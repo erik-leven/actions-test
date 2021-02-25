@@ -1,0 +1,21 @@
+[
+  {
+    "EmployeeId": 1093,
+    "_id": "3471",
+    "operation": "update-employeeaccess",
+    "payload": {
+      "RoleCertifier": false,
+      "RoleDepartment": false,
+      "RoleEconomy": false,
+      "RoleEmployee": true,
+      "RoleManager": false,
+      "RolePrognosis": false,
+      "RoleProject": false,
+      "UseDashboard": true,
+      "UseExpense": true,
+      "UseMobile": true,
+      "UsePrognosis": true,
+      "UseTime": true
+    }
+  }
+]

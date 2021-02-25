@@ -1,0 +1,19 @@
+{
+  "_id": "customer-sql01_vbn",
+  "type": "pipe",
+  "source": {
+    "type": "dataset",
+    "dataset": "global-company"
+  },
+  "transform": {
+    "type": "dtl",
+    "rules": {
+      "default": [
+        ["filter",
+          ["in", "~:bouvet:visma-customer", "_S.rdf:type"]
+        ],
+        ["copy", "visma-customer:*"]
+      ]
+    }
+  }
+}

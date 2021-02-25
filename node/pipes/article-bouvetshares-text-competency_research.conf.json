@@ -1,0 +1,25 @@
+{
+  "_id": "article-bouvetshares-text-competency_research",
+  "type": "pipe",
+  "source": {
+    "type": "dataset",
+    "dataset": "article-bouvetshares-competency_research"
+  },
+  "transform": {
+    "type": "dtl",
+    "rules": {
+      "default": [
+        ["copy", "_id"],
+        ["add", "data",
+          ["concat", "Creator: ", "_S.data.creator", "\n", "Header: ,", "_S.data.data.header", "\n", "Lead: ,", "_S.data.data.lead", "Body: ", "_S.data.data.body"]
+        ],
+        ["add", "filename",
+          ["concat", "_S.data.language", "-",
+            ["ni-id",
+              ["ni", "_S._id"]
+            ], ".txt"]
+        ]
+      ]
+    }
+  }
+}

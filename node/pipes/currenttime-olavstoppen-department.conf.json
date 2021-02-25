@@ -1,0 +1,67 @@
+{
+  "_id": "currenttime-olavstoppen-department",
+  "type": "pipe",
+  "source": {
+    "type": "conditional",
+    "alternatives": {
+      "prod": {
+        "type": "sql",
+        "system": "currenttime-olavstoppen",
+        "table": "department",
+        "updated_column": "updatedate"
+      },
+      "test": {
+        "type": "embedded",
+        "entities": [{
+          "_id": "4",
+          "certifierid": 0,
+          "cteconomyid": 0,
+          "departmentactive": 1,
+          "departmentid": 4,
+          "departmentname": "Team Einar",
+          "employeeid": 3465,
+          "updateby": "Einar Lichtenberg (53)",
+          "updatedate": "~t2016-02-11T10:37:01Z"
+        }, {
+          "_id": "3",
+          "certifierid": 0,
+          "createby": "Anita Velle",
+          "createdate": "~t2014-03-17T11:53:21Z",
+          "cteconomyid": 0,
+          "departmentactive": 1,
+          "departmentid": 3,
+          "departmentname": "Team Felles",
+          "departmentref": "",
+          "employeeid": 3466,
+          "updateby": "Anita Velle (45)",
+          "updatedate": "~t2016-04-06T08:29:07Z"
+        }]
+      }
+    },
+    "condition": "$ENV(node-env)"
+  },
+  "transform": {
+    "type": "dtl",
+    "rules": {
+      "default": [
+        ["filter",
+          ["and",
+            ["eq", "_S.departmentactive", 1],
+            ["not",
+              ["matches", "* LED*", "_S.departmentname"]
+            ]
+          ]
+        ],
+        ["copy", "*"],
+        ["make-ni", "currenttime-olavstoppen-employee", "employeeid"],
+        ["add", "rdf:type",
+          ["ni", "bouvet:currenttime-olavstoppen-department"]
+        ]
+      ]
+    }
+  },
+  "pump": {
+    "cron_expression": "$ENV(ct_cron_fast)",
+    "rescan_cron_expression": "$ENV(ct_rescan_cron)"
+  }
+}

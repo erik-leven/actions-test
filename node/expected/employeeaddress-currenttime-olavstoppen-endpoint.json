@@ -1,0 +1,13 @@
+[
+  {
+    "EmployeeId": 1093,
+    "_id": "3471",
+    "operation": "update-employeeaddress",
+    "payload": {
+      "AddressLine1": "Testveien 1",
+      "Mobile": "+4723123123",
+      "PostAddress": "Stavanger",
+      "Zipcode": "90310"
+    }
+  }
+]

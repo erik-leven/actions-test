@@ -1,0 +1,3351 @@
+{
+  "_id": "catalystone-organization",
+  "type": "pipe",
+  "source": {
+    "type": "conditional",
+    "alternatives": {
+      "prod": {
+        "type": "json",
+        "system": "catalystone-rest-v2",
+        "url": "organization"
+      },
+      "test": {
+        "type": "embedded",
+        "entities": [{
+          "@CREATED": "2018-09-14 14:37:56",
+          "@LAST_MODIFIED": "2018-12-03 12:06:31",
+          "NAME": {
+            "@FIELD_ID": 400,
+            "@ID": 82,
+            "@MODE": 2,
+            "value": "Kristiansand"
+          },
+          "ORG_ID": {
+            "@FIELD_ID": 0,
+            "value": "630"
+          },
+          "PARENT": {
+            "NAME": {
+              "@FIELD_ID": 401,
+              "@ID": 79,
+              "@MODE": 2,
+              "value": "Region Sør"
+            },
+            "ORG_ID": {
+              "@FIELD_ID": 403,
+              "value": "609"
+            }
+          }
+        }, {
+          "@CREATED": "2018-09-14 14:37:56",
+          "@LAST_MODIFIED": "2018-12-03 12:06:31",
+          "NAME": {
+            "@FIELD_ID": 400,
+            "@ID": 80,
+            "@MODE": 2,
+            "value": "Grenland"
+          },
+          "ORG_ID": {
+            "@FIELD_ID": 0,
+            "value": "610"
+          },
+          "PARENT": {
+            "NAME": {
+              "@FIELD_ID": 401,
+              "@ID": 79,
+              "@MODE": 2,
+              "value": "Region Sør"
+            },
+            "ORG_ID": {
+              "@FIELD_ID": 403,
+              "value": "609"
+            }
+          }
+        }, {
+          "@CREATED": "2018-09-14 14:37:56",
+          "@LAST_MODIFIED": "2018-12-03 12:06:31",
+          "NAME": {
+            "@FIELD_ID": 400,
+            "@ID": 81,
+            "@MODE": 2,
+            "value": "Arendal"
+          },
+          "ORG_ID": {
+            "@FIELD_ID": 0,
+            "value": "620"
+          },
+          "PARENT": {
+            "NAME": {
+              "@FIELD_ID": 401,
+              "@ID": 79,
+              "@MODE": 2,
+              "value": "Region Sør"
+            },
+            "ORG_ID": {
+              "@FIELD_ID": 403,
+              "value": "609"
+            }
+          }
+        }, {
+          "@CREATED": "2018-09-14 14:37:56",
+          "@LAST_MODIFIED": "2018-09-20 11:48:34",
+          "NAME": {
+            "@FIELD_ID": 400,
+            "@ID": 83,
+            "@MODE": 2,
+            "value": "Vestfold"
+          },
+          "ORG_ID": {
+            "@FIELD_ID": 0,
+            "value": "640"
+          },
+          "PARENT": {
+            "NAME": {
+              "@FIELD_ID": 401,
+              "@ID": 79,
+              "@MODE": 2,
+              "value": "Region Sør"
+            },
+            "ORG_ID": {
+              "@FIELD_ID": 403,
+              "value": "609"
+            }
+          }
+        }, {
+          "@CREATED": "2018-12-03 12:06:23",
+          "@LAST_MODIFIED": "2018-12-03 12:06:31",
+          "NAME": {
+            "@FIELD_ID": 400,
+            "@ID": 144,
+            "@MODE": 2,
+            "value": "Sør Felles"
+          },
+          "ORG_ID": {
+            "@FIELD_ID": 0,
+            "value": "600"
+          },
+          "PARENT": {
+            "NAME": {
+              "@FIELD_ID": 401,
+              "@ID": 79,
+              "@MODE": 2,
+              "value": "Region Sør"
+            },
+            "ORG_ID": {
+              "@FIELD_ID": 403,
+              "value": "609"
+            }
+          }
+        }, {
+          "@CREATED": "2018-10-18 09:44:23",
+          "@LAST_MODIFIED": "2019-10-30 13:25:14",
+          "NAME": {
+            "@FIELD_ID": 400,
+            "@ID": 139,
+            "@MODE": 2,
+            "value": "Rogaland Økonomi og IT"
+          },
+          "ORG_ID": {
+            "@FIELD_ID": 0,
+            "value": "701"
+          },
+          "PARENT": {
+            "NAME": {
+              "@FIELD_ID": 401,
+              "@ID": 155,
+              "@MODE": 2,
+              "value": "Rogaland Administrasjon"
+            },
+            "ORG_ID": {
+              "@FIELD_ID": 403,
+              "value": "777"
+            }
+          }
+        }, {
+          "@CREATED": "2018-09-14 14:37:56",
+          "@LAST_MODIFIED": "2019-10-30 13:25:14",
+          "NAME": {
+            "@FIELD_ID": 400,
+            "@ID": 101,
+            "@MODE": 2,
+            "value": "Kontorstøtte Haugesund"
+          },
+          "ORG_ID": {
+            "@FIELD_ID": 0,
+            "value": "730"
+          },
+          "PARENT": {
+            "NAME": {
+              "@FIELD_ID": 401,
+              "@ID": 155,
+              "@MODE": 2,
+              "value": "Rogaland Administrasjon"
+            },
+            "ORG_ID": {
+              "@FIELD_ID": 403,
+              "value": "777"
+            }
+          }
+        }, {
+          "@CREATED": "2018-09-14 14:37:56",
+          "@LAST_MODIFIED": "2019-10-30 13:24:08",
+          "NAME": {
+            "@FIELD_ID": 400,
+            "@ID": 88,
+            "@MODE": 2,
+            "value": "Kontorstøtte Stavanger"
+          },
+          "ORG_ID": {
+            "@FIELD_ID": 0,
+            "value": "705"
+          },
+          "PARENT": {
+            "NAME": {
+              "@FIELD_ID": 401,
+              "@ID": 155,
+              "@MODE": 2,
+              "value": "Rogaland Administrasjon"
+            },
+            "ORG_ID": {
+              "@FIELD_ID": 403,
+              "value": "777"
+            }
+          }
+        }, {
+          "@CREATED": "2018-10-02 09:58:55",
+          "@LAST_MODIFIED": "2019-10-30 13:17:47",
+          "NAME": {
+            "@FIELD_ID": 400,
+            "@ID": 138,
+            "@MODE": 2,
+            "value": "Rogaland Equinox"
+          },
+          "ORG_ID": {
+            "@FIELD_ID": 0,
+            "value": "704"
+          },
+          "PARENT": {
+            "NAME": {
+              "@FIELD_ID": 401,
+              "@ID": 153,
+              "@MODE": 2,
+              "value": "Rogaland Felles"
+            },
+            "ORG_ID": {
+              "@FIELD_ID": 403,
+              "value": "778"
+            }
+          }
+        }, {
+          "@CREATED": "2018-09-14 14:37:56",
+          "@LAST_MODIFIED": "2019-10-30 13:16:09",
+          "NAME": {
+            "@FIELD_ID": 400,
+            "@ID": 86,
+            "@MODE": 2,
+            "value": "Rogaland Tech Center"
+          },
+          "ORG_ID": {
+            "@FIELD_ID": 0,
+            "value": "703"
+          },
+          "PARENT": {
+            "NAME": {
+              "@FIELD_ID": 401,
+              "@ID": 153,
+              "@MODE": 2,
+              "value": "Rogaland Felles"
+            },
+            "ORG_ID": {
+              "@FIELD_ID": 403,
+              "value": "778"
+            }
+          }
+        }, {
+          "@CREATED": "2018-09-14 14:37:56",
+          "@LAST_MODIFIED": "2019-10-30 13:17:02",
+          "NAME": {
+            "@FIELD_ID": 400,
+            "@ID": 85,
+            "@MODE": 2,
+            "value": "Rogaland Virksomhetsstøtte"
+          },
+          "ORG_ID": {
+            "@FIELD_ID": 0,
+            "value": "700"
+          },
+          "PARENT": {
+            "NAME": {
+              "@FIELD_ID": 401,
+              "@ID": 153,
+              "@MODE": 2,
+              "value": "Rogaland Felles"
+            },
+            "ORG_ID": {
+              "@FIELD_ID": 403,
+              "value": "778"
+            }
+          }
+        }, {
+          "@CREATED": "2018-09-14 14:37:56",
+          "@LAST_MODIFIED": "2019-10-30 13:09:01",
+          "NAME": {
+            "@FIELD_ID": 400,
+            "@ID": 87,
+            "@MODE": 2,
+            "value": "Rogaland Klyngestøtte"
+          },
+          "ORG_ID": {
+            "@FIELD_ID": 0,
+            "value": "702"
+          },
+          "PARENT": {
+            "NAME": {
+              "@FIELD_ID": 401,
+              "@ID": 153,
+              "@MODE": 2,
+              "value": "Rogaland Felles"
+            },
+            "ORG_ID": {
+              "@FIELD_ID": 403,
+              "value": "778"
+            }
+          }
+        }, {
+          "@CREATED": "2019-10-29 13:45:45",
+          "@LAST_MODIFIED": "2019-10-29 13:45:45",
+          "NAME": {
+            "@FIELD_ID": 400,
+            "@ID": 155,
+            "@MODE": 2,
+            "value": "Rogaland Administrasjon"
+          },
+          "ORG_ID": {
+            "@FIELD_ID": 0,
+            "value": "777"
+          },
+          "PARENT": {
+            "NAME": {
+              "@FIELD_ID": 401,
+              "@ID": 153,
+              "@MODE": 2,
+              "value": "Rogaland Felles"
+            },
+            "ORG_ID": {
+              "@FIELD_ID": 403,
+              "value": "778"
+            }
+          }
+        }, {
+          "@CREATED": "2018-09-14 14:37:56",
+          "@LAST_MODIFIED": "2019-10-30 13:05:27",
+          "NAME": {
+            "@FIELD_ID": 400,
+            "@ID": 93,
+            "@MODE": 2,
+            "value": "Rogaland Syndicate"
+          },
+          "ORG_ID": {
+            "@FIELD_ID": 0,
+            "value": "756"
+          },
+          "PARENT": {
+            "NAME": {
+              "@FIELD_ID": 401,
+              "@ID": 154,
+              "@MODE": 2,
+              "value": "Rogaland Enheter"
+            },
+            "ORG_ID": {
+              "@FIELD_ID": 403,
+              "value": "779"
+            }
+          }
+        }, {
+          "@CREATED": "2018-09-14 14:37:56",
+          "@LAST_MODIFIED": "2019-10-30 13:05:03",
+          "NAME": {
+            "@FIELD_ID": 400,
+            "@ID": 98,
+            "@MODE": 2,
+            "value": "Rogaland SQAD"
+          },
+          "ORG_ID": {
+            "@FIELD_ID": 0,
+            "value": "761"
+          },
+          "PARENT": {
+            "NAME": {
+              "@FIELD_ID": 401,
+              "@ID": 154,
+              "@MODE": 2,
+              "value": "Rogaland Enheter"
+            },
+            "ORG_ID": {
+              "@FIELD_ID": 403,
+              "value": "779"
+            }
+          }
+        }, {
+          "@CREATED": "2018-11-16 12:09:23",
+          "@LAST_MODIFIED": "2019-10-30 13:04:38",
+          "NAME": {
+            "@FIELD_ID": 400,
+            "@ID": 141,
+            "@MODE": 2,
+            "value": "Rogaland SPOCK"
+          },
+          "ORG_ID": {
+            "@FIELD_ID": 0,
+            "value": "764"
+          },
+          "PARENT": {
+            "NAME": {
+              "@FIELD_ID": 401,
+              "@ID": 154,
+              "@MODE": 2,
+              "value": "Rogaland Enheter"
+            },
+            "ORG_ID": {
+              "@FIELD_ID": 403,
+              "value": "779"
+            }
+          }
+        }, {
+          "@CREATED": "2018-09-14 14:37:56",
+          "@LAST_MODIFIED": "2019-10-30 13:04:11",
+          "NAME": {
+            "@FIELD_ID": 400,
+            "@ID": 100,
+            "@MODE": 2,
+            "value": "Rogaland Spectre"
+          },
+          "ORG_ID": {
+            "@FIELD_ID": 0,
+            "value": "763"
+          },
+          "PARENT": {
+            "NAME": {
+              "@FIELD_ID": 401,
+              "@ID": 154,
+              "@MODE": 2,
+              "value": "Rogaland Enheter"
+            },
+            "ORG_ID": {
+              "@FIELD_ID": 403,
+              "value": "779"
+            }
+          }
+        }, {
+          "@CREATED": "2018-09-14 14:37:56",
+          "@LAST_MODIFIED": "2019-10-30 13:03:43",
+          "NAME": {
+            "@FIELD_ID": 400,
+            "@ID": 97,
+            "@MODE": 2,
+            "value": "Rogaland Skynet"
+          },
+          "ORG_ID": {
+            "@FIELD_ID": 0,
+            "value": "760"
+          },
+          "PARENT": {
+            "NAME": {
+              "@FIELD_ID": 401,
+              "@ID": 154,
+              "@MODE": 2,
+              "value": "Rogaland Enheter"
+            },
+            "ORG_ID": {
+              "@FIELD_ID": 403,
+              "value": "779"
+            }
+          }
+        }, {
+          "@CREATED": "2019-08-30 15:14:05",
+          "@LAST_MODIFIED": "2019-10-30 13:03:19",
+          "NAME": {
+            "@FIELD_ID": 400,
+            "@ID": 152,
+            "@MODE": 2,
+            "value": "Rogaland Phoenix"
+          },
+          "ORG_ID": {
+            "@FIELD_ID": 0,
+            "value": "768"
+          },
+          "PARENT": {
+            "NAME": {
+              "@FIELD_ID": 401,
+              "@ID": 154,
+              "@MODE": 2,
+              "value": "Rogaland Enheter"
+            },
+            "ORG_ID": {
+              "@FIELD_ID": 403,
+              "value": "779"
+            }
+          }
+        }, {
+          "@CREATED": "2019-05-14 14:11:17",
+          "@LAST_MODIFIED": "2019-10-30 13:02:46",
+          "NAME": {
+            "@FIELD_ID": 400,
+            "@ID": 147,
+            "@MODE": 2,
+            "value": "Rogaland Optimus"
+          },
+          "ORG_ID": {
+            "@FIELD_ID": 0,
+            "value": "766"
+          },
+          "PARENT": {
+            "NAME": {
+              "@FIELD_ID": 401,
+              "@ID": 154,
+              "@MODE": 2,
+              "value": "Rogaland Enheter"
+            },
+            "ORG_ID": {
+              "@FIELD_ID": 403,
+              "value": "779"
+            }
+          }
+        }, {
+          "@CREATED": "2018-09-14 14:37:56",
+          "@LAST_MODIFIED": "2019-10-30 12:34:21",
+          "NAME": {
+            "@FIELD_ID": 400,
+            "@ID": 94,
+            "@MODE": 2,
+            "value": "Rogaland Morgenstiern"
+          },
+          "ORG_ID": {
+            "@FIELD_ID": 0,
+            "value": "757"
+          },
+          "PARENT": {
+            "NAME": {
+              "@FIELD_ID": 401,
+              "@ID": 154,
+              "@MODE": 2,
+              "value": "Rogaland Enheter"
+            },
+            "ORG_ID": {
+              "@FIELD_ID": 403,
+              "value": "779"
+            }
+          }
+        }, {
+          "@CREATED": "2018-11-16 12:09:50",
+          "@LAST_MODIFIED": "2019-10-30 11:59:08",
+          "NAME": {
+            "@FIELD_ID": 400,
+            "@ID": 142,
+            "@MODE": 2,
+            "value": "Rogaland MCS"
+          },
+          "ORG_ID": {
+            "@FIELD_ID": 0,
+            "value": "765"
+          },
+          "PARENT": {
+            "NAME": {
+              "@FIELD_ID": 401,
+              "@ID": 154,
+              "@MODE": 2,
+              "value": "Rogaland Enheter"
+            },
+            "ORG_ID": {
+              "@FIELD_ID": 403,
+              "value": "779"
+            }
+          }
+        }, {
+          "@CREATED": "2018-09-14 14:37:56",
+          "@LAST_MODIFIED": "2019-10-30 08:10:53",
+          "NAME": {
+            "@FIELD_ID": 400,
+            "@ID": 92,
+            "@MODE": 2,
+            "value": "Rogaland Invicta"
+          },
+          "ORG_ID": {
+            "@FIELD_ID": 0,
+            "value": "755"
+          },
+          "PARENT": {
+            "NAME": {
+              "@FIELD_ID": 401,
+              "@ID": 154,
+              "@MODE": 2,
+              "value": "Rogaland Enheter"
+            },
+            "ORG_ID": {
+              "@FIELD_ID": 403,
+              "value": "779"
+            }
+          }
+        }, {
+          "@CREATED": "2018-09-14 14:37:56",
+          "@LAST_MODIFIED": "2019-10-30 08:10:03",
+          "NAME": {
+            "@FIELD_ID": 400,
+            "@ID": 89,
+            "@MODE": 2,
+            "value": "Rogaland Formel 1"
+          },
+          "ORG_ID": {
+            "@FIELD_ID": 0,
+            "value": "751"
+          },
+          "PARENT": {
+            "NAME": {
+              "@FIELD_ID": 401,
+              "@ID": 154,
+              "@MODE": 2,
+              "value": "Rogaland Enheter"
+            },
+            "ORG_ID": {
+              "@FIELD_ID": 403,
+              "value": "779"
+            }
+          }
+        }, {
+          "@CREATED": "2018-09-14 14:37:56",
+          "@LAST_MODIFIED": "2019-10-30 08:09:31",
+          "NAME": {
+            "@FIELD_ID": 400,
+            "@ID": 90,
+            "@MODE": 2,
+            "value": "Rogaland Enigma"
+          },
+          "ORG_ID": {
+            "@FIELD_ID": 0,
+            "value": "752"
+          },
+          "PARENT": {
+            "NAME": {
+              "@FIELD_ID": 401,
+              "@ID": 154,
+              "@MODE": 2,
+              "value": "Rogaland Enheter"
+            },
+            "ORG_ID": {
+              "@FIELD_ID": 403,
+              "value": "779"
+            }
+          }
+        }, {
+          "@CREATED": "2018-09-14 14:37:56",
+          "@LAST_MODIFIED": "2019-10-29 22:46:23",
+          "NAME": {
+            "@FIELD_ID": 400,
+            "@ID": 96,
+            "@MODE": 2,
+            "value": "Rogaland DIGG"
+          },
+          "ORG_ID": {
+            "@FIELD_ID": 0,
+            "value": "759"
+          },
+          "PARENT": {
+            "NAME": {
+              "@FIELD_ID": 401,
+              "@ID": 154,
+              "@MODE": 2,
+              "value": "Rogaland Enheter"
+            },
+            "ORG_ID": {
+              "@FIELD_ID": 403,
+              "value": "779"
+            }
+          }
+        }, {
+          "@CREATED": "2018-09-14 14:37:56",
+          "@LAST_MODIFIED": "2019-10-29 22:45:46",
+          "NAME": {
+            "@FIELD_ID": 400,
+            "@ID": 95,
+            "@MODE": 2,
+            "value": "Rogaland DAIM"
+          },
+          "ORG_ID": {
+            "@FIELD_ID": 0,
+            "value": "758"
+          },
+          "PARENT": {
+            "NAME": {
+              "@FIELD_ID": 401,
+              "@ID": 154,
+              "@MODE": 2,
+              "value": "Rogaland Enheter"
+            },
+            "ORG_ID": {
+              "@FIELD_ID": 403,
+              "value": "779"
+            }
+          }
+        }, {
+          "@CREATED": "2018-09-14 14:37:56",
+          "@LAST_MODIFIED": "2019-10-29 14:10:43",
+          "NAME": {
+            "@FIELD_ID": 400,
+            "@ID": 99,
+            "@MODE": 2,
+            "value": "Rogaland Atlas"
+          },
+          "ORG_ID": {
+            "@FIELD_ID": 0,
+            "value": "762"
+          },
+          "PARENT": {
+            "NAME": {
+              "@FIELD_ID": 401,
+              "@ID": 154,
+              "@MODE": 2,
+              "value": "Rogaland Enheter"
+            },
+            "ORG_ID": {
+              "@FIELD_ID": 403,
+              "value": "779"
+            }
+          }
+        }, {
+          "@CREATED": "2018-09-14 14:37:56",
+          "@LAST_MODIFIED": "2019-10-29 14:11:02",
+          "NAME": {
+            "@FIELD_ID": 400,
+            "@ID": 91,
+            "@MODE": 2,
+            "value": "Rogaland Alpha"
+          },
+          "ORG_ID": {
+            "@FIELD_ID": 0,
+            "value": "754"
+          },
+          "PARENT": {
+            "NAME": {
+              "@FIELD_ID": 401,
+              "@ID": 154,
+              "@MODE": 2,
+              "value": "Rogaland Enheter"
+            },
+            "ORG_ID": {
+              "@FIELD_ID": 403,
+              "value": "779"
+            }
+          }
+        }, {
+          "@CREATED": "2018-09-14 14:37:56",
+          "@LAST_MODIFIED": "2019-10-30 13:06:48",
+          "NAME": {
+            "@FIELD_ID": 400,
+            "@ID": 102,
+            "@MODE": 2,
+            "value": "Rogaland Industristøtte"
+          },
+          "ORG_ID": {
+            "@FIELD_ID": 0,
+            "value": "731"
+          },
+          "PARENT": {
+            "NAME": {
+              "@FIELD_ID": 401,
+              "@ID": 154,
+              "@MODE": 2,
+              "value": "Rogaland Enheter"
+            },
+            "ORG_ID": {
+              "@FIELD_ID": 403,
+              "value": "779"
+            }
+          }
+        }, {
+          "@CREATED": "2019-06-05 09:16:33",
+          "@LAST_MODIFIED": "2019-10-29 14:10:10",
+          "NAME": {
+            "@FIELD_ID": 400,
+            "@ID": 148,
+            "@MODE": 2,
+            "value": "Rogaland ACME"
+          },
+          "ORG_ID": {
+            "@FIELD_ID": 0,
+            "value": "767"
+          },
+          "PARENT": {
+            "NAME": {
+              "@FIELD_ID": 401,
+              "@ID": 154,
+              "@MODE": 2,
+              "value": "Rogaland Enheter"
+            },
+            "ORG_ID": {
+              "@FIELD_ID": 403,
+              "value": "779"
+            }
+          }
+        }, {
+          "@CREATED": "2019-10-29 13:42:37",
+          "@LAST_MODIFIED": "2019-10-29 13:42:37",
+          "NAME": {
+            "@FIELD_ID": 400,
+            "@ID": 153,
+            "@MODE": 2,
+            "value": "Rogaland Felles"
+          },
+          "ORG_ID": {
+            "@FIELD_ID": 0,
+            "value": "778"
+          },
+          "PARENT": {
+            "NAME": {
+              "@FIELD_ID": 401,
+              "@ID": 84,
+              "@MODE": 2,
+              "value": "Region Rogaland"
+            },
+            "ORG_ID": {
+              "@FIELD_ID": 403,
+              "value": "799"
+            }
+          }
+        }, {
+          "@CREATED": "2019-10-29 13:44:50",
+          "@LAST_MODIFIED": "2019-10-29 13:44:50",
+          "NAME": {
+            "@FIELD_ID": 400,
+            "@ID": 154,
+            "@MODE": 2,
+            "value": "Rogaland Enheter"
+          },
+          "ORG_ID": {
+            "@FIELD_ID": 0,
+            "value": "779"
+          },
+          "PARENT": {
+            "NAME": {
+              "@FIELD_ID": 401,
+              "@ID": 84,
+              "@MODE": 2,
+              "value": "Region Rogaland"
+            },
+            "ORG_ID": {
+              "@FIELD_ID": 403,
+              "value": "799"
+            }
+          }
+        }, {
+          "@CREATED": "2018-09-14 14:37:56",
+          "@LAST_MODIFIED": "2018-09-14 14:38:33",
+          "NAME": {
+            "@FIELD_ID": 400,
+            "@ID": 67,
+            "@MODE": 2,
+            "value": "SAP Tech og forvaltning"
+          },
+          "ORG_ID": {
+            "@FIELD_ID": 0,
+            "value": "523"
+          },
+          "PARENT": {
+            "NAME": {
+              "@FIELD_ID": 401,
+              "@ID": 65,
+              "@MODE": 2,
+              "value": "Øst Virksomhetsstyring"
+            },
+            "ORG_ID": {
+              "@FIELD_ID": 403,
+              "value": "501"
+            }
+          }
+        }, {
+          "@CREATED": "2018-09-14 14:37:56",
+          "@LAST_MODIFIED": "2018-09-14 14:38:33",
+          "NAME": {
+            "@FIELD_ID": 400,
+            "@ID": 68,
+            "@MODE": 2,
+            "value": "Prosjekt og Arkitekt"
+          },
+          "ORG_ID": {
+            "@FIELD_ID": 0,
+            "value": "525"
+          },
+          "PARENT": {
+            "NAME": {
+              "@FIELD_ID": 401,
+              "@ID": 65,
+              "@MODE": 2,
+              "value": "Øst Virksomhetsstyring"
+            },
+            "ORG_ID": {
+              "@FIELD_ID": 403,
+              "value": "501"
+            }
+          }
+        }, {
+          "@CREATED": "2018-09-14 14:37:56",
+          "@LAST_MODIFIED": "2018-09-14 14:38:33",
+          "NAME": {
+            "@FIELD_ID": 400,
+            "@ID": 66,
+            "@MODE": 2,
+            "value": "Applikasjon og Prosess"
+          },
+          "ORG_ID": {
+            "@FIELD_ID": 0,
+            "value": "522"
+          },
+          "PARENT": {
+            "NAME": {
+              "@FIELD_ID": 401,
+              "@ID": 65,
+              "@MODE": 2,
+              "value": "Øst Virksomhetsstyring"
+            },
+            "ORG_ID": {
+              "@FIELD_ID": 403,
+              "value": "501"
+            }
+          }
+        }, {
+          "@CREATED": "2018-09-20 11:55:47",
+          "@LAST_MODIFIED": "2018-10-23 12:04:32",
+          "NAME": {
+            "@FIELD_ID": 400,
+            "@ID": 136,
+            "@MODE": 2,
+            "value": "Øst Microsoft 5"
+          },
+          "ORG_ID": {
+            "@FIELD_ID": 0,
+            "value": "324"
+          },
+          "PARENT": {
+            "NAME": {
+              "@FIELD_ID": 401,
+              "@ID": 45,
+              "@MODE": 2,
+              "value": "Øst Microsoft"
+            },
+            "ORG_ID": {
+              "@FIELD_ID": 403,
+              "value": "327"
+            }
+          }
+        }, {
+          "@CREATED": "2018-09-14 14:37:55",
+          "@LAST_MODIFIED": "2018-09-14 14:38:33",
+          "NAME": {
+            "@FIELD_ID": 400,
+            "@ID": 49,
+            "@MODE": 2,
+            "value": "Øst Microsoft 4"
+          },
+          "ORG_ID": {
+            "@FIELD_ID": 0,
+            "value": "323"
+          },
+          "PARENT": {
+            "NAME": {
+              "@FIELD_ID": 401,
+              "@ID": 45,
+              "@MODE": 2,
+              "value": "Øst Microsoft"
+            },
+            "ORG_ID": {
+              "@FIELD_ID": 403,
+              "value": "327"
+            }
+          }
+        }, {
+          "@CREATED": "2018-09-14 14:37:55",
+          "@LAST_MODIFIED": "2018-09-14 14:38:33",
+          "NAME": {
+            "@FIELD_ID": 400,
+            "@ID": 48,
+            "@MODE": 2,
+            "value": "Øst Microsoft 3"
+          },
+          "ORG_ID": {
+            "@FIELD_ID": 0,
+            "value": "322"
+          },
+          "PARENT": {
+            "NAME": {
+              "@FIELD_ID": 401,
+              "@ID": 45,
+              "@MODE": 2,
+              "value": "Øst Microsoft"
+            },
+            "ORG_ID": {
+              "@FIELD_ID": 403,
+              "value": "327"
+            }
+          }
+        }, {
+          "@CREATED": "2018-09-14 14:37:55",
+          "@LAST_MODIFIED": "2018-09-14 14:38:33",
+          "NAME": {
+            "@FIELD_ID": 400,
+            "@ID": 47,
+            "@MODE": 2,
+            "value": "Øst Microsoft 2"
+          },
+          "ORG_ID": {
+            "@FIELD_ID": 0,
+            "value": "321"
+          },
+          "PARENT": {
+            "NAME": {
+              "@FIELD_ID": 401,
+              "@ID": 45,
+              "@MODE": 2,
+              "value": "Øst Microsoft"
+            },
+            "ORG_ID": {
+              "@FIELD_ID": 403,
+              "value": "327"
+            }
+          }
+        }, {
+          "@CREATED": "2018-09-14 14:37:55",
+          "@LAST_MODIFIED": "2018-09-14 14:38:33",
+          "NAME": {
+            "@FIELD_ID": 400,
+            "@ID": 46,
+            "@MODE": 2,
+            "value": "Øst Microsoft 1"
+          },
+          "ORG_ID": {
+            "@FIELD_ID": 0,
+            "value": "320"
+          },
+          "PARENT": {
+            "NAME": {
+              "@FIELD_ID": 401,
+              "@ID": 45,
+              "@MODE": 2,
+              "value": "Øst Microsoft"
+            },
+            "ORG_ID": {
+              "@FIELD_ID": 403,
+              "value": "327"
+            }
+          }
+        }, {
+          "@CREATED": "2018-09-14 14:37:56",
+          "@LAST_MODIFIED": "2018-09-14 14:38:33",
+          "NAME": {
+            "@FIELD_ID": 400,
+            "@ID": 52,
+            "@MODE": 2,
+            "value": "Øst Cloud 2"
+          },
+          "ORG_ID": {
+            "@FIELD_ID": 0,
+            "value": "401"
+          },
+          "PARENT": {
+            "NAME": {
+              "@FIELD_ID": 401,
+              "@ID": 50,
+              "@MODE": 2,
+              "value": "Øst Cloud"
+            },
+            "ORG_ID": {
+              "@FIELD_ID": 403,
+              "value": "409"
+            }
+          }
+        }, {
+          "@CREATED": "2018-09-14 14:37:56",
+          "@LAST_MODIFIED": "2018-09-14 14:38:33",
+          "NAME": {
+            "@FIELD_ID": 400,
+            "@ID": 51,
+            "@MODE": 2,
+            "value": "Øst Cloud 1"
+          },
+          "ORG_ID": {
+            "@FIELD_ID": 0,
+            "value": "400"
+          },
+          "PARENT": {
+            "NAME": {
+              "@FIELD_ID": 401,
+              "@ID": 50,
+              "@MODE": 2,
+              "value": "Øst Cloud"
+            },
+            "ORG_ID": {
+              "@FIELD_ID": 403,
+              "value": "409"
+            }
+          }
+        }, {
+          "@CREATED": "2018-09-14 14:37:55",
+          "@LAST_MODIFIED": "2018-10-23 12:04:39",
+          "NAME": {
+            "@FIELD_ID": 400,
+            "@ID": 45,
+            "@MODE": 2,
+            "value": "Øst Microsoft"
+          },
+          "ORG_ID": {
+            "@FIELD_ID": 0,
+            "value": "327"
+          },
+          "PARENT": {
+            "NAME": {
+              "@FIELD_ID": 401,
+              "@ID": 44,
+              "@MODE": 2,
+              "value": "Øst Tech 2"
+            },
+            "ORG_ID": {
+              "@FIELD_ID": 403,
+              "value": "302"
+            }
+          }
+        }, {
+          "@CREATED": "2018-09-14 14:37:56",
+          "@LAST_MODIFIED": "2018-09-14 14:38:33",
+          "NAME": {
+            "@FIELD_ID": 400,
+            "@ID": 50,
+            "@MODE": 2,
+            "value": "Øst Cloud"
+          },
+          "ORG_ID": {
+            "@FIELD_ID": 0,
+            "value": "409"
+          },
+          "PARENT": {
+            "NAME": {
+              "@FIELD_ID": 401,
+              "@ID": 44,
+              "@MODE": 2,
+              "value": "Øst Tech 2"
+            },
+            "ORG_ID": {
+              "@FIELD_ID": 403,
+              "value": "302"
+            }
+          }
+        }, {
+          "@CREATED": "2018-09-14 14:37:55",
+          "@LAST_MODIFIED": "2018-09-14 14:38:33",
+          "NAME": {
+            "@FIELD_ID": 400,
+            "@ID": 41,
+            "@MODE": 2,
+            "value": "Øst Dev 5"
+          },
+          "ORG_ID": {
+            "@FIELD_ID": 0,
+            "value": "317"
+          },
+          "PARENT": {
+            "NAME": {
+              "@FIELD_ID": 401,
+              "@ID": 37,
+              "@MODE": 2,
+              "value": "Øst Tech 1"
+            },
+            "ORG_ID": {
+              "@FIELD_ID": 403,
+              "value": "301"
+            }
+          }
+        }, {
+          "@CREATED": "2018-09-14 14:37:55",
+          "@LAST_MODIFIED": "2018-10-14 20:32:32",
+          "NAME": {
+            "@FIELD_ID": 400,
+            "@ID": 40,
+            "@MODE": 2,
+            "value": "Øst Dev 4"
+          },
+          "ORG_ID": {
+            "@FIELD_ID": 0,
+            "value": "316"
+          },
+          "PARENT": {
+            "NAME": {
+              "@FIELD_ID": 401,
+              "@ID": 37,
+              "@MODE": 2,
+              "value": "Øst Tech 1"
+            },
+            "ORG_ID": {
+              "@FIELD_ID": 403,
+              "value": "301"
+            }
+          }
+        }, {
+          "@CREATED": "2018-09-14 14:37:55",
+          "@LAST_MODIFIED": "2018-10-14 20:32:40",
+          "NAME": {
+            "@FIELD_ID": 400,
+            "@ID": 39,
+            "@MODE": 2,
+            "value": "Øst Dev 3"
+          },
+          "ORG_ID": {
+            "@FIELD_ID": 0,
+            "value": "315"
+          },
+          "PARENT": {
+            "NAME": {
+              "@FIELD_ID": 401,
+              "@ID": 37,
+              "@MODE": 2,
+              "value": "Øst Tech 1"
+            },
+            "ORG_ID": {
+              "@FIELD_ID": 403,
+              "value": "301"
+            }
+          }
+        }, {
+          "@CREATED": "2018-09-14 14:37:55",
+          "@LAST_MODIFIED": "2018-10-14 20:28:32",
+          "NAME": {
+            "@FIELD_ID": 400,
+            "@ID": 38,
+            "@MODE": 2,
+            "value": "Øst Dev 2"
+          },
+          "ORG_ID": {
+            "@FIELD_ID": 0,
+            "value": "312"
+          },
+          "PARENT": {
+            "NAME": {
+              "@FIELD_ID": 401,
+              "@ID": 37,
+              "@MODE": 2,
+              "value": "Øst Tech 1"
+            },
+            "ORG_ID": {
+              "@FIELD_ID": 403,
+              "value": "301"
+            }
+          }
+        }, {
+          "@CREATED": "2018-09-14 14:37:55",
+          "@LAST_MODIFIED": "2018-10-14 20:32:18",
+          "NAME": {
+            "@FIELD_ID": 400,
+            "@ID": 43,
+            "@MODE": 2,
+            "value": "Øst Dev 1"
+          },
+          "ORG_ID": {
+            "@FIELD_ID": 0,
+            "value": "340"
+          },
+          "PARENT": {
+            "NAME": {
+              "@FIELD_ID": 401,
+              "@ID": 37,
+              "@MODE": 2,
+              "value": "Øst Tech 1"
+            },
+            "ORG_ID": {
+              "@FIELD_ID": 403,
+              "value": "301"
+            }
+          }
+        }, {
+          "@CREATED": "2018-09-14 14:37:55",
+          "@LAST_MODIFIED": "2018-09-14 14:38:33",
+          "NAME": {
+            "@FIELD_ID": 400,
+            "@ID": 42,
+            "@MODE": 2,
+            "value": "Øst Data Science"
+          },
+          "ORG_ID": {
+            "@FIELD_ID": 0,
+            "value": "318"
+          },
+          "PARENT": {
+            "NAME": {
+              "@FIELD_ID": 401,
+              "@ID": 37,
+              "@MODE": 2,
+              "value": "Øst Tech 1"
+            },
+            "ORG_ID": {
+              "@FIELD_ID": 403,
+              "value": "301"
+            }
+          }
+        }, {
+          "@CREATED": "2018-09-14 14:37:56",
+          "@LAST_MODIFIED": "2018-09-14 14:38:33",
+          "NAME": {
+            "@FIELD_ID": 400,
+            "@ID": 72,
+            "@MODE": 2,
+            "value": "Øst Sandvika UK"
+          },
+          "ORG_ID": {
+            "@FIELD_ID": 0,
+            "value": "552"
+          },
+          "PARENT": {
+            "NAME": {
+              "@FIELD_ID": 401,
+              "@ID": 69,
+              "@MODE": 2,
+              "value": "Øst Sandvika"
+            },
+            "ORG_ID": {
+              "@FIELD_ID": 403,
+              "value": "502"
+            }
+          }
+        }, {
+          "@CREATED": "2018-09-14 14:37:56",
+          "@LAST_MODIFIED": "2018-09-14 14:38:33",
+          "NAME": {
+            "@FIELD_ID": 400,
+            "@ID": 73,
+            "@MODE": 2,
+            "value": "Øst Sandvika 3"
+          },
+          "ORG_ID": {
+            "@FIELD_ID": 0,
+            "value": "553"
+          },
+          "PARENT": {
+            "NAME": {
+              "@FIELD_ID": 401,
+              "@ID": 69,
+              "@MODE": 2,
+              "value": "Øst Sandvika"
+            },
+            "ORG_ID": {
+              "@FIELD_ID": 403,
+              "value": "502"
+            }
+          }
+        }, {
+          "@CREATED": "2018-09-14 14:37:56",
+          "@LAST_MODIFIED": "2018-09-14 14:38:33",
+          "NAME": {
+            "@FIELD_ID": 400,
+            "@ID": 71,
+            "@MODE": 2,
+            "value": "Øst Sandvika 2"
+          },
+          "ORG_ID": {
+            "@FIELD_ID": 0,
+            "value": "551"
+          },
+          "PARENT": {
+            "NAME": {
+              "@FIELD_ID": 401,
+              "@ID": 69,
+              "@MODE": 2,
+              "value": "Øst Sandvika"
+            },
+            "ORG_ID": {
+              "@FIELD_ID": 403,
+              "value": "502"
+            }
+          }
+        }, {
+          "@CREATED": "2018-09-14 14:37:56",
+          "@LAST_MODIFIED": "2018-09-14 14:38:33",
+          "NAME": {
+            "@FIELD_ID": 400,
+            "@ID": 70,
+            "@MODE": 2,
+            "value": "Øst Sandvika 1"
+          },
+          "ORG_ID": {
+            "@FIELD_ID": 0,
+            "value": "550"
+          },
+          "PARENT": {
+            "NAME": {
+              "@FIELD_ID": 401,
+              "@ID": 69,
+              "@MODE": 2,
+              "value": "Øst Sandvika"
+            },
+            "ORG_ID": {
+              "@FIELD_ID": 403,
+              "value": "502"
+            }
+          }
+        }, {
+          "@CREATED": "2018-09-14 14:37:55",
+          "@LAST_MODIFIED": "2018-09-14 14:38:33",
+          "NAME": {
+            "@FIELD_ID": 400,
+            "@ID": 32,
+            "@MODE": 2,
+            "value": "Øst Test og Testledelse"
+          },
+          "ORG_ID": {
+            "@FIELD_ID": 0,
+            "value": "514"
+          },
+          "PARENT": {
+            "NAME": {
+              "@FIELD_ID": 401,
+              "@ID": 29,
+              "@MODE": 2,
+              "value": "Øst Råd og Prosjekt"
+            },
+            "ORG_ID": {
+              "@FIELD_ID": 403,
+              "value": "500"
+            }
+          }
+        }, {
+          "@CREATED": "2018-09-14 14:37:55",
+          "@LAST_MODIFIED": "2018-12-03 11:10:47",
+          "NAME": {
+            "@FIELD_ID": 400,
+            "@ID": 35,
+            "@MODE": 2,
+            "value": "Øst Rådgivning innføring og endring"
+          },
+          "ORG_ID": {
+            "@FIELD_ID": 0,
+            "value": "517"
+          },
+          "PARENT": {
+            "NAME": {
+              "@FIELD_ID": 401,
+              "@ID": 29,
+              "@MODE": 2,
+              "value": "Øst Råd og Prosjekt"
+            },
+            "ORG_ID": {
+              "@FIELD_ID": 403,
+              "value": "500"
+            }
+          }
+        }, {
+          "@CREATED": "2018-09-14 14:37:55",
+          "@LAST_MODIFIED": "2018-09-14 14:38:33",
+          "NAME": {
+            "@FIELD_ID": 400,
+            "@ID": 34,
+            "@MODE": 2,
+            "value": "Øst Rådgivning arkitektur"
+          },
+          "ORG_ID": {
+            "@FIELD_ID": 0,
+            "value": "516"
+          },
+          "PARENT": {
+            "NAME": {
+              "@FIELD_ID": 401,
+              "@ID": 29,
+              "@MODE": 2,
+              "value": "Øst Råd og Prosjekt"
+            },
+            "ORG_ID": {
+              "@FIELD_ID": 403,
+              "value": "500"
+            }
+          }
+        }, {
+          "@CREATED": "2018-09-14 14:37:55",
+          "@LAST_MODIFIED": "2018-09-14 14:38:33",
+          "NAME": {
+            "@FIELD_ID": 400,
+            "@ID": 36,
+            "@MODE": 2,
+            "value": "Øst Råd og Prosjekt UK"
+          },
+          "ORG_ID": {
+            "@FIELD_ID": 0,
+            "value": "518"
+          },
+          "PARENT": {
+            "NAME": {
+              "@FIELD_ID": 401,
+              "@ID": 29,
+              "@MODE": 2,
+              "value": "Øst Råd og Prosjekt"
+            },
+            "ORG_ID": {
+              "@FIELD_ID": 403,
+              "value": "500"
+            }
+          }
+        }, {
+          "@CREATED": "2018-09-14 14:37:55",
+          "@LAST_MODIFIED": "2018-09-20 11:53:26",
+          "NAME": {
+            "@FIELD_ID": 400,
+            "@ID": 33,
+            "@MODE": 2,
+            "value": "Øst Råd og Prosjekt Felles"
+          },
+          "ORG_ID": {
+            "@FIELD_ID": 0,
+            "value": "515"
+          },
+          "PARENT": {
+            "NAME": {
+              "@FIELD_ID": 401,
+              "@ID": 29,
+              "@MODE": 2,
+              "value": "Øst Råd og Prosjekt"
+            },
+            "ORG_ID": {
+              "@FIELD_ID": 403,
+              "value": "500"
+            }
+          }
+        }, {
+          "@CREATED": "2018-09-14 14:37:55",
+          "@LAST_MODIFIED": "2018-09-14 14:38:33",
+          "NAME": {
+            "@FIELD_ID": 400,
+            "@ID": 31,
+            "@MODE": 2,
+            "value": "Øst Prosjektledelse 2"
+          },
+          "ORG_ID": {
+            "@FIELD_ID": 0,
+            "value": "513"
+          },
+          "PARENT": {
+            "NAME": {
+              "@FIELD_ID": 401,
+              "@ID": 29,
+              "@MODE": 2,
+              "value": "Øst Råd og Prosjekt"
+            },
+            "ORG_ID": {
+              "@FIELD_ID": 403,
+              "value": "500"
+            }
+          }
+        }, {
+          "@CREATED": "2018-09-14 14:37:55",
+          "@LAST_MODIFIED": "2018-09-14 14:38:33",
+          "NAME": {
+            "@FIELD_ID": 400,
+            "@ID": 30,
+            "@MODE": 2,
+            "value": "Øst Prosjektledelse 1"
+          },
+          "ORG_ID": {
+            "@FIELD_ID": 0,
+            "value": "512"
+          },
+          "PARENT": {
+            "NAME": {
+              "@FIELD_ID": 401,
+              "@ID": 29,
+              "@MODE": 2,
+              "value": "Øst Råd og Prosjekt"
+            },
+            "ORG_ID": {
+              "@FIELD_ID": 403,
+              "value": "500"
+            }
+          }
+        }, {
+          "@CREATED": "2019-08-16 11:44:09",
+          "@LAST_MODIFIED": "2019-08-16 11:44:09",
+          "NAME": {
+            "@FIELD_ID": 400,
+            "@ID": 150,
+            "@MODE": 2,
+            "value": "Øst Programledelse"
+          },
+          "ORG_ID": {
+            "@FIELD_ID": 0,
+            "value": "511"
+          },
+          "PARENT": {
+            "NAME": {
+              "@FIELD_ID": 401,
+              "@ID": 29,
+              "@MODE": 2,
+              "value": "Øst Råd og Prosjekt"
+            },
+            "ORG_ID": {
+              "@FIELD_ID": 403,
+              "value": "500"
+            }
+          }
+        }, {
+          "@CREATED": "2019-12-17 11:51:00",
+          "@LAST_MODIFIED": "2019-12-17 11:51:00",
+          "NAME": {
+            "@FIELD_ID": 400,
+            "@ID": 159,
+            "@MODE": 2,
+            "value": "Øst PIA 3"
+          },
+          "ORG_ID": {
+            "@FIELD_ID": 0,
+            "value": "453"
+          },
+          "PARENT": {
+            "NAME": {
+              "@FIELD_ID": 401,
+              "@ID": 156,
+              "@MODE": 2,
+              "value": "Øst PIA"
+            },
+            "ORG_ID": {
+              "@FIELD_ID": 403,
+              "value": "450"
+            }
+          }
+        }, {
+          "@CREATED": "2019-12-17 11:50:44",
+          "@LAST_MODIFIED": "2019-12-17 11:50:44",
+          "NAME": {
+            "@FIELD_ID": 400,
+            "@ID": 158,
+            "@MODE": 2,
+            "value": "Øst PIA 2"
+          },
+          "ORG_ID": {
+            "@FIELD_ID": 0,
+            "value": "452"
+          },
+          "PARENT": {
+            "NAME": {
+              "@FIELD_ID": 401,
+              "@ID": 156,
+              "@MODE": 2,
+              "value": "Øst PIA"
+            },
+            "ORG_ID": {
+              "@FIELD_ID": 403,
+              "value": "450"
+            }
+          }
+        }, {
+          "@CREATED": "2019-12-17 11:50:15",
+          "@LAST_MODIFIED": "2019-12-17 11:50:15",
+          "NAME": {
+            "@FIELD_ID": 400,
+            "@ID": 157,
+            "@MODE": 2,
+            "value": "Øst PIA 1"
+          },
+          "ORG_ID": {
+            "@FIELD_ID": 0,
+            "value": "451"
+          },
+          "PARENT": {
+            "NAME": {
+              "@FIELD_ID": 401,
+              "@ID": 156,
+              "@MODE": 2,
+              "value": "Øst PIA"
+            },
+            "ORG_ID": {
+              "@FIELD_ID": 403,
+              "value": "450"
+            }
+          }
+        }, {
+          "@CREATED": "2018-09-14 14:37:56",
+          "@LAST_MODIFIED": "2019-01-04 12:53:37",
+          "NAME": {
+            "@FIELD_ID": 400,
+            "@ID": 62,
+            "@MODE": 2,
+            "value": "Øst Ria 3"
+          },
+          "ORG_ID": {
+            "@FIELD_ID": 0,
+            "value": "337"
+          },
+          "PARENT": {
+            "NAME": {
+              "@FIELD_ID": 401,
+              "@ID": 54,
+              "@MODE": 2,
+              "value": "Øst Kundeopplevelse"
+            },
+            "ORG_ID": {
+              "@FIELD_ID": 403,
+              "value": "303"
+            }
+          }
+        }, {
+          "@CREATED": "2018-09-14 14:37:56",
+          "@LAST_MODIFIED": "2019-01-04 12:53:37",
+          "NAME": {
+            "@FIELD_ID": 400,
+            "@ID": 61,
+            "@MODE": 2,
+            "value": "Øst Ria 2"
+          },
+          "ORG_ID": {
+            "@FIELD_ID": 0,
+            "value": "335"
+          },
+          "PARENT": {
+            "NAME": {
+              "@FIELD_ID": 401,
+              "@ID": 54,
+              "@MODE": 2,
+              "value": "Øst Kundeopplevelse"
+            },
+            "ORG_ID": {
+              "@FIELD_ID": 403,
+              "value": "303"
+            }
+          }
+        }, {
+          "@CREATED": "2018-09-14 14:37:56",
+          "@LAST_MODIFIED": "2019-01-04 12:53:37",
+          "NAME": {
+            "@FIELD_ID": 400,
+            "@ID": 57,
+            "@MODE": 2,
+            "value": "Øst Ria 1"
+          },
+          "ORG_ID": {
+            "@FIELD_ID": 0,
+            "value": "331"
+          },
+          "PARENT": {
+            "NAME": {
+              "@FIELD_ID": 401,
+              "@ID": 54,
+              "@MODE": 2,
+              "value": "Øst Kundeopplevelse"
+            },
+            "ORG_ID": {
+              "@FIELD_ID": 403,
+              "value": "303"
+            }
+          }
+        }, {
+          "@CREATED": "2018-09-20 11:52:16",
+          "@LAST_MODIFIED": "2019-01-04 12:53:37",
+          "NAME": {
+            "@FIELD_ID": 400,
+            "@ID": 135,
+            "@MODE": 2,
+            "value": "Øst Råd Tjenestedesign"
+          },
+          "ORG_ID": {
+            "@FIELD_ID": 0,
+            "value": "338"
+          },
+          "PARENT": {
+            "NAME": {
+              "@FIELD_ID": 401,
+              "@ID": 54,
+              "@MODE": 2,
+              "value": "Øst Kundeopplevelse"
+            },
+            "ORG_ID": {
+              "@FIELD_ID": 403,
+              "value": "303"
+            }
+          }
+        }, {
+          "@CREATED": "2018-09-14 14:37:56",
+          "@LAST_MODIFIED": "2019-01-04 12:53:37",
+          "NAME": {
+            "@FIELD_ID": 400,
+            "@ID": 55,
+            "@MODE": 2,
+            "value": "Øst Råd KO"
+          },
+          "ORG_ID": {
+            "@FIELD_ID": 0,
+            "value": "339"
+          },
+          "PARENT": {
+            "NAME": {
+              "@FIELD_ID": 401,
+              "@ID": 54,
+              "@MODE": 2,
+              "value": "Øst Kundeopplevelse"
+            },
+            "ORG_ID": {
+              "@FIELD_ID": 403,
+              "value": "303"
+            }
+          }
+        }, {
+          "@CREATED": "2018-09-14 14:37:56",
+          "@LAST_MODIFIED": "2019-01-04 12:53:37",
+          "NAME": {
+            "@FIELD_ID": 400,
+            "@ID": 56,
+            "@MODE": 2,
+            "value": "Øst Innsikt"
+          },
+          "ORG_ID": {
+            "@FIELD_ID": 0,
+            "value": "330"
+          },
+          "PARENT": {
+            "NAME": {
+              "@FIELD_ID": 401,
+              "@ID": 54,
+              "@MODE": 2,
+              "value": "Øst Kundeopplevelse"
+            },
+            "ORG_ID": {
+              "@FIELD_ID": 403,
+              "value": "303"
+            }
+          }
+        }, {
+          "@CREATED": "2018-09-14 14:37:56",
+          "@LAST_MODIFIED": "2019-01-04 12:53:37",
+          "NAME": {
+            "@FIELD_ID": 400,
+            "@ID": 60,
+            "@MODE": 2,
+            "value": "Øst Design 2"
+          },
+          "ORG_ID": {
+            "@FIELD_ID": 0,
+            "value": "334"
+          },
+          "PARENT": {
+            "NAME": {
+              "@FIELD_ID": 401,
+              "@ID": 54,
+              "@MODE": 2,
+              "value": "Øst Kundeopplevelse"
+            },
+            "ORG_ID": {
+              "@FIELD_ID": 403,
+              "value": "303"
+            }
+          }
+        }, {
+          "@CREATED": "2018-09-14 14:37:56",
+          "@LAST_MODIFIED": "2019-01-04 12:53:37",
+          "NAME": {
+            "@FIELD_ID": 400,
+            "@ID": 59,
+            "@MODE": 2,
+            "value": "Øst Design 1"
+          },
+          "ORG_ID": {
+            "@FIELD_ID": 0,
+            "value": "333"
+          },
+          "PARENT": {
+            "NAME": {
+              "@FIELD_ID": 401,
+              "@ID": 54,
+              "@MODE": 2,
+              "value": "Øst Kundeopplevelse"
+            },
+            "ORG_ID": {
+              "@FIELD_ID": 403,
+              "value": "303"
+            }
+          }
+        }, {
+          "@CREATED": "2018-09-14 14:37:56",
+          "@LAST_MODIFIED": "2019-01-04 12:53:37",
+          "NAME": {
+            "@FIELD_ID": 400,
+            "@ID": 64,
+            "@MODE": 2,
+            "value": "Øst Webapps 2"
+          },
+          "ORG_ID": {
+            "@FIELD_ID": 0,
+            "value": "326"
+          },
+          "PARENT": {
+            "NAME": {
+              "@FIELD_ID": 401,
+              "@ID": 54,
+              "@MODE": 2,
+              "value": "Øst Kundeopplevelse"
+            },
+            "ORG_ID": {
+              "@FIELD_ID": 403,
+              "value": "303"
+            }
+          }
+        }, {
+          "@CREATED": "2018-09-14 14:37:56",
+          "@LAST_MODIFIED": "2019-01-04 12:53:37",
+          "NAME": {
+            "@FIELD_ID": 400,
+            "@ID": 63,
+            "@MODE": 2,
+            "value": "Øst Webapps 1"
+          },
+          "ORG_ID": {
+            "@FIELD_ID": 0,
+            "value": "325"
+          },
+          "PARENT": {
+            "NAME": {
+              "@FIELD_ID": 401,
+              "@ID": 54,
+              "@MODE": 2,
+              "value": "Øst Kundeopplevelse"
+            },
+            "ORG_ID": {
+              "@FIELD_ID": 403,
+              "value": "303"
+            }
+          }
+        }, {
+          "@CREATED": "2018-09-14 14:37:56",
+          "@LAST_MODIFIED": "2018-09-14 14:38:33",
+          "NAME": {
+            "@FIELD_ID": 400,
+            "@ID": 65,
+            "@MODE": 2,
+            "value": "Øst Virksomhetsstyring"
+          },
+          "ORG_ID": {
+            "@FIELD_ID": 0,
+            "value": "501"
+          },
+          "PARENT": {
+            "NAME": {
+              "@FIELD_ID": 401,
+              "@ID": 27,
+              "@MODE": 2,
+              "value": "Region Øst"
+            },
+            "ORG_ID": {
+              "@FIELD_ID": 403,
+              "value": "299"
+            }
+          }
+        }, {
+          "@CREATED": "2018-09-14 14:37:56",
+          "@LAST_MODIFIED": "2018-09-20 11:57:43",
+          "NAME": {
+            "@FIELD_ID": 400,
+            "@ID": 53,
+            "@MODE": 2,
+            "value": "Øst Tjenesteleveranser"
+          },
+          "ORG_ID": {
+            "@FIELD_ID": 0,
+            "value": "329"
+          },
+          "PARENT": {
+            "NAME": {
+              "@FIELD_ID": 401,
+              "@ID": 27,
+              "@MODE": 2,
+              "value": "Region Øst"
+            },
+            "ORG_ID": {
+              "@FIELD_ID": 403,
+              "value": "299"
+            }
+          }
+        }, {
+          "@CREATED": "2018-09-14 14:37:55",
+          "@LAST_MODIFIED": "2018-09-14 14:38:33",
+          "NAME": {
+            "@FIELD_ID": 400,
+            "@ID": 44,
+            "@MODE": 2,
+            "value": "Øst Tech 2"
+          },
+          "ORG_ID": {
+            "@FIELD_ID": 0,
+            "value": "302"
+          },
+          "PARENT": {
+            "NAME": {
+              "@FIELD_ID": 401,
+              "@ID": 27,
+              "@MODE": 2,
+              "value": "Region Øst"
+            },
+            "ORG_ID": {
+              "@FIELD_ID": 403,
+              "value": "299"
+            }
+          }
+        }, {
+          "@CREATED": "2018-09-14 14:37:55",
+          "@LAST_MODIFIED": "2018-09-14 14:38:33",
+          "NAME": {
+            "@FIELD_ID": 400,
+            "@ID": 37,
+            "@MODE": 2,
+            "value": "Øst Tech 1"
+          },
+          "ORG_ID": {
+            "@FIELD_ID": 0,
+            "value": "301"
+          },
+          "PARENT": {
+            "NAME": {
+              "@FIELD_ID": 401,
+              "@ID": 27,
+              "@MODE": 2,
+              "value": "Region Øst"
+            },
+            "ORG_ID": {
+              "@FIELD_ID": 403,
+              "value": "299"
+            }
+          }
+        }, {
+          "@CREATED": "2018-09-14 14:37:56",
+          "@LAST_MODIFIED": "2018-09-14 14:38:33",
+          "NAME": {
+            "@FIELD_ID": 400,
+            "@ID": 69,
+            "@MODE": 2,
+            "value": "Øst Sandvika"
+          },
+          "ORG_ID": {
+            "@FIELD_ID": 0,
+            "value": "502"
+          },
+          "PARENT": {
+            "NAME": {
+              "@FIELD_ID": 401,
+              "@ID": 27,
+              "@MODE": 2,
+              "value": "Region Øst"
+            },
+            "ORG_ID": {
+              "@FIELD_ID": 403,
+              "value": "299"
+            }
+          }
+        }, {
+          "@CREATED": "2018-09-14 14:37:55",
+          "@LAST_MODIFIED": "2018-09-14 14:38:33",
+          "NAME": {
+            "@FIELD_ID": 400,
+            "@ID": 28,
+            "@MODE": 2,
+            "value": "Øst Salg"
+          },
+          "ORG_ID": {
+            "@FIELD_ID": 0,
+            "value": "211"
+          },
+          "PARENT": {
+            "NAME": {
+              "@FIELD_ID": 401,
+              "@ID": 27,
+              "@MODE": 2,
+              "value": "Region Øst"
+            },
+            "ORG_ID": {
+              "@FIELD_ID": 403,
+              "value": "299"
+            }
+          }
+        }, {
+          "@CREATED": "2018-09-14 14:37:55",
+          "@LAST_MODIFIED": "2018-09-14 14:38:33",
+          "NAME": {
+            "@FIELD_ID": 400,
+            "@ID": 29,
+            "@MODE": 2,
+            "value": "Øst Råd og Prosjekt"
+          },
+          "ORG_ID": {
+            "@FIELD_ID": 0,
+            "value": "500"
+          },
+          "PARENT": {
+            "NAME": {
+              "@FIELD_ID": 401,
+              "@ID": 27,
+              "@MODE": 2,
+              "value": "Region Øst"
+            },
+            "ORG_ID": {
+              "@FIELD_ID": 403,
+              "value": "299"
+            }
+          }
+        }, {
+          "@CREATED": "2019-12-17 11:49:12",
+          "@LAST_MODIFIED": "2019-12-17 14:06:13",
+          "NAME": {
+            "@FIELD_ID": 400,
+            "@ID": 156,
+            "@MODE": 2,
+            "value": "Øst PIA"
+          },
+          "ORG_ID": {
+            "@FIELD_ID": 0,
+            "value": "450"
+          },
+          "PARENT": {
+            "NAME": {
+              "@FIELD_ID": 401,
+              "@ID": 27,
+              "@MODE": 2,
+              "value": "Region Øst"
+            },
+            "ORG_ID": {
+              "@FIELD_ID": 403,
+              "value": "299"
+            }
+          }
+        }, {
+          "@CREATED": "2018-07-03 13:34:54",
+          "@LAST_MODIFIED": "2018-09-14 14:38:33",
+          "NAME": {
+            "@FIELD_ID": 400,
+            "@ID": 6,
+            "@MODE": 2,
+            "value": "Øst Kurs"
+          },
+          "ORG_ID": {
+            "@FIELD_ID": 0,
+            "value": "200"
+          },
+          "PARENT": {
+            "NAME": {
+              "@FIELD_ID": 401,
+              "@ID": 27,
+              "@MODE": 2,
+              "value": "Region Øst"
+            },
+            "ORG_ID": {
+              "@FIELD_ID": 403,
+              "value": "299"
+            }
+          }
+        }, {
+          "@CREATED": "2018-09-14 14:37:56",
+          "@LAST_MODIFIED": "2018-12-18 09:48:33",
+          "NAME": {
+            "@FIELD_ID": 400,
+            "@ID": 54,
+            "@MODE": 2,
+            "value": "Øst Kundeopplevelse"
+          },
+          "ORG_ID": {
+            "@FIELD_ID": 0,
+            "value": "303"
+          },
+          "PARENT": {
+            "NAME": {
+              "@FIELD_ID": 401,
+              "@ID": 27,
+              "@MODE": 2,
+              "value": "Region Øst"
+            },
+            "ORG_ID": {
+              "@FIELD_ID": 403,
+              "value": "299"
+            }
+          }
+        }, {
+          "@CREATED": "2018-07-03 13:44:15",
+          "@LAST_MODIFIED": "2018-09-14 14:38:32",
+          "NAME": {
+            "@FIELD_ID": 400,
+            "@ID": 14,
+            "@MODE": 2,
+            "value": "Øst Felles"
+          },
+          "ORG_ID": {
+            "@FIELD_ID": 0,
+            "value": "210"
+          },
+          "PARENT": {
+            "NAME": {
+              "@FIELD_ID": 401,
+              "@ID": 27,
+              "@MODE": 2,
+              "value": "Region Øst"
+            },
+            "ORG_ID": {
+              "@FIELD_ID": 403,
+              "value": "299"
+            }
+          }
+        }, {
+          "@CREATED": "2018-09-14 14:37:57",
+          "@LAST_MODIFIED": "2018-09-14 14:38:34",
+          "NAME": {
+            "@FIELD_ID": 400,
+            "@ID": 116,
+            "@MODE": 2,
+            "value": "Trondheim Tech 3"
+          },
+          "ORG_ID": {
+            "@FIELD_ID": 0,
+            "value": "804"
+          },
+          "PARENT": {
+            "NAME": {
+              "@FIELD_ID": 401,
+              "@ID": 111,
+              "@MODE": 2,
+              "value": "Region Nord"
+            },
+            "ORG_ID": {
+              "@FIELD_ID": 403,
+              "value": "809"
+            }
+          }
+        }, {
+          "@CREATED": "2018-09-14 14:37:57",
+          "@LAST_MODIFIED": "2018-09-14 14:38:34",
+          "NAME": {
+            "@FIELD_ID": 400,
+            "@ID": 114,
+            "@MODE": 2,
+            "value": "Trondheim Tech 2"
+          },
+          "ORG_ID": {
+            "@FIELD_ID": 0,
+            "value": "802"
+          },
+          "PARENT": {
+            "NAME": {
+              "@FIELD_ID": 401,
+              "@ID": 111,
+              "@MODE": 2,
+              "value": "Region Nord"
+            },
+            "ORG_ID": {
+              "@FIELD_ID": 403,
+              "value": "809"
+            }
+          }
+        }, {
+          "@CREATED": "2018-09-14 14:37:57",
+          "@LAST_MODIFIED": "2018-09-14 14:38:34",
+          "NAME": {
+            "@FIELD_ID": 400,
+            "@ID": 113,
+            "@MODE": 2,
+            "value": "Trondheim Tech 1"
+          },
+          "ORG_ID": {
+            "@FIELD_ID": 0,
+            "value": "801"
+          },
+          "PARENT": {
+            "NAME": {
+              "@FIELD_ID": 401,
+              "@ID": 111,
+              "@MODE": 2,
+              "value": "Region Nord"
+            },
+            "ORG_ID": {
+              "@FIELD_ID": 403,
+              "value": "809"
+            }
+          }
+        }, {
+          "@CREATED": "2018-09-14 14:37:57",
+          "@LAST_MODIFIED": "2018-09-14 14:38:34",
+          "NAME": {
+            "@FIELD_ID": 400,
+            "@ID": 117,
+            "@MODE": 2,
+            "value": "Trondheim Rådgivning&Prosjektledelse"
+          },
+          "ORG_ID": {
+            "@FIELD_ID": 0,
+            "value": "805"
+          },
+          "PARENT": {
+            "NAME": {
+              "@FIELD_ID": 401,
+              "@ID": 111,
+              "@MODE": 2,
+              "value": "Region Nord"
+            },
+            "ORG_ID": {
+              "@FIELD_ID": 403,
+              "value": "809"
+            }
+          }
+        }, {
+          "@CREATED": "2018-09-14 14:37:57",
+          "@LAST_MODIFIED": "2018-09-14 14:38:34",
+          "NAME": {
+            "@FIELD_ID": 400,
+            "@ID": 118,
+            "@MODE": 2,
+            "value": "Trondheim FrontEnd"
+          },
+          "ORG_ID": {
+            "@FIELD_ID": 0,
+            "value": "806"
+          },
+          "PARENT": {
+            "NAME": {
+              "@FIELD_ID": 401,
+              "@ID": 111,
+              "@MODE": 2,
+              "value": "Region Nord"
+            },
+            "ORG_ID": {
+              "@FIELD_ID": 403,
+              "value": "809"
+            }
+          }
+        }, {
+          "@CREATED": "2018-09-14 14:37:57",
+          "@LAST_MODIFIED": "2018-09-14 14:38:34",
+          "NAME": {
+            "@FIELD_ID": 400,
+            "@ID": 115,
+            "@MODE": 2,
+            "value": "Trondheim Brukeropplevelse"
+          },
+          "ORG_ID": {
+            "@FIELD_ID": 0,
+            "value": "803"
+          },
+          "PARENT": {
+            "NAME": {
+              "@FIELD_ID": 401,
+              "@ID": 111,
+              "@MODE": 2,
+              "value": "Region Nord"
+            },
+            "ORG_ID": {
+              "@FIELD_ID": 403,
+              "value": "809"
+            }
+          }
+        }, {
+          "@CREATED": "2018-09-14 14:37:57",
+          "@LAST_MODIFIED": "2018-10-18 07:17:15",
+          "NAME": {
+            "@FIELD_ID": 400,
+            "@ID": 112,
+            "@MODE": 2,
+            "value": "Nord Felles"
+          },
+          "ORG_ID": {
+            "@FIELD_ID": 0,
+            "value": "800"
+          },
+          "PARENT": {
+            "NAME": {
+              "@FIELD_ID": 401,
+              "@ID": 111,
+              "@MODE": 2,
+              "value": "Region Nord"
+            },
+            "ORG_ID": {
+              "@FIELD_ID": 403,
+              "value": "809"
+            }
+          }
+        }, {
+          "@CREATED": "2018-09-14 14:37:56",
+          "@LAST_MODIFIED": "2018-09-14 14:38:34",
+          "NAME": {
+            "@FIELD_ID": 400,
+            "@ID": 105,
+            "@MODE": 2,
+            "value": "Ulriken"
+          },
+          "ORG_ID": {
+            "@FIELD_ID": 0,
+            "value": "781"
+          },
+          "PARENT": {
+            "NAME": {
+              "@FIELD_ID": 401,
+              "@ID": 103,
+              "@MODE": 2,
+              "value": "Region Bergen"
+            },
+            "ORG_ID": {
+              "@FIELD_ID": 403,
+              "value": "789"
+            }
+          }
+        }, {
+          "@CREATED": "2018-09-14 14:37:57",
+          "@LAST_MODIFIED": "2018-09-14 14:38:34",
+          "NAME": {
+            "@FIELD_ID": 400,
+            "@ID": 109,
+            "@MODE": 2,
+            "value": "Rundemanen"
+          },
+          "ORG_ID": {
+            "@FIELD_ID": 0,
+            "value": "785"
+          },
+          "PARENT": {
+            "NAME": {
+              "@FIELD_ID": 401,
+              "@ID": 103,
+              "@MODE": 2,
+              "value": "Region Bergen"
+            },
+            "ORG_ID": {
+              "@FIELD_ID": 403,
+              "value": "789"
+            }
+          }
+        }, {
+          "@CREATED": "2018-09-14 14:37:56",
+          "@LAST_MODIFIED": "2018-09-14 14:38:34",
+          "NAME": {
+            "@FIELD_ID": 400,
+            "@ID": 107,
+            "@MODE": 2,
+            "value": "Lyderhorn"
+          },
+          "ORG_ID": {
+            "@FIELD_ID": 0,
+            "value": "783"
+          },
+          "PARENT": {
+            "NAME": {
+              "@FIELD_ID": 401,
+              "@ID": 103,
+              "@MODE": 2,
+              "value": "Region Bergen"
+            },
+            "ORG_ID": {
+              "@FIELD_ID": 403,
+              "value": "789"
+            }
+          }
+        }, {
+          "@CREATED": "2018-09-14 14:37:57",
+          "@LAST_MODIFIED": "2018-09-14 14:38:34",
+          "NAME": {
+            "@FIELD_ID": 400,
+            "@ID": 108,
+            "@MODE": 2,
+            "value": "Løvstakken"
+          },
+          "ORG_ID": {
+            "@FIELD_ID": 0,
+            "value": "784"
+          },
+          "PARENT": {
+            "NAME": {
+              "@FIELD_ID": 401,
+              "@ID": 103,
+              "@MODE": 2,
+              "value": "Region Bergen"
+            },
+            "ORG_ID": {
+              "@FIELD_ID": 403,
+              "value": "789"
+            }
+          }
+        }, {
+          "@CREATED": "2019-08-21 09:21:23",
+          "@LAST_MODIFIED": "2019-08-21 09:23:20",
+          "NAME": {
+            "@FIELD_ID": 400,
+            "@ID": 151,
+            "@MODE": 2,
+            "value": "Gullfjellet"
+          },
+          "ORG_ID": {
+            "@FIELD_ID": 0,
+            "value": "787"
+          },
+          "PARENT": {
+            "NAME": {
+              "@FIELD_ID": 401,
+              "@ID": 103,
+              "@MODE": 2,
+              "value": "Region Bergen"
+            },
+            "ORG_ID": {
+              "@FIELD_ID": 403,
+              "value": "789"
+            }
+          }
+        }, {
+          "@CREATED": "2018-09-14 14:37:56",
+          "@LAST_MODIFIED": "2018-09-14 14:38:34",
+          "NAME": {
+            "@FIELD_ID": 400,
+            "@ID": 106,
+            "@MODE": 2,
+            "value": "Fløien"
+          },
+          "ORG_ID": {
+            "@FIELD_ID": 0,
+            "value": "782"
+          },
+          "PARENT": {
+            "NAME": {
+              "@FIELD_ID": 401,
+              "@ID": 103,
+              "@MODE": 2,
+              "value": "Region Bergen"
+            },
+            "ORG_ID": {
+              "@FIELD_ID": 403,
+              "value": "789"
+            }
+          }
+        }, {
+          "@CREATED": "2018-09-14 14:37:57",
+          "@LAST_MODIFIED": "2018-09-14 14:38:34",
+          "NAME": {
+            "@FIELD_ID": 400,
+            "@ID": 110,
+            "@MODE": 2,
+            "value": "Blåmanen"
+          },
+          "ORG_ID": {
+            "@FIELD_ID": 0,
+            "value": "786"
+          },
+          "PARENT": {
+            "NAME": {
+              "@FIELD_ID": 401,
+              "@ID": 103,
+              "@MODE": 2,
+              "value": "Region Bergen"
+            },
+            "ORG_ID": {
+              "@FIELD_ID": 403,
+              "value": "789"
+            }
+          }
+        }, {
+          "@CREATED": "2018-09-14 14:37:56",
+          "@LAST_MODIFIED": "2018-09-14 14:38:34",
+          "NAME": {
+            "@FIELD_ID": 400,
+            "@ID": 104,
+            "@MODE": 2,
+            "value": "Bergen Felles"
+          },
+          "ORG_ID": {
+            "@FIELD_ID": 0,
+            "value": "780"
+          },
+          "PARENT": {
+            "NAME": {
+              "@FIELD_ID": 401,
+              "@ID": 103,
+              "@MODE": 2,
+              "value": "Region Bergen"
+            },
+            "ORG_ID": {
+              "@FIELD_ID": 403,
+              "value": "789"
+            }
+          }
+        }, {
+          "@CREATED": "2018-09-14 14:37:55",
+          "@LAST_MODIFIED": "2018-09-14 14:38:32",
+          "NAME": {
+            "@FIELD_ID": 400,
+            "@ID": 26,
+            "@MODE": 2,
+            "value": "IT Drift"
+          },
+          "ORG_ID": {
+            "@FIELD_ID": 0,
+            "value": "150"
+          },
+          "PARENT": {
+            "NAME": {
+              "@FIELD_ID": 401,
+              "@ID": 5,
+              "@MODE": 2,
+              "value": "Norge Felles"
+            },
+            "ORG_ID": {
+              "@FIELD_ID": 403,
+              "value": "100"
+            }
+          }
+        }, {
+          "@CREATED": "2018-09-14 14:37:56",
+          "@LAST_MODIFIED": "2018-12-03 12:05:56",
+          "NAME": {
+            "@FIELD_ID": 400,
+            "@ID": 79,
+            "@MODE": 2,
+            "value": "Region Sør"
+          },
+          "ORG_ID": {
+            "@FIELD_ID": 0,
+            "value": "609"
+          },
+          "PARENT": {
+            "NAME": {
+              "@FIELD_ID": 401,
+              "@ID": 22,
+              "@MODE": 2,
+              "value": "Bouvet Norge AS"
+            },
+            "ORG_ID": {
+              "@FIELD_ID": 403,
+              "value": "2"
+            }
+          }
+        }, {
+          "@CREATED": "2018-09-14 14:37:56",
+          "@LAST_MODIFIED": "2019-06-05 09:14:34",
+          "NAME": {
+            "@FIELD_ID": 400,
+            "@ID": 84,
+            "@MODE": 2,
+            "value": "Region Rogaland"
+          },
+          "ORG_ID": {
+            "@FIELD_ID": 0,
+            "value": "799"
+          },
+          "PARENT": {
+            "NAME": {
+              "@FIELD_ID": 401,
+              "@ID": 22,
+              "@MODE": 2,
+              "value": "Bouvet Norge AS"
+            },
+            "ORG_ID": {
+              "@FIELD_ID": 403,
+              "value": "2"
+            }
+          }
+        }, {
+          "@CREATED": "2018-09-14 14:37:55",
+          "@LAST_MODIFIED": "2018-09-14 14:38:32",
+          "NAME": {
+            "@FIELD_ID": 400,
+            "@ID": 27,
+            "@MODE": 2,
+            "value": "Region Øst"
+          },
+          "ORG_ID": {
+            "@FIELD_ID": 0,
+            "value": "299"
+          },
+          "PARENT": {
+            "NAME": {
+              "@FIELD_ID": 401,
+              "@ID": 22,
+              "@MODE": 2,
+              "value": "Bouvet Norge AS"
+            },
+            "ORG_ID": {
+              "@FIELD_ID": 403,
+              "value": "2"
+            }
+          }
+        }, {
+          "@CREATED": "2018-09-14 14:37:57",
+          "@LAST_MODIFIED": "2018-09-14 14:38:34",
+          "NAME": {
+            "@FIELD_ID": 400,
+            "@ID": 111,
+            "@MODE": 2,
+            "value": "Region Nord"
+          },
+          "ORG_ID": {
+            "@FIELD_ID": 0,
+            "value": "809"
+          },
+          "PARENT": {
+            "NAME": {
+              "@FIELD_ID": 401,
+              "@ID": 22,
+              "@MODE": 2,
+              "value": "Bouvet Norge AS"
+            },
+            "ORG_ID": {
+              "@FIELD_ID": 403,
+              "value": "2"
+            }
+          }
+        }, {
+          "@CREATED": "2018-09-14 14:37:56",
+          "@LAST_MODIFIED": "2018-09-14 14:38:34",
+          "NAME": {
+            "@FIELD_ID": 400,
+            "@ID": 103,
+            "@MODE": 2,
+            "value": "Region Bergen"
+          },
+          "ORG_ID": {
+            "@FIELD_ID": 0,
+            "value": "789"
+          },
+          "PARENT": {
+            "NAME": {
+              "@FIELD_ID": 401,
+              "@ID": 22,
+              "@MODE": 2,
+              "value": "Bouvet Norge AS"
+            },
+            "ORG_ID": {
+              "@FIELD_ID": 403,
+              "value": "2"
+            }
+          }
+        }, {
+          "@CREATED": "2018-07-03 13:34:43",
+          "@LAST_MODIFIED": "2018-09-14 14:38:32",
+          "NAME": {
+            "@FIELD_ID": 400,
+            "@ID": 5,
+            "@MODE": 2,
+            "value": "Norge Felles"
+          },
+          "ORG_ID": {
+            "@FIELD_ID": 0,
+            "value": "100"
+          },
+          "PARENT": {
+            "NAME": {
+              "@FIELD_ID": 401,
+              "@ID": 22,
+              "@MODE": 2,
+              "value": "Bouvet Norge AS"
+            },
+            "ORG_ID": {
+              "@FIELD_ID": 403,
+              "value": "2"
+            }
+          }
+        }, {
+          "@CREATED": "2018-09-14 14:37:57",
+          "@LAST_MODIFIED": "2018-09-14 14:38:34",
+          "NAME": {
+            "@FIELD_ID": 400,
+            "@ID": 124,
+            "@MODE": 2,
+            "value": "Stockholm Projektledning"
+          },
+          "ORG_ID": {
+            "@FIELD_ID": 0,
+            "value": "906"
+          },
+          "PARENT": {
+            "NAME": {
+              "@FIELD_ID": 401,
+              "@ID": 119,
+              "@MODE": 2,
+              "value": "Stockholm"
+            },
+            "ORG_ID": {
+              "@FIELD_ID": 403,
+              "value": "901"
+            }
+          }
+        }, {
+          "@CREATED": "2019-01-17 11:19:37",
+          "@LAST_MODIFIED": "2019-01-17 11:20:17",
+          "NAME": {
+            "@FIELD_ID": 400,
+            "@ID": 146,
+            "@MODE": 2,
+            "value": "Stockholm Web Systemutveckling"
+          },
+          "ORG_ID": {
+            "@FIELD_ID": 0,
+            "value": "900"
+          },
+          "PARENT": {
+            "NAME": {
+              "@FIELD_ID": 401,
+              "@ID": 119,
+              "@MODE": 2,
+              "value": "Stockholm"
+            },
+            "ORG_ID": {
+              "@FIELD_ID": 403,
+              "value": "901"
+            }
+          }
+        }, {
+          "@CREATED": "2018-09-27 10:43:36",
+          "@LAST_MODIFIED": "2018-09-27 10:43:36",
+          "NAME": {
+            "@FIELD_ID": 400,
+            "@ID": 137,
+            "@MODE": 2,
+            "value": "Stockholm Systemutveckling 2"
+          },
+          "ORG_ID": {
+            "@FIELD_ID": 0,
+            "value": "916"
+          },
+          "PARENT": {
+            "NAME": {
+              "@FIELD_ID": 401,
+              "@ID": 119,
+              "@MODE": 2,
+              "value": "Stockholm"
+            },
+            "ORG_ID": {
+              "@FIELD_ID": 403,
+              "value": "901"
+            }
+          }
+        }, {
+          "@CREATED": "2018-09-14 14:37:57",
+          "@LAST_MODIFIED": "2018-09-27 10:42:55",
+          "NAME": {
+            "@FIELD_ID": 400,
+            "@ID": 125,
+            "@MODE": 2,
+            "value": "Stockholm Systemutveckling 1"
+          },
+          "ORG_ID": {
+            "@FIELD_ID": 0,
+            "value": "907"
+          },
+          "PARENT": {
+            "NAME": {
+              "@FIELD_ID": 401,
+              "@ID": 119,
+              "@MODE": 2,
+              "value": "Stockholm"
+            },
+            "ORG_ID": {
+              "@FIELD_ID": 403,
+              "value": "901"
+            }
+          }
+        }, {
+          "@CREATED": "2019-06-20 10:04:00",
+          "@LAST_MODIFIED": "2019-06-20 10:04:00",
+          "NAME": {
+            "@FIELD_ID": 400,
+            "@ID": 149,
+            "@MODE": 2,
+            "value": "Stockholm Kundupplevelse 3"
+          },
+          "ORG_ID": {
+            "@FIELD_ID": 0,
+            "value": "917"
+          },
+          "PARENT": {
+            "NAME": {
+              "@FIELD_ID": 401,
+              "@ID": 119,
+              "@MODE": 2,
+              "value": "Stockholm"
+            },
+            "ORG_ID": {
+              "@FIELD_ID": 403,
+              "value": "901"
+            }
+          }
+        }, {
+          "@CREATED": "2018-09-14 14:37:57",
+          "@LAST_MODIFIED": "2018-09-14 14:38:34",
+          "NAME": {
+            "@FIELD_ID": 400,
+            "@ID": 123,
+            "@MODE": 2,
+            "value": "Stockholm Kundupplevelse 2"
+          },
+          "ORG_ID": {
+            "@FIELD_ID": 0,
+            "value": "905"
+          },
+          "PARENT": {
+            "NAME": {
+              "@FIELD_ID": 401,
+              "@ID": 119,
+              "@MODE": 2,
+              "value": "Stockholm"
+            },
+            "ORG_ID": {
+              "@FIELD_ID": 403,
+              "value": "901"
+            }
+          }
+        }, {
+          "@CREATED": "2018-09-14 14:37:57",
+          "@LAST_MODIFIED": "2018-09-14 14:38:34",
+          "NAME": {
+            "@FIELD_ID": 400,
+            "@ID": 122,
+            "@MODE": 2,
+            "value": "Stockholm Kundupplevelse 1"
+          },
+          "ORG_ID": {
+            "@FIELD_ID": 0,
+            "value": "904"
+          },
+          "PARENT": {
+            "NAME": {
+              "@FIELD_ID": 401,
+              "@ID": 119,
+              "@MODE": 2,
+              "value": "Stockholm"
+            },
+            "ORG_ID": {
+              "@FIELD_ID": 403,
+              "value": "901"
+            }
+          }
+        }, {
+          "@CREATED": "2018-09-14 14:37:57",
+          "@LAST_MODIFIED": "2018-09-14 14:38:34",
+          "NAME": {
+            "@FIELD_ID": 400,
+            "@ID": 120,
+            "@MODE": 2,
+            "value": "Stockholm Felles"
+          },
+          "ORG_ID": {
+            "@FIELD_ID": 0,
+            "value": "902"
+          },
+          "PARENT": {
+            "NAME": {
+              "@FIELD_ID": 401,
+              "@ID": 119,
+              "@MODE": 2,
+              "value": "Stockholm"
+            },
+            "ORG_ID": {
+              "@FIELD_ID": 403,
+              "value": "901"
+            }
+          }
+        }, {
+          "@CREATED": "2018-09-14 14:37:57",
+          "@LAST_MODIFIED": "2018-09-14 14:38:34",
+          "NAME": {
+            "@FIELD_ID": 400,
+            "@ID": 121,
+            "@MODE": 2,
+            "value": "Stockholm e-Hälsa"
+          },
+          "ORG_ID": {
+            "@FIELD_ID": 0,
+            "value": "903"
+          },
+          "PARENT": {
+            "NAME": {
+              "@FIELD_ID": 401,
+              "@ID": 119,
+              "@MODE": 2,
+              "value": "Stockholm"
+            },
+            "ORG_ID": {
+              "@FIELD_ID": 403,
+              "value": "901"
+            }
+          }
+        }, {
+          "@CREATED": "2018-09-14 14:37:57",
+          "@LAST_MODIFIED": "2018-09-14 14:38:34",
+          "NAME": {
+            "@FIELD_ID": 400,
+            "@ID": 129,
+            "@MODE": 2,
+            "value": "Örebro Systemutveckling"
+          },
+          "ORG_ID": {
+            "@FIELD_ID": 0,
+            "value": "911"
+          },
+          "PARENT": {
+            "NAME": {
+              "@FIELD_ID": 401,
+              "@ID": 126,
+              "@MODE": 2,
+              "value": "Örebro"
+            },
+            "ORG_ID": {
+              "@FIELD_ID": 403,
+              "value": "908"
+            }
+          }
+        }, {
+          "@CREATED": "2018-09-14 14:37:57",
+          "@LAST_MODIFIED": "2018-09-14 14:38:34",
+          "NAME": {
+            "@FIELD_ID": 400,
+            "@ID": 128,
+            "@MODE": 2,
+            "value": "Örebro Projektledning"
+          },
+          "ORG_ID": {
+            "@FIELD_ID": 0,
+            "value": "910"
+          },
+          "PARENT": {
+            "NAME": {
+              "@FIELD_ID": 401,
+              "@ID": 126,
+              "@MODE": 2,
+              "value": "Örebro"
+            },
+            "ORG_ID": {
+              "@FIELD_ID": 403,
+              "value": "908"
+            }
+          }
+        }, {
+          "@CREATED": "2018-09-14 14:37:57",
+          "@LAST_MODIFIED": "2018-09-14 14:38:34",
+          "NAME": {
+            "@FIELD_ID": 400,
+            "@ID": 127,
+            "@MODE": 2,
+            "value": "Örebro Felles"
+          },
+          "ORG_ID": {
+            "@FIELD_ID": 0,
+            "value": "909"
+          },
+          "PARENT": {
+            "NAME": {
+              "@FIELD_ID": 401,
+              "@ID": 126,
+              "@MODE": 2,
+              "value": "Örebro"
+            },
+            "ORG_ID": {
+              "@FIELD_ID": 403,
+              "value": "908"
+            }
+          }
+        }, {
+          "@CREATED": "2018-09-14 14:37:57",
+          "@LAST_MODIFIED": "2018-09-14 14:38:34",
+          "NAME": {
+            "@FIELD_ID": 400,
+            "@ID": 133,
+            "@MODE": 2,
+            "value": "Borlänge Systemutveckling"
+          },
+          "ORG_ID": {
+            "@FIELD_ID": 0,
+            "value": "915"
+          },
+          "PARENT": {
+            "NAME": {
+              "@FIELD_ID": 401,
+              "@ID": 130,
+              "@MODE": 2,
+              "value": "Borlänge"
+            },
+            "ORG_ID": {
+              "@FIELD_ID": 403,
+              "value": "912"
+            }
+          }
+        }, {
+          "@CREATED": "2018-09-14 14:37:57",
+          "@LAST_MODIFIED": "2018-09-14 14:38:34",
+          "NAME": {
+            "@FIELD_ID": 400,
+            "@ID": 132,
+            "@MODE": 2,
+            "value": "Borlänge Projektledning"
+          },
+          "ORG_ID": {
+            "@FIELD_ID": 0,
+            "value": "914"
+          },
+          "PARENT": {
+            "NAME": {
+              "@FIELD_ID": 401,
+              "@ID": 130,
+              "@MODE": 2,
+              "value": "Borlänge"
+            },
+            "ORG_ID": {
+              "@FIELD_ID": 403,
+              "value": "912"
+            }
+          }
+        }, {
+          "@CREATED": "2018-09-14 14:37:57",
+          "@LAST_MODIFIED": "2018-09-14 14:38:34",
+          "NAME": {
+            "@FIELD_ID": 400,
+            "@ID": 131,
+            "@MODE": 2,
+            "value": "Borlänge Felles"
+          },
+          "ORG_ID": {
+            "@FIELD_ID": 0,
+            "value": "913"
+          },
+          "PARENT": {
+            "NAME": {
+              "@FIELD_ID": 401,
+              "@ID": 130,
+              "@MODE": 2,
+              "value": "Borlänge"
+            },
+            "ORG_ID": {
+              "@FIELD_ID": 403,
+              "value": "912"
+            }
+          }
+        }, {
+          "@CREATED": "2018-09-14 14:37:57",
+          "@LAST_MODIFIED": "2018-09-14 14:38:34",
+          "NAME": {
+            "@FIELD_ID": 400,
+            "@ID": 119,
+            "@MODE": 2,
+            "value": "Stockholm"
+          },
+          "ORG_ID": {
+            "@FIELD_ID": 0,
+            "value": "901"
+          },
+          "PARENT": {
+            "NAME": {
+              "@FIELD_ID": 401,
+              "@ID": 23,
+              "@MODE": 2,
+              "value": "Bouvet Sverige AB"
+            },
+            "ORG_ID": {
+              "@FIELD_ID": 403,
+              "value": "3"
+            }
+          }
+        }, {
+          "@CREATED": "2018-09-14 14:37:57",
+          "@LAST_MODIFIED": "2018-09-14 14:38:34",
+          "NAME": {
+            "@FIELD_ID": 400,
+            "@ID": 126,
+            "@MODE": 2,
+            "value": "Örebro"
+          },
+          "ORG_ID": {
+            "@FIELD_ID": 0,
+            "value": "908"
+          },
+          "PARENT": {
+            "NAME": {
+              "@FIELD_ID": 401,
+              "@ID": 23,
+              "@MODE": 2,
+              "value": "Bouvet Sverige AB"
+            },
+            "ORG_ID": {
+              "@FIELD_ID": 403,
+              "value": "3"
+            }
+          }
+        }, {
+          "@CREATED": "2018-09-14 14:37:57",
+          "@LAST_MODIFIED": "2018-09-14 14:38:34",
+          "NAME": {
+            "@FIELD_ID": 400,
+            "@ID": 130,
+            "@MODE": 2,
+            "value": "Borlänge"
+          },
+          "ORG_ID": {
+            "@FIELD_ID": 0,
+            "value": "912"
+          },
+          "PARENT": {
+            "NAME": {
+              "@FIELD_ID": 401,
+              "@ID": 23,
+              "@MODE": 2,
+              "value": "Bouvet Sverige AB"
+            },
+            "ORG_ID": {
+              "@FIELD_ID": 403,
+              "value": "3"
+            }
+          }
+        }, {
+          "@CREATED": "2018-09-14 14:37:55",
+          "@LAST_MODIFIED": "2018-09-20 11:41:13",
+          "NAME": {
+            "@FIELD_ID": 400,
+            "@ID": 23,
+            "@MODE": 2,
+            "value": "Bouvet Sverige AB"
+          },
+          "ORG_ID": {
+            "@FIELD_ID": 0,
+            "value": "3"
+          },
+          "PARENT": {
+            "NAME": {
+              "@FIELD_ID": 401,
+              "@ID": 134,
+              "@MODE": 2,
+              "value": "Bouvet AB"
+            },
+            "ORG_ID": {
+              "@FIELD_ID": 403,
+              "value": "6"
+            }
+          }
+        }, {
+          "@CREATED": "2018-09-14 14:37:55",
+          "@LAST_MODIFIED": "2018-09-20 11:41:27",
+          "NAME": {
+            "@FIELD_ID": 400,
+            "@ID": 25,
+            "@MODE": 2,
+            "value": "Bouvet Public Skills"
+          },
+          "ORG_ID": {
+            "@FIELD_ID": 0,
+            "value": "5"
+          },
+          "PARENT": {
+            "NAME": {
+              "@FIELD_ID": 401,
+              "@ID": 134,
+              "@MODE": 2,
+              "value": "Bouvet AB"
+            },
+            "ORG_ID": {
+              "@FIELD_ID": 403,
+              "value": "6"
+            }
+          }
+        }, {
+          "@CREATED": "2018-09-14 14:37:55",
+          "@LAST_MODIFIED": "2019-06-25 14:51:35",
+          "NAME": {
+            "@FIELD_ID": 400,
+            "@ID": 24,
+            "@MODE": 2,
+            "value": "Olavstoppen AS"
+          },
+          "ORG_ID": {
+            "@FIELD_ID": 0,
+            "value": "4"
+          },
+          "PARENT": {
+            "NAME": {
+              "@FIELD_ID": 401,
+              "@ID": 21,
+              "@MODE": 2,
+              "value": "Bouvet ASA"
+            },
+            "ORG_ID": {
+              "@FIELD_ID": 403,
+              "value": "1"
+            }
+          }
+        }, {
+          "@CREATED": "2018-09-14 14:37:55",
+          "@LAST_MODIFIED": "2018-09-14 14:38:32",
+          "NAME": {
+            "@FIELD_ID": 400,
+            "@ID": 22,
+            "@MODE": 2,
+            "value": "Bouvet Norge AS"
+          },
+          "ORG_ID": {
+            "@FIELD_ID": 0,
+            "value": "2"
+          },
+          "PARENT": {
+            "NAME": {
+              "@FIELD_ID": 401,
+              "@ID": 21,
+              "@MODE": 2,
+              "value": "Bouvet ASA"
+            },
+            "ORG_ID": {
+              "@FIELD_ID": 403,
+              "value": "1"
+            }
+          }
+        }, {
+          "@CREATED": "2018-09-20 11:40:56",
+          "@LAST_MODIFIED": "2018-09-20 11:41:37",
+          "NAME": {
+            "@FIELD_ID": 400,
+            "@ID": 134,
+            "@MODE": 2,
+            "value": "Bouvet AB"
+          },
+          "ORG_ID": {
+            "@FIELD_ID": 0,
+            "value": "6"
+          },
+          "PARENT": {
+            "NAME": {
+              "@FIELD_ID": 401,
+              "@ID": 21,
+              "@MODE": 2,
+              "value": "Bouvet ASA"
+            },
+            "ORG_ID": {
+              "@FIELD_ID": 403,
+              "value": "1"
+            }
+          }
+        }, {
+          "@CREATED": "2018-09-14 13:54:29",
+          "@LAST_MODIFIED": "2018-09-14 14:38:32",
+          "NAME": {
+            "@FIELD_ID": 400,
+            "@ID": 21,
+            "@MODE": 2,
+            "value": "Bouvet ASA"
+          },
+          "ORG_ID": {
+            "@FIELD_ID": 0,
+            "value": "1"
+          }
+        }]
+      }
+    },
+    "condition": "$ENV(node-env)"
+  },
+  "transform": {
+    "type": "dtl",
+    "rules": {
+      "default": [
+        ["copy", "*"],
+        ["if",
+          ["eq", "_S.NAME.value", "XDemo"],
+          ["add", "_id", "999"],
+          ["add", "_id", "_S.ORG_ID.value"]
+        ],
+        ["add", "rdf:type",
+          ["ni", "bouvet:catalystone-org"]
+        ]
+      ]
+    }
+  },
+  "pump": {
+    "cron_expression": "$ENV(catalystone_cron_medium)"
+  }
+}

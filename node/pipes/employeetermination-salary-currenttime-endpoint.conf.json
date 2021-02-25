@@ -1,0 +1,145 @@
+{
+  "_id": "employeeTermination-salary-currenttime-endpoint",
+  "type": "pipe",
+  "source": {
+    "type": "dataset",
+    "dataset": "employeeTermination-salary-currenttime"
+  },
+  "sink": {
+    "type": "sql",
+    "system": "currenttime-economydbrepl-sesam",
+    "batch_size": 1,
+    "create_table_if_missing": true,
+    "primary_key": ["Ansatt-ID"],
+    "schema": "adm",
+    "schema_definition": [{
+      "type": "integer",
+      "name": "Ansatt-ID",
+      "max_value": 20000,
+      "min_value": 101,
+      "primary_key": true,
+      "source_property": "Ansatt-ID"
+    }, {
+      "type": "datetime",
+      "name": "Ansettelsesdato",
+      "max_value": "~t2100-01-01T00:00:00Z",
+      "min_value": "~t1970-01-01T00:00:00Z",
+      "source_property": "Ansettelsesdato"
+    }, {
+      "type": "string",
+      "name": "Ansettelsestype",
+      "max_size": 100,
+      "min_size": 1,
+      "source_property": "Ansettelsestype"
+    }, {
+      "type": "string",
+      "name": "Arbeidssted",
+      "max_size": 100,
+      "min_size": 1,
+      "source_property": "Arbeidssted"
+    }, {
+      "type": "string",
+      "name": "Brukernavn",
+      "allow_null": true,
+      "max_size": 100,
+      "min_size": 1,
+      "source_property": "Brukernavn"
+    }, {
+      "type": "string",
+      "name": "E-post",
+      "allow_null": true,
+      "max_size": 150,
+      "min_size": 1,
+      "source_property": "E-post"
+    }, {
+      "type": "string",
+      "name": "Region",
+      "allow_null": true,
+      "max_size": 50,
+      "min_size": 0,
+      "source_property": "Region"
+    }, {
+      "type": "string",
+      "name": "Jobbrolle",
+      "max_size": 100,
+      "min_size": 1,
+      "source_property": "Jobbrolle"
+    }, {
+      "type": "string",
+      "name": "Leder",
+      "allow_null": true,
+      "max_size": 150,
+      "min_size": 1,
+      "source_property": "Leder"
+    }, {
+      "type": "string",
+      "name": "Mobiltelefon",
+      "max_size": 50,
+      "min_size": 1,
+      "source_property": "Mobiltelefon"
+    }, {
+      "type": "string",
+      "name": "Navn",
+      "max_size": 150,
+      "min_size": 2,
+      "source_property": "Navn"
+    }, {
+      "type": "string",
+      "name": "Organisasjon",
+      "max_size": 150,
+      "min_size": 1,
+      "source_property": "Organisasjon"
+    }, {
+      "type": "datetime",
+      "name": "Sluttdato",
+      "max_value": "~t2100-01-01T00:00:00Z",
+      "min_value": "~t1970-01-01T00:00:00Z",
+      "source_property": "Sluttdato"
+    }, {
+      "type": "datetime",
+      "name": "Faktisk siste arbeidsdag",
+      "allow_null": true,
+      "max_value": "~t2100-01-01T00:00:00Z",
+      "min_value": "~t1970-01-01T00:00:00Z",
+      "source_property": "Faktisk_siste_arbeidsdag"
+    }, {
+      "type": "integer",
+      "name": "Mnd",
+      "max_value": 12,
+      "min_value": 1,
+      "source_property": "Mnd"
+    }, {
+      "type": "integer",
+      "name": "År",
+      "max_value": 2100,
+      "min_value": 1970,
+      "source_property": "År"
+    }, {
+      "type": "boolean",
+      "name": "Sjekket",
+      "source_property": "Sjekket"
+    }, {
+      "type": "string",
+      "name": "Kommentar",
+      "max_size": 1000,
+      "min_size": 0,
+      "source_property": "Kommentar"
+    }],
+    "table": "Lønn-Oppsigelser"
+  },
+  "transform": {
+    "type": "dtl",
+    "rules": {
+      "default": [
+        ["filter",
+          ["neq", "_S._deleted", true]
+        ],
+        ["copy", "*"]
+      ]
+    }
+  },
+  "pump": {
+    "cron_expression": "$ENV(economylist_cron)",
+    "mode": "$ENV(pump-mode)"
+  }
+}

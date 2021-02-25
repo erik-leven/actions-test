@@ -1,0 +1,467 @@
+{
+  "_id": "node",
+  "type": "metadata",
+  "backup": {
+    "backup_interaval": 21600,
+    "num_backups_to_keep": 4
+  },
+  "global_defaults": {
+    "enable_cpp_extensions": false
+  },
+  "namespaced_identifiers": true,
+  "namespaces": {
+    "default": {
+      "_": "http://data.bouvet.no/sesam",
+      "ad-department": "http://data.bouvet.no/sesam/ad/department/",
+      "ad-user": "http://data.bouvet.no/sesam/ad/user/",
+      "bouvet": "http://data.bouvet.no/sesam/bouvet/",
+      "browser": "http://data.sesam.io/browser/",
+      "browser-data": "http://data.sesam.io/schema/browser/",
+      "consent": "http://data.bouvet.no/sesam/consent/",
+      "currenttime": "http://data.bouvet.no/sesam/currenttime/",
+      "currenttime-avdeling": "http://data.bouvet.no/sesam/currenttime/avdeling/",
+      "currenttime-company": "http://data.bouvet.no/sesam/currenttime/company/",
+      "currenttime-company-extra": "http://data.bouvet.no/sesam/currenttime/company/extra/",
+      "currenttime-contact": "http://data.bouvet.no/sesam/currenttime/contact/",
+      "currenttime-department": "http://data.bouvet.no/sesam/currenttime/department/",
+      "currenttime-departmentavdeling": "http://data.bouvet.no/sesam/currenttime/department/avdeling/",
+      "currenttime-employee": "http://data.bouvet.no/sesam/currenttime/employee/",
+      "currenttime-omrade": "http://data.bouvet.no/sesam/currenttime/omrade/",
+      "currenttime-project": "http://data.bouvet.no/sesam/currenttime/project/",
+      "currenttime-projecttype": "http://data.bouvet.no/sesam/currenttime/projecttype/",
+      "currenttime-region": "http://data.bouvet.no/sesam/currenttime/region/",
+      "currenttime-subtask": "http://data.bouvet.no/sesam/currenttime/subtask/",
+      "currenttime-task": "http://data.bouvet.no/sesam/currenttime/task/",
+      "currenttime-timeheader": "http://data.bouvet.no/sesam/currenttime/timeheader/",
+      "currenttime-timetransaction": "http://data.bouvet.no/sesam/currenttime/timetransaction/",
+      "cvpartner": "http://data.bouvet.no/sesam/cvpartner/",
+      "cvpartner-company": "http://data.bouvet.no/sesam/cvpartner/company/",
+      "cvpartner-cvreport": "http://data.bouvet.no/sesam/cvpartner/cvreport/",
+      "cvpartner-user": "http://data.bouvet.no/sesam/cvpartner/user/",
+      "enhetsregisteret": "http://data.bouvet.no/sesam/enhetsregisteret/data/",
+      "excel-azure-vm": "http://data.bouvet.no/sesam/machine/azure-vm/",
+      "excel-seminar-attendee": "http://data.bouvet.no/sesam/excel-seminar/attendee/",
+      "gdpr": "http://data.bouvet.no/sesam/gdpr/",
+      "gdpr-breach": "http://data.bouvet.no/sesam/gdpr/breach/",
+      "gdpr-consent-type": "http://data.bouvet.no/sesam/gdpr/consent-type/",
+      "gdpr-purpose": "http://data.bouvet.no/sesam/gdpr/purpose/",
+      "global-person": "http://data.bouvet.no/sesam/global-person/",
+      "jira": "http://data.bouvet.no/sesam/jira/",
+      "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+      "salesforce": "http://data.bouvet.no/sesam/salesforce/",
+      "salesforce-account": "http://data.bouvet.no/sesam/salesforce/account/",
+      "salesforce-contact": "http://data.bouvet.no/sesam/salesforce/contact/",
+      "salesforce-event": "http://data.bouvet.no/sesam/salesforce/event/",
+      "salesforce-group": "http://data.bouvet.no/sesam/salesforce/group/",
+      "salesforce-lead": "http://data.bouvet.no/sesam/salesforce/lead/",
+      "salesforce-opportunity": "http://data.bouvet.no/sesam/salesforce/opportunity/",
+      "salesforce-task": "http://data.bouvet.no/sesam/salesforce/task/",
+      "salesforce-user": "http://data.bouvet.no/sesam/salesforce/user/",
+      "sesam-portal": "http://data.bouvet.no/sesam/sesam-portal/",
+      "sesam-portal-invoicing_information": "http://data.bouvet.no/sesam/sesam-portal/invoicing_information/",
+      "sesam-portal-paymentmethod": "http://data.bouvet.no/sesam/sesam-portal/paymentmethod/",
+      "sesam-portal-subscription": "http://data.bouvet.no/sesam/sesam-portal/subscription/",
+      "sesam-portal-user": "http://data.bouvet.no/sesam/sesam-portal/user/",
+      "sharepoint": "http://data.bouvet.no/sesam/sharepoint/",
+      "slack": "http://data.bouvet.no/sesam/slack/",
+      "slack-group": "http://data.bouvet.no/sesam/slack/group/",
+      "slack-user": "http://data.bouvet.no/sesam/slack/user/",
+      "visma": "http://data.bouvet.no/sesam/visma/norge/",
+      "visma-asa": "http://data.bouvet.no/sesam/visma/asa/",
+      "visma-asa-customer": "http://data.bouvet.no/sesam/visma/asa/",
+      "visma-asa-customerordercopy": "http://data.bouvet.no/sesam/visma/asa/",
+      "visma-asa-employee": "http://data.bouvet.no/sesam/visma/asa/",
+      "visma-customer": "http://data.bouvet.no/sesam/visma/norge/",
+      "visma-customerordercopy": "http://data.bouvet.no/sesam/visma/norge/",
+      "visma-employee": "http://data.bouvet.no/sesam/visma/norge/"
+    }
+  },
+  "rdf": {
+    "demo_achilles-delegate_rdf": {
+      "prefix_includes": ["global"],
+      "prefix_rules": {
+        "id": "demo_achilles-delegate",
+        "properties": ["demo_schema",
+          ["**"]
+        ]
+      },
+      "quote_safe_characters": ""
+    },
+    "demo_person_rdf": {
+      "prefix_includes": ["global"],
+      "prefix_rules": {
+        "id": "demo_person",
+        "properties": ["demo_schema",
+          ["**"]
+        ]
+      },
+      "quote_safe_characters": ""
+    },
+    "difi-etatsbasen-organization_rdf": {
+      "prefix_includes": ["global"],
+      "prefix_rules": {
+        "id": "etat_org",
+        "properties": ["etat_org_schema",
+          ["**"]
+        ]
+      },
+      "quote_safe_characters": ""
+    },
+    "enhetsregisteret_naeringskode_rdf": {
+      "prefix_includes": ["global"],
+      "prefix_rules": {
+        "id": "brreg_nk",
+        "properties": ["brreg_schema",
+          ["**"]
+        ]
+      },
+      "quote_safe_characters": ""
+    },
+    "enhetsregisteret_organisasjonsform_rdf": {
+      "prefix_includes": ["global"],
+      "prefix_rules": {
+        "id": "brreg_orgform",
+        "properties": ["brreg_schema",
+          ["**"]
+        ]
+      },
+      "quote_safe_characters": ""
+    },
+    "enhetsregisteret_rdf": {
+      "prefix_includes": ["global"],
+      "prefix_rules": {
+        "id": "brreg_enhet",
+        "properties": [null,
+          ["orig_id"], "brreg_schema",
+          ["**"]
+        ]
+      },
+      "quote_safe_characters": ""
+    },
+    "enhetsregisteret_sektorkode_rdf": {
+      "prefix_includes": ["global"],
+      "prefix_rules": {
+        "id": "brreg_sektor",
+        "properties": ["brreg_schema",
+          ["**"]
+        ]
+      },
+      "quote_safe_characters": ""
+    },
+    "enhetsregisteret_sub_rdf": {
+      "prefix_includes": ["global"],
+      "prefix_rules": {
+        "id": "brreg_enhet",
+        "properties": ["brreg_schema",
+          ["**"]
+        ]
+      },
+      "quote_safe_characters": ""
+    },
+    "fylke_rdf": {
+      "prefix_includes": ["global"],
+      "prefix_rules": {
+        "id": "geo_fylke",
+        "properties": ["geo_schema",
+          ["**"]
+        ]
+      },
+      "quote_safe_characters": ""
+    },
+    "global": {
+      "prefixes": {
+        "brreg": "http://psi.datanav.info/brreg/",
+        "brreg_enhet": "http://psi.datanav.info/brreg/enhet/",
+        "brreg_lod": "https://ws.brreg.no/lod/data/",
+        "brreg_nk": "http://psi.datanav.info/brreg/naeringskode/",
+        "brreg_orgform": "http://psi.datanav.info/brreg/organisasjonsform/",
+        "brreg_schema": "http://psi.datanav.info/brreg/schema/",
+        "brreg_sektor": "http://psi.datanav.info/brreg/sektor/",
+        "demo": "http://psi.datanav.info/demo/",
+        "demo_achilles-delegate": "http://psi.datanav.info/demo/achilles-delegate/",
+        "demo_person": "http://psi.datanav.info/demo/person/",
+        "demo_schema": "http://psi.datanav.info/demo/schema/",
+        "eb": "http://psi.datanav.info/erikbolstad/",
+        "eb_kval": "http://psi.datanav.info/erikbolstad/datakvalitet/",
+        "eb_postnummer": "http://psi.datanav.info/erikbolstad/postnummer/",
+        "eb_schema": "http://psi.datanav.info/erikbolstad/schema/",
+        "eb_www": "http://www.erikbolstad.no/geo/noreg/postnummer/",
+        "etat_enhet": "http://psi.datanav.info/difi/etatsbasen/organization/enhet/",
+        "etat_org": "http://psi.datanav.info/difi/etatsbasen/organization/",
+        "etat_org_schema": "http://psi.datanav.info/difi/etatsbasen/organization/schema/",
+        "etat_orgstruct": "http://psi.datanav.info/difi/etatsbasen/organization/orgstruct/",
+        "geo": "http://psi.datanav.info/difi/geo/",
+        "geoSparql": "http://www.opengis.net/ont/geosparql#",
+        "geo_fylke": "http://psi.datanav.info/difi/geo/fylke/",
+        "geo_kommune": "http://psi.datanav.info/difi/geo/kommune/",
+        "geo_land": "http://psi.datanav.info/difi/geo/land/",
+        "geo_postnummer": "http://psi.datanav.info/difi/geo/postnummer/",
+        "geo_postnummer_type": "http://psi.datanav.info/difi/geo/postnummertype/",
+        "geo_schema": "http://psi.datanav.info/difi/geo/schema/",
+        "mat": "http://psi.datanav.info/matrikkel/",
+        "mat_adr": "http://psi.datanav.info/matrikkel/adresse/",
+        "mat_grunnkrets": "http://psi.datanav.info/matrikkel/grunnkrets/",
+        "mat_kirkesogn": "http://psi.datanav.info/matrikkel/kirkesogn/",
+        "mat_koord": "http://psi.datanav.info/matrikkel/koordinatsystem/",
+        "mat_schema": "http://psi.datanav.info/matrikkel/schema/",
+        "mat_tettsted": "http://psi.datanav.info/matrikkel/tettsted/",
+        "mat_type": "http://psi.datanav.info/matrikkel/type/",
+        "mat_valgkrets": "http://psi.datanav.info/matrikkel/valgkrets/",
+        "met_weathericon": "http://api.met.no/weatherapi/weathericon/1.1/",
+        "nobil": "http://psi.datanav.info/nobil/",
+        "nobil_attr": "http://psi.datanav.info/nobil/attribut/",
+        "nobil_connector": "http://psi.datanav.info/nobil/connector/",
+        "nobil_schema": "http://psi.datanav.info/nobil/schema/",
+        "nobil_station": "http://psi.datanav.info/nobil/station/",
+        "nve": "http://psi.datanav.info/nve/",
+        "nve_kraftlinje": "http://psi.datanav.info/nve/kraftlinje/",
+        "nve_kraftnett": "http://psi.datanav.info/nve/kraftnett/",
+        "nve_schema": "http://psi.datanav.info/nve/schema/",
+        "nve_vindkraft-konsesjon": "http://psi.datanav.info/nve/vindkraft/konsesjon/",
+        "oep": "http://psi.datanav.info/oep/",
+        "oep_dok_type": "http://psi.datanav.info/oep/dokumenttype/",
+        "oep_org": "http://psi.datanav.info/oep/org/",
+        "oep_schema": "http://psi.datanav.info/oep/schema/",
+        "oep_unntaksgrunnlag": "http://psi.datanav.info/oep/unntaksgrunnlag/",
+        "sehavnivaa": "http://psi.datanav.info/kartverket/sehavnivaa/",
+        "sehavnivaa_highlow": "http://psi.datanav.info/kartverket/sehavnivaa/highlow/",
+        "sehavnivaa_level": "http://psi.datanav.info/kartverket/sehavnivaa/level/",
+        "sehavnivaa_location": "http://psi.datanav.info/kartverket/sehavnivaa/location/",
+        "sehavnivaa_schema": "http://psi.datanav.info/kartverket/sehavnivaa/schema/",
+        "sehavnivaa_station": "http://psi.datanav.info/kartverket/sehavnivaa/station/",
+        "wgs84": "http://www.w3.org/2003/01/geo/wgs84_pos#",
+        "yr": "http://psi.datanav.info/yr/",
+        "yr_schema": "http://psi.datanav.info/yr/schema/"
+      }
+    },
+    "kommune_rdf": {
+      "prefix_includes": ["global"],
+      "prefix_rules": {
+        "id": "geo_kommune",
+        "properties": ["geo_schema",
+          ["**"]
+        ]
+      },
+      "quote_safe_characters": ""
+    },
+    "matrikkel_adresse_rdf": {
+      "prefix_includes": ["global"],
+      "prefix_rules": {
+        "id": "mat_adr",
+        "properties": ["mat_schema",
+          ["**"]
+        ]
+      },
+      "quote_safe_characters": ""
+    },
+    "nobil_attribute_rdf": {
+      "prefix_includes": ["global"],
+      "prefix_rules": {
+        "id": "nobil_attr",
+        "properties": ["nobil_schema",
+          ["**"]
+        ]
+      },
+      "quote_safe_characters": ""
+    },
+    "nobil_connector_rdf": {
+      "prefix_includes": ["global"],
+      "prefix_rules": {
+        "id": "nobil_connector",
+        "properties": ["nobil_schema",
+          ["**"]
+        ]
+      },
+      "quote_safe_characters": ""
+    },
+    "nobil_property_rdf": {
+      "prefix_includes": ["global"],
+      "prefix_rules": {
+        "id": "nobil_schema",
+        "properties": ["nobil_schema",
+          ["**"]
+        ]
+      },
+      "quote_safe_characters": ""
+    },
+    "nobil_station_rdf": {
+      "prefix_includes": ["global"],
+      "prefix_rules": {
+        "id": "nobil_station",
+        "properties": ["nobil_schema",
+          ["**"]
+        ]
+      },
+      "quote_safe_characters": ""
+    },
+    "nve_kraftlinje_rdf": {
+      "prefix_includes": ["global"],
+      "prefix_rules": {
+        "id": "nve_kraftlinje",
+        "properties": ["nve_schema",
+          ["**"]
+        ]
+      },
+      "quote_safe_characters": ""
+    },
+    "nve_kraftnett_rdf": {
+      "prefix_includes": ["global"],
+      "prefix_rules": {
+        "id": "nve_kraftnett",
+        "properties": ["nve_schema",
+          ["**"]
+        ]
+      },
+      "quote_safe_characters": ""
+    },
+    "nve_vindkraft-konsesjon_rdf": {
+      "prefix_includes": ["global"],
+      "prefix_rules": {
+        "id": "nve_vindkraft-konsesjon",
+        "properties": ["nve_schema",
+          ["**"]
+        ]
+      },
+      "quote_safe_characters": ""
+    },
+    "oep-avsender_rdf": {
+      "prefix_includes": ["global"],
+      "prefix_rules": {
+        "id": "oep_org",
+        "properties": [null,
+          ["orig_id"], "oep_schema",
+          ["**"]
+        ]
+      },
+      "quote_safe_characters": ""
+    },
+    "oep-mottaker_rdf": {
+      "prefix_includes": ["global"],
+      "prefix_rules": {
+        "id": "oep_org",
+        "properties": [null,
+          ["orig_id"], "oep_schema",
+          ["**"]
+        ]
+      },
+      "quote_safe_characters": ""
+    },
+    "oep-unntaksgrunnlag_rdf": {
+      "prefix_includes": ["global"],
+      "prefix_rules": {
+        "id": "oep_unntaksgrunnlag",
+        "properties": ["oep_schema",
+          ["**"]
+        ]
+      },
+      "quote_safe_characters": ""
+    },
+    "oep-virksomhet_rdf": {
+      "prefix_includes": ["global"],
+      "prefix_rules": {
+        "id": "oep_org",
+        "properties": [null,
+          ["orig_id"], "oep_schema",
+          ["**"]
+        ]
+      },
+      "quote_safe_characters": ""
+    },
+    "oep_dokumenttype_rdf": {
+      "prefix_includes": ["global"],
+      "prefix_rules": {
+        "id": "oep_dok_type",
+        "properties": ["oep_schema",
+          ["**"]
+        ]
+      },
+      "quote_safe_characters": ""
+    },
+    "oep_rdf": {
+      "prefix_includes": ["global"],
+      "prefix_rules": {
+        "id": "oep_org",
+        "properties": [null,
+          ["orig_id"], "oep_schema",
+          ["**"]
+        ]
+      },
+      "quote_safe_characters": ""
+    },
+    "postnummer_koordinater_rdf": {
+      "prefix_includes": ["global"],
+      "prefix_rules": {
+        "id": "eb_postnummer",
+        "properties": [null,
+          ["titles"], null,
+          ["ids"], "eb_schema",
+          ["**"]
+        ]
+      },
+      "quote_safe_characters": ""
+    },
+    "postnummer_rdf": {
+      "prefix_includes": ["geo", "global"],
+      "prefix_rules": {
+        "id": "geo_postnummer",
+        "properties": [null,
+          ["orig_id"], "geo_schema",
+          ["**"]
+        ]
+      },
+      "quote_safe_characters": ""
+    },
+    "sehavnivaa_highlow_rdf": {
+      "prefix_includes": ["global"],
+      "prefix_rules": {
+        "id": "sehavnivaa_highlow",
+        "properties": ["sehavnivaa_schema",
+          ["**"]
+        ]
+      },
+      "quote_safe_characters": ""
+    },
+    "sehavnivaa_location_rdf": {
+      "prefix_includes": ["global"],
+      "prefix_rules": {
+        "id": "sehavnivaa_location",
+        "properties": ["sehavnivaa_schema",
+          ["**"]
+        ]
+      },
+      "quote_safe_characters": ""
+    },
+    "sehavnivaa_station_rdf": {
+      "prefix_includes": ["global"],
+      "prefix_rules": {
+        "id": "sehavnivaa_station",
+        "properties": ["sehavnivaa_schema",
+          ["**"]
+        ]
+      },
+      "quote_safe_characters": ""
+    },
+    "solr_enhetsregisteret": {
+      "prefix_includes": ["global"],
+      "prefix_rules": {
+        "id": null,
+        "properties": [null,
+          ["titles"], null,
+          ["title"], null,
+          ["ids"], null,
+          ["dat_updated"], "brreg_schema",
+          ["**"]
+        ]
+      }
+    },
+    "yr_rdf": {
+      "prefix_includes": ["global"],
+      "prefix_rules": {
+        "id": "yr",
+        "properties": ["yr_schema",
+          ["**"]
+        ]
+      }
+    }
+  }
+}

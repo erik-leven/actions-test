@@ -1,0 +1,22 @@
+{
+  "_id": "costunitshierarchydata-sql01_vot",
+  "type": "pipe",
+  "source": {
+    "type": "dataset",
+    "dataset": "visma-olavstoppen-costunitshierarchydata"
+  },
+  "transform": {
+    "type": "dtl",
+    "rules": {
+      "default": [
+        ["filter",
+          ["eq", "_S.visma-olavstoppen-costunitshierarchydata:CostUnitID", 1751]
+        ],
+        ["discard",
+          ["neq", "_S._id", "visma-olavstoppen-costunitshierarchydata:1_1751_"]
+        ],
+        ["copy", "*"]
+      ]
+    }
+  }
+}

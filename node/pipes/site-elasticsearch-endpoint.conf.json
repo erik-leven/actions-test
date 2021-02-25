@@ -1,0 +1,32 @@
+{
+  "_id": "site-elasticsearch-endpoint",
+  "type": "pipe",
+  "source": {
+    "type": "dataset",
+    "dataset": "site-elasticsearch"
+  },
+  "sink": {
+    "type": "json",
+    "system": "elasticsearch",
+    "batch_size": 50,
+    "url": "/sesam_area_data"
+  },
+  "transform": {
+    "type": "dtl",
+    "rules": {
+      "default": [
+        ["copy", "*"],
+        ["if", "_S._deleted",
+          ["add", "enonic_deleted", true],
+          ["add", "enonic_deleted", false]
+        ],
+        ["add", "site-elasticsearch:sesam_updated",
+          ["now"]
+        ]
+      ]
+    }
+  },
+  "pump": {
+    "mode": "$ENV(pump-mode)"
+  }
+}

@@ -1,0 +1,60 @@
+{
+  "_id": "currentDepartmentID-reconciliation-currenttime-endpoint",
+  "type": "pipe",
+  "source": {
+    "type": "dataset",
+    "dataset": "currentDepartmentID-reconciliation-currenttime"
+  },
+  "sink": {
+    "type": "sql",
+    "system": "currenttime-economydbrepl-sesam",
+    "batch_size": 1,
+    "create_table_if_missing": true,
+    "primary_key": "AnsattIDFolk",
+    "schema": "adm",
+    "schema_definition": [{
+      "type": "integer",
+      "name": "AnsattIDFolk",
+      "max_value": 15000,
+      "min_value": 101,
+      "primary_key": true,
+      "source_property": "AnsattIDFolk"
+    }, {
+      "type": "boolean",
+      "name": "rettet",
+      "source_property": "rettet"
+    }, {
+      "type": "datetime",
+      "name": "SistOppdatert",
+      "max_value": "~t2100-01-01T12:00:00Z",
+      "min_value": "~t2020-01-01T12:00:00Z",
+      "source_property": "sist-oppdatert"
+    }, {
+      "type": "string",
+      "name": "Reason",
+      "allow_null": true,
+      "max_size": 100,
+      "min_size": 0,
+      "source_property": "Reason"
+    }, {
+      "type": "integer",
+      "name": "BliPlassertICurrentDepartmentID",
+      "allow_null": true,
+      "max_value": 1000,
+      "min_value": 1,
+      "source_property": "BliPlassertICurrentDepartmentID"
+    }],
+    "table": "Avstemming-CurrentDepartmentID-v2"
+  },
+  "transform": {
+    "type": "dtl",
+    "rules": {
+      "default": [
+        ["copy", "*"]
+      ]
+    }
+  },
+  "pump": {
+    "mode": "$ENV(pump-mode)"
+  }
+}

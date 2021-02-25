@@ -1,0 +1,96 @@
+{
+  "_id": "catalystone-user-historic",
+  "type": "pipe",
+  "source": {
+    "type": "conditional",
+    "alternatives": {
+      "prod": {
+        "type": "json",
+        "system": "catalystone-rest-v3",
+        "url": "employees"
+      },
+      "test": {
+        "type": "embedded",
+        "entities": [{
+          "employeeId": "3471",
+          "guid": "458776845087"
+        }, {
+          "employeeId": "2978",
+          "guid": "543687y435"
+        }, {
+          "employeeId": "1938",
+          "guid": "3485679"
+        }, {
+          "employeeId": "132",
+          "guid": "3658u473"
+        }, {
+          "employeeId": "1847",
+          "guid": "35469785"
+        }, {
+          "employeeId": "2276",
+          "guid": "546720"
+        }, {
+          "employeeId": "2156",
+          "guid": "23489247"
+        }, {
+          "employeeId": "2015",
+          "guid": "243516y0"
+        }, {
+          "employeeId": "0001",
+          "guid": "2354863"
+        }, {
+          "employeeId": "0003",
+          "guid": "35467247247"
+        }, {
+          "employeeId": "0004",
+          "guid": "3546724724456"
+        }, {
+          "employeeId": "0006",
+          "guid": "35247247"
+        }, {
+          "employeeId": "0007",
+          "guid": "3512347247"
+        }, {
+          "employeeId": "0008",
+          "guid": "356574744572"
+        }, {
+          "employeeId": "0010",
+          "guid": "243+89324890+432"
+        }, {
+          "employeeId": "0011",
+          "guid": "3q4roui8743q52"
+        }, {
+          "employeeId": "1316",
+          "guid": "342q5089435oiu"
+        }, {
+          "employeeId": "1528",
+          "guid": "sdgfknjbfdg"
+        }, {
+          "employeeId": "2288",
+          "guid": "sdfkjngfnjøk"
+        }, {
+          "employeeId": "391",
+          "guid": "sfdgkjøngfdøkjn"
+        }]
+      }
+    },
+    "condition": "$ENV(node-env)"
+  },
+  "transform": {
+    "type": "dtl",
+    "rules": {
+      "default": [
+        ["add", "_id", "_S.employeeId"],
+        ["copy",
+          ["list", "employeeId", "guid"]
+        ],
+        ["add", "rdf:type",
+          ["ni", "bouvet:catalystone-user-historic"]
+        ]
+      ]
+    }
+  },
+  "pump": {
+    "cron_expression": "0 0 * * ?"
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "_id": "cv-competency_research-endpoint",
+  "type": "pipe",
+  "source": {
+    "type": "dataset",
+    "dataset": "cv-competency_research"
+  },
+  "sink": {
+    "type": "json",
+    "system": "competency_research",
+    "url": "/sink/cv-partner"
+  },
+  "pump": {
+    "mode": "$ENV(pump-mode)"
+  }
+}

@@ -1,0 +1,66 @@
+[
+  {
+    "AnsattID": 1,
+    "Ansattnavn": "Max Manus",
+    "Ansattypenavn": "Timelønn",
+    "Mnd": 6,
+    "_id": "0001;06.2020",
+    "År": 2020
+  },
+  {
+    "AnsattID": 2,
+    "Ansattnavn": "Ola Norrman",
+    "Ansattypenavn": "Timelønn",
+    "Mnd": 6,
+    "_id": "0002;06.2020",
+    "År": 2020
+  },
+  {
+    "AnsattID": 4,
+    "Ansattnavn": "Test Tester",
+    "Ansattypenavn": "Timelønn",
+    "Mnd": 6,
+    "_id": "0004;06.2020",
+    "År": 2020
+  },
+  {
+    "AnsattID": 6,
+    "Ansattnavn": "Testina Testsen",
+    "Ansattypenavn": "Timelønn",
+    "Mnd": 6,
+    "_id": "0006;06.2020",
+    "År": 2020
+  },
+  {
+    "AnsattID": 7,
+    "Ansattnavn": "Karl Michael Bergman",
+    "Ansattypenavn": "Timelønn",
+    "Mnd": 6,
+    "_id": "0007;06.2020",
+    "År": 2020
+  },
+  {
+    "AnsattID": 8,
+    "Ansattnavn": "Gal Gadot",
+    "Ansattypenavn": "Timelønn",
+    "Mnd": 6,
+    "_id": "0008;06.2020",
+    "År": 2020
+  },
+  {
+    "AnsattID": 9,
+    "Ansattnavn": "Bruce Wayne",
+    "Ansattypenavn": "Timelønn",
+    "Mnd": 6,
+    "_id": "0009;06.2020",
+    "År": 2020
+  },
+  {
+    "AnsattID": 10,
+    "Ansattnavn": "Lynvingen",
+    "Ansattypenavn": "Timelønn",
+    "Mnd": 6,
+    "_id": "0010;06.2020",
+    "År": 2020
+  }
+]

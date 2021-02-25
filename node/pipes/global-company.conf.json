@@ -1,0 +1,38 @@
+{
+  "_id": "global-company",
+  "type": "pipe",
+  "source": {
+    "type": "merge",
+    "datasets": ["currenttime-company cc", "currenttime-company-extra ccx", "visma-customer vc", "visma-olavstoppen-customer voc", "visma-asa-customer vac", "salesforce-account sa", "loop-company-enhetsregisteret lce", "paymentmethod-company pc"],
+    "equality": [],
+    "identity": "first",
+    "strategy": "compact",
+    "version": 2
+  },
+  "transform": {
+    "type": "dtl",
+    "rules": {
+      "default": [
+        ["copy", "*"],
+        ["add", "name",
+          ["coalesce",
+            ["list", "_S.enhetsregisteret:navn", "_S.currenttime-company:companyname", "_S.visma-asa-customer:Name", "_S.visma-customer:Name", "_S.salesforce-account:Name", "_S.sesam-portal-paymentmethod:name"]
+          ]
+        ],
+        ["add", "company-id",
+          ["coalesce",
+            ["list", "_S.enhetsregisteret:orgnr", "_S.visma-asa-customer:CompanyNo", "_S.visma-customer:CompanyNo", "_S.paymentmethod-company:customer-id"]
+          ]
+        ],
+        ["add", "url",
+          ["coalesce",
+            ["list", "_S.currenttime-company:webpage", "_S.salesforce-account:Website", "_S.visma-asa-customer:WWWAddress", "_S.visma-customer:WWWAddress"]
+          ]
+        ]
+      ]
+    }
+  },
+  "metadata": {
+    "global": true
+  }
+}

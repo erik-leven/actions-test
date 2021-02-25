@@ -1,0 +1,284 @@
+{
+  "_id": "user-history-sensitive-pulsen-endpoint",
+  "type": "pipe",
+  "source": {
+    "type": "dataset",
+    "dataset": "user-history-sensitive-pulsen"
+  },
+  "sink": {
+    "type": "sql",
+    "system": "sql01_sa",
+    "schema_definition": [{
+      "type": "string",
+      "name": "Aarsloenn_heltid",
+      "allow_null": true,
+      "max_size": 150,
+      "min_size": 0,
+      "source_property": "Aarsloenn_heltid"
+    }, {
+      "type": "string",
+      "name": "Ansatt_ID",
+      "allow_null": false,
+      "max_size": 150,
+      "min_size": 0,
+      "source_property": "Ansatt_ID"
+    }, {
+      "type": "string",
+      "name": "Ansettelsetype",
+      "allow_null": true,
+      "max_size": 150,
+      "min_size": 0,
+      "source_property": "Ansettelsetype"
+    }, {
+      "type": "string",
+      "name": "Datobakgrunnssjekk",
+      "allow_null": true,
+      "max_size": 150,
+      "min_size": 0,
+      "source_property": "Datobakgrunnssjekk"
+    }, {
+      "type": "string",
+      "name": "Forespoerselomsikkerhetsklareringsendt",
+      "allow_null": true,
+      "max_size": 150,
+      "min_size": 0,
+      "source_property": "Forespoerselomsikkerhetsklareringsendt"
+    }, {
+      "type": "string",
+      "name": "GrunnlagDersomMidlertidigKontrakt",
+      "allow_null": true,
+      "max_size": 150,
+      "min_size": 0,
+      "source_property": "GrunnlagDersomMidlertidigKontrakt"
+    }, {
+      "type": "string",
+      "name": "Klareringsnivaasikkerhetsklarering",
+      "allow_null": true,
+      "max_size": 150,
+      "min_size": 0,
+      "source_property": "Klareringsnivaasikkerhetsklarering"
+    }, {
+      "type": "string",
+      "name": "Kommentarsikkerhetsklarering",
+      "allow_null": true,
+      "max_size": 150,
+      "min_size": 0,
+      "source_property": "Kommentarsikkerhetsklarering"
+    }, {
+      "type": "string",
+      "name": "Navn",
+      "allow_null": true,
+      "max_size": 150,
+      "min_size": 0,
+      "source_property": "Navn"
+    }, {
+      "type": "string",
+      "name": "Organisasjon",
+      "allow_null": true,
+      "max_size": 150,
+      "min_size": 0,
+      "source_property": "Organisasjon"
+    }, {
+      "type": "string",
+      "name": "Saerskilte_vilkaar",
+      "allow_null": true,
+      "max_size": 150,
+      "min_size": 0,
+      "source_property": "Saerskilte_vilkaar"
+    }, {
+      "type": "string",
+      "name": "Selskap",
+      "allow_null": true,
+      "max_size": 150,
+      "min_size": 0,
+      "source_property": "Selskap"
+    }, {
+      "type": "string",
+      "name": "Sikkerhetsklarering_Svarmottatt",
+      "allow_null": true,
+      "max_size": 150,
+      "min_size": 0,
+      "source_property": "Sikkerhetsklarering_Svarmottatt"
+    }, {
+      "type": "string",
+      "name": "Sluttaarsak",
+      "allow_null": true,
+      "max_size": 150,
+      "min_size": 0,
+      "source_property": "Sluttaarsak"
+    }, {
+      "type": "string",
+      "name": "Statussikkerhetsklarering",
+      "allow_null": true,
+      "max_size": 150,
+      "min_size": 0,
+      "source_property": "Statussikkerhetsklarering"
+    }, {
+      "type": "string",
+      "name": "Stillingsprosent",
+      "allow_null": true,
+      "max_size": 150,
+      "min_size": 0,
+      "source_property": "Stillingsprosent"
+    }, {
+      "type": "string",
+      "name": "Timeloenn",
+      "allow_null": true,
+      "max_size": 150,
+      "min_size": 0,
+      "source_property": "Timeloenn"
+    }, {
+      "type": "string",
+      "name": "Utloepsdatosikkerhetsklarering",
+      "allow_null": true,
+      "max_size": 150,
+      "min_size": 0,
+      "source_property": "Utloepsdatosikkerhetsklarering"
+    }, {
+      "type": "string",
+      "name": "Grunnloenn_beloep",
+      "allow_null": true,
+      "max_size": 150,
+      "min_size": 0,
+      "source_property": "Grunnloenn_beloep"
+    }, {
+      "type": "string",
+      "name": "Grunnloenn_valuta",
+      "allow_null": true,
+      "max_size": 150,
+      "min_size": 0,
+      "source_property": "Grunnloenn_valuta"
+    }, {
+      "type": "string",
+      "name": "Loennstype",
+      "allow_null": true,
+      "max_size": 150,
+      "min_size": 0,
+      "source_property": "Loennstype"
+    }, {
+      "type": "string",
+      "name": "Bruttoloennsreduksjon",
+      "allow_null": true,
+      "max_size": 150,
+      "min_size": 0,
+      "source_property": "Bruttoloennsreduksjon"
+    }, {
+      "type": "string",
+      "name": "Faktiskloenn",
+      "allow_null": true,
+      "max_size": 150,
+      "min_size": 0,
+      "source_property": "Faktiskloenn"
+    }],
+    "table": "Folk_Historikk_Sensitiv"
+  },
+  "transform": {
+    "type": "conditional",
+    "alternatives": {
+      "prod": {
+        "type": "dtl",
+        "rules": {
+          "default": [
+            ["filter",
+              ["neq", "_S._deleted", true]
+            ],
+            ["add", "temp",
+              ["key-values", "_S."]
+            ],
+            ["merge-union",
+              ["apply", "decryption", "_T.temp"]
+            ],
+            ["remove", "temp*"]
+          ],
+          "decryption": [
+            ["if",
+              ["is-list", "_S.value"],
+              [
+                ["merge-union",
+                  ["apply", "decryption-list", "_S.value"]
+                ],
+                ["add", "_S.key",
+                  ["join", ", ", "_T.tempkey"]
+                ]
+              ],
+              ["if",
+                ["is-not-null",
+                  ["decrypt", "$SECRET(folk-encryption-key)", "_S.value"]
+                ],
+                ["add", "_S.key",
+                  ["decrypt", "$SECRET(folk-encryption-key)", "_S.value"]
+                ],
+                ["add", "_S.key", "_S.value"]
+              ]
+            ]
+          ],
+          "decryption-list": [
+            ["if",
+              ["is-not-null",
+                ["decrypt", "$SECRET(folk-encryption-key)", "_S."]
+              ],
+              ["add", "tempkey",
+                ["decrypt", "$SECRET(folk-encryption-key)", "_S."]
+              ],
+              ["add", "tempkey", "_S."]
+            ]
+          ]
+        }
+      },
+      "test": {
+        "type": "dtl",
+        "rules": {
+          "default": [
+            ["filter",
+              ["neq", "_S._deleted", true]
+            ],
+            ["add", "temp",
+              ["key-values", "_S."]
+            ],
+            ["merge-union",
+              ["apply", "decryption", "_T.temp"]
+            ],
+            ["remove", "temp*"]
+          ],
+          "decryption": [
+            ["if",
+              ["is-list", "_S.value"],
+              [
+                ["merge-union",
+                  ["apply", "decryption-list", "_S.value"]
+                ],
+                ["add", "_S.key",
+                  ["join", ", ", "_T.tempkey"]
+                ]
+              ],
+              ["if",
+                ["is-not-null",
+                  ["decrypt", "folk-encryption-key", "_S.value"]
+                ],
+                ["add", "_S.key",
+                  ["decrypt", "folk-encryption-key", "_S.value"]
+                ],
+                ["add", "_S.key", "_S.value"]
+              ]
+            ]
+          ],
+          "decryption-list": [
+            ["if",
+              ["is-not-null",
+                ["decrypt", "folk-encryption-key", "_S."]
+              ],
+              ["add", "tempkey",
+                ["decrypt", "folk-encryption-key", "_S."]
+              ],
+              ["add", "tempkey", "_S."]
+            ]
+          ]
+        }
+      }
+    },
+    "condition": "$ENV(node-env)"
+  },
+  "pump": {
+    "mode": "$ENV(pump-mode)"
+  }
+}

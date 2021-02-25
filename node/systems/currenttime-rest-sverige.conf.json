@@ -1,0 +1,66 @@
+{
+  "_id": "currenttime-rest-sverige",
+  "type": "system:rest",
+  "authentication": "basic",
+  "connect_timeout": 120,
+  "operations": {
+    "post-employee": {
+      "headers": {
+        "Accept": "application/json",
+        "Content-Type": "application/json"
+      },
+      "method": "POST",
+      "payload-type": "json",
+      "url": "v1/odata/employees"
+    },
+    "update-employee": {
+      "headers": {
+        "Accept": "application/json",
+        "Content-Type": "application/json"
+      },
+      "method": "PATCH",
+      "payload-type": "json",
+      "url": "v1/odata/employees({{ EmployeeId }})"
+    },
+    "update-employeeaccess": {
+      "headers": {
+        "Accept": "application/json",
+        "Content-Type": "application/json"
+      },
+      "method": "PATCH",
+      "payload-type": "json",
+      "url": "v1/odata/employees({{ EmployeeId }})/EmployeeAccess"
+    },
+    "update-employeeaddress": {
+      "headers": {
+        "Accept": "application/json",
+        "Content-Type": "application/json"
+      },
+      "method": "PATCH",
+      "payload-type": "json",
+      "url": "v1/odata/employees({{ EmployeeId }})/EmployeeAddress"
+    },
+    "update-employeedetail": {
+      "headers": {
+        "Accept": "application/json",
+        "Content-Type": "application/json"
+      },
+      "method": "PATCH",
+      "payload-type": "json",
+      "url": "v1/odata/employees({{ EmployeeId }})/EmployeeDetail"
+    },
+    "update-employeetime": {
+      "headers": {
+        "Accept": "application/json",
+        "Content-Type": "application/json"
+      },
+      "method": "PATCH",
+      "payload-type": "json",
+      "url": "v1/odata/employees({{ EmployeeId }})/EmployeeTime"
+    }
+  },
+  "password": "$SECRET(current-sverige-api-password)",
+  "url_pattern": "$ENV(current-sverige-api-url)",
+  "username": "$ENV(current-sverige-api-user)",
+  "verify_ssl": true
+}

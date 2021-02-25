@@ -1,0 +1,965 @@
+[
+  {
+    "AvdelingslederID": null,
+    "AvdelingslederNavn": null,
+    "AvdelingsnavnFolk": "Norge Felles",
+    "AvdelingsnummerVisma": 100,
+    "Mnd": 7,
+    "_id": "100;07.2018",
+    "År": 2018
+  },
+  {
+    "AvdelingslederID": null,
+    "AvdelingslederNavn": null,
+    "AvdelingsnavnFolk": "IT Drift",
+    "AvdelingsnummerVisma": 150,
+    "Mnd": 9,
+    "_id": "150;09.2018",
+    "År": 2018
+  },
+  {
+    "AvdelingslederID": null,
+    "AvdelingslederNavn": null,
+    "AvdelingsnavnFolk": "Øst Kurs",
+    "AvdelingsnummerVisma": 200,
+    "Mnd": 7,
+    "_id": "200;07.2018",
+    "År": 2018
+  },
+  {
+    "AvdelingslederID": null,
+    "AvdelingslederNavn": null,
+    "AvdelingsnavnFolk": "Øst Felles",
+    "AvdelingsnummerVisma": 210,
+    "Mnd": 7,
+    "_id": "210;07.2018",
+    "År": 2018
+  },
+  {
+    "AvdelingslederID": null,
+    "AvdelingslederNavn": null,
+    "AvdelingsnavnFolk": "Øst Salg",
+    "AvdelingsnummerVisma": 211,
+    "Mnd": 9,
+    "_id": "211;09.2018",
+    "År": 2018
+  },
+  {
+    "AvdelingslederID": null,
+    "AvdelingslederNavn": null,
+    "AvdelingsnavnFolk": "Region Øst",
+    "AvdelingsnummerVisma": 299,
+    "Mnd": 9,
+    "_id": "299;09.2018",
+    "År": 2018
+  },
+  {
+    "AvdelingslederID": null,
+    "AvdelingslederNavn": null,
+    "AvdelingsnavnFolk": "Bouvet Norge AS",
+    "AvdelingsnummerVisma": 2,
+    "Mnd": 9,
+    "_id": "2;09.2018",
+    "År": 2018
+  },
+  {
+    "AvdelingslederID": null,
+    "AvdelingslederNavn": null,
+    "AvdelingsnavnFolk": "Øst Tech 1",
+    "AvdelingsnummerVisma": 301,
+    "Mnd": 9,
+    "_id": "301;09.2018",
+    "År": 2018
+  },
+  {
+    "AvdelingslederID": null,
+    "AvdelingslederNavn": null,
+    "AvdelingsnavnFolk": "Øst Tech 2",
+    "AvdelingsnummerVisma": null,
+    "Mnd": 9,
+    "_id": "302;09.2018",
+    "År": 2018
+  },
+  {
+    "AvdelingslederID": null,
+    "AvdelingslederNavn": null,
+    "AvdelingsnavnFolk": "Øst Kundeopplevelse",
+    "AvdelingsnummerVisma": 303,
+    "Mnd": 9,
+    "_id": "303;09.2018",
+    "År": 2018
+  },
+  {
+    "AvdelingslederID": null,
+    "AvdelingslederNavn": null,
+    "AvdelingsnavnFolk": "Øst Dev 2",
+    "AvdelingsnummerVisma": 312,
+    "Mnd": 9,
+    "_id": "312;09.2018",
+    "År": 2018
+  },
+  {
+    "AvdelingslederID": null,
+    "AvdelingslederNavn": null,
+    "AvdelingsnavnFolk": "Øst Dev 3",
+    "AvdelingsnummerVisma": 315,
+    "Mnd": 9,
+    "_id": "315;09.2018",
+    "År": 2018
+  },
+  {
+    "AvdelingslederID": null,
+    "AvdelingslederNavn": null,
+    "AvdelingsnavnFolk": "Øst Dev 4",
+    "AvdelingsnummerVisma": 316,
+    "Mnd": 9,
+    "_id": "316;09.2018",
+    "År": 2018
+  },
+  {
+    "AvdelingslederID": null,
+    "AvdelingslederNavn": null,
+    "AvdelingsnavnFolk": "Øst Dev 5",
+    "AvdelingsnummerVisma": 317,
+    "Mnd": 9,
+    "_id": "317;09.2018",
+    "År": 2018
+  },
+  {
+    "AvdelingslederID": null,
+    "AvdelingslederNavn": null,
+    "AvdelingsnavnFolk": "Øst Data Science",
+    "AvdelingsnummerVisma": 318,
+    "Mnd": 9,
+    "_id": "318;09.2018",
+    "År": 2018
+  },
+  {
+    "AvdelingslederID": null,
+    "AvdelingslederNavn": null,
+    "AvdelingsnavnFolk": "Øst Microsoft 1",
+    "AvdelingsnummerVisma": 320,
+    "Mnd": 9,
+    "_id": "320;09.2018",
+    "År": 2018
+  },
+  {
+    "AvdelingslederID": null,
+    "AvdelingslederNavn": null,
+    "AvdelingsnavnFolk": "Øst Microsoft 2",
+    "AvdelingsnummerVisma": 321,
+    "Mnd": 9,
+    "_id": "321;09.2018",
+    "År": 2018
+  },
+  {
+    "AvdelingslederID": null,
+    "AvdelingslederNavn": null,
+    "AvdelingsnavnFolk": "Øst Microsoft 3",
+    "AvdelingsnummerVisma": 322,
+    "Mnd": 9,
+    "_id": "322;09.2018",
+    "År": 2018
+  },
+  {
+    "AvdelingslederID": null,
+    "AvdelingslederNavn": null,
+    "AvdelingsnavnFolk": "Øst Microsoft 4",
+    "AvdelingsnummerVisma": 323,
+    "Mnd": 9,
+    "_id": "323;09.2018",
+    "År": 2018
+  },
+  {
+    "AvdelingslederID": null,
+    "AvdelingslederNavn": null,
+    "AvdelingsnavnFolk": "Øst Microsoft 5",
+    "AvdelingsnummerVisma": 324,
+    "Mnd": 10,
+    "_id": "324;10.2018",
+    "År": 2018
+  },
+  {
+    "AvdelingslederID": null,
+    "AvdelingslederNavn": null,
+    "AvdelingsnavnFolk": "Øst Webapps 1",
+    "AvdelingsnummerVisma": 325,
+    "Mnd": 9,
+    "_id": "325;09.2018",
+    "År": 2018
+  },
+  {
+    "AvdelingslederID": null,
+    "AvdelingslederNavn": null,
+    "AvdelingsnavnFolk": "Øst Webapps 2",
+    "AvdelingsnummerVisma": 326,
+    "Mnd": 9,
+    "_id": "326;09.2018",
+    "År": 2018
+  },
+  {
+    "AvdelingslederID": null,
+    "AvdelingslederNavn": null,
+    "AvdelingsnavnFolk": "Øst Microsoft",
+    "AvdelingsnummerVisma": 327,
+    "Mnd": 9,
+    "_id": "327;09.2018",
+    "År": 2018
+  },
+  {
+    "AvdelingslederID": null,
+    "AvdelingslederNavn": null,
+    "AvdelingsnavnFolk": "Øst Tjenesteleveranser",
+    "AvdelingsnummerVisma": 329,
+    "Mnd": 9,
+    "_id": "329;09.2018",
+    "År": 2018
+  },
+  {
+    "AvdelingslederID": null,
+    "AvdelingslederNavn": null,
+    "AvdelingsnavnFolk": "Øst Innsikt",
+    "AvdelingsnummerVisma": 330,
+    "Mnd": 9,
+    "_id": "330;09.2018",
+    "År": 2018
+  },
+  {
+    "AvdelingslederID": null,
+    "AvdelingslederNavn": null,
+    "AvdelingsnavnFolk": "Øst Ria 1",
+    "AvdelingsnummerVisma": 331,
+    "Mnd": 9,
+    "_id": "331;09.2018",
+    "År": 2018
+  },
+  {
+    "AvdelingslederID": null,
+    "AvdelingslederNavn": null,
+    "AvdelingsnavnFolk": "Øst Design 1",
+    "AvdelingsnummerVisma": 333,
+    "Mnd": 9,
+    "_id": "333;09.2018",
+    "År": 2018
+  },
+  {
+    "AvdelingslederID": null,
+    "AvdelingslederNavn": null,
+    "AvdelingsnavnFolk": "Øst Design 2",
+    "AvdelingsnummerVisma": 334,
+    "Mnd": 9,
+    "_id": "334;09.2018",
+    "År": 2018
+  },
+  {
+    "AvdelingslederID": null,
+    "AvdelingslederNavn": null,
+    "AvdelingsnavnFolk": "Øst Ria 3",
+    "AvdelingsnummerVisma": 337,
+    "Mnd": 9,
+    "_id": "337;09.2018",
+    "År": 2018
+  },
+  {
+    "AvdelingslederID": null,
+    "AvdelingslederNavn": null,
+    "AvdelingsnavnFolk": "Øst Råd Tjenestedesign",
+    "AvdelingsnummerVisma": 338,
+    "Mnd": 10,
+    "_id": "338;10.2018",
+    "År": 2018
+  },
+  {
+    "AvdelingslederID": null,
+    "AvdelingslederNavn": null,
+    "AvdelingsnavnFolk": "Øst Råd KO",
+    "AvdelingsnummerVisma": 339,
+    "Mnd": 9,
+    "_id": "339;09.2018",
+    "År": 2018
+  },
+  {
+    "AvdelingslederID": null,
+    "AvdelingslederNavn": null,
+    "AvdelingsnavnFolk": "Øst Dev 1",
+    "AvdelingsnummerVisma": 340,
+    "Mnd": 9,
+    "_id": "340;09.2018",
+    "År": 2018
+  },
+  {
+    "AvdelingslederID": null,
+    "AvdelingslederNavn": null,
+    "AvdelingsnavnFolk": "Øst Cloud 1",
+    "AvdelingsnummerVisma": 400,
+    "Mnd": 9,
+    "_id": "400;09.2018",
+    "År": 2018
+  },
+  {
+    "AvdelingslederID": null,
+    "AvdelingslederNavn": null,
+    "AvdelingsnavnFolk": "Øst Cloud",
+    "AvdelingsnummerVisma": 409,
+    "Mnd": 9,
+    "_id": "409;09.2018",
+    "År": 2018
+  },
+  {
+    "AvdelingslederID": null,
+    "AvdelingslederNavn": null,
+    "AvdelingsnavnFolk": "Øst PIA",
+    "AvdelingsnummerVisma": 450,
+    "Mnd": 1,
+    "_id": "450;01.2020",
+    "År": 2020
+  },
+  {
+    "AvdelingslederID": null,
+    "AvdelingslederNavn": null,
+    "AvdelingsnavnFolk": "Øst PIA 1",
+    "AvdelingsnummerVisma": 451,
+    "Mnd": 1,
+    "_id": "451;01.2020",
+    "År": 2020
+  },
+  {
+    "AvdelingslederID": null,
+    "AvdelingslederNavn": null,
+    "AvdelingsnavnFolk": "Øst PIA 2",
+    "AvdelingsnummerVisma": 452,
+    "Mnd": 1,
+    "_id": "452;01.2020",
+    "År": 2020
+  },
+  {
+    "AvdelingslederID": null,
+    "AvdelingslederNavn": null,
+    "AvdelingsnavnFolk": "Øst PIA 3",
+    "AvdelingsnummerVisma": 453,
+    "Mnd": 1,
+    "_id": "453;01.2020",
+    "År": 2020
+  },
+  {
+    "AvdelingslederID": null,
+    "AvdelingslederNavn": null,
+    "AvdelingsnavnFolk": "Øst Råd og Prosjekt",
+    "AvdelingsnummerVisma": 500,
+    "Mnd": 9,
+    "_id": "500;09.2018",
+    "År": 2018
+  },
+  {
+    "AvdelingslederID": null,
+    "AvdelingslederNavn": null,
+    "AvdelingsnavnFolk": "Øst Virksomhetsstyring",
+    "AvdelingsnummerVisma": 501,
+    "Mnd": 9,
+    "_id": "501;09.2018",
+    "År": 2018
+  },
+  {
+    "AvdelingslederID": null,
+    "AvdelingslederNavn": null,
+    "AvdelingsnavnFolk": "Øst Sandvika",
+    "AvdelingsnummerVisma": 502,
+    "Mnd": 9,
+    "_id": "502;09.2018",
+    "År": 2018
+  },
+  {
+    "AvdelingslederID": null,
+    "AvdelingslederNavn": null,
+    "AvdelingsnavnFolk": "Øst Programledelse",
+    "AvdelingsnummerVisma": 511,
+    "Mnd": 9,
+    "_id": "511;09.2019",
+    "År": 2019
+  },
+  {
+    "AvdelingslederID": null,
+    "AvdelingslederNavn": null,
+    "AvdelingsnavnFolk": "Øst Prosjektledelse 1",
+    "AvdelingsnummerVisma": 512,
+    "Mnd": 9,
+    "_id": "512;09.2018",
+    "År": 2018
+  },
+  {
+    "AvdelingslederID": null,
+    "AvdelingslederNavn": null,
+    "AvdelingsnavnFolk": "Øst Prosjektledelse 2",
+    "AvdelingsnummerVisma": 513,
+    "Mnd": 9,
+    "_id": "513;09.2018",
+    "År": 2018
+  },
+  {
+    "AvdelingslederID": null,
+    "AvdelingslederNavn": null,
+    "AvdelingsnavnFolk": "Øst Test og Testledelse",
+    "AvdelingsnummerVisma": 514,
+    "Mnd": 9,
+    "_id": "514;09.2018",
+    "År": 2018
+  },
+  {
+    "AvdelingslederID": null,
+    "AvdelingslederNavn": null,
+    "AvdelingsnavnFolk": "Øst Råd og Prosjekt Felles",
+    "AvdelingsnummerVisma": 515,
+    "Mnd": 9,
+    "_id": "515;09.2018",
+    "År": 2018
+  },
+  {
+    "AvdelingslederID": null,
+    "AvdelingslederNavn": null,
+    "AvdelingsnavnFolk": "Øst Rådgivning arkitektur",
+    "AvdelingsnummerVisma": 516,
+    "Mnd": 9,
+    "_id": "516;09.2018",
+    "År": 2018
+  },
+  {
+    "AvdelingslederID": null,
+    "AvdelingslederNavn": null,
+    "AvdelingsnavnFolk": "Øst Rådgivning innføring og endring",
+    "AvdelingsnummerVisma": 517,
+    "Mnd": 9,
+    "_id": "517;09.2018",
+    "År": 2018
+  },
+  {
+    "AvdelingslederID": null,
+    "AvdelingslederNavn": null,
+    "AvdelingsnavnFolk": "Øst Råd og Prosjekt UK",
+    "AvdelingsnummerVisma": 518,
+    "Mnd": 9,
+    "_id": "518;09.2018",
+    "År": 2018
+  },
+  {
+    "AvdelingslederID": null,
+    "AvdelingslederNavn": null,
+    "AvdelingsnavnFolk": "Applikasjon og Prosess",
+    "AvdelingsnummerVisma": 522,
+    "Mnd": 9,
+    "_id": "522;09.2018",
+    "År": 2018
+  },
+  {
+    "AvdelingslederID": null,
+    "AvdelingslederNavn": null,
+    "AvdelingsnavnFolk": "SAP Tech og forvaltning",
+    "AvdelingsnummerVisma": 523,
+    "Mnd": 9,
+    "_id": "523;09.2018",
+    "År": 2018
+  },
+  {
+    "AvdelingslederID": null,
+    "AvdelingslederNavn": null,
+    "AvdelingsnavnFolk": "Prosjekt og Arkitekt",
+    "AvdelingsnummerVisma": 525,
+    "Mnd": 9,
+    "_id": "525;09.2018",
+    "År": 2018
+  },
+  {
+    "AvdelingslederID": null,
+    "AvdelingslederNavn": null,
+    "AvdelingsnavnFolk": "Øst Sandvika 1",
+    "AvdelingsnummerVisma": 550,
+    "Mnd": 9,
+    "_id": "550;09.2018",
+    "År": 2018
+  },
+  {
+    "AvdelingslederID": null,
+    "AvdelingslederNavn": null,
+    "AvdelingsnavnFolk": "Øst Sandvika 2",
+    "AvdelingsnummerVisma": 551,
+    "Mnd": 9,
+    "_id": "551;09.2018",
+    "År": 2018
+  },
+  {
+    "AvdelingslederID": null,
+    "AvdelingslederNavn": null,
+    "AvdelingsnavnFolk": "Øst Sandvika UK",
+    "AvdelingsnummerVisma": 552,
+    "Mnd": 9,
+    "_id": "552;09.2018",
+    "År": 2018
+  },
+  {
+    "AvdelingslederID": null,
+    "AvdelingslederNavn": null,
+    "AvdelingsnavnFolk": "Øst Sandvika 3",
+    "AvdelingsnummerVisma": 553,
+    "Mnd": 9,
+    "_id": "553;09.2018",
+    "År": 2018
+  },
+  {
+    "AvdelingslederID": null,
+    "AvdelingslederNavn": null,
+    "AvdelingsnavnFolk": "Sør Felles",
+    "AvdelingsnummerVisma": 600,
+    "Mnd": 12,
+    "_id": "600;12.2018",
+    "År": 2018
+  },
+  {
+    "AvdelingslederID": null,
+    "AvdelingslederNavn": null,
+    "AvdelingsnavnFolk": "Region Sør",
+    "AvdelingsnummerVisma": 609,
+    "Mnd": 9,
+    "_id": "609;09.2018",
+    "År": 2018
+  },
+  {
+    "AvdelingslederID": null,
+    "AvdelingslederNavn": null,
+    "AvdelingsnavnFolk": "Arendal",
+    "AvdelingsnummerVisma": 620,
+    "Mnd": 9,
+    "_id": "620;09.2018",
+    "År": 2018
+  },
+  {
+    "AvdelingslederID": null,
+    "AvdelingslederNavn": null,
+    "AvdelingsnavnFolk": "Kristiansand",
+    "AvdelingsnummerVisma": 630,
+    "Mnd": 9,
+    "_id": "630;09.2018",
+    "År": 2018
+  },
+  {
+    "AvdelingslederID": null,
+    "AvdelingslederNavn": null,
+    "AvdelingsnavnFolk": "Vestfold",
+    "AvdelingsnummerVisma": 640,
+    "Mnd": 9,
+    "_id": "640;09.2018",
+    "År": 2018
+  },
+  {
+    "AvdelingslederID": null,
+    "AvdelingslederNavn": null,
+    "AvdelingsnavnFolk": "Rogaland Virksomhetsstøtte",
+    "AvdelingsnummerVisma": 700,
+    "Mnd": 9,
+    "_id": "700;09.2018",
+    "År": 2018
+  },
+  {
+    "AvdelingslederID": null,
+    "AvdelingslederNavn": null,
+    "AvdelingsnavnFolk": "Rogaland Økonomi og IT",
+    "AvdelingsnummerVisma": 701,
+    "Mnd": 11,
+    "_id": "701;11.2018",
+    "År": 2018
+  },
+  {
+    "AvdelingslederID": null,
+    "AvdelingslederNavn": null,
+    "AvdelingsnavnFolk": "Rogaland Klyngestøtte",
+    "AvdelingsnummerVisma": 702,
+    "Mnd": 9,
+    "_id": "702;09.2018",
+    "År": 2018
+  },
+  {
+    "AvdelingslederID": null,
+    "AvdelingslederNavn": null,
+    "AvdelingsnavnFolk": "Rogaland Tech Center",
+    "AvdelingsnummerVisma": 703,
+    "Mnd": 9,
+    "_id": "703;09.2018",
+    "År": 2018
+  },
+  {
+    "AvdelingslederID": null,
+    "AvdelingslederNavn": null,
+    "AvdelingsnavnFolk": "Rogaland Equinox",
+    "AvdelingsnummerVisma": 704,
+    "Mnd": 10,
+    "_id": "704;10.2018",
+    "År": 2018
+  },
+  {
+    "AvdelingslederID": null,
+    "AvdelingslederNavn": null,
+    "AvdelingsnavnFolk": "Kontorstøtte Stavanger",
+    "AvdelingsnummerVisma": 705,
+    "Mnd": 9,
+    "_id": "705;09.2018",
+    "År": 2018
+  },
+  {
+    "AvdelingslederID": null,
+    "AvdelingslederNavn": null,
+    "AvdelingsnavnFolk": "Kontorstøtte Haugesund",
+    "AvdelingsnummerVisma": 730,
+    "Mnd": 9,
+    "_id": "730;09.2018",
+    "År": 2018
+  },
+  {
+    "AvdelingslederID": null,
+    "AvdelingslederNavn": null,
+    "AvdelingsnavnFolk": "Rogaland Industristøtte",
+    "AvdelingsnummerVisma": 731,
+    "Mnd": 9,
+    "_id": "731;09.2018",
+    "År": 2018
+  },
+  {
+    "AvdelingslederID": null,
+    "AvdelingslederNavn": null,
+    "AvdelingsnavnFolk": "Rogaland Formel 1",
+    "AvdelingsnummerVisma": 751,
+    "Mnd": 9,
+    "_id": "751;09.2018",
+    "År": 2018
+  },
+  {
+    "AvdelingslederID": null,
+    "AvdelingslederNavn": null,
+    "AvdelingsnavnFolk": "Rogaland Enigma",
+    "AvdelingsnummerVisma": 752,
+    "Mnd": 9,
+    "_id": "752;09.2018",
+    "År": 2018
+  },
+  {
+    "AvdelingslederID": null,
+    "AvdelingslederNavn": null,
+    "AvdelingsnavnFolk": "Rogaland Alpha",
+    "AvdelingsnummerVisma": 754,
+    "Mnd": 9,
+    "_id": "754;09.2018",
+    "År": 2018
+  },
+  {
+    "AvdelingslederID": null,
+    "AvdelingslederNavn": null,
+    "AvdelingsnavnFolk": "Rogaland Invicta",
+    "AvdelingsnummerVisma": 755,
+    "Mnd": 9,
+    "_id": "755;09.2018",
+    "År": 2018
+  },
+  {
+    "AvdelingslederID": null,
+    "AvdelingslederNavn": null,
+    "AvdelingsnavnFolk": "Rogaland Syndicate",
+    "AvdelingsnummerVisma": 756,
+    "Mnd": 9,
+    "_id": "756;09.2018",
+    "År": 2018
+  },
+  {
+    "AvdelingslederID": null,
+    "AvdelingslederNavn": null,
+    "AvdelingsnavnFolk": "Rogaland Morgenstiern",
+    "AvdelingsnummerVisma": 757,
+    "Mnd": 9,
+    "_id": "757;09.2018",
+    "År": 2018
+  },
+  {
+    "AvdelingslederID": null,
+    "AvdelingslederNavn": null,
+    "AvdelingsnavnFolk": "Rogaland DAIM",
+    "AvdelingsnummerVisma": 758,
+    "Mnd": 9,
+    "_id": "758;09.2018",
+    "År": 2018
+  },
+  {
+    "AvdelingslederID": null,
+    "AvdelingslederNavn": null,
+    "AvdelingsnavnFolk": "Rogaland DIGG",
+    "AvdelingsnummerVisma": 759,
+    "Mnd": 9,
+    "_id": "759;09.2018",
+    "År": 2018
+  },
+  {
+    "AvdelingslederID": null,
+    "AvdelingslederNavn": null,
+    "AvdelingsnavnFolk": "Rogaland Skynet",
+    "AvdelingsnummerVisma": 760,
+    "Mnd": 9,
+    "_id": "760;09.2018",
+    "År": 2018
+  },
+  {
+    "AvdelingslederID": null,
+    "AvdelingslederNavn": null,
+    "AvdelingsnavnFolk": "Rogaland SQAD",
+    "AvdelingsnummerVisma": 761,
+    "Mnd": 9,
+    "_id": "761;09.2018",
+    "År": 2018
+  },
+  {
+    "AvdelingslederID": null,
+    "AvdelingslederNavn": null,
+    "AvdelingsnavnFolk": "Rogaland Atlas",
+    "AvdelingsnummerVisma": 762,
+    "Mnd": 9,
+    "_id": "762;09.2018",
+    "År": 2018
+  },
+  {
+    "AvdelingslederID": null,
+    "AvdelingslederNavn": null,
+    "AvdelingsnavnFolk": "Rogaland Spectre",
+    "AvdelingsnummerVisma": 763,
+    "Mnd": 9,
+    "_id": "763;09.2018",
+    "År": 2018
+  },
+  {
+    "AvdelingslederID": null,
+    "AvdelingslederNavn": null,
+    "AvdelingsnavnFolk": "Rogaland SPOCK",
+    "AvdelingsnummerVisma": 764,
+    "Mnd": 12,
+    "_id": "764;12.2018",
+    "År": 2018
+  },
+  {
+    "AvdelingslederID": null,
+    "AvdelingslederNavn": null,
+    "AvdelingsnavnFolk": "Rogaland MCS",
+    "AvdelingsnummerVisma": 765,
+    "Mnd": 12,
+    "_id": "765;12.2018",
+    "År": 2018
+  },
+  {
+    "AvdelingslederID": null,
+    "AvdelingslederNavn": null,
+    "AvdelingsnavnFolk": "Rogaland Optimus",
+    "AvdelingsnummerVisma": 766,
+    "Mnd": 5,
+    "_id": "766;05.2019",
+    "År": 2019
+  },
+  {
+    "AvdelingslederID": null,
+    "AvdelingslederNavn": null,
+    "AvdelingsnavnFolk": "Rogaland ACME",
+    "AvdelingsnummerVisma": 767,
+    "Mnd": 6,
+    "_id": "767;06.2019",
+    "År": 2019
+  },
+  {
+    "AvdelingslederID": null,
+    "AvdelingslederNavn": null,
+    "AvdelingsnavnFolk": "Rogaland Phoenix",
+    "AvdelingsnummerVisma": 768,
+    "Mnd": 9,
+    "_id": "768;09.2019",
+    "År": 2019
+  },
+  {
+    "AvdelingslederID": null,
+    "AvdelingslederNavn": null,
+    "AvdelingsnavnFolk": "Rogaland Administrasjon",
+    "AvdelingsnummerVisma": 777,
+    "Mnd": 11,
+    "_id": "777;11.2019",
+    "År": 2019
+  },
+  {
+    "AvdelingslederID": null,
+    "AvdelingslederNavn": null,
+    "AvdelingsnavnFolk": "Rogaland Felles",
+    "AvdelingsnummerVisma": 778,
+    "Mnd": 11,
+    "_id": "778;11.2019",
+    "År": 2019
+  },
+  {
+    "AvdelingslederID": null,
+    "AvdelingslederNavn": null,
+    "AvdelingsnavnFolk": "Rogaland Enheter",
+    "AvdelingsnummerVisma": 779,
+    "Mnd": 11,
+    "_id": "779;11.2019",
+    "År": 2019
+  },
+  {
+    "AvdelingslederID": null,
+    "AvdelingslederNavn": null,
+    "AvdelingsnavnFolk": "Bergen Felles",
+    "AvdelingsnummerVisma": 780,
+    "Mnd": 9,
+    "_id": "780;09.2018",
+    "År": 2018
+  },
+  {
+    "AvdelingslederID": null,
+    "AvdelingslederNavn": null,
+    "AvdelingsnavnFolk": "Ulriken",
+    "AvdelingsnummerVisma": 781,
+    "Mnd": 9,
+    "_id": "781;09.2018",
+    "År": 2018
+  },
+  {
+    "AvdelingslederID": null,
+    "AvdelingslederNavn": null,
+    "AvdelingsnavnFolk": "Fløien",
+    "AvdelingsnummerVisma": 782,
+    "Mnd": 9,
+    "_id": "782;09.2018",
+    "År": 2018
+  },
+  {
+    "AvdelingslederID": null,
+    "AvdelingslederNavn": null,
+    "AvdelingsnavnFolk": "Lyderhorn",
+    "AvdelingsnummerVisma": 783,
+    "Mnd": 9,
+    "_id": "783;09.2018",
+    "År": 2018
+  },
+  {
+    "AvdelingslederID": null,
+    "AvdelingslederNavn": null,
+    "AvdelingsnavnFolk": "Løvstakken",
+    "AvdelingsnummerVisma": 784,
+    "Mnd": 9,
+    "_id": "784;09.2018",
+    "År": 2018
+  },
+  {
+    "AvdelingslederID": null,
+    "AvdelingslederNavn": null,
+    "AvdelingsnavnFolk": "Rundemanen",
+    "AvdelingsnummerVisma": 785,
+    "Mnd": 9,
+    "_id": "785;09.2018",
+    "År": 2018
+  },
+  {
+    "AvdelingslederID": null,
+    "AvdelingslederNavn": null,
+    "AvdelingsnavnFolk": "Blåmanen",
+    "AvdelingsnummerVisma": 786,
+    "Mnd": 9,
+    "_id": "786;09.2018",
+    "År": 2018
+  },
+  {
+    "AvdelingslederID": null,
+    "AvdelingslederNavn": null,
+    "AvdelingsnavnFolk": "Gullfjellet",
+    "AvdelingsnummerVisma": 787,
+    "Mnd": 9,
+    "_id": "787;09.2019",
+    "År": 2019
+  },
+  {
+    "AvdelingslederID": null,
+    "AvdelingslederNavn": null,
+    "AvdelingsnavnFolk": "Region Bergen",
+    "AvdelingsnummerVisma": 789,
+    "Mnd": 9,
+    "_id": "789;09.2018",
+    "År": 2018
+  },
+  {
+    "AvdelingslederID": null,
+    "AvdelingslederNavn": null,
+    "AvdelingsnavnFolk": "Region Rogaland",
+    "AvdelingsnummerVisma": 799,
+    "Mnd": 9,
+    "_id": "799;09.2018",
+    "År": 2018
+  },
+  {
+    "AvdelingslederID": null,
+    "AvdelingslederNavn": null,
+    "AvdelingsnavnFolk": "Nord Felles",
+    "AvdelingsnummerVisma": 800,
+    "Mnd": 9,
+    "_id": "800;09.2018",
+    "År": 2018
+  },
+  {
+    "AvdelingslederID": null,
+    "AvdelingslederNavn": null,
+    "AvdelingsnavnFolk": "Trondheim Tech 1",
+    "AvdelingsnummerVisma": 801,
+    "Mnd": 9,
+    "_id": "801;09.2018",
+    "År": 2018
+  },
+  {
+    "AvdelingslederID": null,
+    "AvdelingslederNavn": null,
+    "AvdelingsnavnFolk": "Trondheim Tech 2",
+    "AvdelingsnummerVisma": 802,
+    "Mnd": 9,
+    "_id": "802;09.2018",
+    "År": 2018
+  },
+  {
+    "AvdelingslederID": null,
+    "AvdelingslederNavn": null,
+    "AvdelingsnavnFolk": "Trondheim Brukeropplevelse",
+    "AvdelingsnummerVisma": 803,
+    "Mnd": 9,
+    "_id": "803;09.2018",
+    "År": 2018
+  },
+  {
+    "AvdelingslederID": null,
+    "AvdelingslederNavn": null,
+    "AvdelingsnavnFolk": "Trondheim Tech 3",
+    "AvdelingsnummerVisma": 804,
+    "Mnd": 9,
+    "_id": "804;09.2018",
+    "År": 2018
+  },
+  {
+    "AvdelingslederID": null,
+    "AvdelingslederNavn": null,
+    "AvdelingsnavnFolk": "Trondheim Rådgivning\u0026Prosjektledelse",
+    "AvdelingsnummerVisma": 805,
+    "Mnd": 9,
+    "_id": "805;09.2018",
+    "År": 2018
+  },
+  {
+    "AvdelingslederID": null,
+    "AvdelingslederNavn": null,
+    "AvdelingsnavnFolk": "Trondheim FrontEnd",
+    "AvdelingsnummerVisma": 806,
+    "Mnd": 9,
+    "_id": "806;09.2018",
+    "År": 2018
+  },
+  {
+    "AvdelingslederID": null,
+    "AvdelingslederNavn": null,
+    "AvdelingsnavnFolk": "Region Nord",
+    "AvdelingsnummerVisma": 809,
+    "Mnd": 9,
+    "_id": "809;09.2018",
+    "År": 2018
+  }
+]

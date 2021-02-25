@@ -1,0 +1,102 @@
+{
+  "_id": "cvpartner-customer",
+  "type": "pipe",
+  "source": {
+    "type": "conditional",
+    "alternatives": {
+      "prod": {
+        "type": "json",
+        "system": "cv-partner-rest",
+        "url": "$ENV(cvpartner-customers)"
+      },
+      "test": {
+        "type": "embedded",
+        "entities": [{
+          "customer_name": {
+            "no": "Eksempelkunde"
+          },
+          "id": "56fe24d369702d71360000d2",
+          "industry_id": "56fe24eb69702d0f92000234"
+        }, {
+          "customer_name": {
+            "no": "Arkivverket",
+            "se": "Arkivverket"
+          },
+          "id": "5825b32e2c04d62376fe9c27",
+          "industry_id": "58e34c3998fc46086377f34e"
+        }, {
+          "customer_name": {
+            "no": "Capgemini Norge AS"
+          },
+          "id": "57146e0069702d7f3500100e",
+          "industry_id": null
+        }, {
+          "customer_name": {
+            "no": "Forsvaret",
+            "se": "Forsvaret"
+          },
+          "id": "5763ef2569702d3641000000",
+          "industry_id": "57d7a7f269702d6f57000387"
+        }, {
+          "customer_name": {
+            "no": "Kirkensbymisjon",
+            "se": "Kirkensbymisjon"
+          },
+          "id": "5763ef7269702d3617000001",
+          "industry_id": null
+        }, {
+          "customer_name": {
+            "no": "Statnett",
+            "se": "Statnett"
+          },
+          "id": "58047fde5584e358e0524c2b",
+          "industry_id": "57d7a7a569702d6f6b0002ae"
+        }, {
+          "customer_name": {
+            "no": "Color Line",
+            "se": "Color Line"
+          },
+          "id": "5806106ba56d6f6899139b8c",
+          "industry_id": "57d7a80969702d3c84000a0b"
+        }, {
+          "customer_name": {
+            "no": "Statens Innkrevingssentral",
+            "se": "Statens Innkrevingssentral"
+          },
+          "id": "580611bca56d6f6836139b9f",
+          "industry_id": "58e34c3998fc46086377f34e"
+        }, {
+          "customer_name": {
+            "no": "Utdanningsdirektoratet",
+            "se": "Utdanningsdirektoratet"
+          },
+          "id": "580de3001bab8e0265c94f34",
+          "industry_id": "58e34c3998fc46086377f34e"
+        }, {
+          "customer_name": {
+            "no": "Statens vegvesen",
+            "se": "Statens vegvesen"
+          },
+          "id": "580de3401bab8e0265c94f36",
+          "industry_id": "58e34c3998fc46086377f34e"
+        }]
+      }
+    },
+    "condition": "$ENV(node-env)"
+  },
+  "transform": {
+    "type": "dtl",
+    "rules": {
+      "default": [
+        ["add", "_id", "_S.id"],
+        ["copy", "*"],
+        ["add", "rdf:type",
+          ["ni", "cvpartner:customer"]
+        ]
+      ]
+    }
+  },
+  "pump": {
+    "cron_expression": "$ENV(cvpartner_cron_fast)"
+  }
+}

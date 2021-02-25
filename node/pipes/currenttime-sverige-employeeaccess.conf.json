@@ -1,0 +1,32 @@
+{
+  "_id": "currenttime-sverige-employeeaccess",
+  "type": "pipe",
+  "source": {
+    "type": "conditional",
+    "alternatives": {
+      "prod": {
+        "type": "sql",
+        "system": "currenttime-sverige",
+        "table": "employeeaccess",
+        "updated_column": "updatedate"
+      },
+      "test": {
+        "type": "embedded",
+        "entities": []
+      }
+    },
+    "condition": "$ENV(node-env)"
+  },
+  "transform": {
+    "type": "dtl",
+    "rules": {
+      "default": [
+        ["copy", "*"]
+      ]
+    }
+  },
+  "pump": {
+    "cron_expression": "$ENV(ct_cron_fast)",
+    "rescan_cron_expression": "$ENV(ct_rescan_cron)"
+  }
+}

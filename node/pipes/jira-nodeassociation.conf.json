@@ -1,0 +1,93 @@
+{
+  "_id": "jira-nodeassociation",
+  "type": "pipe",
+  "source": {
+    "type": "conditional",
+    "alternatives": {
+      "prod": {
+        "type": "sql",
+        "system": "jira",
+        "preserve_null_values": false,
+        "table": "nodeassociation"
+      },
+      "test": {
+        "type": "embedded",
+        "entities": [{
+          "_id": "338977_Issue_11050_Component_IssueComponent",
+          "association_type": "IssueComponent",
+          "sink_node_entity": "Component",
+          "sink_node_id": "~f11050",
+          "source_node_entity": "Issue",
+          "source_node_id": "~f338977"
+        }, {
+          "_id": "338974_Issue_11050_Component_IssueComponent",
+          "association_type": "IssueComponent",
+          "sink_node_entity": "Component",
+          "sink_node_id": "~f11050",
+          "source_node_entity": "Issue",
+          "source_node_id": "~f338974"
+        }, {
+          "_id": "338954_Issue_50581_Component_IssueComponent",
+          "association_type": "IssueComponent",
+          "sink_node_entity": "Component",
+          "sink_node_id": "~f50581",
+          "source_node_entity": "Issue",
+          "source_node_id": "~f338954"
+        }, {
+          "_id": "338949_Issue_49345_Component_IssueComponent",
+          "association_type": "IssueComponent",
+          "sink_node_entity": "Component",
+          "sink_node_id": "~f49345",
+          "source_node_entity": "Issue",
+          "source_node_id": "~f338949"
+        }, {
+          "_id": "338938_Issue_19380_Component_IssueComponent",
+          "association_type": "IssueComponent",
+          "sink_node_entity": "Component",
+          "sink_node_id": "~f19380",
+          "source_node_entity": "Issue",
+          "source_node_id": "~f338938"
+        }, {
+          "_id": "133291_Issue_23120_Version_IssueFixVersion",
+          "association_type": "IssueFixVersion",
+          "sink_node_entity": "Version",
+          "sink_node_id": "~f23120",
+          "source_node_entity": "Issue",
+          "source_node_id": "~f133291"
+        }, {
+          "_id": "133902_Issue_32120_Version_IssueFixVersion",
+          "association_type": "IssueFixVersion",
+          "sink_node_entity": "Version",
+          "sink_node_id": "~f32120",
+          "source_node_entity": "Issue",
+          "source_node_id": "~f133902"
+        }, {
+          "_id": "133315_Issue_29620_Version_IssueFixVersion",
+          "association_type": "IssueFixVersion",
+          "sink_node_entity": "Version",
+          "sink_node_id": "~f29620",
+          "source_node_entity": "Issue",
+          "source_node_id": "~f133315"
+        }, {
+          "_id": "133312_Issue_29620_Version_IssueFixVersion",
+          "association_type": "IssueFixVersion",
+          "sink_node_entity": "Version",
+          "sink_node_id": "~f29620",
+          "source_node_entity": "Issue",
+          "source_node_id": "~f133312"
+        }, {
+          "_id": "133311_Issue_31522_Version_IssueVersion",
+          "association_type": "IssueVersion",
+          "sink_node_entity": "Version",
+          "sink_node_id": "~f31522",
+          "source_node_entity": "Issue",
+          "source_node_id": "~f133311"
+        }]
+      }
+    },
+    "condition": "$ENV(node-env)"
+  },
+  "pump": {
+    "cron_expression": "$ENV(jira_cron_slow)"
+  }
+}

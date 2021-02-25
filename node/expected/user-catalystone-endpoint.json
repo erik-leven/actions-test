@@ -1,0 +1,422 @@
+[
+  {
+    "_id": "0001",
+    "employees": [
+      {
+        "field": {
+          "101": {
+            "data": {
+              "value": "max.manus@bouvet.no"
+            }
+          },
+          "7": {
+            "data": {
+              "value": "max.manus@bouvet.no"
+            }
+          }
+        },
+        "guid": "2cd1ed1e-e16a-4c83-a5c5-b171f359ca06"
+      }
+    ]
+  },
+  {
+    "_id": "0003",
+    "employees": [
+      {
+        "field": {
+          "101": {
+            "data": {
+              "value": "sven.svensson@bouvet.no"
+            }
+          },
+          "7": {
+            "data": {
+              "value": "sven.svensson@bouvet.no"
+            }
+          }
+        },
+        "guid": "716975f5-9af2-4ec6-855a-c871e5f8b941"
+      }
+    ]
+  },
+  {
+    "_id": "0004",
+    "employees": [
+      {
+        "field": {
+          "101": {
+            "data": {
+              "value": "test.tester@bouvet.no"
+            }
+          },
+          "7": {
+            "data": {
+              "value": "test.tester@bouvet.no"
+            }
+          }
+        },
+        "guid": "ce97c944-4e9c-49ee-aef6-b64031b043c7"
+      }
+    ]
+  },
+  {
+    "_id": "0006",
+    "employees": [
+      {
+        "field": {
+          "101": {
+            "data": {
+              "value": "abc@bouvet.no"
+            }
+          },
+          "7": {
+            "data": {
+              "value": "abc@bouvet.no"
+            }
+          }
+        },
+        "guid": "00b98b86-7e4b-4620-a30f-674075aae046"
+      }
+    ]
+  },
+  {
+    "_id": "0007",
+    "employees": [
+      {
+        "field": {
+          "101": {
+            "data": {
+              "value": "cba@bouvet.no"
+            }
+          },
+          "7": {
+            "data": {
+              "value": "cba@bouvet.no"
+            }
+          }
+        },
+        "guid": "d8e66454-e0a4-4b81-a06c-cbd37acaf08b"
+      }
+    ]
+  },
+  {
+    "_id": "0008",
+    "employees": [
+      {
+        "field": {
+          "101": {
+            "data": {
+              "value": "xyz@bouvet.no"
+            }
+          },
+          "7": {
+            "data": {
+              "value": "xyz@bouvet.no"
+            }
+          }
+        },
+        "guid": "0c1f1cf0-d6ce-4fd1-a582-d9f666c813a5"
+      }
+    ]
+  },
+  {
+    "_id": "0010",
+    "employees": [
+      {
+        "field": {
+          "101": {
+            "data": {
+              "value": "klm@bouvet.no"
+            }
+          },
+          "7": {
+            "data": {
+              "value": "klm@bouvet.no"
+            }
+          }
+        },
+        "guid": "c1ae2298-0246-4dad-81f6-18d178da16cd"
+      }
+    ]
+  },
+  {
+    "_id": "0011",
+    "employees": [
+      {
+        "field": {
+          "101": {
+            "data": {
+              "value": "virat.kohli@bouvet.no"
+            }
+          },
+          "7": {
+            "data": {
+              "value": "virat.kohli@bouvet.no"
+            }
+          }
+        },
+        "guid": "4622f04d-69e8-42cb-af2d-124b6d092bfe"
+      }
+    ]
+  },
+  {
+    "_id": "1316",
+    "employees": [
+      {
+        "field": {
+          "101": {
+            "data": {
+              "value": "user.userson@bouvet.no"
+            }
+          },
+          "7": {
+            "data": {
+              "value": "user.userson@bouvet.no"
+            }
+          }
+        },
+        "guid": "51a489c8-f207-4445-a175-d7c84d62787c"
+      }
+    ]
+  },
+  {
+    "_id": "132",
+    "employees": [
+      {
+        "field": {
+          "101": {
+            "data": {
+              "value": "gjett.mail@bouvet.no"
+            }
+          },
+          "7": {
+            "data": {
+              "value": "gjett.mailre@bouvet.no"
+            }
+          }
+        },
+        "guid": "10cd8543-84f7-42f3-ae3c-b306522397ed"
+      }
+    ]
+  },
+  {
+    "_id": "1528",
+    "employees": [
+      {
+        "field": {
+          "101": {
+            "data": {
+              "value": "jeg.etternavn@bouvet.no"
+            }
+          },
+          "7": {
+            "data": {
+              "value": "jeg.etternavn@bouvet.no"
+            }
+          }
+        },
+        "guid": "3348f5d6-efef-49b3-a85f-3224ad038384"
+      }
+    ]
+  },
+  {
+    "_id": "1847",
+    "employees": [
+      {
+        "field": {
+          "101": {
+            "data": {
+              "value": "ehm.noe@bouvet.no"
+            }
+          },
+          "7": {
+            "data": {
+              "value": "ehm.noe@bouvet.no"
+            }
+          }
+        },
+        "guid": "f948c272-aacd-4eb5-817a-083c61a3da86"
+      }
+    ]
+  },
+  {
+    "_id": "1938",
+    "employees": [
+      {
+        "field": {
+          "101": {
+            "data": {
+              "value": "lite.ambisjon@bouvet.no"
+            }
+          },
+          "7": {
+            "data": {
+              "value": "lite.ambisjon@bouvet.no"
+            }
+          }
+        },
+        "guid": "7dbc7b7c-fae3-4431-9aaa-9985aea97df3"
+      }
+    ]
+  },
+  {
+    "_id": "2015",
+    "employees": [
+      {
+        "field": {
+          "101": {
+            "data": {
+              "value": "meg.finnepå@bouvet.no"
+            }
+          },
+          "7": {
+            "data": {
+              "value": "meg.finnepå@bouvet.no"
+            }
+          }
+        },
+        "guid": "3cc14080-1e6f-4bee-b62b-30e9db5ed5f9"
+      }
+    ]
+  },
+  {
+    "_id": "2156",
+    "employees": [
+      {
+        "field": {
+          "101": {
+            "data": {
+              "value": "fornavn.testetternavn@bouvet.no"
+            }
+          },
+          "7": {
+            "data": {
+              "value": "fornavn.testetternavn@bouvet.no"
+            }
+          }
+        },
+        "guid": "3f6b4413-0877-4746-b5a2-4a9e5fff5d26"
+      }
+    ]
+  },
+  {
+    "_id": "2276",
+    "employees": [
+      {
+        "field": {
+          "101": {
+            "data": {
+              "value": "test.testsson@bouvet.no"
+            }
+          },
+          "7": {
+            "data": {
+              "value": "test.testsson@bouvet.no"
+            }
+          }
+        },
+        "guid": "b14c3245-7e88-4771-a4be-000922055fb6"
+      }
+    ]
+  },
+  {
+    "_id": "2288",
+    "employees": [
+      {
+        "field": {
+          "101": {
+            "data": {
+              "value": "min.nabo@bouvet.no"
+            }
+          },
+          "7": {
+            "data": {
+              "value": "min.nabo@bouvet.no"
+            }
+          }
+        },
+        "guid": "1aa33d93-cb50-43ad-92b5-6f92db782329"
+      }
+    ]
+  },
+  {
+    "_id": "2978",
+    "employees": [
+      {
+        "field": {
+          "101": {
+            "data": {
+              "value": "harry.potter@bouvet.no"
+            }
+          },
+          "7": {
+            "data": {
+              "value": "harry.potter@bouvet.no"
+            }
+          }
+        },
+        "guid": "274684bb-f573-4447-a1d7-542ea25c1f84"
+      }
+    ]
+  },
+  {
+    "_id": "3471",
+    "employees": [
+      {
+        "field": {
+          "101": {
+            "data": {
+              "value": "severus.snape@olavstoppen.no"
+            }
+          },
+          "7": {
+            "data": {
+              "value": "severus.snape@olavstoppen.no"
+            }
+          }
+        },
+        "guid": "20b99c17-9eeb-438f-a308-3236cae7be5f"
+      }
+    ]
+  },
+  {
+    "_id": "391",
+    "employees": [
+      {
+        "field": {
+          "101": {
+            "data": {
+              "value": "bruker.bruksersen@bouvet.no"
+            }
+          },
+          "7": {
+            "data": {
+              "value": "bruker.brukersen@bouvet.no"
+            }
+          }
+        },
+        "guid": "f122a83c-a4cd-4fef-80b1-a1d34e043627"
+      }
+    ]
+  },
+  {
+    "_id": "7777",
+    "employees": [
+      {
+        "field": {
+          "101": {
+            "data": {
+              "value": "alfie.colli@bouvet.no"
+            }
+          },
+          "7": {
+            "data": {
+              "value": "alfie.collin@bouvet.no"
+            }
+          }
+        },
+        "guid": "51a489c8-f207-4445-a175-d7c84d62787c"
+      }
+    ]
+  }
+]

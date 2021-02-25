@@ -1,0 +1,263 @@
+[
+  {
+    "_id": "5763ef2569702d3641000000",
+    "accountmanagers": [],
+    "consultants": [
+      {
+        "enddate": "~t2016-02-01T00:00:00Z",
+        "projectparticipation": [
+          {
+            "consultant_enddate": "~t2016-02-01T00:00:00Z",
+            "consultant_startdate": "~t2015-02-01T00:00:00Z",
+            "projectname": "Forsvaret",
+            "role": [
+              "Grafisk designer",
+              "Konseptutvikler"
+            ]
+          }
+        ],
+        "role": [
+          "Grafisk designer",
+          "Konseptutvikler"
+        ],
+        "startdate": "~t2012-10-01T00:00:00Z",
+        "uid": "391"
+      }
+    ],
+    "deliverymanagers": [],
+    "description": null,
+    "name": "Forsvaret",
+    "offers": [
+      {
+        "createddate": "~t2019-04-02T00:00:00Z",
+        "description": "Tilbudsrom for TEST",
+        "name": "Forsvaret - MAST",
+        "reneweddate": null,
+        "uid": "c017b523-933c-4750-a12a-451282c82f3d",
+        "url": "https://bouvetasa.sharepoint.com/sites/Forsvaret-MAST"
+      }
+    ],
+    "projects": [
+      {
+        "description": "Sharepoint basert intranett plattform for operativ bruk. Mange bruksområder og forskjellige typer brukere. Dashboard med spesialdesignede widgets. Detaljer tilbakeholdt pga gradering.",
+        "enddate": "~t2016-02-01T00:00:00Z",
+        "name": "Forsvaret",
+        "startdate": "~t2012-10-01T00:00:00Z",
+        "uid": "584e7b142c04d61e0a5a643d"
+      }
+    ],
+    "type": "~:customer",
+    "uid": "5763ef2569702d3641000000"
+  },
+  {
+    "_id": "58047fde5584e358e0524c2b",
+    "consultants": {
+      "enddate": "~t2014-02-01T00:00:00Z",
+      "projectparticipation": {
+        "consultant_enddate": "~t2014-02-01T00:00:00Z",
+        "consultant_startdate": "~t2013-09-01T00:00:00Z",
+        "projectname": "Statnett",
+        "role": [
+          "Grafisk designer",
+          "Konseptutvikler"
+        ]
+      },
+      "role": [
+        "Grafisk designer",
+        "Konseptutvikler"
+      ],
+      "startdate": "~t2013-09-01T00:00:00Z",
+      "uid": "391"
+    },
+    "description": null,
+    "name": "Statnett",
+    "projects": [
+      {
+        "description": "Intranett. Oppgradering og Relansering.\nStatnett besluttet å oppgradere intranettplattformen til Sharepoint 2013, og relansere intranettet med nytt design og ny struktur.",
+        "enddate": "~t2014-02-01T00:00:00Z",
+        "name": "Statnett",
+        "startdate": "~t2013-09-01T00:00:00Z",
+        "uid": "584e7b152c04d61e0a5a645e"
+      }
+    ],
+    "type": [
+      "~:customer",
+      "~:ad-customer"
+    ],
+    "uid": "58047fde5584e358e0524c2b"
+  },
+  {
+    "_id": "5806106ba56d6f6899139b8c",
+    "consultants": [
+      {
+        "enddate": "~t2018-03-01T00:00:00Z",
+        "projectparticipation": [
+          {
+            "consultant_enddate": "~t2009-01-01T00:00:00Z",
+            "consultant_startdate": "~t2009-01-01T00:00:00Z",
+            "projectname": "Color Line",
+            "role": [
+              "Grafisk designer"
+            ]
+          },
+          {
+            "consultant_enddate": "~t2018-03-01T00:00:00Z",
+            "consultant_startdate": "~t2016-12-01T00:00:00Z",
+            "projectname": "Color Lines Booking og Internettplattform (CBI)",
+            "role": [
+              "Grafisk designer",
+              "Konseptutvikler"
+            ]
+          }
+        ],
+        "role": [
+          "Grafisk designer",
+          "Konseptutvikler"
+        ],
+        "startdate": "~t2009-01-01T00:00:00Z",
+        "uid": "391"
+      }
+    ],
+    "description": null,
+    "name": "Color Line",
+    "projects": [
+      {
+        "description": "Color Line lanserte i desember 2009 nye nettsider. I dette arbeidet utførte bruker en gjennomgang og kvalitetssikring av det grafiske designet som var utarbeidet i prosjektet.",
+        "enddate": "~t2009-01-01T00:00:00Z",
+        "name": "Color Line",
+        "startdate": "~t2009-01-01T00:00:00Z",
+        "uid": "584e7b162c04d61e0a5a648f"
+      },
+      {
+        "description": "Color Line gjennomførte et større utviklingsprosjekt for å erstatte eksisterende booking- og reservasjonssystem, nødvendig for å støtte Color Lines endrede forretningsstrategi og mål om bedre utnyttelse av internett som salgskanal. ",
+        "enddate": "~t2018-03-01T00:00:00Z",
+        "name": "Color Lines Booking og Internettplattform (CBI)",
+        "startdate": "~t2016-12-01T00:00:00Z",
+        "uid": "58f5cd1e41de2708222ff5a0"
+      }
+    ],
+    "type": "~:customer",
+    "uid": "5806106ba56d6f6899139b8c"
+  },
+  {
+    "_id": "580de3001bab8e0265c94f34",
+    "consultants": {
+      "enddate": "~t2012-01-01T00:00:00Z",
+      "projectparticipation": {
+        "consultant_enddate": "~t2012-01-01T00:00:00Z",
+        "consultant_startdate": "~t2012-01-01T00:00:00Z",
+        "projectname": "Utdanningsdirektoratet",
+        "role": [
+          "Grafisk designer"
+        ]
+      },
+      "role": [
+        "Grafisk designer"
+      ],
+      "startdate": "~t2012-01-01T00:00:00Z",
+      "uid": "391"
+    },
+    "description": null,
+    "name": "Utdanningsdirektoratet",
+    "projects": [
+      {
+        "description": "Skoleporten.no. Re-design av Ståstedsanalysen. Verktøyet brukes av skoler som ledd i deres utviklings- og forbedringsprosess, for å hente ut, legge til og jobbe med datagrunnlaget for analysen av eksisterende tilstand.",
+        "enddate": "~t2012-01-01T00:00:00Z",
+        "name": "Utdanningsdirektoratet",
+        "startdate": "~t2012-01-01T00:00:00Z",
+        "uid": "584e7b152c04d61e0a5a646b"
+      }
+    ],
+    "type": "~:customer",
+    "uid": "580de3001bab8e0265c94f34"
+  },
+  {
+    "_id": "5825b32e2c04d62376fe9c27",
+    "consultants": [
+      {
+        "enddate": "~t2017-11-01T00:00:00Z",
+        "projectparticipation": [
+          {
+            "consultant_enddate": "~t2017-03-01T00:00:00Z",
+            "consultant_startdate": "~t2016-09-01T00:00:00Z",
+            "projectname": "Nye nettsider for arkivverket.no",
+            "role": [
+              "Grafisk designer",
+              "Konseptutvikler"
+            ]
+          },
+          {
+            "consultant_enddate": "~t2017-11-01T00:00:00Z",
+            "consultant_startdate": "~t2017-10-01T00:00:00Z",
+            "projectname": "Visuell identitet",
+            "role": [
+              "Design lead"
+            ]
+          }
+        ],
+        "role": [
+          "Design lead",
+          "Grafisk designer",
+          "Konseptutvikler"
+        ],
+        "startdate": "~t2016-09-01T00:00:00Z",
+        "uid": "391"
+      }
+    ],
+    "description": "Arkivverkets skal ta vare på arkivmateriale fra statlige virksomheter, gjøre materialet tilgjengelig for bruk, føre tilsyn med arkivarbeidet i staten, fylkeskommunene og kommunene, samt bidra til at private arkiver blir tatt vare på. Arkivverket består av Riksarkivet, åtte statsarkiver, Samisk arkiv og Norsk helsearkiv. De fører tilsyn med offentlige virksomheters arkivering, tar vare på arkivverdig innhold og har ca 260 000 hyllemeter med arkivmateriale, hvorav det eldste er fra før år 1000. ",
+    "name": "Arkivverket",
+    "offers": [
+      {
+        "createddate": "~t2019-08-12T00:00:00Z",
+        "description": "Arkivverket - 2019/13790 Drift og forvaltning av Microsoft løsninger",
+        "name": "Arkivverket - 2019/13790 Drift og forvaltning av Microsoft løsninger",
+        "reneweddate": null,
+        "uid": "b1ca6b38-44dd-42a1-b41f-5b8ed795d292",
+        "url": "https://bouvetasa.sharepoint.com/sites/Arkivverket-201913790DriftogforvaltningavMicrosoftlosninger"
+      }
+    ],
+    "projectrooms": [
+      {
+        "createddate": "~t2019-02-26T00:00:00Z",
+        "description": "Arkivverket - Vedlikeholdsavtale Arkivverket",
+        "name": "Arkivverket - Vedlikeholdsavtale Arkivverket",
+        "projectmanager": null,
+        "reneweddate": "~t2019-06-05T11:37:19Z",
+        "uid": "9d5c8eed-3729-4b9f-baf2-81e8d4d914c8",
+        "url": "https://bouvetasa.sharepoint.com/sites/ArkivverketVedlikeholdsavtaleArkivverket"
+      }
+    ],
+    "projects": [
+      {
+        "description": "Arkivverket skal ta vare på arkivmateriale fra statlige virksomheter, gjøre materialet tilgjengelig for bruk, føre tilsyn med arkivarbeidet i staten, fylkeskommunene og kommunene, samt bidra til at private arkiver blir tatt vare på. Prosjekt for ny nettside ble etablert desember 2015. Bakgrunnen for å anskaffe ny nettside, er at nåværende løsning ikke dekker de behov brukere og Arkivverket har. Ny nettside innebærer utvikling av konsept, design og implementasjon i publiseringsplattformen Enonic XP. Første lansering av nettsiden skjer i mai 2017.",
+        "enddate": "~t2017-05-01T00:00:00Z",
+        "name": "Ny nettside",
+        "startdate": "~t2016-08-01T00:00:00Z",
+        "uid": "58a2d544e024740931c7cee4"
+      },
+      {
+        "description": "Arkivverkets skal ta vare på arkivmateriale fra statlige virksomheter, gjøre materialet tilgjengelig for bruk, føre tilsyn med arkivarbeidet i staten, fylkeskommunene og kommunene, samt bidra til at private arkiver blir tatt vare på. Prosjekt for ny nettside ble etablert desember 2015. Bakgrunnen for å anskaffe ny nettside, er at nåværende løsning ikke dekker de behov brukere og Arkivverket har. Dagens arkivverket.no fremstår som rotete, lite brukerorientert og utdatert med tanke på design. Prosjektet inkluderer innholdsanalyse, konseptdesign, interaksjonsdesign og ny visuell profil. Ny nettside innebærer utvikling av konsept, design og implementasjon i publiseringsplattformen Enonic XP. Første lansering av nettsiden skjer i mai 2017.",
+        "enddate": "~t2017-03-01T00:00:00Z",
+        "name": "Nye nettsider for arkivverket.no",
+        "startdate": "~t2016-09-01T00:00:00Z",
+        "uid": "58ac5233c96cdc0937364d9e"
+      },
+      {
+        "description": "Arkivverket lanserte sine nye nettsider i juni 2017, og la med den nye plattformen grunnlaget å utvikle flere digitale tjenester til publikum og samarbeidspartnere. Nettsiden skal nå utvides til å levere selvbetjente løsninger med skjemaer, autentisering og sikker innlogging, samt integrasjon med saksbehadlingssystem. Forventede gevinster ligger i bedre identifikasjonsprosess (går bort fra manuelle kontrollprosedyrer), tidsbesparelse for saksbehandler (slipper å kopiere inn utstrukturert informasjon fra e-poster) og kvalitetsforbedring på innkommen informasjon (hvor bruker styres til å fylle ut nødvendige innholdselementer). Prosjektet er i første omgang begrenset til en teknisk \"Proof of Concept\" (PoC), der man har som mål å teste ut hele dataflyten fra brukers autentisering, skjemautfylling, gjennom klassering og saksopprettelse i saksbehandlingssystmet, til kvittering om mottatt henvendelse. Plattformen er Enonic XP, autentisering skjer gjennom ID-porten og det opprettes integrasjon til ePhorte.\n\nTeamet består av to utviklere, en teknisk arkitekt og prosjektleder. Arkivverket tar selv ansvar for funksjonell arkitektur for kravene til en fremtidig produksjonsklar løsning.",
+        "enddate": "~t2017-10-01T00:00:00Z",
+        "name": "Skjemaløsning PoC",
+        "startdate": "~t2017-08-01T00:00:00Z",
+        "uid": "59f0d613ef03f708fcd296e5"
+      },
+      {
+        "description": "Som en forlengelse av arbeidet med nye nettsider ble det utviklet en ny visuell profil for Arkivverket. Denne omfattet logo, fargepalett og typografi. Det ble utarbeidet nye visittkort, brev og powerpointmaler.\nSom en del av leveransen ble det utviklet en online designmanual med nedlastbare logoer, ikoner, fargepaletter, maler og retningslinjer for buk av den nye visuelle identiteten",
+        "enddate": "~t2017-11-01T00:00:00Z",
+        "name": "Visuell identitet",
+        "startdate": "~t2017-10-01T00:00:00Z",
+        "uid": "5a853c69dcfb010f24045b71"
+      }
+    ],
+    "type": "~:customer",
+    "uid": "5825b32e2c04d62376fe9c27"
+  }
+]

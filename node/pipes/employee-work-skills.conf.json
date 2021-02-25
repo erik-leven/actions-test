@@ -1,0 +1,98 @@
+{
+  "_id": "employee-work-skills",
+  "type": "pipe",
+  "source": {
+    "type": "dataset",
+    "dataset": "global-person"
+  },
+  "transform": {
+    "type": "dtl",
+    "rules": {
+      "default": [
+        ["filter",
+          ["in", "_S.global-person:employee_status",
+            ["list", "Employee", "EarlyEmployee", "SoonEmployee", "TempEmployee", "TempEarlyEmployee", "TempSoonEmployee"]
+          ]
+        ],
+        ["add", "AnsattNr", "_S.global-person:uid"],
+        ["merge",
+          ["apply-hops", "cv", {
+            "datasets": ["global-cv pg"],
+            "where": ["eq", "_S.$ids", "pg.bruker_id-ni"]
+          }]
+        ],
+        ["merge-union",
+          ["apply-hops", "skills", {
+            "datasets": ["global-classification skills"],
+            "where": ["eq", "_S.cvpartner-userskills:skills",
+              ["ni-id", "skills.$ids"]
+            ]
+          }]
+        ],
+        ["add", "Kompetanse",
+          ["join", ",", "_T.Kompetanse"]
+        ],
+        ["add", "Sammendrag", "_T.about_me"],
+        ["remove",
+          ["list", "about_me", "role"]
+        ]
+      ],
+      "cv": [
+        ["if",
+          ["gt", "_S.cvpartner-cv:title.no", ""],
+          ["add", "role", "_S.cvpartner-cv:title.no"],
+          ["if",
+            ["gt", "_S.cvpartner-cv:title.int", ""],
+            ["add", "role", "_S.cvpartner-cv:title.int"],
+            ["if",
+              ["gt", "_S.cvpartner-cv:title.se", ""],
+              ["add", "role", "_S.cvpartner-cv:title.se"],
+              ["add", "role", "_S.folk-user:44.data.value"]
+            ]
+          ]
+        ],
+        ["merge",
+          ["apply", "key_qualifications", "_S.cvpartner-cv:key_qualifications"]
+        ]
+      ],
+      "key_qualifications": [
+        ["filter",
+          ["eq", "_S.cvpartner-cv:disabled", false]
+        ],
+        ["comment",
+          ["eq", "_S.cvpartner-cv:key_points.name.no", ""]
+        ],
+        ["if",
+          ["gt", "_S.cvpartner-cv:long_description.no", ""],
+          ["add", "about_me", "_S.cvpartner-cv:long_description.no"]
+        ],
+        ["if",
+          ["gt", "_S.cvpartner-cv:long_description.int", ""],
+          ["add", "about_me", "_S.cvpartner-cv:long_description.int"]
+        ],
+        ["if",
+          ["gt", "_S.cvpartner-cv:long_description.se", ""],
+          ["add", "about_me", "_S.cvpartner-cv:long_description.se"]
+        ],
+        ["comment",
+          ["apply", "key_qualifications_language", "_S.cvpartner-cv:key_points.name"]
+        ],
+        ["comment", "ask_me", "_S.cvpartner-cv:key_points.name.no"]
+      ],
+      "skills": [
+        ["if",
+          ["gt", "_S.values.no", ""],
+          ["add", "Kompetanse", "_S.values.no"],
+          ["if",
+            ["gt", "_S.int", ""],
+            ["add", "Kompetanse", "_S.values.int"],
+            ["if",
+              ["gt", "_S.se", ""],
+              ["add", "Kompetanse", "_S.se"]
+            ]
+          ]
+        ]
+      ]
+    }
+  }
+}

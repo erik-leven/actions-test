@@ -1,0 +1,243 @@
+{
+  "_id": "workforce-currenttime",
+  "type": "pipe",
+  "source": {
+    "type": "dataset",
+    "dataset": "global-person"
+  },
+  "transform": {
+    "type": "dtl",
+    "rules": {
+      "default": [
+        ["add", "AnsattID",
+          ["coalesce",
+            ["list",
+              ["integer", "_S.UNIQUE_IMPORT_ID.value"], "_S.currenttime-employee:employeeid", "_S.visma-employee:ProductNo"]
+          ]
+        ],
+        ["filter",
+          ["neq", "_S.currenttime-employeedetail:employeeref", "0"]
+        ],
+        ["comment", "nedenstående filter er for å ekskludere de som har status Quit."],
+        ["filter",
+          ["or",
+            ["in", "_S.global-person:employee_status",
+              ["list", "EarlyEmployee", "TempEarlyEmployee", "SoonEmployee", "TempSoonEmployee", "Employee", "TempEmployee"]
+            ],
+            ["and",
+              ["not",
+                ["in", "~:bouvet:ad-user", "_S.rdf:type"]
+              ],
+              ["or",
+                ["in", "~:bouvet:visma-employee", "_S.rdf:type"],
+                ["in", "~:bouvet:currenttime-employee", "_S.rdf:type"]
+              ]
+            ]
+          ]
+        ],
+        ["filter",
+          ["and",
+            ["gt", "_T.AnsattID", 0],
+            ["lt", "_T.AnsattID", 11000]
+          ]
+        ],
+        ["comment", "nedenstående filter for kun å inkludere Bouvet Norge AS."],
+        ["filter",
+          ["or",
+            ["eq", "_S.catalystone-user:1002.VALUE.value", "Bouvet Norge AS"],
+            ["in", "~:bouvet:visma-employee", "_S.rdf:type"],
+            ["in", "~:bouvet:currenttime-employee", "_S.rdf:type"]
+          ]
+        ],
+        ["if",
+          ["is-null", "_S.ORGANIZATION.@UNIQUE_IMPORT_ID"],
+          ["add", "depRefCurrent",
+            ["first",
+              ["hops", {
+                "datasets": ["currenttime-department-filtered cdf"],
+                "where": ["eq", "_S.currenttime-employee:departmentid", "cdf.departmentid"],
+                "return": "cdf.departmentref"
+              }]
+            ]
+          ]
+        ],
+        ["merge",
+          ["hops", {
+            "datasets": ["visma-product vp"],
+            "where": ["eq", "_S.visma-employee:ProductNo", "vp.ProductNo"],
+            "return": "vp.InActiveYesNo"
+          }]
+        ],
+        ["if",
+          ["eq", "_S.InActiveYesNo", 0],
+          ["add", "Aktiv i Visma", true],
+          ["add", "Aktiv i Visma", false]
+        ],
+        ["comment", "Nested if på Avdelingskilde, slik vi kan sortere Folk, Current og Visma."],
+        ["if",
+          ["and",
+            ["is-not-null", "_S.ORGANIZATION.@UNIQUE_IMPORT_ID"],
+            ["neq", "_S.ORGANIZATION.@UNIQUE_IMPORT_ID", ""]
+          ],
+          [
+            ["add", "AvdelingsKilde", "Folk"],
+            ["add", "AvdelingsID",
+              ["integer", "_S.ORGANIZATION.@UNIQUE_IMPORT_ID"]
+            ]
+          ],
+          ["if",
+            ["and",
+              ["eq", "_S.currenttime-employee:active", true],
+              ["is-not-null", "_T.depRefCurrent"]
+            ],
+            [
+              ["add", "AvdelingsKilde", "CurrentTime"],
+              ["add", "AvdelingsID",
+                ["integer", "_T.depRefCurrent"]
+              ]
+            ],
+            ["if",
+              ["and",
+                ["eq", 0, "_S.InActiveYesNo"],
+                ["is-not-null", "_S.visma-employee:DepNo"]
+              ],
+              [
+                ["add", "AvdelingsKilde", "Visma"],
+                ["add", "AvdelingsID", "_S.visma-employee:DepNo"]
+              ]
+            ]
+          ]
+        ],
+        ["filter",
+          ["is-not-null", "_T.AvdelingsKilde"]
+        ],
+        ["if",
+          ["eq", "_S.currenttime-employee:active", true],
+          ["add", "Aktiv i Current", true],
+          ["add", "Aktiv i Current", false]
+        ],
+        ["add", "AnsattTypeID", "_S.currenttime-employee:employeecategoryid"],
+        ["add", "AnsattTypeNavn",
+          ["if",
+            ["is-not-null", "_T.AnsattTypeID"],
+            ["case-eq", "_T.AnsattTypeID", 1, "Support", 2, "Underkonsulent", 3, "", 4, "NAV", 6, "Underkons. Konsern", 7, "Timelønn", "ukjent"],
+            ["case",
+              ["lt",
+                ["integer", "_T.AnsattID"], 8000], "ansatt",
+              ["lt",
+                ["integer", "_S._T.AnsattID"], 9000], "underkonsulent konsern",
+              ["lt",
+                ["integer", "_T.AnsattID"], 11000], "underkonsulent", "ukjent"]
+          ]
+        ],
+        ["comment", "Generér Mnd og År"],
+        ["merge",
+          ["apply", "check-date",
+            ["if",
+              ["eq", "$ENV(node-env)", "test"], "~t2020-03-16T00:00:00Z",
+              ["now"]
+            ]
+          ]
+        ],
+        ["add", "Mnd_prefixed",
+          ["if",
+            ["lt", "_T.Mnd", 10],
+            ["concat", "0",
+              ["string", "_T.Mnd"]
+            ],
+            ["string", "_T.Mnd"]
+          ]
+        ],
+        ["copy", "_id"],
+        ["add", "FraDatoMnd",
+          ["concat", "01.",
+            ["string", "_T.Mnd_prefixed"], ".",
+            ["string", "_T.År"]
+          ]
+        ],
+        ["add", "TilDatoMnd",
+          ["datetime-format", "%d.%m.%Y",
+            ["datetime-plus", "day", -1,
+              ["datetime-plus", "month", 1,
+                ["datetime-parse", "%d.%m.%Y",
+                  ["concat",
+                    ["list", "01.", "_T.Mnd_prefixed", ".",
+                      ["string", "_T.År"]
+                    ]
+                  ]
+                ]
+              ]
+            ]
+          ]
+        ],
+        ["merge",
+          ["apply-hops", "add-currenttime-region", {
+            "datasets": ["currenttime-avdeling ca"],
+            "where": ["eq", "_S.ORGANIZATION.@UNIQUE_IMPORT_ID",
+              ["string", "ca.Departmentref"]
+            ]
+          }]
+        ],
+        ["add", "AnsattIDPersonalansvarlig",
+          ["integer", "_S.SUPERVISOR.EMPLOYEE_ID"]
+        ],
+        ["add", "Leder",
+          ["if",
+            ["in", "~:bouvet:catalystone-user", "_S.rdf:type"],
+            ["if",
+              ["is-not-empty", "_S.catalystone-user:1170.VALUE.value"], true, false], null]
+        ],
+        ["add", "Personalansvar",
+          ["if",
+            ["in", "~:bouvet:catalystone-user", "_S.rdf:type"],
+            ["if",
+              ["in", "Personalansvarlig", "_S.catalystone-user:1071.VALUES.VALUE.value"], true, false], null]
+        ],
+        ["add", "Fritekst", null],
+        ["remove",
+          ["list", "depRefCurrent", "Mnd_prefixed", "check-date", "check-day", "check-hour", "check-month", "check-year", "limit-date", "InActiveYesNo"]
+        ]
+      ],
+      "add-currenttime-region": [
+        ["add", "RegionIDCurrent", "_S.RegionID"]
+      ],
+      "check-date": [
+        ["if",
+          ["gte",
+            ["datetime-format", "%d", "_S."], "16"],
+          [
+            ["add", "Mnd",
+              ["integer",
+                ["datetime-format", "%m",
+                  ["datetime-plus", "month", 1, "_S."]
+                ]
+              ]
+            ],
+            ["add", "År",
+              ["integer",
+                ["datetime-format", "%Y",
+                  ["datetime-plus", "month", 1, "_S."]
+                ]
+              ]
+            ]
+          ],
+          [
+            ["add", "Mnd",
+              ["integer",
+                ["datetime-format", "%m", "_S."]
+              ]
+            ],
+            ["add", "År",
+              ["integer",
+                ["datetime-format", "%Y", "_S."]
+              ]
+            ]
+          ]
+        ]
+      ]
+    }
+  },
+  "pump": {
+    "rescan_cron_expression": "* 0 16 * *"
+  }
+}

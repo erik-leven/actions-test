@@ -1,0 +1,31 @@
+{
+  "_id": "global-customer",
+  "type": "pipe",
+  "source": {
+    "type": "merge",
+    "datasets": ["cvpartner-customer cvc", "currenttime-company cc", "currenttime-company-extra ccx", "ad-customer ad"],
+    "equality": [
+      ["eq", "cc.companyid", "ccx.companyid"],
+      ["eq", "cc.companyname", "cvc.customer_name.no"],
+      ["eq", "cc.companyname", "cvc.customer_name.int"],
+      ["eq", "cc.companyname", "cvc.customer_name.se"],
+      ["eq", "ad.ad-customer:displayName", "cvc.customer_name.no"],
+      ["eq", "ad.ad-customer:displayName", "cvc.customer_name.int"],
+      ["eq", "ad.ad-customer:displayName", "cvc.customer_name.se"]
+    ],
+    "identity": "first",
+    "strategy": "compact",
+    "version": 2
+  },
+  "transform": {
+    "type": "dtl",
+    "rules": {
+      "default": [
+        ["copy", "*"]
+      ]
+    }
+  },
+  "metadata": {
+    "global": true
+  }
+}

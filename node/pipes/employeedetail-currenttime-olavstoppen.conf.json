@@ -1,0 +1,63 @@
+{
+  "_id": "employeedetail-currenttime-olavstoppen",
+  "type": "pipe",
+  "source": {
+    "type": "dataset",
+    "dataset": "global-person",
+    "supports_signalling": true
+  },
+  "transform": {
+    "type": "dtl",
+    "rules": {
+      "default": [
+        ["filter",
+          ["in", "_S.global-person:employee_status",
+            ["list", "Employee", "SoonEmployee", "EarlyEmployee", "TempEmployee", "TempSoonEmployee", "EarlyTempEmployee"]
+          ]
+        ],
+        ["comment", "some times employees are rehired, ie. summer students who get a new contract before their current contract i closed by the economy department"],
+        ["comment", "in these cases we need to stop updating from Folk until the new contract is closed (the employee becomes inactive in CT)"],
+        ["comment", "these cases are identified by a new hiring date from Folk which is at a later time than their last leave date"],
+        ["if",
+          ["and",
+            ["lt", "_S.currenttime-olavstoppen-employee:leavedate",
+              ["datetime-parse", "%d.%m.%Y", "_S.catalystone-user:HIRING_DATE.value"]
+            ],
+            ["eq", "_S.currenttime-olavstoppen-employee:active", true]
+          ],
+          ["filter"]
+        ],
+        ["merge",
+          ["hops", {
+            "datasets": ["global-department gd"],
+            "where": [
+              ["eq",
+                ["string", "_S.ORGANIZATION.@UNIQUE_IMPORT_ID"], "gd.ORG_ID.value"]
+            ],
+            "return": ["dict", "temp-rdf:type", "gd.rdf:type"]
+          }]
+        ],
+        ["filter",
+          ["in", "~:bouvet:global-dep-olavstoppen-as", "_T.temp-rdf:type"]
+        ],
+        ["remove", "temp-rdf:type"],
+        ["filter",
+          ["is-not-null", "_S.currenttime-olavstoppen-employee:employeeid"]
+        ],
+        ["add", "EmployeeId", "_S.currenttime-olavstoppen-employee:employeeid"],
+        ["add", "payload",
+          ["dict", "EmployeeRef", "_S.catalystone-user:UNIQUE_IMPORT_ID.value", "EmployeeRefImport", "_S.catalystone-user:UNIQUE_IMPORT_ID.value", "Gender",
+            ["substring", 0, 1, "_S.catalystone-user:GENDER.value"], "DateOfBirth",
+            ["datetime-format", "%Y-%m-%d",
+              ["datetime-parse", "%d.%m.%Y", "_S.catalystone-user:DATE_OF_BIRTH.value"]
+            ]
+          ]
+        ],
+        ["add", "operation", "update-employeedetail"]
+      ],
+      "currentdept": [
+        ["copy", "departmentid"]
+      ]
+    }
+  }
+}

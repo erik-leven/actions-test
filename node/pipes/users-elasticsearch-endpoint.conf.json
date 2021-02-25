@@ -1,0 +1,31 @@
+{
+  "_id": "users-elasticsearch-endpoint",
+  "type": "pipe",
+  "source": {
+    "type": "dataset",
+    "dataset": "users-elasticsearch"
+  },
+  "sink": {
+    "type": "json",
+    "system": "elasticsearch",
+    "url": "/sesam"
+  },
+  "transform": {
+    "type": "dtl",
+    "rules": {
+      "default": [
+        ["copy", "*"],
+        ["add", "foo", "bar"],
+        ["add", "users-elasticsearch:sesam_updated",
+          ["now"]
+        ]
+      ]
+    }
+  },
+  "pump": {
+    "max_retries_per_entity": 5,
+    "mode": "$ENV(pump-mode)"
+  },
+  "batch_size": 10,
+  "checkpoint_interval": 10
+}

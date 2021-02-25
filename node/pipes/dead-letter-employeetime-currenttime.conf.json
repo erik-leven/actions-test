@@ -1,0 +1,17 @@
+{
+  "_id": "dead-letter-employeetime-currenttime",
+  "type": "pipe",
+  "source": {
+    "type": "dataset",
+    "dataset": "system:dead-letter:employeetime-currenttime-endpoint"
+  },
+  "transform": {
+    "type": "dtl",
+    "id_required": false,
+    "rules": {
+      "default": [
+        ["copy", "*"]
+      ]
+    }
+  }
+}

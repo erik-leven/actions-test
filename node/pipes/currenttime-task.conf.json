@@ -1,0 +1,83 @@
+{
+  "_id": "currenttime-task",
+  "type": "pipe",
+  "source": {
+    "type": "conditional",
+    "alternatives": {
+      "prod": {
+        "type": "sql",
+        "system": "currenttime",
+        "table": "task",
+        "updated_column": "updatedate"
+      },
+      "test": {
+        "type": "embedded",
+        "entities": [{
+          "_id": "0",
+          "employeeid": 0,
+          "projectid": 0,
+          "taskid": 0,
+          "taskname": "Udefinert"
+        }, {
+          "_id": "1",
+          "employeeid": 0,
+          "projectid": 1,
+          "taskid": 1,
+          "taskname": "Diverse annet internt",
+          "taskref": "",
+          "taskrefimport": "",
+          "updateby": "Marian Grav",
+          "updatedate": "~t2013-06-12T20:23:16Z"
+        }, {
+          "_id": "3",
+          "employeeid": 0,
+          "projectid": 1,
+          "taskid": 3,
+          "taskname": "Internkurs",
+          "taskref": "",
+          "taskrefimport": "",
+          "updateby": "Marian Grav:Win",
+          "updatedate": "~t2004-02-18T00:00:00Z"
+        }, {
+          "_id": "4",
+          "employeeid": 0,
+          "projectid": 1,
+          "taskid": 4,
+          "taskname": "Kompetanseutvikling",
+          "taskref": "",
+          "taskrefimport": "",
+          "updateby": "Marian Grav:Win",
+          "updatedate": "~t2004-02-18T00:00:00Z"
+        }, {
+          "_id": "5",
+          "employeeid": 0,
+          "projectid": 1,
+          "taskid": 5,
+          "taskname": "Markedsføring",
+          "taskref": "",
+          "taskrefimport": "",
+          "updateby": "Marian Grav:Win",
+          "updatedate": "~t2004-02-18T00:00:00Z"
+        }]
+      }
+    },
+    "condition": "$ENV(node-env)"
+  },
+  "transform": {
+    "type": "dtl",
+    "rules": {
+      "default": [
+        ["copy", "*"],
+        ["make-ni", "currenttime-employee", "employeeid"],
+        ["make-ni", "currenttime-project", "projectid"],
+        ["add", "rdf:type",
+          ["ni", "bouvet:currenttime-task"]
+        ]
+      ]
+    }
+  },
+  "pump": {
+    "cron_expression": "$ENV(ct_cron_fast)",
+    "rescan_cron_expression": "$ENV(ct_rescan_cron)"
+  }
+}

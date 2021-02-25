@@ -1,0 +1,134 @@
+{
+  "_id": "bouvet-event",
+  "type": "pipe",
+  "source": {
+    "type": "conditional",
+    "alternatives": {
+      "prod": {
+        "type": "json",
+        "system": "event-bouvet",
+        "url": "/graphql?query={\"query\": \"{sesam{id eventName owner startDate endDate responseDeadline summary description location minParticipants maxParticipants requireResponse ownerName participants{acceptanceStatus employeeId}collaborators targetAudience}}\"}"
+      },
+      "test": {
+        "type": "embedded",
+        "entities": [{
+          "data": {
+            "sesam": [{
+              "bouvet-event:collaborators": [],
+              "bouvet-event:description": "<h4>Dette er en introduksjon til bruk av den nye, flotte symaskinen vi har fått på Labben:</h4>\n<p>- Grunnleggende funksjoner og utstyr</p>\n<p>- Tredning av maskin, spole og bytte tråd, bytte nål.</p>\n<p>- Sikker bruk</p>\n<p>- Orden i sysakene</p>\n<p>Beste måten å lære er gjennom praktisk bruk, så vi skal også sy en liten gjenstand :)</p>\n<p>Passer for alle.</p>\n<p><br></p>\n<p>Det blir pizza :-)&nbsp;</p>",
+              "bouvet-event:endDate": "2020-01-28T18:00:00Z",
+              "bouvet-event:eventName": "Intro symaskin#2: sy en liten gjenstand",
+              "bouvet-event:id": "067113c5-33e7-4e00-b71e-0e9b5ea79ff3",
+              "bouvet-event:location": "{\"value\":\"\",\"label\":\"labben\"}",
+              "bouvet-event:maxParticipants": 6,
+              "bouvet-event:minParticipants": 0,
+              "bouvet-event:owner": "207b9995-4555-4bce-bdcb-945a9542c697",
+              "bouvet-event:ownerName": "Silje Totland",
+              "bouvet-event:participants": [{
+                "bouvet-event:acceptanceStatus": "GOING",
+                "bouvet-event:employeeId": "0001"
+              }, {
+                "bouvet-event:acceptanceStatus": "GOING",
+                "bouvet-event:employeeId": "0008"
+              }, {
+                "bouvet-event:acceptanceStatus": "NOTGOING",
+                "bouvet-event:employeeId": "0004"
+              }, {
+                "bouvet-event:acceptanceStatus": "Not responded",
+                "bouvet-event:employeeId": "0009"
+              }, {
+                "bouvet-event:acceptanceStatus": "Not going",
+                "bouvet-event:employeeId": "0011"
+              }],
+              "bouvet-event:requireResponse": false,
+              "bouvet-event:responseDeadline": "2020-01-28T07:00:00Z",
+              "bouvet-event:startDate": "2020-01-28T16:00:00Z",
+              "bouvet-event:summary": "",
+              "bouvet-event:targetAudience": ["91772f26-7af2-4000-8d1b-4b46d9e7959b", "f011409a-0a30-4b31-b67c-f60aca84fdfc", "793684ae-0878-46de-97bb-56b8340c04c3", "fb3b4651-61f1-4105-b2fa-7573391cdffd", "db0b42ed-db30-4845-9d6d-06002753f134", "188e05c2-0768-410b-b5b3-bb91fee346ee", "2ceeaee5-70f9-43ce-8ff7-7fe6226b1828", "c3502db7-e612-436f-838e-6ed4cb2ea8db", "2568066e-82c3-45b4-b6cc-a4d8846cc41d", "5a9ab4a8-1d6e-4e8b-885e-77f394ffa688", "b293a88e-f8b1-447c-8424-81e0efe06509", "5df197c3-6c24-4e58-959a-e6155f755dd1", "1a8bbacf-b29d-4143-9cbe-46a48846d09f", "f68ec820-e810-4275-9693-b2fa007e37fe", "25422f8b-d485-4a84-87bf-22f10be8af5e", "9b19ffdd-cd9c-47c9-8e9c-0f5125f442be", "ef3999c8-3040-4cb3-9321-946ab149ea4d", "07daa0ae-c44b-4328-9d65-7389360b9ef1", "cc11e1e5-d2ec-48b0-9b57-1e496ac8e875", "cb5da3e8-af4f-44e6-962a-1babdff3a582", "8c41808c-c25e-4fb5-acae-6f637e7247e1", "a8a7e502-b850-4249-a6c3-2190ce8645e8", "b79f397d-d700-4da9-bd64-dc28c71a176c", "859cc039-38a6-4211-abb8-061820220cbd", "0ad19669-3240-449b-8575-e43ea4303916", "5adb0942-4d4c-410f-9b84-81e3e2851a5d", "923e2b8a-3de6-4ae5-93a5-41c8a79c7dbb", "4fb8388e-e1b6-421d-aa8d-7fb6c0a6e505", "f28c1329-faa1-4671-98e1-ee320352ab04", "d9750e80-eacf-4966-bfe2-6785370c8a80", "b237d102-5447-437d-ba43-dfce888e1914", "2456f165-cc3c-4d9d-8ead-24a2c38cd65c", "a97edb80-3d66-43f2-ace3-4c274d19fad7", "4f13d63c-529a-4c19-8303-d2ea736b726b", "ee444aa7-59df-4612-9062-fd13134ae0c6", "e429139d-764a-44ea-9b7a-592e10041fdf", "43b418d2-7537-498f-b3b6-c5737d846422", "273b5946-c53f-4f0a-b145-ca13087eba63", "56c9f7f4-365a-4b5d-8642-36a94b155486", "ccc07449-6e7f-4405-90b5-675f0ad22839", "c716209f-c4b4-4762-add1-6155cbe15ff3", "c7252cf0-085d-409e-9012-bc0d99d483ed", "65741737-07a4-4c44-8d2a-98cf1f9ab4a4", "8823a3d4-1b0e-4769-962c-478441a6e976", "a5e11f2c-cd55-4223-9e4f-68fcceeeb40d", "61e16ef6-c01f-4610-b95c-047eeac95fae", "ea842de2-bff4-4a03-9518-b9cc179d61ff", "cf748b96-e676-4c85-9648-b00920d6e3a0", "b1eefba3-92b8-4e3c-a432-5250a8692912", "49ec45d9-44a3-4ff9-8bbc-caeefb022f2d", "cae3cd27-ca0e-4aa5-9f16-d7f7404cb104", "0f493f0b-5e8e-4cd0-97d9-c635655342d3", "c8383fc8-79b6-4b8b-8dbc-7a1a93a82065", "68449d5e-f769-4048-b40a-7c04edcd504e", "4e0f605e-e2f7-4436-8e89-18300fb40b9f", "c58018bb-6c0b-4f0b-8d5d-7521f89c19fc"]
+            }, {
+              "bouvet-event:collaborators": [],
+              "bouvet-event:description": "<p>Velkommen til labbaften! Her kan du:</p>\n<p><br></p>\n<ul>\n  <li>være sosial på labben</li>\n  <li>lære deg noe nytt</li>\n  <li>ta med et prosjekt hjemmefra</li>\n  <li>hjelpe noen med deres prosjekt</li>\n  <li>sitte i sofaen</li>\n  <li>reparere noe du har som er ødelagt</li>\n  <li>fly droner</li>\n  <li>Spille HTC Vive</li>\n</ul>\n<p><br></p>\n<p>Vi har masse utstyr! Sensorer, mikrokontrollere, symaskin, 3d-printere, loddeutstyr etc. Mangler vi noe? Kom innom så kan vi bestille!&nbsp;</p>\n<p><br></p>\n<p>Vi bestiller noe mat og drikke.&nbsp;</p>",
+              "bouvet-event:endDate": "2020-02-06T20:30:00Z",
+              "bouvet-event:eventName": "Labbaften",
+              "bouvet-event:id": "058b27e9-bf1d-4648-8319-7aa720b4a55a",
+              "bouvet-event:location": "",
+              "bouvet-event:maxParticipants": 0,
+              "bouvet-event:minParticipants": 0,
+              "bouvet-event:owner": "29a7913b-8aaa-4ffd-9343-e8ee4a797af9",
+              "bouvet-event:ownerName": "Nikhil André Luthra",
+              "bouvet-event:participants": [{
+                "bouvet-event:acceptanceStatus": "Not responded",
+                "bouvet-event:employeeId": "0003"
+              }, {
+                "bouvet-event:acceptanceStatus": "GOING",
+                "bouvet-event:employeeId": "0004"
+              }, {
+                "bouvet-event:acceptanceStatus": "Not going",
+                "bouvet-event:employeeId": "0006"
+              }, {
+                "bouvet-event:acceptanceStatus": "GOING",
+                "bouvet-event:employeeId": "0001"
+              }, {
+                "bouvet-event:acceptanceStatus": "GOING",
+                "bouvet-event:employeeId": "0008"
+              }],
+              "bouvet-event:requireResponse": false,
+              "bouvet-event:responseDeadline": "2020-02-06T15:00:00Z",
+              "bouvet-event:startDate": "2020-02-06T15:00:00Z",
+              "bouvet-event:summary": "",
+              "bouvet-event:targetAudience": ["91772f26-7af2-4000-8d1b-4b46d9e7959b", "f011409a-0a30-4b31-b67c-f60aca84fdfc", "793684ae-0878-46de-97bb-56b8340c04c3", "fb3b4651-61f1-4105-b2fa-7573391cdffd", "db0b42ed-db30-4845-9d6d-06002753f134", "188e05c2-0768-410b-b5b3-bb91fee346ee", "2ceeaee5-70f9-43ce-8ff7-7fe6226b1828", "c3502db7-e612-436f-838e-6ed4cb2ea8db", "2568066e-82c3-45b4-b6cc-a4d8846cc41d", "5a9ab4a8-1d6e-4e8b-885e-77f394ffa688", "b293a88e-f8b1-447c-8424-81e0efe06509", "5df197c3-6c24-4e58-959a-e6155f755dd1", "1a8bbacf-b29d-4143-9cbe-46a48846d09f", "f68ec820-e810-4275-9693-b2fa007e37fe", "25422f8b-d485-4a84-87bf-22f10be8af5e", "9b19ffdd-cd9c-47c9-8e9c-0f5125f442be", "ef3999c8-3040-4cb3-9321-946ab149ea4d", "07daa0ae-c44b-4328-9d65-7389360b9ef1", "cc11e1e5-d2ec-48b0-9b57-1e496ac8e875", "cb5da3e8-af4f-44e6-962a-1babdff3a582", "8c41808c-c25e-4fb5-acae-6f637e7247e1", "a8a7e502-b850-4249-a6c3-2190ce8645e8", "b79f397d-d700-4da9-bd64-dc28c71a176c", "859cc039-38a6-4211-abb8-061820220cbd", "0ad19669-3240-449b-8575-e43ea4303916", "5adb0942-4d4c-410f-9b84-81e3e2851a5d", "923e2b8a-3de6-4ae5-93a5-41c8a79c7dbb", "4fb8388e-e1b6-421d-aa8d-7fb6c0a6e505", "f28c1329-faa1-4671-98e1-ee320352ab04", "d9750e80-eacf-4966-bfe2-6785370c8a80", "b237d102-5447-437d-ba43-dfce888e1914", "2456f165-cc3c-4d9d-8ead-24a2c38cd65c", "a97edb80-3d66-43f2-ace3-4c274d19fad7", "4f13d63c-529a-4c19-8303-d2ea736b726b", "ee444aa7-59df-4612-9062-fd13134ae0c6", "e429139d-764a-44ea-9b7a-592e10041fdf", "43b418d2-7537-498f-b3b6-c5737d846422", "273b5946-c53f-4f0a-b145-ca13087eba63", "56c9f7f4-365a-4b5d-8642-36a94b155486", "ccc07449-6e7f-4405-90b5-675f0ad22839", "c716209f-c4b4-4762-add1-6155cbe15ff3", "c7252cf0-085d-409e-9012-bc0d99d483ed", "65741737-07a4-4c44-8d2a-98cf1f9ab4a4", "8823a3d4-1b0e-4769-962c-478441a6e976", "a5e11f2c-cd55-4223-9e4f-68fcceeeb40d", "61e16ef6-c01f-4610-b95c-047eeac95fae", "ea842de2-bff4-4a03-9518-b9cc179d61ff", "cf748b96-e676-4c85-9648-b00920d6e3a0", "b1eefba3-92b8-4e3c-a432-5250a8692912", "49ec45d9-44a3-4ff9-8bbc-caeefb022f2d", "cae3cd27-ca0e-4aa5-9f16-d7f7404cb104", "0f493f0b-5e8e-4cd0-97d9-c635655342d3", "c8383fc8-79b6-4b8b-8dbc-7a1a93a82065", "68449d5e-f769-4048-b40a-7c04edcd504e", "4e0f605e-e2f7-4436-8e89-18300fb40b9f", "c58018bb-6c0b-4f0b-8d5d-7521f89c19fc", "a92a7567-6ee6-4f3c-87cf-a0def053f35a", "05e29d5f-7e97-4328-b528-73ccfac62d3f"]
+            }]
+          }
+        }]
+      }
+    },
+    "condition": "$ENV(node-env)"
+  },
+  "transform": {
+    "type": "chained",
+    "transforms": [{
+      "type": "dtl",
+      "rules": {
+        "default": [
+          ["add", "_id", "1"],
+          ["if",
+            ["is-not-empty", "_S.data.sesam"],
+            ["merge-union",
+              ["apply", "events", "_S.data.sesam"]
+            ]
+          ]
+        ],
+        "create": [
+          ["add", "acceptanceStatus", "_S.acceptanceStatus"],
+          ["add", "name", "_P._S.eventName"],
+          ["add", "_id",
+            ["concat", "_P._S.id", ";", "_S.employeeId"]
+          ],
+          ["add", "description", "_P._S.description"],
+          ["add", "url",
+            ["concat", "https://event.bouvet.no/events/view/", "_P._S.id"]
+          ],
+          ["add", "startdate", "_P._S.startDate"]
+        ],
+        "events": [
+          ["create-child",
+            ["apply", "create", "_S.participants"]
+          ]
+        ]
+      }
+    }, {
+      "type": "emit_children"
+    }]
+  },
+  "pump": {
+    "cron_expression": "$ENV(event_cron)",
+    "max_read_retries": 3,
+    "max_retries_per_entity": 3,
+    "mode": "scheduled",
+    "read_retry_delay": 300
+  },
+  "compaction": {
+    "sink": true,
+    "keep_versions": 2
+  }
+}

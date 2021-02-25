@@ -1,0 +1,228 @@
+[
+  {
+    "_id": "0001",
+    "id": "U86BLFNDS",
+    "lastName": "Manus",
+    "mobile": [
+      "+47 11111111"
+    ],
+    "name": "Max",
+    "profile": {
+      "avatar_hash": "gc4feeafde9d",
+      "display_name": "",
+      "display_name_normalized": "",
+      "email": "max.manus@bouvet.no",
+      "image_192": "https://secure.gravatar.com/avatar/c4feeafde9d642befc975f18f6a76b87.jpg?s=192\u0026d=https%3A%2F%2Fa.slack-edge.com%2F7fa9%2Fimg%2Favatars%2Fava_0001-192.png",
+      "image_24": "https://secure.gravatar.com/avatar/c4feeafde9d642befc975f18f6a76b87.jpg?s=24\u0026d=https%3A%2F%2Fa.slack-edge.com%2F66f9%2Fimg%2Favatars%2Fava_0001-24.png",
+      "image_32": "https://secure.gravatar.com/avatar/c4feeafde9d642befc975f18f6a76b87.jpg?s=32\u0026d=https%3A%2F%2Fa.slack-edge.com%2F66f9%2Fimg%2Favatars%2Fava_0001-32.png",
+      "image_48": "https://secure.gravatar.com/avatar/c4feeafde9d642befc975f18f6a76b87.jpg?s=48\u0026d=https%3A%2F%2Fa.slack-edge.com%2F0180%2Fimg%2Favatars%2Fava_0001-48.png",
+      "image_512": "https://secure.gravatar.com/avatar/c4feeafde9d642befc975f18f6a76b87.jpg?s=512\u0026d=https%3A%2F%2Fa.slack-edge.com%2F7fa9%2Fimg%2Favatars%2Fava_0001-512.png",
+      "image_72": "https://secure.gravatar.com/avatar/c4feeafde9d642befc975f18f6a76b87.jpg?s=72\u0026d=https%3A%2F%2Fa.slack-edge.com%2F3654%2Fimg%2Favatars%2Fava_0001-72.png",
+      "real_name": "Max Manus",
+      "real_name_normalized": "Max Manus",
+      "team": "T024XURJ2",
+      "title": ""
+    }
+  },
+  {
+    "_id": "0003",
+    "id": "U4N5W5JP6",
+    "lastName": "Svensson",
+    "mobile": [
+      "+47 33333333"
+    ],
+    "name": "Sven",
+    "profile": {
+      "avatar_hash": "4ecd3654e1ff",
+      "display_name": "",
+      "display_name_normalized": "",
+      "email": "sven.svensson@bouvet.no",
+      "first_name": "Sven",
+      "image_1024": "https://avatars.slack-edge.com/2017-11-24/277983919142_4ecd3654e1ff460bcbe5_1024.png",
+      "image_192": "https://avatars.slack-edge.com/2017-11-24/277983919142_4ecd3654e1ff460bcbe5_192.png",
+      "image_24": "https://avatars.slack-edge.com/2017-11-24/277983919142_4ecd3654e1ff460bcbe5_24.png",
+      "image_32": "https://avatars.slack-edge.com/2017-11-24/277983919142_4ecd3654e1ff460bcbe5_32.png",
+      "image_48": "https://avatars.slack-edge.com/2017-11-24/277983919142_4ecd3654e1ff460bcbe5_48.png",
+      "image_512": "https://avatars.slack-edge.com/2017-11-24/277983919142_4ecd3654e1ff460bcbe5_512.png",
+      "image_72": "https://avatars.slack-edge.com/2017-11-24/277983919142_4ecd3654e1ff460bcbe5_72.png",
+      "image_original": "https://avatars.slack-edge.com/2017-11-24/277983919142_4ecd3654e1ff460bcbe5_original.png",
+      "last_name": "Svensson",
+      "phone": " 47 33333333",
+      "real_name": "Sven Svensson",
+      "real_name_normalized": "Sven Svensson",
+      "team": "T024XURJ2"
+    }
+  },
+  {
+    "_id": "0004",
+    "id": "U3NPXEJ2V",
+    "lastName": "Tester",
+    "mobile": [
+      "+47 44444444"
+    ],
+    "name": "Test",
+    "profile": {
+      "avatar_hash": "2f740db7c201",
+      "display_name": "test",
+      "display_name_normalized": "test",
+      "email": "test.tester@bouvet.no",
+      "first_name": "Test",
+      "image_1024": "https://avatars.slack-edge.com/2017-09-27/247613477106_2f740db7c2019950a1fa_1024.png",
+      "image_192": "https://avatars.slack-edge.com/2017-09-27/247613477106_2f740db7c2019950a1fa_192.png",
+      "image_24": "https://avatars.slack-edge.com/2017-09-27/247613477106_2f740db7c2019950a1fa_24.png",
+      "image_32": "https://avatars.slack-edge.com/2017-09-27/247613477106_2f740db7c2019950a1fa_32.png",
+      "image_48": "https://avatars.slack-edge.com/2017-09-27/247613477106_2f740db7c2019950a1fa_48.png",
+      "image_512": "https://avatars.slack-edge.com/2017-09-27/247613477106_2f740db7c2019950a1fa_512.png",
+      "image_72": "https://avatars.slack-edge.com/2017-09-27/247613477106_2f740db7c2019950a1fa_72.png",
+      "image_original": "https://avatars.slack-edge.com/2017-09-27/247613477106_2f740db7c2019950a1fa_original.png",
+      "last_name": "Tester",
+      "phone": "44444444",
+      "real_name": "Test Tester",
+      "real_name_normalized": "Test Tester",
+      "team": "T024XURJ2"
+    }
+  },
+  {
+    "_id": "0006",
+    "id": "U3BPHUN22",
+    "lastName": "Testsen",
+    "mobile": [
+      "+47 66666666"
+    ],
+    "name": "Testina",
+    "profile": {
+      "avatar_hash": "g61d2f474b59",
+      "display_name": "",
+      "display_name_normalized": "",
+      "email": "abc@bouvet.no",
+      "first_name": "Ragnar",
+      "image_192": "https://secure.gravatar.com/avatar/61d2f474b5949d6f674a207da4cfb0f0.jpg?s=192\u0026d=https%3A%2F%2Fa.slack-edge.com%2F7fa9%2Fimg%2Favatars%2Fava_0018-192.png",
+      "image_24": "https://secure.gravatar.com/avatar/61d2f474b5949d6f674a207da4cfb0f0.jpg?s=24\u0026d=https%3A%2F%2Fa.slack-edge.com%2F66f9%2Fimg%2Favatars%2Fava_0018-24.png",
+      "image_32": "https://secure.gravatar.com/avatar/61d2f474b5949d6f674a207da4cfb0f0.jpg?s=32\u0026d=https%3A%2F%2Fa.slack-edge.com%2F66f9%2Fimg%2Favatars%2Fava_0018-32.png",
+      "image_48": "https://secure.gravatar.com/avatar/61d2f474b5949d6f674a207da4cfb0f0.jpg?s=48\u0026d=https%3A%2F%2Fa.slack-edge.com%2F66f9%2Fimg%2Favatars%2Fava_0018-48.png",
+      "image_512": "https://secure.gravatar.com/avatar/61d2f474b5949d6f674a207da4cfb0f0.jpg?s=512\u0026d=https%3A%2F%2Fa.slack-edge.com%2F7fa9%2Fimg%2Favatars%2Fava_0018-512.png",
+      "image_72": "https://secure.gravatar.com/avatar/61d2f474b5949d6f674a207da4cfb0f0.jpg?s=72\u0026d=https%3A%2F%2Fa.slack-edge.com%2F3654%2Fimg%2Favatars%2Fava_0018-72.png",
+      "last_name": "Testsen",
+      "phone": " 47 66666666",
+      "real_name": "Testina Testsen",
+      "real_name_normalized": "Testina Testsen",
+      "team": "T024XURJ2"
+    }
+  },
+  {
+    "_id": "0007",
+    "id": "U3YJBHQPJ",
+    "lastName": "Bergman",
+    "mobile": [
+      "+47 77777777"
+    ],
+    "name": "Karl Michael",
+    "profile": {
+      "avatar_hash": "g274f3d092b5",
+      "display_name": "karl.bergman",
+      "display_name_normalized": "karl.bergman",
+      "email": "cba@bouvet.no",
+      "first_name": "Karl ",
+      "image_192": "https://secure.gravatar.com/avatar/274f3d092b5508d50ae23e522b161f2d.jpg?s=192\u0026d=https%3A%2F%2Fa.slack-edge.com%2F7fa9%2Fimg%2Favatars%2Fava_0025-192.png",
+      "image_24": "https://secure.gravatar.com/avatar/274f3d092b5508d50ae23e522b161f2d.jpg?s=24\u0026d=https%3A%2F%2Fa.slack-edge.com%2F0180%2Fimg%2Favatars%2Fava_0025-24.png",
+      "image_32": "https://secure.gravatar.com/avatar/274f3d092b5508d50ae23e522b161f2d.jpg?s=32\u0026d=https%3A%2F%2Fa.slack-edge.com%2F66f9%2Fimg%2Favatars%2Fava_0025-32.png",
+      "image_48": "https://secure.gravatar.com/avatar/274f3d092b5508d50ae23e522b161f2d.jpg?s=48\u0026d=https%3A%2F%2Fa.slack-edge.com%2F66f9%2Fimg%2Favatars%2Fava_0025-48.png",
+      "image_512": "https://secure.gravatar.com/avatar/274f3d092b5508d50ae23e522b161f2d.jpg?s=512\u0026d=https%3A%2F%2Fa.slack-edge.com%2F7fa9%2Fimg%2Favatars%2Fava_0025-512.png",
+      "image_72": "https://secure.gravatar.com/avatar/274f3d092b5508d50ae23e522b161f2d.jpg?s=72\u0026d=https%3A%2F%2Fa.slack-edge.com%2F66f9%2Fimg%2Favatars%2Fava_0025-72.png",
+      "last_name": "Bergman",
+      "phone": " 47 77777777",
+      "real_name": "Karl Michael Bergman",
+      "real_name_normalized": "Oystein  Lygre",
+      "team": "T024XURJ2",
+      "title": "Bergen"
+    }
+  },
+  {
+    "_id": "0008",
+    "id": "U866ZBF1V",
+    "lastName": "Gadot",
+    "mobile": [
+      "88888888"
+    ],
+    "name": "Gal",
+    "profile": {
+      "avatar_hash": "g4e7eb7a43dd",
+      "display_name": "",
+      "display_name_normalized": "",
+      "email": "xyz@bouvet.no",
+      "first_name": "Gal",
+      "image_192": "https://secure.gravatar.com/avatar/4e7eb7a43ddc2f00a43f357d0fe91818.jpg?s=192\u0026d=https%3A%2F%2Fa.slack-edge.com%2F7fa9%2Fimg%2Favatars%2Fava_0020-192.png",
+      "image_24": "https://secure.gravatar.com/avatar/4e7eb7a43ddc2f00a43f357d0fe91818.jpg?s=24\u0026d=https%3A%2F%2Fa.slack-edge.com%2F66f9%2Fimg%2Favatars%2Fava_0020-24.png",
+      "image_32": "https://secure.gravatar.com/avatar/4e7eb7a43ddc2f00a43f357d0fe91818.jpg?s=32\u0026d=https%3A%2F%2Fa.slack-edge.com%2F0180%2Fimg%2Favatars%2Fava_0020-32.png",
+      "image_48": "https://secure.gravatar.com/avatar/4e7eb7a43ddc2f00a43f357d0fe91818.jpg?s=48\u0026d=https%3A%2F%2Fa.slack-edge.com%2F66f9%2Fimg%2Favatars%2Fava_0020-48.png",
+      "image_512": "https://secure.gravatar.com/avatar/4e7eb7a43ddc2f00a43f357d0fe91818.jpg?s=512\u0026d=https%3A%2F%2Fa.slack-edge.com%2F7fa9%2Fimg%2Favatars%2Fava_0020-512.png",
+      "image_72": "https://secure.gravatar.com/avatar/4e7eb7a43ddc2f00a43f357d0fe91818.jpg?s=72\u0026d=https%3A%2F%2Fa.slack-edge.com%2F66f9%2Fimg%2Favatars%2Fava_0020-72.png",
+      "last_name": "Gadot",
+      "phone": "88888888",
+      "real_name": "Gal Gadot",
+      "real_name_normalized": "Gal Gadot",
+      "team": "T024XURJ2",
+      "title": ""
+    }
+  },
+  {
+    "_id": "0009",
+    "id": "U5H60EX5H",
+    "lastName": "Wayne",
+    "mobile": [
+      "99999999"
+    ],
+    "name": "Bruce",
+    "profile": {
+      "avatar_hash": "76504015130d",
+      "display_name": "",
+      "display_name_normalized": "",
+      "email": "fgh@bouvet.no",
+      "first_name": "Bruce",
+      "image_1024": "https://avatars.slack-edge.com/2017-11-24/277057307282_76504015130d373f63c6_1024.png",
+      "image_192": "https://avatars.slack-edge.com/2017-11-24/277057307282_76504015130d373f63c6_192.png",
+      "image_24": "https://avatars.slack-edge.com/2017-11-24/277057307282_76504015130d373f63c6_24.png",
+      "image_32": "https://avatars.slack-edge.com/2017-11-24/277057307282_76504015130d373f63c6_32.png",
+      "image_48": "https://avatars.slack-edge.com/2017-11-24/277057307282_76504015130d373f63c6_48.png",
+      "image_512": "https://avatars.slack-edge.com/2017-11-24/277057307282_76504015130d373f63c6_512.png",
+      "image_72": "https://avatars.slack-edge.com/2017-11-24/277057307282_76504015130d373f63c6_72.png",
+      "image_original": "https://avatars.slack-edge.com/2017-11-24/277057307282_76504015130d373f63c6_original.png",
+      "last_name": "Wayne",
+      "phone": " 47 999 99 999",
+      "real_name": "Bruce Wayne",
+      "real_name_normalized": "Bruce Wayne",
+      "status_emoji": ":status-bouvet:",
+      "team": "T024XURJ2",
+      "title": "Resepsjonist"
+    }
+  },
+  {
+    "_id": "0010",
+    "id": "U4BS0K8BA",
+    "lastName": "Lynvingen",
+    "mobile": [
+      "1010101010"
+    ],
+    "name": "",
+    "profile": {
+      "avatar_hash": "faee974a84bb",
+      "display_name": "lynvingen",
+      "display_name_normalized": "lynvingen",
+      "email": "klm@bouvet.no",
+      "first_name": "lynvingen ",
+      "image_1024": "https://avatars.slack-edge.com/2017-05-04/178547670178_faee974a84bbed5e897b_1024.png",
+      "image_192": "https://avatars.slack-edge.com/2017-05-04/178547670178_faee974a84bbed5e897b_192.png",
+      "image_24": "https://avatars.slack-edge.com/2017-05-04/178547670178_faee974a84bbed5e897b_24.png",
+      "image_32": "https://avatars.slack-edge.com/2017-05-04/178547670178_faee974a84bbed5e897b_32.png",
+      "image_48": "https://avatars.slack-edge.com/2017-05-04/178547670178_faee974a84bbed5e897b_48.png",
+      "image_512": "https://avatars.slack-edge.com/2017-05-04/178547670178_faee974a84bbed5e897b_512.png",
+      "image_72": "https://avatars.slack-edge.com/2017-05-04/178547670178_faee974a84bbed5e897b_72.png",
+      "image_original": "https://avatars.slack-edge.com/2017-05-04/178547670178_faee974a84bbed5e897b_original.png",
+      "last_name": "",
+      "phone": " 47 10101010",
+      "real_name": "lynvingen",
+      "real_name_normalized": "lynvingen",
+      "team": "T024XURJ2"
+    }
+  }
+]

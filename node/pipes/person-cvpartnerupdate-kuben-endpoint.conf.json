@@ -1,0 +1,27 @@
+{
+  "_id": "person-cvpartnerupdate-kuben-endpoint",
+  "type": "pipe",
+  "source": {
+    "type": "dataset",
+    "dataset": "person-cvpartnerupdate-kuben"
+  },
+  "sink": {
+    "type": "sql",
+    "system": "currenttime-economydbrepl-sesam",
+    "table": "CVpartner"
+  },
+  "transform": {
+    "type": "dtl",
+    "rules": {
+      "default": [
+        ["filter",
+          ["neq", "_S._deleted", true]
+        ],
+        ["copy", "*"]
+      ]
+    }
+  },
+  "pump": {
+    "mode": "$ENV(pump-mode)"
+  }
+}

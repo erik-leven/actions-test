@@ -1,0 +1,1282 @@
+[
+  {
+    "_id": "1",
+    "department": [
+      {
+        "department": [
+          {
+            "department": [
+              {
+                "departmentname": "IT Drift",
+                "description": "IT Avdeling",
+                "member": [],
+                "slack-channels": [],
+                "sum-level": 0,
+                "uid": "150"
+              }
+            ],
+            "departmentname": "Norge Felles",
+            "description": "Ansatte i Admin og ledelse",
+            "member": [],
+            "slack-channels": [],
+            "sum-level": 0,
+            "uid": "100"
+          },
+          {
+            "department": [
+              {
+                "departmentname": "Øst Kurs",
+                "description": "Øst - Kurs ",
+                "member": [],
+                "slack-channels": [],
+                "sum-level": 0,
+                "uid": "200"
+              },
+              {
+                "departmentname": "Øst Felles",
+                "description": "Ansatte i Felles Oslo",
+                "member": [],
+                "slack-channels": [],
+                "sum-level": 0,
+                "uid": "210"
+              },
+              {
+                "departmentname": "Øst Salg",
+                "description": "Oslo Salg",
+                "member": [],
+                "slack-channels": [],
+                "sum-level": 0,
+                "uid": "211"
+              },
+              {
+                "department": [
+                  {
+                    "departmentname": "Øst Dev 2",
+                    "description": "Ansatte i Dev 2",
+                    "member": [],
+                    "slack-channels": [],
+                    "sum-level": 0,
+                    "uid": "312"
+                  },
+                  {
+                    "departmentname": "Øst Dev 3",
+                    "description": "Ansatte i Dev 3",
+                    "member": [],
+                    "slack-channels": [],
+                    "sum-level": 0,
+                    "uid": "315"
+                  },
+                  {
+                    "departmentname": "Øst Dev 4",
+                    "description": "Ansatte i Dev 4",
+                    "member": [],
+                    "slack-channels": [],
+                    "sum-level": 0,
+                    "uid": "316"
+                  },
+                  {
+                    "departmentname": "Øst Dev 5",
+                    "description": "Ansatte i Dev 5",
+                    "member": [],
+                    "slack-channels": [
+                      "C6FHQST2Q"
+                    ],
+                    "sum-level": 0,
+                    "uid": "317"
+                  },
+                  {
+                    "departmentname": "Øst Data Science",
+                    "description": null,
+                    "member": [],
+                    "slack-channels": null,
+                    "sum-level": 0,
+                    "uid": "318"
+                  },
+                  {
+                    "departmentname": "Øst Dev 1",
+                    "description": "Øst Dev 1",
+                    "member": [],
+                    "slack-channels": [],
+                    "sum-level": 0,
+                    "uid": "340"
+                  }
+                ],
+                "departmentname": "Øst Tech 1",
+                "description": "Ansatte i Tech 1",
+                "member": [],
+                "slack-channels": [
+                  "C6FFZM60J"
+                ],
+                "sum-level": 0,
+                "uid": "301"
+              },
+              {
+                "department": [
+                  {
+                    "department": [
+                      {
+                        "departmentname": "Øst Microsoft 1",
+                        "description": "Ansatte i Microsoft 1",
+                        "member": [],
+                        "slack-channels": [
+                          "C6G5PV8QY"
+                        ],
+                        "sum-level": 0,
+                        "uid": "320"
+                      },
+                      {
+                        "departmentname": "Øst Microsoft 2",
+                        "description": "Ansatte i Microsoft 2",
+                        "member": [
+                          {
+                            "name": "Test Testsson",
+                            "start-date": "~t2018-08-01T00:00:00Z",
+                            "uid": "2276"
+                          }
+                        ],
+                        "member-count": 1,
+                        "slack-channels": [
+                          "C6GUTPVB7"
+                        ],
+                        "sum-level": 1,
+                        "uid": "321"
+                      },
+                      {
+                        "departmentname": "Øst Microsoft 3",
+                        "description": "Ansatte i Microsoft 3",
+                        "member": [],
+                        "slack-channels": [
+                          "C4REM1YSK"
+                        ],
+                        "sum-level": 0,
+                        "uid": "322"
+                      },
+                      {
+                        "departmentname": "Øst Microsoft 4",
+                        "description": null,
+                        "member": [],
+                        "slack-channels": [
+                          "C6GUTPSCD"
+                        ],
+                        "sum-level": 0,
+                        "uid": "323"
+                      },
+                      {
+                        "departmentname": "Øst Microsoft 5",
+                        "description": null,
+                        "member": [],
+                        "slack-channels": null,
+                        "sum-level": 0,
+                        "uid": "324"
+                      }
+                    ],
+                    "departmentname": "Øst Microsoft",
+                    "description": "Ansatte i Microsoft",
+                    "member": [],
+                    "slack-channels": [],
+                    "sum-level": 1,
+                    "uid": "327"
+                  },
+                  {
+                    "department": [
+                      {
+                        "departmentname": "Øst Cloud 1",
+                        "description": null,
+                        "member": [],
+                        "slack-channels": [
+                          "C6HMQ4D6J"
+                        ],
+                        "sum-level": 0,
+                        "uid": "400"
+                      },
+                      {
+                        "departmentname": "Øst Cloud 2",
+                        "description": null,
+                        "member": [],
+                        "slack-channels": [
+                          "C6GSNMBTN"
+                        ],
+                        "sum-level": 0,
+                        "uid": "401"
+                      }
+                    ],
+                    "departmentname": "Øst Cloud",
+                    "description": null,
+                    "member": [],
+                    "slack-channels": [
+                      "C599QCXRU"
+                    ],
+                    "sum-level": 0,
+                    "uid": "409"
+                  }
+                ],
+                "departmentname": "Øst Tech 2",
+                "description": null,
+                "member": [],
+                "slack-channels": null,
+                "sum-level": 1,
+                "uid": "302"
+              },
+              {
+                "department": [
+                  {
+                    "departmentname": "Øst Webapps 1",
+                    "description": "Ansatte i CMS 1",
+                    "member": [],
+                    "slack-channels": [
+                      "C72ELM2J1"
+                    ],
+                    "sum-level": 0,
+                    "uid": "325"
+                  },
+                  {
+                    "departmentname": "Øst Webapps 2",
+                    "description": "Ansatte i CMS 2",
+                    "member": [
+                      {
+                        "name": "Lite Ambisjon",
+                        "start-date": "~t2017-08-01T00:00:00Z",
+                        "uid": "1938"
+                      }
+                    ],
+                    "member-count": 1,
+                    "slack-channels": [
+                      "C71LTKBG8"
+                    ],
+                    "sum-level": 1,
+                    "uid": "326"
+                  },
+                  {
+                    "departmentname": "Øst Innsikt",
+                    "description": null,
+                    "member": [],
+                    "slack-channels": null,
+                    "sum-level": 0,
+                    "uid": "330"
+                  },
+                  {
+                    "departmentname": "Øst Ria 1",
+                    "description": "Ansatte i RIA",
+                    "member": [],
+                    "slack-channels": [
+                      "C6F1AJ8JU"
+                    ],
+                    "sum-level": 0,
+                    "uid": "331"
+                  },
+                  {
+                    "departmentname": "Øst Design 1",
+                    "description": "Ansatte i Øst TjenesteDesign",
+                    "member": [
+                      {
+                        "name": "bruker brukersen",
+                        "start-date": "~t2017-08-01T00:00:00Z",
+                        "uid": "391"
+                      }
+                    ],
+                    "member-count": 1,
+                    "slack-channels": null,
+                    "sum-level": 1,
+                    "uid": "333"
+                  },
+                  {
+                    "departmentname": "Øst Design 2",
+                    "description": "Ansatte i Øst Design",
+                    "member": [],
+                    "slack-channels": null,
+                    "sum-level": 0,
+                    "uid": "334"
+                  },
+                  {
+                    "departmentname": "Øst Ria 2",
+                    "description": "Ansatte i RIA 2",
+                    "member": [],
+                    "slack-channels": [
+                      "C3S105S2G"
+                    ],
+                    "sum-level": 0,
+                    "uid": "335"
+                  },
+                  {
+                    "departmentname": "Øst Ria 3",
+                    "description": null,
+                    "member": [],
+                    "slack-channels": null,
+                    "sum-level": 0,
+                    "uid": "337"
+                  },
+                  {
+                    "departmentname": "Øst Råd Tjenestedesign",
+                    "description": null,
+                    "member": [],
+                    "slack-channels": null,
+                    "sum-level": 0,
+                    "uid": "338"
+                  },
+                  {
+                    "departmentname": "Øst Råd KO",
+                    "description": "Ansatte i Øst KO Felles",
+                    "member": [],
+                    "slack-channels": null,
+                    "sum-level": 0,
+                    "uid": "339"
+                  }
+                ],
+                "departmentname": "Øst Kundeopplevelse",
+                "description": null,
+                "member": [],
+                "slack-channels": [
+                  "C4NHUKA3Z"
+                ],
+                "sum-level": 2,
+                "uid": "303"
+              },
+              {
+                "departmentname": "Øst Tjenesteleveranser",
+                "description": null,
+                "member": [],
+                "slack-channels": null,
+                "sum-level": 0,
+                "uid": "329"
+              },
+              {
+                "department": [
+                  {
+                    "departmentname": "Øst PIA 1",
+                    "description": null,
+                    "member": [],
+                    "slack-channels": null,
+                    "sum-level": 0,
+                    "uid": "451"
+                  },
+                  {
+                    "departmentname": "Øst PIA 2",
+                    "description": null,
+                    "member": [],
+                    "slack-channels": null,
+                    "sum-level": 0,
+                    "uid": "452"
+                  },
+                  {
+                    "departmentname": "Øst PIA 3",
+                    "description": null,
+                    "member": [],
+                    "slack-channels": null,
+                    "sum-level": 0,
+                    "uid": "453"
+                  }
+                ],
+                "departmentname": "Øst PIA",
+                "description": null,
+                "member": [],
+                "slack-channels": null,
+                "sum-level": 0,
+                "uid": "450"
+              },
+              {
+                "department": [
+                  {
+                    "departmentname": "Øst Programledelse",
+                    "description": null,
+                    "member": [],
+                    "slack-channels": null,
+                    "sum-level": 0,
+                    "uid": "511"
+                  },
+                  {
+                    "departmentname": "Øst Prosjektledelse 1",
+                    "description": "Ansatte i Prosjektledelse",
+                    "member": [],
+                    "slack-channels": [],
+                    "sum-level": 0,
+                    "uid": "512"
+                  },
+                  {
+                    "departmentname": "Øst Prosjektledelse 2",
+                    "description": null,
+                    "member": [
+                      {
+                        "name": "Karl Michael Bergman",
+                        "start-date": "~t2020-03-20T00:00:00Z",
+                        "uid": "0007"
+                      }
+                    ],
+                    "member-count": 1,
+                    "slack-channels": [],
+                    "sum-level": 1,
+                    "uid": "513"
+                  },
+                  {
+                    "departmentname": "Øst Test og Testledelse",
+                    "description": null,
+                    "member": [],
+                    "slack-channels": [
+                      "C6FKWKP1T"
+                    ],
+                    "sum-level": 0,
+                    "uid": "514"
+                  },
+                  {
+                    "departmentname": "Øst Råd og Prosjekt Felles",
+                    "description": null,
+                    "member": [],
+                    "slack-channels": null,
+                    "sum-level": 0,
+                    "uid": "515"
+                  },
+                  {
+                    "departmentname": "Øst Rådgivning arkitektur",
+                    "description": "Rådgiving arkitektur",
+                    "member": [],
+                    "slack-channels": null,
+                    "sum-level": 0,
+                    "uid": "516"
+                  },
+                  {
+                    "departmentname": "Øst Rådgivning innføring og endring",
+                    "description": "Øst Rådgiving innføring og endring",
+                    "member": [],
+                    "slack-channels": null,
+                    "sum-level": 0,
+                    "uid": "517"
+                  },
+                  {
+                    "departmentname": "Øst Råd og Prosjekt UK",
+                    "description": null,
+                    "member": [],
+                    "slack-channels": null,
+                    "sum-level": 0,
+                    "uid": "518"
+                  }
+                ],
+                "departmentname": "Øst Råd og Prosjekt",
+                "description": "Råd og Prosjekt",
+                "member": [],
+                "slack-channels": [],
+                "sum-level": 1,
+                "uid": "500"
+              },
+              {
+                "department": [
+                  {
+                    "departmentname": "Applikasjon og Prosess",
+                    "description": "Ansatte i Applikasjon og Prosess",
+                    "member": [],
+                    "slack-channels": null,
+                    "sum-level": 0,
+                    "uid": "522"
+                  },
+                  {
+                    "departmentname": "SAP Tech og forvaltning",
+                    "description": null,
+                    "member": [
+                      {
+                        "name": "Ehm Noe",
+                        "start-date": "~t2017-02-01T00:00:00Z",
+                        "uid": "1847"
+                      }
+                    ],
+                    "member-count": 1,
+                    "slack-channels": null,
+                    "sum-level": 1,
+                    "uid": "523"
+                  },
+                  {
+                    "departmentname": "Prosjekt og Arkitekt",
+                    "description": "Øst Prosjektledelse og Arkitekt",
+                    "member": [],
+                    "slack-channels": null,
+                    "sum-level": 0,
+                    "uid": "525"
+                  }
+                ],
+                "departmentname": "Øst Virksomhetsstyring",
+                "description": "Virksomhetsstyring",
+                "member": [],
+                "slack-channels": [],
+                "sum-level": 1,
+                "uid": "501"
+              },
+              {
+                "department": [
+                  {
+                    "departmentname": "Øst Sandvika 1",
+                    "description": null,
+                    "member": [],
+                    "slack-channels": [
+                      "C4MSD8DL1"
+                    ],
+                    "sum-level": 0,
+                    "uid": "550"
+                  },
+                  {
+                    "departmentname": "Øst Sandvika 2",
+                    "description": null,
+                    "member": [],
+                    "slack-channels": null,
+                    "sum-level": 0,
+                    "uid": "551"
+                  },
+                  {
+                    "departmentname": "Øst Sandvika UK",
+                    "description": null,
+                    "member": [],
+                    "slack-channels": null,
+                    "sum-level": 0,
+                    "uid": "552"
+                  },
+                  {
+                    "departmentname": "Øst Sandvika 3",
+                    "description": null,
+                    "member": [],
+                    "slack-channels": [
+                      "C4MSD8DL1"
+                    ],
+                    "sum-level": 0,
+                    "uid": "553"
+                  }
+                ],
+                "departmentname": "Øst Sandvika",
+                "description": null,
+                "member": [],
+                "slack-channels": [
+                  "C4MSD8DL1"
+                ],
+                "sum-level": 0,
+                "uid": "502"
+              }
+            ],
+            "departmentname": "Region Øst",
+            "description": "Felles gruppe for avdelingene i Oslo",
+            "member": [],
+            "slack-channels": null,
+            "sum-level": 5,
+            "uid": "299"
+          },
+          {
+            "department": [
+              {
+                "departmentname": "Sør Felles",
+                "description": null,
+                "member": [],
+                "slack-channels": null,
+                "sum-level": 0,
+                "uid": "600"
+              },
+              {
+                "departmentname": "Grenland",
+                "description": "Ansatte Grenland",
+                "member": [],
+                "slack-channels": null,
+                "sum-level": 0,
+                "uid": "610"
+              },
+              {
+                "departmentname": "Arendal",
+                "description": "Ansatte Arendal",
+                "member": [],
+                "slack-channels": null,
+                "sum-level": 0,
+                "uid": "620"
+              },
+              {
+                "departmentname": "Kristiansand",
+                "description": "Ansatte Kristiansand",
+                "member": [],
+                "slack-channels": null,
+                "sum-level": 0,
+                "uid": "630"
+              },
+              {
+                "departmentname": "Vestfold",
+                "description": null,
+                "member": [],
+                "slack-channels": null,
+                "sum-level": 0,
+                "uid": "640"
+              }
+            ],
+            "departmentname": "Region Sør",
+            "description": "Felles gruppe for Arendal, Grenland \u0026 Kristiansand",
+            "member": [],
+            "slack-channels": null,
+            "sum-level": 0,
+            "uid": "609"
+          },
+          {
+            "department": [
+              {
+                "departmentname": "Bergen Felles",
+                "description": null,
+                "member": [],
+                "slack-channels": [],
+                "sum-level": 0,
+                "uid": "780"
+              },
+              {
+                "departmentname": "Ulriken",
+                "description": null,
+                "member": [
+                  {
+                    "name": "Gjett Mail",
+                    "start-date": "~t1995-07-01T00:00:00Z",
+                    "uid": "132"
+                  }
+                ],
+                "member-count": 1,
+                "slack-channels": [
+                  "C6GJWTUDD"
+                ],
+                "sum-level": 1,
+                "uid": "781"
+              },
+              {
+                "departmentname": "Fløien",
+                "description": "Ansatte i Fløien",
+                "member": [],
+                "slack-channels": [
+                  "C6TT0L3TJ"
+                ],
+                "sum-level": 0,
+                "uid": "782"
+              },
+              {
+                "departmentname": "Lyderhorn",
+                "description": null,
+                "member": [],
+                "slack-channels": [
+                  "C6GJWTVD5"
+                ],
+                "sum-level": 0,
+                "uid": "783"
+              },
+              {
+                "departmentname": "Løvstakken",
+                "description": null,
+                "member": [],
+                "slack-channels": [],
+                "sum-level": 0,
+                "uid": "784"
+              },
+              {
+                "departmentname": "Rundemanen",
+                "description": null,
+                "member": [],
+                "slack-channels": null,
+                "sum-level": 0,
+                "uid": "785"
+              },
+              {
+                "departmentname": "Blåmanen",
+                "description": null,
+                "member": [],
+                "slack-channels": null,
+                "sum-level": 0,
+                "uid": "786"
+              },
+              {
+                "departmentname": "Gullfjellet",
+                "description": null,
+                "member": [],
+                "slack-channels": null,
+                "sum-level": 0,
+                "uid": "787"
+              }
+            ],
+            "departmentname": "Region Bergen",
+            "description": "Ansatte Bergen",
+            "member": [],
+            "slack-channels": null,
+            "sum-level": 1,
+            "uid": "789"
+          },
+          {
+            "department": [
+              {
+                "department": [
+                  {
+                    "departmentname": "Rogaland Virksomhetsstøtte",
+                    "description": null,
+                    "member": [],
+                    "slack-channels": [
+                      "C6FDVJC2X"
+                    ],
+                    "sum-level": 0,
+                    "uid": "700"
+                  },
+                  {
+                    "departmentname": "Rogaland Klyngestøtte",
+                    "description": "Ansatte Stavanger",
+                    "member": [],
+                    "slack-channels": null,
+                    "sum-level": 0,
+                    "uid": "702"
+                  },
+                  {
+                    "departmentname": "Rogaland Tech Center",
+                    "description": null,
+                    "member": [],
+                    "slack-channels": null,
+                    "sum-level": 0,
+                    "uid": "703"
+                  },
+                  {
+                    "departmentname": "Rogaland Equinox",
+                    "description": null,
+                    "member": [],
+                    "slack-channels": null,
+                    "sum-level": 0,
+                    "uid": "704"
+                  },
+                  {
+                    "department": [
+                      {
+                        "departmentname": "Rogaland Økonomi og IT",
+                        "description": null,
+                        "member": [],
+                        "slack-channels": null,
+                        "sum-level": 0,
+                        "uid": "701"
+                      },
+                      {
+                        "departmentname": "Kontorstøtte Stavanger",
+                        "description": null,
+                        "member": [],
+                        "slack-channels": null,
+                        "sum-level": 0,
+                        "uid": "705"
+                      },
+                      {
+                        "departmentname": "Kontorstøtte Haugesund",
+                        "description": "Ansatte Haugesund",
+                        "member": [],
+                        "slack-channels": null,
+                        "sum-level": 0,
+                        "uid": "730"
+                      }
+                    ],
+                    "departmentname": "Rogaland Administrasjon",
+                    "description": null,
+                    "member": [],
+                    "slack-channels": [
+                      "C6FKWKLQM"
+                    ],
+                    "sum-level": 0,
+                    "uid": "777"
+                  }
+                ],
+                "departmentname": "Rogaland Felles",
+                "description": null,
+                "member": [],
+                "slack-channels": null,
+                "sum-level": 0,
+                "uid": "778"
+              },
+              {
+                "department": [
+                  {
+                    "departmentname": "Rogaland Industristøtte",
+                    "description": null,
+                    "member": [],
+                    "slack-channels": null,
+                    "sum-level": 0,
+                    "uid": "731"
+                  },
+                  {
+                    "departmentname": "Rogaland Formel 1",
+                    "description": null,
+                    "member": [
+                      {
+                        "name": "Harry Potter",
+                        "start-date": "~t2019-06-10T00:00:00Z",
+                        "uid": "2978"
+                      }
+                    ],
+                    "member-count": 1,
+                    "slack-channels": [
+                      "C6FKWKN93"
+                    ],
+                    "sum-level": 1,
+                    "uid": "751"
+                  },
+                  {
+                    "departmentname": "Rogaland Enigma",
+                    "description": null,
+                    "member": [],
+                    "slack-channels": [
+                      "C6FDVJDUK"
+                    ],
+                    "sum-level": 0,
+                    "uid": "752"
+                  },
+                  {
+                    "departmentname": "Rogaland Alpha",
+                    "description": null,
+                    "member": [],
+                    "slack-channels": [
+                      "C4DA2ND9T"
+                    ],
+                    "sum-level": 0,
+                    "uid": "754"
+                  },
+                  {
+                    "departmentname": "Rogaland Invicta",
+                    "description": null,
+                    "member": [],
+                    "slack-channels": [],
+                    "sum-level": 0,
+                    "uid": "755"
+                  },
+                  {
+                    "departmentname": "Rogaland Syndicate",
+                    "description": null,
+                    "member": [
+                      {
+                        "name": "Fornavn Testetternavn",
+                        "start-date": "~t2019-11-01T00:00:00Z",
+                        "uid": "2156"
+                      }
+                    ],
+                    "member-count": 1,
+                    "slack-channels": [
+                      "C6FFZLZKL"
+                    ],
+                    "sum-level": 1,
+                    "uid": "756"
+                  },
+                  {
+                    "departmentname": "Rogaland Morgenstiern",
+                    "description": null,
+                    "member": [
+                      {
+                        "name": "Lynvingen",
+                        "start-date": "~t2017-08-01T00:00:00Z",
+                        "uid": "0010"
+                      }
+                    ],
+                    "member-count": 1,
+                    "slack-channels": [
+                      "C6FKWKMS9"
+                    ],
+                    "sum-level": 1,
+                    "uid": "757"
+                  },
+                  {
+                    "departmentname": "Rogaland DAIM",
+                    "description": null,
+                    "member": [],
+                    "slack-channels": [
+                      "C6FKWKMEH"
+                    ],
+                    "sum-level": 0,
+                    "uid": "758"
+                  },
+                  {
+                    "departmentname": "Rogaland DIGG",
+                    "description": null,
+                    "member": [],
+                    "slack-channels": null,
+                    "sum-level": 0,
+                    "uid": "759"
+                  },
+                  {
+                    "departmentname": "Rogaland Skynet",
+                    "description": null,
+                    "member": [],
+                    "slack-channels": null,
+                    "sum-level": 0,
+                    "uid": "760"
+                  },
+                  {
+                    "departmentname": "Rogaland SQAD",
+                    "description": null,
+                    "member": [],
+                    "slack-channels": null,
+                    "sum-level": 0,
+                    "uid": "761"
+                  },
+                  {
+                    "departmentname": "Rogaland Atlas",
+                    "description": null,
+                    "member": [],
+                    "slack-channels": null,
+                    "sum-level": 0,
+                    "uid": "762"
+                  },
+                  {
+                    "departmentname": "Rogaland Spectre",
+                    "description": null,
+                    "member": [],
+                    "slack-channels": null,
+                    "sum-level": 0,
+                    "uid": "763"
+                  },
+                  {
+                    "departmentname": "Rogaland SPOCK",
+                    "description": null,
+                    "member": [],
+                    "slack-channels": null,
+                    "sum-level": 0,
+                    "uid": "764"
+                  },
+                  {
+                    "departmentname": "Rogaland MCS",
+                    "description": null,
+                    "member": [],
+                    "slack-channels": null,
+                    "sum-level": 0,
+                    "uid": "765"
+                  },
+                  {
+                    "departmentname": "Rogaland Optimus",
+                    "description": null,
+                    "member": [],
+                    "slack-channels": null,
+                    "sum-level": 0,
+                    "uid": "766"
+                  },
+                  {
+                    "departmentname": "Rogaland ACME",
+                    "description": null,
+                    "member": [],
+                    "slack-channels": null,
+                    "sum-level": 0,
+                    "uid": "767"
+                  },
+                  {
+                    "departmentname": "Rogaland Phoenix",
+                    "description": null,
+                    "member": [],
+                    "slack-channels": null,
+                    "sum-level": 0,
+                    "uid": "768"
+                  }
+                ],
+                "departmentname": "Rogaland Enheter",
+                "description": null,
+                "member": [],
+                "slack-channels": null,
+                "sum-level": 3,
+                "uid": "779"
+              }
+            ],
+            "departmentname": "Region Rogaland",
+            "description": "Ansatte Rogaland",
+            "member": [],
+            "slack-channels": null,
+            "sum-level": 3,
+            "uid": "799"
+          },
+          {
+            "department": [
+              {
+                "departmentname": "Nord Felles",
+                "description": "Ansatte i Felles Nord",
+                "member": [],
+                "slack-channels": [],
+                "sum-level": 0,
+                "uid": "800"
+              },
+              {
+                "departmentname": "Trondheim Tech 1",
+                "description": null,
+                "member": [
+                  {
+                    "name": "Meg Finnepå",
+                    "start-date": "~t2017-08-01T00:00:00Z",
+                    "uid": "2015"
+                  }
+                ],
+                "member-count": 1,
+                "slack-channels": [
+                  "C6FJDG091"
+                ],
+                "sum-level": 1,
+                "uid": "801"
+              },
+              {
+                "departmentname": "Trondheim Tech 2",
+                "description": null,
+                "member": [],
+                "slack-channels": [],
+                "sum-level": 0,
+                "uid": "802"
+              },
+              {
+                "departmentname": "Trondheim Brukeropplevelse",
+                "description": null,
+                "member": [],
+                "slack-channels": [
+                  "C6GSNMPAQ"
+                ],
+                "sum-level": 0,
+                "uid": "803"
+              },
+              {
+                "departmentname": "Trondheim Tech 3",
+                "description": null,
+                "member": [],
+                "slack-channels": [
+                  "C6GJWTYFR"
+                ],
+                "sum-level": 0,
+                "uid": "804"
+              },
+              {
+                "departmentname": "Trondheim Rådgivning\u0026Prosjektledelse",
+                "description": null,
+                "member": [
+                  {
+                    "name": "Min Nabo",
+                    "start-date": "~t2018-09-01T00:00:00Z",
+                    "uid": "2288"
+                  }
+                ],
+                "member-count": 1,
+                "slack-channels": null,
+                "sum-level": 1,
+                "uid": "805"
+              },
+              {
+                "departmentname": "Trondheim FrontEnd",
+                "description": null,
+                "member": [],
+                "slack-channels": null,
+                "sum-level": 0,
+                "uid": "806"
+              }
+            ],
+            "departmentname": "Region Nord",
+            "description": "Alle Nord",
+            "member": [],
+            "slack-channels": null,
+            "sum-level": 2,
+            "uid": "809"
+          }
+        ],
+        "departmentname": "Bouvet Norge AS",
+        "description": null,
+        "member": [],
+        "slack-channels": null,
+        "sum-level": 11,
+        "uid": "2"
+      },
+      {
+        "departmentname": "Olavstoppen AS",
+        "description": "Ansatte i Olavstoppen",
+        "member": [
+          {
+            "name": "Severus Snape",
+            "start-date": "~t2020-06-01T00:00:00Z",
+            "uid": "3471"
+          },
+          {
+            "name": "Alfie Collin",
+            "start-date": "~t2020-06-02T00:00:00Z",
+            "uid": "7777"
+          }
+        ],
+        "member-count": 2,
+        "slack-channels": [
+          "C6J11T44A"
+        ],
+        "sum-level": 2,
+        "uid": "4"
+      },
+      {
+        "department": [
+          {
+            "department": [
+              {
+                "department": [
+                  {
+                    "departmentname": "Stockholm Web Systemutveckling",
+                    "description": null,
+                    "member": [],
+                    "slack-channels": null,
+                    "sum-level": 0,
+                    "uid": "900"
+                  },
+                  {
+                    "departmentname": "Stockholm Felles",
+                    "description": null,
+                    "member": [],
+                    "slack-channels": null,
+                    "sum-level": 0,
+                    "uid": "902"
+                  },
+                  {
+                    "departmentname": "Stockholm e-Hälsa",
+                    "description": null,
+                    "member": [],
+                    "slack-channels": null,
+                    "sum-level": 0,
+                    "uid": "903"
+                  },
+                  {
+                    "departmentname": "Stockholm Kundupplevelse 1",
+                    "description": null,
+                    "member": [
+                      {
+                        "name": "Jonas Danmarksson",
+                        "start-date": "~t2020-06-02T00:00:00Z",
+                        "uid": "2507"
+                      }
+                    ],
+                    "member-count": 1,
+                    "slack-channels": null,
+                    "sum-level": 1,
+                    "uid": "904"
+                  },
+                  {
+                    "departmentname": "Stockholm Kundupplevelse 2",
+                    "description": null,
+                    "member": [],
+                    "slack-channels": null,
+                    "sum-level": 0,
+                    "uid": "905"
+                  },
+                  {
+                    "departmentname": "Stockholm Projektledning",
+                    "description": null,
+                    "member": [],
+                    "slack-channels": null,
+                    "sum-level": 0,
+                    "uid": "906"
+                  },
+                  {
+                    "departmentname": "Stockholm Systemutveckling 1",
+                    "description": null,
+                    "member": [],
+                    "slack-channels": null,
+                    "sum-level": 0,
+                    "uid": "907"
+                  },
+                  {
+                    "departmentname": "Stockholm Systemutveckling 2",
+                    "description": null,
+                    "member": [],
+                    "slack-channels": null,
+                    "sum-level": 0,
+                    "uid": "916"
+                  },
+                  {
+                    "departmentname": "Stockholm Kundupplevelse 3",
+                    "description": null,
+                    "member": [],
+                    "slack-channels": null,
+                    "sum-level": 0,
+                    "uid": "917"
+                  }
+                ],
+                "departmentname": "Stockholm",
+                "description": "Ansatte i Stockholm",
+                "member": [],
+                "slack-channels": null,
+                "sum-level": 1,
+                "uid": "901"
+              },
+              {
+                "department": [
+                  {
+                    "departmentname": "Örebro Felles",
+                    "description": null,
+                    "member": [],
+                    "slack-channels": null,
+                    "sum-level": 0,
+                    "uid": "909"
+                  },
+                  {
+                    "departmentname": "Örebro Projektledning",
+                    "description": null,
+                    "member": [],
+                    "slack-channels": null,
+                    "sum-level": 0,
+                    "uid": "910"
+                  },
+                  {
+                    "departmentname": "Örebro Systemutveckling",
+                    "description": null,
+                    "member": [],
+                    "slack-channels": null,
+                    "sum-level": 0,
+                    "uid": "911"
+                  }
+                ],
+                "departmentname": "Örebro",
+                "description": null,
+                "member": [],
+                "slack-channels": null,
+                "sum-level": 0,
+                "uid": "908"
+              },
+              {
+                "department": [
+                  {
+                    "departmentname": "Borlänge Felles",
+                    "description": null,
+                    "member": [],
+                    "slack-channels": null,
+                    "sum-level": 0,
+                    "uid": "913"
+                  },
+                  {
+                    "departmentname": "Borlänge Projektledning",
+                    "description": null,
+                    "member": [],
+                    "slack-channels": null,
+                    "sum-level": 0,
+                    "uid": "914"
+                  },
+                  {
+                    "departmentname": "Borlänge Systemutveckling",
+                    "description": null,
+                    "member": [],
+                    "slack-channels": null,
+                    "sum-level": 0,
+                    "uid": "915"
+                  }
+                ],
+                "departmentname": "Borlänge",
+                "description": null,
+                "member": [],
+                "slack-channels": [
+                  "C6GSNMG3E"
+                ],
+                "sum-level": 0,
+                "uid": "912"
+              }
+            ],
+            "departmentname": "Bouvet Sverige AB",
+            "description": "Ansatte i Bouvet Sverige AB",
+            "member": [],
+            "slack-channels": null,
+            "sum-level": 1,
+            "uid": "3"
+          },
+          {
+            "departmentname": "Bouvet Public Skills",
+            "description": null,
+            "member": [],
+            "slack-channels": null,
+            "sum-level": 0,
+            "uid": "5"
+          }
+        ],
+        "departmentname": "Bouvet AB",
+        "description": null,
+        "member": [],
+        "slack-channels": null,
+        "sum-level": 1,
+        "uid": "6"
+      }
+    ],
+    "departmentname": "Bouvet ASA",
+    "description": "Styres av HR systemet CatalystOne",
+    "enonic_deleted": false,
+    "member": [],
+    "slack-channels": null,
+    "sum-level": 14,
+    "uid": "1"
+  }
+]

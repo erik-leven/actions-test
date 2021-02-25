@@ -1,0 +1,340 @@
+{
+  "_id": "employee-currenttime",
+  "type": "pipe",
+  "source": {
+    "type": "dataset",
+    "dataset": "global-person",
+    "supports_signalling": true
+  },
+  "transform": {
+    "type": "dtl",
+    "rules": {
+      "default": [
+        ["filter",
+          ["in", "_S.global-person:employee_status",
+            ["list", "EarlyEmployee", "TempEarlyEmployee", "SoonEmployee", "TempSoonEmployee", "Employee", "TempEmployee", "Quit"]
+          ]
+        ],
+        ["if",
+          ["and",
+            ["lt", "_S.currenttime-employee:leavedate",
+              ["datetime-parse", "%d.%m.%Y", "_S.catalystone-user:HIRING_DATE.value"]
+            ],
+            ["eq", "_S.currenttime-employee:active", true]
+          ],
+          ["filter"]
+        ],
+        ["comment", "filter quit employees if they have no Currenttime user"],
+        ["if",
+          ["and",
+            ["eq", "_S.global-person:employee_status", "Quit"],
+            ["is-null", "_S.currenttime-employee:employeeid"]
+          ],
+          ["filter"]
+        ],
+        ["comment", "Filter Olavstoppen and Sverige"],
+        ["merge",
+          ["hops", {
+            "datasets": ["global-department gd"],
+            "where": [
+              ["eq",
+                ["string", "_S.catalystone-user:ORGANIZATION.@UNIQUE_IMPORT_ID"], "gd.ORG_ID.value"]
+            ],
+            "return": ["dict", "temp-rdf:type", "gd.rdf:type"]
+          }]
+        ],
+        ["filter",
+          ["in", "~:bouvet:global-dep-bouvet-norge-as", "_T.temp-rdf:type"]
+        ],
+        ["remove", "temp-rdf:type"],
+        ["comment", "fetch CurrentDepartmentID from Folk if exists"],
+        ["if",
+          ["and",
+            ["is-not-null", "_S.catalystone-user:1125.VALUE.value"],
+            ["neq", "_S.catalystone-user:1125.VALUE.value", ""]
+          ],
+          ["add", "DepartmentId",
+            ["first",
+              ["integer", "_S.catalystone-user:1125.VALUE.value"]
+            ]
+          ]
+        ],
+        ["comment", "Region Øst and Region Rogaland employees are given Planner licence from 180 days to start date"],
+        ["if",
+          ["and",
+            ["or",
+              ["eq", "_S.catalystone-user:1117.VALUE.value", "4"],
+              ["eq", "_S.catalystone-user:1117.VALUE.value", "2"]
+            ],
+            ["lte",
+              ["datetime-diff", "day", "_S.global-person:Start-date",
+                ["if",
+                  ["eq", "$ENV(node-env)", "test"], "~t2020-03-16T00:00:00Z",
+                  ["now"]
+                ]
+              ], 180]
+          ],
+          ["add", "availableforplanning", true]
+        ],
+        ["merge",
+          ["apply-hops", "currentdept", {
+            "datasets": ["global-department cdpt"],
+            "where": [
+              ["eq", "_S.catalystone-user:ORGANIZATION.@UNIQUE_IMPORT_ID", "cdpt.currenttime-department:departmentref"]
+            ]
+          }]
+        ],
+        ["add", "EmployeeCategoryId", "_S.global-person:AnsattkategoriID"],
+        ["comment", "set roles for employee. the roles from AD are based on roles in Folk"],
+        ["add", "roles",
+          ["split", ";",
+            ["first", "_S.ad-user:extensionAttribute9"]
+          ]
+        ],
+        ["add", "changeroles",
+          ["split", ";",
+            ["first", "_S.ad-user:extensionAttribute8"]
+          ]
+        ],
+        ["if",
+          ["eq",
+            ["intersects", "_T.roles", "RoleAdministrator"], true],
+          ["add", "RoleAdministrator", true],
+          ["add", "RoleAdministrator", false]
+        ],
+        ["if",
+          ["or",
+            ["eq",
+              ["intersects", "_T.roles", "RoleDepartment"], true],
+            ["eq",
+              ["intersects", "_T.roles", "RoleEconomy"], true],
+            ["eq",
+              ["intersects", "_T.changeroles", "currentøkonomi"], true]
+          ],
+          ["add", "RoleDepartment", true],
+          ["add", "RoleDepartment", false]
+        ],
+        ["if",
+          ["eq",
+            ["intersects", "_T.roles", "RoleEconomy"], true],
+          ["add", "RoleEconomy", true],
+          ["add", "RoleEconomy", false]
+        ],
+        ["if",
+          ["eq",
+            ["intersects", "_T.changeroles", "currentøkonomi"], true],
+          ["add", "RoleEconomy", true]
+        ],
+        ["if",
+          ["eq",
+            ["intersects", "_T.roles", "RoleEmployee"], true],
+          ["add", "RoleEmployee", true],
+          ["add", "RoleEmployee", false]
+        ],
+        ["if",
+          ["or",
+            ["eq",
+              ["intersects", "_T.roles", "RoleManager"], true],
+            ["eq",
+              ["intersects", "_T.roles", "RoleEconomy"], true],
+            ["eq",
+              ["intersects", "_T.changeroles", "currentøkonomi"], true]
+          ],
+          ["add", "RoleManager", true],
+          ["add", "RoleManager", false]
+        ],
+        ["if",
+          ["or",
+            ["eq",
+              ["intersects", "_T.roles", "RoleProject"], true],
+            ["eq",
+              ["intersects", "_T.roles", "RoleEconomy"], true],
+            ["eq",
+              ["intersects", "_T.changeroles", "currentøkonomi"], true]
+          ],
+          ["add", "RoleProject", true],
+          ["add", "RoleProject", false]
+        ],
+        ["if",
+          ["eq",
+            ["intersects", "_T.roles", "RoleCertifier"], true],
+          ["add", "RoleCertifier", true],
+          ["add", "RoleCertifier", false]
+        ],
+        ["if",
+          ["eq",
+            ["intersects", "_T.roles", "RolePrognosis"], true],
+          ["add", "RolePrognosis", true],
+          ["add", "RolePrognosis", false]
+        ],
+        ["if",
+          ["or",
+            ["eq", "_S.global-person:employee_status", "Employee"],
+            ["eq", "_S.global-person:employee_status", "SoonEmployee"],
+            ["eq", "_S.global-person:employee_status", "TempSoonEmployee"],
+            ["eq", "_S.global-person:employee_status", "TempEmployee"]
+          ],
+          ["add", "RoleEmployee", true]
+        ],
+        ["case-eq", "_S.global-person:employee_status", "Employee",
+          ["add", "licenses",
+            ["dict", "UseDashboard", true, "UseExpense", true, "UseTime", true, "UsePrognosis", true, "UseMobile", true]
+          ], "TempEmployee",
+          ["add", "licenses",
+            ["dict", "UseDashboard", true, "UseExpense", true, "UseTime", true, "UsePrognosis", true, "UseMobile", true]
+          ],
+          ["add", "licenses",
+            ["dict", "UseDashboard", false, "UseExpense", false, "UseTime", false, "UsePrognosis", false, "UseMobile", false]
+          ]
+        ],
+        ["add", "EmployeeId", "_S.currenttime-employee:employeeid"],
+        ["if",
+          ["eq", "_S.global-person:AnsattkategoriID", 7],
+          [
+            ["add", "FlexiTime", false],
+            ["add", "PercentWork", 0]
+          ],
+          [
+            ["add", "FlexiTime", true],
+            ["add", "PercentWork", "_S.global-person:Stillingsprosent"]
+          ]
+        ],
+        ["comment", "Set balance for flexitime and vacation equal to the employee's start data, unless it's earlier than a cutoff date"],
+        ["add", "FlexiTimeBalanceUpdated",
+          ["if",
+            ["gt",
+              ["datetime-diff", "day", "_S.global-person:Start-date",
+                ["datetime-parse", "%Y-%m-%dT%H:%M:%S.0Z", "2018-01-01T00:00:00.0Z"]
+              ], 0],
+            ["datetime-format", "%Y-%m-%d", "_S.global-person:Start-date"], "2018-01-01"]
+        ],
+        ["add", "VacationBalanceUpdated",
+          ["if",
+            ["gt",
+              ["datetime-diff", "day", "_S.global-person:Start-date",
+                ["datetime-parse", "%Y-%m-%dT%H:%M:%S.0Z", "2015-01-01T00:00:00.0Z"]
+              ], 0],
+            ["datetime-format", "%Y-%m-%d", "_S.global-person:Start-date"], "2015-01-01"]
+        ],
+        ["comment", "build payloads"],
+        ["comment", "checks for new employees as well as employees who already exist but have a new contract which needs to be updated"],
+        ["if",
+          ["or",
+            ["and",
+              ["eq", "_S.currenttime-employee:active", false],
+              ["lt", "_S.currenttime-employee:leavedate",
+                ["datetime-format", "%d.%m.%Y", "_S.catalystone-user:HIRING_DATE.value"]
+              ]
+            ],
+            ["is-null", "_S.currenttime-employee:employeeid"]
+          ],
+          [
+            ["comment", "POST payload"],
+            ["add", "payload",
+              ["dict", "CompanyId", 0, "Initials",
+                ["concat",
+                  ["coalesce",
+                    ["list",
+                      ["first", "_S.ad-user:displayName"],
+                      ["first", "_S.ad-user:cn"],
+                      ["first", "_S:ad-user:name"]
+                    ]
+                  ], " ", "(",
+                  ["first", "_S.ad-user:employeeNumber"], ")"], "Firstname",
+                ["first", "_S.ad-user:givenName"], "LastName",
+                ["first", "_S.ad-user:sn"], "EmployedDate",
+                ["datetime-format", "%Y-%m-%d", "_S.global-person:Start-date"], "IsActive", true, "Username",
+                ["concat", "bouvet\\",
+                  ["first", "_S.ad-user:sAMAccountName"]
+                ], "Email1", "_S.global-person:Email", "UsernameMobile", "_S.currenttime-employee:usernamemobile", "JobCodeId", 0, "DepartmentId",
+                ["if",
+                  ["is-not-null", "_T.DepartmentId"], "_T.DepartmentId", "_T.currenttime-department:departmentid"], "ActcatId",
+                ["integer", "_S.catalystone-user:1117.VALUE.value"], "EmployeeCategoryId", "_T.EmployeeCategoryId", "EmployeeDetail",
+                ["dict", "EmployeeRef", "_S.global-person:uid", "EmployeeRefImport", "_S.global-person:uid", "Gender",
+                  ["substring", 0, 1, "_S.catalystone-user:GENDER.value"], "DateOfBirth",
+                  ["datetime-format", "%Y-%m-%d",
+                    ["datetime-parse", "%d.%m.%Y", "_S.catalystone-user:DATE_OF_BIRTH.value"]
+                  ]
+                ], "EmployeeTime",
+                ["dict", "CostRate", 0, "FlexiTime", "_T.FlexiTime", "VacationBalanceUpdated", "_T.VacationBalanceUpdated", "FlexiTimeBalanceUpdated", "_T.FlexiTimeBalanceUpdated", "ShowPlannedHours", false, "Overtime", false, "Rate", 9, "ChangeSalaryCode", false, "Timesheet", true, "PercentWork", "_T.PercentWork", "Vacation", true], "EmployeeAddress",
+                ["dict", "AddressLine1", "_S.catalystone-user:1006.VALUE.value", "Mobile", "_S.global-person:Mobile", "PostAddress", "_S.catalystone-user:1008.VALUE.value", "Zipcode", "_S.catalystone-user:1007.VALUE.value"], "EmployeeAccess",
+                ["if",
+                  ["and",
+                    ["eq", "_T.EmployeeCategoryId", 3],
+                    ["eq", "_T.availableforplanning", true]
+                  ],
+                  ["if",
+                    ["or",
+                      ["eq",
+                        ["intersects", "_T.changeroles", "personalansvarlig"], true],
+                      ["and",
+                        ["is-not-null", "_S.catalystone-user:1170.VALUE.value"],
+                        ["neq", "_S.catalystone-user:1170.VALUE.value", ""]
+                      ]
+                    ],
+                    ["dict", "RoleDepartment", "_T.RoleDepartment", "RoleEmployee", "_T.RoleEmployee", "RoleEconomy", "_T.RoleEconomy", "RoleManager", "_T.RoleManager", "RoleProject", "_T.RoleProject", "AvailableForPlanning", false, "UseResourcePlan", true, "RoleCertifier", "_T.RoleCertifier", "RolePrognosis", "_T.RolePrognosis", "UseDashboard", "_T.licenses.UseDashboard", "UseExpense", "_T.licenses.UseExpense", "UseTime", "_T.licenses.UseTime", "UsePrognosis", "_T.licenses.UsePrognosis", "UseMobile", "_T.licenses.UseMobile"],
+                    ["if",
+                      ["and",
+                        ["eq",
+                          ["intersects", "_T.roles", "RoleDepartment"], false],
+                        ["eq",
+                          ["intersects", "_T.roles", "RoleManager"], false]
+                      ],
+                      ["dict", "RoleDepartment", "_T.RoleDepartment", "RoleEmployee", "_T.RoleEmployee", "RoleEconomy", "_T.RoleEconomy", "RoleManager", "_T.RoleManager", "RoleProject", "_T.RoleProject", "AvailableForPlanning", "_T.availableforplanning", "UseResourcePlan", false, "RoleCertifier", "_T.RoleCertifier", "RolePrognosis", "_T.RolePrognosis", "UseDashboard", "_T.licenses.UseDashboard", "UseExpense", "_T.licenses.UseExpense", "UseTime", "_T.licenses.UseTime", "UsePrognosis", "_T.licenses.UsePrognosis", "UseMobile", "_T.licenses.UseMobile"],
+                      ["dict", "RoleDepartment", "_T.RoleDepartment", "RoleEmployee", "_T.RoleEmployee", "RoleEconomy", "_T.RoleEconomy", "RoleManager", "_T.RoleManager", "RoleProject", "_T.RoleProject", "RoleCertifier", "_T.RoleCertifier", "RolePrognosis", "_T.RolePrognosis", "UseDashboard", "_T.licenses.UseDashboard", "UseExpense", "_T.licenses.UseExpense", "UseTime", "_T.licenses.UseTime", "UsePrognosis", "_T.licenses.UsePrognosis", "UseMobile", "_T.licenses.UseMobile"]
+                    ]
+                  ],
+                  ["dict", "RoleDepartment", "_T.RoleDepartment", "RoleEmployee", "_T.RoleEmployee", "RoleEconomy", "_T.RoleEconomy", "RoleManager", "_T.RoleManager", "RoleProject", "_T.RoleProject", "RoleCertifier", "_T.RoleCertifier", "RolePrognosis", "_T.RolePrognosis", "UseDashboard", "_T.licenses.UseDashboard", "UseExpense", "_T.licenses.UseExpense", "UseTime", "_T.licenses.UseTime", "UsePrognosis", "_T.licenses.UsePrognosis", "UseMobile", "_T.licenses.UseMobile"]
+                ]
+              ]
+            ]
+          ],
+          ["if",
+            ["eq", "_S.global-person:employee_status", "Quit"],
+            [
+              ["comment", "quit update payload"],
+              ["add", "payload",
+                ["dict", "LeaveDate",
+                  ["datetime-format", "%Y-%m-%d", "_S.global-person:Leave-date"]
+                ]
+              ]
+            ],
+            [
+              ["comment", "future or active employee update payload"],
+              ["add", "payload",
+                ["dict", "CompanyId", 0, "Initials",
+                  ["concat",
+                    ["coalesce",
+                      ["list",
+                        ["first", "_S.ad-user:displayName"],
+                        ["first", "_S.ad-user:cn"],
+                        ["first", "_S:ad-user:name"]
+                      ]
+                    ], " ", "(",
+                    ["first", "_S.ad-user:employeeNumber"], ")"], "Firstname",
+                  ["first", "_S.ad-user:givenName"], "LastName",
+                  ["first", "_S.ad-user:sn"], "Email1", "_S.global-person:Email", "EmployedDate",
+                  ["datetime-format", "%Y-%m-%d", "_S.global-person:Start-date"], "IsActive", true, "Username",
+                  ["concat", "bouvet\\",
+                    ["first", "_S.ad-user:sAMAccountName"]
+                  ], "LeaveDate",
+                  ["datetime-format", "%Y-%m-%d", "_S.global-person:Leave-date"], "UsernameMobile", "_S.currenttime-employee:usernamemobile"]
+              ]
+            ]
+          ]
+        ],
+        ["if",
+          ["is-null", "_S.currenttime-employee:employeeid"],
+          ["add", "operation", "post-employee"],
+          ["add", "operation", "update-employee"]
+        ],
+        ["remove",
+          ["list", "availableforplanning", "licenses", "EmployeeCategoryId", "FlexiTimeBalanceUpdated", "RoleAdministrator", "RoleCertifier", "RoleDepartment", "RoleEconomy", "RoleEmployee", "RoleManager", "RolePrognosis", "RoleProject", "UseDashboard", "UseExpense", "UseMobile", "UsePrognosis", "UseTime", "VacationBalanceUpdated", "roles", "changeroles", "FlexiTime", "PercentWork"]
+        ]
+      ],
+      "currentdept": [
+        ["copy", "departmentid"]
+      ]
+    }
+  }
+}

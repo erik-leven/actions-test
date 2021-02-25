@@ -1,0 +1,27 @@
+{
+  "_id": "user-github-endpoint",
+  "type": "pipe",
+  "source": {
+    "type": "dataset",
+    "dataset": "user-github"
+  },
+  "sink": {
+    "type": "json",
+    "system": "github",
+    "url": "/org_user/bouvet"
+  },
+  "transform": {
+    "type": "dtl",
+    "rules": {
+      "default": [
+        ["filter",
+          ["eq", "_S._deleted", false]
+        ],
+        ["copy", "*"]
+      ]
+    }
+  },
+  "pump": {
+    "mode": "$ENV(pump-mode)"
+  }
+}

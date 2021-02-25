@@ -1,0 +1,135 @@
+{
+  "_id": "bouvet-orgdata-elasticsearch",
+  "type": "pipe",
+  "source": {
+    "type": "dataset",
+    "dataset": "global-department"
+  },
+  "transform": [{
+    "type": "dtl",
+    "rules": {
+      "default": [
+        ["filter",
+          ["eq", "_S.global-department:uid", "1"]
+        ],
+        ["copy",
+          ["list", "global-department:description", "global-department:uid", "global-department:departmentname", "manager", "member-count"]
+        ],
+        ["add", "sum-level",
+          ["sum",
+            ["values",
+              ["apply-hops", "count-employees-on-level", {
+                "datasets": ["global-department gds"],
+                "where": [
+                  ["eq", "_S.global-department:uid", "gds.PARENT.ORG_ID.value"]
+                ],
+                "recurse": true,
+                "exclude_root": true
+              }]
+            ]
+          ]
+        ],
+        ["add", "slack-channels", "_S.slack-group:prefs.channels"],
+        ["comment", "add", "department",
+          ["apply", "create-dep", "_S."]
+        ],
+        ["add", "department",
+          ["apply-hops", "create-dep", {
+            "datasets": ["global-department gds"],
+            "where": [
+              ["eq", "_S.global-department:uid", "gds.PARENT.ORG_ID.value"]
+            ],
+            "recurse": true
+          }]
+        ]
+      ],
+      "count-employees-on-level": [
+        ["add", "temp-count", "_S.member-count"]
+      ],
+      "create-dep": [
+        ["filter",
+          ["and",
+            ["neq", "_S._id", "catalystone-organization:999999"],
+            ["neq", "_S._id", "catalystone-organization:999"],
+            ["is-not-null", "_S.global-department:uid"]
+          ]
+        ],
+        ["copy", "global-department:description"],
+        ["copy", "global-department:uid"],
+        ["copy", "global-department:departmentname"],
+        ["copy", "manager"],
+        ["add", "parent", "_S.PARENT.ORG_ID.value"],
+        ["copy", "member-count"],
+        ["add", "slack-channels", "_S.slack-group:prefs.channels"],
+        ["comment", "counting all the members from the department and its sub-departments"],
+        ["if",
+          ["is-not-null", "_S.member-count"],
+          ["add", "sum-level",
+            ["plus", "_S.member-count",
+              ["sum",
+                ["values",
+                  ["apply-hops", "count-employees-on-level", {
+                    "datasets": ["global-department gds"],
+                    "where": [
+                      ["eq", "_S.global-department:uid", "gds.PARENT.ORG_ID.value"]
+                    ],
+                    "recurse": true,
+                    "exclude_root": true
+                  }]
+                ]
+              ]
+            ]
+          ],
+          ["add", "sum-level",
+            ["plus", 0,
+              ["sum",
+                ["values",
+                  ["apply-hops", "count-employees-on-level", {
+                    "datasets": ["global-department gds"],
+                    "where": [
+                      ["eq", "_S.global-department:uid", "gds.PARENT.ORG_ID.value"]
+                    ],
+                    "recurse": true,
+                    "exclude_root": true
+                  }]
+                ]
+              ]
+            ]
+          ]
+        ],
+        ["comment", "adding all the members from the department"],
+        ["add", "member",
+          ["apply-hops", "members", {
+            "datasets": ["global-person gps"],
+            "where": [
+              ["eq", "_S.uid", "gps.ORGANIZATION.@UNIQUE_IMPORT_ID"]
+            ]
+          }]
+        ]
+      ],
+      "members": [
+        ["filter",
+          ["eq", "_S.global-person:employee_status", "Employee"]
+        ],
+        ["filter",
+          ["not",
+            ["in", "_P._S.ORG_ID.value",
+              ["split", ";", "_S.1170.VALUE.value"]
+            ]
+          ]
+        ],
+        ["add", "uid", "_S.UNIQUE_IMPORT_ID.value"],
+        ["add", "name", "_S.global-person:DisplayName"],
+        ["add", "start-date",
+          ["datetime-parse", "%d.%m.%Y", "_S.HIRING_DATE.value"]
+        ],
+        ["if",
+          ["is-null", "_S.HIRING_DATE.value"],
+          ["add", "start-date",
+            ["datetime-parse", "%Y%m%d%H%M%S.0Z", "20000101000000.0Z"]
+          ]
+        ]
+      ]
+    }
+  }]
+}

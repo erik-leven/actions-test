@@ -1,0 +1,33 @@
+{
+  "_id": "slack-profile",
+  "type": "pipe",
+  "source": {
+    "type": "dataset",
+    "dataset": "global-person"
+  },
+  "sink": {
+    "type": "dataset",
+    "dataset": "slack-profile"
+  },
+  "transform": {
+    "type": "dtl",
+    "rules": {
+      "default": [
+        ["filter",
+          ["gt", "_S.slack-user:id", ""]
+        ],
+        ["add", "_id", "_S.id"],
+        ["add", "slack-user:id", "_S.id"],
+        ["add", "first_name",
+          ["if",
+            ["gt", "_S.FirstName", ""], "_S.FirstName", ""]
+        ],
+        ["add", "last_name",
+          ["if",
+            ["gt", "_S.LastName", ""], "_S.LastName", ""]
+        ],
+        ["add", "name", "_S.slack-user:name"]
+      ]
+    }
+  }
+}

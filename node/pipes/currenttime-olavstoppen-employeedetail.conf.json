@@ -1,0 +1,70 @@
+{
+  "_id": "currenttime-olavstoppen-employeedetail",
+  "type": "pipe",
+  "source": {
+    "type": "conditional",
+    "alternatives": {
+      "prod": {
+        "type": "sql",
+        "system": "currenttime-olavstoppen",
+        "blacklist": ["creditcard1", "creditcard2", "creditcard3", "gender", "abaxusertoken", "economymailreceiverdefaultchecked"],
+        "table": "employeedetail",
+        "updated_column": "updatedate"
+      },
+      "test": {
+        "type": "embedded",
+        "entities": [{
+          "_id": "1093",
+          "createdate": "~t2020-06-02T13:12:03.163Z",
+          "employeedetailid": 1093,
+          "employeeid": 1093,
+          "employeeid-ni": "~:currenttime-olavstoppen-employee:1093",
+          "employeeref": "3471",
+          "pursuant": "~:sesam:bouvet-employee",
+          "updateby": "Anita Velle (45)",
+          "updatedate": "~t2020-06-02T13:12:39Z"
+        }, {
+          "_id": "3203",
+          "createdate": "~t2018-02-05T14:25:12.303Z",
+          "employeedetailid": 3203,
+          "employeeid": 3465,
+          "employeeref": "0012",
+          "employeerefimport": "2174",
+          "pursuant": "~:sesam:bouvet-employee",
+          "updateby": "Testing (3526)",
+          "updatedate": "~t2019-03-20T08:41:24.887Z"
+        }, {
+          "_id": "3204",
+          "createdate": "~t2018-02-05T14:25:12.303Z",
+          "employeedetailid": 3204,
+          "employeeid": 3466,
+          "employeeref": "0013",
+          "employeerefimport": "2174",
+          "pursuant": "~:sesam:bouvet-employee",
+          "updateby": "Testing (3526)",
+          "updatedate": "~t2019-03-20T08:41:24.887Z"
+        }]
+      }
+    },
+    "condition": "$ENV(node-env)"
+  },
+  "transform": {
+    "type": "dtl",
+    "rules": {
+      "default": [
+        ["copy", "*"],
+        ["make-ni", "currenttime-olavstoppen-employee", "employeeid"],
+        ["add", "rdf:type",
+          ["ni", "bouvet:currenttime-olavstoppen-employeedetail"]
+        ],
+        ["add", "pursuant",
+          ["ni", "sesam:bouvet-employee"]
+        ]
+      ]
+    }
+  },
+  "pump": {
+    "cron_expression": "$ENV(ct_cron_fast)",
+    "rescan_cron_expression": "$ENV(ct_rescan_cron)"
+  }
+}

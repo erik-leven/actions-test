@@ -1,0 +1,214 @@
+{
+  "_id": "newEmployee-salary-currenttime-endpoint",
+  "type": "pipe",
+  "source": {
+    "type": "dataset",
+    "dataset": "newEmployee-salary-currenttime"
+  },
+  "sink": {
+    "type": "sql",
+    "system": "currenttime-economydbrepl-sesam",
+    "batch_size": 1,
+    "create_table_if_missing": true,
+    "primary_key": ["Ansatt-ID", "Mnd", "År"],
+    "schema": "adm",
+    "schema_definition": [{
+      "type": "integer",
+      "name": "Ansatt-ID",
+      "max_value": 20000,
+      "min_value": 0,
+      "primary_key": true,
+      "source_property": "Ansatt-ID"
+    }, {
+      "type": "string",
+      "name": "Ansettelsestype",
+      "max_size": 50,
+      "min_size": 0,
+      "source_property": "Ansettelsestype"
+    }, {
+      "type": "string",
+      "name": "Arbeidssted",
+      "max_size": 50,
+      "min_size": 0,
+      "source_property": "Arbeidssted"
+    }, {
+      "type": "string",
+      "name": "Folk-signert-kontrakt",
+      "max_size": 5,
+      "min_size": 0,
+      "source_property": "Folk-signert-kontrakt"
+    }, {
+      "type": "string",
+      "name": "Leder",
+      "allow_null": true,
+      "max_size": 50,
+      "min_size": 0,
+      "source_property": "Leder"
+    }, {
+      "type": "integer",
+      "name": "Mnd",
+      "max_value": 12,
+      "min_value": 1,
+      "primary_key": true,
+      "source_property": "Mnd"
+    }, {
+      "type": "string",
+      "name": "Navn",
+      "max_size": 100,
+      "min_size": 0,
+      "source_property": "Navn"
+    }, {
+      "type": "string",
+      "name": "Organisasjon",
+      "max_size": 100,
+      "min_size": 0,
+      "source_property": "Organisasjon"
+    }, {
+      "type": "datetime",
+      "name": "Startdato",
+      "max_value": "~t2099-08-02T00:00:00Z",
+      "min_value": "~t1987-11-01T00:00:00Z",
+      "source_property": "Startdato"
+    }, {
+      "type": "string",
+      "name": "Stillingsprosent",
+      "max_size": 10,
+      "min_size": 0,
+      "source_property": "Stillingsprosent"
+    }, {
+      "type": "string",
+      "name": "Vismabruker-opprettet",
+      "max_size": 5,
+      "min_size": 0,
+      "source_property": "Vismabruker-opprettet"
+    }, {
+      "type": "integer",
+      "name": "År",
+      "max_value": 2099,
+      "min_value": 1987,
+      "primary_key": true,
+      "source_property": "År"
+    }, {
+      "type": "string",
+      "name": "Adresse",
+      "allow_null": true,
+      "max_size": 100,
+      "min_size": 0,
+      "source_property": "Adresse"
+    }, {
+      "type": "string",
+      "name": "By",
+      "allow_null": true,
+      "max_size": 50,
+      "min_size": 0,
+      "source_property": "By"
+    }, {
+      "type": "string",
+      "name": "Kontonummer",
+      "allow_null": true,
+      "max_size": 50,
+      "min_size": 0,
+      "source_property": "Kontonummer"
+    }, {
+      "type": "string",
+      "name": "Land",
+      "allow_null": true,
+      "max_size": 50,
+      "min_size": 0,
+      "source_property": "Land"
+    }, {
+      "type": "integer",
+      "name": "Årslønn",
+      "allow_null": true,
+      "max_value": 10000000,
+      "min_size": 0,
+      "source_property": "Årslønn"
+    }, {
+      "type": "string",
+      "name": "Timelønn",
+      "allow_null": true,
+      "max_size": 50,
+      "min_size": 0,
+      "source_property": "Timelønn"
+    }, {
+      "type": "string",
+      "name": "Region",
+      "allow_null": true,
+      "max_size": 50,
+      "min_size": 0,
+      "source_property": "Region"
+    }, {
+      "type": "integer",
+      "name": "Postnr",
+      "allow_null": true,
+      "max_value": 100000,
+      "min_value": 0,
+      "source_property": "Postnr"
+    }, {
+      "type": "boolean",
+      "name": "Sjekket",
+      "source_property": "Sjekket"
+    }, {
+      "type": "string",
+      "name": "Kommentar",
+      "max_size": 1000,
+      "min_size": 0,
+      "source_property": "Kommentar"
+    }],
+    "table": "Lønn-Nyansettelser"
+  },
+  "transform": {
+    "type": "conditional",
+    "alternatives": {
+      "prod": {
+        "type": "dtl",
+        "rules": {
+          "default": [
+            ["copy", "*"],
+            ["filter",
+              ["neq", "_S._deleted", true]
+            ],
+            ["add", "Kontonummer",
+              ["decrypt", "$SECRET(folk-encryption-key)", "_T.Kontonummer"]
+            ],
+            ["add", "Årslønn",
+              ["integer",
+                ["decrypt", "$SECRET(folk-encryption-key)", "_T.Årslønn"]
+              ]
+            ],
+            ["add", "Timelønn",
+              ["decrypt", "$SECRET(folk-encryption-key)", "_T.Timelønn"]
+            ]
+          ]
+        }
+      },
+      "test": {
+        "type": "dtl",
+        "rules": {
+          "default": [
+            ["copy", "*"],
+            ["filter",
+              ["neq", "_S._deleted", true]
+            ],
+            ["add", "Kontonummer",
+              ["decrypt", "folk-encryption-key", "_T.Kontonummer"]
+            ],
+            ["add", "Årslønn",
+              ["integer",
+                ["decrypt", "folk-encryption-key", "_T.Årslønn"]
+              ]
+            ],
+            ["add", "Timelønn",
+              ["decrypt", "folk-encryption-key", "_T.Timelønn"]
+            ]
+          ]
+        }
+      }
+    },
+    "condition": "$ENV(node-env)"
+  },
+  "pump": {
+    "cron_expression": "$ENV(economylist_cron)",
+    "mode": "$ENV(pump-mode)"
+  }
+}

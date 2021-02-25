@@ -1,0 +1,16 @@
+{
+  "_id": "article-competency_research-endpoint",
+  "type": "pipe",
+  "source": {
+    "type": "dataset",
+    "dataset": "article-competency_research"
+  },
+  "sink": {
+    "type": "json",
+    "system": "competency_research",
+    "url": "/sink/min-side_blog-articles"
+  },
+  "pump": {
+    "mode": "$ENV(pump-mode)"
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "_id": "user-image-catalystone",
+  "type": "pipe",
+  "source": {
+    "type": "dataset",
+    "dataset": "global-person"
+  },
+  "transform": {
+    "type": "dtl",
+    "rules": {
+      "default": [
+        ["filter",
+          ["in", "_S.global-person:employee_status",
+            ["list", "EarlyEmployee", "TempEarlyEmployee", "SoonEmployee", "TempSoonEmployee", "Employee", "TempEmployee"]
+          ]
+        ],
+        ["add", "employeenumber", "_S.global-person:uid"],
+        ["add", "image",
+          ["first",
+            ["hops", {
+              "datasets": ["global-cv gcv"],
+              "where": [
+                ["eq", "_S.$ids", "gcv.bruker_id-ni"]
+              ],
+              "return": "gcv.image.large.url"
+            }]
+          ]
+        ],
+        ["filter",
+          ["is-not-null", "_T.image"]
+        ]
+      ]
+    }
+  }
+}

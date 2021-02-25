@@ -1,0 +1,50 @@
+{
+  "_id": "currenttime-sverige-employeedetail",
+  "type": "pipe",
+  "source": {
+    "type": "conditional",
+    "alternatives": {
+      "prod": {
+        "type": "sql",
+        "system": "currenttime-sverige",
+        "blacklist": ["creditcard1", "creditcard2", "creditcard3", "gender", "abaxusertoken", "economymailreceiverdefaultchecked"],
+        "table": "employeedetail",
+        "updated_column": "updatedate"
+      },
+      "test": {
+        "type": "embedded",
+        "entities": [{
+          "_id": "1260",
+          "createdate": "~t2018-02-26T14:17:17.393Z",
+          "employeedetailid": 1258,
+          "employeeid": 1260,
+          "employeeid-ni": "~:currenttime-sverige-employee:1260",
+          "employeeref": "2507",
+          "pursuant": "~:sesam:bouvet-employee",
+          "updateby": "Api",
+          "updatedate": "~t2020-09-29T12:13:46.91Z"
+        }]
+      }
+    },
+    "condition": "$ENV(node-env)"
+  },
+  "transform": {
+    "type": "dtl",
+    "rules": {
+      "default": [
+        ["copy", "*"],
+        ["make-ni", "currenttime-sverige-employee", "employeeid"],
+        ["add", "rdf:type",
+          ["ni", "bouvet:currenttime-sverige-employeedetail"]
+        ],
+        ["add", "pursuant",
+          ["ni", "sesam:bouvet-employee"]
+        ]
+      ]
+    }
+  },
+  "pump": {
+    "cron_expression": "$ENV(ct_cron_fast)",
+    "rescan_cron_expression": "$ENV(ct_rescan_cron)"
+  }
+}

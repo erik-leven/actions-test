@@ -1,0 +1,72 @@
+{
+  "_id": "organization-pulsen-endpoint",
+  "type": "pipe",
+  "source": {
+    "type": "dataset",
+    "dataset": "organization-pulsen"
+  },
+  "sink": {
+    "type": "sql",
+    "system": "sql01_sa",
+    "primary_key": "AvdelingsNr",
+    "schema_definition": [{
+      "type": "integer",
+      "name": "AvdelingsNr",
+      "allow_null": false,
+      "max_value": 9999,
+      "min_value": 0,
+      "primary_key": true,
+      "source_property": "AvdelingsNr"
+    }, {
+      "type": "string",
+      "name": "AvdelingsNavn",
+      "allow_null": true,
+      "max_size": 200,
+      "min_size": 0,
+      "source_property": "Avdelingsnavn"
+    }, {
+      "type": "integer",
+      "name": "Forelder_AvdelingsNr",
+      "allow_null": true,
+      "max_value": 9999,
+      "min_value": 0,
+      "source_property": "Forelder_AvdelingsNr"
+    }, {
+      "type": "datetime2",
+      "name": "Opprettet",
+      "allow_null": true,
+      "max_value": "~3999-01-27T23:00:00Z",
+      "min_value": "~t1970-12-18T23:00:00Z",
+      "source_property": "Opprettet"
+    }, {
+      "type": "datetime2",
+      "name": "Sist_Endret",
+      "allow_null": true,
+      "max_value": "~3999-01-27T23:00:00Z",
+      "min_value": "~t1970-12-18T23:00:00Z",
+      "source_property": "Sist_Endret"
+    }, {
+      "type": "bit",
+      "name": "Slettet",
+      "allow_null": true,
+      "max_value": 1,
+      "min_value": 0,
+      "source_property": "Slettet"
+    }],
+    "table": "Folk_Organisasjon_Historikk"
+  },
+  "transform": {
+    "type": "dtl",
+    "rules": {
+      "default": [
+        ["copy", "*"],
+        ["filter",
+          ["neq", "_S._deleted", true]
+        ]
+      ]
+    }
+  },
+  "pump": {
+    "mode": "$ENV(pump-mode)"
+  }
+}

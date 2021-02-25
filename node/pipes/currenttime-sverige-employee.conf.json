@@ -1,0 +1,70 @@
+{
+  "_id": "currenttime-sverige-employee",
+  "type": "pipe",
+  "source": {
+    "type": "conditional",
+    "alternatives": {
+      "prod": {
+        "type": "sql",
+        "system": "currenttime-sverige",
+        "blacklist": ["pinsalt", "salt", "pincode", "pwd"],
+        "table": "employee"
+      },
+      "test": {
+        "type": "embedded",
+        "entities": [{
+          "_id": "1260",
+          "source": 0,
+          "actcatid": 0,
+          "active": true,
+          "allocatedprojects": false,
+          "calendarconfigid": 0,
+          "companyid": 2,
+          "costdepartmentid": 0,
+          "createby": "MIT (007)",
+          "createdate": "~t2018-02-26T14:17:17Z",
+          "departmentid": 4,
+          "departmentid-ni": "~:currenttime-department:4",
+          "email1": "jonas.danmarksson@bouvet.se",
+          "employeddate": "~t2018-03-01T00:00:00Z",
+          "employeecategoryid": 1,
+          "employeeid": 1260,
+          "firstname": "Jonas",
+          "globalid": "~u0ab2510a-e934-4795-8c00-0a193fa93408",
+          "initials": "Jonas Danmarksson",
+          "jobcodeid": 0,
+          "lastname": "Danmarksson",
+          "pursuant": "~:sesam:bouvet-employee",
+          "pwdactive": true,
+          "ssoref": "",
+          "updateby": "MIT (007)",
+          "updatedate": "~t2018-02-26T14:17:17Z",
+          "username": "jonas.danmarksson"
+        }]
+      }
+    },
+    "condition": "$ENV(node-env)"
+  },
+  "transform": {
+    "type": "dtl",
+    "rules": {
+      "default": [
+        ["filter",
+          ["eq", "_S.active", true]
+        ],
+        ["copy", "*"],
+        ["make-ni", "currenttime-department", "departmentid"],
+        ["add", "rdf:type",
+          ["ni", "bouvet:currenttime-sverige-employee"]
+        ],
+        ["add", "pursuant",
+          ["ni", "sesam:bouvet-employee"]
+        ]
+      ]
+    }
+  },
+  "pump": {
+    "cron_expression": "$ENV(ct_cron_fast)",
+    "rescan_cron_expression": "$ENV(ct_rescan_cron)"
+  }
+}

@@ -1,0 +1,62 @@
+[
+  {
+    "$ids": [
+      "~:0001"
+    ],
+    "AnsattIDFolk": 1,
+    "Reason": "Mismatch Supervisor (Folk) and attestant (Current)",
+    "_id": "0001",
+    "rettet": false,
+    "sist-oppdatert": "~t2000-01-01T00:00:00Z"
+  },
+  {
+    "$ids": [
+      "~:0004"
+    ],
+    "AnsattIDFolk": 4,
+    "Reason": "Mismatch Supervisor (Folk) and attestant (Current)",
+    "_id": "0004",
+    "rettet": false,
+    "sist-oppdatert": "~t2000-01-01T00:00:00Z"
+  },
+  {
+    "$ids": [
+      "~:0007"
+    ],
+    "AnsattIDFolk": 7,
+    "Reason": "Mismatch Supervisor (Folk) and attestant (Current)",
+    "_id": "0007",
+    "rettet": false,
+    "sist-oppdatert": "~t2000-01-01T00:00:00Z"
+  },
+  {
+    "$ids": [
+      "~:0010"
+    ],
+    "AnsattIDFolk": 10,
+    "Reason": "Mismatch Supervisor (Folk) and attestant (Current)",
+    "_id": "0010",
+    "rettet": false,
+    "sist-oppdatert": "~t2000-01-01T00:00:00Z"
+  },
+  {
+    "$ids": [
+      "~:132"
+    ],
+    "AnsattIDFolk": 132,
+    "Reason": "Mismatch Supervisor (Folk) and attestant (Current)",
+    "_id": "132",
+    "rettet": false,
+    "sist-oppdatert": "~t2000-01-01T00:00:00Z"
+  },
+  {
+    "$ids": [
+      "~:391"
+    ],
+    "AnsattIDFolk": 391,
+    "Reason": "Mismatch Supervisor (Folk) and attestant (Current)",
+    "_id": "391",
+    "rettet": false,
+    "sist-oppdatert": "~t2000-01-01T00:00:00Z"
+  }
+]

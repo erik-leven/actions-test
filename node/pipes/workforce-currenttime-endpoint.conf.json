@@ -1,0 +1,132 @@
+{
+  "_id": "workforce-currenttime-endpoint",
+  "type": "pipe",
+  "source": {
+    "type": "dataset",
+    "dataset": "workforce-currenttime"
+  },
+  "sink": {
+    "type": "sql",
+    "system": "currenttime-economydbrepl-sesam",
+    "batch_size": 1,
+    "create_table_if_missing": true,
+    "primary_key": ["AnsattID", "Mnd", "År"],
+    "schema": "adm",
+    "schema_definition": [{
+      "type": "integer",
+      "name": "AnsattID",
+      "max_value": 99999,
+      "min_value": 101,
+      "primary_key": true,
+      "source_property": "AnsattID"
+    }, {
+      "type": "integer",
+      "name": "AnsattIDPersonalansvarlig",
+      "allow_null": true,
+      "max_value": 99999,
+      "min_value": 101,
+      "source_property": "AnsattIDPersonalansvarlig"
+    }, {
+      "type": "string",
+      "name": "AnsattTypeNavn",
+      "max_size": 100,
+      "min_size": 0,
+      "source_property": "AnsattTypeNavn"
+    }, {
+      "type": "string",
+      "name": "FraDatoMnd",
+      "max_size": 10,
+      "min_size": 10,
+      "source_property": "FraDatoMnd"
+    }, {
+      "type": "string",
+      "name": "AvdelingsKilde",
+      "max_size": 100,
+      "min_size": 0,
+      "source_property": "AvdelingsKilde"
+    }, {
+      "type": "boolean",
+      "name": "Leder",
+      "allow_null": true,
+      "source_property": "Leder"
+    }, {
+      "type": "boolean",
+      "name": "Aktiv i Current",
+      "allow_null": true,
+      "source_property": "Aktiv i Current"
+    }, {
+      "type": "boolean",
+      "name": "Aktiv i Visma",
+      "allow_null": true,
+      "source_property": "Aktiv i Visma"
+    }, {
+      "type": "integer",
+      "name": "Mnd",
+      "max_value": 12,
+      "min_value": 1,
+      "primary_key": true,
+      "source_property": "Mnd"
+    }, {
+      "type": "boolean",
+      "name": "Personalansvar",
+      "allow_null": true,
+      "source_property": "Personalansvar"
+    }, {
+      "type": "integer",
+      "name": "RegionIDCurrent",
+      "allow_null": true,
+      "max_value": 100,
+      "min_value": 1,
+      "source_property": "RegionIDCurrent"
+    }, {
+      "type": "string",
+      "name": "TilDatoMnd",
+      "max_size": 10,
+      "min_size": 10,
+      "source_property": "TilDatoMnd"
+    }, {
+      "type": "integer",
+      "name": "År",
+      "max_value": 2100,
+      "min_value": 1970,
+      "primary_key": true,
+      "source_property": "År"
+    }, {
+      "type": "integer",
+      "name": "AnsattTypeID",
+      "allow_null": true,
+      "max_value": 100,
+      "min_value": 1,
+      "source_property": "AnsattTypeID"
+    }, {
+      "type": "integer",
+      "name": "AvdelingsID",
+      "allow_null": true,
+      "max_value": 9999,
+      "min_value": 1,
+      "source_property": "AvdelingsID"
+    }, {
+      "type": "string",
+      "name": "Fritekst",
+      "allow_null": true,
+      "max_size": 1000,
+      "min_size": 1,
+      "source_property": "Fritekst"
+    }],
+    "table": "Ansatt_Avdeling_Periode"
+  },
+  "transform": {
+    "type": "dtl",
+    "rules": {
+      "default": [
+        ["filter",
+          ["neq", "_S._deleted", true]
+        ],
+        ["copy", "*"]
+      ]
+    }
+  },
+  "pump": {
+    "mode": "$ENV(pump-mode)"
+  }
+}

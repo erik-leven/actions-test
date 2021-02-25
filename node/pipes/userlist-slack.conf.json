@@ -1,0 +1,71 @@
+{
+  "_id": "userlist-slack",
+  "type": "pipe",
+  "source": {
+    "type": "dataset",
+    "dataset": "global-department"
+  },
+  "transform": {
+    "type": "dtl",
+    "rules": {
+      "default": [
+        ["copy", "_id"],
+        ["add", "id", "_S.slack-group:id"],
+        ["add", "DepartmentName",
+          ["first", "_S.ad-department:displayName"]
+        ],
+        ["merge-union",
+          ["apply-hops", "members", {
+            "datasets": ["global-department gd"],
+            "where": ["eq", "_S.distinguishedName", "gd.ad-department:memberOf"],
+            "recurse": true,
+            "max_depth": 10
+          }]
+        ],
+        ["if",
+          ["eq", "_S.id", "S015J2E7UGH"],
+          [
+            ["add", "DepartmentName", "_S.name"],
+            ["add", "employees",
+              ["apply-hops", "slack", {
+                "datasets": ["global-person gp"],
+                "where": [
+                  ["and",
+                    ["eq", "_S._deleted", "gp._deleted"],
+                    ["or",
+                      ["in",
+                        ["first", "_S.global-department:group-tag"],
+                        ["split", ";", "gp.ad-user:extensionAttribute8"]
+                      ],
+                      ["in",
+                        ["last", "_S.global-department:group-tag"],
+                        ["split", ";", "gp.ad-user:extensionAttribute8"]
+                      ]
+                    ]
+                  ]
+                ]
+              }]
+            ]
+          ]
+        ]
+      ],
+      "members": [
+        ["add", "employees",
+          ["apply-hops", "slack", {
+            "datasets": ["global-person gp"],
+            "where": ["eq", "_S.distinguishedName", "gp.ad-user:memberOf"]
+          }]
+        ]
+      ],
+      "slack": [
+        ["comment",
+          ["is-not-empty", "_S.slack-user:id"]
+        ],
+        ["add", "id", "_S.slack-user:id"],
+        ["add", "name",
+          ["first", "_S.ad-user:displayName"]
+        ]
+      ]
+    }
+  }
+}

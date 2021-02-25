@@ -1,0 +1,72 @@
+{
+  "_id": "basics-salary-currenttime",
+  "type": "pipe",
+  "source": {
+    "type": "dataset",
+    "dataset": "global-person"
+  },
+  "transform": {
+    "type": "dtl",
+    "rules": {
+      "default": [
+        ["copy", "_id"],
+        ["filter",
+          ["in", "_S.global-person:employee_status",
+            ["list", "EarlyEmployee", "TempEarlyEmployee", "SoonEmployee", "TempSoonEmployee", "Employee", "TempEmployee", "Quit"]
+          ]
+        ],
+        ["filter",
+          ["in", "~:bouvet:folk-user", "_S.rdf:type"]
+        ],
+        ["add", "Ansatt-ID",
+          ["integer", "_S.folk-user:employeeId"]
+        ],
+        ["add", "Navn",
+          ["coalesce",
+            ["list", "_S.catalystone-user:NAME.value", "_S.folk-user:1.data.value"]
+          ]
+        ],
+        ["add", "Personnummer",
+          ["coalesce",
+            ["list", "_S.catalystone-user:SOCIAL_SECURITY_NUMBER.value", "_S.folk-user:22.data.value"]
+          ]
+        ],
+        ["add", "Adresse-gatenavn",
+          ["coalesce",
+            ["list", "_S.catalystone-user:1006.VALUE.value", "_S.folk-user:1006.data.value"]
+          ]
+        ],
+        ["add", "Postnummer",
+          ["coalesce",
+            ["list", "_S.catalystone-user:1007.VALUE.value", "_S.folk-user:1007.data.value"]
+          ]
+        ],
+        ["add", "Adresse-by",
+          ["coalesce",
+            ["list", "_S.catalystone-user:1008.VALUE.value", "_S.folk-user:1008.data.value"]
+          ]
+        ],
+        ["add", "Adresse-land",
+          ["coalesce",
+            ["list", "_S.catalystone-user:1009.VALUE.value", "_S.folk-user:1009.data.value"]
+          ]
+        ],
+        ["add", "Kontonummer",
+          ["coalesce",
+            ["list", "_S.catalystone-user:1036.VALUE.value", "_S.folk-user:1036.data.value"]
+          ]
+        ],
+        ["add", "Stillingsprosent",
+          ["coalesce",
+            ["list", "_S.catalystone-user:WORKING_HOURS.value", "_S.folk-user:40.data.value"]
+          ]
+        ],
+        ["add", "Arbeidssted",
+          ["coalesce",
+            ["list", "_S.catalystone-user:JOB_LOCATION.value", "_S.folk-user:14.data.value"]
+          ]
+        ]
+      ]
+    }
+  }
+}

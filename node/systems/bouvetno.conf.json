@@ -1,0 +1,14 @@
+{
+  "_id": "bouvetno",
+  "type": "system:url",
+  "authentication": "basic",
+  "connect_timeout": 60,
+  "headers": {
+    "charset": "latin-1"
+  },
+  "password": "$SECRET(bouvetno-pw)",
+  "read_timeout": 300,
+  "url_pattern": "$ENV(bouvetno-baseurl)",
+  "username": "Sesam",
+  "verify_ssl": true
+}

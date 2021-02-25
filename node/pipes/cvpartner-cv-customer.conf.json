@@ -1,0 +1,83 @@
+{
+  "_id": "cvpartner-cv-customer",
+  "type": "pipe",
+  "source": {
+    "type": "conditional",
+    "alternatives": {
+      "prod": {
+        "type": "json",
+        "system": "cv-partner",
+        "url": "v2/company/cv/customers"
+      },
+      "test": {
+        "type": "embedded",
+        "entities": [{
+          "customers": [{
+            "_id": "5825b32e2c04d62376fe9c27",
+            "company_cv_id": "5320485a2f274f28d9000009",
+            "created_at": "2016-11-11T12:01:50.713Z",
+            "custom_tag_ids": [],
+            "custom_tags": [],
+            "customer_description": {
+              "no": "Arkivverkets skal ta vare på arkivmateriale fra statlige virksomheter, gjøre materialet tilgjengelig for bruk, føre tilsyn med arkivarbeidet i staten, fylkeskommunene og kommunene, samt bidra til at private arkiver blir tatt vare på. Arkivverket består av Riksarkivet, åtte statsarkiver, Samisk arkiv og Norsk helsearkiv. De fører tilsyn med offentlige virksomheters arkivering, tar vare på arkivverdig innhold og har ca 260 000 hyllemeter med arkivmateriale, hvorav det eldste er fra før år 1000. "
+            },
+            "customer_description_to_cvs": {
+              "no": "Arkivverkets skal ta vare på arkivmateriale fra statlige virksomheter, gjøre materialet tilgjengelig for bruk, føre tilsyn med arkivarbeidet i staten, fylkeskommunene og kommunene, samt bidra til at private arkiver blir tatt vare på. Arkivverket består av Riksarkivet, åtte statsarkiver, Samisk arkiv og Norsk helsearkiv. De fører tilsyn med offentlige virksomheters arkivering, tar vare på arkivverdig innhold og har ca 260 000 hyllemeter med arkivmateriale, hvorav det eldste er fra før år 1000. "
+            },
+            "customer_name": {
+              "no": "Arkivverket",
+              "se": "Arkivverket"
+            },
+            "customer_url": null,
+            "external_unique_id": null,
+            "image": {
+              "fit_thumb": {
+                "url": null
+              },
+              "large": {
+                "url": null
+              },
+              "small_thumb": {
+                "url": null
+              },
+              "thumb": {
+                "url": null
+              },
+              "url": null
+            },
+            "image_height": null,
+            "image_width": null,
+            "industry_id": "58e34c3998fc46086377f34e",
+            "modifier_id": null,
+            "project_count": 3,
+            "rdf:type": "cvpartner:CvCustomer",
+            "updated_at": "2018-05-30T14:35:41.339Z",
+            "version": 3
+          }]
+        }]
+      }
+    },
+    "condition": "$ENV(node-env)"
+  },
+  "transform": {
+    "type": "dtl",
+    "rules": {
+      "default": [
+        ["add", "_id", "1"],
+        ["create",
+          ["apply", "create", "_S.customers"]
+        ]
+      ],
+      "create": [
+        ["copy", "*"],
+        ["add", "rdf:type", "cvpartner:CvCustomer"]
+      ]
+    }
+  },
+  "pump": {
+    "cron_expression": "$ENV(cvpartner_cron_fast)"
+  },
+  "compaction": {
+    "sink": true
+  }
+}

@@ -1,0 +1,149 @@
+{
+  "_id": "currenttime-project-extra",
+  "type": "pipe",
+  "source": {
+    "type": "conditional",
+    "alternatives": {
+      "prod": {
+        "type": "sql",
+        "system": "currenttime",
+        "schema": "bov",
+        "table": "PROJECT_TILLEGGSINFORMASJON",
+        "updated_column": "updatedate"
+      },
+      "test": {
+        "type": "embedded",
+        "entities": [{
+          "_id": "14913",
+          "AutoFaktType": "Per prosjekt",
+          "Automatiskfakturering": false,
+          "KontraktAnsvarlig_employeeid": 0,
+          "KontraktInnlevert": false,
+          "projectid": 14913,
+          "projectid-ni": "~:currenttime-project:14913",
+          "rdf:type": "~:bouvet:currenttime-project-extra",
+          "ts": "~bAAAAAAaSykQ=",
+          "updateby": "Vedlikeholdsquery",
+          "updatedate": "~t2019-05-24T10:17:00Z"
+        }, {
+          "_id": "14887",
+          "AutoFaktType": "Per prosjekt",
+          "Automatiskfakturering": false,
+          "KontraktAnsvarlig_employeeid": 0,
+          "KontraktInnlevert": false,
+          "projectid": 14887,
+          "projectid-ni": "~:currenttime-project:14887",
+          "rdf:type": "~:bouvet:currenttime-project-extra",
+          "ts": "~bAAAAAAZ3MHI=",
+          "updateby": "Vedlikeholdsquery",
+          "updatedate": "~t2019-05-07T09:23:46Z"
+        }, {
+          "_id": "14876",
+          "AutoFaktType": "Per prosjekt",
+          "Automatiskfakturering": false,
+          "KontraktAnsvarlig_employeeid": 0,
+          "KontraktInnlevert": false,
+          "projectid": 14876,
+          "projectid-ni": "~:currenttime-project:14876",
+          "rdf:type": "~:bouvet:currenttime-project-extra",
+          "ts": "~bAAAAAAZ0s4Y=",
+          "updateby": "Vedlikeholdsquery",
+          "updatedate": "~t2019-05-06T08:18:42Z"
+        }, {
+          "_id": "2281",
+          "Automatiskfakturering": false,
+          "KontraktAnsvarlig_employeeid": 0,
+          "KontraktInnlevert": false,
+          "projectid": 2281,
+          "projectid-ni": "~:currenttime-project:2281",
+          "rdf:type": "~:bouvet:currenttime-project-extra",
+          "ts": "~bAAAAAAACuzg=",
+          "updateby": "Access",
+          "updatedate": "~t2014-11-06T11:28:16Z"
+        }, {
+          "_id": "2279",
+          "Automatiskfakturering": false,
+          "KontraktAnsvarlig_employeeid": 0,
+          "KontraktInnlevert": false,
+          "projectid": 2279,
+          "projectid-ni": "~:currenttime-project:2279",
+          "rdf:type": "~:bouvet:currenttime-project-extra",
+          "ts": "~bAAAAAAACuzY=",
+          "updateby": "Access",
+          "updatedate": "~t2014-11-06T11:28:16Z"
+        }, {
+          "_id": "2277",
+          "Automatiskfakturering": false,
+          "KontraktAnsvarlig_employeeid": 0,
+          "KontraktInnlevert": false,
+          "projectid": 2277,
+          "projectid-ni": "~:currenttime-project:2277",
+          "rdf:type": "~:bouvet:currenttime-project-extra",
+          "ts": "~bAAAAAAACuzQ=",
+          "updateby": "Access",
+          "updatedate": "~t2014-11-06T11:28:16Z"
+        }, {
+          "_id": "2276",
+          "Automatiskfakturering": false,
+          "KontraktAnsvarlig_employeeid": 0,
+          "KontraktInnlevert": false,
+          "projectid": 2276,
+          "projectid-ni": "~:currenttime-project:2276",
+          "rdf:type": "~:bouvet:currenttime-project-extra",
+          "ts": "~bAAAAAAACuzM=",
+          "updateby": "Access",
+          "updatedate": "~t2014-11-06T11:28:16Z"
+        }, {
+          "_id": "2269",
+          "Automatiskfakturering": false,
+          "KontraktAnsvarlig_employeeid": 0,
+          "KontraktInnlevert": false,
+          "projectid": 2269,
+          "projectid-ni": "~:currenttime-project:2269",
+          "rdf:type": "~:bouvet:currenttime-project-extra",
+          "ts": "~bAAAAAAACuyw=",
+          "updateby": "Access",
+          "updatedate": "~t2014-11-06T11:28:16Z"
+        }, {
+          "_id": "2263",
+          "Automatiskfakturering": false,
+          "KontraktAnsvarlig_employeeid": 0,
+          "KontraktInnlevert": false,
+          "projectid": 2263,
+          "projectid-ni": "~:currenttime-project:2263",
+          "rdf:type": "~:bouvet:currenttime-project-extra",
+          "ts": "~bAAAAAAACuyc=",
+          "updateby": "Access",
+          "updatedate": "~t2014-11-06T11:28:16Z"
+        }, {
+          "_id": "2256",
+          "Automatiskfakturering": false,
+          "KontraktAnsvarlig_employeeid": 0,
+          "KontraktInnlevert": true,
+          "projectid": 2256,
+          "projectid-ni": "~:currenttime-project:2256",
+          "rdf:type": "~:bouvet:currenttime-project-extra",
+          "ts": "~bAAAAAACtamQ=",
+          "updateby": "Access",
+          "updatedate": "~t2014-11-06T11:28:16Z"
+        }]
+      }
+    },
+    "condition": "$ENV(node-env)"
+  },
+  "transform": {
+    "type": "dtl",
+    "rules": {
+      "default": [
+        ["copy", "*"],
+        ["make-ni", "currenttime-project", "projectid"],
+        ["add", "rdf:type",
+          ["ni", "bouvet:currenttime-project-extra"]
+        ]
+      ]
+    }
+  },
+  "pump": {
+    "mode": "manual"
+  }
+}

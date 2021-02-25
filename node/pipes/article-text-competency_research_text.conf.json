@@ -1,0 +1,36 @@
+{
+  "_id": "article-text-competency_research_text",
+  "type": "pipe",
+  "source": {
+    "type": "dataset",
+    "dataset": "article-competency_research"
+  },
+  "transform": {
+    "type": "dtl",
+    "rules": {
+      "default": [
+        ["copy", "_id"],
+        ["merge",
+          ["apply", "components", "_S.data.page.regions.main.components"]
+        ],
+        ["add", "data",
+          ["concat", "Creator: ", "_S.data.creator", "\n", "_S.data.data.body", "\n\n", "_T.component-content"]
+        ],
+        ["add", "filename",
+          ["concat", "_S.data.id", ".txt"]
+        ],
+        ["remove", "component-content"]
+      ],
+      "components": [
+        ["merge-union",
+          ["apply", "content", "_S.config.accordion"]
+        ]
+      ],
+      "content": [
+        ["add", "component-content",
+          ["concat", "_S.title", "\n", "_S.body", "\n\n"]
+        ]
+      ]
+    }
+  }
+}

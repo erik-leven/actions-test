@@ -1,0 +1,57 @@
+{
+  "_id": "employeeaddress-currenttime-sverige",
+  "type": "pipe",
+  "source": {
+    "type": "dataset",
+    "dataset": "global-person"
+  },
+  "transform": {
+    "type": "dtl",
+    "rules": {
+      "default": [
+        ["filter",
+          ["in", "_S.global-person:employee_status",
+            ["list", "Employee", "SoonEmployee", "EarlyEmployee", "TempEmployee", "TempSoonEmployee", "EarlyTempEmployee"]
+          ]
+        ],
+        ["filter",
+          ["is-not-null", "_S.currenttime-sverige-employee:employeeid"]
+        ],
+        ["comment", "some times employees are rehired, ie. summer students who get a new contract before their current contract i closed by the economy department"],
+        ["comment", "in these cases we need to stop updating from Folk until the new contract is closed (the employee becomes inactive in CT)"],
+        ["comment", "these cases are identified by a new hiring date from Folk which is at a later time than their last leave date"],
+        ["if",
+          ["and",
+            ["lt", "_S.currenttime-sverige-employee:leavedate",
+              ["datetime-parse", "%d.%m.%Y", "_S.catalystone-user:HIRING_DATE.value"]
+            ],
+            ["eq", "_S.currenttime-sverige-employee:active", true]
+          ],
+          ["filter"]
+        ],
+        ["merge",
+          ["hops", {
+            "datasets": ["global-department gd"],
+            "where": [
+              ["eq",
+                ["string", "_S.ORGANIZATION.@UNIQUE_IMPORT_ID"], "gd.ORG_ID.value"]
+            ],
+            "return": ["dict", "temp-rdf:type", "gd.rdf:type"]
+          }]
+        ],
+        ["filter",
+          ["in", "~:bouvet:global-dep-bouvet-ab", "_T.temp-rdf:type"]
+        ],
+        ["remove", "temp-rdf:type"],
+        ["add", "EmployeeId", "_S.currenttime-sverige-employee:employeeid"],
+        ["add", "payload",
+          ["dict", "AddressLine1", "_S.catalystone-user:1006.VALUE.value", "Mobile", "_S.global-person:Mobile", "PostAddress", "_S.catalystone-user:1008.VALUE.value", "Zipcode", "_S.catalystone-user:1007.VALUE.value"]
+        ],
+        ["add", "operation", "update-employeeaddress"]
+      ],
+      "currentdept": [
+        ["copy", "departmentid"]
+      ]
+    }
+  }
+}

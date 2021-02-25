@@ -1,0 +1,61 @@
+{
+  "_id": "user-catalystone",
+  "type": "pipe",
+  "source": {
+    "type": "dataset",
+    "dataset": "global-person"
+  },
+  "transform": {
+    "type": "dtl",
+    "rules": {
+      "default": [
+        ["filter",
+          ["intersects", "_S.rdf:type", "~:bouvet:folk-user"]
+        ],
+        ["filter",
+          ["is-not-empty", "_S.folk-user:guid"]
+        ],
+        ["filter",
+          ["or",
+            ["neq",
+              ["in", "OU=Ansatte som begynner",
+                ["split", ",",
+                  ["first", "_S.distinguishedName"]
+                ]
+              ], false],
+            ["neq",
+              ["in", "OU=Midlertidig ansatte",
+                ["split", ",",
+                  ["first", "_S.distinguishedName"]
+                ]
+              ], false],
+            ["neq",
+              ["in", "OU=Ansatte",
+                ["split", ",",
+                  ["first", "_S.distinguishedName"]
+                ]
+              ], false]
+          ]
+        ],
+        ["add", "employees",
+          ["list",
+            ["dict", "guid", "_S.folk-user:guid", "field",
+              ["dict", "101",
+                ["dict", "data",
+                  ["dict", "value",
+                    ["first", "_S.ad-user:userPrincipalName"]
+                  ]
+                ], "7",
+                ["dict", "data",
+                  ["dict", "value",
+                    ["first", "_S.ad-user:mail"]
+                  ]
+                ]
+              ]
+            ]
+          ]
+        ]
+      ]
+    }
+  }
+}

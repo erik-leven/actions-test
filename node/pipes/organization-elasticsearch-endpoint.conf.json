@@ -1,0 +1,34 @@
+{
+  "_id": "organization-elasticsearch-endpoint",
+  "type": "pipe",
+  "source": {
+    "type": "dataset",
+    "dataset": "bouvet-orgstructure-elasticsearch"
+  },
+  "sink": {
+    "type": "json",
+    "system": "elasticsearch",
+    "batch_size": 50,
+    "url": "/sesam_org_data"
+  },
+  "transform": {
+    "type": "dtl",
+    "rules": {
+      "default": [
+        ["copy", "*"],
+        ["add", "sesam_updated",
+          ["datetime",
+            ["now"]
+          ]
+        ],
+        ["if", "_S._deleted",
+          ["add", "enonic_deleted", true],
+          ["add", "enonic_deleted", false]
+        ]
+      ]
+    }
+  },
+  "pump": {
+    "mode": "$ENV(pump-mode)"
+  }
+}

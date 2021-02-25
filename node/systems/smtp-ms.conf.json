@@ -1,0 +1,15 @@
+{
+  "_id": "smtp-ms",
+  "type": "system:microservice",
+  "docker": {
+    "environment": {
+      "AMOUNT_CAP": 10,
+      "BASE_URL": "$ENV(mail_base_url)",
+      "LOG_LEVEL": "INFO",
+      "MAIL_RECEIVER": "$ENV(mail_receiver_dead_letter)",
+      "SESAM_JWT": "$SECRET(sesam-jwt)"
+    },
+    "image": "bouveta/smtp:1.0.1",
+    "port": 5000
+  }
+}

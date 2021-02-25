@@ -1,0 +1,136 @@
+{
+  "_id": "jira-worklog",
+  "type": "pipe",
+  "source": {
+    "type": "conditional",
+    "alternatives": {
+      "prod": {
+        "type": "sql",
+        "system": "jira",
+        "preserve_null_values": false,
+        "primary_key": "ID",
+        "table": "worklog",
+        "updated_column": "UPDATED"
+      },
+      "test": {
+        "type": "embedded",
+        "entities": [{
+          "_id": "481924",
+          "author": "ola.normann",
+          "created": "~t2019-05-24T10:54:08.007Z",
+          "id": "~f481924",
+          "issueid": "~f338981",
+          "startdate": "~t2019-05-24T10:54:00Z",
+          "timeworked": "~f14400",
+          "updateauthor": "ola.normann",
+          "updated": "~t2019-05-24T10:54:08.007Z",
+          "worklogbody": ""
+        }, {
+          "_id": "481923",
+          "author": "kari.normann",
+          "created": "~t2019-05-24T10:48:14.881Z",
+          "id": "~f481923",
+          "issueid": "~f333909",
+          "startdate": "~t2019-05-24T10:45:00Z",
+          "timeworked": "~f10800",
+          "updateauthor": "kari.normann",
+          "updated": "~t2019-05-24T10:48:14.881Z",
+          "worklogbody": "Satt opp Filestream og Filetable på server instansen.\r\nResoret utviklings basen.\r\nSjekket at eksisterende filetable fungerer\r\nForsøkt å logge på Integratiosn services  med SSMS. Det feiler. Fant ut av at det for ny version av SSMS (v18) som var installert. Installert v 17.9.1 så får jeg logge på."
+        }, {
+          "_id": "481915",
+          "author": "ol.sen",
+          "created": "~t2019-05-24T09:51:33.555Z",
+          "id": "~f481915",
+          "issueid": "~f338979",
+          "startdate": "~t2019-05-24T09:51:00Z",
+          "timeworked": "~f3600",
+          "updateauthor": "ol.sen",
+          "updated": "~t2019-05-24T09:51:33.555Z",
+          "worklogbody": ""
+        }, {
+          "_id": "481911",
+          "author": "mala.bror",
+          "created": "~t2019-05-24T09:42:40.527Z",
+          "id": "~f481911",
+          "issueid": "~f338526",
+          "startdate": "~t2019-05-24T08:12:00Z",
+          "timeworked": "~f5400",
+          "updateauthor": "mala.bror",
+          "updated": "~t2019-05-24T09:42:40.527Z",
+          "worklogbody": ""
+        }, {
+          "_id": "481906",
+          "author": "alle.mann",
+          "created": "~t2019-05-24T09:03:47.466Z",
+          "id": "~f481906",
+          "issueid": "~f323161",
+          "startdate": "~t2019-05-24T07:33:00Z",
+          "timeworked": "~f5400",
+          "updateauthor": "alle.mann",
+          "updated": "~t2019-05-24T09:03:47.466Z",
+          "worklogbody": "Fullføre og pushe til test"
+        }, {
+          "_id": "481902",
+          "author": "tor.kornmo",
+          "created": "~t2019-05-24T08:33:05.954Z",
+          "id": "~f481902",
+          "issueid": "~f338334",
+          "startdate": "~t2019-05-24T08:27:00Z",
+          "timeworked": "~f1800",
+          "updateauthor": "tor.kornmo",
+          "updated": "~t2019-05-24T08:33:05.954Z",
+          "worklogbody": "CAPDAM-21992\r\nCAPDAM-21985\r\nCAPDAM-22038\r\nCAPDAM-22047\r\nCAPDAM-22044\r\nCAPDAM-22032"
+        }, {
+          "_id": "481882",
+          "author": "egon.olsen",
+          "created": "~t2019-05-24T07:13:40.129Z",
+          "id": "~f481882",
+          "issueid": "~f338605",
+          "startdate": "~t2019-05-23T07:13:00Z",
+          "timeworked": "~f19800",
+          "updateauthor": "egon.olsen",
+          "updated": "~t2019-05-24T08:26:42.93Z",
+          "worklogbody": "Avklaringer om backend med Kristine, implementert målepunkter og startet med infoboks. Avklaringer med Gareth"
+        }, {
+          "_id": "481897",
+          "author": "sand.kasse",
+          "created": "~t2019-05-24T08:25:21.532Z",
+          "id": "~f481897",
+          "issueid": "~f338949",
+          "startdate": "~t2019-05-07T08:25:00Z",
+          "timeworked": "~f3600",
+          "updateauthor": "sand.kasse",
+          "updated": "~t2019-05-24T08:25:21.532Z",
+          "worklogbody": "Testing av prøvesider i Skynet. "
+        }, {
+          "_id": "123910",
+          "author": "kjell.pell",
+          "created": "~t2012-11-29T09:38:20.473Z",
+          "id": "~f123910",
+          "issueid": "~f82238",
+          "startdate": "~t2012-11-28T09:38:00Z",
+          "timeworked": "~f3600",
+          "updateauthor": "kjell.pell",
+          "updated": "~t2012-11-29T09:38:20.473Z",
+          "worklogbody": ""
+        }, {
+          "_id": "123905",
+          "author": "benny.lenny",
+          "created": "~t2012-11-29T09:06:25.457Z",
+          "id": "~f123905",
+          "issueid": "~f83403",
+          "startdate": "~t2012-11-29T09:05:00Z",
+          "timeworked": "~f3600",
+          "updateauthor": "benny.lenny",
+          "updated": "~t2012-11-29T09:06:25.457Z",
+          "worklogbody": "Var en feil i søke-sp i db. Har patchet test+prod med fiks."
+        }]
+      }
+    },
+    "condition": "$ENV(node-env)"
+  },
+  "pump": {
+    "cron_expression": "$ENV(jira_cron_slow)",
+    "rescan_cron_expression": "$ENV(jira_rescan_cron)"
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "_id": "article-bouvetshares-text-competency_research_text-endpoint",
+  "type": "pipe",
+  "source": {
+    "type": "dataset",
+    "dataset": "article-bouvetshares-text-competency_research"
+  },
+  "sink": {
+    "type": "json",
+    "system": "competency_research",
+    "url": "/sink/bouvet-deler_eu"
+  },
+  "transform": {
+    "type": "dtl",
+    "rules": {
+      "default": [
+        ["copy", "*"],
+        ["comment", "added content_type in this pipe instead of prep pipe to avoid reprocessing of prep pipe, as endpoints are paused and we might want to continue from where we stopped."],
+        ["add", "content_type", "text/html"]
+      ]
+    }
+  },
+  "pump": {
+    "mode": "$ENV(pump-mode)"
+  }
+}

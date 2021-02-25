@@ -1,0 +1,125 @@
+{
+  "_id": "visma-employee",
+  "type": "pipe",
+  "source": {
+    "type": "conditional",
+    "alternatives": {
+      "prod": {
+        "type": "sql",
+        "system": "visma",
+        "schema": "BouvetNorgeAS",
+        "table": "product",
+        "updated_column": "LastUpdate"
+      },
+      "test": {
+        "type": "embedded",
+        "entities": [{
+          "_id": "1",
+          "Created": "~t2011-03-11T16:47:34Z",
+          "CreatedBy": 1,
+          "DepNo": 990,
+          "InActiveYesNo": 1,
+          "LastUpdate": "~t2017-03-15T10:26:50Z",
+          "LastUpdatedBy": 8,
+          "MDM_Deleted": 0,
+          "MDM_SyncVersion": 0,
+          "MDM_Version": 0,
+          "Name": "xForretningsutvikling",
+          "ProductNo": 1,
+          "RespEmployeeNo": 0,
+          "StartTime": "~t2001-01-01T00:00:00Z",
+          "StopTime": "~t2001-06-30T00:00:00Z",
+          "TransferNewYearYesNo": 0,
+          "UtilityBits": "~bAAAAAAAA",
+          "_updated": "~t2017-03-15T10:26:50Z"
+        }, {
+          "_id": "2",
+          "Created": "~t2011-03-11T16:47:41Z",
+          "CreatedBy": 1,
+          "DepNo": 990,
+          "InActiveYesNo": 1,
+          "LastUpdate": "~t2011-04-08T09:13:26Z",
+          "LastUpdatedBy": 3,
+          "Name": "AUT. OPPRETTET BUNT NR. 14320",
+          "ProductNo": 2,
+          "RespEmployeeNo": 0,
+          "StartTime": "~t1970-01-01T00:00:00Z",
+          "StopTime": "~t2029-12-31T00:00:00Z",
+          "TransferNewYearYesNo": 0,
+          "UtilityBits": "~bAAAAAAAA",
+          "_updated": "~t2011-04-08T09:13:26Z"
+        }, {
+          "_id": "5",
+          "Created": "~t2011-03-11T16:47:34Z",
+          "CreatedBy": 1,
+          "DepNo": 990,
+          "InActiveYesNo": 1,
+          "LastUpdate": "~t2011-04-08T09:13:25Z",
+          "LastUpdatedBy": 3,
+          "Name": "xFag/Leveranse",
+          "ProductNo": 5,
+          "RespEmployeeNo": 0,
+          "StartTime": "~t2001-01-01T00:00:00Z",
+          "StopTime": "~t2001-06-30T00:00:00Z",
+          "TransferNewYearYesNo": 0,
+          "UtilityBits": "~bAAAAAAAA",
+          "_updated": "~t2011-04-08T09:13:25Z"
+        }, {
+          "_id": "8",
+          "Created": "~t2011-03-11T16:47:41Z",
+          "CreatedBy": 1,
+          "DepNo": 990,
+          "InActiveYesNo": 1,
+          "LastUpdate": "~t2011-04-08T09:13:26Z",
+          "LastUpdatedBy": 3,
+          "Name": "AUT. OPPRETTET BUNT NR. 13813",
+          "ProductNo": 8,
+          "RespEmployeeNo": 0,
+          "StartTime": "~t1970-01-01T00:00:00Z",
+          "StopTime": "~t2029-12-31T00:00:00Z",
+          "TransferNewYearYesNo": 0,
+          "UtilityBits": "~bAAAAAAAA",
+          "_updated": "~t2011-04-08T09:13:26Z"
+        }, {
+          "_id": "10",
+          "Created": "~t2011-03-11T16:47:34Z",
+          "CreatedBy": 1,
+          "DepNo": 990,
+          "InActiveYesNo": 1,
+          "LastUpdate": "~t2016-10-07T14:42:49Z",
+          "LastUpdatedBy": 3,
+          "MDM_Deleted": 0,
+          "MDM_SyncVersion": 0,
+          "MDM_Version": 0,
+          "Name": "xØkonomix",
+          "ProductNo": 10,
+          "RespEmployeeNo": 0,
+          "StartTime": "~t2001-01-01T00:00:00Z",
+          "StopTime": "~t2001-06-30T00:00:00Z",
+          "TransferNewYearYesNo": 0,
+          "UtilityBits": "~bAAAAAAAA",
+          "_updated": "~t2016-10-07T14:42:49Z"
+        }]
+      }
+    },
+    "condition": "$ENV(node-env)"
+  },
+  "transform": {
+    "type": "dtl",
+    "rules": {
+      "default": [
+        ["filter",
+          ["neq", "_S.DepNo", "0"]
+        ],
+        ["copy", "*"],
+        ["add", "rdf:type",
+          ["ni", "bouvet:visma-employee"]
+        ]
+      ]
+    }
+  },
+  "pump": {
+    "cron_expression": "$ENV(visma_cron_fast)",
+    "rescan_cron_expression": "$ENV(visma_rescan_cron)"
+  }
+}

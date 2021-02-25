@@ -1,0 +1,128 @@
+{
+  "_id": "employeetime-currenttime",
+  "type": "pipe",
+  "source": {
+    "type": "dataset",
+    "dataset": "global-person",
+    "supports_signalling": true
+  },
+  "transform": {
+    "type": "dtl",
+    "rules": {
+      "default": [
+        ["filter",
+          ["in", "_S.global-person:employee_status",
+            ["list", "EarlyEmployee", "TempEarlyEmployee", "SoonEmployee", "TempSoonEmployee", "Employee", "TempEmployee"]
+          ]
+        ],
+        ["comment", "some times employees are rehired, ie. summer students who get a new contract before their current contract i closed by the economy department"],
+        ["comment", "in these cases we need to stop updating from Folk until the new contract is closed (the employee becomes inactive in CT)"],
+        ["comment", "these cases are identified by a new hiring date from Folk which is at a later time than their last leave date"],
+        ["if",
+          ["and",
+            ["lt", "_S.currenttime-employee:leavedate",
+              ["datetime-parse", "%d.%m.%Y", "_S.catalystone-user:HIRING_DATE.value"]
+            ],
+            ["eq", "_S.currenttime-employee:active", true]
+          ],
+          ["filter"]
+        ],
+        ["merge",
+          ["apply-hops", "rdf-org", {
+            "datasets": ["global-department gd"],
+            "where": [
+              ["eq",
+                ["string", "_S.ORGANIZATION.@UNIQUE_IMPORT_ID"], "gd.ORG_ID.value"]
+            ]
+          }]
+        ],
+        ["filter",
+          ["eq", "_T.dep_check", true]
+        ],
+        ["remove", "dep_check"],
+        ["filter",
+          ["is-not-null", "_S.currenttime-employee:employeeid"]
+        ],
+        ["add", "EmployeeId", "_S.currenttime-employee:employeeid"],
+        ["if",
+          ["eq", "_S.global-person:AnsattkategoriID", 7],
+          [
+            ["add", "FlexiTime", false]
+          ],
+          [
+            ["add", "FlexiTime", true]
+          ]
+        ],
+        ["comment", "Ikke send update om ikke ansattkategori er endret"],
+        ["filter",
+          ["or",
+            ["is-changed", "_S.catalystone-user:HIRING_DATE.value"],
+            ["neq", "_T.FlexiTime", "_S.currenttime-employeetime:flexitime"]
+          ]
+        ],
+        ["comment", "Sett X om ansattdato er eldre enn X. X endres av økonomi og varsles til oss som drifter Sesam"],
+        ["add", "FlexiTimeBalanceUpdated",
+          ["if",
+            ["gt",
+              ["datetime-diff", "day",
+                ["datetime-parse", "%d.%m.%Y", "_S.catalystone-user:HIRING_DATE.value"],
+                ["datetime-parse", "%Y-%m-%dT%H:%M:%S.0Z", "2015-01-01T00:00:00.0Z"]
+              ], 0],
+            ["datetime-format", "%Y-%m-%d",
+              ["datetime-parse", "%d.%m.%Y", "_S.catalystone-user:HIRING_DATE.value"]
+            ], "2018-01-01"]
+        ],
+        ["add", "VacationBalanceUpdated",
+          ["if",
+            ["gt",
+              ["datetime-diff", "day",
+                ["datetime-parse", "%d.%m.%Y", "_S.catalystone-user:HIRING_DATE.value"],
+                ["datetime-parse", "%Y-%m-%dT%H:%M:%S.0Z", "2015-01-01T00:00:00.0Z"]
+              ], 0],
+            ["datetime-format", "%Y-%m-%d",
+              ["datetime-parse", "%d.%m.%Y", "_S.catalystone-user:HIRING_DATE.value"]
+            ], "2015-01-01"]
+        ],
+        ["comment", "adding logic for dealing with Timesheet request"],
+        ["if",
+          ["and",
+            ["lt",
+              ["datetime-parse", "%d.%m.%Y", "_S.catalystone-user:1029.VALUE.value"],
+              ["now"]
+            ],
+            ["gt",
+              ["datetime-diff", "day",
+                ["datetime-parse", "%d.%m.%Y", "_S.catalystone-user:TERMINATION_DATE.value"],
+                ["datetime-parse", "%d.%m.%Y", "_S.catalystone-user:1029.VALUE.value"]
+              ], 0]
+          ],
+          ["add", "_Timesheet", false],
+          ["add", "_Timesheet", true]
+        ],
+        ["if",
+          ["and",
+            ["eq", "_T._Timesheet", true],
+            ["eq", "_S.currenttime-employeetime:timesheet", false]
+          ],
+          ["add", "_Timesheet", false]
+        ],
+        ["comment", "sette en spesiell condition for de som har sluttet, må ikke slette for mye."],
+        ["comment", "om leavedate er mere enn 30 dager siden, slett username for å unngå problem med innlogging i current for ansatte som kommer tilbake."],
+        ["comment", "kommentar som stenger nyansatte"],
+        ["comment", "Hardkodede verdier i payload er defaultverdier ved ansattkategoribytte"],
+        ["add", "payload",
+          ["dict", "CostRate", 0, "FlexiTime", "_T.FlexiTime", "VacationBalanceUpdated", "_T.VacationBalanceUpdated", "FlexiTimeBalanceUpdated", "_T.FlexiTimeBalanceUpdated", "ShowPlannedHours", false, "Overtime", false, "Rate", 9, "ChangeSalaryCode", false, "Timesheet", "_T._Timesheet", "Vacation", true]
+        ],
+        ["add", "operation", "update-employeetime"],
+        ["remove",
+          ["list", "FlexiTimeBalanceUpdated", "VacationBalanceUpdated", "FlexiTime", "_Timesheet"]
+        ]
+      ],
+      "rdf-org": ["if",
+        ["eq",
+          ["intersects", "_S.rdf:type", "~:bouvet:global-dep-bouvet-norge-as"], true],
+        ["add", "dep_check", true]
+      ]
+    }
+  }
+}

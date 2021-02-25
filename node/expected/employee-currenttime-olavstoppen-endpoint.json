@@ -1,0 +1,79 @@
+[
+  {
+    "EmployeeId": 1093,
+    "_id": "3471",
+    "departmentid": null,
+    "operation": "update-employee",
+    "payload": {
+      "CompanyId": 13,
+      "Email1": "jan.erik.nilsen@bouvet.no",
+      "EmployedDate": "2020-06-01",
+      "EmployeeCategoryId": 1,
+      "Firstname": "Severus",
+      "Initials": "Severus Snape (3471)",
+      "IsActive": true,
+      "LastName": "Snape",
+      "LeaveDate": null,
+      "Username": "severus.snape"
+    }
+  },
+  {
+    "EmployeeId": null,
+    "_id": "7777",
+    "departmentid": null,
+    "operation": "post-employee",
+    "payload": {
+      "ActcatId": 0,
+      "CompanyId": 13,
+      "DepartmentId": null,
+      "Email1": "alfie.collin@bouvet.no",
+      "EmployedDate": "2018-05-07",
+      "EmployeeAccess": {
+        "RoleCertifier": false,
+        "RoleDepartment": false,
+        "RoleEconomy": false,
+        "RoleEmployee": true,
+        "RoleManager": false,
+        "RolePrognosis": false,
+        "RoleProject": true,
+        "UseDashboard": true,
+        "UseExpense": true,
+        "UseMobile": true,
+        "UsePrognosis": true,
+        "UseTime": true
+      },
+      "EmployeeAddress": {
+        "AddressLine1": "Nobels gate 3a",
+        "Mobile": "+4747474747",
+        "PostAddress": "Oslo",
+        "Zipcode": "0234"
+      },
+      "EmployeeCategoryId": 3,
+      "EmployeeDetail": {
+        "DateOfBirth": "1967-07-12",
+        "EmployeeRef": "7777",
+        "EmployeeRefImport": "7777",
+        "Gender": "K"
+      },
+      "EmployeeTime": {
+        "ChangeSalaryCode": false,
+        "CostRate": 0,
+        "FlexiTime": true,
+        "FlexiTimeBalanceUpdated": "2018-05-07",
+        "Overtime": false,
+        "PercentWork": null,
+        "Rate": 9,
+        "ShowPlannedHours": false,
+        "Timesheet": true,
+        "Vacation": true,
+        "VacationBalanceUpdated": "2018-05-07"
+      },
+      "Firstname": "Alfie",
+      "Initials": "Alfie Collin (7777)",
+      "IsActive": true,
+      "JobCodeId": 0,
+      "LastName": "Nilsson",
+      "Username": "alfie.colli"
+    }
+  }
+]

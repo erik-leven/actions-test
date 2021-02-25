@@ -1,0 +1,210 @@
+{
+  "_id": "sesam-portal-invoice_info",
+  "type": "pipe",
+  "source": {
+    "type": "conditional",
+    "alternatives": {
+      "prod": {
+        "type": "json",
+        "system": "sesam-portal-db",
+        "supports_since": true,
+        "url": "sesam-portal-invoice_info"
+      },
+      "test": {
+        "type": "embedded",
+        "entities": [{
+          "_id": "77c2d687-484c-476f-b3e0-82de83e02a53_2017-04-01 00:00:00",
+          "name": "100.0 % - 0.0 GB",
+          "disk_usage": 31752211,
+          "invoicing_date": "~t2017-04-01T00:00:00Z",
+          "rdf:type": "~:bouvet:sesam-portal-invoice_info",
+          "subscription_id": "77c2d687-484c-476f-b3e0-82de83e02a53",
+          "subscription_id-ni": "~:sesam-portal-subscription:77c2d687-484c-476f-b3e0-82de83e02a53",
+          "uptime_pct": "~f100.000000"
+        }, {
+          "_id": "aa17c81f-9481-497c-a550-9aed6e835162_2017-11-01 00:00:00",
+          "disk_usage": 9875486368,
+          "invoicing_date": "~t2017-11-01T00:00:00Z",
+          "subscription_id": "aa17c81f-9481-497c-a550-9aed6e835162",
+          "uptime_pct": "~f100.000000"
+        }, {
+          "_id": "09164791-232e-401f-ab78-6d1e66a01385_2017-04-01 00:00:00",
+          "name": "100.0 % - 0.0 GB",
+          "disk_usage": 0,
+          "invoicing_date": "~t2017-04-01T00:00:00Z",
+          "rdf:type": "~:bouvet:sesam-portal-invoice_info",
+          "subscription_id": "09164791-232e-401f-ab78-6d1e66a01385",
+          "subscription_id-ni": "~:sesam-portal-subscription:09164791-232e-401f-ab78-6d1e66a01385",
+          "uptime_pct": "~f100.000000"
+        }, {
+          "_id": "aa17c81f-9481-497c-a550-9aed6e835162_2017-11-01 00:00:00",
+          "disk_usage": 9875486368,
+          "invoicing_date": "~t2017-11-01T00:00:00Z",
+          "subscription_id": "aa17c81f-9481-497c-a550-9aed6e835162",
+          "uptime_pct": "~f100.000000"
+        }, {
+          "_id": "35421324-6e38-45a8-a9c4-9b703174d957_2017-04-01 00:00:00",
+          "name": "100.0 % - 3.0 GB",
+          "disk_usage": 3002299875,
+          "invoicing_date": "~t2017-04-01T00:00:00Z",
+          "rdf:type": "~:bouvet:sesam-portal-invoice_info",
+          "subscription_id": "35421324-6e38-45a8-a9c4-9b703174d957",
+          "subscription_id-ni": "~:sesam-portal-subscription:35421324-6e38-45a8-a9c4-9b703174d957",
+          "uptime_pct": "~f100.000000"
+        }, {
+          "_id": "aa17c81f-9481-497c-a550-9aed6e835162_2017-11-01 00:00:00",
+          "disk_usage": 9875486368,
+          "invoicing_date": "~t2017-11-01T00:00:00Z",
+          "subscription_id": "aa17c81f-9481-497c-a550-9aed6e835162",
+          "uptime_pct": "~f100.000000"
+        }, {
+          "_id": "e34af541-c539-418e-94de-5d55110beba7_2017-04-01 00:00:00",
+          "name": "100.0 % - 3.7 GB",
+          "disk_usage": 3727890573,
+          "invoicing_date": "~t2017-04-01T00:00:00Z",
+          "rdf:type": "~:bouvet:sesam-portal-invoice_info",
+          "subscription_id": "e34af541-c539-418e-94de-5d55110beba7",
+          "subscription_id-ni": "~:sesam-portal-subscription:e34af541-c539-418e-94de-5d55110beba7",
+          "uptime_pct": "~f100.000000"
+        }, {
+          "_id": "aa17c81f-9481-497c-a550-9aed6e835162_2017-11-01 00:00:00",
+          "disk_usage": 9875486368,
+          "invoicing_date": "~t2017-11-01T00:00:00Z",
+          "subscription_id": "aa17c81f-9481-497c-a550-9aed6e835162",
+          "uptime_pct": "~f100.000000"
+        }, {
+          "_id": "b352493d-2315-485a-a87b-5b7a11a4272f_2017-04-01 00:00:00",
+          "name": "100.0 % - 0.0 GB",
+          "disk_usage": 0,
+          "invoicing_date": "~t2017-04-01T00:00:00Z",
+          "rdf:type": "~:bouvet:sesam-portal-invoice_info",
+          "subscription_id": "b352493d-2315-485a-a87b-5b7a11a4272f",
+          "subscription_id-ni": "~:sesam-portal-subscription:b352493d-2315-485a-a87b-5b7a11a4272f",
+          "uptime_pct": "~f100.000000"
+        }, {
+          "_id": "aa17c81f-9481-497c-a550-9aed6e835162_2017-11-01 00:00:00",
+          "disk_usage": 9875486368,
+          "invoicing_date": "~t2017-11-01T00:00:00Z",
+          "subscription_id": "aa17c81f-9481-497c-a550-9aed6e835162",
+          "uptime_pct": "~f100.000000"
+        }, {
+          "_id": "f68199a2-9366-4e00-8f98-017f6d96eaca_2017-04-01 00:00:00",
+          "name": "100.0 % - 3.1 GB",
+          "disk_usage": 3160434210,
+          "invoicing_date": "~t2017-04-01T00:00:00Z",
+          "rdf:type": "~:bouvet:sesam-portal-invoice_info",
+          "subscription_id": "f68199a2-9366-4e00-8f98-017f6d96eaca",
+          "subscription_id-ni": "~:sesam-portal-subscription:f68199a2-9366-4e00-8f98-017f6d96eaca",
+          "uptime_pct": "~f100.000000"
+        }, {
+          "_id": "aa17c81f-9481-497c-a550-9aed6e835162_2017-11-01 00:00:00",
+          "disk_usage": 9875486368,
+          "invoicing_date": "~t2017-11-01T00:00:00Z",
+          "subscription_id": "aa17c81f-9481-497c-a550-9aed6e835162",
+          "uptime_pct": "~f100.000000"
+        }, {
+          "_id": "e34af541-c539-418e-94de-5d55110beba7_2017-04-01 00:00:00",
+          "name": "100.0 % - 3.7 GB",
+          "disk_usage": 3727890573,
+          "invoicing_date": "~t2017-04-01T00:00:00Z",
+          "rdf:type": "~:bouvet:sesam-portal-invoice_info",
+          "subscription_id": "e34af541-c539-418e-94de-5d55110beba7",
+          "subscription_id-ni": "~:sesam-portal-subscription:e34af541-c539-418e-94de-5d55110beba7",
+          "uptime_pct": "~f100.000000"
+        }, {
+          "_id": "aa17c81f-9481-497c-a550-9aed6e835162_2017-11-01 00:00:00",
+          "disk_usage": 9875486368,
+          "invoicing_date": "~t2017-11-01T00:00:00Z",
+          "subscription_id": "aa17c81f-9481-497c-a550-9aed6e835162",
+          "uptime_pct": "~f100.000000"
+        }, {
+          "_id": "b352493d-2315-485a-a87b-5b7a11a4272f_2017-04-01 00:00:00",
+          "name": "100.0 % - 0.0 GB",
+          "disk_usage": 0,
+          "invoicing_date": "~t2017-04-01T00:00:00Z",
+          "rdf:type": "~:bouvet:sesam-portal-invoice_info",
+          "subscription_id": "b352493d-2315-485a-a87b-5b7a11a4272f",
+          "subscription_id-ni": "~:sesam-portal-subscription:b352493d-2315-485a-a87b-5b7a11a4272f",
+          "uptime_pct": "~f100.000000"
+        }, {
+          "_id": "aa17c81f-9481-497c-a550-9aed6e835162_2017-11-01 00:00:00",
+          "disk_usage": 9875486368,
+          "invoicing_date": "~t2017-11-01T00:00:00Z",
+          "subscription_id": "aa17c81f-9481-497c-a550-9aed6e835162",
+          "uptime_pct": "~f100.000000"
+        }, {
+          "_id": "f68199a2-9366-4e00-8f98-017f6d96eaca_2017-04-01 00:00:00",
+          "name": "100.0 % - 3.1 GB",
+          "disk_usage": 3160434210,
+          "invoicing_date": "~t2017-04-01T00:00:00Z",
+          "rdf:type": "~:bouvet:sesam-portal-invoice_info",
+          "subscription_id": "f68199a2-9366-4e00-8f98-017f6d96eaca",
+          "subscription_id-ni": "~:sesam-portal-subscription:f68199a2-9366-4e00-8f98-017f6d96eaca",
+          "uptime_pct": "~f100.000000"
+        }, {
+          "_id": "aa17c81f-9481-497c-a550-9aed6e835162_2017-11-01 00:00:00",
+          "disk_usage": 9875486368,
+          "invoicing_date": "~t2017-11-01T00:00:00Z",
+          "subscription_id": "aa17c81f-9481-497c-a550-9aed6e835162",
+          "uptime_pct": "~f100.000000"
+        }, {
+          "_id": "a56e6107-0e3c-4e0c-a0f3-c4dcdf01632f_2017-04-01 00:00:00",
+          "name": "100.0 % - 0.5 GB",
+          "disk_usage": 562627459,
+          "invoicing_date": "~t2017-04-01T00:00:00Z",
+          "rdf:type": "~:bouvet:sesam-portal-invoice_info",
+          "subscription_id": "a56e6107-0e3c-4e0c-a0f3-c4dcdf01632f",
+          "subscription_id-ni": "~:sesam-portal-subscription:a56e6107-0e3c-4e0c-a0f3-c4dcdf01632f",
+          "uptime_pct": "~f100.000000"
+        }, {
+          "_id": "aa17c81f-9481-497c-a550-9aed6e835162_2017-11-01 00:00:00",
+          "disk_usage": 9875486368,
+          "invoicing_date": "~t2017-11-01T00:00:00Z",
+          "subscription_id": "aa17c81f-9481-497c-a550-9aed6e835162",
+          "uptime_pct": "~f100.000000"
+        }, {
+          "_id": "ff23b402-7317-4b37-a0b2-247456db58a4_2017-11-01 00:00:00",
+          "dap_disk_usage": 2875486368,
+          "disk_usage": 9875486368,
+          "invoicing_date": "~t2017-11-01T00:00:00Z",
+          "subscription_id": "ff23b402-7317-4b37-a0b2-247456db58a4",
+          "uptime_pct": "~f99.000000"
+        }]
+      }
+    },
+    "condition": "$ENV(node-env)"
+  },
+  "transform": {
+    "type": "dtl",
+    "rules": {
+      "default": [
+        ["copy", "*"],
+        ["add", "name",
+          ["concat",
+            ["string",
+              ["divide", 100,
+                ["integer",
+                  ["multiply", 100, "_S.uptime_pct"]
+                ]
+              ]
+            ], " % - ",
+            ["string",
+              ["divide", 10,
+                ["integer",
+                  ["divide", 100000000, "_S.disk_usage"]
+                ]
+              ]
+            ], " GB"]
+        ],
+        ["make-ni", "sesam-portal-subscription", "subscription_id"],
+        ["add", "rdf:type",
+          ["ni", "bouvet:sesam-portal-invoice_info"]
+        ]
+      ]
+    }
+  },
+  "pump": {
+    "cron_expression": "0/5 * * * *",
+    "rescan_cron_expression": "0 0 * * *"
+  }
+}

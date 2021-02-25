@@ -1,0 +1,18 @@
+{
+  "_id": "catalystone-rest-v3",
+  "type": "system:microservice",
+  "name": "catalystone-rest-v3",
+  "docker": {
+    "environment": {
+      "api_version": "v3",
+      "client_id_user": "$ENV(catalystone-v3-client_id_user)",
+      "client_secret_user": "$SECRET(catalystone-v3-client_secret_user)",
+      "employee_url": "https://bt.catalystone.com/bouvet/api/employees",
+      "grant_type": "client_credentials",
+      "token_url": "https://bt.catalystone.com/bouvet/api/accesstoken"
+    },
+    "image": "erikalev/cat1-new-test:1.0.1",
+    "memory": 1048,
+    "port": 5000
+  }
+}

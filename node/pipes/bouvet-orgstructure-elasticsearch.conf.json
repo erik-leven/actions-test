@@ -1,0 +1,57 @@
+{
+  "_id": "bouvet-orgstructure-elasticsearch",
+  "type": "pipe",
+  "source": {
+    "type": "dataset",
+    "dataset": "bouvet-orgdata-elasticsearch"
+  },
+  "transform": {
+    "type": "dtl",
+    "rules": {
+      "default": [
+        ["merge",
+          ["apply", "add-Bouvet-ASA", "_S.department"]
+        ],
+        ["add", "department",
+          ["apply", "create-struct",
+            ["apply", "find-companies", "_S.department"]
+          ]
+        ],
+        ["remove", "parent"]
+      ],
+      "add-Bouvet-ASA": [
+        ["filter",
+          ["eq", "_S.uid", "1"]
+        ],
+        ["copy", "*"]
+      ],
+      "create-struct": [
+        ["if",
+          ["neq", "_S.uid", "1"],
+          ["copy", "*"]
+        ],
+        ["remove", "parent"],
+        ["if",
+          ["in", "_S.uid", "_R._S.department.parent"],
+          ["add", "department",
+            ["apply", "create-struct",
+              ["apply", "find-child", "_R._S.department"]
+            ]
+          ]
+        ]
+      ],
+      "find-child": [
+        ["filter",
+          ["eq", "_S.parent", "_P._S.uid"]
+        ],
+        ["copy", "*"]
+      ],
+      "find-companies": [
+        ["filter",
+          ["eq", "_S.parent", "1"]
+        ],
+        ["copy", "*"]
+      ]
+    }
+  }
+}

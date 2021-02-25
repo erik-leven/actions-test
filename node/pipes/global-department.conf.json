@@ -1,0 +1,170 @@
+{
+  "_id": "global-department",
+  "type": "pipe",
+  "source": {
+    "type": "dataset",
+    "dataset": "merge-department",
+    "supports_signalling": true
+  },
+  "transform": {
+    "type": "dtl",
+    "rules": {
+      "default": [
+        ["copy", "*"],
+        ["if",
+          ["in", "~:bouvet:catalystone-org", "_S.rdf:type"],
+          ["merge-union",
+            ["apply-hops", "find-parent", {
+              "datasets": ["catalystone-organization co"],
+              "where": [
+                ["eq", "_S.NAME.@ID", "co.NAME.@ID"]
+              ]
+            }]
+          ]
+        ],
+        ["add", "manager",
+          ["apply-hops", "manager", {
+            "datasets": ["global-person gp"],
+            "where": [
+              ["eq",
+                ["tuples", "_S.ad-department:full-match", true],
+                ["tuples", "gp.ad-user:full-match",
+                  ["is-not-empty", "gp.catalystone-user:1170"]
+                ]
+              ],
+              ["eq", true,
+                ["in", "_S.ORG_ID.value",
+                  ["split", ";", "gp.1170.VALUE.value"]
+                ]
+              ]
+            ]
+          }]
+        ],
+        ["if",
+          ["eq",
+            ["count", "_T.manager"], 1],
+          ["add", "manager",
+            ["first", "_T.manager"]
+          ],
+          ["if",
+            ["not",
+              ["gt",
+                ["count", "_T.manager"], 1]
+            ],
+            ["remove", "manager"]
+          ]
+        ],
+        ["merge-union",
+          ["apply", "rdf-parent", "_T.department-hierarchy"]
+        ],
+        ["add", "uid",
+          ["first",
+            ["coalesce",
+              ["list", "_S.catalystone-organization:ORG_ID.value", "_S.ad-department:departmentNumber", "_S.currenttime-department:departmentref", "_S.currenttime-olavstoppen-department:departmentref"]
+            ]
+          ]
+        ],
+        ["add", "departmentname",
+          ["first",
+            ["coalesce",
+              ["list", "_S.catalystone-organization:NAME.value", "_S.ad-department:cn", "_S.currenttime-department:departmentname", "_S.currenttime-olavstoppen-department:departmentname"]
+            ]
+          ]
+        ],
+        ["add", "description",
+          ["first", "_S.ad-department:description"]
+        ],
+        ["merge-union",
+          ["apply-hops", "members", {
+            "datasets": ["global-person gp"],
+            "where": [
+              ["eq", "_S.ORG_ID.value", "gp.ORGANIZATION.@UNIQUE_IMPORT_ID"]
+            ]
+          }]
+        ],
+        ["merge",
+          ["apply", "count", "_T."]
+        ],
+        ["if",
+          ["eq", "_S._id", "slack-group:S015J2E7UGH"],
+          [
+            ["add", "DepartmentName", "_S.name"],
+            ["add", "group-tag",
+              ["list", "ledelsen", "salg"]
+            ]
+          ]
+        ]
+      ],
+      "count": [
+        ["filter",
+          ["neq",
+            ["count", "_S.department-members"], 0]
+        ],
+        ["add", "member-count",
+          ["count", "_S.department-members"]
+        ]
+      ],
+      "find-parent": [
+        ["merge-union",
+          ["apply-hops", "set-source-parent", {
+            "datasets": ["catalystone-organization co"],
+            "where": [
+              ["eq", "_S.PARENT.NAME.value", "co.NAME.value"]
+            ],
+            "recurse": true
+          }]
+        ]
+      ],
+      "manager": [
+        ["filter",
+          ["in", "_S.global-person:employee_status",
+            ["list", "Employee", "TempEmployee"]
+          ]
+        ],
+        ["add", "managername",
+          ["coalesce",
+            ["list", "_S.catalystone-user:1141.VALUE.value", "_S.NAME.value"]
+          ]
+        ],
+        ["add", "uid", "_S.UNIQUE_IMPORT_ID.value"]
+      ],
+      "members": [
+        ["filter",
+          ["eq", "_S.global-person:employee_status", "Employee"]
+        ],
+        ["add", "department-members", "_S.UNIQUE_IMPORT_ID.value"]
+      ],
+      "rdf-parent": [
+        ["if",
+          ["eq", "_S.name", "Bouvet Norge AS"],
+          ["add", "rdf:type",
+            ["ni", "bouvet:global-dep-bouvet-norge-as"]
+          ],
+          ["if",
+            ["eq", "_S.name", "Olavstoppen AS"],
+            ["add", "rdf:type",
+              ["ni", "bouvet:global-dep-olavstoppen-as"]
+            ],
+            ["if",
+              ["eq", "_S.name", "Bouvet AB"],
+              ["add", "rdf:type",
+                ["ni", "bouvet:global-dep-bouvet-ab"]
+              ]
+            ]
+          ]
+        ]
+      ],
+      "set-source-parent": [
+        ["add", "department-hierarchy",
+          ["dict", "name", "_S.NAME.value", "parent", "_S.PARENT.ORG_ID.value", "uid", "_S.ORG_ID.value"]
+        ]
+      ]
+    }
+  },
+  "metadata": {
+    "global": true
+  },
+  "compaction": {
+    "keep_versions": 10
+  }
+}

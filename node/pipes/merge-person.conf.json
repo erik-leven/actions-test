@@ -1,0 +1,72 @@
+{
+  "_id": "merge-person",
+  "type": "pipe",
+  "source": {
+    "type": "merge",
+    "datasets": ["ad-user au", "folk-user fu", "catalystone-user cou", "currenttime-employee ce", "currenttime-olavstoppen-employee coe", "currenttime-sverige-employee cse", "currenttime-sverige-employeedetail csed", "currenttime-sverige-employeetime cset", "currenttime-olavstoppen-employeedetail coed", "currenttime-olavstoppen-employee-custom-export-folk coecef", "currenttime-employeedetail ced", "currenttime-employeetime cet", "currenttime-olavstoppen-employeetime coet", "slack-user slu", "cvpartner-user cu", "o365-user o365", "cvpartner-userskills cv-us", "currenttime-employee-custom-export-folk cecef", "visma-employee ve"],
+    "equality": [
+      ["eq", "cou.UNIQUE_IMPORT_ID.value",
+        ["first", "au.employeeNumber"]
+      ],
+      ["eq", "fu.employeeId",
+        ["first", "au.employeeNumber"]
+      ],
+      ["eq", "cse.$ids", "csed.employeeid-ni"],
+      ["eq", "cse.$ids", "cset.employeeid-ni"],
+      ["eq", "au.employeeNumber", "csed.employeeref"],
+      ["eq", "ce.$ids", "ced.employeeid-ni"],
+      ["eq", "coe.$ids", "coed.employeeid-ni"],
+      ["eq", "ce.$ids", "cet.employeeid-ni"],
+      ["eq", "coe.$ids", "coet.employeeid-ni"],
+      ["eq", "au.employeeNumber", "coed.employeeref"],
+      ["eq",
+        ["first", "au.employeeNumber"], "coecef.AnsattNr"],
+      ["eq", "au.employeeNumber", "ced.employeeref"],
+      ["eq", "cu.$ids", "cv-us.cvpartner-userskills:id-ni"],
+      ["eq",
+        ["first", "au.employeeNumber"], "cecef.AnsattNr"],
+      ["eq",
+        ["tuples",
+          ["lower", "cu.cvpartner-user:email"], "cu.deactivated"],
+        ["tuples",
+          ["lower",
+            ["first", "au.ad-user:merged-emails"]
+          ], false]
+      ],
+      ["eq",
+        ["tuples",
+          ["lower", "cu.cvpartner-user:email"], "cu.deactivated"],
+        ["tuples",
+          ["lower",
+            ["first", "au.ad-user:userPrincipalName"]
+          ], false]
+      ],
+      ["eq",
+        ["tuples", "cu.cvpartner-user:external_unique_id", "cu.deactivated"],
+        ["tuples",
+          ["first", "au.ad-user:employeeNumber"], false]
+      ],
+      ["eq",
+        ["if",
+          ["gt",
+            ["first", "au.ad-user:merged-emails"], ""],
+          ["lower", "au.ad-user:merged-emails"], "au.ad-user:userPrincipalName"],
+        ["lower", "slu.slack-user:profile.slack-user:email"]
+      ],
+      ["eq",
+        ["lower", "au.ad-user:merged-emails"],
+        ["lower", "o365.o365-user:mail"]
+      ],
+      ["eq",
+        ["string", "ve.ProductNo"], "fu.employeeId"],
+      ["eq",
+        ["string", "ve.ProductNo"], "cou.UNIQUE_IMPORT_ID.value"],
+      ["eq",
+        ["string", "ve.ProductNo"], "ced.employeeref"]
+    ],
+    "identity": "first",
+    "strategy": "compact",
+    "supports_signalling": true,
+    "version": 2
+  }
+}

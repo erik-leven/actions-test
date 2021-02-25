@@ -1,0 +1,26 @@
+{
+  "_id": "cv-partner-rest",
+  "type": "system:microservice",
+  "docker": {
+    "environment": {
+      "base_url": "$ENV(cvpartner-baseurl)",
+      "custom_tag_category_url": "$ENV(cvpartner-custom-tag-category-url)",
+      "custom_tag_url": "$ENV(cvpartner-custom-tag-url)",
+      "delete_company_images": "True",
+      "entities_path": "values",
+      "headers": "{'Accept':'application/json', 'Content-Type':'application/json', 'Authorization':'$SECRET(cvpartner-token)'}",
+      "log_level": "DEBUG",
+      "next_page": "next.href",
+      "reference_post": "$ENV(cvpartner-reference-post)",
+      "reference_url": "$ENV(cvpartner-references)",
+      "references_path": "references",
+      "set_id": "cvpartner:set_id",
+      "sleep": "0.400",
+      "token": "$SECRET(cvpartner-token)",
+      "user_url": "$ENV(cvpartner-user-url)"
+    },
+    "image": "sesamcommunity/cvpartner-rest:1.5.0",
+    "memory": 512,
+    "port": 5000
+  }
+}

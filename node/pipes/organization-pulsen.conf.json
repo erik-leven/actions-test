@@ -1,0 +1,40 @@
+{
+  "_id": "organization-pulsen",
+  "type": "pipe",
+  "source": {
+    "type": "dataset",
+    "completeness": false,
+    "dataset": "global-department"
+  },
+  "transform": {
+    "type": "dtl",
+    "rules": {
+      "default": [
+        ["filter",
+          ["in", "~:bouvet:catalystone-org", "_S.rdf:type"]
+        ],
+        ["filter",
+          ["neq", "_S._id", "catalystone-organization:999"]
+        ],
+        ["copy", "_id"],
+        ["add", "AvdelingsNr",
+          ["integer", "_S.catalystone-organization:ORG_ID.value"]
+        ],
+        ["add", "Avdelingsnavn", "_S.catalystone-organization:NAME.value"],
+        ["add", "Forelder_AvdelingsNr",
+          ["integer", "_S.catalystone-organization:PARENT.ORG_ID.value"]
+        ],
+        ["add", "Opprettet", "_S.catalystone-organization:@CREATED"],
+        ["add", "Sist_Endret", "_S.catalystone-organization:@LAST_MODIFIED"],
+        ["if",
+          ["eq", "_S._deleted", true],
+          [
+            ["add", "Slettet", 1],
+            ["add", "_deleted", false]
+          ],
+          ["add", "Slettet", 0]
+        ]
+      ]
+    }
+  }
+}

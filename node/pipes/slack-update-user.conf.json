@@ -1,0 +1,49 @@
+{
+  "_id": "slack-update-user",
+  "type": "pipe",
+  "source": {
+    "type": "dataset",
+    "dataset": "global-person"
+  },
+  "sink": {
+    "type": "dataset",
+    "dataset": "slack-update-users"
+  },
+  "transform": {
+    "type": "dtl",
+    "rules": {
+      "default": [
+        ["filter",
+          ["and",
+            ["is-not-empty", "_S.slack-user:id"],
+            ["is-not-empty", "_S.ad-user:mobile"],
+            ["is-not-empty", "_S.global-person:FirstName"],
+            ["is-not-empty", "_S.global-person:LastName"],
+            ["not",
+              ["matches", "*OU=Eksterne*", "_S.ad-user:distinguishedName"]
+            ]
+          ]
+        ],
+        ["add", "id", "_S.slack-user:id"],
+        ["add", "profile", "_S.slack-user:profile"],
+        ["comment", "commented out until slack-image-sync is fixed",
+          ["merge",
+            ["apply-hops", "fetch", {
+              "datasets": ["global-cv gcv"],
+              "where": ["eq", "_S.$ids", "gcv.cvpartner-cv:bruker_id-ni"]
+            }]
+          ]
+        ],
+        ["add", "name", "_S.global-person:DisplayFirstName"],
+        ["add", "lastName", "_S.global-person:DisplayLastName"],
+        ["add", "mobile", "_S.ad-user:mobile"]
+      ],
+      "fetch": [
+        ["copy", "image"]
+      ]
+    }
+  },
+  "pump": {
+    "cron_expression": "0 0 * * ?"
+  }
+}

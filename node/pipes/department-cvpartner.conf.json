@@ -1,0 +1,56 @@
+{
+  "_id": "department-cvpartner",
+  "type": "pipe",
+  "source": {
+    "type": "dataset",
+    "dataset": "global-department"
+  },
+  "transform": {
+    "type": "dtl",
+    "rules": {
+      "default": [
+        ["filter",
+          ["in", "~:bouvet:catalystone-org", "_S.rdf:type"]
+        ],
+        ["filter",
+          ["not",
+            ["in", "_S.NAME.value",
+              ["list", "XDemo", "Kandidater"]
+            ]
+          ]
+        ],
+        ["if",
+          ["in", "~:cvpartner:CustomTagCategory", "_S.rdf:type"],
+          [
+            ["add", "operation", "put"],
+            ["add", "id", "_S.cvpartner-custom-tag-category:id"],
+            ["add", "payload",
+              ["dict", "masterdata",
+                ["dict", "values",
+                  ["if",
+                    ["in", "3", "_S.global-department:department-hierarchy.uid"],
+                    ["dict", "no", "_S.global-department:departmentname", "se", "_S.global-department:departmentname"],
+                    ["dict", "no", "_S.global-department:departmentname"]
+                  ], "external_unique_id", "_S.global-department:uid", "custom_tag_category_id", "_S.cvpartner-custom-tag-category:custom_tag_category_id"]
+              ]
+            ]
+          ],
+          [
+            ["add", "operation", "post"],
+            ["add", "payload",
+              ["dict", "masterdata",
+                ["dict", "category_ids",
+                  ["list", "$ENV(cvpartner-department-tag-category-id)"], "values",
+                  ["if",
+                    ["in", "3", "_S.global-department:department-hierarchy.uid"],
+                    ["dict", "no", "_S.global-department:departmentname", "se", "_S.global-department:departmentname"],
+                    ["dict", "no", "_S.global-department:departmentname"]
+                  ], "external_unique_id", "_S.global-department:uid"]
+              ]
+            ]
+          ]
+        ]
+      ]
+    }
+  }
+}

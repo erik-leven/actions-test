@@ -1,0 +1,188 @@
+{
+  "_id": "employeeDepChange-reconciliation-currenttime",
+  "type": "pipe",
+  "source": {
+    "type": "dataset",
+    "dataset": "person-change"
+  },
+  "transform": {
+    "type": "dtl",
+    "rules": {
+      "default": [
+        ["filter", "_S.newDepartment"],
+        ["filter",
+          ["in", "_S.global-person:employee_status",
+            ["list", "EarlyEmployee", "TempEarlyEmployee", "SoonEmployee", "TempSoonEmployee", "Employee", "TempEmployee"]
+          ]
+        ],
+        ["if",
+          ["gte",
+            ["datetime-parse", "%d.%m.%Y", "_S.catalystone-user:HIRING_DATE.@VALID_FROM"],
+            ["datetime-parse", "%d.%m.%Y", "_S.catalystone-user:ORGANIZATION.@VALID_FROM"]
+          ],
+          ["filter"]
+        ],
+        ["merge",
+          ["apply", "check-month",
+            ["datetime-parse", "%d.%m.%Y", "_S.catalystone-user:ORGANIZATION.@VALID_FROM"]
+          ]
+        ],
+        ["remove",
+          ["list", "check-year", "check-month", "check-day", "check-hour", "check-date", "limit-date"]
+        ],
+        ["add", "startdate",
+          ["datetime-parse", "%d.%m.%Y", "_S.catalystone-user:ORGANIZATION.@VALID_FROM"]
+        ],
+        ["add", "AvdelingsnavnNytt", "_S.catalystone-user:ORGANIZATION.value"],
+        ["add", "AvdelingsnavnGammelt", "_S.oldDepartment.value"],
+        ["add", "AvdelingsIDGammelt", "_S.oldDepartment.@UNIQUE_IMPORT_ID"],
+        ["comment", "people from Sweden or Olavstoppen should not be included"],
+        ["merge",
+          ["hops", {
+            "datasets": ["global-department gd"],
+            "where": [
+              ["eq",
+                ["string", "_S.catalystone-user:ORGANIZATION.@UNIQUE_IMPORT_ID"], "gd.ORG_ID.value"]
+            ],
+            "return": ["dict", "department-hierarchy", "gd.department-hierarchi"]
+          }]
+        ],
+        ["if",
+          ["in", "Bouvet Norge AS", "_T.department-hierarchy"],
+          ["filter"]
+        ],
+        ["remove", "department-hierarchy"],
+        ["add", "RegionId",
+          ["integer", "_S.catalystone-user:1117.VALUE.value"]
+        ],
+        ["add", "Ansattnavn",
+          ["concat",
+            ["list", "_S.catalystone-user:FIRST_NAME.value", " ", "_S.catalystone-user:LAST_NAME.value"]
+          ]
+        ],
+        ["add", "AnsattIDFolk",
+          ["integer", "_S.catalystone-user:UNIQUE_IMPORT_ID.value"]
+        ],
+        ["comment", "activate this when we take over the integration. Right now Marian wants all changes reported"],
+        ["comment", "merge",
+          ["apply-hops", "check-department", {
+            "datasets": ["currenttime-department cd"],
+            "where": [
+              ["and",
+                ["eq", "_S.catalystone-user:ORGANIZATION.@UNIQUE_IMPORT_ID", "cd.departmentref"],
+                ["neq",
+                  ["substring", -3, "cd.departmentref"], "LED"]
+              ]
+            ]
+          }]
+        ],
+        ["comment", "filter",
+          ["neq", "_T.exists", true]
+        ],
+        ["remove", "exists"],
+        ["comment", "dding AvdelingsIDVisma as empty here to avoid sink issues in the endpoint"],
+        ["comment", "since departments in Visma may not be created yet and the IDs across Folk and Visma are the same we just pick dep no from Folk"],
+        ["add", "AvdelingsIDVisma",
+          ["integer", "_S.catalystone-user:ORGANIZATION.@UNIQUE_IMPORT_ID"]
+        ],
+        ["if",
+          ["lt", "_T.Mnd", 10],
+          ["add", "_id",
+            ["concat", "_S._id", ";", "0",
+              ["string", "_T.Mnd"], ".",
+              ["string", "_T.År"]
+            ]
+          ],
+          ["add", "_id",
+            ["concat", "_S._id", ";",
+              ["string", "_T.Mnd"], ".",
+              ["string", "_T.År"]
+            ]
+          ]
+        ],
+        ["add", "Sjekket", false],
+        ["add", "Kommentar",
+          ["coalesce",
+            ["list",
+              ["first",
+                ["hops", {
+                  "datasets": ["global-economy ga"],
+                  "where": ["eq",
+                    ["ni", "currenttime-employeedepchange-recon", "_S.catalystone-user:UNIQUE_IMPORT_ID.value"], "ga.$ids"],
+                  "return": "ga.currenttime-employeedepchange-recon:Kommentar"
+                }]
+              ], ""]
+          ]
+        ]
+      ],
+      "check-department": [
+        ["merge",
+          ["apply-hops", "check-new-employee", {
+            "datasets": ["currenttime-employee ce"],
+            "where": [
+              ["eq",
+                ["string", "_S.departmentid"],
+                ["string", "ce.departmentid"]
+              ]
+            ]
+          }]
+        ]
+      ],
+      "check-month": [
+        ["if",
+          ["gte",
+            ["datetime-format", "%d", "_S."], "16"],
+          [
+            ["add", "Mnd",
+              ["integer",
+                ["datetime-format", "%m",
+                  ["datetime-plus", "month", 1, "_S."]
+                ]
+              ]
+            ],
+            ["add", "År",
+              ["integer",
+                ["datetime-format", "%Y",
+                  ["datetime-plus", "month", 1, "_S."]
+                ]
+              ]
+            ]
+          ],
+          [
+            ["add", "Mnd",
+              ["integer",
+                ["datetime-format", "%m", "_S."]
+              ]
+            ],
+            ["add", "År",
+              ["integer",
+                ["datetime-format", "%Y", "_S."]
+              ]
+            ]
+          ]
+        ]
+      ],
+      "check-new-employee": [
+        ["merge",
+          ["apply-hops", "check-new-employee-current", {
+            "datasets": ["currenttime-employeedetail ce"],
+            "where": [
+              ["eq",
+                ["string", "_S.employeeid"],
+                ["string", "ce.employeeid"]
+              ]
+            ]
+          }]
+        ]
+      ],
+      "check-new-employee-current": [
+        ["add", "foo", "_R._S.catalystone-user:UNIQUE_IMPORT_ID.value"],
+        ["add", "foo0", "_S.employeeref"],
+        ["filter",
+          ["eq", "_R._S.catalystone-user:UNIQUE_IMPORT_ID.value", "_S.employeeref"]
+        ],
+        ["add", "exists", true]
+      ]
+    }
+  }
+}

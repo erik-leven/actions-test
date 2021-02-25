@@ -1,0 +1,37 @@
+{
+  "_id": "article-bouvetshares-competency_research",
+  "type": "pipe",
+  "source": {
+    "type": "dataset",
+    "dataset": "global-site"
+  },
+  "transform": {
+    "type": "dtl",
+    "rules": {
+      "default": [
+        ["filter",
+          ["in", "~:bouvet:bouvetno-article", "_S.rdf:type"]
+        ],
+        ["copy", "_id"],
+        ["add", "filename",
+          ["concat", "_S.language", "-",
+            ["ni-id",
+              ["ni", "_S._id"]
+            ], ".json"]
+        ],
+        ["add", "data",
+          ["map-dict",
+            ["filter",
+              ["not",
+                ["or",
+                  ["matches", "*-ni", "_."],
+                  ["matches", "$ids", "_."],
+                  ["matches", "_*", "_."],
+                  ["matches", "rdf:type", "_."]
+                ]
+              ], "_."], "_.", "_S."]
+        ]
+      ]
+    }
+  }
+}

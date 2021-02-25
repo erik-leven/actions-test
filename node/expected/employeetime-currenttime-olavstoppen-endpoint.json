@@ -1,0 +1,19 @@
+[
+  {
+    "EmployeeId": 1093,
+    "_id": "3471",
+    "operation": "update-employeetime",
+    "payload": {
+      "ChangeSalaryCode": false,
+      "CostRate": 0,
+      "FlexiTime": true,
+      "FlexiTimeBalanceUpdated": "2020-06-01",
+      "Overtime": false,
+      "Rate": 9,
+      "ShowPlannedHours": false,
+      "Timesheet": true,
+      "Vacation": true,
+      "VacationBalanceUpdated": "2020-06-01"
+    }
+  }
+]

@@ -1,0 +1,76 @@
+{
+  "_id": "employmentTypeChange-reconciliation-currenttime-endpoint",
+  "type": "pipe",
+  "source": {
+    "type": "dataset",
+    "dataset": "employmentTypeChange-reconciliation-currenttime"
+  },
+  "sink": {
+    "type": "sql",
+    "system": "currenttime-economydbrepl-sesam",
+    "batch_size": 1,
+    "create_table_if_missing": true,
+    "primary_key": ["AnsattIDFolk", "Mnd", "År"],
+    "schema": "adm",
+    "schema_definition": [{
+      "type": "integer",
+      "name": "AnsattIDFolk",
+      "max_value": 10000,
+      "min_value": 0,
+      "primary_key": true,
+      "source_property": "AnsattID"
+    }, {
+      "type": "string",
+      "name": "Ansattnavn",
+      "max_size": 150,
+      "min_size": 5,
+      "source_property": "Ansattnavn"
+    }, {
+      "type": "string",
+      "name": "AnsattypenavnFraFolk",
+      "max_size": 100,
+      "min_size": 0,
+      "source_property": "Ansattypenavn"
+    }, {
+      "type": "integer",
+      "name": "Mnd",
+      "max_value": 12,
+      "min_value": 0,
+      "primary_key": true,
+      "source_property": "Mnd"
+    }, {
+      "type": "integer",
+      "name": "År",
+      "max_value": 3000,
+      "min_value": 0,
+      "primary_key": true,
+      "source_property": "År"
+    }, {
+      "type": "boolean",
+      "name": "Sjekket",
+      "source_property": "Sjekket"
+    }, {
+      "type": "string",
+      "name": "Kommentar",
+      "max_size": 1000,
+      "min_size": 0,
+      "source_property": "Kommentar"
+    }],
+    "table": "Avstemming-AnsattypeBytte"
+  },
+  "transform": {
+    "type": "dtl",
+    "rules": {
+      "default": [
+        ["filter",
+          ["neq", "_S._deleted", true]
+        ],
+        ["copy", "*"]
+      ]
+    }
+  },
+  "pump": {
+    "cron_expression": "$ENV(economylist_cron)",
+    "mode": "$ENV(pump-mode)"
+  }
+}

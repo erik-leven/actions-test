@@ -1,0 +1,127 @@
+{
+  "_id": "basics-salary-currenttime-endpoint",
+  "type": "pipe",
+  "source": {
+    "type": "dataset",
+    "dataset": "basics-salary-currenttime"
+  },
+  "sink": {
+    "type": "sql",
+    "system": "currenttime-economydbrepl-sesam",
+    "batch_size": 1,
+    "create_table_if_missing": true,
+    "primary_key": ["Ansatt-ID"],
+    "schema": "adm",
+    "schema_definition": [{
+      "type": "integer",
+      "name": "Ansatt-ID",
+      "max_value": 99999,
+      "min_value": 101,
+      "primary_key": true,
+      "source_property": "Ansatt-ID"
+    }, {
+      "type": "string",
+      "name": "Arbeidssted",
+      "max_size": 150,
+      "min_size": 2,
+      "source_property": "Arbeidssted"
+    }, {
+      "type": "string",
+      "name": "Dato-siste-endring",
+      "max_size": 10,
+      "min_size": 10,
+      "source_property": "Dato-siste-endring"
+    }, {
+      "type": "string",
+      "name": "Navn",
+      "max_size": 150,
+      "min_size": 3,
+      "source_property": "Navn"
+    }, {
+      "type": "string",
+      "name": "Stillingsprosent",
+      "max_size": 10,
+      "min_size": 4,
+      "source_property": "Stillingsprosent"
+    }, {
+      "type": "string",
+      "name": "Adresse-by",
+      "allow_null": true,
+      "max_size": 150,
+      "min_size": 1,
+      "source_property": "Adresse-by"
+    }, {
+      "type": "string",
+      "name": "Adresse-gatenavn",
+      "allow_null": true,
+      "max_size": 150,
+      "min_size": 1,
+      "source_property": "Adresse-gatenavn"
+    }, {
+      "type": "string",
+      "name": "Adresse-land",
+      "allow_null": true,
+      "max_size": 150,
+      "min_size": 2,
+      "source_property": "Adresse-land"
+    }, {
+      "type": "string",
+      "name": "Kontonummer",
+      "allow_null": true,
+      "max_size": 50,
+      "min_size": 4,
+      "source_property": "Kontonummer"
+    }, {
+      "type": "string",
+      "name": "Personnummer",
+      "allow_null": true,
+      "max_size": 50,
+      "min_size": 2,
+      "source_property": "Personnummer"
+    }, {
+      "type": "string",
+      "name": "Postnummer",
+      "allow_null": true,
+      "max_size": 50,
+      "min_size": 2,
+      "source_property": "Postnummer"
+    }],
+    "table": "Lønn-Grunndata"
+  },
+  "transform": {
+    "type": "dtl",
+    "rules": {
+      "default": [
+        ["copy", "*"],
+        ["add", "Dato-siste-endring",
+          ["datetime-format", "%d.%m.%Y",
+            ["if",
+              ["eq", "$ENV(node-env)", "test"], "~t2020-03-16T00:00:00Z",
+              ["now"]
+            ]
+          ]
+        ],
+        ["filter",
+          ["neq", "_S._deleted", true]
+        ],
+        ["add", "Personnummer",
+          ["if",
+            ["eq", "$ENV(node-env)", "prod"],
+            ["decrypt", "$SECRET(folk-encryption-key)", "_S.Personnummer"],
+            ["decrypt", "folk-encryption-key", "_S.Personnummer"]
+          ]
+        ],
+        ["add", "Kontonummer",
+          ["if",
+            ["eq", "$ENV(node-env)", "prod"],
+            ["decrypt", "$SECRET(folk-encryption-key)", "_S.Kontonummer"],
+            ["decrypt", "folk-encryption-key", "_S.Kontonummer"]
+          ]
+        ]
+      ]
+    }
+  },
+  "pump": {
+    "mode": "$ENV(pump-mode)"
+  }
+}

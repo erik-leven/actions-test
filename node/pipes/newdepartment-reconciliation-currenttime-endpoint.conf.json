@@ -1,0 +1,82 @@
+{
+  "_id": "newDepartment-reconciliation-currenttime-endpoint",
+  "type": "pipe",
+  "source": {
+    "type": "dataset",
+    "dataset": "newDepartment-reconciliation-currenttime"
+  },
+  "sink": {
+    "type": "sql",
+    "system": "currenttime-economydbrepl-sesam",
+    "batch_size": 1,
+    "create_table_if_missing": true,
+    "primary_key": "AvdelingsnummerFolk",
+    "schema": "adm",
+    "schema_definition": [{
+      "type": "integer",
+      "name": "AvdelingsnummerFolk",
+      "max_value": 10000,
+      "min_value": 0,
+      "primary_key": true,
+      "source_property": "AvdelingsnummerFolk"
+    }, {
+      "type": "integer",
+      "name": "AvdelingslederID",
+      "allow_null": true,
+      "max_value": 10000,
+      "min_value": 0,
+      "source_property": "AvdelingslederID"
+    }, {
+      "type": "string",
+      "name": "AvdelingslederNavn",
+      "allow_null": true,
+      "max_size": 100,
+      "min_size": 0,
+      "source_property": "AvdelingslederNavn"
+    }, {
+      "type": "integer",
+      "name": "År",
+      "max_value": 3000,
+      "min_value": 0,
+      "source_property": "År"
+    }, {
+      "type": "integer",
+      "name": "Mnd",
+      "max_value": 12,
+      "min_value": 0,
+      "source_property": "Mnd"
+    }, {
+      "type": "string",
+      "name": "AvdelingsnavnFolk",
+      "max_size": 100,
+      "min_size": 0,
+      "source_property": "AvdelingsnavnFolk"
+    }, {
+      "type": "boolean",
+      "name": "Sjekket",
+      "source_property": "Sjekket"
+    }, {
+      "type": "string",
+      "name": "Kommentar",
+      "max_size": 1000,
+      "min_size": 0,
+      "source_property": "Kommentar"
+    }],
+    "table": "Avstemming-NyAvdeling"
+  },
+  "transform": {
+    "type": "dtl",
+    "rules": {
+      "default": [
+        ["copy", "*"],
+        ["filter",
+          ["neq", "_S._deleted", true]
+        ]
+      ]
+    }
+  },
+  "pump": {
+    "cron_expression": "$ENV(economylist_cron)",
+    "mode": "$ENV(pump-mode)"
+  }
+}

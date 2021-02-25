@@ -1,0 +1,18 @@
+{
+  "_id": "event-bouvet",
+  "type": "system:microservice",
+  "docker": {
+    "environment": {
+      "LOG_LEVEL": "DEBUG",
+      "baseurl": "$ENV(event-baseurl)",
+      "client_id": "$ENV(o365-clientid)",
+      "client_secret": "$SECRET(O365Token)",
+      "grant_type": "$ENV(o365-granttype)",
+      "resource": "$ENV(event-resource)",
+      "token_url": "$ENV(o365-tokenurl)"
+    },
+    "image": "sesamcommunity/graphql:1.0.2",
+    "port": 5000
+  },
+  "verify_ssl": true
+}

@@ -1,0 +1,42 @@
+[
+  {
+    "_id": "0003",
+    "deleted": false,
+    "department-hierarchy": [
+      {
+        "name": "Øst Dev 3",
+        "parent": "301",
+        "uid": "315"
+      },
+      {
+        "name": "Øst Tech 1",
+        "parent": "299",
+        "uid": "301"
+      },
+      {
+        "name": "Region Øst",
+        "parent": "2",
+        "uid": "299"
+      },
+      {
+        "name": "Bouvet Norge AS",
+        "parent": "1",
+        "uid": "2"
+      },
+      {
+        "name": "Bouvet ASA",
+        "parent": null,
+        "uid": "1"
+      }
+    ],
+    "department-name": "Øst Dev 3",
+    "department-number": "315",
+    "email": "sven.svensson@bouvet.no",
+    "employee-number": "0003",
+    "id": "0003",
+    "image": "https://image.com/9",
+    "mobile": "33333333",
+    "name": "Sven Svensson",
+    "project_exp": []
+  }
+]

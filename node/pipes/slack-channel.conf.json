@@ -1,0 +1,118 @@
+{
+  "_id": "slack-channel",
+  "type": "pipe",
+  "source": {
+    "type": "conditional",
+    "alternatives": {
+      "prod": {
+        "type": "json",
+        "system": "slack",
+        "url": "/channels"
+      },
+      "test": {
+        "type": "embedded",
+        "entities": [{
+          "name": "ai-kompetensgrupp",
+          "created": 1524151294,
+          "creator": "U7VEA14SY",
+          "id": "CA9P6UARG",
+          "is_archived": false,
+          "is_channel": true,
+          "is_general": false,
+          "is_member": false,
+          "is_mpim": false,
+          "is_org_shared": false,
+          "is_private": false,
+          "is_shared": false,
+          "name_normalized": "ai-kompetensgrupp",
+          "num_members": 14,
+          "previous_names": [],
+          "purpose": {
+            "creator": "U7VEA14SY",
+            "last_set": 1524151295,
+            "value": "Här lägger vi upp utbildningsmaterial, intressanta länkar och tips samt information angående utbildningen."
+          },
+          "topic": {
+            "creator": "",
+            "last_set": 0,
+            "value": ""
+          },
+          "unlinked": 0
+        }, {
+          "name": "alle-arendal",
+          "created": 1501376245,
+          "creator": "U4P6BMR55",
+          "id": "C6ES72NRE",
+          "is_archived": false,
+          "is_channel": true,
+          "is_general": false,
+          "is_member": false,
+          "is_mpim": false,
+          "is_org_shared": false,
+          "is_private": false,
+          "is_shared": false,
+          "name_normalized": "alle-arendal",
+          "num_members": 12,
+          "previous_names": [],
+          "purpose": {
+            "creator": "",
+            "last_set": 0,
+            "value": ""
+          },
+          "topic": {
+            "creator": "",
+            "last_set": 0,
+            "value": ""
+          },
+          "unlinked": 0
+        }, {
+          "name": "alle-grenland",
+          "created": 1501376245,
+          "creator": "U4P6BMR55",
+          "id": "C6FKWKL5T",
+          "is_archived": false,
+          "is_channel": true,
+          "is_general": false,
+          "is_member": false,
+          "is_mpim": false,
+          "is_org_shared": false,
+          "is_private": false,
+          "is_shared": false,
+          "name_normalized": "alle-grenland",
+          "purpose": {
+            "creator": "",
+            "last_set": 0,
+            "value": ""
+          },
+          "topic": {
+            "creator": "U2SN1EYHY",
+            "last_set": 1523003602,
+            "value": "Det er vel slik at vi ikke bruker denne kanalen men heller bruker #nordfløyen"
+          },
+          "unlinked": 0
+        }]
+      }
+    },
+    "condition": "$ENV(node-env)"
+  },
+  "transform": {
+    "type": "dtl",
+    "rules": {
+      "default": [
+        ["create",
+          ["apply", "usergroup", "_S.usergroups"]
+        ],
+        ["discard"]
+      ],
+      "usergroup": [
+        ["copy", "*"],
+        ["add", "rdf:type",
+          ["ni", "bouvet:slack-group"]
+        ]
+      ]
+    }
+  },
+  "pump": {
+    "cron_expression": "$ENV(slack_cron_fast)"
+  }
+}

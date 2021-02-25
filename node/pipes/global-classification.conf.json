@@ -1,0 +1,25 @@
+{
+  "_id": "global-classification",
+  "type": "pipe",
+  "source": {
+    "type": "merge",
+    "datasets": ["cvpartner-custom-tag-category c-ctc", "cvpartner-country c-c", "elasticsearch-tags est", "cvpartner-skills cs"],
+    "identity": "first",
+    "strategy": "compact",
+    "version": "$ENV(merge-version)"
+  },
+  "sink": {
+    "indexes": "$ids"
+  },
+  "transform": {
+    "type": "dtl",
+    "rules": {
+      "default": [
+        ["copy", "*"]
+      ]
+    }
+  },
+  "metadata": {
+    "global": true
+  }
+}

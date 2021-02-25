@@ -1,0 +1,16 @@
+{
+  "_id": "article-bouvetshares-competency_research-endpoint",
+  "type": "pipe",
+  "source": {
+    "type": "dataset",
+    "dataset": "article-bouvetshares-competency_research"
+  },
+  "sink": {
+    "type": "json",
+    "system": "competency_research",
+    "url": "/sink/bouvet-deler"
+  },
+  "pump": {
+    "mode": "$ENV(pump-mode)"
+  }
+}

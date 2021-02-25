@@ -1,0 +1,165 @@
+{
+  "_id": "consultant-azure",
+  "type": "pipe",
+  "source": {
+    "type": "dataset",
+    "dataset": "global-person"
+  },
+  "transform": {
+    "type": "dtl",
+    "rules": {
+      "default": [
+        ["copy", "_id"],
+        ["filter",
+          ["in", "_S.global-person:employee_status",
+            ["list", "Employee", "TempEmployee"]
+          ]
+        ],
+        ["add", "department-hierarchy",
+          ["first",
+            ["hops", {
+              "datasets": ["global-department gd"],
+              "where": ["eq", "_S.folk-user:8.data.uniqueImportId", "gd.catalystone-organization:ORG_ID.value"],
+              "return": "gd.global-department:department-hierarchy"
+            }]
+          ]
+        ],
+        ["filter",
+          ["intersects",
+            ["list", "301", "402"], "_T.department-hierarchy.parent"]
+        ],
+        ["add", "id", "_S.folk-user:employeeId"],
+        ["add", "employee-number", "_S.folk-user:employeeId"],
+        ["add", "name",
+          ["coalesce",
+            ["list", "_S.global-person:DisplayName", "_S.global-person:Name"]
+          ]
+        ],
+        ["add", "department-number", "_S.folk-user:8.data.uniqueImportId"],
+        ["add", "department-name", "_S.folk-user:8.data.value"],
+        ["add", "email", "_S.global-person:Email"],
+        ["add", "mobile", "_S.global-person:Mobile"],
+        ["add", "image",
+          ["first",
+            ["hops", {
+              "datasets": ["global-cv gcv"],
+              "where": [
+                ["eq", "_S.$ids", "gcv.bruker_id-ni"]
+              ],
+              "return": "gcv.image.thumb.url"
+            }]
+          ]
+        ],
+        ["merge",
+          ["apply-hops", "cv", {
+            "datasets": ["global-cv pg"],
+            "where": ["eq", "_S.$ids", "pg.bruker_id-ni"]
+          }]
+        ],
+        ["if",
+          ["is-null", "_T.project_exp"],
+          ["add", "project_exp",
+            ["list"]
+          ]
+        ]
+      ],
+      "customer": [
+        ["if",
+          ["gt", "_S.no", ""],
+          ["add", "customer", "_S.no"],
+          ["if",
+            ["gt", "_S.int", ""],
+            ["add", "customer", "_S.int"],
+            ["if",
+              ["gt", "_S.se", ""],
+              ["add", "customer", "_S.se"]
+            ]
+          ]
+        ]
+      ],
+      "cv": [
+        ["add", "project_exp",
+          ["apply", "project_experience", "_S.cvpartner-cv:project_experiences"]
+        ]
+      ],
+      "project_experience": [
+        ["filter",
+          ["eq", "_S.cvpartner-cv:disabled", false]
+        ],
+        ["merge-union",
+          ["apply", "customer", "_S.cvpartner-cv:customer"]
+        ],
+        ["merge-union",
+          ["apply", "project_name", "_S.cvpartner-cv:description"]
+        ],
+        ["merge-union",
+          ["apply", "roles", "_S.cvpartner-cv:roles.name"]
+        ],
+        ["if",
+          ["gt", "_S.month_from", ""],
+          ["add", "from",
+            ["datetime-parse", "%Y.%m",
+              ["concat", "_S.year_from", ".", "_S.month_from"]
+            ]
+          ],
+          ["if",
+            ["gt", "_S.year_from", ""],
+            ["add", "from",
+              ["datetime-parse", "%Y", "_S.year_from"]
+            ],
+            ["add", "from", "ikke påbegynt"]
+          ]
+        ],
+        ["if",
+          ["gt", "_S.month_to", ""],
+          ["add", "to",
+            ["datetime-parse", "%Y.%m",
+              ["concat", "_S.year_to", ".", "_S.month_to"]
+            ]
+          ],
+          ["if",
+            ["gt", "_S.year_to", ""],
+            ["add", "to",
+              ["datetime-parse", "%Y", "_S.year_to"]
+            ],
+            ["add", "to", "pågående"]
+          ]
+        ]
+      ],
+      "project_name": [
+        ["if",
+          ["gt", "_S.no", ""],
+          ["add", "project_name", "_S.no"],
+          ["if",
+            ["gt", "_S.int", ""],
+            ["add", "project_name", "_S.int"],
+            ["if",
+              ["gt", "_S.se", ""],
+              ["add", "project_name", "_S.se"]
+            ]
+          ]
+        ]
+      ],
+      "roles": [
+        ["if",
+          ["gt", "_S.no", ""],
+          ["add", "roles",
+            ["list", "_S.no"]
+          ],
+          ["if",
+            ["gt", "_S.int", ""],
+            ["add", "roles",
+              ["list", "_S.int"]
+            ],
+            ["if",
+              ["gt", "_S.se", ""],
+              ["add", "roles",
+                ["list", "_S.se"]
+              ]
+            ]
+          ]
+        ]
+      ]
+    }
+  }
+}

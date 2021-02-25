@@ -1,0 +1,43 @@
+{
+  "_id": "person-cvpartnerupdate-kuben",
+  "type": "pipe",
+  "source": {
+    "type": "dataset",
+    "dataset": "global-person"
+  },
+  "transform": {
+    "type": "dtl",
+    "rules": {
+      "default": [
+        ["filter",
+          ["neq", "_S.currenttime-employeedetail:employeeref", "0"]
+        ],
+        ["copy", "_id"],
+        ["add", "employeeid",
+          ["first", "_S.currenttime-employee:employeeid"]
+        ],
+        ["add", "AnsattNavn",
+          ["first", "_S.global-person:Name"]
+        ],
+        ["add", "EnhetsNr",
+          ["first", "_S.currenttime-employee:departmentid"]
+        ],
+        ["merge",
+          ["apply-hops", "foo", {
+            "datasets": ["global-cv gcv"],
+            "where": [
+              ["eq", "_S.$ids", "gcv.bruker_id-ni"]
+            ]
+          }]
+        ],
+        ["filter",
+          ["eq",
+            ["is-null", "_T.employeeid"], false]
+        ]
+      ],
+      "foo": [
+        ["add", "Sist oppdatert dato CV", "_S.owner_updated_at"]
+      ]
+    }
+  }
+}

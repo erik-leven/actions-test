@@ -1,0 +1,134 @@
+[
+  {
+    "AnsattNr": "0001",
+    "Kompetanse": "JavaFX 2,Spring JDBC,Java SE 7,Java EE 6,Java SE 8,Java EE 5,JavaScript,Java EE 8",
+    "Sammendrag": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+    "_id": "0001"
+  },
+  {
+    "AnsattNr": "0003",
+    "Kompetanse": "JavaFX 2,Spring JDBC,Java SE 7,Java EE 6,Java SE 8,Java EE 5,JavaScript,Java EE 8",
+    "Sammendrag": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+    "_id": "0003"
+  },
+  {
+    "AnsattNr": "0004",
+    "Kompetanse": "JavaFX 2,Spring JDBC,Java SE 7,Java EE 6,Java SE 8,Java EE 5,JavaScript,Java EE 8",
+    "Sammendrag": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+    "_id": "0004"
+  },
+  {
+    "AnsattNr": "0006",
+    "Kompetanse": null,
+    "Sammendrag": null,
+    "_id": "0006"
+  },
+  {
+    "AnsattNr": "0007",
+    "Kompetanse": "JavaFX 2,Spring JDBC,Java SE 7,Java EE 6,Java SE 8,Java EE 5,JavaScript,Java EE 8",
+    "Sammendrag": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+    "_id": "0007"
+  },
+  {
+    "AnsattNr": "0008",
+    "Kompetanse": "JavaFX 2,Spring JDBC,Java SE 7,Java EE 6,Java SE 8,Java EE 5,JavaScript,Java EE 8",
+    "Sammendrag": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+    "_id": "0008"
+  },
+  {
+    "AnsattNr": "0010",
+    "Kompetanse": null,
+    "Sammendrag": null,
+    "_id": "0010"
+  },
+  {
+    "AnsattNr": "0011",
+    "Kompetanse": null,
+    "Sammendrag": null,
+    "_id": "0011"
+  },
+  {
+    "AnsattNr": "132",
+    "Kompetanse": null,
+    "Sammendrag": null,
+    "_id": "132"
+  },
+  {
+    "AnsattNr": "1528",
+    "Kompetanse": null,
+    "Sammendrag": null,
+    "_id": "1528"
+  },
+  {
+    "AnsattNr": "1847",
+    "Kompetanse": null,
+    "Sammendrag": null,
+    "_id": "1847"
+  },
+  {
+    "AnsattNr": "1938",
+    "Kompetanse": null,
+    "Sammendrag": null,
+    "_id": "1938"
+  },
+  {
+    "AnsattNr": "2015",
+    "Kompetanse": null,
+    "Sammendrag": null,
+    "_id": "2015"
+  },
+  {
+    "AnsattNr": "2156",
+    "Kompetanse": null,
+    "Sammendrag": null,
+    "_id": "2156"
+  },
+  {
+    "AnsattNr": "2276",
+    "Kompetanse": null,
+    "Sammendrag": null,
+    "_id": "2276"
+  },
+  {
+    "AnsattNr": "2288",
+    "Kompetanse": null,
+    "Sammendrag": null,
+    "_id": "2288"
+  },
+  {
+    "AnsattNr": "2507",
+    "Kompetanse": null,
+    "Sammendrag": null,
+    "_id": "2507"
+  },
+  {
+    "AnsattNr": "2978",
+    "Kompetanse": null,
+    "Sammendrag": null,
+    "_id": "2978"
+  },
+  {
+    "AnsattNr": "3471",
+    "Kompetanse": null,
+    "Sammendrag": null,
+    "_id": "3471"
+  },
+  {
+    "AnsattNr": "3636",
+    "Kompetanse": null,
+    "Sammendrag": null,
+    "_id": "3636"
+  },
+  {
+    "AnsattNr": "391",
+    "Kompetanse": null,
+    "Sammendrag": null,
+    "_id": "391"
+  },
+  {
+    "AnsattNr": "7777",
+    "Kompetanse": null,
+    "Sammendrag": null,
+    "_id": "7777"
+  }
+]

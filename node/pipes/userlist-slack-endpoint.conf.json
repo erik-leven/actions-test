@@ -1,0 +1,33 @@
+{
+  "_id": "userlist-slack-endpoint",
+  "type": "pipe",
+  "source": {
+    "type": "dataset",
+    "dataset": "userlist-slack"
+  },
+  "sink": {
+    "type": "json",
+    "system": "slack",
+    "batch_size": 5,
+    "url": "/userlist"
+  },
+  "transform": {
+    "type": "dtl",
+    "rules": {
+      "default": [
+        ["filter",
+          ["neq", "_S._id", "ad-department:CN=Alle Bouvet,OU=Organisasjon,OU=Grupper,OU=Bouvet,DC=bouvet,DC=no"]
+        ],
+        ["filter",
+          ["gt",
+            ["count", "_S.employees"], 1]
+        ],
+        ["copy", "*"]
+      ]
+    }
+  },
+  "pump": {
+    "cron_expression": "0 * * * ?",
+    "mode": "$ENV(pump-mode)"
+  }
+}

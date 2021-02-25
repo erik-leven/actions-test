@@ -1,0 +1,55 @@
+{
+  "_id": "currenttime-omrade",
+  "type": "pipe",
+  "source": {
+    "type": "conditional",
+    "alternatives": {
+      "prod": {
+        "type": "sql",
+        "system": "currenttime",
+        "primary_key": "OmradeID",
+        "schema": "bov",
+        "table": "omrade"
+      },
+      "test": {
+        "type": "embedded",
+        "entities": [{
+          "_id": "1",
+          "OmradeID": 1,
+          "OmradeNavn": "Kundeopplevelse"
+        }, {
+          "_id": "2",
+          "OmradeID": 2,
+          "OmradeNavn": "Sandvika"
+        }, {
+          "_id": "3",
+          "OmradeID": 3,
+          "OmradeNavn": "Tech 1"
+        }, {
+          "_id": "4",
+          "OmradeID": 4,
+          "OmradeNavn": "Tech 2"
+        }, {
+          "_id": "5",
+          "OmradeID": 5,
+          "OmradeNavn": "Virk"
+        }]
+      }
+    },
+    "condition": "$ENV(node-env)"
+  },
+  "transform": {
+    "type": "dtl",
+    "rules": {
+      "default": [
+        ["copy", "*"],
+        ["add", "rdf:type",
+          ["ni", "bouvet:currenttime-omrade"]
+        ]
+      ]
+    }
+  },
+  "pump": {
+    "cron_expression": "$ENV(ct_cron_slow)"
+  }
+}

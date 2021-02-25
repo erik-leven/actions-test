@@ -1,0 +1,418 @@
+{
+  "_id": "customer-project-data",
+  "type": "pipe",
+  "source": {
+    "type": "dataset",
+    "dataset": "global-customer"
+  },
+  "transform": {
+    "type": "dtl",
+    "rules": {
+      "default": [
+        ["comment", "The pipe both produces customer entities, and creates separate consultant entities per project in their CV that is connected to the customer"],
+        ["copy",
+          ["list", "_id", "rdf:type"]
+        ],
+        ["add", "name",
+          ["replace", "/", " ",
+            ["strip",
+              ["coalesce",
+                ["list", "_S.cvpartner-customer:customer_name.no", "_S.cvpartner-customer:customer_name.int", "_S.cvpartner-customer:customer_name.se", "_S.ad-customer:name", "_S.currenttime-company:companyname", "_S.currenttime-company:companyref"]
+              ]
+            ]
+          ]
+        ],
+        ["filter",
+          ["neq", "_T.name", null]
+        ],
+        ["filter",
+          ["neq", "_S.id", "5b15125e90954d68dd67f99d"]
+        ],
+        ["filter",
+          ["neq", "_T.name", "Testkunde"]
+        ],
+        ["add", "uid", "_S.id"],
+        ["comment", "Hop to a dataset of project experiences split/created from CVPartner CVs and get all project experiences for the customer"],
+        ["add", "project_data",
+          ["apply-hops", "project_data", {
+            "datasets": ["cv-project cvp"],
+            "where": [
+              ["or",
+                ["eq",
+                  ["lower",
+                    ["rstrip", " AS", "_S.cvpartner-customer:customer_name.no"]
+                  ],
+                  ["lower",
+                    ["rstrip", " AS", "cvp.customer.no"]
+                  ]
+                ],
+                ["eq",
+                  ["lower",
+                    ["rstrip", " AS", "_S.cvpartner-customer:customer_name.int"]
+                  ],
+                  ["lower",
+                    ["rstrip", " AS", "cvp.customer.int"]
+                  ]
+                ],
+                ["eq",
+                  ["lower",
+                    ["rstrip", " AS", "_S.cvpartner-customer:customer_name.se"]
+                  ],
+                  ["lower",
+                    ["rstrip", " AS", "cvp.customer.se"]
+                  ]
+                ]
+              ]
+            ]
+          }]
+        ],
+        ["comment", "Hop to o365 groups to get offers and projectsrooms from Sharepoint. Populates manager attributes with employeenumbers if managers are listed in o365."],
+        ["merge-union",
+          ["apply-hops", "o365_data", {
+            "datasets": ["global-site gs"],
+            "where": ["or",
+              ["eq", "_S.cvpartner-customer:customer_name.no", "gs.Customers.Name"],
+              ["eq", "_S.cvpartner-customer:customer_name.int", "gs.Customers.Name"],
+              ["eq", "_S.cvpartner-customer:customer_name.se", "gs.Customers.Name"],
+              ["eq", "_S.ad-customer:name", "gs.Customers.Name"],
+              ["eq", "_S.currenttime-company:companyname", "gs.Customers.Name"],
+              ["eq", "_S.currenttime-company:companyref", "gs.Customers.Name"]
+            ]
+          }]
+        ],
+        ["comment", "Emit separate entity for consultant data created in _T.project_data.consultant. This is to be able to hops to all of a consultants projects for a given custumer in pipe custmer-elasticsearch downstream to aggregate dates etc for a consultant."],
+        ["if",
+          ["and", "_T.project_data.consultant",
+            ["is-not-null", "_T.project_data.consultant._id"]
+          ],
+          ["create",
+            ["apply", "create-project-consultant", "_T.project_data.consultant"]
+          ]
+        ]
+      ],
+      "consultants": [
+        ["merge",
+          ["apply-hops", "personuid", {
+            "datasets": ["global-person gp"],
+            "where": [
+              ["eq", "_S.external_unique_id", "gp.catalystone-user:UNIQUE_IMPORT_ID.value"]
+            ]
+          }]
+        ]
+      ],
+      "create-project-consultant": [
+        ["copy", "*"],
+        ["add", "rdf:type",
+          ["ni", "cvpartner:projectConsultant"]
+        ]
+      ],
+      "o365_data": [
+        ["comment", "Filter all other o365-groups"],
+        ["filter",
+          ["or",
+            ["eq", "_S.AreaType", "Tilbud og avtaler"],
+            ["eq", "_S.AreaType", "Oppdrag og prosjekt"]
+          ]
+        ],
+        ["if", "_S.AccountManagers.Mail",
+          ["add", "accountmanagers",
+            ["apply-hops", "personuid", {
+              "datasets": ["global-person gp"],
+              "where": [
+                ["eq", "_S.AccountManagers.Mail", "gp.global-person:Email"]
+              ]
+            }]
+          ]
+        ],
+        ["comment", "Populate managers in payload if they exist"],
+        ["if", "_S.DeliveryManagers.Mail",
+          ["add", "deliverymanagers",
+            ["apply-hops", "personuid", {
+              "datasets": ["global-person gp"],
+              "where": [
+                ["eq", "_S.DeliveryManagers.Mail", "gp.global-person:Email"]
+              ]
+            }]
+          ]
+        ],
+        ["if", "_S.ProjectManagers.Mail",
+          ["add", "projectmanagers",
+            ["apply-hops", "personuid", {
+              "datasets": ["global-person gp"],
+              "where": [
+                ["eq", "_S.ProjectManagers.Mail", "gp.global-person:Email"]
+              ]
+            }]
+          ]
+        ],
+        ["comment", "Create 'offers' for payload"],
+        ["if",
+          ["eq", "_S.AreaType", "Tilbud og avtaler"],
+          [
+            ["add", "createddate_tmp",
+              ["datetime-parse", "%m/%d/%Y",
+                ["first",
+                  ["split", " ", "_S.SiteOriginalCreatedDate"]
+                ]
+              ]
+            ],
+            ["add", "reneweddate",
+              ["datetime-parse", "%Y-%m-%dT%H:%M:%SZ",
+                ["coalesce",
+                  ["list", "_S.o365-sitedata:LastItemUserModifiedDate", "_S.o365-siteurl:lastModifiedDateTime"]
+                ]
+              ]
+            ],
+            ["add", "offers",
+              ["list",
+                ["dict", "name",
+                  ["first",
+                    ["distinct", "_S.displayName"]
+                  ], "description",
+                  ["first",
+                    ["distinct", "_S.description"]
+                  ], "uid",
+                  ["last",
+                    ["split", ":", "_S._id"]
+                  ], "createddate", "_T.createddate_tmp", "reneweddate", "_T.reneweddate", "url",
+                  ["concat", "https://bouvetasa.sharepoint.com/sites/",
+                    ["first", "_S.mailNickname"]
+                  ]
+                ]
+              ]
+            ]
+          ]
+        ],
+        ["comment", "Create 'projectrooms' for payload"],
+        ["if",
+          ["eq", "_S.AreaType", "Oppdrag og prosjekt"],
+          [
+            ["add", "createddate_tmp",
+              ["datetime-parse", "%m/%d/%Y",
+                ["first",
+                  ["split", " ", "_S.SiteOriginalCreatedDate"]
+                ]
+              ]
+            ],
+            ["add", "reneweddate",
+              ["datetime-parse", "%Y-%m-%dT%H:%M:%SZ",
+                ["coalesce",
+                  ["list", "_S.o365-sitedata:LastItemUserModifiedDate", "_S.o365-siteurl:lastModifiedDateTime"]
+                ]
+              ]
+            ],
+            ["add", "projectrooms",
+              ["list",
+                ["dict", "name",
+                  ["first",
+                    ["distinct", "_S.displayName"]
+                  ], "description",
+                  ["first",
+                    ["distinct", "_S.description"]
+                  ], "uid",
+                  ["last",
+                    ["split", ":", "_S._id"]
+                  ], "createddate", "_T.createddate_tmp", "reneweddate", "_T.reneweddate", "url",
+                  ["concat", "https://bouvetasa.sharepoint.com/sites/",
+                    ["first", "_S.mailNickname"]
+                  ], "projectmanager", "_T.projectmanagers"]
+              ]
+            ]
+          ]
+        ],
+        ["remove",
+          ["list", "createddate_tmp", "reneweddate", "projectmanagers"]
+        ]
+      ],
+      "personuid": [
+        ["if",
+          ["in", "_S.global-person:employee_status",
+            ["list", "EarlyEmployee", "TempEarlyEmployee", "SoonEmployee", "TempSoonEmployee", "Employee", "TempEmployee"]
+          ],
+          ["add", "uid", "_S.catalystone-user:UNIQUE_IMPORT_ID.value"]
+        ]
+      ],
+      "project_data": [
+        ["comment", "Get startdates, enddates and descriptions of projects for all projects of same name for the same customer- Creates lists if multiple consultants have worked on the project"],
+        ["if",
+          ["neq", "_S.customer.no", ""],
+          ["merge-union",
+            ["apply-hops", "same-name-projects", {
+              "datasets": ["cv-project cvp"],
+              "where": [
+                ["eq",
+                  ["tuples", "_S.customer.no", "_S.description.no"],
+                  ["tuples", "cvp.customer.no", "cvp.description.no"]
+                ]
+              ]
+            }]
+          ],
+          ["if",
+            ["neq", "_S.customer.int", ""],
+            ["merge-union",
+              ["apply-hops", "same-name-projects", {
+                "datasets": ["cv-project cvp"],
+                "where": [
+                  ["eq",
+                    ["tuples", "_S.customer.int", "_S.description.int"],
+                    ["tuples", "cvp.customer.int", "cvp.description.int"]
+                  ]
+                ]
+              }]
+            ],
+            ["if",
+              ["neq", "_S.customer.se", ""],
+              ["merge-union",
+                ["apply-hops", "same-name-projects", {
+                  "datasets": ["cv-project cvp"],
+                  "where": [
+                    ["eq",
+                      ["tuples", "_S.customer.se", "_S.description.se"],
+                      ["tuples", "cvp.customer.se", "cvp.description.se"]
+                    ]
+                  ]
+                }]
+              ]
+            ]
+          ]
+        ],
+        ["comment", "Create 'project' in 'project_data' based on all consultant experiences for the customer with the same project name. Using earliest startdate and latest enddate to summarize the project."],
+        ["if",
+          ["in", "pågående", "_T.project_enddate"],
+          ["add", "project_enddate_final", "pågående"],
+          ["add", "project_enddate_final",
+            ["max", "_T.project_enddate"]
+          ]
+        ],
+        ["add", "project",
+          ["dict", "uid",
+            ["replace", "cvpartner-cv:", "", "_S._id"], "name",
+            ["coalesce",
+              ["list", "_S.description.no", "_S.description.int", "_S.description.se"]
+            ], "description",
+            ["first",
+              ["sorted-descending",
+                ["length", "_."], "_T.project_description"]
+            ], "startdate",
+            ["min", "_T.project_startdate"], "enddate", "_T.project_enddate_final"]
+        ],
+        ["comment", "Create 'consultant' in 'project_data' based on original consultant's project data from CV"],
+        ["if",
+          ["and",
+            ["gt", "_S.month_from", ""],
+            ["gt", "_S.year_from", ""]
+          ],
+          ["add", "consultant_startdate",
+            ["datetime-parse", "%m.%Y",
+              ["concat", "_S.month_from", ".", "_S.year_from"]
+            ]
+          ],
+          ["add", "consultant_startdate",
+            ["datetime-parse", "%Y", "_S.year_from"]
+          ]
+        ],
+        ["if",
+          ["and",
+            ["gt", "_S.month_to", ""],
+            ["gt", "_S.year_to", ""]
+          ],
+          ["add", "consultant_enddate",
+            ["datetime-parse", "%m.%Y",
+              ["concat", "_S.month_to", ".", "_S.year_to"]
+            ]
+          ],
+          ["add", "consultant_enddate",
+            ["datetime-parse", "%Y", "_S.year_to"]
+          ]
+        ],
+        ["if",
+          ["is-null", "_T.consultant_enddate"],
+          ["add", "consultant_enddate", "pågående"]
+        ],
+        ["add", "consultant_role",
+          ["coalesce",
+            ["list", "_S.roles.name.no", "_S.roles.name.int", "_S.roles.name.se"]
+          ]
+        ],
+        ["merge",
+          ["apply-hops", "consultants", {
+            "datasets": ["global-cv gcv"],
+            "where": ["eq", "_S.cv_id-ni", "gcv.$ids"],
+            "track-dependencies": false
+          }]
+        ],
+        ["if",
+          ["in", "pågående", "_T.consultant_enddate"],
+          ["add", "consultant_enddate_final", "pågående"],
+          ["add", "consultant_enddate_final",
+            ["max", "_T.consultant_enddate"]
+          ]
+        ],
+        ["if",
+          ["is-not-null", "_T.uid"],
+          ["add", "consultant",
+            ["dict", "_id",
+              ["concat", "_T.project.uid", "-",
+                ["first", "_T.uid"]
+              ], "uid",
+              ["first", "_T.uid"], "startdate",
+              ["min", "_T.consultant_startdate"], "enddate", "_T.consultant_enddate_final", "role",
+              ["sorted",
+                ["distinct",
+                  ["strip",
+                    ["filter",
+                      ["neq", "", "_."], "_T.consultant_role"]
+                  ]
+                ]
+              ], "project_id", "_T.project.uid", "customer_id", "_P._S._id"]
+          ]
+        ],
+        ["remove",
+          ["list", "uid", "project_startdate", "project_description", "project_enddate", "project_enddate_final", "consultant_startdate", "consultant_enddate", "consultant_enddate_final", "consultant_role"]
+        ]
+      ],
+      "same-name-projects": [
+        ["if",
+          ["and",
+            ["gt", "_S.month_from", ""],
+            ["gt", "_S.year_from", ""]
+          ],
+          ["add", "project_startdate",
+            ["datetime-parse", "%m.%Y",
+              ["concat", "_S.month_from", ".", "_S.year_from"]
+            ]
+          ],
+          ["add", "project_startdate",
+            ["datetime-parse", "%Y", "_S.year_from"]
+          ]
+        ],
+        ["if",
+          ["and",
+            ["gt", "_S.month_to", ""],
+            ["gt", "_S.year_to", ""]
+          ],
+          ["add", "project_enddate",
+            ["datetime-parse", "%m.%Y",
+              ["concat", "_S.month_to", ".", "_S.year_to"]
+            ]
+          ],
+          ["add", "project_enddate",
+            ["datetime-parse", "%Y", "_S.year_to"]
+          ]
+        ],
+        ["if",
+          ["is-null", "_T.project_enddate"],
+          ["add", "project_enddate", "pågående"]
+        ],
+        ["add", "project_description",
+          ["coalesce",
+            ["list", "_S.long_description.no", "_S.long_description.int", "_S.long_description.se"]
+          ]
+        ]
+      ]
+    }
+  },
+  "compaction": {
+    "sink": true
+  }
+}

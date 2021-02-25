@@ -1,0 +1,183 @@
+[
+  {
+    "_id": "0001",
+    "data": {
+      "about_me": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+      "ask_me": [
+        "Innholdsstrategi",
+        "Innholdsdesign",
+        "Innholdsforvaltning",
+        "Innholdsanalyse",
+        "Redaktørrollen",
+        "Digital samhandling",
+        "Konseptutvikling",
+        "Universell utforming",
+        "Interaksjonsdesign",
+        "Informasjonsarkitektur",
+        "Kanalstrategi",
+        "Kommunikasjonsstrategi"
+      ],
+      "blogs": null,
+      "cv_url": "https://bouvet.cvpartner.com/redirect/to/cv?email=kari.norrman%40bouvet.no",
+      "employeenumber": "0001",
+      "project_exp": [
+        {
+          "customer": "Altibox",
+          "from": "~t2015-09-01T00:00:00Z",
+          "project_name": "Funksjonalitetstesting av «TV Overalt»",
+          "roles": [
+            "Tester"
+          ],
+          "to": "~t2015-12-01T00:00:00Z"
+        },
+        {
+          "customer": "Altibox",
+          "from": "~t2015-01-01T00:00:00Z",
+          "project_name": "Funksjonalitetstesting av dekodere",
+          "roles": [
+            "Tester"
+          ],
+          "to": "~t2015-06-01T00:00:00Z"
+        },
+        {
+          "customer": "Altibox",
+          "from": "~t2016-03-01T00:00:00Z",
+          "project_name": "Testing av TV Overalt app og på web ",
+          "roles": [
+            "Tester"
+          ],
+          "to": "pågående"
+        },
+        {
+          "customer": "Nortura",
+          "from": "~t2014-09-01T00:00:00Z",
+          "project_name": "Hospitering datavarehuset",
+          "roles": [
+            "Utvikler"
+          ],
+          "to": "~t2014-12-01T00:00:00Z"
+        },
+        {
+          "customer": "Bouvet Norge AS",
+          "from": "~t2013-12-01T00:00:00Z",
+          "project_name": "Business Intelligence team",
+          "roles": [
+            "Dashboarddesigner",
+            "Utvikler"
+          ],
+          "to": "pågående"
+        }
+      ],
+      "role": "Konsulent"
+    },
+    "filename": "0001.json"
+  },
+  {
+    "_id": "0003",
+    "data": {
+      "about_me": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+      "ask_me": [
+        "Innholdsstrategi",
+        "Innholdsdesign",
+        "Innholdsforvaltning",
+        "Innholdsanalyse",
+        "Redaktørrollen",
+        "Digital samhandling",
+        "Konseptutvikling",
+        "Universell utforming",
+        "Interaksjonsdesign",
+        "Informasjonsarkitektur",
+        "Kanalstrategi",
+        "Kommunikasjonsstrategi",
+        "Behovsanalyse"
+      ],
+      "blogs": null,
+      "cv_url": "https://bouvet.cvpartner.com/redirect/to/cv?email=fgh%40bouvet.no",
+      "employeenumber": "0003",
+      "project_exp": null,
+      "role": "Konsulent"
+    },
+    "filename": "0003.json"
+  },
+  {
+    "_id": "0004",
+    "data": {
+      "about_me": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+      "ask_me": [
+        "Innholdsstrategi",
+        "Innholdsdesign",
+        "Innholdsforvaltning",
+        "Innholdsanalyse",
+        "Redaktørrollen",
+        "Digital samhandling",
+        "Konseptutvikling",
+        "Universell utforming",
+        "Interaksjonsdesign",
+        "Informasjonsarkitektur",
+        "Kanalstrategi",
+        "Kommunikasjonsstrategi",
+        "Behovsanalyse"
+      ],
+      "blogs": null,
+      "cv_url": "https://bouvet.cvpartner.com/redirect/to/cv?email=sven.svensson%40bouvet.no",
+      "employeenumber": "0004",
+      "project_exp": null,
+      "role": "Konsulent"
+    },
+    "filename": "0004.json"
+  },
+  {
+    "_id": "0007",
+    "data": {
+      "about_me": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+      "ask_me": [
+        "Innholdsstrategi",
+        "Innholdsdesign",
+        "Innholdsforvaltning",
+        "Innholdsanalyse",
+        "Redaktørrollen",
+        "Digital samhandling",
+        "Konseptutvikling",
+        "Universell utforming",
+        "Interaksjonsdesign",
+        "Informasjonsarkitektur",
+        "Kanalstrategi",
+        "Kommunikasjonsstrategi",
+        "Behovsanalyse"
+      ],
+      "blogs": null,
+      "cv_url": "https://bouvet.cvpartner.com/redirect/to/cv?email=abc%40bouvet.no",
+      "employeenumber": "0007",
+      "project_exp": null,
+      "role": "Konsulent"
+    },
+    "filename": "0007.json"
+  },
+  {
+    "_id": "0008",
+    "data": {
+      "about_me": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+      "ask_me": [
+        "Innholdsstrategi",
+        "Innholdsdesign",
+        "Innholdsforvaltning",
+        "Innholdsanalyse",
+        "Redaktørrollen",
+        "Digital samhandling",
+        "Konseptutvikling",
+        "Universell utforming",
+        "Interaksjonsdesign",
+        "Informasjonsarkitektur",
+        "Kanalstrategi",
+        "Kommunikasjonsstrategi",
+        "Behovsanalyse"
+      ],
+      "blogs": null,
+      "cv_url": "https://bouvet.cvpartner.com/redirect/to/cv?email=cba%40bouvet.no",
+      "employeenumber": "0008",
+      "project_exp": null,
+      "role": "Konsulent"
+    },
+    "filename": "0008.json"
+  }
+]

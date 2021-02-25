@@ -1,0 +1,149 @@
+{
+  "_id": "cvpartner-country",
+  "type": "pipe",
+  "source": {
+    "type": "conditional",
+    "alternatives": {
+      "prod": {
+        "type": "json",
+        "system": "cv-partner",
+        "url": "$ENV(cvpartner-countries)"
+      },
+      "test": {
+        "type": "embedded",
+        "entities": [{
+          "_id": "586cee3f2c04d65514314910",
+          "code": "no",
+          "cv_template_id": "5a58b7d47da82e0ea9f3801b",
+          "cv_template_type": "word",
+          "native_language_code": "no",
+          "offices": [{
+            "_id": "5d4be169b3a1750ff3111f2f",
+            "name": "Region Øst",
+            "country_code": "no",
+            "country_id": "586cee3f2c04d65514314910",
+            "cv_template_id": null,
+            "cv_template_type": null,
+            "num_users": 757,
+            "override_language_code": null,
+            "selected": true,
+            "word_template_id": null
+          }, {
+            "_id": "5d4abfb13330eb0ec3d32e4b",
+            "name": "Andre",
+            "country_code": "no",
+            "country_id": "586cee3f2c04d65514314910",
+            "cv_template_id": null,
+            "cv_template_type": null,
+            "num_users": 52,
+            "override_language_code": null,
+            "selected": true,
+            "word_template_id": null
+          }, {
+            "_id": "5d4be1e146cad20c9cec96c1",
+            "name": "Region Bergen",
+            "country_code": "no",
+            "country_id": "586cee3f2c04d65514314910",
+            "cv_template_id": null,
+            "cv_template_type": null,
+            "num_users": 119,
+            "override_language_code": null,
+            "selected": true,
+            "word_template_id": null
+          }, {
+            "_id": "5d4be172edfc710ff5b832c4",
+            "name": "Region Sør",
+            "country_code": "no",
+            "country_id": "586cee3f2c04d65514314910",
+            "cv_template_id": null,
+            "cv_template_type": null,
+            "num_users": 92,
+            "override_language_code": null,
+            "selected": true,
+            "word_template_id": null
+          }, {
+            "_id": "586cee3f2c04d65514314912",
+            "name": "Region Rogaland",
+            "country_code": "no",
+            "country_id": "586cee3f2c04d65514314910",
+            "cv_template_id": null,
+            "cv_template_type": null,
+            "num_users": 601,
+            "override_language_code": null,
+            "selected": true,
+            "word_template_id": null
+          }, {
+            "_id": "5d4be151edfc710ffab8330c",
+            "name": "Region Nord",
+            "country_code": "no",
+            "country_id": "586cee3f2c04d65514314910",
+            "cv_template_id": null,
+            "cv_template_type": null,
+            "num_users": 141,
+            "override_language_code": null,
+            "selected": true,
+            "word_template_id": null
+          }, {
+            "_id": "5d4be3d5b3a1750edd111f18",
+            "name": "Norge Felles",
+            "country_code": "no",
+            "country_id": "586cee3f2c04d65514314910",
+            "cv_template_id": null,
+            "cv_template_type": null,
+            "num_users": 45,
+            "override_language_code": null,
+            "selected": true,
+            "word_template_id": null
+          }, {
+            "_id": "5d4be141b3a1750e59111ff3",
+            "name": "Sesam",
+            "country_code": "no",
+            "country_id": "586cee3f2c04d65514314910",
+            "cv_template_id": null,
+            "cv_template_type": null,
+            "num_users": 56,
+            "override_language_code": null,
+            "selected": true,
+            "word_template_id": null
+          }, {
+            "_id": "5d4be147edfc710ff5b832be",
+            "name": "Olavstoppen",
+            "country_code": "no",
+            "country_id": "586cee3f2c04d65514314910",
+            "cv_template_id": null,
+            "cv_template_type": null,
+            "num_users": 42,
+            "override_language_code": null,
+            "selected": true,
+            "word_template_id": null
+          }],
+          "selected": true,
+          "setting": {
+            "_id": "50ec0e08a6add14a1f000008"
+          },
+          "word_template_id": "5a58b7d47da82e0ea9f3801b"
+        }]
+      }
+    },
+    "condition": "$ENV(node-env)"
+  },
+  "transform": {
+    "type": "dtl",
+    "rules": {
+      "default": [
+        ["copy", "*", "offices"],
+        ["create",
+          ["apply", "create", "_S.offices"]
+        ]
+      ],
+      "create": [
+        ["copy", "*"],
+        ["add", "id", "_S._id"],
+        ["add", "rdf:type", "cvpartner:Country"]
+      ]
+    }
+  },
+  "pump": {
+    "cron_expression": "$ENV(cvpartner_cron_medium)"
+  }
+}

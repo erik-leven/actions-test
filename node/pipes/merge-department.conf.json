@@ -1,0 +1,52 @@
+{
+  "_id": "merge-department",
+  "type": "pipe",
+  "source": {
+    "type": "merge",
+    "datasets": ["catalystone-organization co", "ad-department ad", "currenttime-department-filtered cd", "currenttime-sverige-department-filtered csd", "slack-group sg", "cvpartner-custom-tag-department cvd", "currenttime-olavstoppen-department-filtered cod", "visma-department vd", "visma-olavstoppen-department vod", "region reg"],
+    "equality": [
+      ["eq", "co.ORG_ID.value",
+        ["first", "ad.departmentNumber"]
+      ],
+      ["eq", "co.ORG_ID.value",
+        ["string", "vd.DepNo"]
+      ],
+      ["eq",
+        ["first", "ad.ad-department:departmentNumber"], "cod.departmentrefimport"],
+      ["eq",
+        ["first", "ad.ad-department:departmentNumber"], "csd.departmentrefimport"],
+      ["eq",
+        ["first", "ad.ad-department:departmentNumber"], "cd.departmentref"],
+      ["eq",
+        ["lower",
+          ["first", "ad.ad-department:cn"]
+        ],
+        ["lower", "sg.slack-group:name"]
+      ],
+      ["eq",
+        ["lower",
+          ["first", "ad.ad-department:displayName"]
+        ],
+        ["lower", "sg.slack-group:name"]
+      ],
+      ["eq", "cvd.cvpartner-custom-tag-category:external_unique_id",
+        ["first", "ad.ad-department:departmentNumber"]
+      ]
+    ],
+    "identity": "first",
+    "strategy": "compact",
+    "supports_signalling": true,
+    "version": "$ENV(merge-version)"
+  },
+  "transform": {
+    "type": "dtl",
+    "rules": {
+      "default": [
+        ["copy", "*"]
+      ]
+    }
+  },
+  "compaction": {
+    "keep_versions": 10
+  }
+}

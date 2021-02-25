@@ -1,0 +1,169 @@
+{
+  "_id": "employeeaccess-currenttime-olavstoppen",
+  "type": "pipe",
+  "source": {
+    "type": "dataset",
+    "dataset": "global-person",
+    "supports_signalling": true
+  },
+  "transform": {
+    "type": "dtl",
+    "rules": {
+      "default": [
+        ["filter",
+          ["in", "_S.global-person:employee_status",
+            ["list", "Employee", "SoonEmployee", "EarlyEmployee", "TempEmployee", "TempSoonEmployee", "EarlyTempEmployee"]
+          ]
+        ],
+        ["filter",
+          ["is-not-null", "_S.currenttime-olavstoppen-employee:employeeid"]
+        ],
+        ["comment", "some times employees are rehired, ie. summer students who get a new contract before their current contract i closed by the economy department"],
+        ["comment", "in these cases we need to stop updating from Folk until the new contract is closed (the employee becomes inactive in CT)"],
+        ["comment", "these cases are identified by a new hiring date from Folk which is at a later time than their last leave date"],
+        ["if",
+          ["and",
+            ["lt", "_S.currenttime-olavstoppen-employee:leavedate",
+              ["datetime-parse", "%d.%m.%Y", "_S.catalystone-user:HIRING_DATE.value"]
+            ],
+            ["eq", "_S.currenttime-olavstoppen-employee:active", true]
+          ],
+          ["filter"]
+        ],
+        ["merge",
+          ["hops", {
+            "datasets": ["global-department gd"],
+            "where": [
+              ["eq",
+                ["string", "_S.ORGANIZATION.@UNIQUE_IMPORT_ID"], "gd.ORG_ID.value"]
+            ],
+            "return": ["dict", "temp-rdf:type", "gd.rdf:type"]
+          }]
+        ],
+        ["filter",
+          ["in", "~:bouvet:global-dep-olavstoppen-as", "_T.temp-rdf:type"]
+        ],
+        ["remove", "temp-rdf:type"],
+        ["add", "roles",
+          ["split", ";",
+            ["first", "_S.extensionAttribute9"]
+          ]
+        ],
+        ["add", "changeroles",
+          ["split", ";",
+            ["first", "_S.extensionAttribute8"]
+          ]
+        ],
+        ["if",
+          ["eq",
+            ["intersects", "_T.roles", "RoleAdministrator"], true],
+          ["add", "RoleAdministrator", true],
+          ["add", "RoleAdministrator", false]
+        ],
+        ["if",
+          ["or",
+            ["eq",
+              ["intersects", "_T.roles", "RoleDepartment"], true],
+            ["eq",
+              ["intersects", "_T.roles", "RoleEconomy"], true],
+            ["eq",
+              ["intersects", "_T.changeroles", "currentøkonomi"], true]
+          ],
+          ["add", "RoleDepartment", true],
+          ["add", "RoleDepartment", false]
+        ],
+        ["if",
+          ["eq",
+            ["intersects", "_T.roles", "RoleEconomy"], true],
+          ["add", "RoleEconomy", true],
+          ["add", "RoleEconomy", false]
+        ],
+        ["if",
+          ["eq",
+            ["intersects", "_T.roles", "RoleEmployee"], true],
+          ["add", "RoleEmployee", true],
+          ["add", "RoleEmployee", false]
+        ],
+        ["if",
+          ["eq",
+            ["intersects", "_T.changeroles", "currentøkonomi"], true],
+          ["add", "RoleEconomy", true]
+        ],
+        ["if",
+          ["or",
+            ["eq",
+              ["intersects", "_T.roles", "RoleManager"], true],
+            ["eq",
+              ["intersects", "_T.roles", "RoleEconomy"], true],
+            ["eq",
+              ["intersects", "_T.changeroles", "currentøkonomi"], true]
+          ],
+          ["add", "RoleManager", true],
+          ["add", "RoleManager", false]
+        ],
+        ["if",
+          ["or",
+            ["eq",
+              ["intersects", "_T.roles", "RoleProject"], true],
+            ["eq",
+              ["intersects", "_T.roles", "RoleEconomy"], true],
+            ["eq",
+              ["intersects", "_T.changeroles", "currentøkonomi"], true]
+          ],
+          ["add", "RoleProject", true],
+          ["add", "RoleProject", false]
+        ],
+        ["if",
+          ["eq",
+            ["intersects", "_T.roles", "RoleCertifier"], true],
+          ["add", "RoleCertifier", true],
+          ["add", "RoleCertifier", false]
+        ],
+        ["if",
+          ["eq",
+            ["intersects", "_T.roles", "RolePrognosis"], true],
+          ["add", "RolePrognosis", true],
+          ["add", "RolePrognosis", false]
+        ],
+        ["case-eq", "_S.global-person:employee_status", "SoonEmployee",
+          ["add", "licenses",
+            ["dict", "UseDashboard", true, "UseExpense", true, "UseTime", true, "UsePrognosis", true, "UseMobile", true]
+          ], "Employee",
+          ["add", "licenses",
+            ["dict", "UseDashboard", true, "UseExpense", true, "UseTime", true, "UsePrognosis", true, "UseMobile", true]
+          ], "TempEmployee",
+          ["add", "licenses",
+            ["dict", "UseDashboard", true, "UseExpense", true, "UseTime", true, "UsePrognosis", true, "UseMobile", true]
+          ], "TempSoonEmployee",
+          ["add", "licenses",
+            ["dict", "UseDashboard", true, "UseExpense", true, "UseTime", true, "UsePrognosis", true, "UseMobile", true]
+          ],
+          ["add", "licenses",
+            ["dict", "UseDashboard", false, "UseExpense", false, "UseTime", false, "UsePrognosis", false, "UseMobile", false]
+          ]
+        ],
+        ["if",
+          ["or",
+            ["eq", "_S.global-person:employee_status", "Employee"],
+            ["eq", "_S.global-person:employee_status", "SoonEmployee"],
+            ["eq", "_S.global-person:employee_status", "TempSoonEmployee"],
+            ["eq", "_S.global-person:employee_status", "TempEmployee"]
+          ],
+          ["add", "RoleEmployee", true]
+        ],
+        ["add", "EmployeeId", "_S.currenttime-olavstoppen-employee:employeeid"],
+        ["comment", "only one payload here since Avainableforplanning is not used in Olavstoppen"],
+        ["add", "payload",
+          ["dict", "RoleDepartment", "_T.RoleDepartment", "RoleEmployee", "_T.RoleEmployee", "RoleEconomy", "_T.RoleEconomy", "RoleManager", "_T.RoleManager", "RoleProject", "_T.RoleProject", "RoleCertifier", "_T.RoleCertifier", "RolePrognosis", "_T.RolePrognosis", "UseDashboard", "_T.licenses.UseDashboard", "UseExpense", "_T.licenses.UseExpense", "UseTime", "_T.licenses.UseTime", "UsePrognosis", "_T.licenses.UsePrognosis", "UseMobile", "_T.licenses.UseMobile"]
+        ],
+        ["add", "operation", "update-employeeaccess"],
+        ["remove",
+          ["list", "licenses", "EmployeeCategoryId", "FlexiTimeBalanceUpdated", "RoleAdministrator", "RoleCertifier", "RoleDepartment", "RoleEconomy", "RoleEmployee", "RoleManager", "RolePrognosis", "RoleProject", "UseDashboard", "UseExpense", "UseMobile", "UsePrognosis", "UseTime", "VacationBalanceUpdated", "roles", "changeroles"]
+        ]
+      ],
+      "currentdept": [
+        ["copy", "departmentid"]
+      ]
+    }
+  }
+}

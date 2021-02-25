@@ -1,0 +1,34 @@
+{
+  "_id": "news-competency_research",
+  "type": "pipe",
+  "source": {
+    "type": "dataset",
+    "dataset": "global-site"
+  },
+  "transform": {
+    "type": "dtl",
+    "rules": {
+      "default": [
+        ["filter",
+          ["in", "~:bouvet:minside-news", "_S.rdf:type"]
+        ],
+        ["copy", "_id"],
+        ["add", "filename",
+          ["concat", "_S.id", ".json"]
+        ],
+        ["add", "data",
+          ["map-dict",
+            ["filter",
+              ["not",
+                ["or",
+                  ["matches", "*-ni", "_."],
+                  ["matches", "$ids", "_."],
+                  ["matches", "_*", "_."],
+                  ["matches", "rdf:type", "_."]
+                ]
+              ], "_."], "_.", "_S."]
+        ]
+      ]
+    }
+  }
+}

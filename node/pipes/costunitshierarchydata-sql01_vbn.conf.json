@@ -1,0 +1,22 @@
+{
+  "_id": "costunitshierarchydata-sql01_vbn",
+  "type": "pipe",
+  "source": {
+    "type": "dataset",
+    "dataset": "visma-costunitshierarchydata"
+  },
+  "transform": {
+    "type": "dtl",
+    "rules": {
+      "default": [
+        ["filter",
+          ["eq", "_S.visma-costunitshierarchydata:CostUnitID", 1751]
+        ],
+        ["discard",
+          ["neq", "_S._id", "visma-costunitshierarchydata:1_1751_"]
+        ],
+        ["copy", "*"]
+      ]
+    }
+  }
+}

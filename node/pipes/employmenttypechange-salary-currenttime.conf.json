@@ -1,0 +1,70 @@
+{
+  "_id": "employmentTypeChange-salary-currenttime",
+  "type": "pipe",
+  "source": {
+    "type": "dataset",
+    "dataset": "person-change"
+  },
+  "transform": {
+    "type": "dtl",
+    "rules": {
+      "default": [
+        ["filter",
+          ["in", "_S.global-person:employee_status",
+            ["list", "EarlyEmployee", "TempEarlyEmployee", "SoonEmployee", "TempSoonEmployee", "Employee", "TempEmployee"]
+          ]
+        ],
+        ["filter", "_S.newEmploymentType"],
+        ["if",
+          ["gte",
+            ["datetime-parse", "%d.%m.%Y", "_S.catalystone-user:HIRING_DATE.@VALID_FROM"],
+            ["datetime-parse", "%d.%m.%Y", "_S.catalystone-user:1046.@VALID_FROM"]
+          ],
+          ["filter"]
+        ],
+        ["add", "Ansatt-ID",
+          ["integer", "_S.catalystone-user:UNIQUE_IMPORT_ID.value"]
+        ],
+        ["add", "Navn", "_S.catalystone-user:NAME.value"],
+        ["add", "Fra-ansattype", "_S.oldEmploymentType"],
+        ["add", "Til-ansattype", "_S.catalystone-user:1046.VALUE.value"],
+        ["add", "Startdato",
+          ["datetime-parse", "%d.%m.%Y", "_S.catalystone-user:1046.@VALID_FROM"]
+        ],
+        ["add", "ÅrsLønn", "_S.catalystone-user:BASIC_SALARY.AMOUNT"],
+        ["add", "Timelønn", "_S.catalystone-user:1031.VALUE"],
+        ["add", "Mnd",
+          ["integer",
+            ["datetime-format", "%m", "_T.Startdato"]
+          ]
+        ],
+        ["add", "År",
+          ["integer",
+            ["datetime-format", "%Y", "_T.Startdato"]
+          ]
+        ],
+        ["add", "Region", "_S.global-person:Region"],
+        ["add", "Sjekket", false],
+        ["add", "Kommentar",
+          ["coalesce",
+            ["list",
+              ["first",
+                ["hops", {
+                  "datasets": ["global-economy ga"],
+                  "where": ["eq",
+                    ["ni", "currenttime-employmenttypechange-salary",
+                      ["concat", "_S.catalystone-user:UNIQUE_IMPORT_ID.value",
+                        ["datetime-format", "_%m_%Y",
+                          ["datetime-parse", "%d.%m.%Y", "_S.catalystone-user:1046.@VALID_FROM"]
+                        ]
+                      ]
+                    ], "ga.$ids"],
+                  "return": "ga.currenttime-employmenttypechange-salary:Kommentar"
+                }]
+              ], ""]
+          ]
+        ]
+      ]
+    }
+  }
+}

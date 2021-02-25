@@ -1,0 +1,114 @@
+{
+  "_id": "user-live-pulsen",
+  "type": "pipe",
+  "source": {
+    "type": "dataset",
+    "dataset": "global-person"
+  },
+  "transform": {
+    "type": "dtl",
+    "rules": {
+      "default": [
+        ["filter",
+          ["in", "_S.global-person:employee_status",
+            ["list", "EarlyEmployee", "TempEarlyEmployee", "SoonEmployee", "TempSoonEmployee", "Employee", "TempEmployee", "Quit"]
+          ]
+        ],
+        ["filter",
+          ["in", "~:bouvet:catalystone-user", "_S.rdf:type"]
+        ],
+        ["copy", "_id"],
+        ["add", "Ansatt_ID", "_S.catalystone-user:UNIQUE_IMPORT_ID.value"],
+        ["add", "Brukernavn", "_S.catalystone-user:USERNAME.value"],
+        ["add", "Brukerkontostatus", "_S.catalystone-user:ACCESS_DISABLE.value"],
+        ["add", "Navn", "_S.catalystone-user:NAME.value"],
+        ["add", "Fornavn", "_S.catalystone-user:FIRST_NAME.value"],
+        ["add", "Etternavn", "_S.catalystone-user:LAST_NAME.value"],
+        ["add", "Tittel", "_S.catalystone-user:TITLE.value"],
+        ["add", "Oensketvisningsnavn", "_S.catalystone-user:1141.VALUE.value"],
+        ["add", "Ansattstatus", "_S.catalystone-user:EMPLOYMENT_STATUS.value"],
+        ["add", "Mobiltelefon", "_S.catalystone-user:1003.VALUE.value"],
+        ["add", "Epost", "_S.catalystone-user:EMAIL.value"],
+        ["add", "Foedselsdato", "_S.catalystone-user:DATE_OF_BIRTH.value"],
+        ["add", "Alder", "_S.catalystone-user:AGE.value"],
+        ["add", "Kjoenn", "_S.catalystone-user:GENDER.value"],
+        ["add", "Nasjonalitet", "_S.catalystone-user:NATIONALITY.value"],
+        ["add", "Statsborgerskap",
+          ["join", ", ", "_S.catalystone-user:1150.VALUES.VALUE.value"]
+        ],
+        ["add", "Hjemmeadresse_gatenavn", "_S.catalystone-user:1006.VALUE.value"],
+        ["add", "Hjemmeadresse_postnummer", "_S.catalystone-user:1007.VALUE.value"],
+        ["add", "Hjemmeadresse_by", "_S.catalystone-user:1008.VALUE.value"],
+        ["add", "Hjemmeadresse_land", "_S.catalystone-user:1009.VALUE.value"],
+        ["add", "Selskap", "_S.catalystone-user:1002.VALUE.value"],
+        ["add", "Land", "_S.catalystone-user:COUNTRY.@ALTERNATIVE_EXPORT_VALUE"],
+        ["add", "Organisasjon", "_S.catalystone-user:ORGANIZATION.value"],
+        ["add", "Arbeidssted", "_S.catalystone-user:JOB_LOCATION.value"],
+        ["add", "Kontoradresse", "_S.catalystone-user:1068.VALUE.value"],
+        ["add", "Jobbrolle", "_S.catalystone-user:JOB_ROLE.value"],
+        ["add", "Roller",
+          ["join", ", ", "_S.catalystone-user:1071.VALUES.VALUE.value"]
+        ],
+        ["add", "Leder", "_S.catalystone-user:SUPERVISOR.EMPLOYEE_ID"],
+        ["add", "Avdelingsleder", "_S.catalystone-user:DEPARTMENT_MANAGER.value"],
+        ["add", "Leveranseleder&salgsleder",
+          ["join", ", ", "_S.catalystone-user:1126.PERSON.NAME"]
+        ],
+        ["add", "HR_leder", "_S.catalystone-user:HR_MANAGER.EMPLOYEE_ID"],
+        ["add", "Romnummer", "_S.catalystone-user:1138.VALUE.value"],
+        ["add", "Regionid", "_S.catalystone-user:1117.VALUE.value"],
+        ["add", "CurrentDepartmentid", "_S.catalystone-user:1125.VALUE.value"],
+        ["add", "Omraadeid_Areaid", "_S.catalystone-user:1134.VALUE.value"],
+        ["add", "Ansettelsesdato", "_S.catalystone-user:HIRING_DATE.value"],
+        ["add", "Datofortilganger", "_S.catalystone-user:1074.VALUE.value"],
+        ["add", "Kontraktsignert", "_S.catalystone-user:1121.VALUE.value"],
+        ["add", "Ansiennitetfradato", "_S.catalystone-user:1140.VALUE.value"],
+        ["add", "Kontraktmedproevetid", "_S.catalystone-user:1142.VALUE.value"],
+        ["add", "Proevetidutloeper", "_S.catalystone-user:1047.VALUE.value"],
+        ["add", "Oppsigelsestid_antallmaaneder", "_S.catalystone-user:1124.VALUE.value"],
+        ["add", "Tidiselskapet", "_S.catalystone-user:LENGTH_OF_SERVICE.value"],
+        ["add", "Hoeyesteutdannelsesgrad_nivaa", "_S.catalystone-user:1113.VALUE.value"],
+        ["add", "Hoeyesteutdannelse_avgangsaar", "_S.catalystone-user:1119.VALUE.value"],
+        ["add", "Hoeyesteutdannelse_studiested", "_S.catalystone-user:1115.VALUE.value"],
+        ["add", "Sluttdato", "_S.catalystone-user:TERMINATION_DATE.value"],
+        ["add", "Faktisksistearbeidsdag", "_S.catalystone-user:1029.VALUE.value"],
+        ["add", "Sluttaarsak", "_S.catalystone-user:1028.VALUE.value"],
+        ["add", "Nyarbeidsgiver", "_S.catalystone-user:1076.VALUE.value"],
+        ["add", "Konsulentrollekurs", "_S.catalystone-user:1152.VALUE.value"],
+        ["add", "Ambisjoner",
+          ["if",
+            ["eq", "$ENV(node-env)", "test"],
+            ["if",
+              ["gt",
+                ["length",
+                  ["decrypt", "folk-encryption-key", "_S.catalystone-user:1155.VALUE.value"]
+                ], 1000],
+              ["encrypt", "folk-encryption-key",
+                ["concat",
+                  ["substring", 0, 982,
+                    ["decrypt", "folk-encryption-key", "_S.catalystone-user:1155.VALUE.value"]
+                  ], "... <truncated>"]
+              ], "_S.catalystone-user:1155.VALUE.value"],
+            ["if",
+              ["gt",
+                ["length",
+                  ["decrypt", "$SECRET(folk-encryption-key)", "_S.catalystone-user:1155.VALUE.value"]
+                ], 1000],
+              ["encrypt", "$SECRET(folk-encryption-key)",
+                ["concat",
+                  ["substring", 0, 982,
+                    ["decrypt", "$SECRET(folk-encryption-key)", "_S.catalystone-user:1155.VALUE.value"]
+                  ], "... <truncated>"]
+              ], "_S.catalystone-user:1155.VALUE.value"]
+          ]
+        ],
+        ["add", "Oensketansvar", "_S.catalystone-user:CAREER_AMBITIONS.value"],
+        ["add", "Kompetansenivaa", "_S.catalystone-user:1156.VALUE.value"],
+        ["add", "Turnoverintensjon", "_S.catalystone-user:FLIGHT_RISK.value"],
+        ["add", "Faktiskloenn", "_S.catalystone-user:1030.VALUE.value"],
+        ["add", "UpdateDate_DW", null],
+        ["add", "Rapportgruppe", "_S.folk-user:1177.data.value"]
+      ]
+    }
+  }
+}

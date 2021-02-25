@@ -1,0 +1,24 @@
+{
+  "_id": "currenttime-department-filtered",
+  "type": "pipe",
+  "source": {
+    "type": "dataset",
+    "dataset": "currenttime-department"
+  },
+  "transform": {
+    "type": "dtl",
+    "rules": {
+      "default": [
+        ["filter",
+          ["and",
+            ["eq", "_S.departmentactive", 1],
+            ["not",
+              ["matches", "* LED*", "_S.departmentname"]
+            ]
+          ]
+        ],
+        ["copy", "*"]
+      ]
+    }
+  }
+}

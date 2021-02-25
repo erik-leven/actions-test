@@ -1,0 +1,10 @@
+{
+  "_id": "ad",
+  "type": "system:ldap",
+  "name": "AD",
+  "host": "dc1.bouvet.no",
+  "password": "$SECRET(ad-password)",
+  "port": 636,
+  "use_ssl": true,
+  "username": "bouvet\\sesam.dbreader"
+}

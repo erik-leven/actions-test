@@ -1,0 +1,11 @@
+{
+  "_id": "elasticsearch",
+  "type": "system:url",
+  "authentication": "basic",
+  "connect_timeout": 60,
+  "password": "$SECRET(elasticsearch-password)",
+  "read_timeout": 300,
+  "url_pattern": "$ENV(elasticsearch-baseurl)",
+  "username": "sesam",
+  "verify_ssl": false
+}

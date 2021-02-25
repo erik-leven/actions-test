@@ -1,0 +1,19 @@
+{
+  "_id": "cvpartner-custom-tag-department",
+  "type": "pipe",
+  "source": {
+    "type": "dataset",
+    "dataset": "cvpartner-custom-tag-category"
+  },
+  "transform": {
+    "type": "dtl",
+    "rules": {
+      "default": [
+        ["filter",
+          ["eq", "_S.category_name", "Avdeling"]
+        ],
+        ["copy", "*"]
+      ]
+    }
+  }
+}

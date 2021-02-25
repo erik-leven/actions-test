@@ -1,0 +1,109 @@
+{
+  "_id": "childinfo-currenttime-endpoint",
+  "type": "pipe",
+  "source": {
+    "type": "dataset",
+    "dataset": "childinfo-currenttime"
+  },
+  "sink": {
+    "type": "sql",
+    "system": "currenttime-prod",
+    "batch_size": 1,
+    "create_table_if_missing": true,
+    "primary_key": ["AnsattNr", "Aar"],
+    "schema": "dbo",
+    "schema_definition": [{
+      "type": "boolean",
+      "name": "NAV-vedtak",
+      "source_property": "NAV-vedtak"
+    }, {
+      "type": "integer",
+      "name": "Aar",
+      "max_value": 1970,
+      "min_value": 2100,
+      "primary_key": true,
+      "source_property": "current-year"
+    }, {
+      "type": "integer",
+      "name": "Timer",
+      "max_value": 99999,
+      "min_value": 0,
+      "source_property": "hours"
+    }, {
+      "type": "string",
+      "name": "AnsattNr",
+      "allow_null": false,
+      "max_size": 10,
+      "min_size": 3,
+      "primary_key": true,
+      "source_property": "_id"
+    }],
+    "table": "CustomExportFolkBarn"
+  },
+  "transform": {
+    "type": "conditional",
+    "alternatives": {
+      "prod": {
+        "type": "dtl",
+        "rules": {
+          "default": [
+            ["add", "foo", "bar"],
+            ["filter",
+              ["neq", "_S._deleted", true]
+            ],
+            ["add", "temp",
+              ["key-values", "_S."]
+            ],
+            ["merge-union",
+              ["apply", "decryption", "_T.temp"]
+            ],
+            ["remove", "temp*"]
+          ],
+          "decryption": [
+            ["if",
+              ["is-not-null",
+                ["decrypt", "$SECRET(folk-encryption-key)", "_S.value"]
+              ],
+              ["add", "_S.key",
+                ["decrypt", "$SECRET(folk-encryption-key)", "_S.value"]
+              ],
+              ["add", "_S.key", "_S.value"]
+            ]
+          ]
+        }
+      },
+      "test": {
+        "type": "dtl",
+        "rules": {
+          "default": [
+            ["filter",
+              ["neq", "_S._deleted", true]
+            ],
+            ["add", "temp",
+              ["key-values", "_S."]
+            ],
+            ["merge-union",
+              ["apply", "decryption", "_T.temp"]
+            ],
+            ["remove", "temp*"]
+          ],
+          "decryption": [
+            ["if",
+              ["is-not-null",
+                ["decrypt", "folk-encryption-key", "_S.value"]
+              ],
+              ["add", "_S.key",
+                ["decrypt", "folk-encryption-key", "_S.value"]
+              ],
+              ["add", "_S.key", "_S.value"]
+            ]
+          ]
+        }
+      }
+    },
+    "condition": "$ENV(node-env)"
+  },
+  "pump": {
+    "mode": "$ENV(pump-mode)"
+  }
+}

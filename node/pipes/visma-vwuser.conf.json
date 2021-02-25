@@ -1,0 +1,176 @@
+{
+  "_id": "visma-vwuser",
+  "type": "pipe",
+  "source": {
+    "type": "conditional",
+    "alternatives": {
+      "prod": {
+        "type": "sql",
+        "system": "visma",
+        "schema": "BouvetNorgeAS",
+        "table": "VWUser",
+        "updated_column": "LastUpdate"
+      },
+      "test": {
+        "type": "embedded",
+        "entities": [{
+          "_id": "2023",
+          "Created": "~t2019-03-29T12:51:08Z",
+          "CreatedBy": "",
+          "LastUpdate": "~t2019-03-29T13:52:24Z",
+          "LastUpdatedBy": "WORKER.BEE",
+          "Name": "Aqua Man",
+          "OcrAccess": 0,
+          "OrderMatchAccess": 0,
+          "RoleId": 40,
+          "RowVersionNo": 2,
+          "UserId": 2023,
+          "Username": "aqua.man",
+          "rdf:type": "~:bouvet:visma-vwuser"
+        }, {
+          "_id": "2019",
+          "Created": "~t2019-02-14T09:03:20Z",
+          "CreatedBy": "",
+          "LastUpdate": "~t2019-02-14T10:03:20Z",
+          "LastUpdatedBy": "LAST.BEE",
+          "Name": "Spider Man",
+          "OcrAccess": 0,
+          "OrderMatchAccess": 0,
+          "RoleId": 19,
+          "RowVersionNo": 1,
+          "UserId": 2019,
+          "Username": "spider.man",
+          "rdf:type": "~:bouvet:visma-vwuser"
+        }, {
+          "_id": "2012",
+          "Created": "~t2018-11-30T10:58:06Z",
+          "CreatedBy": "",
+          "LastUpdate": "~t2018-11-30T11:58:06Z",
+          "LastUpdatedBy": "QUEEN.BEE",
+          "Name": "Super Man",
+          "OcrAccess": 0,
+          "OrderMatchAccess": 0,
+          "RoleId": 40,
+          "RowVersionNo": 1,
+          "UserId": 2012,
+          "Username": "SUPER.MAN",
+          "rdf:type": "~:bouvet:visma-vwuser"
+        }, {
+          "_id": "2003",
+          "Created": "~t2018-10-08T08:28:20Z",
+          "CreatedBy": "",
+          "LastUpdate": "~t2018-10-08T10:28:20Z",
+          "LastUpdatedBy": "WORKER.BEE",
+          "Name": "Green Lantern",
+          "OcrAccess": 0,
+          "OrderMatchAccess": 0,
+          "RoleId": 19,
+          "RowVersionNo": 1,
+          "UserId": 2003,
+          "Username": "GREEN.LANTERN",
+          "rdf:type": "~:bouvet:visma-vwuser"
+        }, {
+          "_id": "2004",
+          "Created": "~t2018-09-26T13:17:18Z",
+          "CreatedBy": "",
+          "LastUpdate": "~t2018-09-26T15:17:18Z",
+          "LastUpdatedBy": "WORKER.BEE",
+          "Name": "Wonder Woman",
+          "OcrAccess": 0,
+          "OrderMatchAccess": 0,
+          "RoleId": 19,
+          "RowVersionNo": 1,
+          "UserId": 2004,
+          "Username": "WONDER.WOMAN",
+          "rdf:type": "~:bouvet:visma-vwuser"
+        }, {
+          "_id": "2001",
+          "Created": "~t2018-08-02T08:12:27Z",
+          "CreatedBy": "",
+          "LastUpdate": "~t2018-08-02T10:12:27Z",
+          "LastUpdatedBy": "OTHER.BEE",
+          "Name": "Boy Robin",
+          "OcrAccess": 0,
+          "OrderMatchAccess": 0,
+          "RoleId": 19,
+          "RowVersionNo": 1,
+          "UserId": 2001,
+          "Username": "BOY.ROBIN",
+          "rdf:type": "~:bouvet:visma-vwuser"
+        }, {
+          "_id": "1071",
+          "Created": "~t2018-06-11T10:06:00Z",
+          "CreatedBy": "",
+          "LastUpdate": "~t2018-06-12T12:59:23Z",
+          "LastUpdatedBy": "admin",
+          "Name": "Thor",
+          "OcrAccess": 0,
+          "OrderMatchAccess": 0,
+          "RoleId": 19,
+          "RowVersionNo": 2,
+          "UserId": 1071,
+          "Username": "THOR",
+          "rdf:type": "~:bouvet:visma-vwuser"
+        }, {
+          "_id": "1035",
+          "Created": "~t2015-02-02T08:51:48Z",
+          "CreatedBy": "",
+          "LastUpdate": "~t2018-06-01T21:53:20Z",
+          "LastUpdatedBy": "",
+          "Name": "Another Superhero",
+          "OcrAccess": 0,
+          "OrderMatchAccess": 0,
+          "RoleId": 40,
+          "RowVersionNo": 1777,
+          "UserId": 1035,
+          "Username": "ANOTHER.SUPERHERO",
+          "rdf:type": "~:bouvet:visma-vwuser"
+        }, {
+          "_id": "2007",
+          "Created": "~t2018-10-08T08:28:20Z",
+          "CreatedBy": "",
+          "LastUpdate": "~t2018-10-08T10:28:20Z",
+          "LastUpdatedBy": "HONEY.BEE",
+          "Name": "Deadpool",
+          "OcrAccess": 0,
+          "OrderMatchAccess": 0,
+          "RoleId": 19,
+          "RowVersionNo": 1,
+          "UserId": 2007,
+          "Username": "DEADPOOL",
+          "rdf:type": "~:bouvet:visma-vwuser"
+        }, {
+          "_id": "1061",
+          "Created": "~t2017-06-28T13:43:33Z",
+          "CreatedBy": "",
+          "LastUpdate": "~t2018-06-01T21:53:20Z",
+          "LastUpdatedBy": "",
+          "Name": "A Ninjaguy",
+          "OcrAccess": 1,
+          "OrderMatchAccess": 0,
+          "RoleId": 40,
+          "RowVersionNo": 605,
+          "UserId": 1061,
+          "Username": "NINJAGUY",
+          "rdf:type": "~:bouvet:visma-vwuser"
+        }]
+      }
+    },
+    "condition": "$ENV(node-env)"
+  },
+  "transform": {
+    "type": "dtl",
+    "rules": {
+      "default": [
+        ["copy", "*"],
+        ["add", "rdf:type",
+          ["ni", "bouvet:visma-vwuser"]
+        ]
+      ]
+    }
+  },
+  "pump": {
+    "cron_expression": "$ENV(visma_cron_fast)",
+    "rescan_cron_expression": "$ENV(visma_rescan_cron)"
+  }
+}

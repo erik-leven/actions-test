@@ -1,0 +1,13 @@
+[
+  {
+    "EmployeeId": 1260,
+    "_id": "2507",
+    "operation": "update-employeeaddress",
+    "payload": {
+      "AddressLine1": "En eller annen vei",
+      "Mobile": "+46 888 888 88",
+      "PostAddress": "En eller annen by",
+      "Zipcode": "Et eller annet postnummer"
+    }
+  }
+]

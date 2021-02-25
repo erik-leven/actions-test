@@ -1,0 +1,89 @@
+{
+  "_id": "jira-component",
+  "type": "pipe",
+  "source": {
+    "type": "conditional",
+    "alternatives": {
+      "prod": {
+        "type": "sql",
+        "system": "jira",
+        "preserve_null_values": false,
+        "table": "component"
+      },
+      "test": {
+        "type": "embedded",
+        "entities": [{
+          "_id": "50849",
+          "assigneetype": "~f0",
+          "cname": "keycloak",
+          "id": "~f50849",
+          "project": "~f10000"
+        }, {
+          "_id": "50836",
+          "assigneetype": "~f3",
+          "cname": "Administrative oppgaver",
+          "description": "MAL - Components add structure to projects, breaking it up into features, teams, modules, subprojects, and more",
+          "id": "~f50836",
+          "project": "~f42964"
+        }, {
+          "_id": "50830",
+          "assigneetype": "~f1",
+          "cname": "Brukergrensesnitt",
+          "description": "Alle oppgaver vedrørende navigasjon, utforming, grensesnitt.",
+          "id": "~f50830",
+          "project": "~f42963"
+        }, {
+          "_id": "50847",
+          "assigneetype": "~f3",
+          "cname": "SØK",
+          "description": "MAL - Components add structure to projects, breaking it up into features, teams, modules, subprojects, and more",
+          "id": "~f50847",
+          "project": "~f42965"
+        }, {
+          "_id": "50846",
+          "assigneetype": "~f3",
+          "cname": "SIKKERHET",
+          "description": "MAL - Components add structure to projects, breaking it up into features, teams, modules, subprojects, and more",
+          "id": "~f50846",
+          "project": "~f42965"
+        }, {
+          "_id": "50842",
+          "assigneetype": "~f3",
+          "cname": "Administrative oppgaver",
+          "description": "MAL - Components add structure to projects, breaking it up into features, teams, modules, subprojects, and more",
+          "id": "~f50842",
+          "project": "~f42965"
+        }, {
+          "_id": "50827",
+          "assigneetype": "~f0",
+          "cname": "Timeføring",
+          "id": "~f50827",
+          "project": "~f41469"
+        }, {
+          "_id": "50826",
+          "assigneetype": "~f0",
+          "cname": "infrastructure",
+          "id": "~f50826",
+          "project": "~f42665"
+        }, {
+          "_id": "50800",
+          "assigneetype": "~f3",
+          "cname": "Deploy",
+          "description": "Gjennomføring av deploy, config. av Teamcity",
+          "id": "~f50800",
+          "project": "~f42266"
+        }, {
+          "_id": "50814",
+          "assigneetype": "~f0",
+          "cname": "time-series",
+          "id": "~f50814",
+          "project": "~f10000"
+        }]
+      }
+    },
+    "condition": "$ENV(node-env)"
+  },
+  "pump": {
+    "cron_expression": "$ENV(jira_cron_slow)"
+  }
+}

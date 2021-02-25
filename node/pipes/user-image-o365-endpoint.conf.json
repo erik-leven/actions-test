@@ -1,0 +1,29 @@
+{
+  "_id": "user-image-o365-endpoint",
+  "type": "pipe",
+  "source": {
+    "type": "dataset",
+    "dataset": "user-image-o365"
+  },
+  "sink": {
+    "type": "json",
+    "system": "o365graph",
+    "url": "/user-image/users/{user}/photo/$value"
+  },
+  "transform": {
+    "type": "dtl",
+    "rules": {
+      "default": [
+        ["filter",
+          ["neq", "_S._deleted", true]
+        ],
+        ["copy", "*"]
+      ]
+    }
+  },
+  "pump": {
+    "mode": "$ENV(pump-mode)"
+  },
+  "batch_size": 10,
+  "checkpoint_interval": 10
+}

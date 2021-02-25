@@ -1,0 +1,32 @@
+{
+  "_id": "cv-competency_research",
+  "type": "pipe",
+  "source": {
+    "type": "dataset",
+    "dataset": "global-cv"
+  },
+  "transform": {
+    "type": "dtl",
+    "rules": {
+      "default": [
+        ["copy", "_id"],
+        ["add", "filename",
+          ["concat", "_S.external_unique_id", ".json"]
+        ],
+        ["add", "data",
+          ["map-dict",
+            ["filter",
+              ["not",
+                ["or",
+                  ["matches", "*image", "_."],
+                  ["matches", "*-ni", "_."],
+                  ["matches", "$ids", "_."],
+                  ["matches", "_*", "_."],
+                  ["matches", "rdf:type", "_."]
+                ]
+              ], "_."], "_.", "_S."]
+        ]
+      ]
+    }
+  }
+}

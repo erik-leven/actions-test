@@ -1,0 +1,99 @@
+{
+  "_id": "currenttime-department",
+  "type": "pipe",
+  "source": {
+    "type": "conditional",
+    "alternatives": {
+      "prod": {
+        "type": "sql",
+        "system": "currenttime",
+        "table": "department",
+        "updated_column": "updatedate"
+      },
+      "test": {
+        "type": "embedded",
+        "entities": [{
+          "_id": "200",
+          "certifierid": 0,
+          "cteconomyid": 0,
+          "departmentactive": 1,
+          "departmentid": 200,
+          "departmentname": "401 ØST Cloud 2",
+          "departmentref": "401",
+          "departmentrefimport": "401",
+          "employeeid": 1987,
+          "updateby": "Margaret B Paulshus (28)",
+          "updatedate": "~t2017-01-16T09:58:47Z"
+        }, {
+          "_id": "274",
+          "certifierid": 0,
+          "createby": "Margaret B Paulshus (28)",
+          "createdate": "~t2016-12-22T11:30:53Z",
+          "cteconomyid": 0,
+          "departmentactive": 1,
+          "departmentid": 274,
+          "departmentname": "335 ØST RIA 2",
+          "departmentref": "335",
+          "departmentrefimport": "335",
+          "employeeid": 2252,
+          "updateby": "Marian Grav (1)",
+          "updatedate": "~t2017-02-23T14:31:08Z"
+        }, {
+          "_id": "30",
+          "certifierid": 0,
+          "cteconomyid": 0,
+          "departmentactive": 1,
+          "departmentid": 30,
+          "departmentname": "610 SØR Grenland",
+          "departmentref": "610",
+          "departmentrefimport": "610",
+          "employeeid": 943
+        }, {
+          "_id": "171",
+          "certifierid": 0,
+          "cteconomyid": 0,
+          "departmentactive": 1,
+          "departmentid": 171,
+          "departmentname": "732 ROG TI&IIT",
+          "departmentref": "732",
+          "departmentrefimport": "732",
+          "employeeid": 275,
+          "updateby": "Remi Øvstebø (1095)",
+          "updatedate": "~t2016-08-09T16:48:39Z"
+        }, {
+          "_id": "242",
+          "certifierid": 0,
+          "createby": "Remi Øvstebø (1095)",
+          "createdate": "~t2015-08-05T14:52:54Z",
+          "cteconomyid": 0,
+          "departmentactive": 1,
+          "departmentid": 242,
+          "departmentname": "753 ROG mIMe",
+          "departmentref": "753",
+          "departmentrefimport": "753",
+          "employeeid": 0,
+          "updateby": "Sandra Lorentzen (1890)",
+          "updatedate": "~t2017-01-23T15:58:20.243Z"
+        }]
+      }
+    },
+    "condition": "$ENV(node-env)"
+  },
+  "transform": {
+    "type": "dtl",
+    "rules": {
+      "default": [
+        ["add", "_id", "_S.departmentref"],
+        ["copy", "*"],
+        ["make-ni", "currenttime-employee", "employeeid"],
+        ["add", "rdf:type",
+          ["ni", "bouvet:currenttime-department"]
+        ]
+      ]
+    }
+  },
+  "pump": {
+    "cron_expression": "$ENV(ct_cron_fast)",
+    "rescan_cron_expression": "$ENV(ct_rescan_cron)"
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "_id": "github",
+  "type": "system:microservice",
+  "docker": {
+    "environment": {
+      "github_base_url": "$ENV(github-base-url-bouvet-org)",
+      "github_token": "$SECRET(github-token-bouvet-org)",
+      "github_username": "$ENV(github-user-bouvet-org)"
+    },
+    "image": "sesamcommunity/github:1.0.1",
+    "port": 5000
+  },
+  "verify_ssl": true
+}

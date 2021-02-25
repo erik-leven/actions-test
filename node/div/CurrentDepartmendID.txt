@@ -1,0 +1,14 @@
+﻿CurrentDepartmentID
+
+
+CurrentDepartmentID brukes i dag i utgangspunktet fordi CurrentTime tillater ikke at en avdeling har en leder. Dette lager problem for økonomiavdelingen i Bouvet, da lederene har et rapporteringsansvar for sin avdeling. Denne problematikken er løst gjennom å plassere alle ledere med rapporteringsansvar i en annen avdeling i CurrentTime. Disse avdelingene har et navn som slutter på LED (leder). Konsekvensen blir at hver avdeling i Folk (og automatisk i AD) kan ha flere korresponderende avdelinger i CurrentTime. Sesam han ansvar for å plassere ansatte i riktig avdeling, og derfor finnes det et behov for å kunne koble ledere til deres korresponderende LED-avdelinger. For å kunne sikre hvilken CurrentTime-avdeling en leder tilhører finnes det et felt i Folk som heter CurrentDepartmentID. Dette nummeret korresponderer til avdelingsnummeret til LED-avdelingen i CurrentTime, og på den måten kan ledere plasseres på riktig sted.
+
+I tillegg finnes det et problem med Folk-avdelinger som har flere CurrentTime-avdelinger som IKKE er LED-avdelinger. Dette er ikke ’best practice’, men det forekommer. For disse personene brukes også CurrentDepartmentID for å kunne plassere dem på riktig sted.
+
+Reglene som styrer hvem som skal ha CurrentDepartmentID i Folk en følgende:
+    • Alle som har populert feltet catalystone-user:1170.VALUE.value. Dette feltet forteller hvilke avdelinger den personen er leder for. Dvs, alle ledere skal ha det.
+    • Alle som har rollen ’Administrasjon’ i feltet catalystone-user:1071.VALUES.VALUE. 
+    • Alle som har rollen ’Personalansvarlig’ i feltet catalystone-user:1071.VALUES.VALUE. Disse burde alle sammen allerede være ledere i 1170-feltet, men dersom vi har med dette som kriterium kan vi finne potensielle mangler i Folk-dataen.
+    • Alle ansatte som jobber på en Folk-avdeling som har mer enn én avdeling i currenttime som IKKE er en LED-avdeling. 
+
+

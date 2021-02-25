@@ -1,0 +1,17 @@
+{
+  "_id": "sharepoint-api",
+  "type": "system:microservice",
+  "docker": {
+    "environment": {
+      "LOG_LEVEL": "INFO",
+      "cert_thumbprint": "$SECRET(sharepoint-cert-thumbprint)",
+      "certificate": "$SECRET(sharepoint-cert)",
+      "client_id": "$ENV(sharepoint-client-id)",
+      "resource": "$ENV(sharepoint-resource)",
+      "token_url": "$ENV(sharepoint-token-url)"
+    },
+    "image": "bouveta/sharepoint:1.0.0",
+    "port": 5000
+  },
+  "verify_ssl": true
+}

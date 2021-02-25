@@ -1,0 +1,36 @@
+{
+  "_id": "loop-company-enhetsregisteret",
+  "type": "pipe",
+  "source": {
+    "type": "dataset",
+    "dataset": "global-company"
+  },
+  "transform": {
+    "type": "dtl",
+    "rules": {
+      "default": [
+        ["copy", "$ids"],
+        ["merge-union",
+          ["apply-hops", "enhet", {
+            "datasets": ["enhetsregisteret e"],
+            "where": [
+              ["eq", "_S.global-company:company-id", "e.enhetsregisteret:orgnr"]
+            ]
+          }]
+        ],
+        ["filter",
+          ["is-not-empty", "_T.enhetsregisteret:orgnr"]
+        ]
+      ],
+      "enhet": [
+        ["copy", "*"],
+        ["add", "$ids",
+          ["ni", "_S._id"]
+        ],
+        ["add", "rdf:type",
+          ["ni", "enhetsregisteret", "enhet"]
+        ]
+      ]
+    }
+  }
+}

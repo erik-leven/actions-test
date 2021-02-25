@@ -1,0 +1,23 @@
+{
+  "_id": "global-economy",
+  "type": "pipe",
+  "source": {
+    "type": "merge",
+    "datasets": ["currenttime-employeedepchange-recon cedcr", "currenttime-employeetermination-salary cets", "currenttime-employmenttypechange-recon cetcr", "currenttime-employmenttypechange-salary cetcs", "currenttime-newdepartment-recon cndr", "currenttime-newemployee-salary cnes", "currenttime-salarychange-salary cscs"],
+    "equality": [],
+    "identity": "first",
+    "strategy": "compact",
+    "version": 2
+  },
+  "transform": {
+    "type": "dtl",
+    "rules": {
+      "default": [
+        ["copy", "*"]
+      ]
+    }
+  },
+  "metadata": {
+    "global": true
+  }
+}

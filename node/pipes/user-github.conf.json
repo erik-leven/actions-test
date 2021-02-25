@@ -1,0 +1,32 @@
+{
+  "_id": "user-github",
+  "type": "pipe",
+  "source": {
+    "type": "dataset",
+    "dataset": "global-person",
+    "supports_signalling": true
+  },
+  "transform": {
+    "type": "dtl",
+    "rules": {
+      "default": [
+        ["filter",
+          ["in", "~:bouvet:folk-user", "_S.rdf:type"]
+        ],
+        ["add", "::username", "_S.folk-user:1174.data.value"],
+        ["if",
+          ["eq", "_S.global-person:employee_status", "Quit"],
+          ["add", "::deleted", true],
+          ["add", "::deleted", false]
+        ],
+        ["if",
+          ["or",
+            ["eq", "_T.username", null],
+            ["eq", "_T.username", ""]
+          ],
+          ["filter"]
+        ]
+      ]
+    }
+  }
+}

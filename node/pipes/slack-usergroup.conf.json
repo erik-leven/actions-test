@@ -1,0 +1,36 @@
+{
+  "_id": "slack-usergroup",
+  "type": "pipe",
+  "source": {
+    "type": "dataset",
+    "dataset": "global-department"
+  },
+  "sink": {
+    "type": "json",
+    "system": "slack",
+    "batch_size": 5,
+    "url": "/usergroups"
+  },
+  "transform": {
+    "type": "dtl",
+    "rules": {
+      "default": [
+        ["add", "_id", "_S.ad-department:departmentNumber"],
+        ["add", "name",
+          ["if",
+            ["is-not-null",
+              ["first", "_S.ad-department:displayName"]
+            ],
+            ["first", "_S.ad-department:displayName"]
+          ]
+        ],
+        ["add", "id", "_S.slack-group:id"],
+        ["add", "channelid", "_S.slack-group:channelid"]
+      ]
+    }
+  },
+  "pump": {
+    "mode": "$ENV(pump-mode)",
+    "schedule_interval": 1800
+  }
+}

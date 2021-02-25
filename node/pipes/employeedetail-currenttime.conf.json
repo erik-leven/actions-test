@@ -1,0 +1,67 @@
+{
+  "_id": "employeedetail-currenttime",
+  "type": "pipe",
+  "source": {
+    "type": "dataset",
+    "dataset": "global-person",
+    "supports_signalling": true
+  },
+  "transform": {
+    "type": "dtl",
+    "rules": {
+      "default": [
+        ["filter",
+          ["in", "_S.global-person:employee_status",
+            ["list", "EarlyEmployee", "TempEarlyEmployee", "SoonEmployee", "TempSoonEmployee", "Employee", "TempEmployee"]
+          ]
+        ],
+        ["comment", "some times employees are rehired, ie. summer students who get a new contract before their current contract i closed by the economy department"],
+        ["comment", "in these cases we need to stop updating from Folk until the new contract is closed (the employee becomes inactive in CT)"],
+        ["comment", "these cases are identified by a new hiring date from Folk which is at a later time than their last leave date"],
+        ["if",
+          ["and",
+            ["lt", "_S.currenttime-employee:leavedate",
+              ["datetime-parse", "%d.%m.%Y", "_S.catalystone-user:HIRING_DATE.value"]
+            ],
+            ["eq", "_S.currenttime-employee:active", true]
+          ],
+          ["filter"]
+        ],
+        ["merge",
+          ["apply-hops", "rdf-org", {
+            "datasets": ["global-department gd"],
+            "where": [
+              ["eq",
+                ["string", "_S.ORGANIZATION.@UNIQUE_IMPORT_ID"], "gd.ORG_ID.value"]
+            ]
+          }]
+        ],
+        ["filter",
+          ["eq", "_T.dep_check", true]
+        ],
+        ["remove", "dep_check"],
+        ["filter",
+          ["is-not-null", "_S.currenttime-employee:employeeid"]
+        ],
+        ["add", "EmployeeId", "_S.currenttime-employee:employeeid"],
+        ["add", "payload",
+          ["dict", "EmployeeRef", "_S.global-person:uid", "EmployeeRefImport", "_S.global-person:uid", "Gender",
+            ["substring", 0, 1, "_S.catalystone-user:GENDER.value"], "DateOfBirth",
+            ["datetime-format", "%Y-%m-%d",
+              ["datetime-parse", "%d.%m.%Y", "_S.catalystone-user:DATE_OF_BIRTH.value"]
+            ]
+          ]
+        ],
+        ["add", "operation", "update-employeedetail"]
+      ],
+      "currentdept": [
+        ["copy", "departmentid"]
+      ],
+      "rdf-org": ["if",
+        ["eq",
+          ["intersects", "_S.rdf:type", "~:bouvet:global-dep-bouvet-norge-as"], true],
+        ["add", "dep_check", true]
+      ]
+    }
+  }
+}

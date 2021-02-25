@@ -1,0 +1,419 @@
+{
+  "_id": "cvpartner-user",
+  "type": "pipe",
+  "source": {
+    "type": "conditional",
+    "alternatives": {
+      "prod": {
+        "type": "json",
+        "system": "cv-partner-rest",
+        "url": "/user"
+      },
+      "test": {
+        "type": "embedded",
+        "entities": [{
+          "_id": "5d4d3353edfc711013b837ef",
+          "name": "Sven Svensson",
+          "company_group_ids": [],
+          "company_id": "586cee3f2c04d6551431490b",
+          "company_name": "bouvettest",
+          "company_subdomains": ["bouvettest"],
+          "country_code": "no",
+          "country_id": "586cee3f2c04d65514314910",
+          "deactivated": false,
+          "deactivated_at": false,
+          "default_cv_id": "5d4d3353edfc711013b837f0",
+          "default_cv_template_id": "586cf26659786049a3029751",
+          "email": "sven.svensson@bouvet.no",
+          "expand_proposals_toggle": true,
+          "external_unique_id": "sven.svensson@bouvet.no",
+          "id": "5d4d3353edfc711013b837ef",
+          "image": {
+            "fit_thumb": {
+              "url": null
+            },
+            "large": {
+              "url": null
+            },
+            "small_thumb": {
+              "url": null
+            },
+            "thumb": {
+              "url": null
+            },
+            "url": null
+          },
+          "include_officeless_reference_projects": true,
+          "international_toggle": "expand",
+          "language_code": "no",
+          "language_codes": ["no", "int"],
+          "masterdata_languages": ["no", "int"],
+          "office_id": "5d4be141b3a1750e59111ff3",
+          "office_name": "Sesam",
+          "override_language_code": null,
+          "preferred_download_format": "pdf-from-word",
+          "role": null,
+          "role_allowed_office_ids": [],
+          "role_allowed_tag_ids": [],
+          "roles": [],
+          "selected_office_ids": [],
+          "selected_tag_ids": [],
+          "telephone": "+47 33333333",
+          "upn": null,
+          "user_id": "5d4d3353edfc711013b837ef"
+        }, {
+          "_id": "5d4d3352b3a1750e59112486",
+          "name": "Max Manus",
+          "company_group_ids": [],
+          "company_id": "586cee3f2c04d6551431490b",
+          "company_name": "bouvettest",
+          "company_subdomains": ["bouvettest"],
+          "country_code": "no",
+          "country_id": "586cee3f2c04d65514314910",
+          "deactivated": false,
+          "deactivated_at": false,
+          "default_cv_id": "5d4d3352b3a1750e59112487",
+          "default_cv_template_id": "586cf26659786049a3029751",
+          "email": "max.manus@bouvet.no",
+          "expand_proposals_toggle": true,
+          "external_unique_id": "max.manus@bouvet.no",
+          "id": "5d4d3352b3a1750e59112486",
+          "image": {
+            "fit_thumb": {
+              "url": null
+            },
+            "large": {
+              "url": null
+            },
+            "small_thumb": {
+              "url": null
+            },
+            "thumb": {
+              "url": null
+            },
+            "url": null
+          },
+          "include_officeless_reference_projects": true,
+          "international_toggle": "expand",
+          "language_code": "no",
+          "language_codes": ["no", "int"],
+          "masterdata_languages": ["no", "int"],
+          "office_id": "5d4be141b3a1750e59111ff3",
+          "office_name": "Sesam",
+          "override_language_code": null,
+          "preferred_download_format": "pdf-from-word",
+          "role": null,
+          "role_allowed_office_ids": [],
+          "role_allowed_tag_ids": [],
+          "roles": [],
+          "selected_office_ids": [],
+          "selected_tag_ids": [],
+          "telephone": "+47 11111111",
+          "upn": null,
+          "user_id": "5d4d3352b3a1750e59112486"
+        }, {
+          "_id": "5d4c2551edfc710ea6b83866",
+          "name": "Gal Gadot",
+          "company_group_ids": [],
+          "company_id": "586cee3f2c04d6551431490b",
+          "company_name": "bouvettest",
+          "company_subdomains": ["bouvettest"],
+          "country_code": "no",
+          "country_id": "586cee3f2c04d65514314910",
+          "deactivated": false,
+          "deactivated_at": false,
+          "default_cv_id": "5d4c2551edfc710ea6b83867",
+          "default_cv_template_id": "586cf26659786049a3029751",
+          "email": "xyz@bouvet.no",
+          "expand_proposals_toggle": true,
+          "external_unique_id": "xyz@bouvet.no",
+          "id": "5d4c2551edfc710ea6b83866",
+          "image": {
+            "fit_thumb": {
+              "url": null
+            },
+            "large": {
+              "url": null
+            },
+            "small_thumb": {
+              "url": null
+            },
+            "thumb": {
+              "url": null
+            },
+            "url": null
+          },
+          "include_officeless_reference_projects": true,
+          "international_toggle": "expand",
+          "language_code": "no",
+          "language_codes": ["no", "int"],
+          "masterdata_languages": ["no", "int"],
+          "office_id": "5d4be147edfc710ff5b832be",
+          "office_name": "Olavstoppen",
+          "override_language_code": null,
+          "preferred_download_format": "pdf-from-word",
+          "role": "external",
+          "role_allowed_office_ids": [],
+          "role_allowed_tag_ids": [],
+          "roles": [],
+          "selected_office_ids": [],
+          "selected_tag_ids": [],
+          "telephone": "88888888",
+          "upn": null,
+          "user_id": "5d4c2551edfc710ea6b83866"
+        }, {
+          "_id": "5d4c2552627c160bd6c7bb60",
+          "name": "Bruce Wayne",
+          "company_group_ids": [],
+          "company_id": "586cee3f2c04d6551431490b",
+          "company_name": "bouvettest",
+          "company_subdomains": ["bouvettest"],
+          "country_code": "no",
+          "country_id": "586cee3f2c04d65514314910",
+          "deactivated": false,
+          "deactivated_at": false,
+          "default_cv_id": "5d4c2552627c160bd6c7bb61",
+          "default_cv_template_id": "586cf26659786049a3029751",
+          "email": "bruce.wayne@bouvet.no",
+          "expand_proposals_toggle": true,
+          "external_unique_id": null,
+          "id": "5d4c2552627c160bd6c7bb60",
+          "image": {
+            "fit_thumb": {
+              "url": null
+            },
+            "large": {
+              "url": null
+            },
+            "small_thumb": {
+              "url": null
+            },
+            "thumb": {
+              "url": null
+            },
+            "url": null
+          },
+          "include_officeless_reference_projects": true,
+          "international_toggle": "expand",
+          "language_code": "no",
+          "language_codes": ["no", "int"],
+          "masterdata_languages": ["no", "int"],
+          "office_id": "586cee3f2c04d65514314912",
+          "office_name": "Region Rogaland",
+          "override_language_code": null,
+          "preferred_download_format": "pdf-from-word",
+          "role": null,
+          "role_allowed_office_ids": [],
+          "role_allowed_tag_ids": [],
+          "roles": [],
+          "selected_office_ids": [],
+          "selected_tag_ids": [],
+          "telephone": "+47 55555555",
+          "upn": null,
+          "user_id": "5d4c2552627c160bd6c7bb60"
+        }, {
+          "_id": "5d4c201246cad20cbfec98eb",
+          "name": "Karl Michael Bergman",
+          "company_group_ids": [],
+          "company_id": "586cee3f2c04d6551431490b",
+          "company_name": "bouvettest",
+          "company_subdomains": ["bouvettest"],
+          "country_code": "no",
+          "country_id": "586cee3f2c04d65514314910",
+          "deactivated": false,
+          "deactivated_at": false,
+          "default_cv_id": "5d4c201246cad20cbfec98ec",
+          "default_cv_template_id": "586cf26659786049a3029751",
+          "email": "cba@bouvet.no",
+          "expand_proposals_toggle": true,
+          "external_unique_id": "cba@bouvet.no",
+          "id": "5d4c201246cad20cbfec98eb",
+          "image": {
+            "fit_thumb": {
+              "url": null
+            },
+            "large": {
+              "url": null
+            },
+            "small_thumb": {
+              "url": null
+            },
+            "thumb": {
+              "url": null
+            },
+            "url": null
+          },
+          "include_officeless_reference_projects": true,
+          "international_toggle": "expand",
+          "language_code": "no",
+          "language_codes": ["no", "int"],
+          "masterdata_languages": ["no", "int"],
+          "office_id": "5d4be169b3a1750ff3111f2f",
+          "office_name": "Region Øst",
+          "override_language_code": null,
+          "preferred_download_format": "pdf-from-word",
+          "role": "consultant",
+          "role_allowed_office_ids": [],
+          "role_allowed_tag_ids": [],
+          "roles": [],
+          "selected_office_ids": [],
+          "selected_tag_ids": [],
+          "telephone": "+47 77777777",
+          "upn": null,
+          "user_id": "5d4c201246cad20cbfec98eb"
+        }, {
+          "_id": "5d4c2012b3a1750ead1121f6",
+          "name": "Test Tester",
+          "company_group_ids": [],
+          "company_id": "586cee3f2c04d6551431490b",
+          "company_name": "bouvettest",
+          "company_subdomains": ["bouvettest"],
+          "country_code": "no",
+          "country_id": "586cee3f2c04d65514314910",
+          "deactivated": false,
+          "deactivated_at": false,
+          "default_cv_id": "5d4c2013b3a1750ead1121f7",
+          "default_cv_template_id": "586cf26659786049a3029751",
+          "email": "test.tester@bouvet.no",
+          "expand_proposals_toggle": true,
+          "external_unique_id": "test.tester@bouvet.no",
+          "id": "5d4c2012b3a1750ead1121f6",
+          "image": {
+            "fit_thumb": {
+              "url": null
+            },
+            "large": {
+              "url": null
+            },
+            "small_thumb": {
+              "url": null
+            },
+            "thumb": {
+              "url": null
+            },
+            "url": null
+          },
+          "include_officeless_reference_projects": true,
+          "international_toggle": "expand",
+          "language_code": "no",
+          "language_codes": ["no", "int"],
+          "masterdata_languages": ["no", "int"],
+          "office_id": "5d4be1e146cad20c9cec96c1",
+          "office_name": "Region Bergen",
+          "override_language_code": null,
+          "preferred_download_format": "pdf-from-word",
+          "role": null,
+          "role_allowed_office_ids": [],
+          "role_allowed_tag_ids": [],
+          "roles": [],
+          "selected_office_ids": [],
+          "selected_tag_ids": [],
+          "telephone": "+47 44444444",
+          "upn": null,
+          "user_id": "5d4c2012b3a1750ead1121f6"
+        }, {
+          "_id": "5c36fe6da3f4ae144f39ee46",
+          "name": "Bruce Wayne",
+          "company_group_ids": [],
+          "company_id": "4f460a2de8ee2a74be000001",
+          "company_name": "Bouvet",
+          "company_subdomains": ["bouvet"],
+          "country_code": "no",
+          "country_id": "5085b1c5a6add17a1500000d",
+          "deactivated": false,
+          "deactivated_at": false,
+          "default_cv_id": "5c36fe6da3f4ae144f39ee47",
+          "default_cv_template_id": "5a58b7d47da82e0ea9f3801b",
+          "email": "fgh@bouvet.no",
+          "expand_proposals_toggle": true,
+          "external_unique_id": "fgh@bouvet.no",
+          "id": "5c36fe6da3f4ae144f39ee46",
+          "include_officeless_reference_projects": true,
+          "international_toggle": "expand",
+          "language_code": "no",
+          "language_codes": ["no", "int", "se"],
+          "masterdata_languages": ["no", "int", "se"],
+          "office_id": "5761326569702d4e41000000",
+          "office_name": "Region Øst",
+          "override_language_code": null,
+          "preferred_download_format": "pdf-from-word",
+          "role": "consultant",
+          "role_allowed_office_ids": [],
+          "role_allowed_tag_ids": [],
+          "roles": ["consultant"],
+          "selected_office_ids": [],
+          "selected_tag_ids": [],
+          "telephone": "+4792270950",
+          "upn": null,
+          "user_id": "5c36fe6da3f4ae144f39ee46"
+        }, {
+          "_id": "5d4c201446cad20d3fec990d",
+          "name": "Lynvingen",
+          "company_group_ids": [],
+          "company_id": "586cee3f2c04d6551431490b",
+          "company_name": "bouvettest",
+          "company_subdomains": ["bouvettest"],
+          "country_code": "no",
+          "country_id": "586cee3f2c04d65514314910",
+          "deactivated": true,
+          "deactivated_at": false,
+          "default_cv_id": "5d4c201446cad20d3fec990e",
+          "default_cv_template_id": "586cf26659786049a3029751",
+          "email": "klm@bouvet.no",
+          "expand_proposals_toggle": true,
+          "external_unique_id": "klm@bouvet.no",
+          "id": "5d4c201446cad20d3fec990d",
+          "image": {
+            "fit_thumb": {
+              "url": null
+            },
+            "large": {
+              "url": null
+            },
+            "small_thumb": {
+              "url": null
+            },
+            "thumb": {
+              "url": null
+            },
+            "url": null
+          },
+          "include_officeless_reference_projects": true,
+          "international_toggle": "expand",
+          "language_code": "no",
+          "language_codes": ["no", "int"],
+          "masterdata_languages": ["no", "int"],
+          "office_id": "586cee3f2c04d65514314912",
+          "office_name": "Region Rogaland",
+          "override_language_code": null,
+          "preferred_download_format": "pdf-from-word",
+          "role": null,
+          "role_allowed_office_ids": [],
+          "role_allowed_tag_ids": [],
+          "roles": [],
+          "selected_office_ids": [],
+          "selected_tag_ids": [],
+          "telephone": "1010101010",
+          "upn": null,
+          "user_id": "5d4c201446cad20d3fec990d"
+        }]
+      }
+    },
+    "condition": "$ENV(node-env)"
+  },
+  "transform": {
+    "type": "dtl",
+    "rules": {
+      "default": [
+        ["copy", "*"],
+        ["remove", "image"],
+        ["add", "rdf:type",
+          ["ni", "cvpartner:User"]
+        ]
+      ]
+    }
+  },
+  "pump": {
+    "schedule_interval": "$ENV(cvpartner_schedule_interval_slow)"
+  }
+}

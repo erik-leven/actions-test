@@ -1,0 +1,68 @@
+{
+  "_id": "cvpartner-custom-tag-category",
+  "type": "pipe",
+  "source": {
+    "type": "conditional",
+    "alternatives": {
+      "prod": {
+        "type": "json",
+        "system": "cv-partner-rest",
+        "url": "/custom_tag_category"
+      },
+      "test": {
+        "type": "embedded",
+        "entities": [{
+          "_id": "586cf0be285db12d00d9e1e5",
+          "allow_filtering": false,
+          "can_be_used_for_customers": false,
+          "can_be_used_for_cvs": true,
+          "can_be_used_for_references": false,
+          "custom_tags": [{
+            "_id": "5d4d290bedfc710e8cb837a5",
+            "custom_tag_category_id": "586cf0be285db12d00d9e1e5",
+            "external_unique_id": "327",
+            "id": "5d4d290bedfc710e8cb837a5",
+            "values": {
+              "no": "Øst Microsoft"
+            }
+          }, {
+            "_id": "5d4aa9043330eb0e7cd32d1e",
+            "custom_tag_category_id": "586cf0be285db12d00d9e1e5",
+            "external_unique_id": "500",
+            "id": "5d4aa9043330eb0e7cd32d1e",
+            "values": {
+              "no": "Øst Råd og Prosjekt"
+            }
+          }],
+          "external_unique_id": null,
+          "id": "586cf0be285db12d00d9e1e5",
+          "values": {
+            "no": "Avdeling"
+          }
+        }]
+      }
+    },
+    "condition": "$ENV(node-env)"
+  },
+  "transform": {
+    "type": "dtl",
+    "rules": {
+      "default": [
+        ["copy", "*", "custom_tags"],
+        ["create",
+          ["apply", "create", "_S.custom_tags"]
+        ]
+      ],
+      "create": [
+        ["copy", "*"],
+        ["add", "category_name", "_P._S.values.no"],
+        ["add", "rdf:type",
+          ["ni", "cvpartner:CustomTagCategory"]
+        ]
+      ]
+    }
+  },
+  "pump": {
+    "schedule_interval": "$ENV(cvpartner_schedule_interval_medium)"
+  }
+}

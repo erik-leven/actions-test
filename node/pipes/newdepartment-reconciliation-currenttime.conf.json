@@ -1,0 +1,103 @@
+{
+  "_id": "newDepartment-reconciliation-currenttime",
+  "type": "pipe",
+  "source": {
+    "type": "dataset",
+    "dataset": "global-department"
+  },
+  "transform": {
+    "type": "dtl",
+    "rules": {
+      "default": [
+        ["filter",
+          ["and",
+            ["not",
+              ["in", "~:bouvet:currenttime-department", "_S.rdf:type"]
+            ],
+            ["in", "~:bouvet:catalystone-org", "_S.rdf:type"],
+            ["in", "~:bouvet:global-dep-bouvet-norge-as", "_S.rdf:type"]
+          ]
+        ],
+        ["merge",
+          ["apply", "check-date",
+            ["datetime-parse", "%Y-%m-%d %H:%M:%S", "_S.@CREATED"]
+          ]
+        ],
+        ["remove",
+          ["list", "check-date", "check-year", "check-month", "check-day", "check-hour", "limit-date"]
+        ],
+        ["add", "AvdelingsnavnFolk", "_S.NAME.value"],
+        ["add", "AvdelingsnummerFolk",
+          ["integer", "_S.ORG_ID.value"]
+        ],
+        ["add", "AvdelingslederID",
+          ["integer", "_S.manager.uid"]
+        ],
+        ["add", "AvdelingslederNavn", "_S.manager.managername"],
+        ["if",
+          ["lt", "_T.Mnd", 10],
+          ["add", "_id",
+            ["concat", "_S._id", ";", "0",
+              ["string", "_T.Mnd"], ".",
+              ["string", "_T.År"]
+            ]
+          ],
+          ["add", "_id",
+            ["concat", "_S._id", ";",
+              ["string", "_T.Mnd"], ".",
+              ["string", "_T.År"]
+            ]
+          ]
+        ],
+        ["add", "Sjekket", false],
+        ["add", "Kommentar",
+          ["coalesce",
+            ["list",
+              ["first",
+                ["hops", {
+                  "datasets": ["global-economy ga"],
+                  "where": ["eq",
+                    ["ni", "currenttime-newdepartment-recon", "_S.catalystone-organization:ORG_ID.value"], "ga.$ids"],
+                  "return": "ga.currenttime-newdepartment-recon:Kommentar"
+                }]
+              ], ""]
+          ]
+        ]
+      ],
+      "check-date": [
+        ["if",
+          ["gte",
+            ["datetime-format", "%d", "_S."], "16"],
+          [
+            ["add", "Mnd",
+              ["integer",
+                ["datetime-format", "%m",
+                  ["datetime-plus", "month", 1, "_S."]
+                ]
+              ]
+            ],
+            ["add", "År",
+              ["integer",
+                ["datetime-format", "%Y",
+                  ["datetime-plus", "month", 1, "_S."]
+                ]
+              ]
+            ]
+          ],
+          [
+            ["add", "Mnd",
+              ["integer",
+                ["datetime-format", "%m", "_S."]
+              ]
+            ],
+            ["add", "År",
+              ["integer",
+                ["datetime-format", "%Y", "_S."]
+              ]
+            ]
+          ]
+        ]
+      ]
+    }
+  }
+}

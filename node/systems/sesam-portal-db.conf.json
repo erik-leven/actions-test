@@ -1,0 +1,11 @@
+{
+  "_id": "sesam-portal-db",
+  "type": "system:url",
+  "name": "Sesam portal db",
+  "authentication": "jwt",
+  "connect_timeout": 60,
+  "jwt_token": "$SECRET(sesam-portal-db-jwt)",
+  "read_timeout": 7200,
+  "url_pattern": "https://sesam-node-01.sesam.cloud/api/datasets/%s/entities?history=false",
+  "verify_ssl": true
+}

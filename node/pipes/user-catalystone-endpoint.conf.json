@@ -1,0 +1,28 @@
+{
+  "_id": "user-catalystone-endpoint",
+  "type": "pipe",
+  "source": {
+    "type": "dataset",
+    "dataset": "user-catalystone"
+  },
+  "sink": {
+    "type": "json",
+    "system": "catalystone-rest-v3",
+    "url": "/post_employees"
+  },
+  "transform": {
+    "type": "dtl",
+    "rules": {
+      "default": [
+        ["filter",
+          ["eq", "_S._deleted", false]
+        ],
+        ["copy", "*"],
+        ["remove", "_*"]
+      ]
+    }
+  },
+  "pump": {
+    "mode": "$ENV(pump-mode)"
+  }
+}

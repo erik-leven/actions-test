@@ -1,0 +1,48 @@
+{
+  "_id": "user-history-sensitive-pulsen",
+  "type": "pipe",
+  "source": {
+    "type": "dataset",
+    "dataset": "global-person"
+  },
+  "transform": {
+    "type": "dtl",
+    "rules": {
+      "default": [
+        ["filter",
+          ["in", "_S.global-person:employee_status",
+            ["list", "EarlyEmployee", "TempEarlyEmployee", "SoonEmployee", "TempSoonEmployee", "Employee", "TempEmployee", "Quit"]
+          ]
+        ],
+        ["filter",
+          ["in", "~:bouvet:catalystone-user", "_S.rdf:type"]
+        ],
+        ["copy", "_id"],
+        ["add", "Ansatt_ID", "_S.catalystone-user:UNIQUE_IMPORT_ID.value"],
+        ["add", "Navn", "_S.catalystone-user:NAME.value"],
+        ["add", "Selskap", "_S.catalystone-user:1002.VALUE.value"],
+        ["add", "Organisasjon", "_S.catalystone-user:ORGANIZATION.value"],
+        ["add", "Ansettelsetype", "_S.catalystone-user:1046.VALUE.value"],
+        ["add", "GrunnlagDersomMidlertidigKontrakt", "_S.catalystone-user:1051.VALUE.value"],
+        ["add", "Aarsloenn_heltid", "_S.catalystone-user:BASIC_SALARY.AMOUNT"],
+        ["add", "Stillingsprosent", "_S.catalystone-user:WORKING_HOURS.value"],
+        ["add", "Timeloenn", "_S.catalystone-user:1031.VALUE.value"],
+        ["add", "Saerskilte_vilkaar", "_S.catalystone-user:1075.VALUE.value"],
+        ["add", "Forespoerselomsikkerhetsklareringsendt", "_S.catalystone-user:1107.VALUE.value"],
+        ["add", "Sikkerhetsklarering_Svarmottatt", "_S.catalystone-user:1102.VALUE.value"],
+        ["add", "Statussikkerhetsklarering", "_S.catalystone-user:1101.VALUE.value"],
+        ["add", "Klareringsnivaasikkerhetsklarering", "_S.catalystone-user:1120.VALUES.VALUE.value"],
+        ["add", "Utloepsdatosikkerhetsklarering", "_S.catalystone-user:1108.VALUE.value"],
+        ["add", "Datobakgrunnssjekk", "_S.catalystone-user:1104.VALUE.value"],
+        ["add", "Sluttaarsak", "_S.catalystone-user:1028.VALUE.value"],
+        ["comment", "Adds below may not fit the data from the source and thus be faulty references. Fields were not in use in source when setting this up."],
+        ["add", "Grunnloenn_beloep", "_S.catalystone-user:SALARY_AMOUNT.value"],
+        ["add", "Grunnloenn_valuta", "_S.catalystone-user:SALARY_CURRENCY.value"],
+        ["add", "Loennstype", "_S.catalystone-user:SALARY_TYPE.value"],
+        ["add", "Bruttoloennsreduksjon", "_S.catalystone-user:1165.VALUE.value"],
+        ["add", "Faktiskloenn", "_S.catalystone-user:1030.VALUE.value"],
+        ["comment", "add", "Kommentarsikkerhetsklarering", "_S.catalystone-user:1118.VALUE.value"]
+      ]
+    }
+  }
+}

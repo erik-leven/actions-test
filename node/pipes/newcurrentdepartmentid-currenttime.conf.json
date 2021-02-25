@@ -1,0 +1,159 @@
+{
+  "_id": "newCurrentDepartmentID-currenttime",
+  "type": "pipe",
+  "source": {
+    "type": "dataset",
+    "dataset": "global-person"
+  },
+  "transform": [{
+    "type": "dtl",
+    "rules": {
+      "default": [
+        ["filter",
+          ["in", "_S.global-person:employee_status",
+            ["list", "EarlyEmployee", "TempEarlyEmployee", "SoonEmployee", "TempSoonEmployee", "Employee", "TempEmployee"]
+          ]
+        ],
+        ["copy",
+          ["list", "_id", "catalystone-user:1071", "folk-user:8", "ad-user:departmentNumber"]
+        ],
+        ["merge",
+          ["hops", {
+            "datasets": ["global-department gd"],
+            "where": [
+              ["eq",
+                ["string", "_S.catalystone-user:ORGANIZATION.@UNIQUE_IMPORT_ID"], "gd.ORG_ID.value"]
+            ],
+            "return": ["dict", "temp-rdf:type", "gd.rdf:type"]
+          }]
+        ],
+        ["filter",
+          ["intersects",
+            ["list", "~:bouvet:global-dep-bouvet-norge-as", "~:bouvet:global-dep-olavstoppen-as"], "_T.temp-rdf:type"]
+        ],
+        ["remove", "temp-rdf:type"],
+        ["filter",
+          ["is-empty", "_S.catalystone-user:1125.VALUE.value"]
+        ],
+        ["copy", "_id"],
+        ["merge-union",
+          ["apply-hops", "find-multiple-departments", {
+            "datasets": ["currenttime-department cd"],
+            "where": [
+              ["eq", "_S.catalystone-user:ORGANIZATION.@UNIQUE_IMPORT_ID", "cd.departmentref"]
+            ]
+          }]
+        ],
+        ["filter",
+          ["or",
+            ["is-not-empty", "_S.catalystone-user:1170.VALUE.value"],
+            ["in",
+              ["dict", "catalystone-user:value", "Administrasjon"], "_S.catalystone-user:1071.VALUES.VALUE"],
+            ["in",
+              ["dict", "catalystone-user:value", "Personalansvarlig"], "_S.catalystone-user:1071.VALUES.VALUE"],
+            ["gt",
+              ["count", "_T.not-led"], 1]
+          ]
+        ],
+        ["merge",
+          ["hops", {
+            "datasets": ["global-person gp"],
+            "where": [
+              ["eq", "_S.catalystone-user:SUPERVISOR.EMPLOYEE_ID",
+                ["string", "gp.catalystone-user:UNIQUE_IMPORT_ID.value"]
+              ]
+            ],
+            "return": ["dict", "supervisor_id", "gp.currenttime-employeedetail:employeeid-ni"]
+          }]
+        ]
+      ],
+      "check-LED": [
+        ["if",
+          ["and",
+            ["not",
+              ["in", "LED",
+                ["split", " ", "_S.departmentname"]
+              ]
+            ],
+            ["eq", "_S.departmentactive", 1]
+          ],
+          ["add", "not-led", "_S.departmentname"]
+        ]
+      ],
+      "find-multiple-departments": [
+        ["add", "departmentname", "_S.departmentname"],
+        ["merge-union",
+          ["apply", "check-LED", "_S."]
+        ]
+      ]
+    }
+  }, {
+    "type": "dtl",
+    "rules": {
+      "default": [
+        ["copy", "*"],
+        ["merge-union",
+          ["hops", {
+            "datasets": ["currenttime-department cd"],
+            "where": [
+              ["eq",
+                ["tuples", "_S.supervisor_id", 1,
+                  ["coalesce",
+                    ["list", "_S.folk-user:8.data.uniqueImportId",
+                      ["first", "_S.ad-user:departmentNumber"]
+                    ]
+                  ]
+                ],
+                ["tuples", "cd.employeeid-ni", "cd.departmentactive", "cd.departmentref"]
+              ]
+            ],
+            "return": ["dict", "ctdepid",
+              ["string", "cd.departmentid"]
+            ]
+          }]
+        ],
+        ["if",
+          ["in",
+            ["dict", "catalystone-user:value", "Personalansvarlig"], "_S.catalystone-user:1071.VALUES.VALUE"],
+          [
+            ["add", "BliPlassertICurrentDepartmentID",
+              ["integer", "_T.ctdepid"]
+            ],
+            ["add", "Reason", "Personalansvarlig"]
+          ],
+          ["if",
+            ["in",
+              ["dict", "catalystone-user:value", "Administrasjon"], "_S.catalystone-user:1071.VALUES.VALUE"],
+            [
+              ["add", "BliPlassertICurrentDepartmentID",
+                ["integer", "_T.ctdepid"]
+              ],
+              ["add", "Reason", "Administrasjon"]
+            ],
+            ["if",
+              ["gt",
+                ["count", "_T.not-led"], 1],
+              ["add", "Reason", "Multiple no-LEDS"],
+              [
+                ["add", "BliPlassertICurrentDepartmentID",
+                  ["integer", "_T.ctdepid"]
+                ],
+                ["add", "Reason", "Har leder-for felt"]
+              ]
+            ]
+          ]
+        ],
+        ["remove",
+          ["list", "departmentname", "not-led", "catalystone-user:1071", "ids", "ctdepid", "folk-user:8", "ad-user:departmentNumber"]
+        ],
+        ["add", "AnsattIDFolk",
+          ["integer",
+            ["ni-id",
+              ["ni", "_S._id"]
+            ]
+          ]
+        ]
+      ]
+    }
+  }]
+}

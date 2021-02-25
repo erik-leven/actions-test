@@ -1,0 +1,133 @@
+{
+  "_id": "currenttime-company-extra",
+  "type": "pipe",
+  "source": {
+    "type": "conditional",
+    "alternatives": {
+      "prod": {
+        "type": "sql",
+        "system": "currenttime",
+        "schema": "bov",
+        "table": "COMPANY_TILLEGGSINFORMASJON"
+      },
+      "test": {
+        "type": "embedded",
+        "entities": [{
+          "_id": "0",
+          "BouvetIkkeFaktSluttkunde": "",
+          "ErSlettet": false,
+          "GodkjentBransje": false,
+          "bransjekategori1": "Udefinert",
+          "bransjekategori2": "Udefinert",
+          "companyid": 0,
+          "companyname": "Her må du koble til riktig kunde",
+          "companyref": "Her må du koble til riktig kunde",
+          "offentlig": false
+        }, {
+          "_id": "15",
+          "BouvetIkkeFaktSluttkunde": "",
+          "ErSlettet": false,
+          "GodkjentBransje": false,
+          "NACE-kode": "71.129, 43.210",
+          "bransjekategori1": "Tjenesteyting",
+          "bransjekategori2": "Teknisk tjenesteyting",
+          "companyid": 15,
+          "companyname": "Siemens AS Oslo",
+          "companyref": "Siemens",
+          "offentlig": false
+        }, {
+          "_id": "68",
+          "BouvetIkkeFaktSluttkunde": "",
+          "ErSlettet": false,
+          "GodkjentBransje": false,
+          "NACE-kode": "",
+          "bransjekategori1": "Off. adm. og forsvar",
+          "bransjekategori2": "Forsvar",
+          "companyid": 68,
+          "companyname": "Forsvarets Bygningstjeneste",
+          "companyref": "Forsvaret",
+          "offentlig": true
+        }, {
+          "_id": "83",
+          "BouvetIkkeFaktSluttkunde": "",
+          "ErSlettet": false,
+          "GodkjentBransje": false,
+          "NACE-kode": "",
+          "bransjekategori1": "",
+          "bransjekategori2": "",
+          "companyid": 83,
+          "companyname": "Planteforsk.",
+          "companyref": "Planeforsk.",
+          "offentlig": false
+        }, {
+          "_id": "87",
+          "BouvetIkkeFaktSluttkunde": "",
+          "ErSlettet": false,
+          "GodkjentBransje": false,
+          "NACE-kode": "",
+          "bransjekategori1": "Info og kommunikasjon",
+          "bransjekategori2": "Forlag og media",
+          "companyid": 87,
+          "companyname": "AS Gyldendal Norsk Forlag",
+          "companyref": "Gyldendal",
+          "offentlig": false
+        }, {
+          "_id": "51037",
+          "GodkjentBransje": false,
+          "companyid": 51037,
+          "companyname": "OBOS BBL",
+          "companyref": "",
+          "offentlig": false
+        }, {
+          "_id": "51036",
+          "GodkjentBransje": false,
+          "bransjekategori1": "Udefinert",
+          "companyid": 51036,
+          "companyname": "Advokatfirmaet Føyen Torkildsen",
+          "companyref": "Advokatfirmaet Føyen Torkildsen",
+          "offentlig": false
+        }, {
+          "_id": "51035",
+          "GodkjentBransje": false,
+          "bransjekategori1": "Udefinert",
+          "companyid": 51035,
+          "companyname": "Enterprise Services Norge As",
+          "companyref": "Enterprise Services Norge As",
+          "offentlig": false
+        }, {
+          "_id": "51033",
+          "GodkjentBransje": false,
+          "bransjekategori1": "Udefinert",
+          "companyid": 51033,
+          "companyname": "Plain Concepts",
+          "companyref": "",
+          "offentlig": false
+        }, {
+          "_id": "51025",
+          "GodkjentBransje": false,
+          "bransjekategori1": "Udefinert",
+          "companyid": 51025,
+          "companyname": "Forsvarsmateriell",
+          "companyref": "",
+          "offentlig": false
+        }]
+      }
+    },
+    "condition": "$ENV(node-env)"
+  },
+  "transform": {
+    "type": "dtl",
+    "rules": {
+      "default": [
+        ["copy", "*"],
+        ["make-ni", "currenttime-company", "companyid"],
+        ["add", "rdf:type",
+          ["ni", "bouvet:currenttime-company-extra"]
+        ]
+      ]
+    }
+  },
+  "pump": {
+    "cron_expression": "$ENV(ct_cron_slow)"
+  }
+}

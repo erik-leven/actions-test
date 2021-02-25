@@ -1,0 +1,28 @@
+{
+  "_id": "user-image-catalystone-endpoint",
+  "type": "pipe",
+  "source": {
+    "type": "dataset",
+    "dataset": "user-image-catalystone"
+  },
+  "sink": {
+    "type": "json",
+    "system": "image-sftp",
+    "batch_size": 1,
+    "url": "/decode"
+  },
+  "transform": {
+    "type": "dtl",
+    "rules": {
+      "default": [
+        ["filter",
+          ["eq", "_S._deleted", false]
+        ],
+        ["copy", "*"]
+      ]
+    }
+  },
+  "pump": {
+    "mode": "$ENV(pump-mode)"
+  }
+}

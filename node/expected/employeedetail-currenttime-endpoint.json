@@ -1,0 +1,57 @@
+[
+  {
+    "EmployeeId": 3402,
+    "_id": "0001",
+    "operation": "update-employeedetail",
+    "payload": {
+      "DateOfBirth": "1980-11-11",
+      "EmployeeRef": "0001",
+      "EmployeeRefImport": "0001",
+      "Gender": "M"
+    }
+  },
+  {
+    "EmployeeId": 3456,
+    "_id": "0004",
+    "operation": "update-employeedetail",
+    "payload": {
+      "DateOfBirth": "1980-11-11",
+      "EmployeeRef": "0004",
+      "EmployeeRefImport": "0004",
+      "Gender": "M"
+    }
+  },
+  {
+    "EmployeeId": 3455,
+    "_id": "0007",
+    "operation": "update-employeedetail",
+    "payload": {
+      "DateOfBirth": "1980-11-11",
+      "EmployeeRef": "0007",
+      "EmployeeRefImport": "0007",
+      "Gender": "M"
+    }
+  },
+  {
+    "EmployeeId": 3452,
+    "_id": "0010",
+    "operation": "update-employeedetail",
+    "payload": {
+      "DateOfBirth": "1980-11-11",
+      "EmployeeRef": "0010",
+      "EmployeeRefImport": "0010",
+      "Gender": "M"
+    }
+  },
+  {
+    "EmployeeId": 3656,
+    "_id": "2276",
+    "operation": "update-employeedetail",
+    "payload": {
+      "DateOfBirth": null,
+      "EmployeeRef": "2276",
+      "EmployeeRefImport": "2276",
+      "Gender": "M"
+    }
+  }
+]

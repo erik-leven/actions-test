@@ -1,0 +1,93 @@
+{
+  "_id": "jira-projectroleactor",
+  "type": "pipe",
+  "source": {
+    "type": "conditional",
+    "alternatives": {
+      "prod": {
+        "type": "sql",
+        "system": "jira",
+        "preserve_null_values": false,
+        "table": "projectroleactor"
+      },
+      "test": {
+        "type": "embedded",
+        "entities": [{
+          "_id": "105572",
+          "id": "~f105572",
+          "pid": "~f40360",
+          "projectroleid": "~f10002",
+          "roletype": "atlassian-user-role-actor",
+          "roletypeparameter": "spider.man"
+        }, {
+          "_id": "105570",
+          "id": "~f105570",
+          "pid": "~f42965",
+          "projectroleid": "~f10002",
+          "roletype": "atlassian-user-role-actor",
+          "roletypeparameter": "super.man"
+        }, {
+          "_id": "105561",
+          "id": "~f105561",
+          "pid": "~f41061",
+          "projectroleid": "~f10001",
+          "roletype": "atlassian-user-role-actor",
+          "roletypeparameter": "bat.man"
+        }, {
+          "_id": "105561",
+          "id": "~f105561",
+          "pid": "~f41061",
+          "projectroleid": "~f10001",
+          "roletype": "atlassian-user-role-actor",
+          "roletypeparameter": "aqua.man"
+        }, {
+          "_id": "105546",
+          "id": "~f105546",
+          "pid": "~f30260",
+          "projectroleid": "~f10060",
+          "roletype": "atlassian-user-role-actor",
+          "roletypeparameter": "green.lantern"
+        }, {
+          "_id": "105543",
+          "id": "~f105543",
+          "pid": "~f42963",
+          "projectroleid": "~f10001",
+          "roletype": "atlassian-user-role-actor",
+          "roletypeparameter": "flash.gordon"
+        }, {
+          "_id": "105535",
+          "id": "~f105535",
+          "pid": "~f41061",
+          "projectroleid": "~f10002",
+          "roletype": "atlassian-user-role-actor",
+          "roletypeparameter": "crang"
+        }, {
+          "_id": "19406",
+          "id": "~f19406",
+          "pid": "~f10390",
+          "projectroleid": "~f10002",
+          "roletype": "atlassian-user-role-actor",
+          "roletypeparameter": "kid.robin"
+        }, {
+          "_id": "16797",
+          "id": "~f16797",
+          "pid": "~f10750",
+          "projectroleid": "~f10001",
+          "roletype": "atlassian-user-role-actor",
+          "roletypeparameter": "dispicable.me"
+        }, {
+          "_id": "16767",
+          "id": "~f16767",
+          "pid": "~f10360",
+          "projectroleid": "~f10010",
+          "roletype": "atlassian-user-role-actor",
+          "roletypeparameter": "mr.deadpool"
+        }]
+      }
+    },
+    "condition": "$ENV(node-env)"
+  },
+  "pump": {
+    "cron_expression": "$ENV(jira_cron_slow)"
+  }
+}

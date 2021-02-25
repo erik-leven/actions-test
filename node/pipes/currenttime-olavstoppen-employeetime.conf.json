@@ -1,0 +1,96 @@
+{
+  "_id": "currenttime-olavstoppen-employeetime",
+  "type": "pipe",
+  "source": {
+    "type": "conditional",
+    "alternatives": {
+      "prod": {
+        "type": "sql",
+        "system": "currenttime-olavstoppen",
+        "table": "employeetime",
+        "updated_column": "updatedate"
+      },
+      "test": {
+        "type": "embedded",
+        "entities": [{
+          "_id": "3204",
+          "changesalarycode": false,
+          "costrate": "~f0E-10",
+          "createby": "Api",
+          "createdate": "~t2020-07-28T12:03:54.537Z",
+          "employeeid": 3466,
+          "employeetimeid": 3204,
+          "flexitime": true,
+          "flexitimebalanceupdated": "~t2020-08-10T00:00:00Z",
+          "overtime": false,
+          "percentwork": "~f100.0000000000",
+          "rate": "~f9.0000000000",
+          "showplannedhours": false,
+          "timesheet": true,
+          "updateby": "Api",
+          "updatedate": "~t2020-08-11T02:19:39.397Z",
+          "vacation": true,
+          "vacationbalanceupdated": "~t2020-08-10T00:00:00Z"
+        }, {
+          "_id": "3203",
+          "changesalarycode": false,
+          "costrate": "~f0E-10",
+          "createby": "Api",
+          "createdate": "~t2020-07-28T12:03:54.537Z",
+          "employeeid": 3465,
+          "employeetimeid": 3203,
+          "flexitime": false,
+          "flexitimebalanceupdated": "~t2020-08-10T00:00:00Z",
+          "overtime": false,
+          "percentwork": "~f100.0000000000",
+          "rate": "~f9.0000000000",
+          "showplannedhours": false,
+          "timesheet": true,
+          "updateby": "Api",
+          "updatedate": "~t2020-08-11T02:19:39.397Z",
+          "vacation": true,
+          "vacationbalanceupdated": "~t2020-08-10T00:00:00Z"
+        }, {
+          "_id": "1093",
+          "changesalarycode": false,
+          "costrate": "~f0E-10",
+          "createby": "Api",
+          "createdate": "~t2020-07-28T12:03:54.537Z",
+          "employeeid": 1093,
+          "employeetimeid": 1093,
+          "flexitime": false,
+          "flexitimebalanceupdated": "~t2020-08-10T00:00:00Z",
+          "overtime": false,
+          "percentwork": "~f100.0000000000",
+          "rate": "~f9.0000000000",
+          "showplannedhours": false,
+          "timesheet": true,
+          "updateby": "Api",
+          "updatedate": "~t2020-08-11T02:19:39.397Z",
+          "vacation": true,
+          "vacationbalanceupdated": "~t2020-08-10T00:00:00Z"
+        }]
+      }
+    },
+    "condition": "$ENV(node-env)"
+  },
+  "transform": {
+    "type": "dtl",
+    "rules": {
+      "default": [
+        ["copy", "*"],
+        ["make-ni", "currenttime-olavstoppen-employee", "employeeid"],
+        ["add", "rdf:type",
+          ["ni", "bouvet:currenttime-olavstoppen-employeetime"]
+        ],
+        ["add", "pursuant",
+          ["ni", "sesam:bouvet-employee"]
+        ]
+      ]
+    }
+  },
+  "pump": {
+    "cron_expression": "$ENV(ct_cron_fast)",
+    "rescan_cron_expression": "$ENV(ct_rescan_cron)"
+  }
+}

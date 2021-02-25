@@ -1,0 +1,51 @@
+{
+  "_id": "visma-costunitshierarchydata",
+  "type": "pipe",
+  "source": {
+    "type": "conditional",
+    "alternatives": {
+      "prod": {
+        "type": "sql",
+        "system": "visma",
+        "primary_key": ["HierarchyNo", "CostUnitID", "CostUnitValue"],
+        "schema": "BouvetNorgeAS",
+        "table": "CostUnitsHierarchyData"
+      },
+      "test": {
+        "type": "embedded",
+        "entities": [{
+          "CostUnitID": 1421,
+          "CostUnitValue": "9286",
+          "HierarchyNo": 1,
+          "SavedValue": "234"
+        }, {
+          "CostUnitID": 1751,
+          "CostUnitValue": "3746",
+          "HierarchyNo": 1,
+          "SavedValue": "345"
+        }]
+      }
+    },
+    "condition": "$ENV(node-env)"
+  },
+  "transform": {
+    "type": "dtl",
+    "rules": {
+      "default": [
+        ["copy", "*"],
+        ["add", "_id",
+          ["concat",
+            ["string", "_S.HierarchyNo"], "_",
+            ["string", "_S.CostUnitID"], "_", "_S.CostUnitValue"]
+        ],
+        ["add", "rdf:type",
+          ["ni", "bouvet:visma-costunitshierarchydata"]
+        ]
+      ]
+    }
+  },
+  "pump": {
+    "cron_expression": "$ENV(visma_cron_medium)",
+    "rescan_cron_expression": "$ENV(visma_rescan_cron)"
+  }
+}

@@ -1,0 +1,187 @@
+{
+  "_id": "o365-sitedata",
+  "type": "pipe",
+  "source": {
+    "type": "conditional",
+    "alternatives": {
+      "prod": {
+        "type": "dataset",
+        "dataset": "o365-siteurl"
+      },
+      "test": {
+        "type": "embedded",
+        "entities": [{
+          "_id": "9d5c8eed-3729-4b9f-baf2-81e8d4d914c8",
+          "o365-siteurl:webUrl": "https://bouvetasa.sharepoint.com/sites/ArkivverketVedlikeholdsavtaleArkivverket"
+        }, {
+          "_id": "5d2bc226-f4a7-468e-8f6f-fa69e03862a5",
+          "o365-siteurl:webUrl": "https://bouvetasa.sharepoint.com/sites/Statnett-Alliansen"
+        }, {
+          "_id": "8b5a174d-6df5-4d91-a561-9aeff91a4e78",
+          "o365-siteurl:webUrl": "https://bouvetasa.sharepoint.com/sites/Teekay-Skynet"
+        }, {
+          "_id": "3b9bb96f-a236-467b-949e-995d47f3f975",
+          "o365-siteurl:webUrl": "https://bouvetasa.sharepoint.com/sites/EniNorge-TestTilbud"
+        }, {
+          "_id": "88577634-20c7-4fbe-b4ea-8bab3a6df0eb",
+          "o365-siteurl:webUrl": "https://bouvetasa.sharepoint.com/sites/BouvetNorgeAS-FrokostmoteberekraftOktober2019"
+        }, {
+          "_id": "88577634-20c7-4fbe-b4ea-8bab3a6df0eb",
+          "o365-siteurl:webUrl": "https://bouvetasa.sharepoint.com/sites/BouvetFeilUrlForTestAv404"
+        }, {
+          "_id": "425d6664-ba29-4239-8ff6-3557e645d825",
+          "o365-siteurl:webUrl": "https://bouvetasa.sharepoint.com/sites/AkerBP-Leveranse"
+        }, {
+          "_id": "3b13cb90-2ffd-4924-9a4e-84252dd144fa",
+          "o365-siteurl:webUrl": "https://bouvetasa.sharepoint.com/sites/NDLA-Etableringavdynamiskinnkjopsordningforanskaffelseravte"
+        }, {
+          "_id": "37d0d61d-dadd-4e84-9be9-1db287cec8c6",
+          "o365-siteurl:webUrl": "https://bouvetasa.sharepoint.com/sites/SHIStidsplanfas2"
+        }, {
+          "_id": "a1303040-ccb8-4e30-8438-675bc3208dec",
+          "o365-siteurl:webUrl": "https://bouvetasa.sharepoint.com/sites/ROG-MTCSMEREP"
+        }, {
+          "_id": "1cb57a5c-d619-42a8-8730-2d3b859a13a9",
+          "o365-siteurl:webUrl": "https://bouvetasa.sharepoint.com/sites/ROG-MixedReality"
+        }, {
+          "_id": "fa37fdb7-b18d-4c93-a38d-122c51f72392",
+          "o365-siteurl:webUrl": "https://bouvetasa.sharepoint.com/sites/Statnett-RammeavtaleIKTUtvikling"
+        }, {
+          "_id": "7d8b31ee-9197-4278-8bc0-adb34f408b97",
+          "o365-siteurl:webUrl": "https://bouvetasa.sharepoint.com/sites/Sjofartsdirektoratet-202016276-Prosjektledersikkerhetskonsu"
+        }, {
+          "_id": "0205eee7-9db1-4db6-ae3b-d4f602b1a335",
+          "o365-siteurl:webUrl": "https://bouvetasa.sharepoint.com/sites/Helsedirektoratet-Rammeavtale2020-Portefoljer"
+        }, {
+          "_id": "ec2ea600-989b-4082-9933-71ff8568714f",
+          "o365-siteurl:webUrl": "https://bouvetasa.sharepoint.com/sites/ROG-SCC"
+        }, {
+          "_id": "88c09daf-5f40-45ea-9a1b-c17af9e0dd58",
+          "o365-siteurl:webUrl": "https://bouvetasa.sharepoint.com/sites/BouvetNorgeAS-CSR-berekraft"
+        }]
+      }
+    },
+    "condition": "$ENV(node-env)"
+  },
+  "transform": {
+    "type": "conditional",
+    "alternatives": {
+      "prod": {
+        "type": "chained",
+        "transforms": [{
+          "type": "dtl",
+          "rules": {
+            "default": [
+              ["filter",
+                ["neq", "_S._deleted", true]
+              ],
+              ["add", "webUrl", "_S.o365-siteurl:webUrl"]
+            ]
+          }
+        }, {
+          "type": "http",
+          "system": "sharepoint-api",
+          "batch_size": 15,
+          "url": "/webUrl"
+        }, {
+          "type": "dtl",
+          "rules": {
+            "default": [
+              ["make-ni", "o365-group", "_id", "o365-sitedata:id-ni"],
+              ["merge",
+                ["apply", "add-ns", "_S."]
+              ],
+              ["add", "rdf:type",
+                ["ni", "o365:Sitedata"]
+              ],
+              ["remove",
+                ["list", "o365-sitedata:_id", "o365-sitedata:CurrentChangeToken"]
+              ],
+              ["add", "_id",
+                ["concat", "o365-sitedata:", "_S._id"]
+              ]
+            ],
+            "add-ns": [
+              ["merge",
+                ["map-dict",
+                  ["concat", "o365-sitedata:", "_."],
+                  ["if",
+                    ["is-dict", "_."],
+                    ["apply", "add-ns", "_."], "_."], "_S."]
+              ]
+            ]
+          }
+        }]
+      },
+      "test": {
+        "type": "dtl",
+        "rules": {
+          "default": [
+            ["add", "_id", "o365-sitedata:9d5c8eed-3729-4b9f-baf2-81e8d4d914c8"],
+            ["add", "o365-sitedata:AllowRssFeeds", true],
+            ["add", "o365-sitedata:AlternateCssUrl", ""],
+            ["add", "o365-sitedata:AppInstanceId", "00000000-0000-0000-0000-000000000000"],
+            ["add", "o365-sitedata:ClassicWelcomePage", null],
+            ["add", "o365-sitedata:Configuration", 0],
+            ["add", "o365-sitedata:Created", "2019-03-29T14:34:50.16"],
+            ["add", "o365-sitedata:CurrentChangeToken",
+              ["dict", "o365-sitedata:StringValue", "1;2;dba3a748-fada-4ffb-abe6-5e93861695f2;637172139745800000;531399597"]
+            ],
+            ["add", "o365-sitedata:CustomMasterUrl", "/sites/ArkivverketVedlikeholdsavtaleArkivverket/_catalogs/masterpage/seattle.master"],
+            ["add", "o365-sitedata:Description", "Arkivverket - Vedlikeholdsavtale Arkivverket"],
+            ["add", "o365-sitedata:DesignPackageId", "00000000-0000-0000-0000-000000000000"],
+            ["add", "o365-sitedata:DocumentLibraryCalloutOfficeWebAppPreviewersDisabled", false],
+            ["add", "o365-sitedata:EnableMinimalDownload", false],
+            ["add", "o365-sitedata:FooterEmphasis", 0],
+            ["add", "o365-sitedata:FooterEnabled", false],
+            ["add", "o365-sitedata:FooterLayout", 0],
+            ["add", "o365-sitedata:HeaderEmphasis", 0],
+            ["add", "o365-sitedata:HeaderLayout", 0],
+            ["add", "o365-sitedata:HorizontalQuickLaunch", false],
+            ["add", "o365-sitedata:Id", "dba3a748-fada-4ffb-abe6-5e93861695f2"],
+            ["add", "o365-sitedata:IsHomepageModernized", false],
+            ["add", "o365-sitedata:IsMultilingual", true],
+            ["add", "o365-sitedata:IsRevertHomepageLinkHidden", false],
+            ["add", "o365-sitedata:Language", 1033],
+            ["add", "o365-sitedata:LastItemModifiedDate", "2020-02-12T22:10:09Z"],
+            ["add", "o365-sitedata:LastItemUserModifiedDate", "2019-06-05T11:37:19Z"],
+            ["add", "o365-sitedata:MasterUrl", "/sites/ArkivverketVedlikeholdsavtaleArkivverket/_catalogs/masterpage/seattle.master"],
+            ["add", "o365-sitedata:MegaMenuEnabled", false],
+            ["add", "o365-sitedata:NavAudienceTargetingEnabled", false],
+            ["add", "o365-sitedata:NoCrawl", false],
+            ["add", "o365-sitedata:ObjectCacheEnabled", false],
+            ["add", "o365-sitedata:OverwriteTranslationsOnChange", false],
+            ["add", "o365-sitedata:QuickLaunchEnabled", true],
+            ["add", "o365-sitedata:RecycleBinEnabled", true],
+            ["add", "o365-sitedata:ResourcePath",
+              ["dict", "o365-sitedata:DecodedUrl", "https://bouvetasa.sharepoint.com/sites/ArkivverketVedlikeholdsavtaleArkivverket"]
+            ],
+            ["add", "o365-sitedata:SearchScope", 0],
+            ["add", "o365-sitedata:ServerRelativeUrl", "/sites/ArkivverketVedlikeholdsavtaleArkivverket"],
+            ["add", "o365-sitedata:SiteLogoUrl", "/sites/ArkivverketVedlikeholdsavtaleArkivverket/_api/GroupService/GetGroupImage?id='e56cf718-2af9-4cbf-8377-aae02997646b'&hash=637171422093513935"],
+            ["add", "o365-sitedata:SyndicationEnabled", true],
+            ["add", "o365-sitedata:TenantAdminMembersCanShare", 0],
+            ["add", "o365-sitedata:Title", "Arkivverket - Vedlikeholdsavtale Arkivverket"],
+            ["add", "o365-sitedata:TreeViewEnabled", false],
+            ["add", "o365-sitedata:UIVersion", 15],
+            ["add", "o365-sitedata:UIVersionConfigurationEnabled", false],
+            ["add", "o365-sitedata:Url", "https://bouvetasa.sharepoint.com/sites/ArkivverketVedlikeholdsavtaleArkivverket"],
+            ["add", "o365-sitedata:WebTemplate", "GROUP"],
+            ["add", "o365-sitedata:WelcomePage", "SitePages/Home.aspx"],
+            ["add", "o365-sitedata:id-ni", "~:o365-group:9d5c8eed-3729-4b9f-baf2-81e8d4d914c8"]
+          ]
+        }
+      }
+    },
+    "condition": "$ENV(node-env)"
+  },
+  "pump": {
+    "mode": "$ENV(pump-mode)",
+    "rescan_run_count": 1,
+    "schedule_interval": 10
+  },
+  "compaction": {
+    "sink": true
+  },
+  "namespaced_identifiers": false
+}

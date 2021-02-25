@@ -1,0 +1,67 @@
+[
+  {
+    "AnsattNavn": "Max Manus",
+    "EnhetsNr": 245,
+    "Sist oppdatert dato CV": "2017-11-14T12:27:04.930Z",
+    "_id": "0001",
+    "employeeid": 3402
+  },
+  {
+    "AnsattNavn": "Ola Norrman",
+    "EnhetsNr": 243,
+    "_id": "0002",
+    "employeeid": 3458
+  },
+  {
+    "AnsattNavn": "Sven Svensson",
+    "EnhetsNr": 16,
+    "Sist oppdatert dato CV": "2017-11-14T12:27:04.930Z",
+    "_id": "0003",
+    "employeeid": 3457
+  },
+  {
+    "AnsattNavn": "Test Tester",
+    "EnhetsNr": 241,
+    "Sist oppdatert dato CV": "2017-11-14T12:27:04.930Z",
+    "_id": "0004",
+    "employeeid": 3456
+  },
+  {
+    "AnsattNavn": "Karl Michael Bergman",
+    "EnhetsNr": 119,
+    "Sist oppdatert dato CV": "2017-11-14T12:27:04.930Z",
+    "_id": "0007",
+    "employeeid": 3455
+  },
+  {
+    "AnsattNavn": "Gal Gadot",
+    "EnhetsNr": 75,
+    "Sist oppdatert dato CV": "2017-11-14T12:27:04.930Z",
+    "_id": "0008",
+    "employeeid": 3454
+  },
+  {
+    "AnsattNavn": "Bruce Wayne",
+    "EnhetsNr": 89,
+    "_id": "0009",
+    "employeeid": 3453
+  },
+  {
+    "AnsattNavn": "Lynvingen",
+    "EnhetsNr": 121,
+    "_id": "0010",
+    "employeeid": 3452
+  },
+  {
+    "AnsattNavn": "Mitt Testnavn",
+    "EnhetsNr": 100,
+    "_id": "2276",
+    "employeeid": 3656
+  },
+  {
+    "AnsattNavn": "Bruce  Wayne ",
+    "EnhetsNr": 241,
+    "_id": "3401",
+    "employeeid": 3401
+  }
+]

@@ -1,0 +1,21 @@
+{
+  "_id": "o365graph",
+  "type": "system:microservice",
+  "docker": {
+    "environment": {
+      "base_url": "$ENV(o365-baseurl)",
+      "client_id": "$ENV(o365-clientid)",
+      "client_secret": "$SECRET(O365Token)",
+      "entities_path": "value",
+      "grant_type": "$ENV(o365-granttype)",
+      "group_url": "$ENV(o365-groupurl)",
+      "next_page": "@odata.nextLink",
+      "resource": "$ENV(o365-resource)",
+      "sleep": "0.400",
+      "token_url": "$ENV(o365-tokenurl)",
+      "user_url": "$ENV(o365-userurl)"
+    },
+    "image": "sesamcommunity/o365graph:1.0.0",
+    "port": 5000
+  }
+}

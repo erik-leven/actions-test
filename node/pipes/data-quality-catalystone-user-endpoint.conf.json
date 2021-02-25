@@ -1,0 +1,58 @@
+{
+  "_id": "data-quality-catalystone-user-endpoint",
+  "type": "pipe",
+  "source": {
+    "type": "dataset",
+    "dataset": "data-quality-catalystone-user"
+  },
+  "sink": {
+    "type": "mail",
+    "system": "smtp-data-quality",
+    "body_template": "Employee id {{ _id }} is missing vital information in Folk!, and can therefore not be processed into AD. \n \n{{ line1 }}:\n \n{{ line2 }}\n{{ line3}}If you have any questions, please contact HR.\n\nSesam ",
+    "mail_from": "dont-reply@bouvet.no",
+    "recipients_property": "receiver",
+    "subject_template": "Missing employee data in Folk!"
+  },
+  "transform": {
+    "type": "dtl",
+    "rules": {
+      "default": [
+        ["filter",
+          ["neq", "_S._deleted", true]
+        ],
+        ["if",
+          ["eq",
+            ["count", "_S.missing_list"], 1],
+          ["add", "line1", "The missing field that need to be filled in is"],
+          ["add", "line1", "The missing fields that need to be filled in are"]
+        ],
+        ["merge-union",
+          ["apply", "line2", "_S.missing_list"]
+        ],
+        ["add", "line2",
+          ["concat", "_T.line2-temp"]
+        ],
+        ["if",
+          ["in", "Phone number", "_S.missing_list"],
+          ["add", "line3", "A correct phone number looks like the following: +4798765432, i.e. +<country code><number>. Make sure there are no white spaces. If you have no phone number you wish to register, please register on the number +4711111111. Do not use your own number, or that of a colleague. \n\n"]
+        ],
+        ["remove", "line2-temp"],
+        ["copy",
+          ["list", "_id", "receiver"]
+        ]
+      ],
+      "line2": [
+        ["add", "line2-temp",
+          ["concat", "_S.", "\n"]
+        ]
+      ]
+    }
+  },
+  "pump": {
+    "max_retries_per_entity": 1,
+    "max_write_errors_in_retry_dataset": 10000,
+    "mode": "$ENV(pump-mode)",
+    "track_dead_letters": true,
+    "use_dead_letter_dataset": true
+  }
+}

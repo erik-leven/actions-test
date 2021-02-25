@@ -1,0 +1,32 @@
+{
+  "_id": "currenttime-newemployee-salary",
+  "type": "pipe",
+  "source": {
+    "type": "conditional",
+    "alternatives": {
+      "prod": {
+        "type": "sql",
+        "system": "currenttime-economydbrepl-sesam",
+        "schema": "adm",
+        "table": "Lønn-Nyansettelser",
+        "whitelist": ["Sjekket", "Kommentar"]
+      },
+      "test": {
+        "type": "embedded",
+        "entities": []
+      }
+    },
+    "condition": "$ENV(node-env)"
+  },
+  "transform": {
+    "type": "dtl",
+    "rules": {
+      "default": [
+        ["copy", "*"],
+        ["add", "rdf:type",
+          ["ni", "bouvet:currenttime-newemployee-salary"]
+        ]
+      ]
+    }
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "_id": "dead-letter-user-cvpartner",
+  "type": "pipe",
+  "source": {
+    "type": "dataset",
+    "dataset": "system:dead-letter:user-cvpartner-endpoint"
+  },
+  "transform": {
+    "type": "dtl",
+    "id_required": false,
+    "rules": {
+      "default": [
+        ["copy", "*"]
+      ]
+    }
+  }
+}

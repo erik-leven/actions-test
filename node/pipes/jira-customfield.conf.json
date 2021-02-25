@@ -1,0 +1,95 @@
+{
+  "_id": "jira-customfield",
+  "type": "pipe",
+  "source": {
+    "type": "conditional",
+    "alternatives": {
+      "prod": {
+        "type": "sql",
+        "system": "jira",
+        "preserve_null_values": false,
+        "table": "customfield"
+      },
+      "test": {
+        "type": "embedded",
+        "entities": [{
+          "_id": "14311",
+          "cfname": "Rollback Plan",
+          "customfieldsearcherkey": "com.atlassian.jira.plugin.system.customfieldtypes:textsearcher",
+          "customfieldtypekey": "com.atlassian.jira.plugin.system.customfieldtypes:textarea",
+          "description": "Used for Change Management",
+          "id": "~f14311"
+        }, {
+          "_id": "14216",
+          "cfname": "Change reason",
+          "customfieldsearcherkey": "com.atlassian.jira.plugin.system.customfieldtypes:multiselectsearcher",
+          "customfieldtypekey": "com.atlassian.jira.plugin.system.customfieldtypes:select",
+          "description": "Choose the reason for the change request",
+          "id": "~f14216"
+        }, {
+          "_id": "14215",
+          "cfname": "Change risk",
+          "customfieldsearcherkey": "com.atlassian.jira.plugin.system.customfieldtypes:multiselectsearcher",
+          "customfieldtypekey": "com.atlassian.jira.plugin.system.customfieldtypes:select",
+          "id": "~f14215"
+        }, {
+          "_id": "14212",
+          "cfname": "Impact",
+          "customfieldsearcherkey": "com.atlassian.jira.plugin.system.customfieldtypes:multiselectsearcher",
+          "customfieldtypekey": "com.atlassian.jira.plugin.system.customfieldtypes:select",
+          "id": "~f14212"
+        }, {
+          "_id": "14210",
+          "cfname": "Approvers",
+          "customfieldtypekey": "com.atlassian.jira.plugin.system.customfieldtypes:multiuserpicker",
+          "description": "Contains users needed for approval. This custom field was created by JIRA Service Desk.",
+          "id": "~f14210"
+        }, {
+          "_id": "14010",
+          "cfname": "Development",
+          "customfieldsearcherkey": "com.atlassian.jira.plugins.jira-development-integration-plugin:devsummarysearcher",
+          "customfieldtypekey": "com.atlassian.jira.plugins.jira-development-integration-plugin:devsummary",
+          "description": "Development Summary Field for JIRA Software use only.",
+          "id": "~f14010"
+        }, {
+          "_id": "12311",
+          "cfname": "Global Rank",
+          "customfieldsearcherkey": "com.pyxis.greenhopper.jira:gh-lexo-rank-searcher",
+          "customfieldtypekey": "com.pyxis.greenhopper.jira:gh-lexo-rank",
+          "description": "Global rank field for JIRA Agile use only.",
+          "id": "~f12311"
+        }, {
+          "_id": "12310",
+          "cfname": "Rank",
+          "customfieldsearcherkey": "com.pyxis.greenhopper.jira:gh-lexo-rank-searcher",
+          "customfieldtypekey": "com.pyxis.greenhopper.jira:gh-lexo-rank",
+          "description": "Global rank field for JIRA Software use only.",
+          "id": "~f12310"
+        }, {
+          "_id": "12110",
+          "cfname": "Fasit CT",
+          "customfieldsearcherkey": "com.atlassian.jira.plugin.system.customfieldtypes:labelsearcher",
+          "customfieldtypekey": "com.atlassian.jira.plugin.system.customfieldtypes:labels",
+          "id": "~f12110"
+        }, {
+          "_id": "11910",
+          "cfname": "FIDO Category",
+          "customfieldsearcherkey": "com.atlassian.jira.plugin.system.customfieldtypes:multiselectsearcher",
+          "customfieldtypekey": "com.atlassian.jira.plugin.system.customfieldtypes:select",
+          "id": "~f11910"
+        }, {
+          "_id": "11711",
+          "cfname": "Svar",
+          "customfieldsearcherkey": "com.atlassian.jira.plugin.system.customfieldtypes:textsearcher",
+          "customfieldtypekey": "com.atlassian.jira.plugin.system.customfieldtypes:textarea",
+          "description": "Leverandørens tilsvar på et gitt krav",
+          "id": "~f11711"
+        }]
+      }
+    },
+    "condition": "$ENV(node-env)"
+  },
+  "pump": {
+    "cron_expression": "$ENV(jira_cron_slow)"
+  }
+}

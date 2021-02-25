@@ -1,0 +1,136 @@
+{
+  "_id": "currenttime-contact",
+  "type": "pipe",
+  "source": {
+    "type": "conditional",
+    "alternatives": {
+      "prod": {
+        "type": "sql",
+        "system": "currenttime",
+        "table": "contact",
+        "updated_column": "updatedate"
+      },
+      "test": {
+        "type": "embedded",
+        "entities": [{
+          "_id": "0",
+          "addres1": "",
+          "addres2": "",
+          "christmas": 0,
+          "companyid": 0,
+          "contactid": 0,
+          "contactname": "Kontaktnavn må registeres",
+          "contactref": "",
+          "department": "",
+          "fax": "",
+          "icon": "",
+          "notetext": "",
+          "phone2": "",
+          "postaddres": "",
+          "updateby": "Marian Grav",
+          "updatedate": "~t2014-09-15T15:04:51Z",
+          "zipcode": ""
+        }, {
+          "_id": "1",
+          "addres1": "",
+          "addres2": "",
+          "christmas": 0,
+          "companyid": 15,
+          "contactid": 1,
+          "contactname": "Her må du koble riktig kontaktperson",
+          "contactref": "",
+          "department": "",
+          "email": "",
+          "fax": "",
+          "icon": "",
+          "mobile": "",
+          "notetext": "",
+          "phone2": "",
+          "postaddres": "",
+          "updateby": "Marian Grav",
+          "updatedate": "~t2014-09-15T15:04:42Z",
+          "zipcode": ""
+        }, {
+          "_id": "159",
+          "addres1": "",
+          "addres2": "",
+          "christmas": 0,
+          "companyid": 68,
+          "contactid": 159,
+          "contactname": "Tom Tomsen #stopp#",
+          "contactref": "",
+          "department": "dso-271",
+          "email": "tom.tomsen@dnv.com",
+          "fax": "",
+          "icon": "",
+          "mobile": "",
+          "notetext": "ola.normann@mail.com",
+          "phone1": "67 57 93 76",
+          "phone2": "",
+          "postaddres": "",
+          "updateby": "Marian Grav:Win",
+          "updatedate": "~t2004-02-18T00:00:00Z",
+          "zipcode": ""
+        }, {
+          "_id": "173",
+          "addres1": "",
+          "addres2": "",
+          "christmas": 1,
+          "companyid": 83,
+          "contactid": 173,
+          "contactname": "Tim Timsen",
+          "contactref": "",
+          "department": "",
+          "fax": "",
+          "icon": "",
+          "mobile": "",
+          "notetext": "",
+          "phone1": "",
+          "phone2": "",
+          "postaddres": "",
+          "updateby": "Marian Grav:Win",
+          "updatedate": "~t2004-02-18T00:00:00Z",
+          "zipcode": ""
+        }, {
+          "_id": "479",
+          "addres1": "",
+          "addres2": "",
+          "christmas": 0,
+          "companyid": 87,
+          "contactid": 479,
+          "contactname": "Marvin Marvinsen",
+          "contactref": "",
+          "department": "",
+          "email": "",
+          "fax": "",
+          "icon": "",
+          "mobile": "",
+          "notetext": "",
+          "phone1": "",
+          "phone2": "",
+          "postaddres": "",
+          "updateby": "Marian Grav:Win",
+          "updatedate": "~t2004-02-18T00:00:00Z",
+          "zipcode": ""
+        }]
+      }
+    },
+    "condition": "$ENV(node-env)"
+  },
+  "transform": {
+    "type": "dtl",
+    "rules": {
+      "default": [
+        ["copy", "*"],
+        ["make-ni", "currenttime-company", "[companyid]"],
+        ["add", "rdf:type",
+          ["ni", "bouvet:currenttime-contact"]
+        ]
+      ]
+    }
+  },
+  "pump": {
+    "cron_expression": "$ENV(ct_cron_fast)",
+    "rescan_cron_expression": "$ENV(ct_rescan_cron)"
+  }
+}

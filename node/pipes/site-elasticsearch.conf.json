@@ -1,0 +1,210 @@
+{
+  "_id": "site-elasticsearch",
+  "type": "pipe",
+  "source": {
+    "type": "dataset",
+    "dataset": "global-site"
+  },
+  "transform": {
+    "type": "dtl",
+    "rules": {
+      "source": [
+        ["merge-union", "_S."]
+      ],
+      "default": [
+        ["filter",
+          ["intersects",
+            ["list", "~:o365:Group", "~:o365:Owner"], "_S.rdf:type"]
+        ],
+        ["copy", "*"],
+        ["add", "uid",
+          ["replace", "o365-group:", "", "_S._id"]
+        ],
+        ["add", "global-person",
+          ["apply-hops", "person", {
+            "datasets": ["global-person gp"],
+            "where": [
+              ["or",
+                ["eq", "_S.members.id", "gp.o365-user:id"],
+                ["eq", "_S.owners.id", "gp.o365-user:id"]
+              ]
+            ]
+          }]
+        ],
+        ["add", "members-flattened",
+          ["apply", "flatten", "_T.members"]
+        ],
+        ["add", "owners-flattened",
+          ["apply", "flatten", "_T.owners"]
+        ],
+        ["merge",
+          ["apply", "source", "_S.output"]
+        ],
+        ["add", "sectors",
+          ["first", "_S.Sectors"]
+        ],
+        ["add", "areatype",
+          ["first", "_S.AreaType"]
+        ],
+        ["add", "customers",
+          ["first", "_S.Customers"]
+        ],
+        ["add", "thingswecan", "_S.ThingsWeCan"],
+        ["add", "classification", "_S.Classification"],
+        ["if",
+          ["is-not-empty", "_S.SiteOriginalCreatedDate"],
+          ["add", "createddatetime",
+            ["datetime",
+              ["datetime-parse", "%m/%d/%Y %I:%M:%S %p", "_S.SiteOriginalCreatedDate"]
+            ]
+          ],
+          ["add", "createddatetime",
+            ["datetime",
+              ["first", "_S.createdDateTime"]
+            ]
+          ]
+        ],
+        ["if",
+          ["is-not-empty", "_S.SiteUrl"],
+          ["add", "siteurl",
+            ["first", "_S.SiteUrl"]
+          ],
+          ["add", "siteurl", "_S.o365-siteurl:webUrl"]
+        ],
+        ["if",
+          ["is-not-empty", "_S.DeliveryManagers"],
+          ["add", "deliverymanagers",
+            ["apply-hops", "manageruid", {
+              "datasets": ["global-person gp"],
+              "where": [
+                ["eq",
+                  ["first", "_S.DeliveryManagers.Mail"], "gp.global-person:Email"]
+              ]
+            }]
+          ],
+          ["add", "deliverymanagers", null]
+        ],
+        ["if",
+          ["is-not-empty", "_S.AccountManagers"],
+          ["add", "accountmanagers",
+            ["apply-hops", "manageruid", {
+              "datasets": ["global-person gp"],
+              "where": [
+                ["eq",
+                  ["first", "_S.AccountManagers.Mail"], "gp.global-person:Email"]
+              ]
+            }]
+          ],
+          ["add", "accountmanagers", null]
+        ],
+        ["if",
+          ["is-not-empty", "_S.ProjectManagers"],
+          ["add", "projectmanagers",
+            ["apply-hops", "manageruid", {
+              "datasets": ["global-person gp"],
+              "where": [
+                ["eq",
+                  ["first", "_S.ProjectManagers.Mail"], "gp.global-person:Email"]
+              ]
+            }]
+          ],
+          ["add", "projectmanagers", null]
+        ],
+        ["add", "displayname", "_S.o365-group:displayName"],
+        ["add", "mail", "_S.o365-group:mail"],
+        ["add", "visibility", "_S.o365-group:visibility"],
+        ["add", "description", "_S.o365-group:description"],
+        ["add", "owners",
+          ["apply", "change-id-owners", "_T.owners-flattened"]
+        ],
+        ["add", "members",
+          ["apply", "change-id", "_T.members-flattened"]
+        ],
+        ["filter",
+          ["neq", "Private", "_T.visibility"]
+        ],
+        ["remove", "global-person"],
+        ["remove", "AreaType"],
+        ["remove", "Sectors"],
+        ["remove", "members-flattened"],
+        ["remove", "owners-flattened"],
+        ["remove", "o365-group:*members"],
+        ["remove", "o365-owner:*owners"],
+        ["remove", "o365-group:id"],
+        ["remove", "global-site:*"],
+        ["remove", "o365-owner:*"],
+        ["remove", "o365-group:*"],
+        ["remove", "o365-siteurl:*"],
+        ["remove", "o365-sitedata:*"],
+        ["remove", "Copy of merge-site:*"],
+        ["remove", "rdf:type"]
+      ],
+      "change-id": [
+        ["copy", "*"],
+        ["merge",
+          ["apply", "change-lower-level", "_S."]
+        ]
+      ],
+      "change-id-owners": [
+        ["copy", "*"],
+        ["merge",
+          ["apply", "change-lower-level-owners", "_S."]
+        ]
+      ],
+      "change-lower-level": [
+        ["comment", "id", "_R._T.global-person._id"],
+        ["merge",
+          ["apply", "getid", "_R._T.global-person"]
+        ]
+      ],
+      "change-lower-level-owners": [
+        ["comment", "id", "_R._T.global-person._id"],
+        ["merge",
+          ["apply", "getid-owners", "_R._T.global-person"]
+        ]
+      ],
+      "flatten": [
+        ["copy", "id"],
+        ["copy", "displayName"],
+        ["copy", "jobTitle"],
+        ["copy", "accountEnabled"],
+        ["copy", "mail"],
+        ["copy", "department"],
+        ["copy", "officeLocation"],
+        ["copy", "userType"]
+      ],
+      "getid": [
+        ["if",
+          ["eq", "_S.o365-user:id", "_P._S.id"],
+          ["add", "uid",
+            ["last",
+              ["split", ":", "_S._id"]
+            ]
+          ]
+        ]
+      ],
+      "getid-owners": [
+        ["if",
+          ["eq", "_S.o365-user:id", "_P._S.o365-owner:id"],
+          ["add", "uid",
+            ["last",
+              ["split", ":", "_S._id"]
+            ]
+          ]
+        ]
+      ],
+      "manageruid": [
+        ["if",
+          ["in", "_S.global-person:employee_status",
+            ["list", "EarlyEmployee", "TempEarlyEmployee", "SoonEmployee", "TempSoonEmployee", "Employee", "TempEmployee"]
+          ],
+          ["add", "uid", "_S.catalystone-user:UNIQUE_IMPORT_ID.value"]
+        ]
+      ],
+      "person": [
+        ["copy", "_id"],
+        ["copy", "o365-user:id"]
+      ]
+    }
+  }
+}

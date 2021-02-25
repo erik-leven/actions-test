@@ -1,0 +1,121 @@
+{
+  "_id": "events-elasticsearch",
+  "type": "pipe",
+  "source": {
+    "type": "dataset",
+    "dataset": "global-person"
+  },
+  "transform": {
+    "type": "dtl",
+    "rules": {
+      "default": [
+        ["filter",
+          ["in", "_S.global-person:employee_status",
+            ["list", "EarlyEmployee", "TempEarlyEmployee", "SoonEmployee", "TempSoonEmployee", "Employee", "TempEmployee"]
+          ]
+        ],
+        ["add", "useruid", "_S.catalystone-user:UNIQUE_IMPORT_ID.value"],
+        ["add", "events",
+          ["apply-hops", "events", {
+            "datasets": ["bouvet-event be"],
+            "where": ["eq",
+              ["last",
+                ["split", ";", "be._id"]
+              ], "_S.catalystone-user:UNIQUE_IMPORT_ID.value"]
+          }]
+        ],
+        ["filter",
+          ["is-not-empty", "_T.events"]
+        ],
+        ["add", "events",
+          ["sorted",
+            ["datetime-parse", "%d.%m.%Y", "_.startdate"], "_T.events"]
+        ]
+      ],
+      "events": [
+        ["comment", "removed this event from minside due to covid-19"],
+        ["filter",
+          ["neq", "_S.url", "https://event.bouvet.no/events/view/0b4a4d41-b142-498f-a879-f3be9f09d683"]
+        ],
+        ["merge-union",
+          ["apply", "strip-html-tag",
+            ["split", ">",
+              ["replace", "<em>", "",
+                ["replace", "</em>", "",
+                  ["replace", "<del>", "",
+                    ["replace", "</del>", "",
+                      ["replace", "<strong>", "",
+                        ["replace", "</strong>", "",
+                          ["replace", "<pre>", "",
+                            ["replace", "</pre>", "",
+                              ["replace", "<code>", "",
+                                ["replace", "</code>", "",
+                                  ["replace", "<ul>", "",
+                                    ["replace", "</ul>", "",
+                                      ["replace", "<ol>", "",
+                                        ["replace", "</ol>", "",
+                                          ["replace", "<br>", "\n",
+                                            ["replace", "&nbsp;", " ", "_S.description"]
+                                          ]
+                                        ]
+                                      ]
+                                    ]
+                                  ]
+                                ]
+                              ]
+                            ]
+                          ]
+                        ]
+                      ]
+                    ]
+                  ]
+                ]
+              ]
+            ]
+          ]
+        ],
+        ["add", "description",
+          ["concat", "_T.text"]
+        ],
+        ["add", "startdate",
+          ["datetime-format", "%d.%m.%Y",
+            ["datetime-parse", "%Y-%m-%dT%H:%M:%SZ", "_S.startdate"]
+          ]
+        ],
+        ["copy",
+          ["list", "name", "url"]
+        ],
+        ["remove",
+          ["list", "text"]
+        ]
+      ],
+      "strip-html-tag": [
+        ["if",
+          ["or",
+            ["matches", "*</p", "_S."],
+            ["matches", "*</h*", "_S."],
+            ["matches", "*</li", "_S."]
+          ],
+          ["add", "text",
+            ["concat",
+              ["strip",
+                ["first",
+                  ["split", "<", "_S."]
+                ]
+              ], "\n"]
+          ],
+          ["add", "text",
+            ["first",
+              ["split", "<", "_S."]
+            ]
+          ]
+        ],
+        ["filter",
+          ["neq", "",
+            ["strip", "_T.text"]
+          ]
+        ]
+      ]
+    }
+  }
+}

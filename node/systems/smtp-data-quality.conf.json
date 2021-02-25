@@ -1,0 +1,9 @@
+{
+  "_id": "smtp-data-quality",
+  "type": "system:smtp",
+  "name": "smtp-data-quality",
+  "max_per_hour": 1000,
+  "smtp_port": 25,
+  "smtp_server": "smtp.bouvet.no",
+  "use_tls": false
+}

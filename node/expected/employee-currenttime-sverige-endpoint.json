@@ -1,0 +1,76 @@
+[
+  {
+    "EmployeeId": 1260,
+    "_id": "2507",
+    "operation": "update-employee",
+    "payload": {
+      "CompanyId": 2,
+      "Email1": "jonas.danmarksson@bouvet.se",
+      "EmployedDate": "2020-06-02",
+      "Firstname": "Et",
+      "Initials": "Et Navn (2507)",
+      "IsActive": true,
+      "LastName": "Navn",
+      "LeaveDate": null,
+      "Username": "jonas.danmarksson"
+    }
+  },
+  {
+    "EmployeeId": null,
+    "_id": "3636",
+    "operation": "post-employee",
+    "payload": {
+      "ActcatId": 0,
+      "CompanyId": 2,
+      "DepartmentId": null,
+      "Email1": "tordenskjold.danmark@bouvet.se",
+      "EmployedDate": "2020-06-02",
+      "EmployeeAccess": {
+        "RoleCertifier": false,
+        "RoleDepartment": false,
+        "RoleEconomy": false,
+        "RoleEmployee": true,
+        "RoleManager": false,
+        "RolePrognosis": false,
+        "RoleProject": false,
+        "UseDashboard": false,
+        "UseExpense": false,
+        "UseMobile": false,
+        "UsePrognosis": false,
+        "UseTime": false
+      },
+      "EmployeeAddress": {
+        "AddressLine1": "En eller annen vei",
+        "Mobile": "+46 888 888 88",
+        "PostAddress": "En eller annen by",
+        "Zipcode": "Et eller annet postnummer"
+      },
+      "EmployeeCategoryId": 3,
+      "EmployeeDetail": {
+        "DateOfBirth": "2000-01-01",
+        "EmployeeRef": "3636",
+        "EmployeeRefImport": "3636",
+        "Gender": "M"
+      },
+      "EmployeeTime": {
+        "ChangeSalaryCode": false,
+        "CostRate": 0,
+        "FlexiTime": true,
+        "FlexiTimeBalanceUpdated": "2020-06-02",
+        "Overtime": false,
+        "PercentWork": null,
+        "Rate": 9,
+        "ShowPlannedHours": false,
+        "Timesheet": true,
+        "Vacation": true,
+        "VacationBalanceUpdated": "2020-06-02"
+      },
+      "Firstname": "Et",
+      "Initials": "Et Navn (3636)",
+      "IsActive": true,
+      "JobCodeId": 0,
+      "LastName": "Navn",
+      "Username": "tordenskjold.danmark"
+    }
+  }
+]

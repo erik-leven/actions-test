@@ -1,0 +1,33 @@
+{
+  "_id": "bouvet-deactivate-slack-user",
+  "type": "pipe",
+  "source": {
+    "type": "dataset",
+    "dataset": "bouvet-deactivate-user"
+  },
+  "sink": {
+    "type": "json",
+    "system": "slack-deactivate",
+    "batch_size": 5,
+    "url": "/users"
+  },
+  "transform": {
+    "type": "dtl",
+    "rules": {
+      "default": [
+        ["filter",
+          ["neq", "_S._deleted", true]
+        ],
+        ["filter",
+          ["is-not-null", "_S.slack-user:id"]
+        ],
+        ["copy", "slack-user:id"],
+        ["copy", "global-person:Email"],
+        ["add", "_deleted", true]
+      ]
+    }
+  },
+  "pump": {
+    "mode": "$ENV(pump-mode)"
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "_id": "image-sftp",
+  "type": "system:microservice",
+  "docker": {
+    "environment": {
+      "fileextension": ".png",
+      "filename": "employeenumber",
+      "host": "$ENV(catalystone-sftp-host)",
+      "imagedata": "image",
+      "password": "$SECRET(catalystone-sftp-password)",
+      "username": "$ENV(catalystone-sftp-username)"
+    },
+    "image": "sesamcommunity/image-sftp:latest",
+    "port": 5000
+  }
+}

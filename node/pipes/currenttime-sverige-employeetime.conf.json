@@ -1,0 +1,60 @@
+{
+  "_id": "currenttime-sverige-employeetime",
+  "type": "pipe",
+  "source": {
+    "type": "conditional",
+    "alternatives": {
+      "prod": {
+        "type": "sql",
+        "system": "currenttime-sverige",
+        "table": "employeetime",
+        "updated_column": "updatedate"
+      },
+      "test": {
+        "type": "embedded",
+        "entities": [{
+          "_id": "1260",
+          "changesalarycode": false,
+          "costrate": "~f0E-10",
+          "createby": "MIT (007)",
+          "createdate": "~t2018-02-26T14:17:17.4Z",
+          "employeeid": 1260,
+          "employeeid-ni": "~:currenttime-sverige-employee:1260",
+          "employeetimeid": 1258,
+          "flexitime": true,
+          "flexitimebalanceupdated": "~t2018-03-01T00:00:00Z",
+          "overtime": false,
+          "percentwork": "~f100.0000000000",
+          "pursuant": "~:sesam:bouvet-employee",
+          "rate": "~f0E-10",
+          "showplannedhours": false,
+          "timesheet": true,
+          "updateby": "JC (006)",
+          "updatedate": "~t2019-08-29T11:04:56Z",
+          "vacation": true,
+          "vacationbalanceupdated": "~t2018-03-01T00:00:00Z"
+        }]
+      }
+    },
+    "condition": "$ENV(node-env)"
+  },
+  "transform": {
+    "type": "dtl",
+    "rules": {
+      "default": [
+        ["copy", "*"],
+        ["make-ni", "currenttime-sverige-employee", "employeeid"],
+        ["add", "rdf:type",
+          ["ni", "bouvet:currenttime-sverige-employeetime"]
+        ],
+        ["add", "pursuant",
+          ["ni", "sesam:bouvet-employee"]
+        ]
+      ]
+    }
+  },
+  "pump": {
+    "cron_expression": "$ENV(ct_cron_fast)",
+    "rescan_cron_expression": "$ENV(ct_rescan_cron)"
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "_id": "department-sql01_vbn",
+  "type": "pipe",
+  "source": {
+    "type": "dataset",
+    "dataset": "global-department"
+  },
+  "transform": {
+    "type": "dtl",
+    "rules": {
+      "default": [
+        ["filter",
+          ["in", "~:bouvet:visma-department", "_S.rdf:type"]
+        ],
+        ["copy", "visma-department:*"]
+      ]
+    }
+  }
+}

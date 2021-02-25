@@ -1,0 +1,13 @@
+{
+  "_id": "slack-deactivate",
+  "type": "system:microservice",
+  "name": "slack",
+  "docker": {
+    "environment": {
+      "Token": "$SECRET(slack-deactivate-token)"
+    },
+    "image": "sesamcommunity/slack:latest",
+    "memory": 128,
+    "port": 5000
+  }
+}

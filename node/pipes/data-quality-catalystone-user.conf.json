@@ -1,0 +1,174 @@
+{
+  "_id": "data-quality-catalystone-user",
+  "type": "pipe",
+  "source": {
+    "type": "dataset",
+    "dataset": "global-person"
+  },
+  "transform": {
+    "type": "dtl",
+    "rules": {
+      "default": [
+        ["filter",
+          ["and",
+            ["in", "~:bouvet:catalystone-user", "_S.rdf:type"],
+            ["not",
+              ["in", "~:bouvet:ad-user", "_S.rdf:type"]
+            ],
+            ["lte",
+              ["datetime-diff", "day",
+                ["if",
+                  ["eq", "$ENV(node-env)", "test"], "~t2020-06-09T00:00:00Z",
+                  ["now"]
+                ],
+                ["datetime-parse", "%d.%m.%Y", "_S.catalystone-user:HIRING_DATE.value"]
+              ], 7]
+          ]
+        ],
+        ["comment", "contract signed and date-of-birth are checked directly in Folk, which is why they are not included here although they are both criteria for being registered in AD"],
+        ["merge",
+          ["hops", {
+            "datasets": ["global-department gd"],
+            "where": [
+              ["eq", "_S.ORGANIZATION.@UNIQUE_IMPORT_ID", "gd.ORG_ID.value"]
+            ],
+            "return": ["dict", "dep-rdf", "gd.rdf:type"]
+          }]
+        ],
+        ["filter",
+          ["in", "~:bouvet:global-dep-bouvet-norge-as", "_T.dep-rdf"]
+        ],
+        ["remove", "dep-rdf"],
+        ["add", "missing_list",
+          ["list"]
+        ],
+        ["if",
+          ["is-null", "_S.catalystone-user:FIRST_NAME.value"],
+          ["merge-union",
+            ["apply", "create_list", "First name"]
+          ]
+        ],
+        ["if",
+          ["is-null", "_S.catalystone-user:LAST_NAME.value"],
+          ["merge-union",
+            ["apply", "create_list", "Last name"]
+          ]
+        ],
+        ["if",
+          ["is-null", "_S.catalystone-user:TITLE.value"],
+          ["merge-union",
+            ["apply", "create_list", "Title"]
+          ]
+        ],
+        ["if",
+          ["is-null", "_S.catalystone-user:GENDER.value"],
+          ["merge-union",
+            ["apply", "create_list", "Gender"]
+          ]
+        ],
+        ["if",
+          ["is-null", "_S.catalystone-user:1002.VALUE.value"],
+          ["merge-union",
+            ["apply", "create_list", "Company"]
+          ]
+        ],
+        ["if",
+          ["is-null", "_S.catalystone-user:COUNTRY.@ALTERNATIVE_EXPORT_VALUE"],
+          ["merge-union",
+            ["apply", "create_list", "Country"]
+          ]
+        ],
+        ["if",
+          ["is-null", "_S.catalystone-user:ORGANIZATION.value"],
+          ["merge-union",
+            ["apply", "create_list", "Organization"]
+          ]
+        ],
+        ["if",
+          ["is-null", "_S.catalystone-user:1068.VALUE.value"],
+          ["merge-union",
+            ["apply", "create_list", "Work address"]
+          ]
+        ],
+        ["if",
+          ["is-null", "_S.catalystone-user:JOB_ROLE.value"],
+          ["merge-union",
+            ["apply", "create_list", "Job role"]
+          ]
+        ],
+        ["if",
+          ["is-null", "_S.catalystone-user:WORKING_HOURS.value"],
+          ["merge-union",
+            ["apply", "create_list", "Working hours"]
+          ]
+        ],
+        ["if",
+          ["not",
+            ["in", "_S.catalystone-user:1046.VALUE.value",
+              ["list", "Fast ansatt", "Midlertidig"]
+            ]
+          ],
+          ["merge-union",
+            ["apply", "create_list", "Employment type"]
+          ]
+        ],
+        ["comment", "phone numbers h"],
+        ["if",
+          ["or",
+            ["neq",
+              ["substring", 0, 1, "_S.catalystone-user:1003.VALUE.value"], "+"],
+            ["neq",
+              ["count",
+                ["split", " ", "_S.catalystone-user:1003.VALUE.value"]
+              ], 1],
+            ["and",
+              ["is-not-null",
+                ["hops", {
+                  "datasets": ["global-person gd"],
+                  "where": [
+                    ["eq", "_S.catalystone-user:1003.VALUE.value", "gd.catalystone-user:1003.VALUE.value"],
+                    ["neq", "_S._id", "gd._id"],
+                    ["neq", "gd.global-person:employee_status", "Quit"]
+                  ]
+                }]
+              ],
+              ["neq", "_S.catalystone-user:1003.VALUE.value", "+4711111111"]
+            ]
+          ],
+          ["merge-union",
+            ["apply", "create_list", "Phone number"]
+          ]
+        ],
+        ["merge",
+          ["apply-hops", "find-recipient-uid", {
+            "datasets": ["global-department gd"],
+            "where": [
+              ["eq", "_S.ORGANIZATION.@UNIQUE_IMPORT_ID", "gd.uid"]
+            ]
+          }]
+        ],
+        ["filter",
+          ["gt",
+            ["count", "_T.missing_list"], 0]
+        ]
+      ],
+      "create_list": [
+        ["add", "missing_list", "_S."]
+      ],
+      "find-recipient-uid": [
+        ["merge",
+          ["hops", {
+            "datasets": ["global-person gp"],
+            "where": [
+              ["and",
+                ["eq", "_S.manager.uid", "gp.catalystone-user:UNIQUE_IMPORT_ID.value"],
+                ["in", "Personalansvarlig", "gp.catalystone-user:1071.VALUES.VALUE.value"]
+              ]
+            ],
+            "return": ["dict", "receiver", "gp.EMAIL.value"]
+          }]
+        ]
+      ]
+    }
+  }
+}

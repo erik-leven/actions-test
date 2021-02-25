@@ -1,0 +1,144 @@
+{
+  "_id": "cvpartner-skills",
+  "type": "pipe",
+  "source": {
+    "type": "conditional",
+    "alternatives": {
+      "prod": {
+        "type": "json",
+        "system": "cv-partner-rest",
+        "url": "$ENV(cvpartner-skills)"
+      },
+      "test": {
+        "type": "embedded",
+        "entities": [{
+          "id": "58b94a61285db1097b61c70c",
+          "values": {
+            "no": "JavaFX 2"
+          }
+        }, {
+          "id": "58b94f81285db1086c61c895",
+          "values": {
+            "no": "Spring JDBC"
+          }
+        }, {
+          "id": "58b94f89525abf0834192831",
+          "values": {
+            "no": "Java SE 7"
+          }
+        }, {
+          "id": "58b95120fd0b8d0800d8b4df",
+          "values": {
+            "no": "Java EE 6"
+          }
+        }, {
+          "id": "58b9512d525abf082f19277c",
+          "values": {
+            "no": "Java SE 8"
+          }
+        }, {
+          "id": "58b951a0fd0b8d0864d8b427",
+          "values": {
+            "no": "Java EE 5"
+          }
+        }, {
+          "id": "58b951c4fd0b8d0881d8b4a7",
+          "values": {
+            "no": "JavaScript"
+          }
+        }, {
+          "id": "58b951f8525abf0871192722",
+          "values": {
+            "no": "Java EE 8"
+          }
+        }, {
+          "id": "58b81fbcfd0b8d0820d8b355",
+          "values": {
+            "no": "Node.js"
+          }
+        }, {
+          "id": "58b820f7285db1085661c67d",
+          "values": {
+            "no": "Java EE 7"
+          }
+        }, {
+          "id": "58b8239a285db107cb61c641",
+          "values": {
+            "no": "PL/SQL"
+          }
+        }, {
+          "id": "58b81ba4fd0b8d0951d8b30d",
+          "values": {
+            "no": "JavaFX 2"
+          }
+        }, {
+          "id": "58b81ba6525abf08491926de",
+          "values": {
+            "no": "Spring JDBC"
+          }
+        }, {
+          "id": "58b81c26fd0b8d093dd8b31a",
+          "values": {
+            "no": "Java SE 7"
+          }
+        }, {
+          "id": "58b81c28285db1081f61c67d",
+          "values": {
+            "no": "Java EE 6"
+          }
+        }, {
+          "id": "58b81c2a525abf08ca1926c9",
+          "values": {
+            "no": "Java SE 8"
+          }
+        }, {
+          "id": "58b81c2b525abf08341926cc",
+          "values": {
+            "no": "Java EE 5"
+          }
+        }, {
+          "id": "58b81c35525abf08c21926ba",
+          "values": {
+            "no": "JavaScript"
+          }
+        }, {
+          "id": "58b81e05fd0b8d08c9d8b314",
+          "values": {
+            "no": "Java EE 8"
+          }
+        }, {
+          "id": "58b81fbcfd0b8d0820d8b355",
+          "values": {
+            "no": "Node.js"
+          }
+        }, {
+          "id": "58b820f7285db1085661c67d",
+          "values": {
+            "no": "Java EE 7"
+          }
+        }, {
+          "id": "58b8239a285db107cb61c641",
+          "values": {
+            "no": "PL/SQL"
+          }
+        }]
+      }
+    },
+    "condition": "$ENV(node-env)"
+  },
+  "transform": {
+    "type": "dtl",
+    "rules": {
+      "default": [
+        ["add", "_id", "_S.id"],
+        ["copy", "*"],
+        ["add", "rdf:type",
+          ["ni", "cvpartner:Skills"]
+        ]
+      ]
+    }
+  },
+  "pump": {
+    "schedule_interval": "$ENV(cvpartner_schedule_interval_fast)"
+  }
+}

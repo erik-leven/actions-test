@@ -1,0 +1,531 @@
+{
+  "_id": "user-live-pulsen-endpoint",
+  "type": "pipe",
+  "source": {
+    "type": "dataset",
+    "dataset": "user-live-pulsen"
+  },
+  "sink": {
+    "type": "sql",
+    "system": "sql01_sa",
+    "primary_key": "Ansatt_ID",
+    "schema_definition": [{
+      "type": "string",
+      "name": "Ansatt_ID",
+      "allow_null": false,
+      "max_size": 150,
+      "min_size": 0,
+      "primary_key": true,
+      "source_property": "Ansatt_ID"
+    }, {
+      "type": "string",
+      "name": "Brukernavn",
+      "allow_null": true,
+      "max_size": 150,
+      "min_size": 0,
+      "source_property": "Brukernavn"
+    }, {
+      "type": "string",
+      "name": "Brukerkontostatus",
+      "allow_null": true,
+      "max_size": 150,
+      "min_size": 0,
+      "source_property": "Brukerkontostatus"
+    }, {
+      "type": "string",
+      "name": "Navn",
+      "allow_null": true,
+      "max_size": 150,
+      "min_size": 0,
+      "source_property": "Navn"
+    }, {
+      "type": "string",
+      "name": "Fornavn",
+      "allow_null": true,
+      "max_size": 150,
+      "min_size": 0,
+      "source_property": "Fornavn"
+    }, {
+      "type": "string",
+      "name": "Etternavn",
+      "allow_null": true,
+      "max_size": 150,
+      "min_size": 0,
+      "source_property": "Etternavn"
+    }, {
+      "type": "string",
+      "name": "Tittel",
+      "allow_null": true,
+      "max_size": 150,
+      "min_size": 0,
+      "source_property": "Tittel"
+    }, {
+      "type": "string",
+      "name": "Oensketvisningsnavn",
+      "allow_null": true,
+      "max_size": 150,
+      "min_size": 0,
+      "source_property": "Oensketvisningsnavn"
+    }, {
+      "type": "string",
+      "name": "Ansattstatus",
+      "allow_null": true,
+      "max_size": 150,
+      "min_size": 0,
+      "source_property": "Ansattstatus"
+    }, {
+      "type": "string",
+      "name": "Mobiltelefon",
+      "allow_null": true,
+      "max_size": 150,
+      "min_size": 0,
+      "source_property": "Mobiltelefon"
+    }, {
+      "type": "string",
+      "name": "Epost",
+      "allow_null": true,
+      "max_size": 150,
+      "min_size": 0,
+      "source_property": "Epost"
+    }, {
+      "type": "string",
+      "name": "Foedselsdato",
+      "allow_null": true,
+      "max_size": 150,
+      "min_size": 0,
+      "source_property": "Foedselsdato"
+    }, {
+      "type": "string",
+      "name": "Alder",
+      "allow_null": true,
+      "max_size": 150,
+      "min_size": 0,
+      "source_property": "Alder"
+    }, {
+      "type": "string",
+      "name": "Kjoenn",
+      "allow_null": true,
+      "max_size": 150,
+      "min_size": 0,
+      "source_property": "Kjoenn"
+    }, {
+      "type": "string",
+      "name": "Nasjonalitet",
+      "allow_null": true,
+      "max_size": 150,
+      "min_size": 0,
+      "source_property": "Nasjonalitet"
+    }, {
+      "type": "string",
+      "name": "Statsborgerskap",
+      "allow_null": true,
+      "max_size": 150,
+      "min_size": 0,
+      "source_property": "Statsborgerskap"
+    }, {
+      "type": "string",
+      "name": "Hjemmeadresse_gatenavn",
+      "allow_null": true,
+      "max_size": 150,
+      "min_size": 0,
+      "source_property": "Hjemmeadresse_gatenavn"
+    }, {
+      "type": "string",
+      "name": "Hjemmeadresse_postnummer",
+      "allow_null": true,
+      "max_size": 150,
+      "min_size": 0,
+      "source_property": "Hjemmeadresse_postnummer"
+    }, {
+      "type": "string",
+      "name": "Hjemmeadresse_by",
+      "allow_null": true,
+      "max_size": 150,
+      "min_size": 0,
+      "source_property": "Hjemmeadresse_by"
+    }, {
+      "type": "string",
+      "name": "Hjemmeadresse_land",
+      "allow_null": true,
+      "max_size": 150,
+      "min_size": 0,
+      "source_property": "Hjemmeadresse_land"
+    }, {
+      "type": "string",
+      "name": "Selskap",
+      "allow_null": true,
+      "max_size": 150,
+      "min_size": 0,
+      "source_property": "Selskap"
+    }, {
+      "type": "string",
+      "name": "Land",
+      "allow_null": true,
+      "max_size": 150,
+      "min_size": 0,
+      "source_property": "Land"
+    }, {
+      "type": "string",
+      "name": "Organisasjon",
+      "allow_null": true,
+      "max_size": 150,
+      "min_size": 0,
+      "source_property": "Organisasjon"
+    }, {
+      "type": "string",
+      "name": "Arbeidssted",
+      "allow_null": true,
+      "max_size": 150,
+      "min_size": 0,
+      "source_property": "Arbeidssted"
+    }, {
+      "type": "string",
+      "name": "Kontoradresse",
+      "allow_null": true,
+      "max_size": 150,
+      "min_size": 0,
+      "source_property": "Kontoradresse"
+    }, {
+      "type": "string",
+      "name": "Jobbrolle",
+      "allow_null": true,
+      "max_size": 150,
+      "min_size": 0,
+      "source_property": "Jobbrolle"
+    }, {
+      "type": "string",
+      "name": "Roller",
+      "allow_null": true,
+      "max_size": 150,
+      "min_size": 0,
+      "source_property": "Roller"
+    }, {
+      "type": "string",
+      "name": "Leder",
+      "allow_null": true,
+      "max_size": 150,
+      "min_size": 0,
+      "source_property": "Leder"
+    }, {
+      "type": "string",
+      "name": "Avdelingsleder",
+      "allow_null": true,
+      "max_size": 150,
+      "min_size": 0,
+      "source_property": "Avdelingsleder"
+    }, {
+      "type": "string",
+      "name": "Leveranseleder&salgsleder",
+      "allow_null": true,
+      "max_size": 150,
+      "min_size": 0,
+      "source_property": "Leveranseleder&salgsleder"
+    }, {
+      "type": "string",
+      "name": "HR_leder",
+      "allow_null": true,
+      "max_size": 150,
+      "min_size": 0,
+      "source_property": "HR_leder"
+    }, {
+      "type": "string",
+      "name": "Romnummer",
+      "allow_null": true,
+      "max_size": 150,
+      "min_size": 0,
+      "source_property": "Romnummer"
+    }, {
+      "type": "string",
+      "name": "Regionid",
+      "allow_null": true,
+      "max_size": 150,
+      "min_size": 0,
+      "source_property": "Regionid"
+    }, {
+      "type": "string",
+      "name": "CurrentDepartmentid",
+      "allow_null": true,
+      "max_size": 150,
+      "min_size": 0,
+      "source_property": "CurrentDepartmentid"
+    }, {
+      "type": "string",
+      "name": "Omraadeid_Areaid",
+      "allow_null": true,
+      "max_size": 150,
+      "min_size": 0,
+      "source_property": "Omraadeid_Areaid"
+    }, {
+      "type": "string",
+      "name": "Ansettelsesdato",
+      "allow_null": true,
+      "max_size": 150,
+      "min_size": 0,
+      "source_property": "Ansettelsesdato"
+    }, {
+      "type": "string",
+      "name": "Datofortilganger",
+      "allow_null": true,
+      "max_size": 150,
+      "min_size": 0,
+      "source_property": "Datofortilganger"
+    }, {
+      "type": "string",
+      "name": "Kontraktsignert",
+      "allow_null": true,
+      "max_size": 150,
+      "min_size": 0,
+      "source_property": "Kontraktsignert"
+    }, {
+      "type": "string",
+      "name": "Ansiennitetfradato",
+      "allow_null": true,
+      "max_size": 150,
+      "min_size": 0,
+      "source_property": "Ansiennitetfradato"
+    }, {
+      "type": "string",
+      "name": "Kontraktmedproevetid",
+      "allow_null": true,
+      "max_size": 150,
+      "min_size": 0,
+      "source_property": "Kontraktmedproevetid"
+    }, {
+      "type": "string",
+      "name": "Proevetidutloeper",
+      "allow_null": true,
+      "max_size": 150,
+      "min_size": 0,
+      "source_property": "Proevetidutloeper"
+    }, {
+      "type": "string",
+      "name": "Oppsigelsestid_antallmaaneder",
+      "allow_null": true,
+      "max_size": 150,
+      "min_size": 0,
+      "source_property": "Oppsigelsestid_antallmaaneder"
+    }, {
+      "type": "string",
+      "name": "Tidiselskapet",
+      "allow_null": true,
+      "max_size": 150,
+      "min_size": 0,
+      "source_property": "Tidiselskapet"
+    }, {
+      "type": "string",
+      "name": "Rapportgruppe",
+      "allow_null": true,
+      "max_size": 150,
+      "min_size": 0,
+      "source_property": "Rapportgruppe"
+    }, {
+      "type": "string",
+      "name": "Hoeyesteutdannelsesgrad_nivaa",
+      "allow_null": true,
+      "max_size": 150,
+      "min_size": 0,
+      "source_property": "Hoeyesteutdannelsesgrad_nivaa"
+    }, {
+      "type": "string",
+      "name": "Hoeyesteutdannelse_avgangsaar",
+      "allow_null": true,
+      "max_size": 150,
+      "min_size": 0,
+      "source_property": "Hoeyesteutdannelse_avgangsaar"
+    }, {
+      "type": "string",
+      "name": "Hoeyesteutdannelse_studiested",
+      "allow_null": true,
+      "max_size": 150,
+      "min_size": 0,
+      "source_property": "Hoeyesteutdannelse_studiested"
+    }, {
+      "type": "string",
+      "name": "Sluttdato",
+      "allow_null": true,
+      "max_size": 150,
+      "min_size": 0,
+      "source_property": "Sluttdato"
+    }, {
+      "type": "string",
+      "name": "Faktisksistearbeidsdag",
+      "allow_null": true,
+      "max_size": 150,
+      "min_size": 0,
+      "source_property": "Faktisksistearbeidsdag"
+    }, {
+      "type": "string",
+      "name": "Sluttaarsak",
+      "allow_null": true,
+      "max_size": 150,
+      "min_size": 0,
+      "source_property": "Sluttaarsak"
+    }, {
+      "type": "string",
+      "name": "Nyarbeidsgiver",
+      "allow_null": true,
+      "max_size": 150,
+      "min_size": 0,
+      "source_property": "Nyarbeidsgiver"
+    }, {
+      "type": "string",
+      "name": "Konsulentrollekurs",
+      "allow_null": true,
+      "max_size": 150,
+      "min_size": 0,
+      "source_property": "Konsulentrollekurs"
+    }, {
+      "type": "string",
+      "name": "Ambisjoner",
+      "allow_null": true,
+      "max_size": 1000,
+      "min_size": 0,
+      "source_property": "Ambisjoner"
+    }, {
+      "type": "string",
+      "name": "Oensketansvar",
+      "allow_null": true,
+      "max_size": 150,
+      "min_size": 0,
+      "source_property": "Oensketansvar"
+    }, {
+      "type": "string",
+      "name": "Kompetansenivaa",
+      "allow_null": true,
+      "max_size": 150,
+      "min_size": 0,
+      "source_property": "Kompetansenivaa"
+    }, {
+      "type": "string",
+      "name": "Turnoverintensjon",
+      "allow_null": true,
+      "max_size": 150,
+      "min_size": 0,
+      "source_property": "Turnoverintensjon"
+    }, {
+      "type": "string",
+      "name": "Faktiskloenn",
+      "allow_null": true,
+      "max_size": 150,
+      "min_size": 0,
+      "source_property": "Faktiskloenn"
+    }, {
+      "type": "string",
+      "name": "UpdateDate_DW",
+      "allow_null": true,
+      "max_size": 150,
+      "min_size": 0,
+      "source_property": "UpdateDate_DW"
+    }],
+    "table": "Folk_Naatid"
+  },
+  "transform": {
+    "type": "conditional",
+    "alternatives": {
+      "prod": {
+        "type": "dtl",
+        "rules": {
+          "default": [
+            ["filter",
+              ["neq", "_S._deleted", true]
+            ],
+            ["add", "temp",
+              ["key-values", "_S."]
+            ],
+            ["merge-union",
+              ["apply", "decryption", "_T.temp"]
+            ],
+            ["remove", "temp*"]
+          ],
+          "decryption": [
+            ["if",
+              ["is-list", "_S.value"],
+              [
+                ["merge-union",
+                  ["apply", "decryption-list", "_S.value"]
+                ],
+                ["add", "_S.key",
+                  ["join", ", ", "_T.tempkey"]
+                ]
+              ],
+              ["if",
+                ["is-not-null",
+                  ["decrypt", "$SECRET(folk-encryption-key)", "_S.value"]
+                ],
+                ["add", "_S.key",
+                  ["decrypt", "$SECRET(folk-encryption-key)", "_S.value"]
+                ],
+                ["add", "_S.key", "_S.value"]
+              ]
+            ]
+          ],
+          "decryption-list": [
+            ["if",
+              ["is-not-null",
+                ["decrypt", "$SECRET(folk-encryption-key)", "_S."]
+              ],
+              ["add", "tempkey",
+                ["decrypt", "$SECRET(folk-encryption-key)", "_S."]
+              ],
+              ["add", "tempkey", "_S."]
+            ]
+          ]
+        }
+      },
+      "test": {
+        "type": "dtl",
+        "rules": {
+          "default": [
+            ["filter",
+              ["neq", "_S._deleted", true]
+            ],
+            ["add", "temp",
+              ["key-values", "_S."]
+            ],
+            ["merge-union",
+              ["apply", "decryption", "_T.temp"]
+            ],
+            ["remove", "temp*"]
+          ],
+          "decryption": [
+            ["if",
+              ["is-list", "_S.value"],
+              [
+                ["merge-union",
+                  ["apply", "decryption-list", "_S.value"]
+                ],
+                ["add", "_S.key",
+                  ["join", ", ", "_T.tempkey"]
+                ]
+              ],
+              ["if",
+                ["is-not-null",
+                  ["decrypt", "folk-encryption-key", "_S.value"]
+                ],
+                ["add", "_S.key",
+                  ["decrypt", "folk-encryption-key", "_S.value"]
+                ],
+                ["add", "_S.key", "_S.value"]
+              ]
+            ]
+          ],
+          "decryption-list": [
+            ["if",
+              ["is-not-null",
+                ["decrypt", "folk-encryption-key", "_S."]
+              ],
+              ["add", "tempkey",
+                ["decrypt", "folk-encryption-key", "_S."]
+              ],
+              ["add", "tempkey", "_S."]
+            ]
+          ]
+        }
+      }
+    },
+    "condition": "$ENV(node-env)"
+  },
+  "pump": {
+    "mode": "$ENV(pump-mode)"
+  }
+}

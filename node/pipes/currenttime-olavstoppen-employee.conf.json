@@ -1,0 +1,122 @@
+{
+  "_id": "currenttime-olavstoppen-employee",
+  "type": "pipe",
+  "source": {
+    "type": "conditional",
+    "alternatives": {
+      "prod": {
+        "type": "sql",
+        "system": "currenttime-olavstoppen",
+        "blacklist": ["pinsalt", "salt", "pincode", "pwd"],
+        "table": "employee",
+        "updated_column": "updatedate"
+      },
+      "test": {
+        "type": "embedded",
+        "entities": [{
+          "_id": "1093",
+          "source": 0,
+          "actcatid": 0,
+          "active": true,
+          "allocatedprojects": false,
+          "calendarconfigid": 0,
+          "companyid": 13,
+          "costdepartmentid": 0,
+          "createby": "Anita Velle (45)",
+          "createdate": "~t2020-06-02T13:12:03Z",
+          "departmentid": 4,
+          "departmentid-ni": "~:currenttime-department:4",
+          "email1": "severus.snape@olavstoppen.no",
+          "employeddate": "~t2020-06-02T00:00:00Z",
+          "employeeid": 1093,
+          "firstname": "Severus",
+          "globalid": "~ue3316e7b-c03d-459d-96d9-812c9378c250",
+          "initials": "Severus Snape",
+          "jobcodeid": 0,
+          "lastname": "Snape",
+          "pursuant": "~:sesam:bouvet-employee",
+          "pwdactive": true,
+          "ssoref": "",
+          "updateby": "Severus Snape (1093)",
+          "updatedate": "~t2020-06-02T13:41:37Z",
+          "username": "severus.snape"
+        }, {
+          "_id": "3465",
+          "source": 0,
+          "actcatid": 0,
+          "active": true,
+          "allocatedprojects": false,
+          "calendarconfigid": 0,
+          "companyid": 13,
+          "costdepartmentid": 4,
+          "createdate": "~t2015-12-01T09:22:46.003Z",
+          "departmentid": 0,
+          "email1": "joe.hardy@olavstoppen.no",
+          "email2": "",
+          "email3": "",
+          "employeddate": "~t2010-05-01T00:00:00Z",
+          "employeecategoryid": 1,
+          "employeeid": 3465,
+          "firstname": "Joe",
+          "globalid": "~u12db922a-4095-4630-8763-d52a360c0d27",
+          "initials": "Joe Hardy",
+          "jobcodeid": 0,
+          "lastname": "Hardy",
+          "pwdactive": true,
+          "updateby": "Kåre Kontorgutt (25)",
+          "updatedate": "~t2012-09-28T13:27:23Z",
+          "username": "joe.hardy"
+        }, {
+          "_id": "3466",
+          "source": 0,
+          "actcatid": 0,
+          "active": true,
+          "allocatedprojects": false,
+          "calendarconfigid": 0,
+          "companyid": 13,
+          "costdepartmentid": 4,
+          "createdate": "~t2015-12-01T09:22:46.003Z",
+          "departmentid": 2,
+          "email1": "frank.hardy@olavstoppen.no",
+          "email2": "",
+          "email3": "",
+          "employeddate": "~t2010-05-01T00:00:00Z",
+          "employeecategoryid": 1,
+          "employeeid": 3466,
+          "firstname": "Frank",
+          "globalid": "~u339b4357-7bbf-42a8-b04b-22a37cd0e2bc",
+          "initials": "Frank Hardy",
+          "jobcodeid": 0,
+          "lastname": "Hardy",
+          "pwdactive": true,
+          "updateby": "Hermann Håerr(19))",
+          "updatedate": "~t2018-10-29T10:18:17Z",
+          "username": "frank.hardy"
+        }]
+      }
+    },
+    "condition": "$ENV(node-env)"
+  },
+  "transform": {
+    "type": "dtl",
+    "rules": {
+      "default": [
+        ["filter",
+          ["eq", "_S.active", true]
+        ],
+        ["copy", "*"],
+        ["make-ni", "currenttime-department", "departmentid"],
+        ["add", "rdf:type",
+          ["ni", "bouvet:currenttime-olavstoppen-employee"]
+        ],
+        ["add", "pursuant",
+          ["ni", "sesam:bouvet-employee"]
+        ]
+      ]
+    }
+  },
+  "pump": {
+    "cron_expression": "$ENV(ct_cron_fast)",
+    "rescan_cron_expression": "$ENV(ct_rescan_cron)"
+  }
+}

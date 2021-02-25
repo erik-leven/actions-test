@@ -1,0 +1,55 @@
+{
+  "_id": "currenttime-region",
+  "type": "pipe",
+  "source": {
+    "type": "conditional",
+    "alternatives": {
+      "prod": {
+        "type": "sql",
+        "system": "currenttime",
+        "primary_key": "RegionID",
+        "schema": "bov",
+        "table": "region"
+      },
+      "test": {
+        "type": "embedded",
+        "entities": [{
+          "_id": "1",
+          "RegionID": 1,
+          "RegionName": "200 Oslo Øvrig"
+        }, {
+          "_id": "2",
+          "RegionID": 2,
+          "RegionName": "xKommunikasjon"
+        }, {
+          "_id": "3",
+          "RegionID": 3,
+          "RegionName": "xSystemutvikling"
+        }, {
+          "_id": "4",
+          "RegionID": 4,
+          "RegionName": "xForretningsrådgivning"
+        }, {
+          "_id": "5",
+          "RegionID": 5,
+          "RegionName": "600 Sør"
+        }]
+      }
+    },
+    "condition": "$ENV(node-env)"
+  },
+  "transform": {
+    "type": "dtl",
+    "rules": {
+      "default": [
+        ["copy", "*"],
+        ["add", "rdf:type",
+          ["ni", "bouvet:currenttime-region"]
+        ]
+      ]
+    }
+  },
+  "pump": {
+    "cron_expression": "$ENV(ct_cron_slow)"
+  }
+}

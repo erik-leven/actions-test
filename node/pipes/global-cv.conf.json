@@ -1,0 +1,20 @@
+{
+  "_id": "global-cv",
+  "type": "pipe",
+  "source": {
+    "type": "merge",
+    "datasets": ["cvpartner-cv cv-cv"],
+    "identity": "first",
+    "strategy": "compact",
+    "version": "$ENV(merge-version)"
+  },
+  "sink": {
+    "indexes": "$ids"
+  },
+  "metadata": {
+    "global": true
+  },
+  "compaction": {
+    "sink": true
+  }
+}

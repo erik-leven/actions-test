@@ -1,0 +1,289 @@
+{
+  "_id": "global-person",
+  "type": "pipe",
+  "source": {
+    "type": "dataset",
+    "dataset": "merge-person",
+    "supports_signalling": true
+  },
+  "transform": {
+    "type": "dtl",
+    "rules": {
+      "default": [
+        ["copy", "*"],
+        ["add", "uid",
+          ["coalesce",
+            ["and",
+              ["is-not-null", "_."],
+              ["neq",
+                ["strip", "_."], ""]
+            ],
+            ["list", "_S.folk-user:employeeId", "_S.catalystone-user:UNIQUE_IMPORT_ID.value",
+              ["first", "_S.ad-user:employeeNumber"],
+              ["string", "_S.visma-employee:ProductNo"]
+            ]
+          ]
+        ],
+        ["add", "FirstName",
+          ["coalesce",
+            ["and",
+              ["is-not-null", "_."],
+              ["neq",
+                ["strip", "_."], ""]
+            ],
+            ["list", "_S.folk-user:2.data.value", "_S.catalystone-user:FIRST_NAME.value",
+              ["first", "_S.ad-user:givenName"], "_S.currenttime-employee:firstname", "_S.o365-user:givenName", "_S.slack-user:profile.first_name"]
+          ]
+        ],
+        ["add", "LastName",
+          ["coalesce",
+            ["and",
+              ["is-not-null", "_."],
+              ["neq",
+                ["strip", "_."], ""]
+            ],
+            ["list", "_S.folk-user:3.data.value", "_S.catalystone-user:LAST_NAME.value",
+              ["first", "_S.ad-user:sn"], "_S.currenttime-employee:lastname", "_S.o365-user:surname", "_S.slack-user:profile.last_name"]
+          ]
+        ],
+        ["add", "Name",
+          ["coalesce",
+            ["and",
+              ["is-not-null", "_."],
+              ["neq",
+                ["strip", "_."], ""]
+            ],
+            ["list", "_S.folk-user:1.data.value", "_S.catalystone-user:NAME.value",
+              ["concat", "_T.global-person:FirstName", " ", "_T.global-person:LastName"],
+              ["first", "_S.ad-user:displayName"]
+            ]
+          ]
+        ],
+        ["add", "upn",
+          ["coalesce",
+            ["and",
+              ["is-not-null", "_."],
+              ["neq",
+                ["strip", "_."], ""]
+            ],
+            ["list",
+              ["first", "_S.ad-user:userPrincipalName"], "_S.folk-user:101.data.value", "_S.catalystone-user:USERNAME.value"]
+          ]
+        ],
+        ["add", "Title",
+          ["coalesce",
+            ["and",
+              ["is-not-null", "_."],
+              ["neq",
+                ["strip", "_."], ""]
+            ],
+            ["list", "_S.folk-user:44.data.value", "_S.catalystone-user:TITLE.value",
+              ["first", "_S.ad-user:title"]
+            ]
+          ]
+        ],
+        ["add", "Start-date",
+          ["coalesce",
+            ["and",
+              ["is-not-null", "_."],
+              ["neq",
+                ["strip", "_."], ""]
+            ],
+            ["list",
+              ["datetime-parse", "%Y-%m-%d", "_S.folk-user:37.data.value"],
+              ["datetime-parse", "%d.%m.%Y", "_S.catalystone-user:HIRING_DATE.value"],
+              ["first", "_S.ad-user:employeeHireDate"]
+            ]
+          ]
+        ],
+        ["add", "Leave-date",
+          ["coalesce",
+            ["and",
+              ["is-not-null", "_."],
+              ["neq",
+                ["strip", "_."], ""]
+            ],
+            ["list",
+              ["datetime-parse", "%Y-%m-%d", "_S.folk-user:38.data.value"],
+              ["datetime-parse", "%d.%m.%Y", "_S.catalystone-user:TERMINATION_DATE.value"],
+              ["first", "_S.ad-user:employeeEndDate"]
+            ]
+          ]
+        ],
+        ["if",
+          ["and",
+            ["is-not-null",
+              ["first", "_S.ad-user:displayName"]
+            ],
+            ["neq",
+              ["strip",
+                ["first", "_S.ad-user:displayName"]
+              ], ""]
+          ],
+          [
+            ["add", "DisplayName",
+              ["first", "_S.ad-user:displayName"]
+            ],
+            ["add", "DisplayLastName",
+              ["last",
+                ["split", " ",
+                  ["first", "_S.ad-user:displayName"]
+                ]
+              ]
+            ],
+            ["add", "DisplayFirstName",
+              ["rstrip",
+                ["replace", "_T.DisplayLastName", "",
+                  ["first", "_S.ad-user:displayName"]
+                ]
+              ]
+            ]
+          ],
+          [
+            ["add", "DisplayName", "_T.global-person:Name"],
+            ["add", "DisplayLastName", "_T.global-person:LastName"],
+            ["add", "DisplayFirstName", "_T.global-person:FirstName"]
+          ]
+        ],
+        ["add", "Email",
+          ["lower",
+            ["coalesce",
+              ["and",
+                ["is-not-null", "_."],
+                ["neq",
+                  ["strip", "_."], ""]
+              ],
+              ["list",
+                ["first", "_S.ad-user:mail"], "_S.folk-user:7.data.value", "_S.catalystone-user:EMAIL.value", "_S.o365-user:mail", "_S.currenttime-employee:email1"]
+            ]
+          ]
+        ],
+        ["add", "Mobile",
+          ["coalesce",
+            ["and",
+              ["is-not-null", "_."],
+              ["neq",
+                ["strip", "_."], ""]
+            ],
+            ["list", "_S.folk-user:1003.data.value", "_S.catalystone-user:1003.VALUE.value",
+              ["first", "_S.ad-user:mobile"], "_S.currenttime-employee:mobile"]
+          ]
+        ],
+        ["add", "Company",
+          ["coalesce",
+            ["and",
+              ["is-not-null", "_."],
+              ["neq",
+                ["strip", "_."], ""]
+            ],
+            ["list", "_S.folk-user:1002.data.value", "_S.catalystone-user:1002.VALUE.value", "_S.ad-user:company"]
+          ]
+        ],
+        ["add", "Pursuant",
+          ["union", "_S.hjemmel", "_S.pursuant"]
+        ],
+        ["if",
+          ["in", "~:bouvet:catalystone-user", "_S.rdf:type"],
+          ["add", "Region",
+            ["first",
+              ["hops", {
+                "datasets": ["region reg"],
+                "where": ["eq", "_S.catalystone-user:1117.VALUE.value", "reg.id"],
+                "return": "reg.name"
+              }]
+            ]
+          ]
+        ],
+        ["if",
+          ["in", "~:bouvet:catalystone-user", "_S.rdf:type"],
+          ["if",
+            ["is-not-empty", "_S.catalystone-user:1031.VALUE.value"],
+            ["merge",
+              ["apply", "timelønn", "_S."]
+            ],
+            ["merge",
+              ["apply", "fast-ansatt", "_S."]
+            ]
+          ]
+        ],
+        ["add", "Stillingsprosent",
+          ["integer",
+            ["first",
+              ["split", ".", "_S.WORKING_HOURS.value"]
+            ]
+          ]
+        ],
+        ["add", "employee_status",
+          ["first", "_S.ad-user:extensionAttribute10"]
+        ],
+        ["if",
+          ["in", "OU=Slutter",
+            ["split", ",",
+              ["first", "_S.ad-user:distinguishedName"]
+            ]
+          ],
+          ["add", "employee_status",
+            ["case-eq", "_S.catalystone-user:1046.VALUE.value", "Fast ansatt", "Employee", "Provanställd", "Employee", "Midlertidig", "TempEmployee", "TempEmployee"]
+          ],
+          ["if",
+            ["or",
+              ["in", "OU=Sperret",
+                ["split", ",",
+                  ["first", "_S.ad-user:distinguishedName"]
+                ]
+              ],
+              ["gt",
+                ["if",
+                  ["eq", "$ENV(node-env)", "test"], "~t2020-03-16T00:00:00Z",
+                  ["now"]
+                ],
+                ["datetime-plus", "day", 1,
+                  ["min",
+                    ["filter",
+                      ["is-not-null", "_."],
+                      ["list",
+                        ["datetime-parse", "%d.%m.%Y", "_S.catalystone-user:TERMINATION_DATE.value"],
+                        ["datetime-parse", "%d.%m.%Y", "_S.catalystone-user:1029.VALUE.value"]
+                      ]
+                    ]
+                  ]
+                ]
+              ]
+            ],
+            ["add", "employee_status", "Quit"]
+          ]
+        ]
+      ],
+      "fast-ansatt": [
+        ["if",
+          ["eq", "_P._T.global-person:Region", "Olavstoppen"],
+          [
+            ["add", "Ansattkategori", "Ansatt"],
+            ["add", "AnsattkategoriID", 1]
+          ],
+          [
+            ["add", "Ansattkategori", ""],
+            ["add", "AnsattkategoriID", 3]
+          ]
+        ]
+      ],
+      "timelønn": [
+        ["add", "Ansattkategori", "Timelønn"],
+        ["add", "AnsattkategoriID", 7]
+      ]
+    }
+  },
+  "pump": {
+    "rescan_cron_expression": "* 0 * * *"
+  },
+  "metadata": {
+    "global": true
+  },
+  "compaction": {
+    "keep_versions": 20
+  },
+  "namespaces": {
+    "identity": "global-person",
+    "property": "global-person"
+  }
+}

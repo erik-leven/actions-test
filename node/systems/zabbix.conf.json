@@ -1,0 +1,17 @@
+{
+  "_id": "zabbix",
+  "type": "system:microservice",
+  "docker": {
+    "environment": {
+      "HOST_NAME": "$ENV(zabbix-host-name)",
+      "PASSWORD": "$SECRET(zabbix-password)",
+      "SESAM_JWT": "$SECRET(zabbix-jwt)",
+      "SUBSCRIPTION": "$ENV(node-subscription)",
+      "USER": "$ENV(zabbix-user)",
+      "ZABBIX_IP": "10.2.100.11",
+      "ZABBIX_SERVER": "$ENV(zabbix-server)"
+    },
+    "image": "erikalev/zabbix:latest",
+    "port": 5000
+  }
+}

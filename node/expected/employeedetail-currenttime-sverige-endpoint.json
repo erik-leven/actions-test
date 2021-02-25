@@ -1,0 +1,13 @@
+[
+  {
+    "EmployeeId": 1260,
+    "_id": "2507",
+    "operation": "update-employeedetail",
+    "payload": {
+      "DateOfBirth": "2000-01-01",
+      "EmployeeRef": "2507",
+      "EmployeeRefImport": "2507",
+      "Gender": "M"
+    }
+  }
+]

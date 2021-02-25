@@ -1,0 +1,30 @@
+{
+  "_id": "consultant-azure-endpoint",
+  "type": "pipe",
+  "source": {
+    "type": "dataset",
+    "dataset": "consultant-azure"
+  },
+  "sink": {
+    "type": "json",
+    "system": "azure",
+    "url": "/sesam"
+  },
+  "transform": {
+    "type": "dtl",
+    "rules": {
+      "default": [
+        ["copy", "*"],
+        ["remove", "_*"],
+        ["if",
+          ["eq", "_S._deleted", true],
+          ["add", "deleted", true],
+          ["add", "deleted", false]
+        ]
+      ]
+    }
+  },
+  "pump": {
+    "mode": "$ENV(pump-mode)"
+  }
+}

@@ -1,0 +1,537 @@
+[
+  {
+    "$ids": [
+      "~:001f1555-3f4e-4a63-bc55-5fdd688b9a9a"
+    ],
+    "_id": "001f1555-3f4e-4a63-bc55-5fdd688b9a9a",
+    "accountmanagers": null,
+    "areatype": null,
+    "classification": null,
+    "createddatetime": "~t2014-10-10T14:11:24Z",
+    "customers": null,
+    "deliverymanagers": null,
+    "description": null,
+    "displayname": "Fag Øst KO metode",
+    "enonic_deleted": false,
+    "mail": "fagostkometode@bouvet.no",
+    "members": [
+      {
+        "accountEnabled": true,
+        "department": "Øst Prosjektledelse 2",
+        "displayName": "Vigdis E Ulstein",
+        "id": "58ab4569-9491-484b-8efc-35950b4d4f9b",
+        "jobTitle": "Prosjektleder",
+        "mail": "vigdis.elsfjordstrand@bouvet.no",
+        "officeLocation": "Oslo",
+        "userType": "Member"
+      },
+      {
+        "accountEnabled": true,
+        "department": "Øst Ria 1",
+        "displayName": "Stian Westvig",
+        "id": "656026ec-775b-438e-883a-1920dc71fb43",
+        "jobTitle": "konsulent",
+        "mail": "stian.westvig@bouvet.no",
+        "officeLocation": "oslo",
+        "userType": "Member"
+      },
+      {
+        "accountEnabled": true,
+        "department": "Øst Design 1",
+        "displayName": "Ulrikke Pedersen",
+        "id": "403923cc-a8d6-4a6e-b9f3-773e4347fe61",
+        "jobTitle": "Interaksjonsdesigner",
+        "mail": "ulrikke.pedersen@bouvet.no",
+        "officeLocation": "Oslo",
+        "userType": "Member"
+      },
+      {
+        "accountEnabled": true,
+        "department": "Øst Design 1",
+        "displayName": "Ulrik Lie",
+        "id": "d9cf434c-5300-48f4-8b2f-663b48c4482e",
+        "jobTitle": "Konsulent",
+        "mail": "ulrik.lie@bouvet.no",
+        "officeLocation": "Oslo",
+        "userType": "Member"
+      },
+      {
+        "accountEnabled": true,
+        "department": "Trondheim Brukeropplevelse",
+        "displayName": "Renate Kristiansen",
+        "id": "90bc8467-d682-4b70-a8a7-3511c67a9d1b",
+        "jobTitle": "Leder Trondheim Brukskvalitet",
+        "mail": "renate.kristiansen@bouvet.no",
+        "officeLocation": "Trondheim",
+        "userType": "Member"
+      },
+      {
+        "accountEnabled": true,
+        "department": "Øst Design 1",
+        "displayName": "Ann-Kristin Hansen",
+        "id": "45837fde-9c73-4346-b44b-b191e410a830",
+        "jobTitle": "Avdelingsleder",
+        "mail": "ann-kristin.hansen@bouvet.no",
+        "officeLocation": "Oslo",
+        "userType": "Member"
+      },
+      {
+        "accountEnabled": true,
+        "department": "Øst Ria 1",
+        "displayName": "Tom Are Pedersen",
+        "id": "25c864cd-6984-4534-b99c-b7b7f054a461",
+        "jobTitle": "Konsulent",
+        "mail": "tom.pedersen@bouvet.no",
+        "officeLocation": "Oslo",
+        "userType": "Member"
+      },
+      {
+        "accountEnabled": true,
+        "department": "Øst Felles",
+        "displayName": "Torgeir Nilsen",
+        "id": "d526deb2-ea44-4e84-b823-6e4c2f2e46a5",
+        "jobTitle": "Regionsleder Øst",
+        "mail": "torgeir.nilsen@bouvet.no",
+        "officeLocation": "Oslo",
+        "userType": "Member"
+      },
+      {
+        "accountEnabled": true,
+        "department": "Kristiansand",
+        "displayName": "Ragnhild Fidjestøl",
+        "id": "a1f078ee-1d49-408d-b6f2-c18ea5e882b3",
+        "jobTitle": "Konsulent Brukskvalitet",
+        "mail": "ragnhild.fidjestol@bouvet.no",
+        "officeLocation": "Kristiansand",
+        "userType": "Member"
+      },
+      {
+        "accountEnabled": true,
+        "department": "Øst CMS 2",
+        "displayName": "Silje Sletteng",
+        "id": "3e07da7b-0996-4d00-95e6-0eb191bd6ee9",
+        "jobTitle": "Konsulent",
+        "mail": "silje.sletteng@bouvet.no",
+        "officeLocation": "Oslo",
+        "userType": "Member"
+      },
+      {
+        "accountEnabled": true,
+        "department": "Øst Rådgivning arkitektur",
+        "displayName": "Sverre Martin Jensen",
+        "id": "e999ec5e-a9e3-4c80-aa8d-bfa60b43466f",
+        "jobTitle": "Konsulent",
+        "mail": "sverre.jensen@bouvet.no",
+        "officeLocation": "Oslo",
+        "userType": "Member"
+      },
+      {
+        "accountEnabled": true,
+        "department": "Øst Design 1",
+        "displayName": "Nina Kristin Langseth",
+        "id": "ae1f4548-cd20-4741-a3ad-ee64c32c93a0",
+        "jobTitle": null,
+        "mail": "nina.langseth@bouvet.no",
+        "officeLocation": "Oslo",
+        "userType": "Member"
+      },
+      {
+        "accountEnabled": true,
+        "department": "Øst Prosjektledelse 2",
+        "displayName": "Ole Kristian Nystrøm",
+        "id": "313520ab-7b17-475f-b7f9-022965dbceff",
+        "jobTitle": "Konsulent",
+        "mail": "ole.nystrom@bouvet.no",
+        "officeLocation": "Oslo",
+        "userType": "Member"
+      },
+      {
+        "accountEnabled": true,
+        "department": "Trondheim Brukeropplevelse",
+        "displayName": "Laila Jøssund",
+        "id": "eb654a3d-d165-419c-9611-d9fe71212cec",
+        "jobTitle": "Konsulent",
+        "mail": "laila.jossund@bouvet.no",
+        "officeLocation": "Trondheim",
+        "userType": "Member"
+      },
+      {
+        "accountEnabled": true,
+        "department": "ROG Industristøtte",
+        "displayName": "Ivar Kornbrekk",
+        "id": "d0d4f4da-9206-4dc9-8a76-ebceff7c1b7a",
+        "jobTitle": "Enhetsleder",
+        "mail": "ivar.kornbrekk@bouvet.no",
+        "officeLocation": "Haugalandet",
+        "userType": "Member"
+      },
+      {
+        "accountEnabled": true,
+        "department": "Kristiansand",
+        "displayName": "Mette Ljosland",
+        "id": "76c62fdc-dcdf-4e10-925b-d7297d41f428",
+        "jobTitle": null,
+        "mail": "mette.ljosland@bouvet.no",
+        "officeLocation": "Kristiansand",
+        "userType": "Member"
+      },
+      {
+        "accountEnabled": true,
+        "department": "Øst Innsikt",
+        "displayName": "Lars Helgeland",
+        "id": "126271f1-b341-44c5-83c2-327867d89716",
+        "jobTitle": "Avdelingsleder",
+        "mail": "lars.helgeland@bouvet.no",
+        "officeLocation": "Oslo",
+        "userType": "Member"
+      },
+      {
+        "accountEnabled": true,
+        "department": "Trondheim Brukeropplevelse",
+        "displayName": "Kjersti Bliksås Winsnes",
+        "id": "5ba171c5-4adc-4567-b641-d61eaa5ba04a",
+        "jobTitle": "Konsulent",
+        "mail": "kjersti.winsnes@bouvet.no",
+        "officeLocation": "Trondheim",
+        "userType": "Member"
+      },
+      {
+        "accountEnabled": true,
+        "department": "Øst Innsikt",
+        "displayName": "Iris Basic",
+        "id": "6c3f9939-18e3-4754-a079-a526fc7d26ed",
+        "jobTitle": "Prosjektleder",
+        "mail": "iris.basic@bouvet.no",
+        "officeLocation": "Oslo",
+        "userType": "Member"
+      },
+      {
+        "accountEnabled": true,
+        "department": "Øst CMS 1",
+        "displayName": "Goran Stene Solomonovic",
+        "id": "1cf20719-7e6e-4dd5-8b5a-277ab66cb5f7",
+        "jobTitle": "Konsulent",
+        "mail": "goran.solomonovic@bouvet.no",
+        "officeLocation": "Oslo",
+        "userType": "Member"
+      }
+    ],
+    "owners": null,
+    "projectmanagers": null,
+    "sectors": null,
+    "siteurl": null,
+    "thingswecan": null,
+    "uid": "001f1555-3f4e-4a63-bc55-5fdd688b9a9a",
+    "visibility": null
+  },
+  {
+    "$ids": [
+      "~:0b96e408-e940-404c-b75e-acd85e9966a9"
+    ],
+    "_id": "0b96e408-e940-404c-b75e-acd85e9966a9",
+    "accountmanagers": null,
+    "areatype": null,
+    "classification": null,
+    "createddatetime": "~t2016-02-29T14:40:34Z",
+    "customers": null,
+    "deliverymanagers": null,
+    "description": null,
+    "displayname": "Arkivverket",
+    "enonic_deleted": false,
+    "mail": null,
+    "members": null,
+    "owners": null,
+    "projectmanagers": null,
+    "sectors": null,
+    "siteurl": null,
+    "thingswecan": null,
+    "type": "~:Group",
+    "uid": "0b96e408-e940-404c-b75e-acd85e9966a9",
+    "visibility": null
+  },
+  {
+    "$ids": [
+      "~:16393f93-b899-444e-9433-361b4c0c002b"
+    ],
+    "_id": "16393f93-b899-444e-9433-361b4c0c002b",
+    "accountmanagers": null,
+    "areatype": null,
+    "classification": null,
+    "createddatetime": null,
+    "customers": null,
+    "deliverymanagers": null,
+    "description": null,
+    "displayname": null,
+    "enonic_deleted": false,
+    "mail": null,
+    "members": null,
+    "owners": null,
+    "projectmanagers": null,
+    "sectors": null,
+    "siteurl": null,
+    "thingswecan": null,
+    "uid": "o365-owner:16393f93-b899-444e-9433-361b4c0c002b",
+    "visibility": null
+  },
+  {
+    "$ids": [
+      "~:1bd11ea2-90e2-4a05-af03-f2764b8f6356"
+    ],
+    "_id": "1bd11ea2-90e2-4a05-af03-f2764b8f6356",
+    "accountmanagers": null,
+    "areatype": null,
+    "classification": null,
+    "createddatetime": null,
+    "customers": null,
+    "deliverymanagers": null,
+    "description": null,
+    "displayname": null,
+    "enonic_deleted": false,
+    "mail": null,
+    "members": null,
+    "owners": null,
+    "projectmanagers": null,
+    "sectors": null,
+    "siteurl": null,
+    "thingswecan": null,
+    "uid": "o365-owner:1bd11ea2-90e2-4a05-af03-f2764b8f6356",
+    "visibility": null
+  },
+  {
+    "$ids": [
+      "~:4ccbe1c8-e4b9-4dda-a2a6-b18eb466087a"
+    ],
+    "_id": "4ccbe1c8-e4b9-4dda-a2a6-b18eb466087a",
+    "accountmanagers": null,
+    "areatype": null,
+    "classification": null,
+    "createddatetime": "~t2018-08-22T10:51:57Z",
+    "customers": null,
+    "deliverymanagers": null,
+    "description": "Lage en presentasjon for Arkivverket til møtet 11/9-2018",
+    "displayname": "Presentasjon for Arkviverket intranett",
+    "enonic_deleted": false,
+    "mail": "presentasjonforarkviverketintranett@bouvetasa.onmicrosoft.com",
+    "members": null,
+    "owners": null,
+    "projectmanagers": null,
+    "sectors": null,
+    "siteurl": null,
+    "thingswecan": null,
+    "type": "~:Group",
+    "uid": "4ccbe1c8-e4b9-4dda-a2a6-b18eb466087a",
+    "visibility": "Private"
+  },
+  {
+    "$ids": [
+      "~:5bba066c-e254-44d7-9732-ec4abe32adfe"
+    ],
+    "_id": "5bba066c-e254-44d7-9732-ec4abe32adfe",
+    "accountmanagers": null,
+    "areatype": "Prosjektområde",
+    "classification": "Company Internal",
+    "createddatetime": null,
+    "customers": "Bouvet",
+    "deliverymanagers": null,
+    "description": "ROG UiS Compendia integrasjon",
+    "displayname": "ROG UiS Compendia integrasjon",
+    "enonic_deleted": false,
+    "mail": "ROGUiSCompendiaintegrasjon@bouvetasa.onmicrosoft.com",
+    "members": null,
+    "owners": null,
+    "projectmanagers": null,
+    "sectors": null,
+    "siteurl": "https://bouvetasa.sharepoint.com/sites/ROGUiSCompendiaintegrasjon",
+    "thingswecan": null,
+    "uid": "5bba066c-e254-44d7-9732-ec4abe32adfe",
+    "visibility": null
+  },
+  {
+    "$ids": [
+      "~:6895fa0d-60d4-4ebb-9d13-eaa6487ba760"
+    ],
+    "_id": "6895fa0d-60d4-4ebb-9d13-eaa6487ba760",
+    "accountmanagers": null,
+    "areatype": null,
+    "classification": null,
+    "createddatetime": null,
+    "customers": null,
+    "deliverymanagers": null,
+    "description": null,
+    "displayname": null,
+    "enonic_deleted": false,
+    "mail": null,
+    "members": null,
+    "owners": null,
+    "projectmanagers": null,
+    "sectors": null,
+    "siteurl": null,
+    "thingswecan": null,
+    "uid": "o365-owner:6895fa0d-60d4-4ebb-9d13-eaa6487ba760",
+    "visibility": null
+  },
+  {
+    "$ids": [
+      "~:807c79f0-4f5c-4244-9664-048bbfc7d542"
+    ],
+    "_id": "807c79f0-4f5c-4244-9664-048bbfc7d542",
+    "accountmanagers": null,
+    "areatype": "Fagområde",
+    "classification": "Confidential",
+    "createddatetime": null,
+    "customers": null,
+    "deliverymanagers": null,
+    "description": "testing testing testing",
+    "displayname": "testerivei",
+    "enonic_deleted": false,
+    "mail": "testerivei@bouvetasa.onmicrosoft.com",
+    "members": null,
+    "owners": null,
+    "projectmanagers": null,
+    "sectors": null,
+    "siteurl": "https://bouvetasa.sharepoint.com/sites/testerivei",
+    "thingswecan": null,
+    "uid": "807c79f0-4f5c-4244-9664-048bbfc7d542",
+    "visibility": null
+  },
+  {
+    "$ids": [
+      "~:9d5c8eed-3729-4b9f-baf2-81e8d4d914c8",
+      "~:9d5c8eed-3729-4b9f-baf2-81e8d4d914c8",
+      "~:9d5c8eed-3729-4b9f-baf2-81e8d4d914c8"
+    ],
+    "_id": "9d5c8eed-3729-4b9f-baf2-81e8d4d914c8",
+    "accountmanagers": null,
+    "areatype": "Oppdrag og prosjekt",
+    "classification": null,
+    "createddatetime": "~t2019-02-26T23:00:00Z",
+    "customers": {
+      "Name": "Arkivverket"
+    },
+    "deliverymanagers": null,
+    "description": "Arkivverket - Vedlikeholdsavtale Arkivverket",
+    "displayname": "Arkivverket - Vedlikeholdsavtale Arkivverket",
+    "enonic_deleted": false,
+    "mail": "ArkivverketVedlikeholdsavtaleArkivverket@bouvet.no",
+    "members": null,
+    "owners": null,
+    "projectmanagers": null,
+    "sectors": null,
+    "siteurl": "https://bouvetasa.sharepoint.com/sites/ArkivverketVedlikeholdsavtaleArkivverket",
+    "thingswecan": [],
+    "type": "~:Group",
+    "uid": "9d5c8eed-3729-4b9f-baf2-81e8d4d914c8",
+    "visibility": "Private"
+  },
+  {
+    "$ids": [
+      "~:a332a54d-f0fd-4792-93fc-7f9a19530716"
+    ],
+    "_id": "a332a54d-f0fd-4792-93fc-7f9a19530716",
+    "accountmanagers": null,
+    "areatype": null,
+    "classification": null,
+    "createddatetime": null,
+    "customers": null,
+    "deliverymanagers": null,
+    "description": null,
+    "displayname": null,
+    "enonic_deleted": false,
+    "mail": null,
+    "members": null,
+    "owners": null,
+    "projectmanagers": null,
+    "sectors": null,
+    "siteurl": null,
+    "thingswecan": null,
+    "uid": "o365-owner:a332a54d-f0fd-4792-93fc-7f9a19530716",
+    "visibility": null
+  },
+  {
+    "$ids": [
+      "~:b1ca6b38-44dd-42a1-b41f-5b8ed795d292"
+    ],
+    "_id": "b1ca6b38-44dd-42a1-b41f-5b8ed795d292",
+    "accountmanagers": null,
+    "areatype": "Tilbud og avtaler",
+    "classification": null,
+    "createddatetime": "~t2019-08-12T10:41:14Z",
+    "customers": {
+      "Name": "Arkivverket"
+    },
+    "deliverymanagers": null,
+    "description": "Arkivverket - 2019/13790 Drift og forvaltning av Microsoft løsninger",
+    "displayname": "Arkivverket - 2019/13790 Drift og forvaltning av Microsoft løsninger",
+    "enonic_deleted": false,
+    "mail": "Arkivverket-201913790DriftogforvaltningavMicrosoftlosninger@bouvet.no",
+    "members": null,
+    "owners": null,
+    "projectmanagers": null,
+    "sectors": null,
+    "siteurl": null,
+    "thingswecan": [],
+    "type": "~:Group",
+    "uid": "b1ca6b38-44dd-42a1-b41f-5b8ed795d292",
+    "visibility": "Private"
+  },
+  {
+    "$ids": [
+      "~:c017b523-933c-4750-a12a-451282c82f3d",
+      "~:c017b523-933c-4750-a12a-451282c82f3d"
+    ],
+    "_id": "c017b523-933c-4750-a12a-451282c82f3d",
+    "accountmanagers": [],
+    "areatype": "Tilbud og avtaler",
+    "classification": null,
+    "createddatetime": "~t2019-04-02T06:31:38Z",
+    "customers": {
+      "Name": "Forsvaret"
+    },
+    "deliverymanagers": [],
+    "description": "Tilbudsrom for TEST",
+    "displayname": "Forsvaret - MAST",
+    "enonic_deleted": false,
+    "mail": "test-mail",
+    "members": null,
+    "owners": null,
+    "projectmanagers": null,
+    "sectors": null,
+    "siteurl": null,
+    "thingswecan": [],
+    "uid": "c017b523-933c-4750-a12a-451282c82f3d",
+    "visibility": "Private"
+  },
+  {
+    "$ids": [
+      "~:cc5f7750-79e5-481b-bd47-3ff920de849c"
+    ],
+    "_id": "cc5f7750-79e5-481b-bd47-3ff920de849c",
+    "accountmanagers": null,
+    "areatype": "Metodeområde",
+    "classification": null,
+    "createddatetime": null,
+    "customers": null,
+    "deliverymanagers": null,
+    "description": null,
+    "displayname": "Tones metode",
+    "enonic_deleted": false,
+    "mail": null,
+    "members": null,
+    "owners": null,
+    "projectmanagers": null,
+    "sectors": null,
+    "siteurl": null,
+    "thingswecan": [
+      {
+        "Name": "SharePoint Online",
+        "TermGuid": "2215dbf2-9ca4-4bf1-9c5e-279275ebf3a9"
+      },
+      {
+        "Name": "Utvikling",
+        "TermGuid": "5e03acb0-b3c0-4c91-9854-4958d6ca4308"
+      }
+    ],
+    "uid": "cc5f7750-79e5-481b-bd47-3ff920de849c",
+    "visibility": null
+  }
+]

@@ -1,0 +1,69 @@
+{
+  "_id": "salaryChange-salary-currenttime",
+  "type": "pipe",
+  "source": {
+    "type": "dataset",
+    "dataset": "person-change"
+  },
+  "transform": {
+    "type": "dtl",
+    "rules": {
+      "default": [
+        ["filter",
+          ["in", "_S.global-person:employee_status",
+            ["list", "EarlyEmployee", "TempEarlyEmployee", "SoonEmployee", "TempSoonEmployee", "Employee", "TempEmployee"]
+          ]
+        ],
+        ["filter", "_S.newSalary"],
+        ["if",
+          ["gte",
+            ["datetime-parse", "%d.%m.%Y", "_S.catalystone-user:HIRING_DATE.@VALID_FROM"],
+            ["datetime-parse", "%d.%m.%Y", "_S.catalystone-user:BASIC_SALARY.@VALID_FROM"]
+          ],
+          ["filter"]
+        ],
+        ["add", "Ansatt-ID",
+          ["integer", "_S.catalystone-user:UNIQUE_IMPORT_ID.value"]
+        ],
+        ["add", "Navn", "_S.catalystone-user:NAME.value"],
+        ["add", "Startdato",
+          ["datetime-parse", "%d.%m.%Y", "_S.catalystone-user:BASIC_SALARY.@VALID_FROM"]
+        ],
+        ["add", "Fra-lønn", "_S.oldSalary"],
+        ["add", "Til-lønn", "_S.catalystone-user:BASIC_SALARY.AMOUNT"],
+        ["add", "Stillingsprosent", "_S.catalystone-user:WORKING_HOURS.value"],
+        ["add", "Mnd",
+          ["integer",
+            ["datetime-format", "%m", "_T.Startdato"]
+          ]
+        ],
+        ["add", "År",
+          ["integer",
+            ["datetime-format", "%Y", "_T.Startdato"]
+          ]
+        ],
+        ["add", "Region", "_S.global-person:Region"],
+        ["add", "Sjekket", false],
+        ["add", "Kommentar",
+          ["coalesce",
+            ["list",
+              ["first",
+                ["hops", {
+                  "datasets": ["global-economy ga"],
+                  "where": ["eq",
+                    ["ni", "currenttime-salarychange-salary",
+                      ["concat", "_S.catalystone-user:UNIQUE_IMPORT_ID.value",
+                        ["datetime-format", "_%m_%Y",
+                          ["datetime-parse", "%d.%m.%Y", "_S.catalystone-user:BASIC_SALARY.@VALID_FROM"]
+                        ]
+                      ]
+                    ], "ga.$ids"],
+                  "return": "ga.currenttime-salarychange-salary:Kommentar"
+                }]
+              ], ""]
+          ]
+        ]
+      ]
+    }
+  }
+}

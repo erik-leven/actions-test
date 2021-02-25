@@ -1,0 +1,64 @@
+{
+  "_id": "global-site",
+  "type": "pipe",
+  "source": {
+    "type": "merge",
+    "datasets": ["o365-group ogp", "o365-owner oor", "o365-siteurl osl", "o365-sitedata osd", "elasticsearch-article ea", "bouvetno-article ba"],
+    "equality": [
+      ["eq", "ogp.$ids", "oor.id-ni"],
+      ["eq", "ogp.$ids", "osl.o365-siteurl:id-ni"],
+      ["eq", "ogp.$ids", "osd.o365-sitedata:id-ni"]
+    ],
+    "identity": "first",
+    "strategy": "compact",
+    "version": 2
+  },
+  "transform": {
+    "type": "dtl",
+    "rules": {
+      "default": [
+        ["copy", "*"],
+        ["merge",
+          ["apply", "filtering",
+            ["key-values", "_S.techmikael_GenericSchema"]
+          ]
+        ]
+      ],
+      "filtering": [
+        ["filter",
+          ["matches", "*Key*", "_S.key"]
+        ],
+        ["merge",
+          ["apply", "matching",
+            ["key-values", "_R._S.techmikael_GenericSchema"]
+          ]
+        ]
+      ],
+      "matching": [
+        ["comment", "checks if keys match on substring, and runs a value to key spin"],
+        ["if",
+          ["eq",
+            ["substring", -7, "_P._S.key"],
+            ["substring", -7, "_S.key"]
+          ],
+          ["if",
+            ["matches", "*\"*", "_S.value"],
+            ["add", "_P._S.value",
+              ["json-parse", "_S.value"]
+            ],
+            ["if",
+              ["eq", "_S.value", "[]"],
+              ["add", "_P._S.value",
+                ["json-parse", "_S.value"]
+              ],
+              ["add", "_P._S.value", "_S.value"]
+            ]
+          ]
+        ]
+      ]
+    }
+  },
+  "metadata": {
+    "global": true
+  }
+}

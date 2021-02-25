@@ -1,0 +1,32 @@
+{
+  "_id": "employeetime-currenttime-olavstoppen-endpoint",
+  "type": "pipe",
+  "source": {
+    "type": "dataset",
+    "dataset": "employeetime-currenttime-olavstoppen"
+  },
+  "sink": {
+    "type": "rest",
+    "system": "currenttime-olavstoppen-rest"
+  },
+  "transform": {
+    "type": "dtl",
+    "rules": {
+      "default": [
+        ["filter",
+          ["neq", "_S._deleted", true]
+        ],
+        ["copy", "*"]
+      ]
+    }
+  },
+  "pump": {
+    "max_consecutive_write_errors": 1000,
+    "max_retries_per_entity": 3,
+    "max_write_errors_in_retry_dataset": 10000,
+    "mode": "$ENV(pump-mode)",
+    "track_dead_letters": true,
+    "use_dead_letter_dataset": true,
+    "write_retry_delay": "~f0.1"
+  }
+}

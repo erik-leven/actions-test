@@ -1,0 +1,171 @@
+{
+  "_id": "elasticsearch-article",
+  "type": "pipe",
+  "source": {
+    "type": "conditional",
+    "alternatives": {
+      "prod": {
+        "type": "json",
+        "system": "elasticsearch",
+        "url": "/articles"
+      },
+      "test": {
+        "type": "embedded",
+        "entities": [{
+          "news": [{
+            "_id": "de7a371e-099a-4ad4-b1ca-d9146c946055",
+            "type": "no.bouvet.intranav:blog-news",
+            "attachments": {},
+            "childOrder": "modifiedtime DESC",
+            "createdTime": "2018-03-15T13:36:48.625Z",
+            "creator": "user:bouvet:renee.hamsund-bouvet.no",
+            "data": {
+              "all": false,
+              "bergen": false,
+              "body": "<figure class=\"justify\"><img src=\"image://6e87b6a4-be2c-4432-b5ba-cd67bb046ce4\" alt=\"KodeklubbenBouvet\" style=\"text-align: justify; width: 100%;\" />\n<figcaption style=\"text-align: left;\"></figcaption>\n</figure>\n<p><strong>Tid:</strong>&nbsp;S&oslash;ndag 29. april klokka 14 &ndash;17</p>\n<p><strong>Sted:</strong>&nbsp;Bouvethuset</p>\n<p>Vi serverer p&oslash;lser, frukt og noe &aring; drikke underveis.</p>\n<p>Vi ser for oss at vi skal tilbyr oppgaver i Scratch for barn i alderen 6-14 &aring;r og vil oppfordre b&aring;de gutter og jenter til &aring; bli med. Barna m&aring; kunne stille med egen PC, men om det skulle v&aelig;re et problem, gi beskjed s&aring; ser vi hva vi f&aring;r til.</p>\n<p>Med p&aring; laget har vi kollega Nora Tessem, som har bidratt til b&aring;de L&aelig;r kidsa koding og organisering av Kodeklubben Oslo i 3 &aring;r. Til daglig jobber hun med back-end i Tech 1, men om kvelden l&aelig;rer hun bort blokkprogrammering i Scratch til barn p&aring; en datalab p&aring; Institutt for informatikk. I forkant av kodekvelden vil hun vil holde en workshop i Scratch for alle som er nysgjerrig p&aring; hvordan man l&aelig;rer bort programmering, og gi et slags kr&aelig;sjkurs i hva som skal til for &aring; f&aring; det til.</p>\n<p><strong>Stikkord:</strong> Pedagogikk, soft skills og debugging.</p>\n<p>Bli med som veileder!&nbsp;Akkurat hvilke oppgaver og hvor mange barn vi kan ta imot, avhenger av antall veiledere og her er vi avhengig av at dere har lyst til &aring; stille opp. Kanskje har du en id&eacute; om et annet opplegg du har lyst til &aring; bidra med?&nbsp;Gi oss tilbakemelding p&aring; hva du evt. &oslash;nsker &aring; gj&oslash;re, hvilken aldersgruppe det passer for og hvor stor gruppe det kan passe for.</p>\n<p>Vi ser for oss at b&aring;de workshopen i forkant og selve kodeklubben kan bli en sosial samlingsstund for b&aring;de voksne og barn. Det er ingen krav til at du skal ha barn for &aring; delta &ndash; alle er hjertelig velkomne som veiledere. Kan du ikke kode, men har lyst til &aring; bidra allikevel? Kom igjen og bli med! 😊</p>\n<p>Har du en id&eacute; til et morsomt prosjekt man kunne gjort, men har ikke tid n&aring;? Gi beskjed, s&aring; kanskje vi f&aring;r det til en annen gang. Dette kan v&aelig;re begynnelsen p&aring; en ny tradisjon!</p>\n<p><strong>P&aring;melding:</strong> https://goo.gl/forms/JgIu27xWtc56qsjG2</p>\n<p><strong>P&aring;meldingsfrist:</strong> Innen 16. april</p>\n<p>Arrangementet er for barn, barnebarn, nev&oslash;er og nieser til de ansatte. Venner av barna m&aring; vi nok henvise til de vanlige kodeklubbene denne kvelden.</p>\n<p>Antall barn vi kan ta i mot avhenger av hvor mange veiledere vi f&aring;r. Forel&oslash;big er det f&oslash;rste mann til m&oslash;lla!</p>\n<p><strong>Workshop for veiledere:</strong> Tirsdag 10. april 16 &ndash; 18. P&aring;melding kommer p&aring; event.bouvet.no</p>\n<p>For sp&oslash;rsm&aring;l om det praktiske: Kontakt <a href=\"slack://user?team=T024XURJ2&amp;id=U64MK3UJV\" target=\"_blank\" rel=\"noopener noreferrer\">Ekaterina Yurchenko</a> eller <a href=\"slack://user?team=T024XURJ2&amp;id=U04RNVBB3\" target=\"_blank\" rel=\"noopener noreferrer\">Ren&eacute;e Hamsund</a></p>\n<p>Om du har sp&oslash;rsm&aring;l om undervisningsopplegget, eller vil melde deg som veileder: Kontakt <a href=\"slack://user?team=T024XURJ2&amp;id=U8MTNHZRC\" target=\"_blank\" rel=\"noopener noreferrer\">Nora Aamb&oslash; Tessem</a></p>\n<p>Vi har ogs&aring; en egen kanal (#kodeklubben) p&aring; Slack for arbeidet med dette og tar gjerne imot forslag og innspill der.</p>",
+              "east": true,
+              "excludeFromTheList": false,
+              "heading": "Bli med på Kodeklubben!",
+              "image": "29cffd65-2e2a-4563-ad23-9680dd617404",
+              "lead": "Kodeklubben Bouvet er tenkt som en sosial samlingsstund der vi inviterer Bouvet-barna til koding. Veiledere for kvelden er oss selv. :)",
+              "north": false,
+              "rogaland": false,
+              "sesam": true,
+              "south": false,
+              "stab": true,
+              "sweden": false
+            },
+            "displayName": "Bli med på Kodeklubben!",
+            "hasChildren": true,
+            "language": "no",
+            "modifiedTime": "2018-04-13T11:03:14.049Z",
+            "modifier": "user:bouvet:renee.hamsund-bouvet.no",
+            "owner": "user:bouvet:renee.hamsund-bouvet.no",
+            "page": {},
+            "publish": {
+              "first": "2018-03-15T14:41:44.725Z",
+              "from": "2018-03-15T14:41:44.725Z"
+            },
+            "valid": true,
+            "x": {
+              "com-enonic-app-metafields": {
+                "meta-data": {
+                  "blockRobots": false
+                }
+              }
+            }
+          }, {
+            "_id": "175cd5ca-5bc4-4318-91b7-c8677fc7ab53",
+            "type": "no.bouvet.intranav:blog-news",
+            "attachments": {},
+            "childOrder": "modifiedtime DESC",
+            "createdTime": "2018-05-04T10:22:15.890Z",
+            "creator": "user:bouvet:eszter.horvati-bouvet.no",
+            "data": {
+              "all": true,
+              "bergen": false,
+              "body": "<p>I forbindelse med at Bouvet deltar p&aring; Holmenkollstafetten 5. mai og R&aring;skinnet 12. mai st&oslash;tter vi som bedrift Kreftforeningen med 10.000,-!</p>\n<p>Vi kjenner alle noen som direkte eller indirekte er rammet av kreft. Sammen kan vi gj&oslash;re en enda st&oslash;rre forskjell. Vil du hjelpe oss og Kreftforeningen, s&aring; st&oslash;tt gjerne v&aring;r kampanje med et valgfritt bel&oslash;p p&aring; <a href=\"https://innsamling.kreftforeningen.no/8594\" target=\"_blank\" title=\"Bli med Bouvet &aring; st&oslash;tte Kreftforeningen\" rel=\"noopener noreferrer\">kampanjesiden</a>.<br />La oss sammen gi alt vi kan i l&oslash;pene og for Kreftforeningen.</p>",
+              "east": false,
+              "excludeFromTheList": false,
+              "heading": "Bouvet løper for å støtte Kreftforeningen",
+              "image": "187ff0c9-3fda-41e7-9867-81526651eecd",
+              "lead": "Nå kan du også være med!",
+              "north": false,
+              "rogaland": false,
+              "sesam": false,
+              "south": false,
+              "stab": false,
+              "sweden": false
+            },
+            "displayName": "Bouvet støtter Kreftforeningen",
+            "hasChildren": true,
+            "language": "no",
+            "modifiedTime": "2018-05-07T20:58:47.406Z",
+            "modifier": "user:bouvet:eszter.horvati-bouvet.no",
+            "owner": "user:bouvet:eszter.horvati-bouvet.no",
+            "page": {},
+            "publish": {
+              "first": "2018-05-04T10:38:38.759Z",
+              "from": "2018-05-04T10:38:38.759Z"
+            },
+            "valid": true,
+            "x": {
+              "com-enonic-app-metafields": {
+                "meta-data": {
+                  "blockRobots": false
+                }
+              }
+            }
+          }]
+        }]
+      }
+    },
+    "condition": "$ENV(node-env)"
+  },
+  "transform": [{
+    "type": "dtl",
+    "rules": {
+      "default": [
+        ["add", "_id", "1"],
+        ["create-child",
+          ["apply", "create-news", "_S.news"]
+        ],
+        ["create-child",
+          ["apply", "create-blogArticles", "_S.blogArticles"]
+        ]
+      ],
+      "create-blogArticles": [
+        ["merge",
+          ["apply", "namespace-blogArticles",
+            ["key-values", "_S."]
+          ]
+        ],
+        ["add", "_id",
+          ["concat",
+            ["list", "elasticsearch-article-blogArticle:", "_S._id"]
+          ]
+        ],
+        ["add", "rdf:type",
+          ["ni", "bouvet", "minside-article"]
+        ]
+      ],
+      "create-news": [
+        ["merge",
+          ["apply", "namespace-news",
+            ["key-values", "_S."]
+          ]
+        ],
+        ["add", "_id",
+          ["concat",
+            ["list", "elasticsearch-article-news:", "_S._id"]
+          ]
+        ],
+        ["add", "rdf:type",
+          ["ni", "bouvet", "minside-news"]
+        ]
+      ],
+      "namespace-blogArticles": [
+        ["add",
+          ["concat",
+            ["list", "elasticsearch-article-blogArticle:",
+              ["lstrip", "_", "_S.key"]
+            ]
+          ], "_S.value"]
+      ],
+      "namespace-news": [
+        ["add",
+          ["concat",
+            ["list", "elasticsearch-article-news:",
+              ["lstrip", "_", "_S.key"]
+            ]
+          ], "_S.value"]
+      ]
+    }
+  }, {
+    "type": "emit_children"
+  }],
+  "pump": {
+    "cron_expression": "$ENV(elasticsearch_cron_medium)"
+  },
+  "namespaced_identifiers": false
+}

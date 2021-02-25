@@ -1,0 +1,49 @@
+{
+  "_id": "costunitshierarchydata-sql01_vot-endpoint",
+  "type": "pipe",
+  "source": {
+    "type": "dataset",
+    "dataset": "costunitshierarchydata-sql01_vot"
+  },
+  "sink": {
+    "type": "sql",
+    "system": "sql01_vot",
+    "create_table_if_missing": true,
+    "primary_key": ["HierarchyNo", "CostUnitID", "CostUnitValue"],
+    "schema": "dbo",
+    "schema_definition": [{
+      "type": "integer",
+      "name": "CostUnitID",
+      "max_value": 10000,
+      "min_value": 0,
+      "primary_key": true,
+      "source_property": "CostUnitID"
+    }, {
+      "type": "string",
+      "name": "CostUnitValue",
+      "max_size": 20,
+      "min_size": 1,
+      "primary_key": true,
+      "source_property": "CostUnitValue"
+    }, {
+      "type": "integer",
+      "name": "HierarchyNo",
+      "max_value": 100000,
+      "min_value": 1,
+      "primary_key": true,
+      "source_property": "HierarchyNo"
+    }, {
+      "type": "string",
+      "name": "SavedValue",
+      "allow_null": true,
+      "max_size": 20,
+      "min_size": 1,
+      "source_property": "SavedValue"
+    }],
+    "table": "CostUnitsHierarchyData"
+  },
+  "pump": {
+    "cron_expression": "$ENV(vot_cron_fast)",
+    "mode": "$ENV(pump-mode)"
+  }
+}

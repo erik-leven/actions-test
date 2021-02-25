@@ -1,0 +1,59 @@
+{
+  "_id": "currenttime-projecttype",
+  "type": "pipe",
+  "source": {
+    "type": "conditional",
+    "alternatives": {
+      "prod": {
+        "type": "sql",
+        "system": "currenttime",
+        "table": "projecttype",
+        "updated_column": "updatedate"
+      },
+      "test": {
+        "type": "embedded",
+        "entities": [{
+          "_id": "0",
+          "active": 1,
+          "projecttypebackcolor": "",
+          "projecttypeforecolor": "",
+          "projecttypeid": 0,
+          "projecttypename": "Eksterne kunder løpende timer"
+        }, {
+          "_id": "1",
+          "active": 1,
+          "projecttypebackcolor": "",
+          "projecttypeforecolor": "",
+          "projecttypeid": 1,
+          "projecttypename": "Eksterne kunder målpris"
+        }, {
+          "_id": "2",
+          "active": 1,
+          "projecttypebackcolor": "",
+          "projecttypeforecolor": "",
+          "projecttypeid": 2,
+          "projecttypename": "Eksterne kunder fastpris"
+        }, {
+          "_id": "3",
+          "active": 1,
+          "projecttypebackcolor": "",
+          "projecttypeforecolor": "",
+          "projecttypeid": 3,
+          "projecttypename": "Interne kunder løpende timer"
+        }, {
+          "_id": "4",
+          "active": 1,
+          "projecttypebackcolor": "",
+          "projecttypeforecolor": "",
+          "projecttypeid": 4,
+          "projecttypename": "Ikke fakturerbare timer"
+        }]
+      }
+    },
+    "condition": "$ENV(node-env)"
+  },
+  "pump": {
+    "cron_expression": "$ENV(ct_cron_fast)",
+    "rescan_cron_expression": "$ENV(ct_rescan_cron)"
+  }
+}

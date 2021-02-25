@@ -1,0 +1,157 @@
+{
+  "_id": "customer-elasticsearch",
+  "type": "pipe",
+  "source": {
+    "type": "dataset",
+    "dataset": "customer-project-data"
+  },
+  "transform": {
+    "type": "dtl",
+    "rules": {
+      "default": [
+        ["filter",
+          ["in", "~:cvpartner:customer", "_S.rdf:type"]
+        ],
+        ["filter",
+          ["neq", "_S._id", "cvpartner-customer:583c22cd285db103a7284779"]
+        ],
+        ["filter",
+          ["neq", "_S._id", "cvpartner-customer:58e3585da37d2507c55b7767"]
+        ],
+        ["filter",
+          ["neq", "_S._id", "cvpartner-customer:5d5d20b7717b920ef4b10468"]
+        ],
+        ["copy", "*"],
+        ["comment", "Add all projects for the customer to payload"],
+        ["if",
+          ["and",
+            ["is-not-empty", "_S.project_data.project.uid"],
+            ["is-not-empty", "_S.project_data.project.name"]
+          ],
+          ["add", "projects",
+            ["distinct", "_.name", "_S.project_data.project"]
+          ]
+        ],
+        ["comment", "Add all consultants who has worked for customer. Use earliest startdate, latest enddate, combined list of all distinct roles etc to summarize the consultant's experience at the customer."],
+        ["merge-union",
+          ["apply-hops", "aggregate-consultants", {
+            "datasets": ["customer-project-data cpd"],
+            "where": ["eq",
+              ["tuples", "_S.project_data.project.uid", "_S.project_data.consultant.uid", "~:cvpartner:projectConsultant"],
+              ["tuples", "cpd.project_id", "cpd.uid", "cpd.rdf:type"]
+            ]
+          }]
+        ],
+        ["comment", "Add customer description"],
+        ["add", "descriptions",
+          ["first",
+            ["hops", {
+              "datasets": ["cvpartner-cv-customer cc"],
+              "where": [
+                ["eq",
+                  ["ni-id",
+                    ["ni", "_S._id"]
+                  ],
+                  ["ni-id",
+                    ["ni", "cc._id"]
+                  ]
+                ]
+              ],
+              "return": "cc.customer_description"
+            }]
+          ]
+        ],
+        ["add", "description",
+          ["coalesce",
+            ["list", "_T.descriptions.no", "_T.descriptions.int", "_T.descriptions.se"]
+          ]
+        ],
+        ["comment", "filter customers without relevant data"],
+        ["filter",
+          ["or",
+            ["gt",
+              ["count", "_T.consultants"], 0],
+            ["gt",
+              ["count", "_S.offers"], 0],
+            ["gt",
+              ["count", "_S.projectrooms"], 0]
+          ]
+        ],
+        ["remove",
+          ["list", "project_data", "descriptions"]
+        ],
+        ["comment", "we add name and uid again to avoid lists due to multiple companies with same name in cvpartner"],
+        ["remove",
+          ["list", "name", "uid"]
+        ],
+        ["add", "name",
+          ["first", "_S.name"]
+        ],
+        ["add", "uid",
+          ["first", "_S.uid"]
+        ]
+      ],
+      "aggregate-consultants": [
+        ["merge-union",
+          ["apply-hops", "all-customer-projects-for-consultant", {
+            "datasets": ["customer-project-data cpd"],
+            "where": ["eq",
+              ["tuples", "_S.customer_id", "_S.uid", "~:cvpartner:projectConsultant"],
+              ["tuples", "cpd.customer_id", "cpd.uid", "cpd.rdf:type"]
+            ]
+          }]
+        ],
+        ["if",
+          ["in", "pågående", "_T.builder.enddate"],
+          ["add", "enddate_tmp", "pågående"],
+          ["add", "enddate_tmp",
+            ["max", "_T.builder.enddate"]
+          ]
+        ],
+        ["add", "consultants",
+          ["dict", "uid",
+            ["first", "_T.builder.uid"], "projectparticipation",
+            ["distinct", "_.projectname", "_T.builder.projectparticipation"], "startdate",
+            ["min", "_T.builder.startdate"], "enddate", "_T.enddate_tmp", "role",
+            ["sorted",
+              ["distinct",
+                ["strip",
+                  ["filter",
+                    ["neq", "", "_."], "_T.builder.role"]
+                ]
+              ]
+            ]
+          ]
+        ],
+        ["remove",
+          ["list", "builder", "enddate_tmp"]
+        ]
+      ],
+      "all-customer-projects-for-consultant": [
+        ["merge",
+          ["apply-hops", "projectnames", {
+            "datasets": ["cv-project cp"],
+            "where": ["eq", "_S.project_id",
+              ["ni-id",
+                ["ni", "cp._id"]
+              ]
+            ]
+          }]
+        ],
+        ["add", "builder",
+          ["dict", "uid", "_S.uid", "startdate", "_S.startdate", "enddate", "_S.enddate", "role", "_S.role", "projectparticipation",
+            ["dict", "projectname", "_T.projectname", "consultant_startdate", "_S.startdate", "consultant_enddate", "_S.enddate", "role", "_S.role"]
+          ]
+        ],
+        ["remove", "projectname"]
+      ],
+      "projectnames": [
+        ["add", "projectname",
+          ["coalesce",
+            ["list", "_S.description.no", "_S.description.int", "_S.description.se"]
+          ]
+        ]
+      ]
+    }
+  }
+}

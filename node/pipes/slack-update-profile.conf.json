@@ -1,0 +1,18 @@
+{
+  "_id": "slack-update-profile",
+  "type": "pipe",
+  "source": {
+    "type": "dataset",
+    "dataset": "slack-update-users"
+  },
+  "sink": {
+    "type": "json",
+    "system": "slack",
+    "batch_size": 30,
+    "url": "/update"
+  },
+  "pump": {
+    "cron_expression": "0 0 * * ?",
+    "mode": "$ENV(pump-mode)"
+  }
+}

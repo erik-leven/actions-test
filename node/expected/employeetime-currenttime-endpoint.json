@@ -1,0 +1,53 @@
+[
+  {
+    "EmployeeId": 3402,
+    "_id": "0001",
+    "operation": "update-employeetime",
+    "payload": {
+      "ChangeSalaryCode": false,
+      "CostRate": 0,
+      "FlexiTime": false,
+      "FlexiTimeBalanceUpdated": "2020-04-01",
+      "Overtime": false,
+      "Rate": 9,
+      "ShowPlannedHours": false,
+      "Timesheet": true,
+      "Vacation": true,
+      "VacationBalanceUpdated": "2020-04-01"
+    }
+  },
+  {
+    "EmployeeId": 3456,
+    "_id": "0004",
+    "operation": "update-employeetime",
+    "payload": {
+      "ChangeSalaryCode": false,
+      "CostRate": 0,
+      "FlexiTime": false,
+      "FlexiTimeBalanceUpdated": "2017-08-01",
+      "Overtime": false,
+      "Rate": 9,
+      "ShowPlannedHours": false,
+      "Timesheet": true,
+      "Vacation": true,
+      "VacationBalanceUpdated": "2017-08-01"
+    }
+  },
+  {
+    "EmployeeId": 3455,
+    "_id": "0007",
+    "operation": "update-employeetime",
+    "payload": {
+      "ChangeSalaryCode": false,
+      "CostRate": 0,
+      "FlexiTime": false,
+      "FlexiTimeBalanceUpdated": "2020-03-20",
+      "Overtime": false,
+      "Rate": 9,
+      "ShowPlannedHours": false,
+      "Timesheet": true,
+      "Vacation": true,
+      "VacationBalanceUpdated": "2020-03-20"
+    }
+  }
+]

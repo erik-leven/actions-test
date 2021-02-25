@@ -1,0 +1,57 @@
+[
+  {
+    "EmployeeId": 3402,
+    "_id": "0001",
+    "operation": "update-employeeaddress",
+    "payload": {
+      "AddressLine1": "test adresse",
+      "Mobile": "test telefon",
+      "PostAddress": "test by",
+      "Zipcode": "test postnummer"
+    }
+  },
+  {
+    "EmployeeId": 3456,
+    "_id": "0004",
+    "operation": "update-employeeaddress",
+    "payload": {
+      "AddressLine1": "test adresse",
+      "Mobile": "55555555",
+      "PostAddress": "test by",
+      "Zipcode": "test postnummer"
+    }
+  },
+  {
+    "EmployeeId": 3455,
+    "_id": "0007",
+    "operation": "update-employeeaddress",
+    "payload": {
+      "AddressLine1": "test adresse",
+      "Mobile": "99999999",
+      "PostAddress": "test by",
+      "Zipcode": "test postnummer"
+    }
+  },
+  {
+    "EmployeeId": 3452,
+    "_id": "0010",
+    "operation": "update-employeeaddress",
+    "payload": {
+      "AddressLine1": "test adresse",
+      "Mobile": "+4623452345",
+      "PostAddress": "test by",
+      "Zipcode": "test postnummer"
+    }
+  },
+  {
+    "EmployeeId": 3656,
+    "_id": "2276",
+    "operation": "update-employeeaddress",
+    "payload": {
+      "AddressLine1": "Hjemmeligveien 1",
+      "Mobile": "+6549873512",
+      "PostAddress": "OSLO",
+      "Zipcode": "0000"
+    }
+  }
+]

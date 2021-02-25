@@ -1,0 +1,44 @@
+{
+  "_id": "currenttime-sverige-department",
+  "type": "pipe",
+  "source": {
+    "type": "conditional",
+    "alternatives": {
+      "prod": {
+        "type": "sql",
+        "system": "currenttime-sverige",
+        "table": "department",
+        "updated_column": "updatedate"
+      },
+      "test": {
+        "type": "embedded",
+        "entities": []
+      }
+    },
+    "condition": "$ENV(node-env)"
+  },
+  "transform": {
+    "type": "dtl",
+    "rules": {
+      "default": [
+        ["filter",
+          ["and",
+            ["eq", "_S.departmentactive", 1],
+            ["not",
+              ["matches", "* LED*", "_S.departmentname"]
+            ]
+          ]
+        ],
+        ["copy", "*"],
+        ["make-ni", "currenttime-sverige-employee", "employeeid"],
+        ["add", "rdf:type",
+          ["ni", "bouvet:currenttime-sverige-department"]
+        ]
+      ]
+    }
+  },
+  "pump": {
+    "cron_expression": "$ENV(ct_cron_fast)",
+    "rescan_cron_expression": "$ENV(ct_rescan_cron)"
+  }
+}

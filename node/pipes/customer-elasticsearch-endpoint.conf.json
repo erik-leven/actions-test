@@ -1,0 +1,28 @@
+{
+  "_id": "customer-elasticsearch-endpoint",
+  "type": "pipe",
+  "source": {
+    "type": "dataset",
+    "dataset": "customer-elasticsearch"
+  },
+  "sink": {
+    "type": "json",
+    "system": "elasticsearch",
+    "batch_size": 50,
+    "url": "/sesam_customers"
+  },
+  "transform": {
+    "type": "dtl",
+    "rules": {
+      "default": [
+        ["filter",
+          ["neq", "_S._deleted", true]
+        ],
+        ["copy", "*"]
+      ]
+    }
+  },
+  "pump": {
+    "mode": "$ENV(pump-mode)"
+  }
+}

@@ -1,0 +1,2014 @@
+[
+  {
+    "_id": "1",
+    "operation": "post",
+    "payload": {
+      "masterdata": {
+        "category_ids": [
+          "586cf0be285db12d00d9e1e5"
+        ],
+        "external_unique_id": "1",
+        "values": {
+          "no": "Bouvet ASA"
+        }
+      }
+    }
+  },
+  {
+    "_id": "100",
+    "operation": "post",
+    "payload": {
+      "masterdata": {
+        "category_ids": [
+          "586cf0be285db12d00d9e1e5"
+        ],
+        "external_unique_id": "100",
+        "values": {
+          "no": "Norge Felles"
+        }
+      }
+    }
+  },
+  {
+    "_id": "150",
+    "operation": "post",
+    "payload": {
+      "masterdata": {
+        "category_ids": [
+          "586cf0be285db12d00d9e1e5"
+        ],
+        "external_unique_id": "150",
+        "values": {
+          "no": "IT Drift"
+        }
+      }
+    }
+  },
+  {
+    "_id": "2",
+    "operation": "post",
+    "payload": {
+      "masterdata": {
+        "category_ids": [
+          "586cf0be285db12d00d9e1e5"
+        ],
+        "external_unique_id": "2",
+        "values": {
+          "no": "Bouvet Norge AS"
+        }
+      }
+    }
+  },
+  {
+    "_id": "200",
+    "operation": "post",
+    "payload": {
+      "masterdata": {
+        "category_ids": [
+          "586cf0be285db12d00d9e1e5"
+        ],
+        "external_unique_id": "200",
+        "values": {
+          "no": "Øst Kurs"
+        }
+      }
+    }
+  },
+  {
+    "_id": "210",
+    "operation": "post",
+    "payload": {
+      "masterdata": {
+        "category_ids": [
+          "586cf0be285db12d00d9e1e5"
+        ],
+        "external_unique_id": "210",
+        "values": {
+          "no": "Øst Felles"
+        }
+      }
+    }
+  },
+  {
+    "_id": "211",
+    "operation": "post",
+    "payload": {
+      "masterdata": {
+        "category_ids": [
+          "586cf0be285db12d00d9e1e5"
+        ],
+        "external_unique_id": "211",
+        "values": {
+          "no": "Øst Salg"
+        }
+      }
+    }
+  },
+  {
+    "_id": "299",
+    "operation": "post",
+    "payload": {
+      "masterdata": {
+        "category_ids": [
+          "586cf0be285db12d00d9e1e5"
+        ],
+        "external_unique_id": "299",
+        "values": {
+          "no": "Region Øst"
+        }
+      }
+    }
+  },
+  {
+    "_id": "3",
+    "operation": "post",
+    "payload": {
+      "masterdata": {
+        "category_ids": [
+          "586cf0be285db12d00d9e1e5"
+        ],
+        "external_unique_id": "3",
+        "values": {
+          "no": "Bouvet Sverige AB",
+          "se": "Bouvet Sverige AB"
+        }
+      }
+    }
+  },
+  {
+    "_id": "301",
+    "operation": "post",
+    "payload": {
+      "masterdata": {
+        "category_ids": [
+          "586cf0be285db12d00d9e1e5"
+        ],
+        "external_unique_id": "301",
+        "values": {
+          "no": "Øst Tech 1"
+        }
+      }
+    }
+  },
+  {
+    "_id": "302",
+    "operation": "post",
+    "payload": {
+      "masterdata": {
+        "category_ids": [
+          "586cf0be285db12d00d9e1e5"
+        ],
+        "external_unique_id": "302",
+        "values": {
+          "no": "Øst Tech 2"
+        }
+      }
+    }
+  },
+  {
+    "_id": "303",
+    "operation": "post",
+    "payload": {
+      "masterdata": {
+        "category_ids": [
+          "586cf0be285db12d00d9e1e5"
+        ],
+        "external_unique_id": "303",
+        "values": {
+          "no": "Øst Kundeopplevelse"
+        }
+      }
+    }
+  },
+  {
+    "_id": "312",
+    "operation": "post",
+    "payload": {
+      "masterdata": {
+        "category_ids": [
+          "586cf0be285db12d00d9e1e5"
+        ],
+        "external_unique_id": "312",
+        "values": {
+          "no": "Øst Dev 2"
+        }
+      }
+    }
+  },
+  {
+    "_id": "315",
+    "operation": "post",
+    "payload": {
+      "masterdata": {
+        "category_ids": [
+          "586cf0be285db12d00d9e1e5"
+        ],
+        "external_unique_id": "315",
+        "values": {
+          "no": "Øst Dev 3"
+        }
+      }
+    }
+  },
+  {
+    "_id": "316",
+    "operation": "post",
+    "payload": {
+      "masterdata": {
+        "category_ids": [
+          "586cf0be285db12d00d9e1e5"
+        ],
+        "external_unique_id": "316",
+        "values": {
+          "no": "Øst Dev 4"
+        }
+      }
+    }
+  },
+  {
+    "_id": "317",
+    "operation": "post",
+    "payload": {
+      "masterdata": {
+        "category_ids": [
+          "586cf0be285db12d00d9e1e5"
+        ],
+        "external_unique_id": "317",
+        "values": {
+          "no": "Øst Dev 5"
+        }
+      }
+    }
+  },
+  {
+    "_id": "318",
+    "operation": "post",
+    "payload": {
+      "masterdata": {
+        "category_ids": [
+          "586cf0be285db12d00d9e1e5"
+        ],
+        "external_unique_id": "318",
+        "values": {
+          "no": "Øst Data Science"
+        }
+      }
+    }
+  },
+  {
+    "_id": "320",
+    "operation": "post",
+    "payload": {
+      "masterdata": {
+        "category_ids": [
+          "586cf0be285db12d00d9e1e5"
+        ],
+        "external_unique_id": "320",
+        "values": {
+          "no": "Øst Microsoft 1"
+        }
+      }
+    }
+  },
+  {
+    "_id": "321",
+    "operation": "post",
+    "payload": {
+      "masterdata": {
+        "category_ids": [
+          "586cf0be285db12d00d9e1e5"
+        ],
+        "external_unique_id": "321",
+        "values": {
+          "no": "Øst Microsoft 2"
+        }
+      }
+    }
+  },
+  {
+    "_id": "322",
+    "operation": "post",
+    "payload": {
+      "masterdata": {
+        "category_ids": [
+          "586cf0be285db12d00d9e1e5"
+        ],
+        "external_unique_id": "322",
+        "values": {
+          "no": "Øst Microsoft 3"
+        }
+      }
+    }
+  },
+  {
+    "_id": "323",
+    "operation": "post",
+    "payload": {
+      "masterdata": {
+        "category_ids": [
+          "586cf0be285db12d00d9e1e5"
+        ],
+        "external_unique_id": "323",
+        "values": {
+          "no": "Øst Microsoft 4"
+        }
+      }
+    }
+  },
+  {
+    "_id": "324",
+    "operation": "post",
+    "payload": {
+      "masterdata": {
+        "category_ids": [
+          "586cf0be285db12d00d9e1e5"
+        ],
+        "external_unique_id": "324",
+        "values": {
+          "no": "Øst Microsoft 5"
+        }
+      }
+    }
+  },
+  {
+    "_id": "325",
+    "operation": "post",
+    "payload": {
+      "masterdata": {
+        "category_ids": [
+          "586cf0be285db12d00d9e1e5"
+        ],
+        "external_unique_id": "325",
+        "values": {
+          "no": "Øst Webapps 1"
+        }
+      }
+    }
+  },
+  {
+    "_id": "326",
+    "operation": "post",
+    "payload": {
+      "masterdata": {
+        "category_ids": [
+          "586cf0be285db12d00d9e1e5"
+        ],
+        "external_unique_id": "326",
+        "values": {
+          "no": "Øst Webapps 2"
+        }
+      }
+    }
+  },
+  {
+    "_id": "327",
+    "id": "5d4d290bedfc710e8cb837a5",
+    "operation": "put",
+    "payload": {
+      "masterdata": {
+        "custom_tag_category_id": "586cf0be285db12d00d9e1e5",
+        "external_unique_id": "327",
+        "values": {
+          "no": "Øst Microsoft"
+        }
+      }
+    }
+  },
+  {
+    "_id": "329",
+    "operation": "post",
+    "payload": {
+      "masterdata": {
+        "category_ids": [
+          "586cf0be285db12d00d9e1e5"
+        ],
+        "external_unique_id": "329",
+        "values": {
+          "no": "Øst Tjenesteleveranser"
+        }
+      }
+    }
+  },
+  {
+    "_id": "330",
+    "operation": "post",
+    "payload": {
+      "masterdata": {
+        "category_ids": [
+          "586cf0be285db12d00d9e1e5"
+        ],
+        "external_unique_id": "330",
+        "values": {
+          "no": "Øst Innsikt"
+        }
+      }
+    }
+  },
+  {
+    "_id": "331",
+    "operation": "post",
+    "payload": {
+      "masterdata": {
+        "category_ids": [
+          "586cf0be285db12d00d9e1e5"
+        ],
+        "external_unique_id": "331",
+        "values": {
+          "no": "Øst Ria 1"
+        }
+      }
+    }
+  },
+  {
+    "_id": "333",
+    "operation": "post",
+    "payload": {
+      "masterdata": {
+        "category_ids": [
+          "586cf0be285db12d00d9e1e5"
+        ],
+        "external_unique_id": "333",
+        "values": {
+          "no": "Øst Design 1"
+        }
+      }
+    }
+  },
+  {
+    "_id": "334",
+    "operation": "post",
+    "payload": {
+      "masterdata": {
+        "category_ids": [
+          "586cf0be285db12d00d9e1e5"
+        ],
+        "external_unique_id": "334",
+        "values": {
+          "no": "Øst Design 2"
+        }
+      }
+    }
+  },
+  {
+    "_id": "335",
+    "operation": "post",
+    "payload": {
+      "masterdata": {
+        "category_ids": [
+          "586cf0be285db12d00d9e1e5"
+        ],
+        "external_unique_id": "335",
+        "values": {
+          "no": "Øst Ria 2"
+        }
+      }
+    }
+  },
+  {
+    "_id": "337",
+    "operation": "post",
+    "payload": {
+      "masterdata": {
+        "category_ids": [
+          "586cf0be285db12d00d9e1e5"
+        ],
+        "external_unique_id": "337",
+        "values": {
+          "no": "Øst Ria 3"
+        }
+      }
+    }
+  },
+  {
+    "_id": "338",
+    "operation": "post",
+    "payload": {
+      "masterdata": {
+        "category_ids": [
+          "586cf0be285db12d00d9e1e5"
+        ],
+        "external_unique_id": "338",
+        "values": {
+          "no": "Øst Råd Tjenestedesign"
+        }
+      }
+    }
+  },
+  {
+    "_id": "339",
+    "operation": "post",
+    "payload": {
+      "masterdata": {
+        "category_ids": [
+          "586cf0be285db12d00d9e1e5"
+        ],
+        "external_unique_id": "339",
+        "values": {
+          "no": "Øst Råd KO"
+        }
+      }
+    }
+  },
+  {
+    "_id": "340",
+    "operation": "post",
+    "payload": {
+      "masterdata": {
+        "category_ids": [
+          "586cf0be285db12d00d9e1e5"
+        ],
+        "external_unique_id": "340",
+        "values": {
+          "no": "Øst Dev 1"
+        }
+      }
+    }
+  },
+  {
+    "_id": "4",
+    "operation": "post",
+    "payload": {
+      "masterdata": {
+        "category_ids": [
+          "586cf0be285db12d00d9e1e5"
+        ],
+        "external_unique_id": "4",
+        "values": {
+          "no": "Olavstoppen AS"
+        }
+      }
+    }
+  },
+  {
+    "_id": "400",
+    "operation": "post",
+    "payload": {
+      "masterdata": {
+        "category_ids": [
+          "586cf0be285db12d00d9e1e5"
+        ],
+        "external_unique_id": "400",
+        "values": {
+          "no": "Øst Cloud 1"
+        }
+      }
+    }
+  },
+  {
+    "_id": "401",
+    "operation": "post",
+    "payload": {
+      "masterdata": {
+        "category_ids": [
+          "586cf0be285db12d00d9e1e5"
+        ],
+        "external_unique_id": "401",
+        "values": {
+          "no": "Øst Cloud 2"
+        }
+      }
+    }
+  },
+  {
+    "_id": "409",
+    "operation": "post",
+    "payload": {
+      "masterdata": {
+        "category_ids": [
+          "586cf0be285db12d00d9e1e5"
+        ],
+        "external_unique_id": "409",
+        "values": {
+          "no": "Øst Cloud"
+        }
+      }
+    }
+  },
+  {
+    "_id": "450",
+    "operation": "post",
+    "payload": {
+      "masterdata": {
+        "category_ids": [
+          "586cf0be285db12d00d9e1e5"
+        ],
+        "external_unique_id": "450",
+        "values": {
+          "no": "Øst PIA"
+        }
+      }
+    }
+  },
+  {
+    "_id": "451",
+    "operation": "post",
+    "payload": {
+      "masterdata": {
+        "category_ids": [
+          "586cf0be285db12d00d9e1e5"
+        ],
+        "external_unique_id": "451",
+        "values": {
+          "no": "Øst PIA 1"
+        }
+      }
+    }
+  },
+  {
+    "_id": "452",
+    "operation": "post",
+    "payload": {
+      "masterdata": {
+        "category_ids": [
+          "586cf0be285db12d00d9e1e5"
+        ],
+        "external_unique_id": "452",
+        "values": {
+          "no": "Øst PIA 2"
+        }
+      }
+    }
+  },
+  {
+    "_id": "453",
+    "operation": "post",
+    "payload": {
+      "masterdata": {
+        "category_ids": [
+          "586cf0be285db12d00d9e1e5"
+        ],
+        "external_unique_id": "453",
+        "values": {
+          "no": "Øst PIA 3"
+        }
+      }
+    }
+  },
+  {
+    "_id": "5",
+    "operation": "post",
+    "payload": {
+      "masterdata": {
+        "category_ids": [
+          "586cf0be285db12d00d9e1e5"
+        ],
+        "external_unique_id": "5",
+        "values": {
+          "no": "Bouvet Public Skills"
+        }
+      }
+    }
+  },
+  {
+    "_id": "500",
+    "id": "5d4aa9043330eb0e7cd32d1e",
+    "operation": "put",
+    "payload": {
+      "masterdata": {
+        "custom_tag_category_id": "586cf0be285db12d00d9e1e5",
+        "external_unique_id": "500",
+        "values": {
+          "no": "Øst Råd og Prosjekt"
+        }
+      }
+    }
+  },
+  {
+    "_id": "501",
+    "operation": "post",
+    "payload": {
+      "masterdata": {
+        "category_ids": [
+          "586cf0be285db12d00d9e1e5"
+        ],
+        "external_unique_id": "501",
+        "values": {
+          "no": "Øst Virksomhetsstyring"
+        }
+      }
+    }
+  },
+  {
+    "_id": "502",
+    "operation": "post",
+    "payload": {
+      "masterdata": {
+        "category_ids": [
+          "586cf0be285db12d00d9e1e5"
+        ],
+        "external_unique_id": "502",
+        "values": {
+          "no": "Øst Sandvika"
+        }
+      }
+    }
+  },
+  {
+    "_id": "511",
+    "operation": "post",
+    "payload": {
+      "masterdata": {
+        "category_ids": [
+          "586cf0be285db12d00d9e1e5"
+        ],
+        "external_unique_id": "511",
+        "values": {
+          "no": "Øst Programledelse"
+        }
+      }
+    }
+  },
+  {
+    "_id": "512",
+    "operation": "post",
+    "payload": {
+      "masterdata": {
+        "category_ids": [
+          "586cf0be285db12d00d9e1e5"
+        ],
+        "external_unique_id": "512",
+        "values": {
+          "no": "Øst Prosjektledelse 1"
+        }
+      }
+    }
+  },
+  {
+    "_id": "513",
+    "operation": "post",
+    "payload": {
+      "masterdata": {
+        "category_ids": [
+          "586cf0be285db12d00d9e1e5"
+        ],
+        "external_unique_id": "513",
+        "values": {
+          "no": "Øst Prosjektledelse 2"
+        }
+      }
+    }
+  },
+  {
+    "_id": "514",
+    "operation": "post",
+    "payload": {
+      "masterdata": {
+        "category_ids": [
+          "586cf0be285db12d00d9e1e5"
+        ],
+        "external_unique_id": "514",
+        "values": {
+          "no": "Øst Test og Testledelse"
+        }
+      }
+    }
+  },
+  {
+    "_id": "515",
+    "operation": "post",
+    "payload": {
+      "masterdata": {
+        "category_ids": [
+          "586cf0be285db12d00d9e1e5"
+        ],
+        "external_unique_id": "515",
+        "values": {
+          "no": "Øst Råd og Prosjekt Felles"
+        }
+      }
+    }
+  },
+  {
+    "_id": "516",
+    "operation": "post",
+    "payload": {
+      "masterdata": {
+        "category_ids": [
+          "586cf0be285db12d00d9e1e5"
+        ],
+        "external_unique_id": "516",
+        "values": {
+          "no": "Øst Rådgivning arkitektur"
+        }
+      }
+    }
+  },
+  {
+    "_id": "517",
+    "operation": "post",
+    "payload": {
+      "masterdata": {
+        "category_ids": [
+          "586cf0be285db12d00d9e1e5"
+        ],
+        "external_unique_id": "517",
+        "values": {
+          "no": "Øst Rådgivning innføring og endring"
+        }
+      }
+    }
+  },
+  {
+    "_id": "518",
+    "operation": "post",
+    "payload": {
+      "masterdata": {
+        "category_ids": [
+          "586cf0be285db12d00d9e1e5"
+        ],
+        "external_unique_id": "518",
+        "values": {
+          "no": "Øst Råd og Prosjekt UK"
+        }
+      }
+    }
+  },
+  {
+    "_id": "522",
+    "operation": "post",
+    "payload": {
+      "masterdata": {
+        "category_ids": [
+          "586cf0be285db12d00d9e1e5"
+        ],
+        "external_unique_id": "522",
+        "values": {
+          "no": "Applikasjon og Prosess"
+        }
+      }
+    }
+  },
+  {
+    "_id": "523",
+    "operation": "post",
+    "payload": {
+      "masterdata": {
+        "category_ids": [
+          "586cf0be285db12d00d9e1e5"
+        ],
+        "external_unique_id": "523",
+        "values": {
+          "no": "SAP Tech og forvaltning"
+        }
+      }
+    }
+  },
+  {
+    "_id": "525",
+    "operation": "post",
+    "payload": {
+      "masterdata": {
+        "category_ids": [
+          "586cf0be285db12d00d9e1e5"
+        ],
+        "external_unique_id": "525",
+        "values": {
+          "no": "Prosjekt og Arkitekt"
+        }
+      }
+    }
+  },
+  {
+    "_id": "550",
+    "operation": "post",
+    "payload": {
+      "masterdata": {
+        "category_ids": [
+          "586cf0be285db12d00d9e1e5"
+        ],
+        "external_unique_id": "550",
+        "values": {
+          "no": "Øst Sandvika 1"
+        }
+      }
+    }
+  },
+  {
+    "_id": "551",
+    "operation": "post",
+    "payload": {
+      "masterdata": {
+        "category_ids": [
+          "586cf0be285db12d00d9e1e5"
+        ],
+        "external_unique_id": "551",
+        "values": {
+          "no": "Øst Sandvika 2"
+        }
+      }
+    }
+  },
+  {
+    "_id": "552",
+    "operation": "post",
+    "payload": {
+      "masterdata": {
+        "category_ids": [
+          "586cf0be285db12d00d9e1e5"
+        ],
+        "external_unique_id": "552",
+        "values": {
+          "no": "Øst Sandvika UK"
+        }
+      }
+    }
+  },
+  {
+    "_id": "553",
+    "operation": "post",
+    "payload": {
+      "masterdata": {
+        "category_ids": [
+          "586cf0be285db12d00d9e1e5"
+        ],
+        "external_unique_id": "553",
+        "values": {
+          "no": "Øst Sandvika 3"
+        }
+      }
+    }
+  },
+  {
+    "_id": "6",
+    "operation": "post",
+    "payload": {
+      "masterdata": {
+        "category_ids": [
+          "586cf0be285db12d00d9e1e5"
+        ],
+        "external_unique_id": "6",
+        "values": {
+          "no": "Bouvet AB"
+        }
+      }
+    }
+  },
+  {
+    "_id": "600",
+    "operation": "post",
+    "payload": {
+      "masterdata": {
+        "category_ids": [
+          "586cf0be285db12d00d9e1e5"
+        ],
+        "external_unique_id": "600",
+        "values": {
+          "no": "Sør Felles"
+        }
+      }
+    }
+  },
+  {
+    "_id": "609",
+    "operation": "post",
+    "payload": {
+      "masterdata": {
+        "category_ids": [
+          "586cf0be285db12d00d9e1e5"
+        ],
+        "external_unique_id": "609",
+        "values": {
+          "no": "Region Sør"
+        }
+      }
+    }
+  },
+  {
+    "_id": "610",
+    "operation": "post",
+    "payload": {
+      "masterdata": {
+        "category_ids": [
+          "586cf0be285db12d00d9e1e5"
+        ],
+        "external_unique_id": "610",
+        "values": {
+          "no": "Grenland"
+        }
+      }
+    }
+  },
+  {
+    "_id": "620",
+    "operation": "post",
+    "payload": {
+      "masterdata": {
+        "category_ids": [
+          "586cf0be285db12d00d9e1e5"
+        ],
+        "external_unique_id": "620",
+        "values": {
+          "no": "Arendal"
+        }
+      }
+    }
+  },
+  {
+    "_id": "630",
+    "operation": "post",
+    "payload": {
+      "masterdata": {
+        "category_ids": [
+          "586cf0be285db12d00d9e1e5"
+        ],
+        "external_unique_id": "630",
+        "values": {
+          "no": "Kristiansand"
+        }
+      }
+    }
+  },
+  {
+    "_id": "640",
+    "operation": "post",
+    "payload": {
+      "masterdata": {
+        "category_ids": [
+          "586cf0be285db12d00d9e1e5"
+        ],
+        "external_unique_id": "640",
+        "values": {
+          "no": "Vestfold"
+        }
+      }
+    }
+  },
+  {
+    "_id": "700",
+    "operation": "post",
+    "payload": {
+      "masterdata": {
+        "category_ids": [
+          "586cf0be285db12d00d9e1e5"
+        ],
+        "external_unique_id": "700",
+        "values": {
+          "no": "Rogaland Virksomhetsstøtte"
+        }
+      }
+    }
+  },
+  {
+    "_id": "701",
+    "operation": "post",
+    "payload": {
+      "masterdata": {
+        "category_ids": [
+          "586cf0be285db12d00d9e1e5"
+        ],
+        "external_unique_id": "701",
+        "values": {
+          "no": "Rogaland Økonomi og IT"
+        }
+      }
+    }
+  },
+  {
+    "_id": "702",
+    "operation": "post",
+    "payload": {
+      "masterdata": {
+        "category_ids": [
+          "586cf0be285db12d00d9e1e5"
+        ],
+        "external_unique_id": "702",
+        "values": {
+          "no": "Rogaland Klyngestøtte"
+        }
+      }
+    }
+  },
+  {
+    "_id": "703",
+    "operation": "post",
+    "payload": {
+      "masterdata": {
+        "category_ids": [
+          "586cf0be285db12d00d9e1e5"
+        ],
+        "external_unique_id": "703",
+        "values": {
+          "no": "Rogaland Tech Center"
+        }
+      }
+    }
+  },
+  {
+    "_id": "704",
+    "operation": "post",
+    "payload": {
+      "masterdata": {
+        "category_ids": [
+          "586cf0be285db12d00d9e1e5"
+        ],
+        "external_unique_id": "704",
+        "values": {
+          "no": "Rogaland Equinox"
+        }
+      }
+    }
+  },
+  {
+    "_id": "705",
+    "operation": "post",
+    "payload": {
+      "masterdata": {
+        "category_ids": [
+          "586cf0be285db12d00d9e1e5"
+        ],
+        "external_unique_id": "705",
+        "values": {
+          "no": "Kontorstøtte Stavanger"
+        }
+      }
+    }
+  },
+  {
+    "_id": "730",
+    "operation": "post",
+    "payload": {
+      "masterdata": {
+        "category_ids": [
+          "586cf0be285db12d00d9e1e5"
+        ],
+        "external_unique_id": "730",
+        "values": {
+          "no": "Kontorstøtte Haugesund"
+        }
+      }
+    }
+  },
+  {
+    "_id": "731",
+    "operation": "post",
+    "payload": {
+      "masterdata": {
+        "category_ids": [
+          "586cf0be285db12d00d9e1e5"
+        ],
+        "external_unique_id": "731",
+        "values": {
+          "no": "Rogaland Industristøtte"
+        }
+      }
+    }
+  },
+  {
+    "_id": "751",
+    "operation": "post",
+    "payload": {
+      "masterdata": {
+        "category_ids": [
+          "586cf0be285db12d00d9e1e5"
+        ],
+        "external_unique_id": "751",
+        "values": {
+          "no": "Rogaland Formel 1"
+        }
+      }
+    }
+  },
+  {
+    "_id": "752",
+    "operation": "post",
+    "payload": {
+      "masterdata": {
+        "category_ids": [
+          "586cf0be285db12d00d9e1e5"
+        ],
+        "external_unique_id": "752",
+        "values": {
+          "no": "Rogaland Enigma"
+        }
+      }
+    }
+  },
+  {
+    "_id": "754",
+    "operation": "post",
+    "payload": {
+      "masterdata": {
+        "category_ids": [
+          "586cf0be285db12d00d9e1e5"
+        ],
+        "external_unique_id": "754",
+        "values": {
+          "no": "Rogaland Alpha"
+        }
+      }
+    }
+  },
+  {
+    "_id": "755",
+    "operation": "post",
+    "payload": {
+      "masterdata": {
+        "category_ids": [
+          "586cf0be285db12d00d9e1e5"
+        ],
+        "external_unique_id": "755",
+        "values": {
+          "no": "Rogaland Invicta"
+        }
+      }
+    }
+  },
+  {
+    "_id": "756",
+    "operation": "post",
+    "payload": {
+      "masterdata": {
+        "category_ids": [
+          "586cf0be285db12d00d9e1e5"
+        ],
+        "external_unique_id": "756",
+        "values": {
+          "no": "Rogaland Syndicate"
+        }
+      }
+    }
+  },
+  {
+    "_id": "757",
+    "operation": "post",
+    "payload": {
+      "masterdata": {
+        "category_ids": [
+          "586cf0be285db12d00d9e1e5"
+        ],
+        "external_unique_id": "757",
+        "values": {
+          "no": "Rogaland Morgenstiern"
+        }
+      }
+    }
+  },
+  {
+    "_id": "758",
+    "operation": "post",
+    "payload": {
+      "masterdata": {
+        "category_ids": [
+          "586cf0be285db12d00d9e1e5"
+        ],
+        "external_unique_id": "758",
+        "values": {
+          "no": "Rogaland DAIM"
+        }
+      }
+    }
+  },
+  {
+    "_id": "759",
+    "operation": "post",
+    "payload": {
+      "masterdata": {
+        "category_ids": [
+          "586cf0be285db12d00d9e1e5"
+        ],
+        "external_unique_id": "759",
+        "values": {
+          "no": "Rogaland DIGG"
+        }
+      }
+    }
+  },
+  {
+    "_id": "760",
+    "operation": "post",
+    "payload": {
+      "masterdata": {
+        "category_ids": [
+          "586cf0be285db12d00d9e1e5"
+        ],
+        "external_unique_id": "760",
+        "values": {
+          "no": "Rogaland Skynet"
+        }
+      }
+    }
+  },
+  {
+    "_id": "761",
+    "operation": "post",
+    "payload": {
+      "masterdata": {
+        "category_ids": [
+          "586cf0be285db12d00d9e1e5"
+        ],
+        "external_unique_id": "761",
+        "values": {
+          "no": "Rogaland SQAD"
+        }
+      }
+    }
+  },
+  {
+    "_id": "762",
+    "operation": "post",
+    "payload": {
+      "masterdata": {
+        "category_ids": [
+          "586cf0be285db12d00d9e1e5"
+        ],
+        "external_unique_id": "762",
+        "values": {
+          "no": "Rogaland Atlas"
+        }
+      }
+    }
+  },
+  {
+    "_id": "763",
+    "operation": "post",
+    "payload": {
+      "masterdata": {
+        "category_ids": [
+          "586cf0be285db12d00d9e1e5"
+        ],
+        "external_unique_id": "763",
+        "values": {
+          "no": "Rogaland Spectre"
+        }
+      }
+    }
+  },
+  {
+    "_id": "764",
+    "operation": "post",
+    "payload": {
+      "masterdata": {
+        "category_ids": [
+          "586cf0be285db12d00d9e1e5"
+        ],
+        "external_unique_id": "764",
+        "values": {
+          "no": "Rogaland SPOCK"
+        }
+      }
+    }
+  },
+  {
+    "_id": "765",
+    "operation": "post",
+    "payload": {
+      "masterdata": {
+        "category_ids": [
+          "586cf0be285db12d00d9e1e5"
+        ],
+        "external_unique_id": "765",
+        "values": {
+          "no": "Rogaland MCS"
+        }
+      }
+    }
+  },
+  {
+    "_id": "766",
+    "operation": "post",
+    "payload": {
+      "masterdata": {
+        "category_ids": [
+          "586cf0be285db12d00d9e1e5"
+        ],
+        "external_unique_id": "766",
+        "values": {
+          "no": "Rogaland Optimus"
+        }
+      }
+    }
+  },
+  {
+    "_id": "767",
+    "operation": "post",
+    "payload": {
+      "masterdata": {
+        "category_ids": [
+          "586cf0be285db12d00d9e1e5"
+        ],
+        "external_unique_id": "767",
+        "values": {
+          "no": "Rogaland ACME"
+        }
+      }
+    }
+  },
+  {
+    "_id": "768",
+    "operation": "post",
+    "payload": {
+      "masterdata": {
+        "category_ids": [
+          "586cf0be285db12d00d9e1e5"
+        ],
+        "external_unique_id": "768",
+        "values": {
+          "no": "Rogaland Phoenix"
+        }
+      }
+    }
+  },
+  {
+    "_id": "777",
+    "operation": "post",
+    "payload": {
+      "masterdata": {
+        "category_ids": [
+          "586cf0be285db12d00d9e1e5"
+        ],
+        "external_unique_id": "777",
+        "values": {
+          "no": "Rogaland Administrasjon"
+        }
+      }
+    }
+  },
+  {
+    "_id": "778",
+    "operation": "post",
+    "payload": {
+      "masterdata": {
+        "category_ids": [
+          "586cf0be285db12d00d9e1e5"
+        ],
+        "external_unique_id": "778",
+        "values": {
+          "no": "Rogaland Felles"
+        }
+      }
+    }
+  },
+  {
+    "_id": "779",
+    "operation": "post",
+    "payload": {
+      "masterdata": {
+        "category_ids": [
+          "586cf0be285db12d00d9e1e5"
+        ],
+        "external_unique_id": "779",
+        "values": {
+          "no": "Rogaland Enheter"
+        }
+      }
+    }
+  },
+  {
+    "_id": "780",
+    "operation": "post",
+    "payload": {
+      "masterdata": {
+        "category_ids": [
+          "586cf0be285db12d00d9e1e5"
+        ],
+        "external_unique_id": "780",
+        "values": {
+          "no": "Bergen Felles"
+        }
+      }
+    }
+  },
+  {
+    "_id": "781",
+    "operation": "post",
+    "payload": {
+      "masterdata": {
+        "category_ids": [
+          "586cf0be285db12d00d9e1e5"
+        ],
+        "external_unique_id": "781",
+        "values": {
+          "no": "Ulriken"
+        }
+      }
+    }
+  },
+  {
+    "_id": "782",
+    "operation": "post",
+    "payload": {
+      "masterdata": {
+        "category_ids": [
+          "586cf0be285db12d00d9e1e5"
+        ],
+        "external_unique_id": "782",
+        "values": {
+          "no": "Fløien"
+        }
+      }
+    }
+  },
+  {
+    "_id": "783",
+    "operation": "post",
+    "payload": {
+      "masterdata": {
+        "category_ids": [
+          "586cf0be285db12d00d9e1e5"
+        ],
+        "external_unique_id": "783",
+        "values": {
+          "no": "Lyderhorn"
+        }
+      }
+    }
+  },
+  {
+    "_id": "784",
+    "operation": "post",
+    "payload": {
+      "masterdata": {
+        "category_ids": [
+          "586cf0be285db12d00d9e1e5"
+        ],
+        "external_unique_id": "784",
+        "values": {
+          "no": "Løvstakken"
+        }
+      }
+    }
+  },
+  {
+    "_id": "785",
+    "operation": "post",
+    "payload": {
+      "masterdata": {
+        "category_ids": [
+          "586cf0be285db12d00d9e1e5"
+        ],
+        "external_unique_id": "785",
+        "values": {
+          "no": "Rundemanen"
+        }
+      }
+    }
+  },
+  {
+    "_id": "786",
+    "operation": "post",
+    "payload": {
+      "masterdata": {
+        "category_ids": [
+          "586cf0be285db12d00d9e1e5"
+        ],
+        "external_unique_id": "786",
+        "values": {
+          "no": "Blåmanen"
+        }
+      }
+    }
+  },
+  {
+    "_id": "787",
+    "operation": "post",
+    "payload": {
+      "masterdata": {
+        "category_ids": [
+          "586cf0be285db12d00d9e1e5"
+        ],
+        "external_unique_id": "787",
+        "values": {
+          "no": "Gullfjellet"
+        }
+      }
+    }
+  },
+  {
+    "_id": "789",
+    "operation": "post",
+    "payload": {
+      "masterdata": {
+        "category_ids": [
+          "586cf0be285db12d00d9e1e5"
+        ],
+        "external_unique_id": "789",
+        "values": {
+          "no": "Region Bergen"
+        }
+      }
+    }
+  },
+  {
+    "_id": "799",
+    "operation": "post",
+    "payload": {
+      "masterdata": {
+        "category_ids": [
+          "586cf0be285db12d00d9e1e5"
+        ],
+        "external_unique_id": "799",
+        "values": {
+          "no": "Region Rogaland"
+        }
+      }
+    }
+  },
+  {
+    "_id": "800",
+    "operation": "post",
+    "payload": {
+      "masterdata": {
+        "category_ids": [
+          "586cf0be285db12d00d9e1e5"
+        ],
+        "external_unique_id": "800",
+        "values": {
+          "no": "Nord Felles"
+        }
+      }
+    }
+  },
+  {
+    "_id": "801",
+    "operation": "post",
+    "payload": {
+      "masterdata": {
+        "category_ids": [
+          "586cf0be285db12d00d9e1e5"
+        ],
+        "external_unique_id": "801",
+        "values": {
+          "no": "Trondheim Tech 1"
+        }
+      }
+    }
+  },
+  {
+    "_id": "802",
+    "operation": "post",
+    "payload": {
+      "masterdata": {
+        "category_ids": [
+          "586cf0be285db12d00d9e1e5"
+        ],
+        "external_unique_id": "802",
+        "values": {
+          "no": "Trondheim Tech 2"
+        }
+      }
+    }
+  },
+  {
+    "_id": "803",
+    "operation": "post",
+    "payload": {
+      "masterdata": {
+        "category_ids": [
+          "586cf0be285db12d00d9e1e5"
+        ],
+        "external_unique_id": "803",
+        "values": {
+          "no": "Trondheim Brukeropplevelse"
+        }
+      }
+    }
+  },
+  {
+    "_id": "804",
+    "operation": "post",
+    "payload": {
+      "masterdata": {
+        "category_ids": [
+          "586cf0be285db12d00d9e1e5"
+        ],
+        "external_unique_id": "804",
+        "values": {
+          "no": "Trondheim Tech 3"
+        }
+      }
+    }
+  },
+  {
+    "_id": "805",
+    "operation": "post",
+    "payload": {
+      "masterdata": {
+        "category_ids": [
+          "586cf0be285db12d00d9e1e5"
+        ],
+        "external_unique_id": "805",
+        "values": {
+          "no": "Trondheim Rådgivning\u0026Prosjektledelse"
+        }
+      }
+    }
+  },
+  {
+    "_id": "806",
+    "operation": "post",
+    "payload": {
+      "masterdata": {
+        "category_ids": [
+          "586cf0be285db12d00d9e1e5"
+        ],
+        "external_unique_id": "806",
+        "values": {
+          "no": "Trondheim FrontEnd"
+        }
+      }
+    }
+  },
+  {
+    "_id": "809",
+    "operation": "post",
+    "payload": {
+      "masterdata": {
+        "category_ids": [
+          "586cf0be285db12d00d9e1e5"
+        ],
+        "external_unique_id": "809",
+        "values": {
+          "no": "Region Nord"
+        }
+      }
+    }
+  },
+  {
+    "_id": "900",
+    "operation": "post",
+    "payload": {
+      "masterdata": {
+        "category_ids": [
+          "586cf0be285db12d00d9e1e5"
+        ],
+        "external_unique_id": "900",
+        "values": {
+          "no": "Stockholm Web Systemutveckling",
+          "se": "Stockholm Web Systemutveckling"
+        }
+      }
+    }
+  },
+  {
+    "_id": "901",
+    "operation": "post",
+    "payload": {
+      "masterdata": {
+        "category_ids": [
+          "586cf0be285db12d00d9e1e5"
+        ],
+        "external_unique_id": "901",
+        "values": {
+          "no": "Stockholm",
+          "se": "Stockholm"
+        }
+      }
+    }
+  },
+  {
+    "_id": "902",
+    "operation": "post",
+    "payload": {
+      "masterdata": {
+        "category_ids": [
+          "586cf0be285db12d00d9e1e5"
+        ],
+        "external_unique_id": "902",
+        "values": {
+          "no": "Stockholm Felles",
+          "se": "Stockholm Felles"
+        }
+      }
+    }
+  },
+  {
+    "_id": "903",
+    "operation": "post",
+    "payload": {
+      "masterdata": {
+        "category_ids": [
+          "586cf0be285db12d00d9e1e5"
+        ],
+        "external_unique_id": "903",
+        "values": {
+          "no": "Stockholm e-Hälsa",
+          "se": "Stockholm e-Hälsa"
+        }
+      }
+    }
+  },
+  {
+    "_id": "904",
+    "operation": "post",
+    "payload": {
+      "masterdata": {
+        "category_ids": [
+          "586cf0be285db12d00d9e1e5"
+        ],
+        "external_unique_id": "904",
+        "values": {
+          "no": "Stockholm Kundupplevelse 1",
+          "se": "Stockholm Kundupplevelse 1"
+        }
+      }
+    }
+  },
+  {
+    "_id": "905",
+    "operation": "post",
+    "payload": {
+      "masterdata": {
+        "category_ids": [
+          "586cf0be285db12d00d9e1e5"
+        ],
+        "external_unique_id": "905",
+        "values": {
+          "no": "Stockholm Kundupplevelse 2",
+          "se": "Stockholm Kundupplevelse 2"
+        }
+      }
+    }
+  },
+  {
+    "_id": "906",
+    "operation": "post",
+    "payload": {
+      "masterdata": {
+        "category_ids": [
+          "586cf0be285db12d00d9e1e5"
+        ],
+        "external_unique_id": "906",
+        "values": {
+          "no": "Stockholm Projektledning",
+          "se": "Stockholm Projektledning"
+        }
+      }
+    }
+  },
+  {
+    "_id": "907",
+    "operation": "post",
+    "payload": {
+      "masterdata": {
+        "category_ids": [
+          "586cf0be285db12d00d9e1e5"
+        ],
+        "external_unique_id": "907",
+        "values": {
+          "no": "Stockholm Systemutveckling 1",
+          "se": "Stockholm Systemutveckling 1"
+        }
+      }
+    }
+  },
+  {
+    "_id": "908",
+    "operation": "post",
+    "payload": {
+      "masterdata": {
+        "category_ids": [
+          "586cf0be285db12d00d9e1e5"
+        ],
+        "external_unique_id": "908",
+        "values": {
+          "no": "Örebro",
+          "se": "Örebro"
+        }
+      }
+    }
+  },
+  {
+    "_id": "909",
+    "operation": "post",
+    "payload": {
+      "masterdata": {
+        "category_ids": [
+          "586cf0be285db12d00d9e1e5"
+        ],
+        "external_unique_id": "909",
+        "values": {
+          "no": "Örebro Felles",
+          "se": "Örebro Felles"
+        }
+      }
+    }
+  },
+  {
+    "_id": "910",
+    "operation": "post",
+    "payload": {
+      "masterdata": {
+        "category_ids": [
+          "586cf0be285db12d00d9e1e5"
+        ],
+        "external_unique_id": "910",
+        "values": {
+          "no": "Örebro Projektledning",
+          "se": "Örebro Projektledning"
+        }
+      }
+    }
+  },
+  {
+    "_id": "911",
+    "operation": "post",
+    "payload": {
+      "masterdata": {
+        "category_ids": [
+          "586cf0be285db12d00d9e1e5"
+        ],
+        "external_unique_id": "911",
+        "values": {
+          "no": "Örebro Systemutveckling",
+          "se": "Örebro Systemutveckling"
+        }
+      }
+    }
+  },
+  {
+    "_id": "912",
+    "operation": "post",
+    "payload": {
+      "masterdata": {
+        "category_ids": [
+          "586cf0be285db12d00d9e1e5"
+        ],
+        "external_unique_id": "912",
+        "values": {
+          "no": "Borlänge",
+          "se": "Borlänge"
+        }
+      }
+    }
+  },
+  {
+    "_id": "913",
+    "operation": "post",
+    "payload": {
+      "masterdata": {
+        "category_ids": [
+          "586cf0be285db12d00d9e1e5"
+        ],
+        "external_unique_id": "913",
+        "values": {
+          "no": "Borlänge Felles",
+          "se": "Borlänge Felles"
+        }
+      }
+    }
+  },
+  {
+    "_id": "914",
+    "operation": "post",
+    "payload": {
+      "masterdata": {
+        "category_ids": [
+          "586cf0be285db12d00d9e1e5"
+        ],
+        "external_unique_id": "914",
+        "values": {
+          "no": "Borlänge Projektledning",
+          "se": "Borlänge Projektledning"
+        }
+      }
+    }
+  },
+  {
+    "_id": "915",
+    "operation": "post",
+    "payload": {
+      "masterdata": {
+        "category_ids": [
+          "586cf0be285db12d00d9e1e5"
+        ],
+        "external_unique_id": "915",
+        "values": {
+          "no": "Borlänge Systemutveckling",
+          "se": "Borlänge Systemutveckling"
+        }
+      }
+    }
+  },
+  {
+    "_id": "916",
+    "operation": "post",
+    "payload": {
+      "masterdata": {
+        "category_ids": [
+          "586cf0be285db12d00d9e1e5"
+        ],
+        "external_unique_id": "916",
+        "values": {
+          "no": "Stockholm Systemutveckling 2",
+          "se": "Stockholm Systemutveckling 2"
+        }
+      }
+    }
+  },
+  {
+    "_id": "917",
+    "operation": "post",
+    "payload": {
+      "masterdata": {
+        "category_ids": [
+          "586cf0be285db12d00d9e1e5"
+        ],
+        "external_unique_id": "917",
+        "values": {
+          "no": "Stockholm Kundupplevelse 3",
+          "se": "Stockholm Kundupplevelse 3"
+        }
+      }
+    }
+  }
+]

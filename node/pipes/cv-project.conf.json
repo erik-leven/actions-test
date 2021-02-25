@@ -1,0 +1,28 @@
+{
+  "_id": "cv-project",
+  "type": "pipe",
+  "source": {
+    "type": "dataset",
+    "dataset": "global-cv"
+  },
+  "transform": {
+    "type": "dtl",
+    "rules": {
+      "default": [
+        ["filter",
+          ["and",
+            ["in", "cvpartner:Cv", "_S.rdf:type"], "_S.project_experiences.customer"]
+        ],
+        ["create",
+          ["apply", "cv-id", "_S.project_experiences"]
+        ]
+      ],
+      "cv-id": [
+        ["copy", "*"],
+        ["add", "cv_id-ni",
+          ["ni", "_P._S._id"]
+        ]
+      ]
+    }
+  }
+}

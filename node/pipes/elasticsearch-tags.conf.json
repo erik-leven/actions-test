@@ -1,0 +1,40 @@
+{
+  "_id": "elasticsearch-tags",
+  "type": "pipe",
+  "source": {
+    "type": "conditional",
+    "alternatives": {
+      "prod": {
+        "type": "json",
+        "system": "elasticsearch",
+        "url": "/tags"
+      },
+      "test": {
+        "type": "embedded",
+        "entities": [{
+          "no": "3D"
+        }, {
+          "no": "AR - VR"
+        }, {
+          "no": "Anskaffelse"
+        }]
+      }
+    },
+    "condition": "$ENV(node-env)"
+  },
+  "transform": {
+    "type": "dtl",
+    "rules": {
+      "default": [
+        ["add", "_id", "_S.no"],
+        ["copy", "*"],
+        ["add", "rdf:type",
+          ["ni", "elasticsearch:Tags"]
+        ]
+      ]
+    }
+  },
+  "pump": {
+    "cron_expression": "$ENV(elasticsearch_cron_fast)"
+  }
+}

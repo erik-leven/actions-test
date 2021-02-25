@@ -1,0 +1,17 @@
+{
+  "_id": "github-autodeployer",
+  "type": "system:microservice",
+  "docker": {
+    "environment": {
+      "AUTODEPLOYER_PATH": "systems/github-autodeployer.conf.json",
+      "BRANCH": "master",
+      "DEPLOY_TOKEN": "$SECRET(github-deploy-token)",
+      "ENV_VARS_FILENAME": "prod-env.json",
+      "GIT_REPO": "git@github.com:datanav/intranav-sesam-config.git",
+      "JWT": "$SECRET(autodeployer-node-jwt)",
+      "SESAM_API_URL": "https://sesam.bouvet.no/api"
+    },
+    "image": "sesamcommunity/github-autodeployer:2.1.1",
+    "port": 5000
+  }
+}

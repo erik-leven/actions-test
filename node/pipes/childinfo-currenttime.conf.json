@@ -1,0 +1,351 @@
+{
+  "_id": "childinfo-currenttime",
+  "type": "pipe",
+  "source": {
+    "type": "dataset",
+    "dataset": "global-person"
+  },
+  "transform": {
+    "type": "conditional",
+    "alternatives": {
+      "prod": {
+        "type": "dtl",
+        "rules": {
+          "default": [
+            ["comment", "Gjeldende kalkyle:"],
+            ["comment", "1-2 barn: 80t"],
+            ["comment", "3+ barn: 120t"],
+            ["comment", "Hvis KUN vedtak fra NAV: ingen endring"],
+            ["comment", "Hvis KUN aleneomsorg: timer for antall barn x 2"],
+            ["comment", "Hvis aleneomsorg OG vedtak fra NAV: timer for antall barn x4"],
+            ["filter",
+              ["in", "_S.global-person:employee_status",
+                ["list", "EarlyEmployee", "TempEarlyEmployee", "SoonEmployee", "TempSoonEmployee", "Employee", "TempEmployee", "Quit"]
+              ]
+            ],
+            ["filter",
+              ["in", "~:bouvet:catalystone-user", "_S.rdf:type"]
+            ],
+            ["copy", "_id"],
+            ["merge",
+              ["apply-hops", "rdf-org", {
+                "datasets": ["global-department gd"],
+                "where": [
+                  ["eq",
+                    ["string", "_S.catalystone-user:ORGANIZATION.@UNIQUE_IMPORT_ID"], "gd.ORG_ID.value"]
+                ]
+              }]
+            ],
+            ["filter",
+              ["eq", "_T.dep_check", true]
+            ],
+            ["comment", "Establish number of children who turn 13 or less this year"],
+            ["merge",
+              ["apply", "accounting-year",
+                ["if",
+                  ["eq", "$ENV(node-env)", "test"], "~t2020-03-16T00:00:00Z",
+                  ["now"]
+                ]
+              ]
+            ],
+            ["add", "current-year", "_T.accounting-year"],
+            ["add", "number-of-children-folk",
+              ["integer",
+                ["decrypt", "$SECRET(folk-encryption-key)", "_S.catalystone-user:1025.VALUE.value"]
+              ]
+            ],
+            ["add", "children-range",
+              ["range", 1,
+                ["plus", "_T.number-of-children-folk", 1]
+              ]
+            ],
+            ["add", "children-dict",
+              ["map",
+                ["dict", "child-number",
+                  ["string", "_."]
+                ], "_T.children-range"]
+            ],
+            ["add", "children-of-viable-age",
+              ["apply", "child-viability", "_T.children-dict"]
+            ],
+            ["add", "number-of-viable-children",
+              ["count", "_T.children-of-viable-age"]
+            ],
+            ["comment", "Calculate hours based on children and extended rights"],
+            ["add", "hours",
+              ["case",
+                ["gte", "_T.number-of-viable-children", 3], 120,
+                ["gte", "_T.number-of-viable-children", 1], 80, 0]
+            ],
+            ["merge-union",
+              ["apply", "get-rights", "_S.catalystone-user:1149.VALUES.VALUE"]
+            ],
+            ["if",
+              ["eq", "_T.aleneomsorg", true],
+              ["if",
+                ["eq", "_T.vedtak", true],
+                ["add", "hours",
+                  ["multiply", "_T.hours", 4]
+                ],
+                ["add", "hours",
+                  ["multiply", "_T.hours", 2]
+                ]
+              ]
+            ],
+            ["add", "NAV-vedtak",
+              ["encrypt", "$SECRET(folk-encryption-key)",
+                ["if",
+                  ["eq", "_T.vedtak", true], true, false]
+              ]
+            ],
+            ["add", "hours",
+              ["encrypt", "$SECRET(folk-encryption-key)", "_T.hours"]
+            ],
+            ["remove",
+              ["list", "dep_check", "accounting-year", "number*", "children*", "aleneomsorg", "vedtak"]
+            ]
+          ],
+          "accounting-year": [
+            ["comment", "For accounting purposes a year is from January 16th to January 15th the following year"],
+            ["add", "accounting-year",
+              ["if",
+                ["and",
+                  ["eq",
+                    ["datetime-format", "%m", "_S."], "01"],
+                  ["lte",
+                    ["integer",
+                      ["datetime-format", "%d", "_S."]
+                    ], 15]
+                ],
+                ["integer",
+                  ["datetime-format", "%Y",
+                    ["datetime-plus", "year", -1, "_S."]
+                  ]
+                ],
+                ["integer",
+                  ["datetime-format", "%Y", "_S."]
+                ]
+              ]
+            ]
+          ],
+          "child-viability": [
+            ["merge",
+              ["apply", "accounting-year",
+                ["datetime-parse", "%d.%m.%Y",
+                  ["case-eq", "_S.child-number", "1",
+                    ["decrypt", "$SECRET(folk-encryption-key)", "_R._S.catalystone-user:1038.VALUE.value"], "2",
+                    ["decrypt", "$SECRET(folk-encryption-key)", "_R._S.catalystone-user:1039.VALUE.value"], "3",
+                    ["decrypt", "$SECRET(folk-encryption-key)", "_R._S.catalystone-user:1041.VALUE.value"], "4",
+                    ["decrypt", "$SECRET(folk-encryption-key)", "_R._S.catalystone-user:1085.VALUE.value"], "5",
+                    ["decrypt", "$SECRET(folk-encryption-key)", "_R._S.catalystone-user:1129.VALUE.value"], "6",
+                    ["decrypt", "$SECRET(folk-encryption-key)", "_R._S.catalystone-user:1132.VALUE.value"]
+                  ]
+                ]
+              ]
+            ],
+            ["comment", "Uncomment birthdate below if needed for debugging purposes"],
+            ["comment", "add", "birthdate",
+              ["case-eq", "_S.child-number", "1",
+                ["decrypt", "$SECRET(folk-encryption-key)", "_R._S.catalystone-user:1038.VALUE.value"], "2",
+                ["decrypt", "$SECRET(folk-encryption-key)", "_R._S.catalystone-user:1039.VALUE.value"], "3",
+                ["decrypt", "$SECRET(folk-encryption-key)", "_R._S.catalystone-user:1041.VALUE.value"], "4",
+                ["decrypt", "$SECRET(folk-encryption-key)", "_R._S.catalystone-user:1085.VALUE.value"], "5",
+                ["decrypt", "$SECRET(folk-encryption-key)", "_R._S.catalystone-user:1129.VALUE.value"], "6",
+                ["decrypt", "$SECRET(folk-encryption-key)", "_R._S.catalystone-user:1132.VALUE.value"]
+              ]
+            ],
+            ["add", "birth-year", "_T.accounting-year"],
+            ["add", "age",
+              ["minus", "_T.birth-year", "_P._T.current-year"]
+            ],
+            ["comment", "Check if child turns 13 or less this year"],
+            ["if",
+              ["lte", "_T.age", 13],
+              ["add", "viablity", true],
+              ["filter"]
+            ],
+            ["remove",
+              ["list", "accounting-year", "birth-year", "age"]
+            ]
+          ],
+          "get-rights": [
+            ["case-eq",
+              ["decrypt", "$SECRET(folk-encryption-key)", "_S.value"], "Vedtak fra Nav",
+              ["add", "vedtak", true], "Alene om omsorgen",
+              ["add", "aleneomsorg", true]
+            ]
+          ],
+          "rdf-org": ["if",
+            ["eq",
+              ["intersects", "_S.rdf:type", "~:bouvet:global-dep-bouvet-norge-as"], true],
+            ["add", "dep_check", true]
+          ]
+        }
+      },
+      "test": {
+        "type": "dtl",
+        "rules": {
+          "default": [
+            ["copy", "_id"],
+            ["merge",
+              ["apply-hops", "rdf-org", {
+                "datasets": ["global-department gd"],
+                "where": [
+                  ["eq",
+                    ["string", "_S.catalystone-user:ORGANIZATION.@UNIQUE_IMPORT_ID"], "gd.ORG_ID.value"]
+                ]
+              }]
+            ],
+            ["filter",
+              ["eq", "_T.dep_check", true]
+            ],
+            ["comment", "Establish number of children who turn 13 or less this year"],
+            ["merge",
+              ["apply", "accounting-year",
+                ["if",
+                  ["eq", "$ENV(node-env)", "test"], "~t2020-03-16T00:00:00Z",
+                  ["now"]
+                ]
+              ]
+            ],
+            ["add", "current-year", "_T.accounting-year"],
+            ["add", "number-of-children-folk",
+              ["integer",
+                ["decrypt", "folk-encryption-key", "_S.catalystone-user:1025.VALUE.value"]
+              ]
+            ],
+            ["add", "children-range",
+              ["range", 1,
+                ["plus", "_T.number-of-children-folk", 1]
+              ]
+            ],
+            ["add", "children-dict",
+              ["map",
+                ["dict", "child-number",
+                  ["string", "_."]
+                ], "_T.children-range"]
+            ],
+            ["add", "children-of-viable-age",
+              ["apply", "child-viability", "_T.children-dict"]
+            ],
+            ["add", "number-of-viable-children",
+              ["count", "_T.children-of-viable-age"]
+            ],
+            ["comment", "Calculate hours based on children and enxtended rights"],
+            ["add", "hours",
+              ["case",
+                ["gte", "_T.number-of-viable-children", 3], 120,
+                ["gte", "_T.number-of-viable-children", 1], 80, 0]
+            ],
+            ["merge-union",
+              ["apply", "get-rights", "_S.catalystone-user:1149.VALUES.VALUE"]
+            ],
+            ["if",
+              ["eq", "_T.aleneomsorg", true],
+              ["if",
+                ["eq", "_T.vedtak", true],
+                ["add", "hours",
+                  ["multiply", "_T.hours", 4]
+                ],
+                ["add", "hours",
+                  ["multiply", "_T.hours", 2]
+                ]
+              ]
+            ],
+            ["add", "NAV-vedtak",
+              ["encrypt", "folk-encryption-key",
+                ["if",
+                  ["eq", "_T.vedtak", true], true, false]
+              ]
+            ],
+            ["add", "hours",
+              ["encrypt", "folk-encryption-key", "_T.hours"]
+            ],
+            ["remove",
+              ["list", "dep_check", "accounting-year", "number*", "children*", "aleneomsorg", "vedtak"]
+            ]
+          ],
+          "accounting-year": [
+            ["comment", "For accounting purposes a year is from January 16th to January 15th the following year"],
+            ["add", "accounting-year",
+              ["if",
+                ["and",
+                  ["eq",
+                    ["datetime-format", "%m", "_S."], "01"],
+                  ["lte",
+                    ["integer",
+                      ["datetime-format", "%d", "_S."]
+                    ], 15]
+                ],
+                ["integer",
+                  ["datetime-format", "%Y",
+                    ["datetime-plus", "year", -1, "_S."]
+                  ]
+                ],
+                ["integer",
+                  ["datetime-format", "%Y", "_S."]
+                ]
+              ]
+            ]
+          ],
+          "child-viability": [
+            ["merge",
+              ["apply", "accounting-year",
+                ["datetime-parse", "%d.%m.%Y",
+                  ["case-eq", "_S.child-number", "1",
+                    ["decrypt", "folk-encryption-key", "_R._S.catalystone-user:1038.VALUE.value"], "2",
+                    ["decrypt", "folk-encryption-key", "_R._S.catalystone-user:1039.VALUE.value"], "3",
+                    ["decrypt", "folk-encryption-key", "_R._S.catalystone-user:1041.VALUE.value"], "4",
+                    ["decrypt", "folk-encryption-key", "_R._S.catalystone-user:1085.VALUE.value"], "5",
+                    ["decrypt", "folk-encryption-key", "_R._S.catalystone-user:1129.VALUE.value"], "6",
+                    ["decrypt", "folk-encryption-key", "_R._S.catalystone-user:1132.VALUE.value"]
+                  ]
+                ]
+              ]
+            ],
+            ["comment", "Uncomment birthdate below if needed for debugging purposes"],
+            ["comment", "add", "birthdate",
+              ["case-eq", "_S.child-number", "1",
+                ["decrypt", "folk-encryption-key", "_R._S.catalystone-user:1038.VALUE.value"], "2",
+                ["decrypt", "folk-encryption-key", "_R._S.catalystone-user:1039.VALUE.value"], "3",
+                ["decrypt", "folk-encryption-key", "_R._S.catalystone-user:1041.VALUE.value"], "4",
+                ["decrypt", "folk-encryption-key", "_R._S.catalystone-user:1085.VALUE.value"], "5",
+                ["decrypt", "folk-encryption-key", "_R._S.catalystone-user:1129.VALUE.value"], "6",
+                ["decrypt", "folk-encryption-key", "_R._S.catalystone-user:1132.VALUE.value"]
+              ]
+            ],
+            ["add", "birth-year", "_T.accounting-year"],
+            ["add", "age",
+              ["minus", "_T.birth-year", "_P._T.current-year"]
+            ],
+            ["comment", "Check if child turns 13 or less this year"],
+            ["if",
+              ["lte", "_T.age", 13],
+              ["add", "viablity", true],
+              ["filter"]
+            ],
+            ["remove",
+              ["list", "accounting-year", "birth-year", "age"]
+            ]
+          ],
+          "get-rights": [
+            ["case-eq",
+              ["decrypt", "folk-encryption-key", "_S.value"], "Vedtak fra Nav",
+              ["add", "vedtak", true], "Alene om omsorgen",
+              ["add", "aleneomsorg", true]
+            ]
+          ],
+          "rdf-org": ["if",
+            ["eq",
+              ["intersects", "_S.rdf:type", "~:bouvet:global-dep-bouvet-norge-as"], true],
+            ["add", "dep_check", true]
+          ]
+        }
+      }
+    },
+    "condition": "$ENV(node-env)"
+  },
+  "pump": {
+    "rescan_cron_expression": "* 0 16 1 *"
+  }
+}

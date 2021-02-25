@@ -1,0 +1,22 @@
+{
+  "_id": "news-text-competency_research_text",
+  "type": "pipe",
+  "source": {
+    "type": "dataset",
+    "dataset": "news-competency_research"
+  },
+  "transform": {
+    "type": "dtl",
+    "rules": {
+      "default": [
+        ["copy", "_id"],
+        ["add", "data",
+          ["concat", "Creator: ", "_S.data.creator", "\n", "_S.data.data.body"]
+        ],
+        ["add", "filename",
+          ["concat", "_S.data.id", ".txt"]
+        ]
+      ]
+    }
+  }
+}

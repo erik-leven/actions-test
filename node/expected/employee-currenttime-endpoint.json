@@ -1,0 +1,641 @@
+[
+  {
+    "DepartmentId": null,
+    "EmployeeId": 3402,
+    "_id": "0001",
+    "operation": "update-employee",
+    "payload": {
+      "CompanyId": 0,
+      "Email1": "max.manus@bouvet.no",
+      "EmployedDate": "2012-01-01",
+      "Firstname": "Max",
+      "Initials": "Max Manus (0001)",
+      "IsActive": true,
+      "LastName": "Manus",
+      "LeaveDate": "2020-12-31",
+      "Username": "bouvet\\max.manus",
+      "UsernameMobile": "bouvet\\max.manus"
+    }
+  },
+  {
+    "DepartmentId": null,
+    "EmployeeId": 3456,
+    "_id": "0004",
+    "operation": "update-employee",
+    "payload": {
+      "CompanyId": 0,
+      "Email1": "test.tester@bouvet.no",
+      "EmployedDate": "2009-12-01",
+      "Firstname": "Test",
+      "Initials": "Test Tester (0004)",
+      "IsActive": true,
+      "LastName": "Testesen",
+      "LeaveDate": "2020-12-31",
+      "Username": "bouvet\\test.tester",
+      "UsernameMobile": null
+    }
+  },
+  {
+    "DepartmentId": null,
+    "EmployeeId": 3455,
+    "_id": "0007",
+    "operation": "update-employee",
+    "payload": {
+      "CompanyId": 0,
+      "Email1": "cba@bouvet.no",
+      "EmployedDate": "2020-03-20",
+      "Firstname": "Karl Michael Bergman",
+      "Initials": "Karl Michael Bergman (0007)",
+      "IsActive": true,
+      "LastName": "Bergman",
+      "LeaveDate": "2020-12-31",
+      "Username": "bouvet\\cba",
+      "UsernameMobile": null
+    }
+  },
+  {
+    "DepartmentId": null,
+    "EmployeeId": 3453,
+    "_id": "0009",
+    "operation": "update-employee",
+    "payload": {
+      "LeaveDate": "2020-12-31"
+    }
+  },
+  {
+    "DepartmentId": null,
+    "EmployeeId": 3452,
+    "_id": "0010",
+    "operation": "update-employee",
+    "payload": {
+      "CompanyId": 0,
+      "Email1": "klm@bouvet.no",
+      "EmployedDate": "2017-08-01",
+      "Firstname": "Lynvingen",
+      "Initials": "Lynvingen (0010)",
+      "IsActive": true,
+      "LastName": "Lynvingen",
+      "LeaveDate": "2020-12-31",
+      "Username": "bouvet\\klm",
+      "UsernameMobile": null
+    }
+  },
+  {
+    "DepartmentId": 161,
+    "EmployeeId": null,
+    "_id": "132",
+    "operation": "post-employee",
+    "payload": {
+      "ActcatId": 5,
+      "CompanyId": 0,
+      "DepartmentId": 161,
+      "Email1": "gjett.mailre@bouvet.no",
+      "EmployedDate": "1995-07-01",
+      "EmployeeAccess": {
+        "RoleCertifier": false,
+        "RoleDepartment": true,
+        "RoleEconomy": false,
+        "RoleEmployee": true,
+        "RoleManager": true,
+        "RolePrognosis": false,
+        "RoleProject": true,
+        "UseDashboard": true,
+        "UseExpense": true,
+        "UseMobile": true,
+        "UsePrognosis": true,
+        "UseTime": true
+      },
+      "EmployeeAddress": {
+        "AddressLine1": "IkkeKomHjemTilMeg 1",
+        "Mobile": "+564315645",
+        "PostAddress": "BØNES",
+        "Zipcode": "5153"
+      },
+      "EmployeeCategoryId": 3,
+      "EmployeeDetail": {
+        "DateOfBirth": null,
+        "EmployeeRef": "132",
+        "EmployeeRefImport": "132",
+        "Gender": "M"
+      },
+      "EmployeeTime": {
+        "ChangeSalaryCode": false,
+        "CostRate": 0,
+        "FlexiTime": true,
+        "FlexiTimeBalanceUpdated": "2018-01-01",
+        "Overtime": false,
+        "PercentWork": 100,
+        "Rate": 9,
+        "ShowPlannedHours": false,
+        "Timesheet": true,
+        "Vacation": true,
+        "VacationBalanceUpdated": "2015-01-01"
+      },
+      "Firstname": "Gjett",
+      "Initials": "Gjett Mail (132)",
+      "IsActive": true,
+      "JobCodeId": 0,
+      "LastName": "Mail",
+      "Username": "bouvet\\gjett.mail",
+      "UsernameMobile": null
+    }
+  },
+  {
+    "EmployeeId": null,
+    "_id": "1528",
+    "operation": "post-employee",
+    "payload": {
+      "ActcatId": 6,
+      "CompanyId": 0,
+      "DepartmentId": null,
+      "Email1": "jeg.etternavn@bouvet.no",
+      "EmployedDate": "2019-03-11",
+      "EmployeeAccess": {
+        "RoleCertifier": false,
+        "RoleDepartment": false,
+        "RoleEconomy": false,
+        "RoleEmployee": true,
+        "RoleManager": false,
+        "RolePrognosis": false,
+        "RoleProject": false,
+        "UseDashboard": false,
+        "UseExpense": false,
+        "UseMobile": false,
+        "UsePrognosis": false,
+        "UseTime": false
+      },
+      "EmployeeAddress": {
+        "AddressLine1": "Mintestvei 1",
+        "Mobile": "+9187654321",
+        "PostAddress": "Nordpolen",
+        "Zipcode": "5555"
+      },
+      "EmployeeCategoryId": 3,
+      "EmployeeDetail": {
+        "DateOfBirth": "1111-11-11",
+        "EmployeeRef": "1528",
+        "EmployeeRefImport": "1528",
+        "Gender": "M"
+      },
+      "EmployeeTime": {
+        "ChangeSalaryCode": false,
+        "CostRate": 0,
+        "FlexiTime": true,
+        "FlexiTimeBalanceUpdated": "2019-03-11",
+        "Overtime": false,
+        "PercentWork": 100,
+        "Rate": 9,
+        "ShowPlannedHours": false,
+        "Timesheet": true,
+        "Vacation": true,
+        "VacationBalanceUpdated": "2019-03-11"
+      },
+      "Firstname": "Jeg",
+      "Initials": "Jeg Etternavn (1528)",
+      "IsActive": true,
+      "JobCodeId": 0,
+      "LastName": "Etternavn",
+      "Username": "bouvet\\jeg.etternavn",
+      "UsernameMobile": null
+    }
+  },
+  {
+    "EmployeeId": null,
+    "_id": "1847",
+    "operation": "post-employee",
+    "payload": {
+      "ActcatId": 2,
+      "CompanyId": 0,
+      "DepartmentId": null,
+      "Email1": "ehm.noe@bouvet.no",
+      "EmployedDate": "2017-02-01",
+      "EmployeeAccess": {
+        "AvailableForPlanning": true,
+        "RoleCertifier": false,
+        "RoleDepartment": false,
+        "RoleEconomy": false,
+        "RoleEmployee": true,
+        "RoleManager": false,
+        "RolePrognosis": false,
+        "RoleProject": false,
+        "UseDashboard": true,
+        "UseExpense": true,
+        "UseMobile": true,
+        "UsePrognosis": true,
+        "UseResourcePlan": false,
+        "UseTime": true
+      },
+      "EmployeeAddress": {
+        "AddressLine1": "En hjemmelig adresse",
+        "Mobile": "+445665489315",
+        "PostAddress": "LILLESTRØM",
+        "Zipcode": "0101"
+      },
+      "EmployeeCategoryId": 3,
+      "EmployeeDetail": {
+        "DateOfBirth": null,
+        "EmployeeRef": "1847",
+        "EmployeeRefImport": "1847",
+        "Gender": "M"
+      },
+      "EmployeeTime": {
+        "ChangeSalaryCode": false,
+        "CostRate": 0,
+        "FlexiTime": true,
+        "FlexiTimeBalanceUpdated": "2018-01-01",
+        "Overtime": false,
+        "PercentWork": 100,
+        "Rate": 9,
+        "ShowPlannedHours": false,
+        "Timesheet": true,
+        "Vacation": true,
+        "VacationBalanceUpdated": "2017-02-01"
+      },
+      "Firstname": "Ehm",
+      "Initials": "Ehm Noe (1847)",
+      "IsActive": true,
+      "JobCodeId": 0,
+      "LastName": "Nordang",
+      "Username": "bouvet\\ehm.noe",
+      "UsernameMobile": null
+    }
+  },
+  {
+    "EmployeeId": null,
+    "_id": "1938",
+    "operation": "post-employee",
+    "payload": {
+      "ActcatId": 2,
+      "CompanyId": 0,
+      "DepartmentId": null,
+      "Email1": "lite.ambisjon@bouvet.no",
+      "EmployedDate": "2017-08-01",
+      "EmployeeAccess": {
+        "AvailableForPlanning": true,
+        "RoleCertifier": false,
+        "RoleDepartment": false,
+        "RoleEconomy": false,
+        "RoleEmployee": true,
+        "RoleManager": false,
+        "RolePrognosis": false,
+        "RoleProject": false,
+        "UseDashboard": true,
+        "UseExpense": true,
+        "UseMobile": true,
+        "UsePrognosis": true,
+        "UseResourcePlan": false,
+        "UseTime": true
+      },
+      "EmployeeAddress": {
+        "AddressLine1": "DenVilDuNokVite 1",
+        "Mobile": "+4790044386",
+        "PostAddress": "OSLO",
+        "Zipcode": "1111"
+      },
+      "EmployeeCategoryId": 3,
+      "EmployeeDetail": {
+        "DateOfBirth": null,
+        "EmployeeRef": "1938",
+        "EmployeeRefImport": "1938",
+        "Gender": "M"
+      },
+      "EmployeeTime": {
+        "ChangeSalaryCode": false,
+        "CostRate": 0,
+        "FlexiTime": true,
+        "FlexiTimeBalanceUpdated": "2018-01-01",
+        "Overtime": false,
+        "PercentWork": 100,
+        "Rate": 9,
+        "ShowPlannedHours": false,
+        "Timesheet": true,
+        "Vacation": true,
+        "VacationBalanceUpdated": "2017-08-01"
+      },
+      "Firstname": "Lite",
+      "Initials": "Lite Ambisjon (1938)",
+      "IsActive": true,
+      "JobCodeId": 0,
+      "LastName": "Ambisjon",
+      "Username": "bouvet\\lite.ambisjon",
+      "UsernameMobile": null
+    }
+  },
+  {
+    "EmployeeId": null,
+    "_id": "2015",
+    "operation": "post-employee",
+    "payload": {
+      "ActcatId": 6,
+      "CompanyId": 0,
+      "DepartmentId": null,
+      "Email1": "meg.finnepå@bouvet.no",
+      "EmployedDate": "2017-08-01",
+      "EmployeeAccess": {
+        "RoleCertifier": false,
+        "RoleDepartment": false,
+        "RoleEconomy": false,
+        "RoleEmployee": true,
+        "RoleManager": false,
+        "RolePrognosis": false,
+        "RoleProject": false,
+        "UseDashboard": true,
+        "UseExpense": true,
+        "UseMobile": true,
+        "UsePrognosis": true,
+        "UseTime": true
+      },
+      "EmployeeAddress": {
+        "AddressLine1": "Min hjemmegate",
+        "Mobile": "+0123456789",
+        "PostAddress": "TRONDHEIM",
+        "Zipcode": "6666"
+      },
+      "EmployeeCategoryId": 3,
+      "EmployeeDetail": {
+        "DateOfBirth": null,
+        "EmployeeRef": "2015",
+        "EmployeeRefImport": "2015",
+        "Gender": "M"
+      },
+      "EmployeeTime": {
+        "ChangeSalaryCode": false,
+        "CostRate": 0,
+        "FlexiTime": true,
+        "FlexiTimeBalanceUpdated": "2018-01-01",
+        "Overtime": false,
+        "PercentWork": 100,
+        "Rate": 9,
+        "ShowPlannedHours": false,
+        "Timesheet": true,
+        "Vacation": true,
+        "VacationBalanceUpdated": "2017-08-01"
+      },
+      "Firstname": "Meg",
+      "Initials": "Meg Finnepå (2015)",
+      "IsActive": true,
+      "JobCodeId": 0,
+      "LastName": "Wilson",
+      "Username": "bouvet\\meg.finnepå",
+      "UsernameMobile": null
+    }
+  },
+  {
+    "EmployeeId": null,
+    "_id": "2156",
+    "operation": "post-employee",
+    "payload": {
+      "ActcatId": 4,
+      "CompanyId": 0,
+      "DepartmentId": null,
+      "Email1": "fornavn.testetternavn@bouvet.no",
+      "EmployedDate": "2019-11-01",
+      "EmployeeAccess": {
+        "AvailableForPlanning": true,
+        "RoleCertifier": false,
+        "RoleDepartment": false,
+        "RoleEconomy": false,
+        "RoleEmployee": true,
+        "RoleManager": false,
+        "RolePrognosis": false,
+        "RoleProject": false,
+        "UseDashboard": true,
+        "UseExpense": true,
+        "UseMobile": true,
+        "UsePrognosis": true,
+        "UseResourcePlan": false,
+        "UseTime": true
+      },
+      "EmployeeAddress": {
+        "AddressLine1": "Hjemmeveien 64",
+        "Mobile": "+654987321",
+        "PostAddress": "STAVANGER",
+        "Zipcode": "2222"
+      },
+      "EmployeeCategoryId": 3,
+      "EmployeeDetail": {
+        "DateOfBirth": null,
+        "EmployeeRef": "2156",
+        "EmployeeRefImport": "2156",
+        "Gender": "M"
+      },
+      "EmployeeTime": {
+        "ChangeSalaryCode": false,
+        "CostRate": 0,
+        "FlexiTime": true,
+        "FlexiTimeBalanceUpdated": "2019-11-01",
+        "Overtime": false,
+        "PercentWork": 80,
+        "Rate": 9,
+        "ShowPlannedHours": false,
+        "Timesheet": true,
+        "Vacation": true,
+        "VacationBalanceUpdated": "2019-11-01"
+      },
+      "Firstname": "Fornavn",
+      "Initials": "Fornavn Testetternavn (2156)",
+      "IsActive": true,
+      "JobCodeId": 0,
+      "LastName": "Sørøy",
+      "Username": "bouvet\\fornavn.testetternavn",
+      "UsernameMobile": null
+    }
+  },
+  {
+    "EmployeeId": 3656,
+    "_id": "2276",
+    "operation": "update-employee",
+    "payload": {
+      "CompanyId": 0,
+      "Email1": "test.testsson@bouvet.no",
+      "EmployedDate": "2018-08-01",
+      "Firstname": "Test",
+      "Initials": "Test Testsson (2276)",
+      "IsActive": true,
+      "LastName": "Testsson",
+      "LeaveDate": null,
+      "Username": "bouvet\\test.testsson",
+      "UsernameMobile": "test.testsson"
+    }
+  },
+  {
+    "EmployeeId": null,
+    "_id": "2288",
+    "operation": "post-employee",
+    "payload": {
+      "ActcatId": 6,
+      "CompanyId": 0,
+      "DepartmentId": null,
+      "Email1": "min.nabo@bouvet.no",
+      "EmployedDate": "2018-09-01",
+      "EmployeeAccess": {
+        "RoleCertifier": false,
+        "RoleDepartment": false,
+        "RoleEconomy": false,
+        "RoleEmployee": true,
+        "RoleManager": false,
+        "RolePrognosis": false,
+        "RoleProject": true,
+        "UseDashboard": true,
+        "UseExpense": true,
+        "UseMobile": true,
+        "UsePrognosis": true,
+        "UseTime": true
+      },
+      "EmployeeAddress": {
+        "AddressLine1": "JegLikerIkkeNaboeneMine1",
+        "Mobile": "+45645682311",
+        "PostAddress": "Nabobyen",
+        "Zipcode": "1212"
+      },
+      "EmployeeCategoryId": 3,
+      "EmployeeDetail": {
+        "DateOfBirth": "1981-01-05",
+        "EmployeeRef": "2288",
+        "EmployeeRefImport": "2288",
+        "Gender": "M"
+      },
+      "EmployeeTime": {
+        "ChangeSalaryCode": false,
+        "CostRate": 0,
+        "FlexiTime": true,
+        "FlexiTimeBalanceUpdated": "2018-09-01",
+        "Overtime": false,
+        "PercentWork": 100,
+        "Rate": 9,
+        "ShowPlannedHours": false,
+        "Timesheet": true,
+        "Vacation": true,
+        "VacationBalanceUpdated": "2018-09-01"
+      },
+      "Firstname": "Min",
+      "Initials": "Min Nabo (2288)",
+      "IsActive": true,
+      "JobCodeId": 0,
+      "LastName": "Nabo",
+      "Username": "bouvet\\min.nabo",
+      "UsernameMobile": null
+    }
+  },
+  {
+    "EmployeeId": null,
+    "_id": "2978",
+    "operation": "post-employee",
+    "payload": {
+      "ActcatId": 4,
+      "CompanyId": 0,
+      "DepartmentId": null,
+      "Email1": "harry.potter@bouvet.no",
+      "EmployedDate": "2019-06-10",
+      "EmployeeAccess": {
+        "AvailableForPlanning": true,
+        "RoleCertifier": false,
+        "RoleDepartment": false,
+        "RoleEconomy": false,
+        "RoleEmployee": true,
+        "RoleManager": false,
+        "RolePrognosis": false,
+        "RoleProject": false,
+        "UseDashboard": true,
+        "UseExpense": true,
+        "UseMobile": true,
+        "UsePrognosis": true,
+        "UseResourcePlan": false,
+        "UseTime": true
+      },
+      "EmployeeAddress": {
+        "AddressLine1": "4 Privet Drive",
+        "Mobile": "+65464",
+        "PostAddress": "Little Whinging, Surrey",
+        "Zipcode": "0000"
+      },
+      "EmployeeCategoryId": 3,
+      "EmployeeDetail": {
+        "DateOfBirth": "1980-07-31",
+        "EmployeeRef": "2978",
+        "EmployeeRefImport": "2978",
+        "Gender": "M"
+      },
+      "EmployeeTime": {
+        "ChangeSalaryCode": false,
+        "CostRate": 0,
+        "FlexiTime": true,
+        "FlexiTimeBalanceUpdated": "2019-06-10",
+        "Overtime": false,
+        "PercentWork": 100,
+        "Rate": 9,
+        "ShowPlannedHours": false,
+        "Timesheet": true,
+        "Vacation": true,
+        "VacationBalanceUpdated": "2019-06-10"
+      },
+      "Firstname": "Harry",
+      "Initials": "Harry Potter (2978)",
+      "IsActive": true,
+      "JobCodeId": 0,
+      "LastName": "Potter",
+      "Username": "bouvet\\harry.potter",
+      "UsernameMobile": null
+    }
+  },
+  {
+    "DepartmentId": null,
+    "EmployeeId": null,
+    "_id": "391",
+    "operation": "post-employee",
+    "payload": {
+      "ActcatId": 2,
+      "CompanyId": 0,
+      "DepartmentId": null,
+      "Email1": "bruker.brukersen@bouvet.no",
+      "EmployedDate": "2018-08-01",
+      "EmployeeAccess": {
+        "RoleCertifier": false,
+        "RoleDepartment": false,
+        "RoleEconomy": false,
+        "RoleEmployee": true,
+        "RoleManager": false,
+        "RolePrognosis": false,
+        "RoleProject": true,
+        "UseDashboard": true,
+        "UseExpense": true,
+        "UseMobile": true,
+        "UsePrognosis": true,
+        "UseTime": true
+      },
+      "EmployeeAddress": {
+        "AddressLine1": "test adresse",
+        "Mobile": "+4712345644",
+        "PostAddress": "test by",
+        "Zipcode": "test postnummer"
+      },
+      "EmployeeCategoryId": 7,
+      "EmployeeDetail": {
+        "DateOfBirth": "1980-11-11",
+        "EmployeeRef": "391",
+        "EmployeeRefImport": "391",
+        "Gender": "M"
+      },
+      "EmployeeTime": {
+        "ChangeSalaryCode": false,
+        "CostRate": 0,
+        "FlexiTime": false,
+        "FlexiTimeBalanceUpdated": "2018-08-01",
+        "Overtime": false,
+        "PercentWork": 0,
+        "Rate": 9,
+        "ShowPlannedHours": false,
+        "Timesheet": true,
+        "Vacation": true,
+        "VacationBalanceUpdated": "2018-08-01"
+      },
+      "Firstname": "bruker",
+      "Initials": "bruker brukersen (391)",
+      "IsActive": true,
+      "JobCodeId": 0,
+      "LastName": "brukersen",
+      "Username": "bouvet\\bruker.bruksersen",
+      "UsernameMobile": null
+    }
+  }
+]

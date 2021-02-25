@@ -1,0 +1,90 @@
+{
+  "_id": "updateCurrentDepartmentID-currenttime",
+  "type": "pipe",
+  "source": {
+    "type": "dataset",
+    "dataset": "global-person"
+  },
+  "transform": [{
+    "type": "dtl",
+    "rules": {
+      "default": [
+        ["comment", "filter",
+          ["neq", "_S._id", "ad-user:116"]
+        ],
+        ["copy",
+          ["list", "_id", "catalystone-user:1125", "updateCurrentDepartmentID-currenttime:SUPERVISOR"]
+        ],
+        ["filter",
+          ["in", "_S.global-person:employee_status",
+            ["list", "EarlyEmployee", "TempEarlyEmployee", "SoonEmployee", "TempSoonEmployee", "Employee", "TempEmployee"]
+          ]
+        ],
+        ["merge",
+          ["hops", {
+            "datasets": ["global-department gd"],
+            "where": [
+              ["eq",
+                ["string", "_S.catalystone-user:ORGANIZATION.@UNIQUE_IMPORT_ID"], "gd.ORG_ID.value"]
+            ],
+            "return": ["dict", "temp-rdf:type", "gd.rdf:type"]
+          }]
+        ],
+        ["filter",
+          ["in", "~:bouvet:global-dep-bouvet-norge-as", "_T.temp-rdf:type"]
+        ],
+        ["remove", "temp-rdf:type"],
+        ["filter",
+          ["is-not-empty", "_S.catalystone-user:1125.VALUE.value"]
+        ],
+        ["merge",
+          ["hops", {
+            "datasets": ["global-person gp"],
+            "where": [
+              ["eq", "_S.catalystone-user:SUPERVISOR.EMPLOYEE_ID",
+                ["string", "gp.catalystone-user:UNIQUE_IMPORT_ID.value"]
+              ]
+            ],
+            "return": ["dict", "ids", "gp.$ids"]
+          }]
+        ]
+      ]
+    }
+  }, {
+    "type": "dtl",
+    "rules": {
+      "default": [
+        ["copy", "*"],
+        ["merge-union",
+          ["apply-hops", "deps", {
+            "datasets": ["currenttime-department cd"],
+            "where": [
+              ["eq", "_S.ids", "cd.employeeid-ni"]
+            ]
+          }]
+        ],
+        ["filter",
+          ["not",
+            ["in", "_S.catalystone-user:1125.VALUE.value", "_T.ctdepid"]
+          ]
+        ],
+        ["add", "Reason", "Mismatch Supervisor (Folk) and attestant (Current)"],
+        ["add", "AnsattIDFolk",
+          ["integer",
+            ["ni-id",
+              ["ni", "_S._id"]
+            ]
+          ]
+        ],
+        ["remove",
+          ["list", "1125", "ids", "ctdepid", "SUPERVISOR"]
+        ]
+      ],
+      "deps": [
+        ["add", "ctdepid",
+          ["string", "_S.departmentid"]
+        ]
+      ]
+    }
+  }]
+}

@@ -1,0 +1,33 @@
+{
+  "_id": "bouvet-deactivate-user",
+  "type": "pipe",
+  "source": {
+    "type": "dataset",
+    "dataset": "global-person"
+  },
+  "transform": {
+    "type": "dtl",
+    "rules": {
+      "default": [
+        ["filter",
+          ["or",
+            ["matches", "*Sperret*", "_S.ad-user:distinguishedName"],
+            ["eq", "_S.catalystone-user:1172.VALUE.value", "Ja"],
+            ["and",
+              ["in", "~:bouvet:slack-user", "_S.rdf:type"],
+              ["not",
+                ["in", "~:bouvet:ad-user", "_S.rdf:type"]
+              ],
+              ["or",
+                ["matches", "*@bouvet.*", "_S.slack-user:profile.email"],
+                ["matches", "*@olavstoppen.no*", "_S.slack-user:profile.email"]
+              ],
+              ["neq", "_S.slack-user:is_admin", true]
+            ]
+          ]
+        ],
+        ["copy", "*"]
+      ]
+    }
+  }
+}

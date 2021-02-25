@@ -1,0 +1,56 @@
+{
+  "_id": "region",
+  "type": "pipe",
+  "source": {
+    "type": "embedded",
+    "entities": [{
+      "name": "Norge Felles",
+      "default-domain": "bouvet.no",
+      "id": "1"
+    }, {
+      "name": "Øst",
+      "default-domain": "bouvet.no",
+      "id": "2"
+    }, {
+      "name": "Sør",
+      "default-domain": "bouvet.no",
+      "id": "3"
+    }, {
+      "name": "Rogaland",
+      "default-domain": "bouvet.no",
+      "id": "4"
+    }, {
+      "name": "Bergen",
+      "default-domain": "bouvet.no",
+      "id": "5"
+    }, {
+      "name": "Nord",
+      "default-domain": "bouvet.no",
+      "id": "6"
+    }, {
+      "name": "Sesam",
+      "default-domain": "sesam.io",
+      "id": "8"
+    }, {
+      "name": "Sverige",
+      "default-domain": "bouvet.se",
+      "id": "9"
+    }, {
+      "name": "Olavstoppen",
+      "default-domain": "olavstoppen.no",
+      "id": "10"
+    }]
+  },
+  "transform": {
+    "type": "dtl",
+    "rules": {
+      "default": [
+        ["add", "_id", "_S.id"],
+        ["copy", "*"],
+        ["add", "rdf:type",
+          ["ni", "bouvet:region"]
+        ]
+      ]
+    }
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "_id": "currenttime-employeetermination-salary",
+  "type": "pipe",
+  "source": {
+    "type": "conditional",
+    "alternatives": {
+      "prod": {
+        "type": "sql",
+        "system": "currenttime-economydbrepl-sesam",
+        "schema": "adm",
+        "table": "Lønn-Oppsigelser",
+        "whitelist": ["Sjekket", "Kommentar"]
+      },
+      "test": {
+        "type": "embedded",
+        "entities": []
+      }
+    },
+    "condition": "$ENV(node-env)"
+  },
+  "transform": {
+    "type": "dtl",
+    "rules": {
+      "default": [
+        ["copy", "*"],
+        ["add", "rdf:type",
+          ["ni", "bouvet:currenttime-employeetermination-salary"]
+        ]
+      ]
+    }
+  }
+}

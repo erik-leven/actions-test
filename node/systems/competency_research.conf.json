@@ -1,0 +1,13 @@
+{
+  "_id": "competency_research",
+  "type": "system:microservice",
+  "docker": {
+    "environment": {
+      "GOOGLE_APPLICATION_CREDENTIALS": "google-storage-credentials.json",
+      "GOOGLE_APPLICATION_CREDENTIALS_CONTENT": "$SECRET(competency-research-credentials)"
+    },
+    "image": "sesamcommunity/google-storage:2.2.3",
+    "port": 5000
+  },
+  "verify_ssl": true
+}

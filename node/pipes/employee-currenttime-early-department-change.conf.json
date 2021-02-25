@@ -1,0 +1,123 @@
+{
+  "_id": "employee-currenttime-early-department-change",
+  "type": "pipe",
+  "source": {
+    "type": "dataset",
+    "dataset": "global-person",
+    "supports_signalling": true
+  },
+  "transform": [{
+    "type": "dtl",
+    "rules": {
+      "default": [
+        ["copy", "currenttime-employee:departmentid"],
+        ["comment", "only updating departments"],
+        ["filter",
+          ["is-not-null", "_S.currenttime-employee:employeeid"]
+        ],
+        ["comment", "we do not include people with pauses in their work status (e.g. summer students and such)"],
+        ["if",
+          ["and",
+            ["lt", "_S.currenttime-employee:leavedate",
+              ["datetime-parse", "%d.%m.%Y", "_S.catalystone-user:HIRING_DATE.value"]
+            ],
+            ["eq", "_S.currenttime-employee:active", true]
+          ],
+          ["filter"]
+        ],
+        ["comment", "only include employees who hasn't started yet (within one day of start date)"],
+        ["filter",
+          ["gte",
+            ["datetime-diff", "day",
+              ["datetime-parse", "%d.%m.%Y", "_S.catalystone-user:HIRING_DATE.value"],
+              ["now"]
+            ], 1]
+        ],
+        ["comment", "Filter Olavstoppen and Sverige"],
+        ["merge",
+          ["hops", {
+            "datasets": ["global-department gd"],
+            "where": [
+              ["eq",
+                ["string", "_S.catalystone-user:ORGANIZATION.@UNIQUE_IMPORT_ID"], "gd.ORG_ID.value"]
+            ],
+            "return": ["dict", "temp-rdf:type", "gd.rdf:type"]
+          }]
+        ],
+        ["filter",
+          ["in", "~:bouvet:global-dep-bouvet-norge-as", "_T.temp-rdf:type"]
+        ],
+        ["remove", "temp-rdf:type"],
+        ["comment", "fetch CurrentDepartmentID from Folk if exists"],
+        ["if",
+          ["and",
+            ["is-not-null", "_S.catalystone-user:1125.VALUE.value"],
+            ["neq", "_S.catalystone-user:1125.VALUE.value", ""]
+          ],
+          ["add", "ctdepartmentid",
+            ["integer", "_S.catalystone-user:1125.VALUE.value"]
+          ]
+        ],
+        ["add", "folk-departmentid", "_S.catalystone-user:ORGANIZATION.@UNIQUE_IMPORT_ID"],
+        ["add", "EmployeeId", "_S.currenttime-employee:employeeid"],
+        ["add", "operation", "update-employee"],
+        ["comment", "finding the currenttime id of the supervisor since we need this to find which ct departments he is supervising (attestant)"],
+        ["merge",
+          ["hops", {
+            "datasets": ["global-person gp"],
+            "where": [
+              ["eq", "_S.catalystone-user:SUPERVISOR.EMPLOYEE_ID",
+                ["string", "gp.catalystone-user:UNIQUE_IMPORT_ID.value"]
+              ]
+            ],
+            "return": ["dict", "ids", "gp.$ids"]
+          }]
+        ]
+      ]
+    }
+  }, {
+    "type": "dtl",
+    "rules": {
+      "default": [
+        ["copy", "*"],
+        ["comment", "adding the supervisors ct-department with the criteria that that department must have the same Folk department number as the employee has"],
+        ["comment", "using the currentdepartmentid from Folk as master"],
+        ["if",
+          ["is-not-null", "_S.ctdepartmentid"],
+          ["add", "ctdepid", "_S.ctdepartmentid"],
+          ["merge-union",
+            ["apply-hops", "deps", {
+              "datasets": ["currenttime-department-filtered cd"],
+              "where": [
+                ["eq",
+                  ["tuples", "_S.ids", "_S.folk-departmentid"],
+                  ["tuples", "cd.employeeid-ni", "cd.departmentref"]
+                ]
+              ]
+            }]
+          ]
+        ],
+        ["filter",
+          ["eq",
+            ["count", "_T.ctdepid"], 1]
+        ],
+        ["filter",
+          ["neq",
+            ["integer", "_T.ctdepid"], "_S.currenttime-employee:departmentid"]
+        ],
+        ["add", "departmentid", "_T.ctdepid"],
+        ["add", "payload",
+          ["dict", "DepartmentId", "_T.ctdepid"]
+        ],
+        ["remove",
+          ["list", "ctdepid", "folk-departmentid", "ids"]
+        ]
+      ],
+      "deps": [
+        ["add", "ctdepid",
+          ["string", "_S.departmentid"]
+        ]
+      ]
+    }
+  }]
+}

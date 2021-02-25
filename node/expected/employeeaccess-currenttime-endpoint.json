@@ -1,0 +1,102 @@
+[
+  {
+    "EmployeeId": 3402,
+    "_id": "0001",
+    "availableforplanning": true,
+    "operation": "update-employeeaccess",
+    "payload": {
+      "RoleCertifier": false,
+      "RoleDepartment": true,
+      "RoleEconomy": true,
+      "RoleEmployee": true,
+      "RoleManager": true,
+      "RolePrognosis": false,
+      "RoleProject": true,
+      "UseDashboard": false,
+      "UseExpense": false,
+      "UseMobile": false,
+      "UsePrognosis": false,
+      "UseTime": false
+    }
+  },
+  {
+    "EmployeeId": 3456,
+    "_id": "0004",
+    "availableforplanning": true,
+    "operation": "update-employeeaccess",
+    "payload": {
+      "RoleCertifier": false,
+      "RoleDepartment": false,
+      "RoleEconomy": false,
+      "RoleEmployee": true,
+      "RoleManager": false,
+      "RolePrognosis": false,
+      "RoleProject": false,
+      "UseDashboard": false,
+      "UseExpense": false,
+      "UseMobile": false,
+      "UsePrognosis": false,
+      "UseTime": false
+    }
+  },
+  {
+    "EmployeeId": 3455,
+    "_id": "0007",
+    "availableforplanning": true,
+    "operation": "update-employeeaccess",
+    "payload": {
+      "RoleCertifier": false,
+      "RoleDepartment": false,
+      "RoleEconomy": false,
+      "RoleEmployee": true,
+      "RoleManager": false,
+      "RolePrognosis": false,
+      "RoleProject": false,
+      "UseDashboard": true,
+      "UseExpense": true,
+      "UseMobile": true,
+      "UsePrognosis": true,
+      "UseTime": true
+    }
+  },
+  {
+    "EmployeeId": 3452,
+    "_id": "0010",
+    "availableforplanning": true,
+    "operation": "update-employeeaccess",
+    "payload": {
+      "RoleCertifier": false,
+      "RoleDepartment": false,
+      "RoleEconomy": false,
+      "RoleEmployee": true,
+      "RoleManager": false,
+      "RolePrognosis": false,
+      "RoleProject": false,
+      "UseDashboard": true,
+      "UseExpense": true,
+      "UseMobile": true,
+      "UsePrognosis": true,
+      "UseTime": true
+    }
+  },
+  {
+    "EmployeeId": 3656,
+    "_id": "2276",
+    "availableforplanning": true,
+    "operation": "update-employeeaccess",
+    "payload": {
+      "RoleCertifier": false,
+      "RoleDepartment": false,
+      "RoleEconomy": false,
+      "RoleEmployee": true,
+      "RoleManager": true,
+      "RolePrognosis": false,
+      "RoleProject": true,
+      "UseDashboard": true,
+      "UseExpense": true,
+      "UseMobile": true,
+      "UsePrognosis": true,
+      "UseTime": true
+    }
+  }
+]

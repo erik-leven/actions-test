@@ -1,0 +1,107 @@
+{
+  "_id": "o365-siteurl",
+  "type": "pipe",
+  "source": {
+    "type": "conditional",
+    "alternatives": {
+      "prod": {
+        "type": "dataset",
+        "dataset": "o365-group"
+      },
+      "test": {
+        "type": "embedded",
+        "entities": [{
+          "_id": "9d5c8eed-3729-4b9f-baf2-81e8d4d914c8",
+          "name": "ArkivverketVedlikeholdsavtaleArkivverket",
+          "@odata": {
+            "context": "https://graph.microsoft.com/v1.0/$metadata#sites/$entity"
+          },
+          "createdDateTime": "2019-03-29T14:34:50.16Z",
+          "description": "Arkivverket - Vedlikeholdsavtale Arkivverket",
+          "displayName": "Arkivverket - Vedlikeholdsavtale Arkivverket",
+          "id": "bouvetasa.sharepoint.com,dc26be38-b69d-4e27-95ac-8acaf78aa77d,dba3a748-fada-4ffb-abe6-5e93861695f2",
+          "lastModifiedDateTime": "2019-09-10T08:12:09Z",
+          "root": {},
+          "siteCollection": {
+            "hostname": "bouvetasa.sharepoint.com"
+          },
+          "webUrl": "https://bouvetasa.sharepoint.com/sites/ArkivverketVedlikeholdsavtaleArkivverket"
+        }]
+      }
+    },
+    "condition": "$ENV(node-env)"
+  },
+  "transform": {
+    "type": "conditional",
+    "alternatives": {
+      "prod": {
+        "type": "chained",
+        "transforms": [{
+          "type": "dtl",
+          "rules": {
+            "default": [
+              ["add", "id", "_S.o365-group:id"]
+            ]
+          }
+        }, {
+          "type": "http",
+          "system": "o365graph",
+          "batch_size": 1,
+          "url": "/siteurl"
+        }, {
+          "type": "dtl",
+          "rules": {
+            "default": [
+              ["make-ni", "o365-group", "_id", "o365-siteurl:id-ni"],
+              ["merge",
+                ["apply", "add-ns", "_S."]
+              ],
+              ["add", "rdf:type",
+                ["ni", "o365:Siteurl"]
+              ],
+              ["remove", "o365-siteurl:_id"]
+            ],
+            "add-ns": [
+              ["merge",
+                ["map-dict",
+                  ["concat", "o365-siteurl:", "_."],
+                  ["if",
+                    ["is-dict", "_."],
+                    ["apply", "add-ns", "_."], "_."], "_S."]
+              ]
+            ]
+          }
+        }]
+      },
+      "test": {
+        "type": "dtl",
+        "rules": {
+          "default": [
+            ["make-ni", "o365-group", "_id", "o365-siteurl:id-ni"],
+            ["merge",
+              ["apply", "add-ns", "_S."]
+            ],
+            ["add", "rdf:type",
+              ["ni", "o365:Siteurl"]
+            ],
+            ["remove", "o365-siteurl:_id"]
+          ],
+          "add-ns": [
+            ["merge",
+              ["map-dict",
+                ["concat", "o365-siteurl:", "_."],
+                ["if",
+                  ["is-dict", "_."],
+                  ["apply", "add-ns", "_."], "_."], "_S."]
+            ]
+          ]
+        }
+      }
+    },
+    "condition": "$ENV(node-env)"
+  },
+  "pump": {
+    "mode": "$ENV(pump-mode)"
+  },
+  "namespaced_identifiers": false
+}

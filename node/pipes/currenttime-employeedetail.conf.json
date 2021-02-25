@@ -1,0 +1,141 @@
+{
+  "_id": "currenttime-employeedetail",
+  "type": "pipe",
+  "source": {
+    "type": "conditional",
+    "alternatives": {
+      "prod": {
+        "type": "sql",
+        "system": "currenttime",
+        "blacklist": ["creditcard1", "creditcard2", "creditcard3", "gender", "abaxusertoken", "economymailreceiverdefaultchecked"],
+        "table": "employeedetail",
+        "updated_column": "updatedate"
+      },
+      "test": {
+        "type": "embedded",
+        "entities": [{
+          "_id": "3315",
+          "dateofbirth": "~t1985-08-18T00:00:00Z",
+          "employeedetailid": 3315,
+          "employeeid": 3656,
+          "employeeid-ni": "~:currenttime-employee:3656",
+          "employeeref": "2276",
+          "employeerefimport": "2276",
+          "pursuant": "~:sesam:bouvet-employee",
+          "updateby": "Api",
+          "updatedate": "~t2020-03-16T13:35:06.907Z"
+        }, {
+          "_id": "3185",
+          "createdate": "~t2018-02-05T14:25:12.303Z",
+          "employeedetailid": 3185,
+          "employeeid": 3402,
+          "employeeref": "0001",
+          "employeerefimport": "2174",
+          "pursuant": "~:sesam:bouvet-employee",
+          "updateby": "Testing (3526)",
+          "updatedate": "~t2019-03-20T08:41:24.887Z"
+        }, {
+          "_id": "3186",
+          "createdate": "~t2018-02-05T14:25:12.303Z",
+          "employeedetailid": 3186,
+          "employeeid": 3458,
+          "employeeref": "0002",
+          "employeerefimport": "2174",
+          "pursuant": "~:sesam:bouvet-employee",
+          "updateby": "Testing (3526)",
+          "updatedate": "~t2019-03-20T08:41:24.887Z"
+        }, {
+          "_id": "3187",
+          "createdate": "~t2018-02-05T14:25:12.303Z",
+          "employeedetailid": 3187,
+          "employeeid": 3457,
+          "employeeref": "0003",
+          "employeerefimport": "2174",
+          "pursuant": "~:sesam:bouvet-employee",
+          "updateby": "Testing (3526)",
+          "updatedate": "~t2019-03-20T08:41:24.887Z"
+        }, {
+          "_id": "3188",
+          "createdate": "~t2018-02-05T14:25:12.303Z",
+          "employeedetailid": 3188,
+          "employeeid": 3456,
+          "employeeref": "0004",
+          "employeerefimport": "2174",
+          "pursuant": "~:sesam:bouvet-employee",
+          "updateby": "Testing (3526)",
+          "updatedate": "~t2019-03-20T08:41:24.887Z"
+        }, {
+          "_id": "3189",
+          "createdate": "~t2018-02-05T14:25:12.303Z",
+          "employeedetailid": 3189,
+          "employeeid": 3452,
+          "employeeref": "0010",
+          "employeerefimport": "2174",
+          "pursuant": "~:sesam:bouvet-employee",
+          "updateby": "Testing (3526)",
+          "updatedate": "~t2019-03-20T08:41:24.887Z"
+        }, {
+          "_id": "3190",
+          "createdate": "~t2018-02-05T14:25:12.303Z",
+          "employeedetailid": 3190,
+          "employeeid": 1625,
+          "employeeref": "0006",
+          "employeerefimport": "2174",
+          "pursuant": "~:sesam:bouvet-employee",
+          "updateby": "Testing (3526)",
+          "updatedate": "~t2019-03-20T08:41:24.887Z"
+        }, {
+          "_id": "3191",
+          "createdate": "~t2018-02-05T14:25:12.303Z",
+          "employeedetailid": 3191,
+          "employeeid": 3455,
+          "employeeref": "0007",
+          "employeerefimport": "2174",
+          "pursuant": "~:sesam:bouvet-employee",
+          "updateby": "Testing (3526)",
+          "updatedate": "~t2019-03-20T08:41:24.887Z"
+        }, {
+          "_id": "3192",
+          "createdate": "~t2018-02-05T14:25:12.303Z",
+          "employeedetailid": 3192,
+          "employeeid": 3454,
+          "employeeref": "0008",
+          "employeerefimport": "2174",
+          "pursuant": "~:sesam:bouvet-employee",
+          "updateby": "Testing (3526)",
+          "updatedate": "~t2019-03-20T08:41:24.887Z"
+        }, {
+          "_id": "3193",
+          "createdate": "~t2018-02-05T14:25:12.303Z",
+          "employeedetailid": 3193,
+          "employeeid": 3453,
+          "employeeref": "0009",
+          "employeerefimport": "2174",
+          "pursuant": "~:sesam:bouvet-employee",
+          "updateby": "Testing (3526)",
+          "updatedate": "~t2019-03-20T08:41:24.887Z"
+        }]
+      }
+    },
+    "condition": "$ENV(node-env)"
+  },
+  "transform": {
+    "type": "dtl",
+    "rules": {
+      "default": [
+        ["copy", "*"],
+        ["make-ni", "currenttime-employee", "employeeid"],
+        ["add", "rdf:type",
+          ["ni", "bouvet:currenttime-employeedetail"]
+        ],
+        ["add", "pursuant",
+          ["ni", "sesam:bouvet-employee"]
+        ]
+      ]
+    }
+  },
+  "pump": {
+    "cron_expression": "$ENV(ct_cron_fast)",
+    "rescan_cron_expression": "$ENV(ct_rescan_cron)"
+  }
+}

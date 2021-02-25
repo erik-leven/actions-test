@@ -1,0 +1,16 @@
+{
+  "_id": "currenttime-sverige",
+  "type": "system:mssql",
+  "name": "currenttime-sverige",
+  "charset": "utf8",
+  "database": "ct_Stockholm",
+  "host": "$ENV(current-sverige-host)",
+  "password": "$SECRET(ct-se-password)",
+  "pool_max_overflow": 10,
+  "pool_recycle": 1800,
+  "pool_size": 10,
+  "pool_timeout": 30,
+  "port": 1433,
+  "timezone": "UTC",
+  "username": "$SECRET(ct-user)"
+}

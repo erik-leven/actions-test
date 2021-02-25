@@ -1,0 +1,119 @@
+{
+  "_id": "employeeTermination-salary-currenttime",
+  "type": "pipe",
+  "source": {
+    "type": "dataset",
+    "dataset": "global-person"
+  },
+  "transform": {
+    "type": "dtl",
+    "rules": {
+      "default": [
+        ["filter",
+          ["in", "_S.global-person:employee_status",
+            ["list", "EarlyEmployee", "TempEarlyEmployee", "SoonEmployee", "TempSoonEmployee", "Employee", "TempEmployee", "Quit"]
+          ]
+        ],
+        ["filter",
+          ["in", "~:bouvet:catalystone-user", "_S.rdf:type"]
+        ],
+        ["filter",
+          ["is-not-null", "_S.TERMINATION_DATE.value"]
+        ],
+        ["filter",
+          ["neq", "", "_S.TERMINATION_DATE.value"]
+        ],
+        ["comment", "Employees from Sweden or Olavstoppen should not be included"],
+        ["merge",
+          ["hops", {
+            "datasets": ["global-department gd"],
+            "where": [
+              ["eq", "_S.ORGANIZATION.@UNIQUE_IMPORT_ID", "gd.catalystone-organization:ORG_ID.value"]
+            ],
+            "return": ["dict", "sjekk-rdf", "gd.rdf:type"]
+          }]
+        ],
+        ["filter",
+          ["in", "~:bouvet:global-dep-bouvet-norge-as", "_T.sjekk-rdf"]
+        ],
+        ["copy", "_id"],
+        ["add", "Ansatt-ID",
+          ["integer", "_S.UNIQUE_IMPORT_ID.value"]
+        ],
+        ["merge",
+          ["apply", "check-date",
+            ["datetime-parse", "%d.%m.%Y", "_S.TERMINATION_DATE.value"]
+          ]
+        ],
+        ["add", "Sluttdato",
+          ["datetime-parse", "%d.%m.%Y", "_S.TERMINATION_DATE.value"]
+        ],
+        ["add", "Faktisk_siste_arbeidsdag",
+          ["datetime-parse", "%d.%m.%Y", "_S.catalystone-user:1029.VALUE.value"]
+        ],
+        ["add", "Navn", "_S.catalystone-user:NAME.value"],
+        ["add", "Ansettelsesdato",
+          ["datetime-parse", "%d.%m.%Y", "_S.HIRING_DATE.value"]
+        ],
+        ["add", "Region", "_S.global-person:Region"],
+        ["add", "E-post", "_S.global-person:Email"],
+        ["add", "Organisasjon", "_S.ORGANIZATION.value"],
+        ["add", "Leder", "_S.SUPERVISOR.NAME"],
+        ["add", "Arbeidssted", "_S.JOB_LOCATION.value"],
+        ["add", "Jobbrolle", "_S.JOB_ROLE.value"],
+        ["add", "Brukernavn", "_S.USERNAME.value"],
+        ["add", "Mobiltelefon", "_S.catalystone-user:1003.VALUE.value"],
+        ["add", "Ansettelsestype", "_S.catalystone-user:1046.VALUE.value"],
+        ["add", "Sjekket", false],
+        ["add", "Kommentar",
+          ["coalesce",
+            ["list",
+              ["first",
+                ["hops", {
+                  "datasets": ["global-economy ga"],
+                  "where": ["eq",
+                    ["ni", "currenttime-employeetermination-salary", "_S.catalystone-user:UNIQUE_IMPORT_ID.value"], "ga.$ids"],
+                  "return": "ga.currenttime-employeetermination-salary:Kommentar"
+                }]
+              ], ""]
+          ]
+        ],
+        ["remove", "sjekk-rdf"]
+      ],
+      "check-date": [
+        ["if",
+          ["gte",
+            ["datetime-format", "%d", "_S."], "16"],
+          [
+            ["add", "Mnd",
+              ["integer",
+                ["datetime-format", "%m",
+                  ["datetime-plus", "month", 1, "_S."]
+                ]
+              ]
+            ],
+            ["add", "År",
+              ["integer",
+                ["datetime-format", "%Y",
+                  ["datetime-plus", "month", 1, "_S."]
+                ]
+              ]
+            ]
+          ],
+          [
+            ["add", "Mnd",
+              ["integer",
+                ["datetime-format", "%m", "_S."]
+              ]
+            ],
+            ["add", "År",
+              ["integer",
+                ["datetime-format", "%Y", "_S."]
+              ]
+            ]
+          ]
+        ]
+      ]
+    }
+  }
+}

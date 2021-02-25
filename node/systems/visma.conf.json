@@ -1,0 +1,16 @@
+{
+  "_id": "visma",
+  "type": "system:mssql-azure-dw",
+  "name": "Visma",
+  "charset": "utf8",
+  "database": "BouvetNorgeASGlobalData",
+  "host": "vismasql.bouvet.no",
+  "password": "$SECRET(visma-password)",
+  "pool_max_overflow": 10,
+  "pool_recycle": 1800,
+  "pool_size": 10,
+  "pool_timeout": 30,
+  "port": 1433,
+  "timezone": "UTC",
+  "username": "sesam"
+}

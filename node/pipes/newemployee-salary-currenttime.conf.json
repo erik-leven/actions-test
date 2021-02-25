@@ -1,0 +1,109 @@
+{
+  "_id": "newEmployee-salary-currenttime",
+  "type": "pipe",
+  "source": {
+    "type": "dataset",
+    "dataset": "global-person"
+  },
+  "transform": {
+    "type": "dtl",
+    "rules": {
+      "default": [
+        ["filter",
+          ["in", "_S.global-person:employee_status",
+            ["list", "EarlyEmployee", "TempEarlyEmployee", "SoonEmployee", "TempSoonEmployee", "Employee", "TempEmployee"]
+          ]
+        ],
+        ["add", "Ansatt-ID",
+          ["integer", "_S.UNIQUE_IMPORT_ID.value"]
+        ],
+        ["merge",
+          ["hops", {
+            "datasets": ["global-department gd"],
+            "where": [
+              ["eq", "_S.ORGANIZATION.@UNIQUE_IMPORT_ID", "gd.catalystone-organization:ORG_ID.value"]
+            ],
+            "return": ["dict", "sjekk-rdf", "gd.rdf:type"]
+          }]
+        ],
+        ["filter",
+          ["in", "~:bouvet:global-dep-bouvet-norge-as", "_T.sjekk-rdf"]
+        ],
+        ["remove",
+          ["list", "check-*", "limit-date", "sjekk-rdf"]
+        ],
+        ["add", "Region", "_S.global-person:Region"],
+        ["add", "Kontonummer", "_S.catalystone-user:1036.VALUE.value"],
+        ["add", "Adresse", "_S.catalystone-user:1006.VALUE.value"],
+        ["add", "Postnr",
+          ["integer", "_S.catalystone-user:1007.VALUE.value"]
+        ],
+        ["add", "By", "_S.catalystone-user:1008.VALUE.value"],
+        ["add", "Land", "_S.catalystone-user:1009.VALUE.value"],
+        ["add", "Startdato",
+          ["datetime-parse", "%d.%m.%Y", "_S.HIRING_DATE.value"]
+        ],
+        ["add", "Mnd",
+          ["integer",
+            ["datetime-format", "%m", "_T.Startdato"]
+          ]
+        ],
+        ["add", "År",
+          ["integer",
+            ["datetime-format", "%Y", "_T.Startdato"]
+          ]
+        ],
+        ["add", "Årslønn", "_S.BASIC_SALARY.AMOUNT"],
+        ["add", "Stillingsprosent", "_S.WORKING_HOURS.value"],
+        ["add", "Navn",
+          ["concat", "_S.FIRST_NAME.value", " ", "_S.LAST_NAME.value"]
+        ],
+        ["add", "Ansettelsestype", "_S.catalystone-user:1046.VALUE.value"],
+        ["add", "Organisasjon", "_S.ORGANIZATION.value"],
+        ["add", "Leder", "_S.SUPERVISOR.NAME"],
+        ["add", "Arbeidssted", "_S.JOB_LOCATION.value"],
+        ["if",
+          ["is-not-empty", "_S.catalystone-user:1121.VALUE.value"],
+          ["add", "Folk-signert-kontrakt", "_S.catalystone-user:1121.VALUE.value"],
+          ["add", "Folk-signert-kontrakt", "Nei"]
+        ],
+        ["add", "Vismabruker-opprettet", "NO"],
+        ["add", "Timelønn", "_S.catalystone-user:1031.VALUE.value"],
+        ["add", "Årslønn", "_S.BASIC_SALARY.AMOUNT"],
+        ["merge",
+          ["apply-hops", "check-visma", {
+            "datasets": ["visma-employee ve"],
+            "where": [
+              ["eq",
+                ["integer", "_S.UNIQUE_IMPORT_ID.value"], "ve.ProductNo"]
+            ]
+          }]
+        ],
+        ["add", "Sjekket", false],
+        ["add", "Kommentar",
+          ["coalesce",
+            ["list",
+              ["first",
+                ["hops", {
+                  "datasets": ["global-economy ga"],
+                  "where": ["eq",
+                    ["ni", "currenttime-newemployee-salary",
+                      ["concat", "_S.catalystone-user:UNIQUE_IMPORT_ID.value",
+                        ["datetime-format", "_%m_%Y",
+                          ["datetime-parse", "%d.%m.%Y", "_S.HIRING_DATE.value"]
+                        ]
+                      ]
+                    ], "ga.$ids"],
+                  "return": "ga.currenttime-newemployee-salary:Kommentar"
+                }]
+              ], ""]
+          ]
+        ],
+        ["copy", "_id"]
+      ],
+      "check-visma": [
+        ["add", "Vismabruker-opprettet", "OK"]
+      ]
+    }
+  }
+}

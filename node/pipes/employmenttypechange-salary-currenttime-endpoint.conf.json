@@ -1,0 +1,135 @@
+{
+  "_id": "employmentTypeChange-salary-currenttime-endpoint",
+  "type": "pipe",
+  "source": {
+    "type": "dataset",
+    "dataset": "employmentTypeChange-salary-currenttime"
+  },
+  "sink": {
+    "type": "sql",
+    "system": "currenttime-economydbrepl-sesam",
+    "batch_size": 1,
+    "create_table_if_missing": true,
+    "primary_key": ["Ansatt-ID", "Mnd", "År"],
+    "schema": "adm",
+    "schema_definition": [{
+      "type": "integer",
+      "name": "Ansatt-ID",
+      "max_value": 20000,
+      "min_value": 0,
+      "primary_key": true,
+      "source_property": "Ansatt-ID"
+    }, {
+      "type": "string",
+      "name": "Fra-ansattype",
+      "max_size": 50,
+      "min_size": 0,
+      "source_property": "Fra-ansattype"
+    }, {
+      "type": "string",
+      "name": "Til-ansattype",
+      "max_size": 50,
+      "min_size": 0,
+      "source_property": "Til-ansattype"
+    }, {
+      "type": "datetime",
+      "name": "Startdato",
+      "max_value": "~t2099-08-02T00:00:00Z",
+      "min_value": "~t1987-11-01T00:00:00Z",
+      "source_property": "Startdato"
+    }, {
+      "type": "integer",
+      "name": "Årslønn",
+      "allow_null": true,
+      "max_value": 10000000,
+      "min_size": 0,
+      "source_property": "Årslønn"
+    }, {
+      "type": "string",
+      "name": "Timelønn",
+      "allow_null": true,
+      "max_size": 50,
+      "min_size": 0,
+      "source_property": "Timelønn"
+    }, {
+      "type": "integer",
+      "name": "Mnd",
+      "max_value": 12,
+      "min_value": 1,
+      "primary_key": true,
+      "source_property": "Mnd"
+    }, {
+      "type": "integer",
+      "name": "År",
+      "max_value": 3000,
+      "min_value": 2000,
+      "primary_key": true,
+      "source_property": "År"
+    }, {
+      "type": "string",
+      "name": "Region",
+      "max_size": 50,
+      "min_size": 0,
+      "source_property": "Region"
+    }, {
+      "type": "boolean",
+      "name": "Sjekket",
+      "source_property": "Sjekket"
+    }, {
+      "type": "string",
+      "name": "Kommentar",
+      "max_size": 1000,
+      "min_size": 0,
+      "source_property": "Kommentar"
+    }],
+    "table": "Lønn-AnsattypeBytte"
+  },
+  "transform": {
+    "type": "conditional",
+    "alternatives": {
+      "prod": {
+        "type": "dtl",
+        "rules": {
+          "default": [
+            ["copy", "*"],
+            ["filter",
+              ["neq", "_S._deleted", true]
+            ],
+            ["add", "Årslønn",
+              ["integer",
+                ["decrypt", "$SECRET(folk-encryption-key)", "_T.Årslønn"]
+              ]
+            ],
+            ["add", "Timelønn",
+              ["decrypt", "$SECRET(folk-encryption-key)", "_T.Timelønn"]
+            ]
+          ]
+        }
+      },
+      "test": {
+        "type": "dtl",
+        "rules": {
+          "default": [
+            ["copy", "*"],
+            ["filter",
+              ["neq", "_S._deleted", true]
+            ],
+            ["add", "Årslønn",
+              ["integer",
+                ["decrypt", "folk-encryption-key", "_T.Årslønn"]
+              ]
+            ],
+            ["add", "Timelønn",
+              ["decrypt", "folk-encryption-key", "_T.Timelønn"]
+            ]
+          ]
+        }
+      }
+    },
+    "condition": "$ENV(node-env)"
+  },
+  "pump": {
+    "cron_expression": "$ENV(economylist_cron)",
+    "mode": "$ENV(pump-mode)"
+  }
+}

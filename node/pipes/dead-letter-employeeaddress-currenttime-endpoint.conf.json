@@ -1,0 +1,28 @@
+{
+  "_id": "dead-letter-employeeaddress-currenttime-endpoint",
+  "type": "pipe",
+  "source": {
+    "type": "dataset",
+    "dataset": "dead-letter-employeeaddress-currenttime"
+  },
+  "sink": {
+    "type": "json",
+    "system": "smtp-ms",
+    "url": "dead-letter-employeeaddress-currenttime/dead-letters/CURRENTTIME"
+  },
+  "transform": {
+    "type": "dtl",
+    "rules": {
+      "default": [
+        ["filter",
+          ["eq", "_S._deleted", false]
+        ],
+        ["copy", "*"]
+      ]
+    }
+  },
+  "pump": {
+    "mode": "$ENV(pump-mode)",
+    "schedule_interval": 3600
+  }
+}

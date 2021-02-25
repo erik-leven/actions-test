@@ -1,0 +1,17 @@
+{
+  "_id": "catalystone-rest-v2",
+  "type": "system:microservice",
+  "docker": {
+    "environment": {
+      "client_id_org": "$ENV(catalystone-v2-client_id_org)",
+      "client_id_user": "$ENV(catalystone-v2-client_id_user)",
+      "client_secret_org": "$SECRET(catalystone-v2-client_secret_org)",
+      "client_secret_user": "$SECRET(catalystone-v2-client_secret_user)",
+      "get_url": "https://bt.catalystone.com/bouvet/api/v2/export",
+      "grant_type": "client_credentials",
+      "token_url": "https://bt.catalystone.com/bouvet/api/v2/oauth2/token"
+    },
+    "image": "erikalev/cat1-new-test:1.0.0",
+    "port": 5000
+  }
+}

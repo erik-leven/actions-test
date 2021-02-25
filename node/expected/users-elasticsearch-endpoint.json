@@ -1,0 +1,1267 @@
+[
+  {
+    "_id": "0001",
+    "about_me": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+    "ad_roles": [
+      "Konsulent",
+      "Prosjektleder"
+    ],
+    "ask_me": [
+      "Innholdsstrategi",
+      "Innholdsdesign",
+      "Innholdsforvaltning",
+      "Innholdsanalyse",
+      "Redaktørrollen",
+      "Digital samhandling",
+      "Konseptutvikling",
+      "Universell utforming",
+      "Interaksjonsdesign",
+      "Informasjonsarkitektur",
+      "Kanalstrategi",
+      "Kommunikasjonsstrategi"
+    ],
+    "blogs": null,
+    "cv_url": "https://bouvet.cvpartner.com/redirect/to/cv?email=kari.norrman%40bouvet.no",
+    "department": [
+      {
+        "name": "Trondheim Tech 1",
+        "parent": "809",
+        "uid": "801"
+      },
+      {
+        "name": "Region Nord",
+        "parent": "2",
+        "uid": "809"
+      },
+      {
+        "name": "Bouvet Norge AS",
+        "parent": "1",
+        "uid": "2"
+      },
+      {
+        "name": "Bouvet ASA",
+        "parent": null,
+        "uid": "1"
+      }
+    ],
+    "enonic_deleted": true,
+    "firstName": "Anders",
+    "foo": "bar",
+    "image_large": "https://image.com/1",
+    "image_thumb": "https://image.com/1",
+    "lastName": "Nygaard",
+    "mail": "max.manus@bouvet.no",
+    "matching_key": [
+      "max.manus@bouvet.no",
+      "max.manus@bouvet.no"
+    ],
+    "mobile": "+46 test telefon",
+    "name": "Max Manus",
+    "project_exp": [
+      {
+        "customer": "Altibox",
+        "from": "~t2015-09-01T00:00:00Z",
+        "project_name": "Funksjonalitetstesting av «TV Overalt»",
+        "roles": [
+          "Tester"
+        ],
+        "to": "~t2015-12-01T00:00:00Z"
+      },
+      {
+        "customer": "Altibox",
+        "from": "~t2015-01-01T00:00:00Z",
+        "project_name": "Funksjonalitetstesting av dekodere",
+        "roles": [
+          "Tester"
+        ],
+        "to": "~t2015-06-01T00:00:00Z"
+      },
+      {
+        "customer": "Altibox",
+        "from": "~t2016-03-01T00:00:00Z",
+        "project_name": "Testing av TV Overalt app og på web ",
+        "roles": [
+          "Tester"
+        ],
+        "to": "pågående"
+      },
+      {
+        "customer": "Nortura",
+        "from": "~t2014-09-01T00:00:00Z",
+        "project_name": "Hospitering datavarehuset",
+        "roles": [
+          "Utvikler"
+        ],
+        "to": "~t2014-12-01T00:00:00Z"
+      },
+      {
+        "customer": "Bouvet Norge AS",
+        "from": "~t2013-12-01T00:00:00Z",
+        "project_name": "Business Intelligence team",
+        "roles": [
+          "Dashboarddesigner",
+          "Utvikler"
+        ],
+        "to": "pågående"
+      }
+    ],
+    "role": "Konsulent",
+    "skill": [
+      "JavaFX 2",
+      "Spring JDBC",
+      "Java SE 7",
+      "Java EE 6",
+      "Java SE 8",
+      "Java EE 5",
+      "JavaScript",
+      "Java EE 8"
+    ],
+    "slack": "max.manus",
+    "slack_nativeurl": "slack://user?team=T024XURJ2\u0026id=U86BLFNDS",
+    "slack_weburl": "https://bouvet.slack.com/messages/U86BLFNDS",
+    "start_date": "~t2012-01-01T00:00:00Z",
+    "uid": "0001"
+  },
+  {
+    "_id": "0002",
+    "ad_roles": [
+      "Konsulent",
+      "Prosjektleder"
+    ],
+    "enonic_deleted": true,
+    "firstName": "Lars Sømo",
+    "foo": "bar",
+    "lastName": "Olaussen",
+    "mail": "ola.norrman@bouvet.no",
+    "matching_key": [
+      "ola.norrman@bouvet.no",
+      "ola.norrman@sesam.io"
+    ],
+    "mobile": "+47 11111111",
+    "name": "Ola Norrman",
+    "slack": null,
+    "start_date": "~t2020-04-01T00:00:00Z",
+    "uid": "0002"
+  },
+  {
+    "_id": "0003",
+    "about_me": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+    "ad_roles": [
+      "Konsulent",
+      "Prosjektleder"
+    ],
+    "ask_me": [
+      "Innholdsstrategi",
+      "Innholdsdesign",
+      "Innholdsforvaltning",
+      "Innholdsanalyse",
+      "Redaktørrollen",
+      "Digital samhandling",
+      "Konseptutvikling",
+      "Universell utforming",
+      "Interaksjonsdesign",
+      "Informasjonsarkitektur",
+      "Kanalstrategi",
+      "Kommunikasjonsstrategi",
+      "Behovsanalyse"
+    ],
+    "blogs": null,
+    "cv_url": "https://bouvet.cvpartner.com/redirect/to/cv?email=fgh%40bouvet.no",
+    "enonic_deleted": false,
+    "firstName": "Sven",
+    "foo": "bar",
+    "image_large": "https://image.com/9",
+    "image_thumb": "https://image.com/9",
+    "lastName": "Svensson",
+    "mail": "sven.svensson@bouvet.no",
+    "matching_key": [
+      "sven.svensson@bouvet.no",
+      "sven.svensson@bouvet.no"
+    ],
+    "mobile": "+47 33333333",
+    "name": "Sven Svensson",
+    "project_exp": null,
+    "role": "Konsulent",
+    "skill": [
+      "JavaFX 2",
+      "Spring JDBC",
+      "Java SE 7",
+      "Java EE 6",
+      "Java SE 8",
+      "Java EE 5",
+      "JavaScript",
+      "Java EE 8"
+    ],
+    "slack": "sven.svensson",
+    "slack_nativeurl": "slack://user?team=T024XURJ2\u0026id=U4N5W5JP6",
+    "slack_weburl": "https://bouvet.slack.com/messages/U4N5W5JP6",
+    "start_date": "~t2010-01-18T00:00:00Z",
+    "uid": "0003"
+  },
+  {
+    "_id": "0004",
+    "about_me": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+    "ad_roles": [
+      "Konsulent",
+      "Prosjektleder"
+    ],
+    "ask_me": [
+      "Innholdsstrategi",
+      "Innholdsdesign",
+      "Innholdsforvaltning",
+      "Innholdsanalyse",
+      "Redaktørrollen",
+      "Digital samhandling",
+      "Konseptutvikling",
+      "Universell utforming",
+      "Interaksjonsdesign",
+      "Informasjonsarkitektur",
+      "Kanalstrategi",
+      "Kommunikasjonsstrategi",
+      "Behovsanalyse"
+    ],
+    "blogs": null,
+    "cv_url": "https://bouvet.cvpartner.com/redirect/to/cv?email=sven.svensson%40bouvet.no",
+    "department": [
+      {
+        "name": "Rundemanen",
+        "parent": "789",
+        "uid": "785"
+      },
+      {
+        "name": "Region Bergen",
+        "parent": "2",
+        "uid": "789"
+      },
+      {
+        "name": "Bouvet Norge AS",
+        "parent": "1",
+        "uid": "2"
+      },
+      {
+        "name": "Bouvet ASA",
+        "parent": null,
+        "uid": "1"
+      }
+    ],
+    "enonic_deleted": true,
+    "firstName": "Kjell Inge",
+    "foo": "bar",
+    "image_large": "https://image.com/3",
+    "image_thumb": "https://image.com/3",
+    "lastName": "Alsvik",
+    "mail": "test.tester@bouvet.no",
+    "matching_key": [
+      "test.tester@bouvet.no",
+      "test.tester@bouvet.no"
+    ],
+    "mobile": "+47 55555555",
+    "name": "Test Tester",
+    "project_exp": null,
+    "role": "Leveranseleder",
+    "skill": [
+      "JavaFX 2",
+      "Spring JDBC",
+      "Java SE 7",
+      "Java EE 6",
+      "Java SE 8",
+      "Java EE 5",
+      "JavaScript",
+      "Java EE 8"
+    ],
+    "slack": "test",
+    "slack_nativeurl": "slack://user?team=T024XURJ2\u0026id=U3NPXEJ2V",
+    "slack_weburl": "https://bouvet.slack.com/messages/U3NPXEJ2V",
+    "start_date": "~t2009-12-01T00:00:00Z",
+    "uid": "0004"
+  },
+  {
+    "_id": "0006",
+    "ad_roles": [
+      "Konsulent",
+      "Prosjektleder"
+    ],
+    "enonic_deleted": false,
+    "firstName": "Flemming",
+    "foo": "bar",
+    "lastName": "Steffensen",
+    "mail": "abc@bouvet.no",
+    "matching_key": [
+      "abc@bouvet.no",
+      "abc@bouvet.no"
+    ],
+    "mobile": "+47 77777777",
+    "name": "Testina Testsen",
+    "slack": "testina",
+    "slack_nativeurl": "slack://user?team=T024XURJ2\u0026id=U3BPHUN22",
+    "slack_weburl": "https://bouvet.slack.com/messages/U3BPHUN22",
+    "start_date": "~t2016-05-01T00:00:00Z",
+    "uid": "0006"
+  },
+  {
+    "_id": "0007",
+    "about_me": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+    "ad_roles": [
+      "Konsulent",
+      "Prosjektleder"
+    ],
+    "ask_me": [
+      "Innholdsstrategi",
+      "Innholdsdesign",
+      "Innholdsforvaltning",
+      "Innholdsanalyse",
+      "Redaktørrollen",
+      "Digital samhandling",
+      "Konseptutvikling",
+      "Universell utforming",
+      "Interaksjonsdesign",
+      "Informasjonsarkitektur",
+      "Kanalstrategi",
+      "Kommunikasjonsstrategi",
+      "Behovsanalyse"
+    ],
+    "blogs": null,
+    "cv_url": "https://bouvet.cvpartner.com/redirect/to/cv?email=abc%40bouvet.no",
+    "department": [
+      {
+        "name": "Øst Prosjektledelse 2",
+        "parent": "500",
+        "uid": "513"
+      },
+      {
+        "name": "Øst Råd og Prosjekt",
+        "parent": "299",
+        "uid": "500"
+      },
+      {
+        "name": "Region Øst",
+        "parent": "2",
+        "uid": "299"
+      },
+      {
+        "name": "Bouvet Norge AS",
+        "parent": "1",
+        "uid": "2"
+      },
+      {
+        "name": "Bouvet ASA",
+        "parent": null,
+        "uid": "1"
+      }
+    ],
+    "enonic_deleted": false,
+    "firstName": "Victoria Welle",
+    "foo": "bar",
+    "image_large": "https://image.com/6",
+    "image_thumb": "https://image.com/6",
+    "lastName": "Fjellbirkeland",
+    "mail": "cba@bouvet.no",
+    "matching_key": [
+      "cba@bouvet.no",
+      "cba@bouvet.no"
+    ],
+    "mobile": "+47 99999999",
+    "name": "Karl Michael Bergman",
+    "project_exp": null,
+    "role": "UX-konsulent",
+    "skill": [
+      "JavaFX 2",
+      "Spring JDBC",
+      "Java SE 7",
+      "Java EE 6",
+      "Java SE 8",
+      "Java EE 5",
+      "JavaScript",
+      "Java EE 8"
+    ],
+    "slack": "karl.bergman",
+    "slack_nativeurl": "slack://user?team=T024XURJ2\u0026id=U3YJBHQPJ",
+    "slack_weburl": "https://bouvet.slack.com/messages/U3YJBHQPJ",
+    "start_date": "~t2020-03-20T00:00:00Z",
+    "uid": "0007"
+  },
+  {
+    "_id": "0008",
+    "about_me": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+    "ad_roles": [
+      "Konsulent",
+      "Prosjektleder"
+    ],
+    "ask_me": [
+      "Innholdsstrategi",
+      "Innholdsdesign",
+      "Innholdsforvaltning",
+      "Innholdsanalyse",
+      "Redaktørrollen",
+      "Digital samhandling",
+      "Konseptutvikling",
+      "Universell utforming",
+      "Interaksjonsdesign",
+      "Informasjonsarkitektur",
+      "Kanalstrategi",
+      "Kommunikasjonsstrategi",
+      "Behovsanalyse"
+    ],
+    "blogs": null,
+    "cv_url": "https://bouvet.cvpartner.com/redirect/to/cv?email=cba%40bouvet.no",
+    "enonic_deleted": true,
+    "firstName": "Trond Atle",
+    "foo": "bar",
+    "image_large": "https://image.com/7",
+    "image_thumb": "https://image.com/7",
+    "lastName": "Eskeland",
+    "mail": "xyz@bouvet.no",
+    "matching_key": [
+      "xyz@bouvet.no",
+      "xyz@bouvet.no"
+    ],
+    "mobile": "+46 43214321",
+    "name": "Gal Gadot",
+    "project_exp": null,
+    "role": "Konsulent",
+    "skill": [
+      "JavaFX 2",
+      "Spring JDBC",
+      "Java SE 7",
+      "Java EE 6",
+      "Java SE 8",
+      "Java EE 5",
+      "JavaScript",
+      "Java EE 8"
+    ],
+    "slack": "gal.gadot",
+    "slack_nativeurl": "slack://user?team=T024XURJ2\u0026id=U866ZBF1V",
+    "slack_weburl": "https://bouvet.slack.com/messages/U866ZBF1V",
+    "start_date": "~t2019-01-01T00:00:00Z",
+    "uid": "0008"
+  },
+  {
+    "_id": "0009",
+    "ad_roles": [
+      "Konsulent",
+      "Prosjektleder"
+    ],
+    "department": [
+      {
+        "name": "Rogaland Morgenstiern",
+        "parent": "779",
+        "uid": "757"
+      },
+      {
+        "name": "Rogaland Enheter",
+        "parent": "799",
+        "uid": "779"
+      },
+      {
+        "name": "Region Rogaland",
+        "parent": "2",
+        "uid": "799"
+      },
+      {
+        "name": "Bouvet Norge AS",
+        "parent": "1",
+        "uid": "2"
+      },
+      {
+        "name": "Bouvet ASA",
+        "parent": null,
+        "uid": "1"
+      }
+    ],
+    "enonic_deleted": true,
+    "firstName": "Hannah",
+    "foo": "bar",
+    "lastName": "Møllhausen",
+    "mail": "fgh@bouvet.no",
+    "matching_key": [
+      "fgh@bouvet.no",
+      "fgh@bouvet.no"
+    ],
+    "mobile": "+46 +4512342345",
+    "name": "Bruce Wayne",
+    "slack": "brucewayne",
+    "slack_nativeurl": "slack://user?team=T024XURJ2\u0026id=U5H60EX5H",
+    "slack_weburl": "https://bouvet.slack.com/messages/U5H60EX5H",
+    "start_date": "~t2020-08-10T00:00:00Z",
+    "uid": "0009"
+  },
+  {
+    "_id": "0010",
+    "ad_roles": [
+      "Konsulent",
+      "Prosjektleder"
+    ],
+    "department": [
+      {
+        "name": "Rogaland Morgenstiern",
+        "parent": "779",
+        "uid": "757"
+      },
+      {
+        "name": "Rogaland Enheter",
+        "parent": "799",
+        "uid": "779"
+      },
+      {
+        "name": "Region Rogaland",
+        "parent": "2",
+        "uid": "799"
+      },
+      {
+        "name": "Bouvet Norge AS",
+        "parent": "1",
+        "uid": "2"
+      },
+      {
+        "name": "Bouvet ASA",
+        "parent": null,
+        "uid": "1"
+      }
+    ],
+    "enonic_deleted": false,
+    "firstName": "Rebekka Olsson",
+    "foo": "bar",
+    "lastName": "Omslandseter",
+    "mail": "klm@bouvet.no",
+    "matching_key": [
+      "klm@bouvet.no",
+      "klm@bouvet.no"
+    ],
+    "mobile": "+46 23452345",
+    "name": "Lynvingen",
+    "slack": "lynvingen",
+    "slack_nativeurl": "slack://user?team=T024XURJ2\u0026id=U4BS0K8BA",
+    "slack_weburl": "https://bouvet.slack.com/messages/U4BS0K8BA",
+    "start_date": "~t2017-08-01T00:00:00Z",
+    "uid": "0010"
+  },
+  {
+    "_id": "0011",
+    "ad_roles": [
+      "Konsulent",
+      "Prosjektleder"
+    ],
+    "enonic_deleted": true,
+    "firstName": "Paul Hallan",
+    "foo": "bar",
+    "lastName": "Svendsen",
+    "mail": "virat.kohli@bouvet.no",
+    "matching_key": [
+      "virat.kohli@bouvet.no",
+      "virat.kohli@bouvet.no"
+    ],
+    "mobile": "+46 1-500-456-234",
+    "name": "Virat Kohli",
+    "slack": null,
+    "start_date": "~t1993-01-01T00:00:00Z",
+    "uid": "0011"
+  },
+  {
+    "_id": "1316",
+    "ad_roles": [
+      "Konsulent",
+      "Prosjektleder"
+    ],
+    "department": [
+      {
+        "name": "Øst Ria 2",
+        "parent": "303",
+        "uid": "335"
+      },
+      {
+        "name": "Øst Kundeopplevelse",
+        "parent": "299",
+        "uid": "303"
+      },
+      {
+        "name": "Region Øst",
+        "parent": "2",
+        "uid": "299"
+      },
+      {
+        "name": "Bouvet Norge AS",
+        "parent": "1",
+        "uid": "2"
+      },
+      {
+        "name": "Bouvet ASA",
+        "parent": null,
+        "uid": "1"
+      }
+    ],
+    "enonic_deleted": true,
+    "firstName": "Teresa",
+    "foo": "bar",
+    "lastName": "Nilsson",
+    "mail": "user.userson@bouvet.no",
+    "matching_key": [
+      "user.userson@bouvet.no",
+      "user.userson@bouvet.no"
+    ],
+    "mobile": "+46 89898989",
+    "name": "User Userson",
+    "slack": null,
+    "start_date": "~t2018-05-07T00:00:00Z",
+    "uid": "1316"
+  },
+  {
+    "_id": "132",
+    "ad_roles": [
+      "Konsulent",
+      "Leder",
+      "Prosjektleder",
+      "Salg",
+      "Personalansvarlig"
+    ],
+    "department": [
+      {
+        "name": "Ulriken",
+        "parent": "789",
+        "uid": "781"
+      },
+      {
+        "name": "Region Bergen",
+        "parent": "2",
+        "uid": "789"
+      },
+      {
+        "name": "Bouvet Norge AS",
+        "parent": "1",
+        "uid": "2"
+      },
+      {
+        "name": "Bouvet ASA",
+        "parent": null,
+        "uid": "1"
+      }
+    ],
+    "enonic_deleted": false,
+    "firstName": "Sven-Erik",
+    "foo": "bar",
+    "lastName": "Nilsen",
+    "mail": "gjett.mailre@bouvet.no",
+    "matching_key": [
+      "gjett.mailre@bouvet.no",
+      "gjett.mail@bouvet.no"
+    ],
+    "mobile": "+46 +564315645",
+    "name": "Gjett Mail",
+    "slack": null,
+    "start_date": "~t1995-07-01T00:00:00Z",
+    "uid": "132"
+  },
+  {
+    "_id": "1528",
+    "ad_roles": [
+      "Konsulent"
+    ],
+    "department": [
+      {
+        "name": "Trondheim Tech 1",
+        "parent": "809",
+        "uid": "801"
+      },
+      {
+        "name": "Region Nord",
+        "parent": "2",
+        "uid": "809"
+      },
+      {
+        "name": "Bouvet Norge AS",
+        "parent": "1",
+        "uid": "2"
+      },
+      {
+        "name": "Bouvet ASA",
+        "parent": null,
+        "uid": "1"
+      }
+    ],
+    "enonic_deleted": true,
+    "firstName": "Edis",
+    "foo": "bar",
+    "lastName": "Asotic",
+    "mail": "jeg.etternavn@bouvet.no",
+    "matching_key": [
+      "jeg.etternavn@bouvet.no",
+      "jeg.etternavn@bouvet.no"
+    ],
+    "mobile": "+46 +9187654321",
+    "name": "Jeg Etternavn",
+    "slack": null,
+    "start_date": "~t2019-03-11T00:00:00Z",
+    "uid": "1528"
+  },
+  {
+    "_id": "1847",
+    "ad_roles": [
+      "Konsulent"
+    ],
+    "department": [
+      {
+        "name": "SAP Tech og forvaltning",
+        "parent": "501",
+        "uid": "523"
+      },
+      {
+        "name": "Øst Virksomhetsstyring",
+        "parent": "299",
+        "uid": "501"
+      },
+      {
+        "name": "Region Øst",
+        "parent": "2",
+        "uid": "299"
+      },
+      {
+        "name": "Bouvet Norge AS",
+        "parent": "1",
+        "uid": "2"
+      },
+      {
+        "name": "Bouvet ASA",
+        "parent": null,
+        "uid": "1"
+      }
+    ],
+    "enonic_deleted": false,
+    "firstName": "Einar",
+    "foo": "bar",
+    "lastName": "Føreid",
+    "mail": "ehm.noe@bouvet.no",
+    "matching_key": [
+      "ehm.noe@bouvet.no",
+      "ehm.noe@bouvet.no"
+    ],
+    "mobile": "+46 +445665489315",
+    "name": "Ehm Noe",
+    "slack": null,
+    "start_date": "~t2017-02-01T00:00:00Z",
+    "uid": "1847"
+  },
+  {
+    "_id": "1872",
+    "ad_roles": [
+      "Konsulent"
+    ],
+    "department": [
+      {
+        "name": "Ulriken",
+        "parent": "789",
+        "uid": "781"
+      },
+      {
+        "name": "Region Bergen",
+        "parent": "2",
+        "uid": "789"
+      },
+      {
+        "name": "Bouvet Norge AS",
+        "parent": "1",
+        "uid": "2"
+      },
+      {
+        "name": "Bouvet ASA",
+        "parent": null,
+        "uid": "1"
+      }
+    ],
+    "enonic_deleted": true,
+    "firstName": "Sigve Torvanger",
+    "foo": "bar",
+    "lastName": "Furholt",
+    "mail": "sigve.furholt@bouvet.no",
+    "matching_key": [
+      "sigve.furholt@bouvet.no",
+      "hermione-granger@bouvet.no"
+    ],
+    "mobile": "+46 +6546546546",
+    "name": "Hermione Granger",
+    "slack": null,
+    "start_date": "~t2020-01-08T00:00:00Z",
+    "uid": "1872"
+  },
+  {
+    "_id": "1938",
+    "ad_roles": [
+      "Konsulent"
+    ],
+    "department": [
+      {
+        "name": "Øst Webapps 2",
+        "parent": "303",
+        "uid": "326"
+      },
+      {
+        "name": "Øst Kundeopplevelse",
+        "parent": "299",
+        "uid": "303"
+      },
+      {
+        "name": "Region Øst",
+        "parent": "2",
+        "uid": "299"
+      },
+      {
+        "name": "Bouvet Norge AS",
+        "parent": "1",
+        "uid": "2"
+      },
+      {
+        "name": "Bouvet ASA",
+        "parent": null,
+        "uid": "1"
+      }
+    ],
+    "enonic_deleted": false,
+    "firstName": "Regine Sagstad",
+    "foo": "bar",
+    "lastName": "Berg",
+    "mail": "lite.ambisjon@bouvet.no",
+    "matching_key": [
+      "lite.ambisjon@bouvet.no",
+      "lite.ambisjon@bouvet.no"
+    ],
+    "mobile": "+47 90044386",
+    "name": "Lite Ambisjon",
+    "slack": null,
+    "start_date": "~t2017-08-01T00:00:00Z",
+    "uid": "1938"
+  },
+  {
+    "_id": "2015",
+    "ad_roles": [
+      "Konsulent"
+    ],
+    "department": [
+      {
+        "name": "Trondheim Tech 1",
+        "parent": "809",
+        "uid": "801"
+      },
+      {
+        "name": "Region Nord",
+        "parent": "2",
+        "uid": "809"
+      },
+      {
+        "name": "Bouvet Norge AS",
+        "parent": "1",
+        "uid": "2"
+      },
+      {
+        "name": "Bouvet ASA",
+        "parent": null,
+        "uid": "1"
+      }
+    ],
+    "enonic_deleted": false,
+    "firstName": "Marthe",
+    "foo": "bar",
+    "lastName": "Frøshaug",
+    "mail": "meg.finnepå@bouvet.no",
+    "matching_key": [
+      "meg.finnepå@bouvet.no",
+      "meg.finnepå@bouvet.no"
+    ],
+    "mobile": "+46 +0123456789",
+    "name": "Meg Finnepå",
+    "slack": null,
+    "start_date": "~t2017-08-01T00:00:00Z",
+    "uid": "2015"
+  },
+  {
+    "_id": "2156",
+    "ad_roles": [
+      "Konsulent"
+    ],
+    "department": [
+      {
+        "name": "Rogaland Syndicate",
+        "parent": "779",
+        "uid": "756"
+      },
+      {
+        "name": "Rogaland Enheter",
+        "parent": "799",
+        "uid": "779"
+      },
+      {
+        "name": "Region Rogaland",
+        "parent": "2",
+        "uid": "799"
+      },
+      {
+        "name": "Bouvet Norge AS",
+        "parent": "1",
+        "uid": "2"
+      },
+      {
+        "name": "Bouvet ASA",
+        "parent": null,
+        "uid": "1"
+      }
+    ],
+    "enonic_deleted": false,
+    "firstName": "Kristian",
+    "foo": "bar",
+    "lastName": "Kvande",
+    "mail": "fornavn.testetternavn@bouvet.no",
+    "matching_key": [
+      "fornavn.testetternavn@bouvet.no",
+      "fornavn.testetternavn@bouvet.no"
+    ],
+    "mobile": "+46 +654987321",
+    "name": "Fornavn Testetternavn",
+    "slack": null,
+    "start_date": "~t2019-11-01T00:00:00Z",
+    "uid": "2156"
+  },
+  {
+    "_id": "2276",
+    "ad_roles": [
+      "Konsulent",
+      "Prosjektleder"
+    ],
+    "department": [
+      {
+        "name": "Øst Microsoft 2",
+        "parent": "327",
+        "uid": "321"
+      },
+      {
+        "name": "Øst Microsoft",
+        "parent": "302",
+        "uid": "327"
+      },
+      {
+        "name": "Øst Tech 2",
+        "parent": "299",
+        "uid": "302"
+      },
+      {
+        "name": "Region Øst",
+        "parent": "2",
+        "uid": "299"
+      },
+      {
+        "name": "Bouvet Norge AS",
+        "parent": "1",
+        "uid": "2"
+      },
+      {
+        "name": "Bouvet ASA",
+        "parent": null,
+        "uid": "1"
+      }
+    ],
+    "enonic_deleted": false,
+    "firstName": "Vetle",
+    "foo": "bar",
+    "lastName": "Horpestad",
+    "mail": "test.testsson@bouvet.no",
+    "matching_key": [
+      "test.testsson@bouvet.no",
+      "test.testsson@bouvet.no"
+    ],
+    "mobile": "+46 +6549873512",
+    "name": "Test Testsson",
+    "slack": null,
+    "start_date": "~t2018-08-01T00:00:00Z",
+    "uid": "2276"
+  },
+  {
+    "_id": "2288",
+    "ad_roles": [
+      "Konsulent",
+      "Prosjektleder"
+    ],
+    "department": [
+      {
+        "name": "Trondheim Rådgivning\u0026Prosjektledelse",
+        "parent": "809",
+        "uid": "805"
+      },
+      {
+        "name": "Region Nord",
+        "parent": "2",
+        "uid": "809"
+      },
+      {
+        "name": "Bouvet Norge AS",
+        "parent": "1",
+        "uid": "2"
+      },
+      {
+        "name": "Bouvet ASA",
+        "parent": null,
+        "uid": "1"
+      }
+    ],
+    "enonic_deleted": false,
+    "firstName": "Jesper",
+    "foo": "bar",
+    "lastName": "Gradin",
+    "mail": "min.nabo@bouvet.no",
+    "matching_key": [
+      "min.nabo@bouvet.no",
+      "min.nabo@bouvet.no"
+    ],
+    "mobile": "+46 +45645682311",
+    "name": "Min Nabo",
+    "slack": null,
+    "start_date": "~t2018-09-01T00:00:00Z",
+    "uid": "2288"
+  },
+  {
+    "_id": "2507",
+    "ad_roles": [
+      "Konsult"
+    ],
+    "department": [
+      {
+        "name": "Stockholm Kundupplevelse 1",
+        "parent": "901",
+        "uid": "904"
+      },
+      {
+        "name": "Stockholm",
+        "parent": "3",
+        "uid": "901"
+      },
+      {
+        "name": "Bouvet Sverige AB",
+        "parent": "6",
+        "uid": "3"
+      },
+      {
+        "name": "Bouvet AB",
+        "parent": "1",
+        "uid": "6"
+      },
+      {
+        "name": "Bouvet ASA",
+        "parent": null,
+        "uid": "1"
+      }
+    ],
+    "enonic_deleted": false,
+    "firstName": "Et",
+    "foo": "bar",
+    "lastName": "Navn",
+    "mail": "jonas.danmarksson@bouvet.se",
+    "matching_key": [
+      "jonas.danmarksson@bouvet.se",
+      "jonas.danmarksson@bouvet.se"
+    ],
+    "mobile": "+46  888 888 88",
+    "name": "Jonas Danmarksson",
+    "slack": null,
+    "start_date": "~t2020-06-02T00:00:00Z",
+    "uid": "2507"
+  },
+  {
+    "_id": "2978",
+    "ad_roles": [
+      "Konsulent"
+    ],
+    "department": [
+      {
+        "name": "Rogaland Formel 1",
+        "parent": "779",
+        "uid": "751"
+      },
+      {
+        "name": "Rogaland Enheter",
+        "parent": "799",
+        "uid": "779"
+      },
+      {
+        "name": "Region Rogaland",
+        "parent": "2",
+        "uid": "799"
+      },
+      {
+        "name": "Bouvet Norge AS",
+        "parent": "1",
+        "uid": "2"
+      },
+      {
+        "name": "Bouvet ASA",
+        "parent": null,
+        "uid": "1"
+      }
+    ],
+    "enonic_deleted": false,
+    "firstName": "Christer",
+    "foo": "bar",
+    "lastName": "Vaskinn",
+    "mail": "harry.potter@bouvet.no",
+    "matching_key": [
+      "harry.potter@bouvet.no",
+      "harry.potter@bouvet.no"
+    ],
+    "mobile": "+65464",
+    "name": "Harry Potter",
+    "slack": null,
+    "start_date": "~t2019-06-10T00:00:00Z",
+    "uid": "2978"
+  },
+  {
+    "_id": "3471",
+    "ad_roles": null,
+    "department": [
+      {
+        "name": "Olavstoppen AS",
+        "parent": "1",
+        "uid": "4"
+      },
+      {
+        "name": "Bouvet ASA",
+        "parent": null,
+        "uid": "1"
+      }
+    ],
+    "enonic_deleted": false,
+    "firstName": "Severus",
+    "foo": "bar",
+    "lastName": "Snape",
+    "mail": "severus.snape@olavstoppen.no",
+    "matching_key": [
+      "severus.snape@olavstoppen.no",
+      "severus.snape@olavstoppen.no"
+    ],
+    "mobile": "+47 23123123",
+    "name": "Severus Snape",
+    "slack": null,
+    "start_date": "~t2020-06-01T00:00:00Z",
+    "uid": "3471"
+  },
+  {
+    "_id": "3636",
+    "ad_roles": [
+      "Konsult"
+    ],
+    "department": [
+      {
+        "name": "Stockholm Kundupplevelse 1",
+        "parent": "901",
+        "uid": "904"
+      },
+      {
+        "name": "Stockholm",
+        "parent": "3",
+        "uid": "901"
+      },
+      {
+        "name": "Bouvet Sverige AB",
+        "parent": "6",
+        "uid": "3"
+      },
+      {
+        "name": "Bouvet AB",
+        "parent": "1",
+        "uid": "6"
+      },
+      {
+        "name": "Bouvet ASA",
+        "parent": null,
+        "uid": "1"
+      }
+    ],
+    "enonic_deleted": false,
+    "firstName": "Et",
+    "foo": "bar",
+    "lastName": "Navn",
+    "mail": "tordenskjold.danmark@bouvet.se",
+    "matching_key": [
+      "tordenskjold.danmark@bouvet.se",
+      "tordenskjold.danmark@bouvet.se"
+    ],
+    "mobile": "+46  888 888 88",
+    "name": "Tordenskjold av Danmark",
+    "slack": null,
+    "start_date": "~t2020-06-02T00:00:00Z",
+    "uid": "3636"
+  },
+  {
+    "_id": "391",
+    "ad_roles": [
+      "Konsulent",
+      "Prosjektleder"
+    ],
+    "department": [
+      {
+        "name": "Øst Design 1",
+        "parent": "303",
+        "uid": "333"
+      },
+      {
+        "name": "Øst Kundeopplevelse",
+        "parent": "299",
+        "uid": "303"
+      },
+      {
+        "name": "Region Øst",
+        "parent": "2",
+        "uid": "299"
+      },
+      {
+        "name": "Bouvet Norge AS",
+        "parent": "1",
+        "uid": "2"
+      },
+      {
+        "name": "Bouvet ASA",
+        "parent": null,
+        "uid": "1"
+      }
+    ],
+    "enonic_deleted": false,
+    "firstName": "Magdalena",
+    "foo": "bar",
+    "lastName": "Hansson",
+    "mail": "bruker.brukersen@bouvet.no",
+    "matching_key": [
+      "bruker.brukersen@bouvet.no",
+      "bruker.bruksersen@bouvet.no"
+    ],
+    "mobile": "+47 12345644",
+    "name": "bruker brukersen",
+    "slack": null,
+    "start_date": "~t2018-08-01T00:00:00Z",
+    "uid": "391"
+  },
+  {
+    "_id": "7777",
+    "ad_roles": [
+      "Konsulent"
+    ],
+    "department": [
+      {
+        "name": "Olavstoppen AS",
+        "parent": "1",
+        "uid": "4"
+      },
+      {
+        "name": "Bouvet ASA",
+        "parent": null,
+        "uid": "1"
+      }
+    ],
+    "enonic_deleted": false,
+    "firstName": "Alfie",
+    "foo": "bar",
+    "lastName": "Nilsson",
+    "mail": "alfie.collin@bouvet.no",
+    "matching_key": [
+      "alfie.collin@bouvet.no",
+      "alfie.colli@bouvet.no"
+    ],
+    "mobile": "+46 +0123456789",
+    "name": "Alfie Collin",
+    "slack": null,
+    "start_date": "~t2018-05-07T00:00:00Z",
+    "uid": "7777"
+  }
+]

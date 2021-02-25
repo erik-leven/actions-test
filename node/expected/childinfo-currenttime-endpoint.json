@@ -1,0 +1,135 @@
+[
+  {
+    "NAV-vedtak": false,
+    "_id": "0001",
+    "current-year": 2020,
+    "foo": "bar",
+    "hours": 0
+  },
+  {
+    "NAV-vedtak": false,
+    "_id": "0004",
+    "current-year": 2020,
+    "foo": "bar",
+    "hours": 0
+  },
+  {
+    "NAV-vedtak": false,
+    "_id": "0007",
+    "current-year": 2020,
+    "foo": "bar",
+    "hours": 0
+  },
+  {
+    "NAV-vedtak": false,
+    "_id": "0009",
+    "current-year": 2020,
+    "foo": "bar",
+    "hours": 0
+  },
+  {
+    "NAV-vedtak": false,
+    "_id": "0010",
+    "current-year": 2020,
+    "foo": "bar",
+    "hours": 0
+  },
+  {
+    "NAV-vedtak": false,
+    "_id": "1316",
+    "current-year": 2020,
+    "foo": "bar",
+    "hours": 0
+  },
+  {
+    "NAV-vedtak": false,
+    "_id": "132",
+    "current-year": 2020,
+    "foo": "bar",
+    "hours": 0
+  },
+  {
+    "NAV-vedtak": false,
+    "_id": "1528",
+    "current-year": 2020,
+    "foo": "bar",
+    "hours": 80
+  },
+  {
+    "NAV-vedtak": false,
+    "_id": "1529",
+    "current-year": 2020,
+    "foo": "bar",
+    "hours": 0
+  },
+  {
+    "NAV-vedtak": false,
+    "_id": "1847",
+    "current-year": 2020,
+    "foo": "bar",
+    "hours": 0
+  },
+  {
+    "NAV-vedtak": false,
+    "_id": "1872",
+    "current-year": 2020,
+    "foo": "bar",
+    "hours": 80
+  },
+  {
+    "NAV-vedtak": false,
+    "_id": "1938",
+    "current-year": 2020,
+    "foo": "bar",
+    "hours": 0
+  },
+  {
+    "NAV-vedtak": false,
+    "_id": "2014",
+    "current-year": 2020,
+    "foo": "bar",
+    "hours": 0
+  },
+  {
+    "NAV-vedtak": false,
+    "_id": "2015",
+    "current-year": 2020,
+    "foo": "bar",
+    "hours": 0
+  },
+  {
+    "NAV-vedtak": false,
+    "_id": "2156",
+    "current-year": 2020,
+    "foo": "bar",
+    "hours": 0
+  },
+  {
+    "NAV-vedtak": false,
+    "_id": "2276",
+    "current-year": 2020,
+    "foo": "bar",
+    "hours": 0
+  },
+  {
+    "NAV-vedtak": false,
+    "_id": "2288",
+    "current-year": 2020,
+    "foo": "bar",
+    "hours": 80
+  },
+  {
+    "NAV-vedtak": false,
+    "_id": "2978",
+    "current-year": 2020,
+    "foo": "bar",
+    "hours": 0
+  },
+  {
+    "NAV-vedtak": false,
+    "_id": "391",
+    "current-year": 2020,
+    "foo": "bar",
+    "hours": 0
+  }
+]

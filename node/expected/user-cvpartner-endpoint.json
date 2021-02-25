@@ -1,0 +1,365 @@
+[
+  {
+    "_id": "0001",
+    "id": "5d4d3352b3a1750e59112486",
+    "operation": "put",
+    "payload": {
+      "user": {
+        "country_id": "586cee3f2c04d65514314910",
+        "email": "max.manus@bouvet.no",
+        "ensure_unique_custom_tag_ids_by_category": {},
+        "external_unique_id": "0001",
+        "name": "Max Manus",
+        "office_id": "5d4be169b3a1750ff3111f2f",
+        "role": "external",
+        "telephone": "test telefon",
+        "upn": "max.manus@bouvet.no"
+      }
+    }
+  },
+  {
+    "_id": "0003",
+    "id": "5d4d3353edfc711013b837ef",
+    "operation": "put",
+    "payload": {
+      "user": {
+        "country_id": "586cee3f2c04d65514314910",
+        "email": "sven.svensson@bouvet.no",
+        "ensure_unique_custom_tag_ids_by_category": {},
+        "external_unique_id": "0003",
+        "name": "Sven Svensson",
+        "office_id": "5d4be151edfc710ffab8330c",
+        "role": "consultant",
+        "telephone": "33333333",
+        "upn": "sven.svensson@bouvet.no"
+      }
+    }
+  },
+  {
+    "_id": "0004",
+    "id": "5d4c2012b3a1750ead1121f6",
+    "operation": "put",
+    "payload": {
+      "user": {
+        "country_id": "586cee3f2c04d65514314910",
+        "email": "test.tester@bouvet.no",
+        "ensure_unique_custom_tag_ids_by_category": {},
+        "external_unique_id": "0004",
+        "name": "Test Tester",
+        "office_id": "5d4be169b3a1750ff3111f2f",
+        "role": "external",
+        "telephone": "55555555",
+        "upn": "test.tester@bouvet.no"
+      }
+    }
+  },
+  {
+    "_id": "0006",
+    "operation": "post",
+    "payload": {
+      "user": {
+        "country_id": "586cee3f2c04d65514314910",
+        "email": "abc@bouvet.no",
+        "ensure_unique_custom_tag_ids_by_category": {},
+        "external_unique_id": "0006",
+        "name": "Testina Testsen",
+        "office_id": "5d4be169b3a1750ff3111f2f",
+        "role": "consultant",
+        "telephone": "77777777",
+        "upn": "abc@bouvet.no"
+      }
+    }
+  },
+  {
+    "_id": "0007",
+    "id": "5d4c201246cad20cbfec98eb",
+    "operation": "put",
+    "payload": {
+      "user": {
+        "country_id": "586cee3f2c04d65514314910",
+        "email": "cba@bouvet.no",
+        "ensure_unique_custom_tag_ids_by_category": {},
+        "external_unique_id": "0007",
+        "name": "Karl Michael Bergman",
+        "office_id": "5d4be169b3a1750ff3111f2f",
+        "telephone": "99999999",
+        "upn": "cba@bouvet.no"
+      }
+    }
+  },
+  {
+    "_id": "0008",
+    "id": "5d4c2551edfc710ea6b83866",
+    "operation": "put",
+    "payload": {
+      "user": {
+        "country_id": "586cee3f2c04d65514314910",
+        "email": "xyz@bouvet.no",
+        "ensure_unique_custom_tag_ids_by_category": {},
+        "external_unique_id": "0008",
+        "name": "Gal Gadot",
+        "office_id": "5d4be172edfc710ff5b832c4",
+        "telephone": "+4643214321",
+        "upn": "xyz@bouvet.no"
+      }
+    }
+  },
+  {
+    "_id": "0009",
+    "id": "5c36fe6da3f4ae144f39ee46",
+    "operation": "put",
+    "payload": {
+      "user": {
+        "deactivated": true
+      }
+    }
+  },
+  {
+    "_id": "0010",
+    "id": "5d4c201446cad20d3fec990d",
+    "operation": "put",
+    "payload": {
+      "user": {
+        "deactivated": false
+      }
+    }
+  },
+  {
+    "_id": "0011",
+    "operation": "post",
+    "payload": {
+      "user": {
+        "country_id": "586cee3f2c04d65514314910",
+        "email": "virat.kohli@bouvet.no",
+        "ensure_unique_custom_tag_ids_by_category": {},
+        "external_unique_id": "0011",
+        "name": "Virat Kohli",
+        "office_id": "5d4be169b3a1750ff3111f2f",
+        "role": "external",
+        "telephone": "1-500-456-234",
+        "upn": "virat.kohli@bouvet.no"
+      }
+    }
+  },
+  {
+    "_id": "132",
+    "operation": "post",
+    "payload": {
+      "user": {
+        "country_id": "586cee3f2c04d65514314910",
+        "email": "gjett.mailre@bouvet.no",
+        "ensure_unique_custom_tag_ids_by_category": {},
+        "external_unique_id": "132",
+        "name": "Gjett Mail",
+        "office_id": "5d4be1e146cad20c9cec96c1",
+        "role": "consultant",
+        "telephone": "+564315645",
+        "upn": "gjett.mail@bouvet.no"
+      }
+    }
+  },
+  {
+    "_id": "1847",
+    "operation": "post",
+    "payload": {
+      "user": {
+        "country_id": "586cee3f2c04d65514314910",
+        "email": "ehm.noe@bouvet.no",
+        "ensure_unique_custom_tag_ids_by_category": {},
+        "external_unique_id": "1847",
+        "name": "Ehm Noe",
+        "office_id": "5d4be169b3a1750ff3111f2f",
+        "role": "consultant",
+        "telephone": "+445665489315",
+        "upn": "ehm.noe@bouvet.no"
+      }
+    }
+  },
+  {
+    "_id": "1938",
+    "operation": "post",
+    "payload": {
+      "user": {
+        "country_id": "586cee3f2c04d65514314910",
+        "email": "lite.ambisjon@bouvet.no",
+        "ensure_unique_custom_tag_ids_by_category": {},
+        "external_unique_id": "1938",
+        "name": "Lite Ambisjon",
+        "office_id": "5d4be169b3a1750ff3111f2f",
+        "role": "consultant",
+        "telephone": "+4790044386",
+        "upn": "lite.ambisjon@bouvet.no"
+      }
+    }
+  },
+  {
+    "_id": "2015",
+    "operation": "post",
+    "payload": {
+      "user": {
+        "country_id": "586cee3f2c04d65514314910",
+        "email": "meg.finnepå@bouvet.no",
+        "ensure_unique_custom_tag_ids_by_category": {},
+        "external_unique_id": "2015",
+        "name": "Meg Finnepå",
+        "office_id": "5d4be151edfc710ffab8330c",
+        "role": "consultant",
+        "telephone": "+0123456789",
+        "upn": "meg.finnepå@bouvet.no"
+      }
+    }
+  },
+  {
+    "_id": "2156",
+    "operation": "post",
+    "payload": {
+      "user": {
+        "country_id": "586cee3f2c04d65514314910",
+        "email": "fornavn.testetternavn@bouvet.no",
+        "ensure_unique_custom_tag_ids_by_category": {},
+        "external_unique_id": "2156",
+        "name": "Fornavn Testetternavn",
+        "office_id": "586cee3f2c04d65514314912",
+        "role": "consultant",
+        "telephone": "+654987321",
+        "upn": "fornavn.testetternavn@bouvet.no"
+      }
+    }
+  },
+  {
+    "_id": "2276",
+    "operation": "post",
+    "payload": {
+      "user": {
+        "country_id": "586cee3f2c04d65514314910",
+        "email": "test.testsson@bouvet.no",
+        "ensure_unique_custom_tag_ids_by_category": {},
+        "external_unique_id": "2276",
+        "name": "Test Testsson",
+        "office_id": "5d4be169b3a1750ff3111f2f",
+        "role": "consultant",
+        "telephone": "+6549873512",
+        "upn": "test.testsson@bouvet.no"
+      }
+    }
+  },
+  {
+    "_id": "2288",
+    "operation": "post",
+    "payload": {
+      "user": {
+        "country_id": "586cee3f2c04d65514314910",
+        "email": "min.nabo@bouvet.no",
+        "ensure_unique_custom_tag_ids_by_category": {},
+        "external_unique_id": "2288",
+        "name": "Min Nabo",
+        "office_id": "5d4be151edfc710ffab8330c",
+        "role": "consultant",
+        "telephone": "+45645682311",
+        "upn": "min.nabo@bouvet.no"
+      }
+    }
+  },
+  {
+    "_id": "2507",
+    "operation": "post",
+    "payload": {
+      "user": {
+        "country_id": "586cee3f2c04d65514314910",
+        "email": "jonas.danmarksson@bouvet.se",
+        "ensure_unique_custom_tag_ids_by_category": {},
+        "external_unique_id": "2507",
+        "name": "Jonas Danmarksson",
+        "office_id": "5d4be151edfc710ffab8330c",
+        "role": "consultant",
+        "telephone": "+46 888 888 88",
+        "upn": "jonas.danmarksson@bouvet.se"
+      }
+    }
+  },
+  {
+    "_id": "2978",
+    "operation": "post",
+    "payload": {
+      "user": {
+        "country_id": "586cee3f2c04d65514314910",
+        "email": "harry.potter@bouvet.no",
+        "ensure_unique_custom_tag_ids_by_category": {},
+        "external_unique_id": "2978",
+        "name": "Harry Potter",
+        "office_id": "586cee3f2c04d65514314912",
+        "role": "consultant",
+        "telephone": "+65464",
+        "upn": "harry.potter@bouvet.no"
+      }
+    }
+  },
+  {
+    "_id": "3471",
+    "operation": "post",
+    "payload": {
+      "user": {
+        "country_id": "586cee3f2c04d65514314910",
+        "email": "severus.snape@olavstoppen.no",
+        "ensure_unique_custom_tag_ids_by_category": {},
+        "external_unique_id": "3471",
+        "name": "Severus Snape",
+        "office_id": "5d4be147edfc710ff5b832be",
+        "role": "consultant",
+        "telephone": "+4723123123",
+        "upn": "severus.snape@olavstoppen.no"
+      }
+    }
+  },
+  {
+    "_id": "3636",
+    "operation": "post",
+    "payload": {
+      "user": {
+        "country_id": "586cee3f2c04d65514314910",
+        "email": "tordenskjold.danmark@bouvet.se",
+        "ensure_unique_custom_tag_ids_by_category": {},
+        "external_unique_id": "3636",
+        "name": "Tordenskjold av Danmark",
+        "office_id": "5d4be151edfc710ffab8330c",
+        "role": "consultant",
+        "telephone": "+46 888 888 88",
+        "upn": "tordenskjold.danmark@bouvet.se"
+      }
+    }
+  },
+  {
+    "_id": "391",
+    "operation": "post",
+    "payload": {
+      "user": {
+        "country_id": "586cee3f2c04d65514314910",
+        "email": "bruker.brukersen@bouvet.no",
+        "ensure_unique_custom_tag_ids_by_category": {},
+        "external_unique_id": "391",
+        "name": "bruker brukersen",
+        "office_id": "5d4be169b3a1750ff3111f2f",
+        "role": "consultant",
+        "telephone": "+4712345644",
+        "upn": "bruker.bruksersen@bouvet.no"
+      }
+    }
+  },
+  {
+    "_id": "7777",
+    "operation": "post",
+    "payload": {
+      "user": {
+        "country_id": "586cee3f2c04d65514314910",
+        "email": "alfie.collin@bouvet.no",
+        "ensure_unique_custom_tag_ids_by_category": {},
+        "external_unique_id": "7777",
+        "name": "Alfie Collin",
+        "office_id": "586cee3f2c04d65514314912",
+        "role": "consultant",
+        "telephone": "+4747474747",
+        "upn": "alfie.colli@bouvet.no"
+      }
+    }
+  }
+]

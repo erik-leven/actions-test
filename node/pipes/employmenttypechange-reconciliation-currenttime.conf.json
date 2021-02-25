@@ -1,0 +1,99 @@
+{
+  "_id": "employmentTypeChange-reconciliation-currenttime",
+  "type": "pipe",
+  "source": {
+    "type": "dataset",
+    "dataset": "person-change"
+  },
+  "transform": [{
+    "type": "dtl",
+    "rules": {
+      "default": [
+        ["filter",
+          ["in", "_S.global-person:employee_status",
+            ["list", "EarlyEmployee", "TempEarlyEmployee", "SoonEmployee", "TempSoonEmployee", "Employee", "TempEmployee"]
+          ]
+        ],
+        ["filter", "_S.newEmploymentType"],
+        ["if",
+          ["gte",
+            ["datetime-parse", "%d.%m.%Y", "_S.HIRING_DATE.@VALID_FROM"],
+            ["datetime-parse", "%d.%m.%Y", "_S.1046.@VALID_FROM"]
+          ],
+          ["filter"]
+        ],
+        ["add", "AnsattID",
+          ["integer", "_S.UNIQUE_IMPORT_ID.value"]
+        ],
+        ["add", "Ansattnavn", "_S.catalystone-user:NAME.value"],
+        ["add", "AnsattypeNavn", "_S.1046.VALUE.value"],
+        ["merge",
+          ["apply", "check-date",
+            ["datetime-parse", "%d.%m.%Y", "_S.catalystone-user:BASIC_SALARY.@VALID_FROM"]
+          ]
+        ]
+      ],
+      "check-date": [
+        ["if",
+          ["gte",
+            ["datetime-format", "%d", "_S."], "16"],
+          [
+            ["add", "Mnd",
+              ["integer",
+                ["datetime-format", "%m",
+                  ["datetime-plus", "month", 1, "_S."]
+                ]
+              ]
+            ],
+            ["add", "År",
+              ["integer",
+                ["datetime-format", "%Y",
+                  ["datetime-plus", "month", 1, "_S."]
+                ]
+              ]
+            ]
+          ],
+          [
+            ["add", "Mnd",
+              ["integer",
+                ["datetime-format", "%m", "_S."]
+              ]
+            ],
+            ["add", "År",
+              ["integer",
+                ["datetime-format", "%Y", "_S."]
+              ]
+            ]
+          ]
+        ]
+      ]
+    }
+  }, {
+    "type": "dtl",
+    "rules": {
+      "default": [
+        ["copy", "*"],
+        ["add", "Sjekket", false],
+        ["add", "Kommentar",
+          ["coalesce",
+            ["list",
+              ["first",
+                ["hops", {
+                  "datasets": ["global-economy ga"],
+                  "where": ["eq",
+                    ["ni", "currenttime-employmenttypechange-recon",
+                      ["concat",
+                        ["string", "_S.AnsattID"], "_",
+                        ["string", "_S.Mnd"], "_",
+                        ["string", "_S.År"]
+                      ]
+                    ], "ga.$ids"],
+                  "return": "ga.currenttime-employmenttypechange-recon:Kommentar"
+                }]
+              ], ""]
+          ]
+        ]
+      ]
+    }
+  }]
+}

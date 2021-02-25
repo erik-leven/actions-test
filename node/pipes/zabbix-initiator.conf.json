@@ -1,0 +1,20 @@
+{
+  "_id": "zabbix-initiator",
+  "type": "pipe",
+  "source": {
+    "type": "embedded",
+    "entities": [{
+      "_id": "1",
+      "url": "notifications"
+    }]
+  },
+  "sink": {
+    "type": "json",
+    "system": "zabbix",
+    "url": "/notifications"
+  },
+  "pump": {
+    "cron_expression": "0/5 * * * *",
+    "mode": "$ENV(pump-mode)"
+  }
+}

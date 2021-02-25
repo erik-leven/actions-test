@@ -1,0 +1,55 @@
+{
+  "_id": "currenttime-departmentavdeling",
+  "type": "pipe",
+  "source": {
+    "type": "conditional",
+    "alternatives": {
+      "prod": {
+        "type": "sql",
+        "system": "currenttime",
+        "primary_key": "DepartmentID",
+        "schema": "bov",
+        "table": "departmentavdeling"
+      },
+      "test": {
+        "type": "embedded",
+        "entities": [{
+          "_id": "0",
+          "AvdelingID": 1,
+          "DepartmentID": 0
+        }, {
+          "_id": "1",
+          "AvdelingID": 29,
+          "DepartmentID": 1
+        }, {
+          "_id": "3",
+          "AvdelingID": 29,
+          "DepartmentID": 3
+        }, {
+          "_id": "4",
+          "AvdelingID": 29,
+          "DepartmentID": 4
+        }, {
+          "_id": "5",
+          "AvdelingID": 29,
+          "DepartmentID": 5
+        }]
+      }
+    },
+    "condition": "$ENV(node-env)"
+  },
+  "transform": {
+    "type": "dtl",
+    "rules": {
+      "default": [
+        ["copy", "*"],
+        ["add", "rdf:type",
+          ["ni", "bouvet:currenttime-departmentavdeling"]
+        ]
+      ]
+    }
+  },
+  "pump": {
+    "cron_expression": "$ENV(ct_cron_fast)"
+  }
+}

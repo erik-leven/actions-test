@@ -1,0 +1,6 @@
+{
+  "_id": "open-sesam",
+  "type": "system:url",
+  "name": "Open Sesam",
+  "base_url": "https://registry.sesam.io"
+}

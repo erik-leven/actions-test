@@ -1,0 +1,84 @@
+{
+  "_id": "person-change",
+  "type": "pipe",
+  "source": {
+    "type": "dataset",
+    "dataset": "global-person"
+  },
+  "transform": {
+    "type": "conditional",
+    "alternatives": {
+      "prod": {
+        "type": "dtl",
+        "rules": {
+          "default": [
+            ["copy", "*"],
+            ["if",
+              ["in", "_S.global-person:employee_status",
+                ["list", "EarlyEmployee", "TempEarlyEmployee", "SoonEmployee", "TempSoonEmployee", "Employee", "TempEmployee"]
+              ],
+              ["merge",
+                ["hops", {
+                  "datasets": ["person-change pc"],
+                  "where": [
+                    ["eq", "_S._id", "pc._id"]
+                  ],
+                  "return": ["dict", "oldEmploymentType", "pc.1046.VALUE.value", "oldDepartment", "pc.ORGANIZATION", "oldSalary", "pc.BASIC_SALARY.AMOUNT"]
+                }]
+              ]
+            ],
+            ["if",
+              ["or",
+                ["is-not-null", "_T.oldEmploymentType"],
+                ["is-not-empty", "_T.oldEmploymentType"]
+              ],
+              ["if",
+                ["neq", "_T.oldEmploymentType", "_S.catalystone-user:1046.VALUE.value"],
+                ["add", "newEmploymentType", true],
+                ["add", "newEmploymentType", false]
+              ],
+              ["add", "newEmploymentType", false]
+            ],
+            ["if",
+              ["or",
+                ["is-not-null", "_T.oldDepartment"],
+                ["is-not-empty", "_T.oldDepartment"]
+              ],
+              ["if",
+                ["neq", "_T.oldDepartment.@UNIQUE_IMPORT_ID", "_S.ORGANIZATION.@UNIQUE_IMPORT_ID"],
+                ["add", "newDepartment", true],
+                ["add", "newDepartment", false]
+              ],
+              ["add", "newDepartment", false]
+            ],
+            ["if",
+              ["or",
+                ["is-not-null", "_T.oldSalary"],
+                ["is-not-empty", "_T.oldSalary"]
+              ],
+              ["if",
+                ["neq",
+                  ["decrypt", "$SECRET(folk-encryption-key)", "_T.oldSalary"],
+                  ["decrypt", "$SECRET(folk-encryption-key)", "_S.BASIC_SALARY.AMOUNT"]
+                ],
+                ["add", "newSalary", true],
+                ["add", "newSalary", false]
+              ],
+              ["add", "newSalary", false]
+            ]
+          ]
+        }
+      },
+      "test": {
+        "type": "dtl",
+        "rules": {
+          "default": [
+            ["copy", "*"],
+            ["comment", "we can't use this in test since the sesam client fail with empty dataset"]
+          ]
+        }
+      }
+    },
+    "condition": "$ENV(node-env)"
+  }
+}

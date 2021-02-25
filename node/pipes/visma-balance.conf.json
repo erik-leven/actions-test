@@ -1,0 +1,90 @@
+{
+  "_id": "visma-balance",
+  "type": "pipe",
+  "source": {
+    "type": "conditional",
+    "alternatives": {
+      "prod": {
+        "type": "sql",
+        "system": "visma",
+        "primary_key": "UniqueNO",
+        "schema": "BouvetNorgeAS",
+        "table": "Balance",
+        "updated_column": "LastUpdate"
+      },
+      "test": {
+        "type": "embedded",
+        "entities": [{
+          "AccountNo": 2700,
+          "Amount": "~f-1056.25",
+          "BalanceType": 0,
+          "CountryType": 0,
+          "Created": "~t2020-06-08T11:00:08.153Z",
+          "CreatedBy": 2,
+          "CurrencyNo": 0,
+          "DepNo": 802,
+          "EmployeeNo": 746,
+          "ExchangeAmount": 0,
+          "ExtraCostUnitIIINo": 0,
+          "ExtraCostUnitIINo": 0,
+          "ExtraCostUnitINo": 0,
+          "ExtraCostUnitIVNo": 0,
+          "LastUpdate": "~t2020-06-08T11:00:08.153Z",
+          "LastUpdatedBy": 2,
+          "Period": 6,
+          "ProductNo": 2226,
+          "ProjectNo": 14541,
+          "Quantity": 0,
+          "TaxClassNo": 1,
+          "UniqueNo": 6824859,
+          "VoucherTypeNo": 10003,
+          "Year": 2020
+        }, {
+          "AccountNo": 2700,
+          "Amount": "~f-17027.5",
+          "BalanceType": 0,
+          "CountryType": 0,
+          "Created": "~t2020-06-08T11:00:08.14Z",
+          "CreatedBy": 2,
+          "CurrencyNo": 0,
+          "DepNo": 782,
+          "EmployeeNo": 3310,
+          "ExchangeAmount": 0,
+          "ExtraCostUnitIIINo": 0,
+          "ExtraCostUnitIINo": 0,
+          "ExtraCostUnitINo": 0,
+          "ExtraCostUnitIVNo": 0,
+          "LastUpdate": "~t2020-06-08T11:00:08.14Z",
+          "LastUpdatedBy": 2,
+          "Period": 5,
+          "ProductNo": 2078,
+          "ProjectNo": 15289,
+          "Quantity": 0,
+          "TaxClassNo": 1,
+          "UniqueNo": 6824848,
+          "VoucherTypeNo": 10003,
+          "Year": 2020
+        }]
+      }
+    },
+    "condition": "$ENV(node-env)"
+  },
+  "transform": {
+    "type": "dtl",
+    "rules": {
+      "default": [
+        ["copy", "*"],
+        ["add", "_id",
+          ["string", "_S.UniqueNo"]
+        ],
+        ["add", "rdf:type",
+          ["ni", "bouvet:visma-balance"]
+        ]
+      ]
+    }
+  },
+  "pump": {
+    "cron_expression": "$ENV(visma_cron_fast)",
+    "rescan_cron_expression": "$ENV(visma_rescan_cron)"
+  }
+}

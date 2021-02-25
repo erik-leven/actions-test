@@ -1,0 +1,12 @@
+{
+  "_id": "azure",
+  "type": "system:url",
+  "connect_timeout": 60,
+  "headers": {
+    "Content-Type": "application/json",
+    "Ocp-Apim-Subscription-Key": "$SECRET(azure-apikey)"
+  },
+  "read_timeout": 300,
+  "url_pattern": "https://t2o.azure-api.net/%s",
+  "verify_ssl": true
+}

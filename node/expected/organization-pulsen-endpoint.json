@@ -1,0 +1,1199 @@
+[
+  {
+    "AvdelingsNr": 1,
+    "Avdelingsnavn": "Bouvet ASA",
+    "Forelder_AvdelingsNr": null,
+    "Opprettet": "2018-09-14 13:54:29",
+    "Sist_Endret": "2018-09-14 14:38:32",
+    "Slettet": 0,
+    "_id": "1"
+  },
+  {
+    "AvdelingsNr": 100,
+    "Avdelingsnavn": "Norge Felles",
+    "Forelder_AvdelingsNr": 2,
+    "Opprettet": "2018-07-03 13:34:43",
+    "Sist_Endret": "2018-09-14 14:38:32",
+    "Slettet": 0,
+    "_id": "100"
+  },
+  {
+    "AvdelingsNr": 150,
+    "Avdelingsnavn": "IT Drift",
+    "Forelder_AvdelingsNr": 100,
+    "Opprettet": "2018-09-14 14:37:55",
+    "Sist_Endret": "2018-09-14 14:38:32",
+    "Slettet": 0,
+    "_id": "150"
+  },
+  {
+    "AvdelingsNr": 2,
+    "Avdelingsnavn": "Bouvet Norge AS",
+    "Forelder_AvdelingsNr": 1,
+    "Opprettet": "2018-09-14 14:37:55",
+    "Sist_Endret": "2018-09-14 14:38:32",
+    "Slettet": 0,
+    "_id": "2"
+  },
+  {
+    "AvdelingsNr": 200,
+    "Avdelingsnavn": "Øst Kurs",
+    "Forelder_AvdelingsNr": 299,
+    "Opprettet": "2018-07-03 13:34:54",
+    "Sist_Endret": "2018-09-14 14:38:33",
+    "Slettet": 0,
+    "_id": "200"
+  },
+  {
+    "AvdelingsNr": 210,
+    "Avdelingsnavn": "Øst Felles",
+    "Forelder_AvdelingsNr": 299,
+    "Opprettet": "2018-07-03 13:44:15",
+    "Sist_Endret": "2018-09-14 14:38:32",
+    "Slettet": 0,
+    "_id": "210"
+  },
+  {
+    "AvdelingsNr": 211,
+    "Avdelingsnavn": "Øst Salg",
+    "Forelder_AvdelingsNr": 299,
+    "Opprettet": "2018-09-14 14:37:55",
+    "Sist_Endret": "2018-09-14 14:38:33",
+    "Slettet": 0,
+    "_id": "211"
+  },
+  {
+    "AvdelingsNr": 299,
+    "Avdelingsnavn": "Region Øst",
+    "Forelder_AvdelingsNr": 2,
+    "Opprettet": "2018-09-14 14:37:55",
+    "Sist_Endret": "2018-09-14 14:38:32",
+    "Slettet": 0,
+    "_id": "299"
+  },
+  {
+    "AvdelingsNr": 3,
+    "Avdelingsnavn": "Bouvet Sverige AB",
+    "Forelder_AvdelingsNr": 6,
+    "Opprettet": "2018-09-14 14:37:55",
+    "Sist_Endret": "2018-09-20 11:41:13",
+    "Slettet": 0,
+    "_id": "3"
+  },
+  {
+    "AvdelingsNr": 301,
+    "Avdelingsnavn": "Øst Tech 1",
+    "Forelder_AvdelingsNr": 299,
+    "Opprettet": "2018-09-14 14:37:55",
+    "Sist_Endret": "2018-09-14 14:38:33",
+    "Slettet": 0,
+    "_id": "301"
+  },
+  {
+    "AvdelingsNr": 302,
+    "Avdelingsnavn": "Øst Tech 2",
+    "Forelder_AvdelingsNr": 299,
+    "Opprettet": "2018-09-14 14:37:55",
+    "Sist_Endret": "2018-09-14 14:38:33",
+    "Slettet": 0,
+    "_id": "302"
+  },
+  {
+    "AvdelingsNr": 303,
+    "Avdelingsnavn": "Øst Kundeopplevelse",
+    "Forelder_AvdelingsNr": 299,
+    "Opprettet": "2018-09-14 14:37:56",
+    "Sist_Endret": "2018-12-18 09:48:33",
+    "Slettet": 0,
+    "_id": "303"
+  },
+  {
+    "AvdelingsNr": 312,
+    "Avdelingsnavn": "Øst Dev 2",
+    "Forelder_AvdelingsNr": 301,
+    "Opprettet": "2018-09-14 14:37:55",
+    "Sist_Endret": "2018-10-14 20:28:32",
+    "Slettet": 0,
+    "_id": "312"
+  },
+  {
+    "AvdelingsNr": 315,
+    "Avdelingsnavn": "Øst Dev 3",
+    "Forelder_AvdelingsNr": 301,
+    "Opprettet": "2018-09-14 14:37:55",
+    "Sist_Endret": "2018-10-14 20:32:40",
+    "Slettet": 0,
+    "_id": "315"
+  },
+  {
+    "AvdelingsNr": 316,
+    "Avdelingsnavn": "Øst Dev 4",
+    "Forelder_AvdelingsNr": 301,
+    "Opprettet": "2018-09-14 14:37:55",
+    "Sist_Endret": "2018-10-14 20:32:32",
+    "Slettet": 0,
+    "_id": "316"
+  },
+  {
+    "AvdelingsNr": 317,
+    "Avdelingsnavn": "Øst Dev 5",
+    "Forelder_AvdelingsNr": 301,
+    "Opprettet": "2018-09-14 14:37:55",
+    "Sist_Endret": "2018-09-14 14:38:33",
+    "Slettet": 0,
+    "_id": "317"
+  },
+  {
+    "AvdelingsNr": 318,
+    "Avdelingsnavn": "Øst Data Science",
+    "Forelder_AvdelingsNr": 301,
+    "Opprettet": "2018-09-14 14:37:55",
+    "Sist_Endret": "2018-09-14 14:38:33",
+    "Slettet": 0,
+    "_id": "318"
+  },
+  {
+    "AvdelingsNr": 320,
+    "Avdelingsnavn": "Øst Microsoft 1",
+    "Forelder_AvdelingsNr": 327,
+    "Opprettet": "2018-09-14 14:37:55",
+    "Sist_Endret": "2018-09-14 14:38:33",
+    "Slettet": 0,
+    "_id": "320"
+  },
+  {
+    "AvdelingsNr": 321,
+    "Avdelingsnavn": "Øst Microsoft 2",
+    "Forelder_AvdelingsNr": 327,
+    "Opprettet": "2018-09-14 14:37:55",
+    "Sist_Endret": "2018-09-14 14:38:33",
+    "Slettet": 0,
+    "_id": "321"
+  },
+  {
+    "AvdelingsNr": 322,
+    "Avdelingsnavn": "Øst Microsoft 3",
+    "Forelder_AvdelingsNr": 327,
+    "Opprettet": "2018-09-14 14:37:55",
+    "Sist_Endret": "2018-09-14 14:38:33",
+    "Slettet": 0,
+    "_id": "322"
+  },
+  {
+    "AvdelingsNr": 323,
+    "Avdelingsnavn": "Øst Microsoft 4",
+    "Forelder_AvdelingsNr": 327,
+    "Opprettet": "2018-09-14 14:37:55",
+    "Sist_Endret": "2018-09-14 14:38:33",
+    "Slettet": 0,
+    "_id": "323"
+  },
+  {
+    "AvdelingsNr": 324,
+    "Avdelingsnavn": "Øst Microsoft 5",
+    "Forelder_AvdelingsNr": 327,
+    "Opprettet": "2018-09-20 11:55:47",
+    "Sist_Endret": "2018-10-23 12:04:32",
+    "Slettet": 0,
+    "_id": "324"
+  },
+  {
+    "AvdelingsNr": 325,
+    "Avdelingsnavn": "Øst Webapps 1",
+    "Forelder_AvdelingsNr": 303,
+    "Opprettet": "2018-09-14 14:37:56",
+    "Sist_Endret": "2019-01-04 12:53:37",
+    "Slettet": 0,
+    "_id": "325"
+  },
+  {
+    "AvdelingsNr": 326,
+    "Avdelingsnavn": "Øst Webapps 2",
+    "Forelder_AvdelingsNr": 303,
+    "Opprettet": "2018-09-14 14:37:56",
+    "Sist_Endret": "2019-01-04 12:53:37",
+    "Slettet": 0,
+    "_id": "326"
+  },
+  {
+    "AvdelingsNr": 327,
+    "Avdelingsnavn": "Øst Microsoft",
+    "Forelder_AvdelingsNr": 302,
+    "Opprettet": "2018-09-14 14:37:55",
+    "Sist_Endret": "2018-10-23 12:04:39",
+    "Slettet": 0,
+    "_id": "327"
+  },
+  {
+    "AvdelingsNr": 329,
+    "Avdelingsnavn": "Øst Tjenesteleveranser",
+    "Forelder_AvdelingsNr": 299,
+    "Opprettet": "2018-09-14 14:37:56",
+    "Sist_Endret": "2018-09-20 11:57:43",
+    "Slettet": 0,
+    "_id": "329"
+  },
+  {
+    "AvdelingsNr": 330,
+    "Avdelingsnavn": "Øst Innsikt",
+    "Forelder_AvdelingsNr": 303,
+    "Opprettet": "2018-09-14 14:37:56",
+    "Sist_Endret": "2019-01-04 12:53:37",
+    "Slettet": 0,
+    "_id": "330"
+  },
+  {
+    "AvdelingsNr": 331,
+    "Avdelingsnavn": "Øst Ria 1",
+    "Forelder_AvdelingsNr": 303,
+    "Opprettet": "2018-09-14 14:37:56",
+    "Sist_Endret": "2019-01-04 12:53:37",
+    "Slettet": 0,
+    "_id": "331"
+  },
+  {
+    "AvdelingsNr": 333,
+    "Avdelingsnavn": "Øst Design 1",
+    "Forelder_AvdelingsNr": 303,
+    "Opprettet": "2018-09-14 14:37:56",
+    "Sist_Endret": "2019-01-04 12:53:37",
+    "Slettet": 0,
+    "_id": "333"
+  },
+  {
+    "AvdelingsNr": 334,
+    "Avdelingsnavn": "Øst Design 2",
+    "Forelder_AvdelingsNr": 303,
+    "Opprettet": "2018-09-14 14:37:56",
+    "Sist_Endret": "2019-01-04 12:53:37",
+    "Slettet": 0,
+    "_id": "334"
+  },
+  {
+    "AvdelingsNr": 335,
+    "Avdelingsnavn": "Øst Ria 2",
+    "Forelder_AvdelingsNr": 303,
+    "Opprettet": "2018-09-14 14:37:56",
+    "Sist_Endret": "2019-01-04 12:53:37",
+    "Slettet": 0,
+    "_id": "335"
+  },
+  {
+    "AvdelingsNr": 337,
+    "Avdelingsnavn": "Øst Ria 3",
+    "Forelder_AvdelingsNr": 303,
+    "Opprettet": "2018-09-14 14:37:56",
+    "Sist_Endret": "2019-01-04 12:53:37",
+    "Slettet": 0,
+    "_id": "337"
+  },
+  {
+    "AvdelingsNr": 338,
+    "Avdelingsnavn": "Øst Råd Tjenestedesign",
+    "Forelder_AvdelingsNr": 303,
+    "Opprettet": "2018-09-20 11:52:16",
+    "Sist_Endret": "2019-01-04 12:53:37",
+    "Slettet": 0,
+    "_id": "338"
+  },
+  {
+    "AvdelingsNr": 339,
+    "Avdelingsnavn": "Øst Råd KO",
+    "Forelder_AvdelingsNr": 303,
+    "Opprettet": "2018-09-14 14:37:56",
+    "Sist_Endret": "2019-01-04 12:53:37",
+    "Slettet": 0,
+    "_id": "339"
+  },
+  {
+    "AvdelingsNr": 340,
+    "Avdelingsnavn": "Øst Dev 1",
+    "Forelder_AvdelingsNr": 301,
+    "Opprettet": "2018-09-14 14:37:55",
+    "Sist_Endret": "2018-10-14 20:32:18",
+    "Slettet": 0,
+    "_id": "340"
+  },
+  {
+    "AvdelingsNr": 4,
+    "Avdelingsnavn": "Olavstoppen AS",
+    "Forelder_AvdelingsNr": 1,
+    "Opprettet": "2018-09-14 14:37:55",
+    "Sist_Endret": "2019-06-25 14:51:35",
+    "Slettet": 0,
+    "_id": "4"
+  },
+  {
+    "AvdelingsNr": 400,
+    "Avdelingsnavn": "Øst Cloud 1",
+    "Forelder_AvdelingsNr": 409,
+    "Opprettet": "2018-09-14 14:37:56",
+    "Sist_Endret": "2018-09-14 14:38:33",
+    "Slettet": 0,
+    "_id": "400"
+  },
+  {
+    "AvdelingsNr": 401,
+    "Avdelingsnavn": "Øst Cloud 2",
+    "Forelder_AvdelingsNr": 409,
+    "Opprettet": "2018-09-14 14:37:56",
+    "Sist_Endret": "2018-09-14 14:38:33",
+    "Slettet": 0,
+    "_id": "401"
+  },
+  {
+    "AvdelingsNr": 409,
+    "Avdelingsnavn": "Øst Cloud",
+    "Forelder_AvdelingsNr": 302,
+    "Opprettet": "2018-09-14 14:37:56",
+    "Sist_Endret": "2018-09-14 14:38:33",
+    "Slettet": 0,
+    "_id": "409"
+  },
+  {
+    "AvdelingsNr": 450,
+    "Avdelingsnavn": "Øst PIA",
+    "Forelder_AvdelingsNr": 299,
+    "Opprettet": "2019-12-17 11:49:12",
+    "Sist_Endret": "2019-12-17 14:06:13",
+    "Slettet": 0,
+    "_id": "450"
+  },
+  {
+    "AvdelingsNr": 451,
+    "Avdelingsnavn": "Øst PIA 1",
+    "Forelder_AvdelingsNr": 450,
+    "Opprettet": "2019-12-17 11:50:15",
+    "Sist_Endret": "2019-12-17 11:50:15",
+    "Slettet": 0,
+    "_id": "451"
+  },
+  {
+    "AvdelingsNr": 452,
+    "Avdelingsnavn": "Øst PIA 2",
+    "Forelder_AvdelingsNr": 450,
+    "Opprettet": "2019-12-17 11:50:44",
+    "Sist_Endret": "2019-12-17 11:50:44",
+    "Slettet": 0,
+    "_id": "452"
+  },
+  {
+    "AvdelingsNr": 453,
+    "Avdelingsnavn": "Øst PIA 3",
+    "Forelder_AvdelingsNr": 450,
+    "Opprettet": "2019-12-17 11:51:00",
+    "Sist_Endret": "2019-12-17 11:51:00",
+    "Slettet": 0,
+    "_id": "453"
+  },
+  {
+    "AvdelingsNr": 5,
+    "Avdelingsnavn": "Bouvet Public Skills",
+    "Forelder_AvdelingsNr": 6,
+    "Opprettet": "2018-09-14 14:37:55",
+    "Sist_Endret": "2018-09-20 11:41:27",
+    "Slettet": 0,
+    "_id": "5"
+  },
+  {
+    "AvdelingsNr": 500,
+    "Avdelingsnavn": "Øst Råd og Prosjekt",
+    "Forelder_AvdelingsNr": 299,
+    "Opprettet": "2018-09-14 14:37:55",
+    "Sist_Endret": "2018-09-14 14:38:33",
+    "Slettet": 0,
+    "_id": "500"
+  },
+  {
+    "AvdelingsNr": 501,
+    "Avdelingsnavn": "Øst Virksomhetsstyring",
+    "Forelder_AvdelingsNr": 299,
+    "Opprettet": "2018-09-14 14:37:56",
+    "Sist_Endret": "2018-09-14 14:38:33",
+    "Slettet": 0,
+    "_id": "501"
+  },
+  {
+    "AvdelingsNr": 502,
+    "Avdelingsnavn": "Øst Sandvika",
+    "Forelder_AvdelingsNr": 299,
+    "Opprettet": "2018-09-14 14:37:56",
+    "Sist_Endret": "2018-09-14 14:38:33",
+    "Slettet": 0,
+    "_id": "502"
+  },
+  {
+    "AvdelingsNr": 511,
+    "Avdelingsnavn": "Øst Programledelse",
+    "Forelder_AvdelingsNr": 500,
+    "Opprettet": "2019-08-16 11:44:09",
+    "Sist_Endret": "2019-08-16 11:44:09",
+    "Slettet": 0,
+    "_id": "511"
+  },
+  {
+    "AvdelingsNr": 512,
+    "Avdelingsnavn": "Øst Prosjektledelse 1",
+    "Forelder_AvdelingsNr": 500,
+    "Opprettet": "2018-09-14 14:37:55",
+    "Sist_Endret": "2018-09-14 14:38:33",
+    "Slettet": 0,
+    "_id": "512"
+  },
+  {
+    "AvdelingsNr": 513,
+    "Avdelingsnavn": "Øst Prosjektledelse 2",
+    "Forelder_AvdelingsNr": 500,
+    "Opprettet": "2018-09-14 14:37:55",
+    "Sist_Endret": "2018-09-14 14:38:33",
+    "Slettet": 0,
+    "_id": "513"
+  },
+  {
+    "AvdelingsNr": 514,
+    "Avdelingsnavn": "Øst Test og Testledelse",
+    "Forelder_AvdelingsNr": 500,
+    "Opprettet": "2018-09-14 14:37:55",
+    "Sist_Endret": "2018-09-14 14:38:33",
+    "Slettet": 0,
+    "_id": "514"
+  },
+  {
+    "AvdelingsNr": 515,
+    "Avdelingsnavn": "Øst Råd og Prosjekt Felles",
+    "Forelder_AvdelingsNr": 500,
+    "Opprettet": "2018-09-14 14:37:55",
+    "Sist_Endret": "2018-09-20 11:53:26",
+    "Slettet": 0,
+    "_id": "515"
+  },
+  {
+    "AvdelingsNr": 516,
+    "Avdelingsnavn": "Øst Rådgivning arkitektur",
+    "Forelder_AvdelingsNr": 500,
+    "Opprettet": "2018-09-14 14:37:55",
+    "Sist_Endret": "2018-09-14 14:38:33",
+    "Slettet": 0,
+    "_id": "516"
+  },
+  {
+    "AvdelingsNr": 517,
+    "Avdelingsnavn": "Øst Rådgivning innføring og endring",
+    "Forelder_AvdelingsNr": 500,
+    "Opprettet": "2018-09-14 14:37:55",
+    "Sist_Endret": "2018-12-03 11:10:47",
+    "Slettet": 0,
+    "_id": "517"
+  },
+  {
+    "AvdelingsNr": 518,
+    "Avdelingsnavn": "Øst Råd og Prosjekt UK",
+    "Forelder_AvdelingsNr": 500,
+    "Opprettet": "2018-09-14 14:37:55",
+    "Sist_Endret": "2018-09-14 14:38:33",
+    "Slettet": 0,
+    "_id": "518"
+  },
+  {
+    "AvdelingsNr": 522,
+    "Avdelingsnavn": "Applikasjon og Prosess",
+    "Forelder_AvdelingsNr": 501,
+    "Opprettet": "2018-09-14 14:37:56",
+    "Sist_Endret": "2018-09-14 14:38:33",
+    "Slettet": 0,
+    "_id": "522"
+  },
+  {
+    "AvdelingsNr": 523,
+    "Avdelingsnavn": "SAP Tech og forvaltning",
+    "Forelder_AvdelingsNr": 501,
+    "Opprettet": "2018-09-14 14:37:56",
+    "Sist_Endret": "2018-09-14 14:38:33",
+    "Slettet": 0,
+    "_id": "523"
+  },
+  {
+    "AvdelingsNr": 525,
+    "Avdelingsnavn": "Prosjekt og Arkitekt",
+    "Forelder_AvdelingsNr": 501,
+    "Opprettet": "2018-09-14 14:37:56",
+    "Sist_Endret": "2018-09-14 14:38:33",
+    "Slettet": 0,
+    "_id": "525"
+  },
+  {
+    "AvdelingsNr": 550,
+    "Avdelingsnavn": "Øst Sandvika 1",
+    "Forelder_AvdelingsNr": 502,
+    "Opprettet": "2018-09-14 14:37:56",
+    "Sist_Endret": "2018-09-14 14:38:33",
+    "Slettet": 0,
+    "_id": "550"
+  },
+  {
+    "AvdelingsNr": 551,
+    "Avdelingsnavn": "Øst Sandvika 2",
+    "Forelder_AvdelingsNr": 502,
+    "Opprettet": "2018-09-14 14:37:56",
+    "Sist_Endret": "2018-09-14 14:38:33",
+    "Slettet": 0,
+    "_id": "551"
+  },
+  {
+    "AvdelingsNr": 552,
+    "Avdelingsnavn": "Øst Sandvika UK",
+    "Forelder_AvdelingsNr": 502,
+    "Opprettet": "2018-09-14 14:37:56",
+    "Sist_Endret": "2018-09-14 14:38:33",
+    "Slettet": 0,
+    "_id": "552"
+  },
+  {
+    "AvdelingsNr": 553,
+    "Avdelingsnavn": "Øst Sandvika 3",
+    "Forelder_AvdelingsNr": 502,
+    "Opprettet": "2018-09-14 14:37:56",
+    "Sist_Endret": "2018-09-14 14:38:33",
+    "Slettet": 0,
+    "_id": "553"
+  },
+  {
+    "AvdelingsNr": 6,
+    "Avdelingsnavn": "Bouvet AB",
+    "Forelder_AvdelingsNr": 1,
+    "Opprettet": "2018-09-20 11:40:56",
+    "Sist_Endret": "2018-09-20 11:41:37",
+    "Slettet": 0,
+    "_id": "6"
+  },
+  {
+    "AvdelingsNr": 600,
+    "Avdelingsnavn": "Sør Felles",
+    "Forelder_AvdelingsNr": 609,
+    "Opprettet": "2018-12-03 12:06:23",
+    "Sist_Endret": "2018-12-03 12:06:31",
+    "Slettet": 0,
+    "_id": "600"
+  },
+  {
+    "AvdelingsNr": 609,
+    "Avdelingsnavn": "Region Sør",
+    "Forelder_AvdelingsNr": 2,
+    "Opprettet": "2018-09-14 14:37:56",
+    "Sist_Endret": "2018-12-03 12:05:56",
+    "Slettet": 0,
+    "_id": "609"
+  },
+  {
+    "AvdelingsNr": 610,
+    "Avdelingsnavn": "Grenland",
+    "Forelder_AvdelingsNr": 609,
+    "Opprettet": "2018-09-14 14:37:56",
+    "Sist_Endret": "2018-12-03 12:06:31",
+    "Slettet": 0,
+    "_id": "610"
+  },
+  {
+    "AvdelingsNr": 620,
+    "Avdelingsnavn": "Arendal",
+    "Forelder_AvdelingsNr": 609,
+    "Opprettet": "2018-09-14 14:37:56",
+    "Sist_Endret": "2018-12-03 12:06:31",
+    "Slettet": 0,
+    "_id": "620"
+  },
+  {
+    "AvdelingsNr": 630,
+    "Avdelingsnavn": "Kristiansand",
+    "Forelder_AvdelingsNr": 609,
+    "Opprettet": "2018-09-14 14:37:56",
+    "Sist_Endret": "2018-12-03 12:06:31",
+    "Slettet": 0,
+    "_id": "630"
+  },
+  {
+    "AvdelingsNr": 640,
+    "Avdelingsnavn": "Vestfold",
+    "Forelder_AvdelingsNr": 609,
+    "Opprettet": "2018-09-14 14:37:56",
+    "Sist_Endret": "2018-09-20 11:48:34",
+    "Slettet": 0,
+    "_id": "640"
+  },
+  {
+    "AvdelingsNr": 700,
+    "Avdelingsnavn": "Rogaland Virksomhetsstøtte",
+    "Forelder_AvdelingsNr": 778,
+    "Opprettet": "2018-09-14 14:37:56",
+    "Sist_Endret": "2019-10-30 13:17:02",
+    "Slettet": 0,
+    "_id": "700"
+  },
+  {
+    "AvdelingsNr": 701,
+    "Avdelingsnavn": "Rogaland Økonomi og IT",
+    "Forelder_AvdelingsNr": 777,
+    "Opprettet": "2018-10-18 09:44:23",
+    "Sist_Endret": "2019-10-30 13:25:14",
+    "Slettet": 0,
+    "_id": "701"
+  },
+  {
+    "AvdelingsNr": 702,
+    "Avdelingsnavn": "Rogaland Klyngestøtte",
+    "Forelder_AvdelingsNr": 778,
+    "Opprettet": "2018-09-14 14:37:56",
+    "Sist_Endret": "2019-10-30 13:09:01",
+    "Slettet": 0,
+    "_id": "702"
+  },
+  {
+    "AvdelingsNr": 703,
+    "Avdelingsnavn": "Rogaland Tech Center",
+    "Forelder_AvdelingsNr": 778,
+    "Opprettet": "2018-09-14 14:37:56",
+    "Sist_Endret": "2019-10-30 13:16:09",
+    "Slettet": 0,
+    "_id": "703"
+  },
+  {
+    "AvdelingsNr": 704,
+    "Avdelingsnavn": "Rogaland Equinox",
+    "Forelder_AvdelingsNr": 778,
+    "Opprettet": "2018-10-02 09:58:55",
+    "Sist_Endret": "2019-10-30 13:17:47",
+    "Slettet": 0,
+    "_id": "704"
+  },
+  {
+    "AvdelingsNr": 705,
+    "Avdelingsnavn": "Kontorstøtte Stavanger",
+    "Forelder_AvdelingsNr": 777,
+    "Opprettet": "2018-09-14 14:37:56",
+    "Sist_Endret": "2019-10-30 13:24:08",
+    "Slettet": 0,
+    "_id": "705"
+  },
+  {
+    "AvdelingsNr": 730,
+    "Avdelingsnavn": "Kontorstøtte Haugesund",
+    "Forelder_AvdelingsNr": 777,
+    "Opprettet": "2018-09-14 14:37:56",
+    "Sist_Endret": "2019-10-30 13:25:14",
+    "Slettet": 0,
+    "_id": "730"
+  },
+  {
+    "AvdelingsNr": 731,
+    "Avdelingsnavn": "Rogaland Industristøtte",
+    "Forelder_AvdelingsNr": 779,
+    "Opprettet": "2018-09-14 14:37:56",
+    "Sist_Endret": "2019-10-30 13:06:48",
+    "Slettet": 0,
+    "_id": "731"
+  },
+  {
+    "AvdelingsNr": 751,
+    "Avdelingsnavn": "Rogaland Formel 1",
+    "Forelder_AvdelingsNr": 779,
+    "Opprettet": "2018-09-14 14:37:56",
+    "Sist_Endret": "2019-10-30 08:10:03",
+    "Slettet": 0,
+    "_id": "751"
+  },
+  {
+    "AvdelingsNr": 752,
+    "Avdelingsnavn": "Rogaland Enigma",
+    "Forelder_AvdelingsNr": 779,
+    "Opprettet": "2018-09-14 14:37:56",
+    "Sist_Endret": "2019-10-30 08:09:31",
+    "Slettet": 0,
+    "_id": "752"
+  },
+  {
+    "AvdelingsNr": 754,
+    "Avdelingsnavn": "Rogaland Alpha",
+    "Forelder_AvdelingsNr": 779,
+    "Opprettet": "2018-09-14 14:37:56",
+    "Sist_Endret": "2019-10-29 14:11:02",
+    "Slettet": 0,
+    "_id": "754"
+  },
+  {
+    "AvdelingsNr": 755,
+    "Avdelingsnavn": "Rogaland Invicta",
+    "Forelder_AvdelingsNr": 779,
+    "Opprettet": "2018-09-14 14:37:56",
+    "Sist_Endret": "2019-10-30 08:10:53",
+    "Slettet": 0,
+    "_id": "755"
+  },
+  {
+    "AvdelingsNr": 756,
+    "Avdelingsnavn": "Rogaland Syndicate",
+    "Forelder_AvdelingsNr": 779,
+    "Opprettet": "2018-09-14 14:37:56",
+    "Sist_Endret": "2019-10-30 13:05:27",
+    "Slettet": 0,
+    "_id": "756"
+  },
+  {
+    "AvdelingsNr": 757,
+    "Avdelingsnavn": "Rogaland Morgenstiern",
+    "Forelder_AvdelingsNr": 779,
+    "Opprettet": "2018-09-14 14:37:56",
+    "Sist_Endret": "2019-10-30 12:34:21",
+    "Slettet": 0,
+    "_id": "757"
+  },
+  {
+    "AvdelingsNr": 758,
+    "Avdelingsnavn": "Rogaland DAIM",
+    "Forelder_AvdelingsNr": 779,
+    "Opprettet": "2018-09-14 14:37:56",
+    "Sist_Endret": "2019-10-29 22:45:46",
+    "Slettet": 0,
+    "_id": "758"
+  },
+  {
+    "AvdelingsNr": 759,
+    "Avdelingsnavn": "Rogaland DIGG",
+    "Forelder_AvdelingsNr": 779,
+    "Opprettet": "2018-09-14 14:37:56",
+    "Sist_Endret": "2019-10-29 22:46:23",
+    "Slettet": 0,
+    "_id": "759"
+  },
+  {
+    "AvdelingsNr": 760,
+    "Avdelingsnavn": "Rogaland Skynet",
+    "Forelder_AvdelingsNr": 779,
+    "Opprettet": "2018-09-14 14:37:56",
+    "Sist_Endret": "2019-10-30 13:03:43",
+    "Slettet": 0,
+    "_id": "760"
+  },
+  {
+    "AvdelingsNr": 761,
+    "Avdelingsnavn": "Rogaland SQAD",
+    "Forelder_AvdelingsNr": 779,
+    "Opprettet": "2018-09-14 14:37:56",
+    "Sist_Endret": "2019-10-30 13:05:03",
+    "Slettet": 0,
+    "_id": "761"
+  },
+  {
+    "AvdelingsNr": 762,
+    "Avdelingsnavn": "Rogaland Atlas",
+    "Forelder_AvdelingsNr": 779,
+    "Opprettet": "2018-09-14 14:37:56",
+    "Sist_Endret": "2019-10-29 14:10:43",
+    "Slettet": 0,
+    "_id": "762"
+  },
+  {
+    "AvdelingsNr": 763,
+    "Avdelingsnavn": "Rogaland Spectre",
+    "Forelder_AvdelingsNr": 779,
+    "Opprettet": "2018-09-14 14:37:56",
+    "Sist_Endret": "2019-10-30 13:04:11",
+    "Slettet": 0,
+    "_id": "763"
+  },
+  {
+    "AvdelingsNr": 764,
+    "Avdelingsnavn": "Rogaland SPOCK",
+    "Forelder_AvdelingsNr": 779,
+    "Opprettet": "2018-11-16 12:09:23",
+    "Sist_Endret": "2019-10-30 13:04:38",
+    "Slettet": 0,
+    "_id": "764"
+  },
+  {
+    "AvdelingsNr": 765,
+    "Avdelingsnavn": "Rogaland MCS",
+    "Forelder_AvdelingsNr": 779,
+    "Opprettet": "2018-11-16 12:09:50",
+    "Sist_Endret": "2019-10-30 11:59:08",
+    "Slettet": 0,
+    "_id": "765"
+  },
+  {
+    "AvdelingsNr": 766,
+    "Avdelingsnavn": "Rogaland Optimus",
+    "Forelder_AvdelingsNr": 779,
+    "Opprettet": "2019-05-14 14:11:17",
+    "Sist_Endret": "2019-10-30 13:02:46",
+    "Slettet": 0,
+    "_id": "766"
+  },
+  {
+    "AvdelingsNr": 767,
+    "Avdelingsnavn": "Rogaland ACME",
+    "Forelder_AvdelingsNr": 779,
+    "Opprettet": "2019-06-05 09:16:33",
+    "Sist_Endret": "2019-10-29 14:10:10",
+    "Slettet": 0,
+    "_id": "767"
+  },
+  {
+    "AvdelingsNr": 768,
+    "Avdelingsnavn": "Rogaland Phoenix",
+    "Forelder_AvdelingsNr": 779,
+    "Opprettet": "2019-08-30 15:14:05",
+    "Sist_Endret": "2019-10-30 13:03:19",
+    "Slettet": 0,
+    "_id": "768"
+  },
+  {
+    "AvdelingsNr": 777,
+    "Avdelingsnavn": "Rogaland Administrasjon",
+    "Forelder_AvdelingsNr": 778,
+    "Opprettet": "2019-10-29 13:45:45",
+    "Sist_Endret": "2019-10-29 13:45:45",
+    "Slettet": 0,
+    "_id": "777"
+  },
+  {
+    "AvdelingsNr": 778,
+    "Avdelingsnavn": "Rogaland Felles",
+    "Forelder_AvdelingsNr": 799,
+    "Opprettet": "2019-10-29 13:42:37",
+    "Sist_Endret": "2019-10-29 13:42:37",
+    "Slettet": 0,
+    "_id": "778"
+  },
+  {
+    "AvdelingsNr": 779,
+    "Avdelingsnavn": "Rogaland Enheter",
+    "Forelder_AvdelingsNr": 799,
+    "Opprettet": "2019-10-29 13:44:50",
+    "Sist_Endret": "2019-10-29 13:44:50",
+    "Slettet": 0,
+    "_id": "779"
+  },
+  {
+    "AvdelingsNr": 780,
+    "Avdelingsnavn": "Bergen Felles",
+    "Forelder_AvdelingsNr": 789,
+    "Opprettet": "2018-09-14 14:37:56",
+    "Sist_Endret": "2018-09-14 14:38:34",
+    "Slettet": 0,
+    "_id": "780"
+  },
+  {
+    "AvdelingsNr": 781,
+    "Avdelingsnavn": "Ulriken",
+    "Forelder_AvdelingsNr": 789,
+    "Opprettet": "2018-09-14 14:37:56",
+    "Sist_Endret": "2018-09-14 14:38:34",
+    "Slettet": 0,
+    "_id": "781"
+  },
+  {
+    "AvdelingsNr": 782,
+    "Avdelingsnavn": "Fløien",
+    "Forelder_AvdelingsNr": 789,
+    "Opprettet": "2018-09-14 14:37:56",
+    "Sist_Endret": "2018-09-14 14:38:34",
+    "Slettet": 0,
+    "_id": "782"
+  },
+  {
+    "AvdelingsNr": 783,
+    "Avdelingsnavn": "Lyderhorn",
+    "Forelder_AvdelingsNr": 789,
+    "Opprettet": "2018-09-14 14:37:56",
+    "Sist_Endret": "2018-09-14 14:38:34",
+    "Slettet": 0,
+    "_id": "783"
+  },
+  {
+    "AvdelingsNr": 784,
+    "Avdelingsnavn": "Løvstakken",
+    "Forelder_AvdelingsNr": 789,
+    "Opprettet": "2018-09-14 14:37:57",
+    "Sist_Endret": "2018-09-14 14:38:34",
+    "Slettet": 0,
+    "_id": "784"
+  },
+  {
+    "AvdelingsNr": 785,
+    "Avdelingsnavn": "Rundemanen",
+    "Forelder_AvdelingsNr": 789,
+    "Opprettet": "2018-09-14 14:37:57",
+    "Sist_Endret": "2018-09-14 14:38:34",
+    "Slettet": 0,
+    "_id": "785"
+  },
+  {
+    "AvdelingsNr": 786,
+    "Avdelingsnavn": "Blåmanen",
+    "Forelder_AvdelingsNr": 789,
+    "Opprettet": "2018-09-14 14:37:57",
+    "Sist_Endret": "2018-09-14 14:38:34",
+    "Slettet": 0,
+    "_id": "786"
+  },
+  {
+    "AvdelingsNr": 787,
+    "Avdelingsnavn": "Gullfjellet",
+    "Forelder_AvdelingsNr": 789,
+    "Opprettet": "2019-08-21 09:21:23",
+    "Sist_Endret": "2019-08-21 09:23:20",
+    "Slettet": 0,
+    "_id": "787"
+  },
+  {
+    "AvdelingsNr": 789,
+    "Avdelingsnavn": "Region Bergen",
+    "Forelder_AvdelingsNr": 2,
+    "Opprettet": "2018-09-14 14:37:56",
+    "Sist_Endret": "2018-09-14 14:38:34",
+    "Slettet": 0,
+    "_id": "789"
+  },
+  {
+    "AvdelingsNr": 799,
+    "Avdelingsnavn": "Region Rogaland",
+    "Forelder_AvdelingsNr": 2,
+    "Opprettet": "2018-09-14 14:37:56",
+    "Sist_Endret": "2019-06-05 09:14:34",
+    "Slettet": 0,
+    "_id": "799"
+  },
+  {
+    "AvdelingsNr": 800,
+    "Avdelingsnavn": "Nord Felles",
+    "Forelder_AvdelingsNr": 809,
+    "Opprettet": "2018-09-14 14:37:57",
+    "Sist_Endret": "2018-10-18 07:17:15",
+    "Slettet": 0,
+    "_id": "800"
+  },
+  {
+    "AvdelingsNr": 801,
+    "Avdelingsnavn": "Trondheim Tech 1",
+    "Forelder_AvdelingsNr": 809,
+    "Opprettet": "2018-09-14 14:37:57",
+    "Sist_Endret": "2018-09-14 14:38:34",
+    "Slettet": 0,
+    "_id": "801"
+  },
+  {
+    "AvdelingsNr": 802,
+    "Avdelingsnavn": "Trondheim Tech 2",
+    "Forelder_AvdelingsNr": 809,
+    "Opprettet": "2018-09-14 14:37:57",
+    "Sist_Endret": "2018-09-14 14:38:34",
+    "Slettet": 0,
+    "_id": "802"
+  },
+  {
+    "AvdelingsNr": 803,
+    "Avdelingsnavn": "Trondheim Brukeropplevelse",
+    "Forelder_AvdelingsNr": 809,
+    "Opprettet": "2018-09-14 14:37:57",
+    "Sist_Endret": "2018-09-14 14:38:34",
+    "Slettet": 0,
+    "_id": "803"
+  },
+  {
+    "AvdelingsNr": 804,
+    "Avdelingsnavn": "Trondheim Tech 3",
+    "Forelder_AvdelingsNr": 809,
+    "Opprettet": "2018-09-14 14:37:57",
+    "Sist_Endret": "2018-09-14 14:38:34",
+    "Slettet": 0,
+    "_id": "804"
+  },
+  {
+    "AvdelingsNr": 805,
+    "Avdelingsnavn": "Trondheim Rådgivning\u0026Prosjektledelse",
+    "Forelder_AvdelingsNr": 809,
+    "Opprettet": "2018-09-14 14:37:57",
+    "Sist_Endret": "2018-09-14 14:38:34",
+    "Slettet": 0,
+    "_id": "805"
+  },
+  {
+    "AvdelingsNr": 806,
+    "Avdelingsnavn": "Trondheim FrontEnd",
+    "Forelder_AvdelingsNr": 809,
+    "Opprettet": "2018-09-14 14:37:57",
+    "Sist_Endret": "2018-09-14 14:38:34",
+    "Slettet": 0,
+    "_id": "806"
+  },
+  {
+    "AvdelingsNr": 809,
+    "Avdelingsnavn": "Region Nord",
+    "Forelder_AvdelingsNr": 2,
+    "Opprettet": "2018-09-14 14:37:57",
+    "Sist_Endret": "2018-09-14 14:38:34",
+    "Slettet": 0,
+    "_id": "809"
+  },
+  {
+    "AvdelingsNr": 900,
+    "Avdelingsnavn": "Stockholm Web Systemutveckling",
+    "Forelder_AvdelingsNr": 901,
+    "Opprettet": "2019-01-17 11:19:37",
+    "Sist_Endret": "2019-01-17 11:20:17",
+    "Slettet": 0,
+    "_id": "900"
+  },
+  {
+    "AvdelingsNr": 901,
+    "Avdelingsnavn": "Stockholm",
+    "Forelder_AvdelingsNr": 3,
+    "Opprettet": "2018-09-14 14:37:57",
+    "Sist_Endret": "2018-09-14 14:38:34",
+    "Slettet": 0,
+    "_id": "901"
+  },
+  {
+    "AvdelingsNr": 902,
+    "Avdelingsnavn": "Stockholm Felles",
+    "Forelder_AvdelingsNr": 901,
+    "Opprettet": "2018-09-14 14:37:57",
+    "Sist_Endret": "2018-09-14 14:38:34",
+    "Slettet": 0,
+    "_id": "902"
+  },
+  {
+    "AvdelingsNr": 903,
+    "Avdelingsnavn": "Stockholm e-Hälsa",
+    "Forelder_AvdelingsNr": 901,
+    "Opprettet": "2018-09-14 14:37:57",
+    "Sist_Endret": "2018-09-14 14:38:34",
+    "Slettet": 0,
+    "_id": "903"
+  },
+  {
+    "AvdelingsNr": 904,
+    "Avdelingsnavn": "Stockholm Kundupplevelse 1",
+    "Forelder_AvdelingsNr": 901,
+    "Opprettet": "2018-09-14 14:37:57",
+    "Sist_Endret": "2018-09-14 14:38:34",
+    "Slettet": 0,
+    "_id": "904"
+  },
+  {
+    "AvdelingsNr": 905,
+    "Avdelingsnavn": "Stockholm Kundupplevelse 2",
+    "Forelder_AvdelingsNr": 901,
+    "Opprettet": "2018-09-14 14:37:57",
+    "Sist_Endret": "2018-09-14 14:38:34",
+    "Slettet": 0,
+    "_id": "905"
+  },
+  {
+    "AvdelingsNr": 906,
+    "Avdelingsnavn": "Stockholm Projektledning",
+    "Forelder_AvdelingsNr": 901,
+    "Opprettet": "2018-09-14 14:37:57",
+    "Sist_Endret": "2018-09-14 14:38:34",
+    "Slettet": 0,
+    "_id": "906"
+  },
+  {
+    "AvdelingsNr": 907,
+    "Avdelingsnavn": "Stockholm Systemutveckling 1",
+    "Forelder_AvdelingsNr": 901,
+    "Opprettet": "2018-09-14 14:37:57",
+    "Sist_Endret": "2018-09-27 10:42:55",
+    "Slettet": 0,
+    "_id": "907"
+  },
+  {
+    "AvdelingsNr": 908,
+    "Avdelingsnavn": "Örebro",
+    "Forelder_AvdelingsNr": 3,
+    "Opprettet": "2018-09-14 14:37:57",
+    "Sist_Endret": "2018-09-14 14:38:34",
+    "Slettet": 0,
+    "_id": "908"
+  },
+  {
+    "AvdelingsNr": 909,
+    "Avdelingsnavn": "Örebro Felles",
+    "Forelder_AvdelingsNr": 908,
+    "Opprettet": "2018-09-14 14:37:57",
+    "Sist_Endret": "2018-09-14 14:38:34",
+    "Slettet": 0,
+    "_id": "909"
+  },
+  {
+    "AvdelingsNr": 910,
+    "Avdelingsnavn": "Örebro Projektledning",
+    "Forelder_AvdelingsNr": 908,
+    "Opprettet": "2018-09-14 14:37:57",
+    "Sist_Endret": "2018-09-14 14:38:34",
+    "Slettet": 0,
+    "_id": "910"
+  },
+  {
+    "AvdelingsNr": 911,
+    "Avdelingsnavn": "Örebro Systemutveckling",
+    "Forelder_AvdelingsNr": 908,
+    "Opprettet": "2018-09-14 14:37:57",
+    "Sist_Endret": "2018-09-14 14:38:34",
+    "Slettet": 0,
+    "_id": "911"
+  },
+  {
+    "AvdelingsNr": 912,
+    "Avdelingsnavn": "Borlänge",
+    "Forelder_AvdelingsNr": 3,
+    "Opprettet": "2018-09-14 14:37:57",
+    "Sist_Endret": "2018-09-14 14:38:34",
+    "Slettet": 0,
+    "_id": "912"
+  },
+  {
+    "AvdelingsNr": 913,
+    "Avdelingsnavn": "Borlänge Felles",
+    "Forelder_AvdelingsNr": 912,
+    "Opprettet": "2018-09-14 14:37:57",
+    "Sist_Endret": "2018-09-14 14:38:34",
+    "Slettet": 0,
+    "_id": "913"
+  },
+  {
+    "AvdelingsNr": 914,
+    "Avdelingsnavn": "Borlänge Projektledning",
+    "Forelder_AvdelingsNr": 912,
+    "Opprettet": "2018-09-14 14:37:57",
+    "Sist_Endret": "2018-09-14 14:38:34",
+    "Slettet": 0,
+    "_id": "914"
+  },
+  {
+    "AvdelingsNr": 915,
+    "Avdelingsnavn": "Borlänge Systemutveckling",
+    "Forelder_AvdelingsNr": 912,
+    "Opprettet": "2018-09-14 14:37:57",
+    "Sist_Endret": "2018-09-14 14:38:34",
+    "Slettet": 0,
+    "_id": "915"
+  },
+  {
+    "AvdelingsNr": 916,
+    "Avdelingsnavn": "Stockholm Systemutveckling 2",
+    "Forelder_AvdelingsNr": 901,
+    "Opprettet": "2018-09-27 10:43:36",
+    "Sist_Endret": "2018-09-27 10:43:36",
+    "Slettet": 0,
+    "_id": "916"
+  },
+  {
+    "AvdelingsNr": 917,
+    "Avdelingsnavn": "Stockholm Kundupplevelse 3",
+    "Forelder_AvdelingsNr": 901,
+    "Opprettet": "2019-06-20 10:04:00",
+    "Sist_Endret": "2019-06-20 10:04:00",
+    "Slettet": 0,
+    "_id": "917"
+  }
+]

@@ -1,0 +1,26 @@
+{
+  "_id": "news-text-competency_research_text-endpoint",
+  "type": "pipe",
+  "source": {
+    "type": "dataset",
+    "dataset": "news-text-competency_research_text"
+  },
+  "sink": {
+    "type": "json",
+    "system": "competency_research",
+    "url": "/sink/min-side_news_eu"
+  },
+  "transform": {
+    "type": "dtl",
+    "rules": {
+      "default": [
+        ["copy", "*"],
+        ["comment", "added content_type in this pipe instead of prep pipe to avoid reprocessing of prep pipe, as endpoints are paused and we might want to continue from where we stopped."],
+        ["add", "content_type", "text/html"]
+      ]
+    }
+  },
+  "pump": {
+    "mode": "$ENV(pump-mode)"
+  }
+}

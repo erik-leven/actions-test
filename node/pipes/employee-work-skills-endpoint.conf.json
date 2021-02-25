@@ -1,0 +1,30 @@
+{
+  "_id": "employee-work-skills-endpoint",
+  "type": "pipe",
+  "source": {
+    "type": "dataset",
+    "dataset": "employee-work-skills"
+  },
+  "sink": {
+    "type": "sql",
+    "system": "currenttime",
+    "primary_key": "AnsattNr",
+    "table": "CustomExportCVpartnerKompetanse",
+    "use_bulk_operations": true
+  },
+  "transform": {
+    "type": "dtl",
+    "rules": {
+      "default": [
+        ["filter",
+          ["neq", "_S._deleted", true]
+        ],
+        ["copy", "*"]
+      ]
+    }
+  },
+  "pump": {
+    "cron_expression": "0 0 * * ?",
+    "mode": "$ENV(pump-mode)"
+  }
+}

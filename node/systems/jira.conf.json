@@ -1,0 +1,9 @@
+{
+  "_id": "jira",
+  "type": "system:postgresql",
+  "database": "$ENV(jira-database)",
+  "host": "$ENV(jira-host)",
+  "password": "$SECRET(jira-password)",
+  "port": "$ENV(jira-port)",
+  "username": "sesam_ro"
+}

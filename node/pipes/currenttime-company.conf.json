@@ -1,0 +1,173 @@
+{
+  "_id": "currenttime-company",
+  "type": "pipe",
+  "source": {
+    "type": "conditional",
+    "alternatives": {
+      "prod": {
+        "type": "sql",
+        "system": "currenttime",
+        "table": "company",
+        "updated_column": "updatedate"
+      },
+      "test": {
+        "type": "embedded",
+        "entities": [{
+          "_id": "0",
+          "active": true,
+          "addres2": "",
+          "christmas": 0,
+          "companyid": 0,
+          "companyname": "Her må du koble til riktig kunde",
+          "companyref": "Her må du koble til riktig kunde",
+          "companyrefimport": "Her må du koble til riktig kunde",
+          "employeecompany": 1,
+          "icon": "Øvrig",
+          "updateby": "Remi Øvstebø (1095)",
+          "updatedate": "~t2016-12-08T12:47:43Z"
+        }, {
+          "_id": "15",
+          "active": true,
+          "addres1": "Østre Akervei 90",
+          "addres2": "Postboks 1",
+          "christmas": 0,
+          "companyid": 15,
+          "companyname": "Siemens AS Oslo",
+          "companyref": "Siemens",
+          "companyrefimport": "Siemens",
+          "email": "",
+          "employeecompany": 0,
+          "fax": "22 63 38 05",
+          "icon": "",
+          "mobile": "",
+          "notetext": "",
+          "phone1": "22 63 30 00",
+          "phone2": "",
+          "postaddres": "OSLO",
+          "updateby": "Einar Christophersen:Win",
+          "updatedate": "~t2012-06-21T00:00:00Z",
+          "webpage": "",
+          "zipcode": "0613"
+        }, {
+          "_id": "68",
+          "active": true,
+          "addres1": "Forsvarets regnskapsadm.",
+          "addres2": "Oslo mil/Akershus",
+          "christmas": 0,
+          "companyid": 68,
+          "companyname": "Forsvarets Bygningstjeneste",
+          "companyref": "Forsvaret",
+          "companyrefimport": "Forsvaret",
+          "email": "",
+          "employeecompany": 0,
+          "fax": "",
+          "icon": "",
+          "mobile": "",
+          "notetext": "Kontoradresse:@Akershus Festning, Hovedporten@Gul bygning med to tårn i toppen, som det står FBT på@Bruk hovedinngangen, så kommer du inn i resepsjonen",
+          "phone1": "23093931",
+          "phone2": "",
+          "postaddres": "OSLO",
+          "updateby": "Marian Grav:Win",
+          "updatedate": "~t2004-02-18T00:00:00Z",
+          "webpage": "",
+          "zipcode": "0015"
+        }, {
+          "_id": "83",
+          "active": true,
+          "addres1": "Fellesbygget",
+          "addres2": "",
+          "christmas": 0,
+          "companyid": 83,
+          "companyname": "Planteforsk.",
+          "companyref": "",
+          "companyrefimport": "",
+          "email": "",
+          "employeecompany": 0,
+          "fax": "64 94 92 26",
+          "icon": "",
+          "mobile": "",
+          "notetext": "",
+          "phone1": "64 94 94 00",
+          "phone2": "",
+          "postaddres": "ÅS (LANDBRUKSHØGSKOLEN)",
+          "updateby": "Marian Grav:Win",
+          "updatedate": "~t2004-02-18T00:00:00Z",
+          "webpage": "",
+          "zipcode": "1432"
+        }, {
+          "_id": "87",
+          "active": true,
+          "addres1": "",
+          "addres2": "Postboks 6860, St.Olavs Plass",
+          "christmas": 0,
+          "companyid": 87,
+          "companyname": "AS Gyldendal Norsk Forlag",
+          "companyref": "Gyldendal",
+          "companyrefimport": "Gyldendal",
+          "email": "",
+          "employeecompany": 0,
+          "fax": "22 03 41 05",
+          "icon": "",
+          "mobile": "",
+          "notetext": "",
+          "phone1": "22 03 41 00",
+          "phone2": "",
+          "postaddres": "OSLO",
+          "updateby": "Marian Grav:Win",
+          "updatedate": "~t2004-02-18T00:00:00Z",
+          "webpage": "",
+          "zipcode": "0164"
+        }, {
+          "_id": "93",
+          ":active": true,
+          ":addres1": null,
+          ":addres2": null,
+          ":christmas": 0,
+          ":companyfree1": null,
+          ":companyfree2": null,
+          ":companyid": 50606,
+          ":companyname": "Statnett AS",
+          ":companyref": "Statnett AS",
+          ":companyrefimport": null,
+          ":createby": "Lisabeth Trones Gjerde (2287)",
+          ":createdate": "~t2014-11-06T09:15:24Z",
+          ":email": null,
+          ":employeecompany": 0,
+          ":employeecompany-ni": "~:currenttime-employee:0",
+          ":fax": null,
+          ":icon": null,
+          ":mobile": null,
+          ":notetext": null,
+          ":phone1": null,
+          ":phone2": null,
+          ":postaddres": null,
+          ":updateby": "Lisbeth Viker Sneve (891)",
+          ":updatedate": "~t2015-08-25T12:28:14Z",
+          ":webpage": null,
+          ":zipcode": null
+        }]
+      }
+    },
+    "condition": "$ENV(node-env)"
+  },
+  "transform": {
+    "type": "dtl",
+    "rules": {
+      "default": [
+        ["make-ni", "currenttime-employee", "employeecompany"],
+        ["add", "rdf:type",
+          ["ni", "bouvet:currenttime-company"]
+        ],
+        ["merge",
+          ["map-dict", "_.",
+            ["if",
+              ["eq", "_.", ""], null, "_."], "_S."]
+        ]
+      ]
+    }
+  },
+  "pump": {
+    "cron_expression": "$ENV(ct_cron_fast)",
+    "rescan_cron_expression": "$ENV(ct_rescan_cron)"
+  }
+}

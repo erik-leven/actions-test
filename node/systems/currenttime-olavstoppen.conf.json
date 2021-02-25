@@ -1,0 +1,16 @@
+{
+  "_id": "currenttime-olavstoppen",
+  "type": "system:mssql",
+  "name": "currenttime-olavstoppen",
+  "charset": "utf8",
+  "database": "ct_olavstoppen",
+  "host": "$ENV(current-olavstoppen-host)",
+  "password": "$SECRET(ct-ot-password)",
+  "pool_max_overflow": 10,
+  "pool_recycle": 1800,
+  "pool_size": 10,
+  "pool_timeout": 30,
+  "port": 1433,
+  "timezone": "UTC",
+  "username": "$SECRET(ct-user)"
+}

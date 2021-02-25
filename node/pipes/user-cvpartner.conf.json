@@ -1,0 +1,215 @@
+{
+  "_id": "user-cvpartner",
+  "type": "pipe",
+  "source": {
+    "type": "dataset",
+    "dataset": "global-person"
+  },
+  "transform": {
+    "type": "dtl",
+    "rules": {
+      "default": [
+        ["filter",
+          ["in", "~:bouvet:catalystone-user", "_S.rdf:type"]
+        ],
+        ["filter",
+          ["in", "_S.global-person:employee_status",
+            ["list", "Employee", "TempEmployee", "SoonEmployee", "TempSoonEmployee", "Quit"]
+          ]
+        ],
+        ["comment", "Fetch values for later use. Either from an active cvpartner user, or if not found in global-person, check for a deactivated cvpartner user and get the values from there."],
+        ["if",
+          ["in", "~:cvpartner:User", "_S.rdf:type"],
+          ["copy",
+            ["list", "cvpartner-user:id", "cvpartner-user:deactivated", "cvpartner-user:upn", "cvpartner-user:external_unique_id", "cvpartner-user:role"]
+          ],
+          ["merge",
+            ["apply-hops", "deactivated-cvs", {
+              "datasets": ["global-person gp"],
+              "where": [
+                ["or",
+                  ["eq",
+                    ["tuples",
+                      ["lower", "gp.cvpartner-user:email"], "gp.deactivated"],
+                    ["tuples",
+                      ["lower", "_S.global-person:Email"], true]
+                  ],
+                  ["eq",
+                    ["tuples", "gp.cvpartner-user:external_unique_id", "gp.deactivated"],
+                    ["tuples", "_S.catalystone-user:UNIQUE_IMPORT_ID.value", true]
+                  ]
+                ]
+              ]
+            }]
+          ]
+        ],
+        ["comment", "Deactivate a CVPartner user if person is no longer employed"],
+        ["if",
+          ["and",
+            ["eq", "_S.global-person:employee_status", "Quit"],
+            ["eq", "_T.cvpartner-user:deactivated", false]
+          ],
+          [
+            ["add", "operation", "put"],
+            ["add", "id", "_T.cvpartner-user:id"],
+            ["add", "payload",
+              ["dict", "user",
+                ["dict", "deactivated", true]
+              ]
+            ]
+          ],
+          [
+            ["comment", "Reactvate a CVPartner user if it is deactivated and the person is still employed"],
+            ["if",
+              ["and",
+                ["neq", "_S.global-person:employee_status", "Quit"],
+                ["eq", "_T.cvpartner-user:deactivated", true]
+              ],
+              [
+                ["add", "operation", "put"],
+                ["add", "id", "_T.cvpartner-user:id"],
+                ["add", "payload",
+                  ["dict", "user",
+                    ["dict", "deactivated", false]
+                  ]
+                ]
+              ],
+              [
+                ["comment", "Now we move on to updating or creating users with user info"],
+                ["if",
+                  ["and",
+                    ["neq", "_S.global-person:employee_status", "Quit"],
+                    ["in", "~:cvpartner:User", "_S.rdf:type"]
+                  ],
+                  [
+                    ["comment", "Update an existing user"],
+                    ["comment", "First we check if a new role needs to be set"],
+                    ["if",
+                      ["or",
+                        ["is-empty", "_T.cvpartner-user:role"],
+                        ["and",
+                          ["in",
+                            ["lower", "_T.cvpartner-user:role"],
+                            ["list", "external", "limited_access"]
+                          ],
+                          ["in", "_S.global-person:employee_status",
+                            ["list", "Employee", "TempEmployee"]
+                          ]
+                        ]
+                      ],
+                      ["case-eq", "_S.global-person:employee_status", "SoonEmployee",
+                        ["add", "set_role", "external"], "TempSoonEmployee",
+                        ["add", "set_role", "external"], "Employee",
+                        ["add", "set_role", "consultant"], "TempEmployee",
+                        ["add", "set_role", "consultant"]
+                      ]
+                    ],
+                    ["merge",
+                      ["apply-hops", "get-region", {
+                        "datasets": ["global-classification gc"],
+                        "where": ["eq", "_S.global-person:Region",
+                          ["last",
+                            ["split", "Region ", "gc.cvpartner-country:name"]
+                          ]
+                        ]
+                      }]
+                    ],
+                    ["merge",
+                      ["apply-hops", "get-department", {
+                        "datasets": ["global-department gd"],
+                        "where": ["eq", "_S.catalystone-user:ORGANIZATION.@UNIQUE_IMPORT_ID", "gd.cvpartner-custom-tag-category:external_unique_id"]
+                      }]
+                    ],
+                    ["add", "operation", "put"],
+                    ["add", "id", "_T.cvpartner-user:id"],
+                    ["if", "_T.set_role",
+                      ["add", "payload",
+                        ["dict", "user",
+                          ["dict", "name", "_S.global-person:DisplayName", "upn",
+                            ["lower", "_S.global-person:upn"], "external_unique_id", "_S.catalystone-user:UNIQUE_IMPORT_ID.value", "email",
+                            ["lower", "_S.global-person:Email"], "telephone", "_S.global-person:Mobile", "office_id", "_T.office_id", "country_id", "_T.country_id", "ensure_unique_custom_tag_ids_by_category",
+                            ["dict", "_T.department_category_id", "_T.department_id"], "role", "_T.set_role"]
+                        ]
+                      ],
+                      ["add", "payload",
+                        ["dict", "user",
+                          ["dict", "name", "_S.global-person:DisplayName", "upn",
+                            ["lower", "_S.global-person:upn"], "external_unique_id", "_S.catalystone-user:UNIQUE_IMPORT_ID.value", "email",
+                            ["lower", "_S.global-person:Email"], "telephone", "_S.global-person:Mobile", "office_id", "_T.office_id", "country_id", "_T.country_id", "ensure_unique_custom_tag_ids_by_category",
+                            ["dict", "_T.department_category_id", "_T.department_id"]
+                          ]
+                        ]
+                      ]
+                    ]
+                  ],
+                  [
+                    ["comment", "Create a new user if the employee does not exist in CVPartner"],
+                    ["filter",
+                      ["eq",
+                        ["in", "~:cvpartner:User", "rdf:type"], false]
+                    ],
+                    ["filter",
+                      ["neq", "_S.global-person:employee_status", "Quit"]
+                    ],
+                    ["add", "operation", "post"],
+                    ["case-eq", "_S.global-person:employee_status", "SoonEmployee",
+                      ["add", "set_role", "external"], "TempSoonEmployee",
+                      ["add", "set_role", "external"], "Employee",
+                      ["add", "set_role", "consultant"], "TempEmployee",
+                      ["add", "set_role", "consultant"]
+                    ],
+                    ["merge",
+                      ["apply-hops", "get-region", {
+                        "datasets": ["global-classification gc"],
+                        "where": ["eq", "_S.global-person:Region",
+                          ["last",
+                            ["split", "Region ", "gc.cvpartner-country:name"]
+                          ]
+                        ]
+                      }]
+                    ],
+                    ["merge",
+                      ["apply-hops", "get-department", {
+                        "datasets": ["global-department gd"],
+                        "where": ["eq", "_S.catalystone-user:ORGANIZATION.@UNIQUE_IMPORT_ID", "gd.cvpartner-custom-tag-category:external_unique_id"]
+                      }]
+                    ],
+                    ["add", "payload",
+                      ["dict", "user",
+                        ["dict", "name", "_S.global-person:DisplayName", "upn",
+                          ["lower", "_S.global-person:upn"], "external_unique_id", "_S.catalystone-user:UNIQUE_IMPORT_ID.value", "email",
+                          ["lower", "_S.global-person:Email"], "telephone", "_S.global-person:Mobile", "role", "_T.set_role", "office_id", "_T.office_id", "country_id", "_T.country_id", "ensure_unique_custom_tag_ids_by_category",
+                          ["dict", "_T.department_category_id", "_T.department_id"]
+                        ]
+                      ]
+                    ]
+                  ]
+                ]
+              ]
+            ]
+          ]
+        ],
+        ["remove",
+          ["list", "set_role", "office_id", "country_id", "department_id", "department_category_id", "cvpartner-user:*", "cvpartner-userskills:*", "global-person:upn"]
+        ]
+      ],
+      "deactivated-cvs": [
+        ["copy",
+          ["list", "id", "deactivated", "upn", "external_unique_id", "role"]
+        ]
+      ],
+      "get-department": [
+        ["add", "department_id", "_S.cvpartner-custom-tag-category:id"],
+        ["add", "department_category_id", "_S.cvpartner-custom-tag-category:custom_tag_category_id"]
+      ],
+      "get-region": [
+        ["add", "office_id",
+          ["ni-id",
+            ["ni", "_S._id"]
+          ]
+        ],
+        ["add", "country_id", "_S.country_id"]
+      ]
+    }
+  }
+}

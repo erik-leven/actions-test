@@ -1,0 +1,272 @@
+[
+  {
+    "DepartmentName": "Bouvet ASA",
+    "_id": "1",
+    "employees": [
+      {
+        "id": null,
+        "name": "Severus Snape"
+      },
+      {
+        "id": null,
+        "name": "Gjett Mail"
+      },
+      {
+        "id": null,
+        "name": "Jeg Etternavn"
+      },
+      {
+        "id": null,
+        "name": "Meg Finnepå"
+      },
+      {
+        "id": null,
+        "name": "Min Nabo"
+      },
+      {
+        "id": null,
+        "name": "Alfie Collin"
+      },
+      {
+        "id": null,
+        "name": "Lite Ambisjon"
+      },
+      {
+        "id": null,
+        "name": "bruker brukersen"
+      },
+      {
+        "id": null,
+        "name": "User Userson"
+      },
+      {
+        "id": null,
+        "name": "Ehm Noe"
+      },
+      {
+        "id": null,
+        "name": "Harry Potter"
+      },
+      {
+        "id": null,
+        "name": "Fornavn Testetternavn"
+      },
+      {
+        "id": null,
+        "name": "Test Testsson"
+      }
+    ],
+    "id": null
+  },
+  {
+    "DepartmentName": "Bouvet Norge AS",
+    "_id": "2",
+    "employees": [
+      {
+        "id": null,
+        "name": "Gjett Mail"
+      },
+      {
+        "id": null,
+        "name": "Jeg Etternavn"
+      },
+      {
+        "id": null,
+        "name": "Meg Finnepå"
+      },
+      {
+        "id": null,
+        "name": "Min Nabo"
+      },
+      {
+        "id": null,
+        "name": "Alfie Collin"
+      },
+      {
+        "id": null,
+        "name": "Lite Ambisjon"
+      },
+      {
+        "id": null,
+        "name": "bruker brukersen"
+      },
+      {
+        "id": null,
+        "name": "User Userson"
+      },
+      {
+        "id": null,
+        "name": "Ehm Noe"
+      },
+      {
+        "id": null,
+        "name": "Harry Potter"
+      },
+      {
+        "id": null,
+        "name": "Fornavn Testetternavn"
+      },
+      {
+        "id": null,
+        "name": "Test Testsson"
+      }
+    ],
+    "id": null
+  },
+  {
+    "DepartmentName": "Region Øst",
+    "_id": "299",
+    "employees": [
+      {
+        "id": null,
+        "name": "Lite Ambisjon"
+      },
+      {
+        "id": null,
+        "name": "bruker brukersen"
+      },
+      {
+        "id": null,
+        "name": "User Userson"
+      },
+      {
+        "id": null,
+        "name": "Ehm Noe"
+      },
+      {
+        "id": null,
+        "name": "Test Testsson"
+      }
+    ],
+    "id": null
+  },
+  {
+    "DepartmentName": "Øst Kundeopplevelser",
+    "_id": "303",
+    "employees": [
+      {
+        "id": null,
+        "name": "Lite Ambisjon"
+      },
+      {
+        "id": null,
+        "name": "bruker brukersen"
+      },
+      {
+        "id": null,
+        "name": "User Userson"
+      }
+    ],
+    "id": "S61F2QGNP"
+  },
+  {
+    "DepartmentName": "Rogaland Enheter",
+    "_id": "779",
+    "employees": [
+      {
+        "id": null,
+        "name": "Harry Potter"
+      },
+      {
+        "id": null,
+        "name": "Fornavn Testetternavn"
+      }
+    ],
+    "id": null
+  },
+  {
+    "DepartmentName": "Region Rogaland",
+    "_id": "799",
+    "employees": [
+      {
+        "id": null,
+        "name": "Harry Potter"
+      },
+      {
+        "id": null,
+        "name": "Fornavn Testetternavn"
+      }
+    ],
+    "id": null
+  },
+  {
+    "DepartmentName": "Trondheim Tech 1",
+    "_id": "801",
+    "employees": [
+      {
+        "id": null,
+        "name": "Jeg Etternavn"
+      },
+      {
+        "id": null,
+        "name": "Meg Finnepå"
+      }
+    ],
+    "id": "S6FQEJ9SR"
+  },
+  {
+    "DepartmentName": "Trondheim Rådgivning\u0026Prosjektledelse",
+    "_id": "805",
+    "employees": [
+      {
+        "id": null,
+        "name": "Min Nabo"
+      },
+      {
+        "id": null,
+        "name": "Alfie Collin"
+      }
+    ],
+    "id": null
+  },
+  {
+    "DepartmentName": "Region Nord",
+    "_id": "809",
+    "employees": [
+      {
+        "id": null,
+        "name": "Jeg Etternavn"
+      },
+      {
+        "id": null,
+        "name": "Meg Finnepå"
+      },
+      {
+        "id": null,
+        "name": "Min Nabo"
+      },
+      {
+        "id": null,
+        "name": "Alfie Collin"
+      }
+    ],
+    "id": null
+  },
+  {
+    "DepartmentName": "Salg og Ledelse",
+    "_id": "S015J2E7UGH",
+    "employees": [
+      {
+        "id": null,
+        "name": "User Userson"
+      },
+      {
+        "id": null,
+        "name": "Gjett Mail"
+      },
+      {
+        "id": null,
+        "name": "Lite Ambisjon"
+      },
+      {
+        "id": null,
+        "name": "Harry Potter"
+      },
+      {
+        "id": null,
+        "name": "Severus Snape"
+      }
+    ],
+    "id": "S015J2E7UGH"
+  }
+]

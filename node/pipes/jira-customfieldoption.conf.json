@@ -1,0 +1,103 @@
+{
+  "_id": "jira-customfieldoption",
+  "type": "pipe",
+  "source": {
+    "type": "conditional",
+    "alternatives": {
+      "prod": {
+        "type": "sql",
+        "system": "jira",
+        "preserve_null_values": false,
+        "table": "customfieldoption"
+      },
+      "test": {
+        "type": "embedded",
+        "entities": [{
+          "_id": "14396",
+          "customfield": "~f12812",
+          "customfieldconfig": "~f15473",
+          "customvalue": "Power Company",
+          "disabled": "N",
+          "id": "~f14396",
+          "sequence": "~f19"
+        }, {
+          "_id": "14692",
+          "customfield": "~f13918",
+          "customfieldconfig": "~f28372",
+          "customvalue": "2",
+          "disabled": "N",
+          "id": "~f14692",
+          "sequence": "~f1"
+        }, {
+          "_id": "14394",
+          "customfield": "~f12812",
+          "customfieldconfig": "~f15473",
+          "customvalue": "Consult it",
+          "disabled": "N",
+          "id": "~f14394",
+          "sequence": "~f18"
+        }, {
+          "_id": "14693",
+          "customfield": "~f13918",
+          "customfieldconfig": "~f28372",
+          "customvalue": "3",
+          "disabled": "N",
+          "id": "~f14693",
+          "sequence": "~f2"
+        }, {
+          "_id": "12298",
+          "customfield": "~f12812",
+          "customfieldconfig": "~f15473",
+          "customvalue": "Management AS",
+          "disabled": "N",
+          "id": "~f12298",
+          "sequence": "~f23"
+        }, {
+          "_id": "12290",
+          "customfield": "~f12812",
+          "customfieldconfig": "~f15473",
+          "customvalue": "DIFI",
+          "disabled": "N",
+          "id": "~f12290",
+          "sequence": "~f6"
+        }, {
+          "_id": "12292",
+          "customfield": "~f12812",
+          "customfieldconfig": "~f15473",
+          "customvalue": "Trykkeriet",
+          "disabled": "N",
+          "id": "~f12292",
+          "sequence": "~f5"
+        }, {
+          "_id": "14604",
+          "customfield": "~f14216",
+          "customfieldconfig": "~f28276",
+          "customvalue": "New functionality",
+          "disabled": "N",
+          "id": "~f14604",
+          "sequence": "~f3"
+        }, {
+          "_id": "14599",
+          "customfield": "~f14215",
+          "customfieldconfig": "~f28275",
+          "customvalue": "Medium",
+          "disabled": "N",
+          "id": "~f14599",
+          "sequence": "~f2"
+        }, {
+          "_id": "14609",
+          "customfield": "~f14217",
+          "customfieldconfig": "~f28277",
+          "customvalue": "Low",
+          "disabled": "N",
+          "id": "~f14609",
+          "sequence": "~f3"
+        }]
+      }
+    },
+    "condition": "$ENV(node-env)"
+  },
+  "pump": {
+    "cron_expression": "$ENV(jira_cron_slow)"
+  }
+}

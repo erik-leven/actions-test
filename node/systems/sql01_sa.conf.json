@@ -1,0 +1,15 @@
+{
+  "_id": "sql01_sa",
+  "type": "system:mssql",
+  "charset": "utf8",
+  "database": "archive_sensitive",
+  "host": "sql01.bouvet.no",
+  "password": "$SECRET(sql01-password)",
+  "pool_max_overflow": 10,
+  "pool_recycle": 1800,
+  "pool_size": 10,
+  "pool_timeout": 30,
+  "port": 1433,
+  "timezone": "UTC",
+  "username": "$ENV(sql01-user)"
+}

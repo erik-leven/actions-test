@@ -1,0 +1,108 @@
+{
+  "_id": "currenttime-timeheader",
+  "type": "pipe",
+  "source": {
+    "type": "conditional",
+    "alternatives": {
+      "prod": {
+        "type": "sql",
+        "system": "currenttime",
+        "table": "timeheader"
+      },
+      "test": {
+        "type": "embedded",
+        "entities": [{
+          "_id": "9",
+          "actcatid": 4,
+          "activitytypeid": 1,
+          "companyid": 0,
+          "costdepartmentid": 167,
+          "departmentid": 167,
+          "employeeid": 1459,
+          "jobcodeid": 0,
+          "salaryid": 0,
+          "shiftcodeid": 0,
+          "subtaskid": 1,
+          "timeheaderid": 9
+        }, {
+          "_id": "38",
+          "actcatid": 2,
+          "activitytypeid": 6,
+          "companyid": 0,
+          "costdepartmentid": 83,
+          "departmentid": 83,
+          "employeeid": 945,
+          "jobcodeid": 0,
+          "salaryid": 0,
+          "shiftcodeid": 0,
+          "subtaskid": 1,
+          "timeheaderid": 38
+        }, {
+          "_id": "75",
+          "actcatid": 5,
+          "activitytypeid": 1,
+          "companyid": 0,
+          "costdepartmentid": 145,
+          "departmentid": 145,
+          "employeeid": 78,
+          "jobcodeid": 0,
+          "salaryid": 0,
+          "shiftcodeid": 0,
+          "subtaskid": 1,
+          "timeheaderid": 75
+        }, {
+          "_id": "727",
+          "actcatid": 4,
+          "activitytypeid": 1,
+          "companyid": 0,
+          "costdepartmentid": 156,
+          "departmentid": 156,
+          "employeeid": 2094,
+          "jobcodeid": 0,
+          "salaryid": 0,
+          "shiftcodeid": 0,
+          "subtaskid": 1,
+          "timeheaderid": 727
+        }, {
+          "_id": "802",
+          "actcatid": 4,
+          "activitytypeid": 3,
+          "companyid": 0,
+          "costdepartmentid": 171,
+          "departmentid": 171,
+          "employeeid": 1785,
+          "jobcodeid": 0,
+          "salaryid": 0,
+          "shiftcodeid": 0,
+          "subtaskid": 1,
+          "timeheaderid": 802
+        }]
+      }
+    },
+    "condition": "$ENV(node-env)"
+  },
+  "transform": {
+    "type": "dtl",
+    "rules": {
+      "default": [
+        ["copy", "*"],
+        ["make-ni", "currenttime-actcat", "actcatid"],
+        ["make-ni", "currenttime-activitytype", "activitytypeid"],
+        ["make-ni", "currenttime-company", "companyid"],
+        ["make-ni", "currenttime-costdepartment", "costdepartmentid"],
+        ["make-ni", "currenttime-department", "departmentid"],
+        ["make-ni", "currenttime-employee", "employeeid"],
+        ["make-ni", "currenttime-jobcode", "jobcodeid"],
+        ["make-ni", "currenttime-salary", "salaryid"],
+        ["make-ni", "currenttime-shiftcode", "shiftcodeid"],
+        ["make-ni", "currenttime-subtask", "subtaskid"],
+        ["add", "rdf:type",
+          ["ni", "bouvet:currenttime-timeheader"]
+        ]
+      ]
+    }
+  },
+  "pump": {
+    "mode": "manual"
+  }
+}

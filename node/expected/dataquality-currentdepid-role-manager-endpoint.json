@@ -1,0 +1,475 @@
+[
+  {
+    "$ids": [
+      "~:0003",
+      "~:3457",
+      "~:3187",
+      "~:U4N5W5JP6",
+      "~:5d4d3353edfc711013b837ef",
+      "~:a332a54d-f0fd-4792-93fc-7f9a19530716",
+      "~:5d4d3353edfc711013b837ef",
+      "~:0003"
+    ],
+    "AnsattNr": "0003",
+    "Ansattkategori": "",
+    "AnsattkategoriID": 7,
+    "Company": "Bouvet Norge AS",
+    "Email": "sven.svensson@bouvet.no",
+    "FirstName": "Sven",
+    "LastName": "Svensson",
+    "Mobile": "+47 33333333",
+    "Name": "Sven Svensson",
+    "Pursuant": [
+      "~:bouvet-employee"
+    ],
+    "Stillingsprosent": 100,
+    "_id": "0003",
+    "accountEnabled": true,
+    "accountExpires": [
+      "9223372036854775807"
+    ],
+    "actcatid": 4,
+    "active": true,
+    "allocatedprojects": true,
+    "assignedPlans": [
+      {
+        "assignedDateTime": "2017-10-19T14:58:33Z",
+        "capabilityStatus": "Enabled",
+        "service": "SharePoint",
+        "servicePlanId": "5dbe027f-2339-4123-9542-606e4d348a72"
+      },
+      {
+        "assignedDateTime": "2017-10-19T14:58:33Z",
+        "capabilityStatus": "Enabled",
+        "service": "SharePoint",
+        "servicePlanId": "e95bec33-7c88-4a70-8e19-b10bd9d0c014"
+      },
+      {
+        "assignedDateTime": "2017-06-05T14:16:03Z",
+        "capabilityStatus": "Enabled",
+        "service": "exchange",
+        "servicePlanId": "efb87545-963c-4e0d-99df-69c6916d9eb0"
+      },
+      {
+        "assignedDateTime": "2017-06-05T14:16:03Z",
+        "capabilityStatus": "Enabled",
+        "service": "MicrosoftCommunicationsOnline",
+        "servicePlanId": "0feaeb32-d00e-4d66-bd5a-43b5b83db82c"
+      },
+      {
+        "assignedDateTime": "2017-06-05T14:16:03Z",
+        "capabilityStatus": "Enabled",
+        "service": "MicrosoftOffice",
+        "servicePlanId": "43de0ff5-c92c-492b-9116-175376d08c38"
+      },
+      {
+        "assignedDateTime": "2017-06-05T14:16:03Z",
+        "capabilityStatus": "Enabled",
+        "service": "MicrosoftCommunicationsOnline",
+        "servicePlanId": "27216c54-caf8-4d0d-97e2-517afb5c08f6"
+      },
+      {
+        "assignedDateTime": "2017-06-05T14:16:03Z",
+        "capabilityStatus": "Enabled",
+        "service": "RMSOnline",
+        "servicePlanId": "bea4c11e-220a-4e6d-8eb8-8ea15d019f90"
+      },
+      {
+        "assignedDateTime": "2017-06-05T14:16:03Z",
+        "capabilityStatus": "Enabled",
+        "service": "YammerEnterprise",
+        "servicePlanId": "7547a3fe-08ee-4ccb-b430-5077c5041653"
+      },
+      {
+        "assignedDateTime": "2017-06-05T14:16:03Z",
+        "capabilityStatus": "Enabled",
+        "service": "ProjectWorkManagement",
+        "servicePlanId": "b737dad2-2f6c-4c65-90e3-ca563267e8b9"
+      },
+      {
+        "assignedDateTime": "2017-06-05T14:16:03Z",
+        "capabilityStatus": "Enabled",
+        "service": "TeamspaceAPI",
+        "servicePlanId": "57ff2da0-773e-42df-b2af-ffb7a2317929"
+      },
+      {
+        "assignedDateTime": "2017-06-05T14:16:03Z",
+        "capabilityStatus": "Enabled",
+        "service": "PowerAppsService",
+        "servicePlanId": "c68f8d98-5534-41c8-bf36-22fa496fa792"
+      },
+      {
+        "assignedDateTime": "2017-06-05T14:16:03Z",
+        "capabilityStatus": "Enabled",
+        "service": "MicrosoftStream",
+        "servicePlanId": "9e700747-8b1d-45e5-ab8d-ef187ceec156"
+      }
+    ],
+    "badPasswordTime": [
+      "131544281728731386"
+    ],
+    "badPwdCount": [
+      "0"
+    ],
+    "businessCategory": [
+      "Ansatt i Bouvet ASA"
+    ],
+    "businessPhones": [
+      "51200020"
+    ],
+    "c": [
+      "NO"
+    ],
+    "calendarconfigid": 0,
+    "city": "Stavanger",
+    "cn": [
+      "Sven Svensson"
+    ],
+    "co": [
+      "Norge"
+    ],
+    "codePage": [
+      "0"
+    ],
+    "color": "5b89d5",
+    "company": [
+      "Bouvet Norge AS"
+    ],
+    "companyName": "Bouvet Norge AS",
+    "company_id": "586cee3f2c04d6551431490b",
+    "company_name": "bouvettest",
+    "company_subdomains": [
+      "bouvettest"
+    ],
+    "companyid": 49722,
+    "costdepartmentid": 0,
+    "countryCode": [
+      "0"
+    ],
+    "country_code": "no",
+    "country_id": "586cee3f2c04d65514314910",
+    "createby": "Big Boss2 (3241)",
+    "createdate": "~t2018-02-05T14:25:12.303Z",
+    "csaref": "0003",
+    "custom_tags": [
+      "57dfc30369702d2ae00003ee",
+      "57e26db669702d096f0002d0",
+      "58c8059cd7705a0894e5d577",
+      "5809d296a56d6f6098ae1b0f"
+    ],
+    "customers": [
+      "5825b3052c04d6206f27ef9a",
+      "5825b3112c04d6206f27f160",
+      "58a6b64feb143208e72c0ff5"
+    ],
+    "cv_id": "13",
+    "dSCorePropagationData": [
+      "20171016121308.0Z",
+      "16010101000001.0Z"
+    ],
+    "dateOfBirth": "23.09.1991",
+    "deactivated": false,
+    "deactivated_at": false,
+    "default_cv_id": "5d4d3353edfc711013b837f0",
+    "default_cv_template_id": "586cf26659786049a3029751",
+    "deleted": false,
+    "department": "Rogaland Administrasjon",
+    "departmentNumber": [
+      "732"
+    ],
+    "departmentid": 16,
+    "departmentid-ni": "~:16",
+    "displayName": "Sven Svensson",
+    "distinguishedName": [
+      "CN=Sven Svensson,OU=Alle Sesam,OU=Ansatte,OU=Brukere,OU=Bouvet,DC=bouvet,DC=no"
+    ],
+    "email": "sven.svensson@bouvet.no",
+    "email1": "sven.svensson@bouvet.no",
+    "employeddate": "~t2018-01-02T00:00:00Z",
+    "employeeHireDate": "01.11.2017",
+    "employeeNumber": [
+      "0003"
+    ],
+    "employeecategoryid": 6,
+    "employeedetailid": 3187,
+    "employeeid": 3457,
+    "employeeid-ni": "~:3457",
+    "employeeref": "0003",
+    "employeerefimport": "2174",
+    "expand_proposals_toggle": true,
+    "extensionAttribute10": [
+      "Employee"
+    ],
+    "extensionAttribute11": [
+      "Alle Sesam"
+    ],
+    "extensionAttribute12": [
+      "Bouvet Norge AS"
+    ],
+    "extensionAttribute13": [
+      "NO"
+    ],
+    "extensionAttribute14": [
+      "|Alle Sesam|"
+    ],
+    "extensionAttribute15": [
+      "employeeID=0003;departmentID=583;managerID=510;regionID=8;regionName=Sesam;regionDomain=sesam.io;regionManagerID=445;subdepID=1;subdepID=2;subdepID=503;"
+    ],
+    "extensionAttribute2": [
+      "8"
+    ],
+    "extensionAttribute3": [
+      "employeeHireDate=01.11.2017;dateOfBirth=23.09.1991;gender=Mann;"
+    ],
+    "extensionAttribute9": [
+      "RoleEmployee;RoleManager"
+    ],
+    "external_unique_id": "sven.svensson@bouvet.no",
+    "firstname": "Sven ",
+    "gender": "Mann",
+    "givenName": "Svensson Sven",
+    "globalid": "~u6f0406ab-ab56-4a0a-80e7-334db474e128",
+    "has_2fa": false,
+    "id": "U4N5W5JP6",
+    "id-ni": "~:5d4d3353edfc711013b837ef",
+    "imAddresses": [
+      "sven.svensson@bouvet.no"
+    ],
+    "include_officeless_reference_projects": true,
+    "industries": [
+      "57d7a79469702d3c6a00026b",
+      "56fe24eb69702d0f92000234",
+      "57d7a80969702d3c84000a0b"
+    ],
+    "initials": "Sven Svensson",
+    "instanceType": [
+      "4"
+    ],
+    "international_toggle": "expand",
+    "is_admin": false,
+    "is_app_user": false,
+    "is_bot": false,
+    "is_owner": false,
+    "is_primary_owner": false,
+    "is_restricted": false,
+    "is_ultra_restricted": false,
+    "jobTitle": "resepsjonist",
+    "jobcodeid": 0,
+    "l": [
+      "Oslo"
+    ],
+    "language_code": "no",
+    "language_codes": [
+      "no",
+      "int"
+    ],
+    "lastLogoff": [
+      "0"
+    ],
+    "lastLogon": [
+      "131552581327892936"
+    ],
+    "lastLogonTimestamp": [
+      "131548824963248030"
+    ],
+    "lastname": "Svensson",
+    "legacyExchangeDN": [
+      "/o=Bouvet AS/ou=Exchange Administrative Group (FYDIBOHF23SPDLT)/cn=Recipients/cn=userb3ce4863"
+    ],
+    "logonCount": [
+      "52"
+    ],
+    "mail": "sven.svensson@bouvet.no",
+    "mailNickname": "sven.svensson",
+    "manager": [
+      "CN=Jim Jimmy,OU=Alle Sesam,OU=Ansatte,OU=Brukere,OU=Bouvet,DC=bouvet,DC=no"
+    ],
+    "manager-ni": "~:CN=Jim Jimmy,OU=Alle Sesam,OU=Ansatte,OU=Brukere,OU=Bouvet,DC=bouvet,DC=no",
+    "masterdata_languages": [
+      "no",
+      "int"
+    ],
+    "memberOf": [
+      "CN=Jira-Sesam-Konsulent,OU=Jira,OU=System,OU=Grupper,OU=Bouvet,DC=bouvet,DC=no",
+      "CN=Jira-Sesam,OU=Jira,OU=System,OU=Grupper,OU=Bouvet,DC=bouvet,DC=no",
+      "CN=Jira-Licensees,OU=Jira,OU=System,OU=Grupper,OU=Bouvet,DC=bouvet,DC=no",
+      "CN=Jira-SD-Agents,OU=Jira,OU=System,OU=Grupper,OU=Bouvet,DC=bouvet,DC=no",
+      "CN=Jira-BSD-Customers,OU=Jira,OU=System,OU=Grupper,OU=Bouvet,DC=bouvet,DC=no",
+      "CN=Alle Sesam,OU=Organisasjon,OU=Grupper,OU=Bouvet,DC=bouvet,DC=no",
+      "CN=EmployeeAndTempSoonEarlyAll,OU=Auto,OU=Grupper,OU=Bouvet,DC=bouvet,DC=no"
+    ],
+    "merged-emails": [
+      "sven.svensson@bouvet.no",
+      "x500:/o=exchangelabs/ou=exchange administrative group (fydibohf23spdlt)/cn=recipients/cn=5f612cc7785d4d31955e490c92ede1ac-user",
+      "esven.svensson@bouvetasa.onmicrosoft.com",
+      "sven.svensson@bouvet.mail.onmicrosoft.com"
+    ],
+    "mobile": [
+      "+47 33333333"
+    ],
+    "mobilePhone": "90897625",
+    "msExchPoliciesIncluded": [
+      "45c209af-386e-44ff-8eac-fc8106012106",
+      "{26491cfc-9e50-4857-861b-0cb8df22b5d7}"
+    ],
+    "msExchRecipientDisplayType": [
+      "-2147483642"
+    ],
+    "msExchRecipientTypeDetails": [
+      "2147483648"
+    ],
+    "msExchRemoteRecipientType": [
+      "1"
+    ],
+    "msExchUMDtmfMap": [
+      "reversedPhone:2379046474+",
+      "emailAddress:377366565863",
+      "lastNameFirstName:656586337736",
+      "firstNameLastName:377366565863"
+    ],
+    "msExchVersion": [
+      "88218628259840"
+    ],
+    "msRTCSIP-PrimaryUserAddress": [
+      "sip:sven.svensson@bouvet.no"
+    ],
+    "name": "sven.svensson",
+    "objectCategory": [
+      "CN=Person,CN=Schema,CN=Configuration,DC=bouvet,DC=no"
+    ],
+    "objectClass": [
+      "top",
+      "person",
+      "organizationalPerson",
+      "user"
+    ],
+    "objectGUID": [
+      "yñ´\u0017§¹GF.öª\u0004fF"
+    ],
+    "objectSid": [
+      "\u0001\u0005"
+    ],
+    "officeLocation": "Stavanger",
+    "office_id": "5d4be141b3a1750e59111ff3",
+    "office_name": "Sesam",
+    "onPremisesDomainName": "bouvet.no",
+    "onPremisesImmutableId": "AbRCH88w3k2k0fByE6YjSA==",
+    "onPremisesLastSyncDateTime": "2017-08-09T11:11:25Z",
+    "onPremisesSamAccountName": "sven.svensson",
+    "onPremisesSecurityIdentifier": "S-1-5-21-1202660629-706699826-1177238915-12751",
+    "onPremisesSyncEnabled": true,
+    "onPremisesUserPrincipalName": "sven.svensson@bouvet.no",
+    "passwordPolicies": "DisablePasswordExpiration",
+    "physicalDeliveryOfficeName": [
+      "Oslo"
+    ],
+    "postalCode": "-",
+    "preferred_download_format": "pdf-from-word",
+    "primaryGroupID": [
+      "513"
+    ],
+    "profile": {
+      "avatar_hash": "4ecd3654e1ff",
+      "display_name": "",
+      "display_name_normalized": "",
+      "email": "sven.svensson@bouvet.no",
+      "first_name": "Sven",
+      "image_1024": "https://avatars.slack-edge.com/2017-11-24/277983919142_4ecd3654e1ff460bcbe5_1024.png",
+      "image_192": "https://avatars.slack-edge.com/2017-11-24/277983919142_4ecd3654e1ff460bcbe5_192.png",
+      "image_24": "https://avatars.slack-edge.com/2017-11-24/277983919142_4ecd3654e1ff460bcbe5_24.png",
+      "image_32": "https://avatars.slack-edge.com/2017-11-24/277983919142_4ecd3654e1ff460bcbe5_32.png",
+      "image_48": "https://avatars.slack-edge.com/2017-11-24/277983919142_4ecd3654e1ff460bcbe5_48.png",
+      "image_512": "https://avatars.slack-edge.com/2017-11-24/277983919142_4ecd3654e1ff460bcbe5_512.png",
+      "image_72": "https://avatars.slack-edge.com/2017-11-24/277983919142_4ecd3654e1ff460bcbe5_72.png",
+      "image_original": "https://avatars.slack-edge.com/2017-11-24/277983919142_4ecd3654e1ff460bcbe5_original.png",
+      "last_name": "Svensson",
+      "phone": " 47 33333333",
+      "real_name": "Sven Svensson",
+      "real_name_normalized": "Sven Svensson",
+      "team": "T024XURJ2"
+    },
+    "proxyAddresses": [
+      "X500:/o=Bouvet AS/ou=External (FYDIBOHF25SPDLT)/cn=Recipients/cn=ee2f3fec8c5c4e3b847a253bc8f4a9bd",
+      "x500:/o=ExchangeLabs/ou=Exchange Administrative Group (FYDIBOHF23SPDLT)/cn=Recipients/cn=usercb849fb2",
+      "smtp:sven.svensson@bouvetasa.mail.onmicrosoft.com",
+      "X500:/o=Bouvet AS/ou=First Administrative Group/cn=Recipients/cn=sven.svensson",
+      "smtp:sven.svensson@bouvetasa.onmicrosoft.com",
+      "SMTP:sven.svensson@bouvet.no"
+    ],
+    "pursuant": "~:bouvet-employee",
+    "pwdLastSet": [
+      "131540117623728842"
+    ],
+    "real_name": "Sven Svensson",
+    "refreshTokensValidFromDateTime": "2017-05-10T11:17:21Z",
+    "region": "Sesam",
+    "sAMAccountName": [
+      "sven.svensson"
+    ],
+    "sAMAccountType": [
+      "805306368"
+    ],
+    "showInAddressBook": [
+      "CN=Ansatte,CN=All Users,CN=All Address Lists,CN=Address Lists Container,CN=Bouvet AS,CN=Microsoft Exchange,CN=Services,CN=Configuration,DC=bouvet,DC=no",
+      "CN=Default Global Address List,CN=All Global Address Lists,CN=Address Lists Container,CN=Bouvet AS,CN=Microsoft Exchange,CN=Services,CN=Configuration,DC=bouvet,DC=no"
+    ],
+    "skills": [
+      "58b94a61285db1097b61c70c",
+      "58b94f81285db1086c61c895",
+      "58b94f89525abf0834192831",
+      "58b95120fd0b8d0800d8b4df",
+      "58b9512d525abf082f19277c",
+      "58b951a0fd0b8d0864d8b427",
+      "58b951c4fd0b8d0881d8b4a7",
+      "58b951f8525abf0871192722"
+    ],
+    "sn": [
+      "Svensson"
+    ],
+    "ssoref": "",
+    "streetAddress": "-",
+    "surname": "Svensson",
+    "targetAddress": [
+      "SMTP:sven.svensson@bouvetasa.mail.onmicrosoft.com"
+    ],
+    "team_id": "T024XURJ2",
+    "telephone": "+47 33333333",
+    "title": [
+      "Konsulent"
+    ],
+    "type": [
+      "~:ad-user",
+      "~:currenttime-employee",
+      "~:currenttime-employeedetail",
+      "~:slack-user",
+      "~:User",
+      "~:User"
+    ],
+    "tz": "Europe/Amsterdam",
+    "tz_label": "Central European Time",
+    "tz_offset": 3600,
+    "uSNChanged": [
+      "209579266"
+    ],
+    "uSNCreated": [
+      "207327572"
+    ],
+    "updateby": "Testing (3526)",
+    "updated": 1511827208,
+    "updatedate": "~t2019-03-20T08:41:24.887Z",
+    "usageLocation": "NO",
+    "userAccountControl": [
+      "544"
+    ],
+    "userPrincipalName": "sven.svensson@bouvet.no",
+    "userType": "Member",
+    "user_id": "5d4d3353edfc711013b837ef",
+    "username": "bouvet\\sven.svensson",
+    "whenChanged": [
+      "20171111140147.0Z"
+    ],
+    "whenCreated": [
+      "20170929102551.0Z"
+    ]
+  }
+]

@@ -1,0 +1,337 @@
+{
+  "_id": "users-elasticsearch",
+  "type": "pipe",
+  "source": {
+    "type": "dataset",
+    "dataset": "global-person"
+  },
+  "transform": {
+    "type": "dtl",
+    "rules": {
+      "default": [
+        ["if",
+          ["and",
+            ["intersects",
+              ["list", "OU=Midlertidig", "OU=Innleide konsulenter"],
+              ["split", ",",
+                ["first", "_S.ad-user:distinguishedName"]
+              ]
+            ],
+            ["is-not-empty", "_S.ad-user:employeeNumber"],
+            ["is-not-empty",
+              ["hops", {
+                "datasets": ["global-department gd"],
+                "where": ["eq", "_S.ad-user:departmentNumber", "gd.ad-department:departmentNumber"]
+              }]
+            ],
+            ["eq",
+              ["first", "_S.ad-user:extensionAttribute10"], "Temporary"]
+          ],
+          ["add", "ad-temp", true]
+        ],
+        ["filter",
+          ["or",
+            ["in", "_S.global-person:employee_status",
+              ["list", "EarlyEmployee", "TempEarlyEmployee", "SoonEmployee", "TempSoonEmployee", "Employee", "TempEmployee", "Quit"]
+            ],
+            ["eq", "_T.ad-temp", true],
+            ["intersects",
+              ["list", "~:ad-user:2818", "~:ad-user:2843", "~:ad-user:2364", "~:ad-user:2972"], "_S.$ids"]
+          ]
+        ],
+        ["if",
+          ["or",
+            ["eq", "_S.global-person:employee_status", "Employee"],
+            ["eq", "_S.global-person:employee_status", "TempEmployee"],
+            ["eq", "_T.ad-temp", true]
+          ],
+          ["add", "enonic_deleted", false],
+          ["add", "enonic_deleted", true]
+        ],
+        ["if",
+          ["intersects",
+            ["first", "_S.ad-user:employeeID"],
+            ["list", "2843", "2818", "2972", "2364"]
+          ],
+          ["add", "enonic_deleted", false]
+        ],
+        ["add", "uid", "_S.global-person:uid"],
+        ["merge",
+          ["hops", {
+            "datasets": ["global-department gd"],
+            "where": [
+              ["eq", "_S.ORGANIZATION.@UNIQUE_IMPORT_ID", "gd.catalystone-organization:ORG_ID.value"]
+            ],
+            "return": ["dict", "department", "gd.department-hierarchy"]
+          }]
+        ],
+        ["comment", "will be added later", "linkedin_link", "_S.extensionAttribute7"],
+        ["add", "mail", "_S.global-person:Email"],
+        ["add", "ad_roles", "_S.catalystone-user:1071.VALUES.VALUE.value"],
+        ["add", "mobile", "_S.catalystone-user:1003.VALUE.value"],
+        ["add", "matching_key",
+          ["list", "_S.global-person:Email", "_S.global-person:upn"]
+        ],
+        ["if",
+          ["eq",
+            ["substring", 0, 3, "_T.mobile"], "+47"],
+          ["add", "mobile",
+            ["replace", "+47", "+47 ", "_T.mobile"]
+          ],
+          ["if",
+            ["eq",
+              ["length", "_T.mobile"], 8],
+            ["add", "mobile",
+              ["concat", "+47 ", "_T.mobile"]
+            ],
+            ["if",
+              ["eq",
+                ["substring", 0, 3, "_T.mobile"], "+46"],
+              ["add", "mobile",
+                ["replace", "+46", "+46 ", "_T.mobile"]
+              ],
+              ["if",
+                ["gt",
+                  ["length", "_T.mobile"], 8],
+                ["add", "mobile",
+                  ["concat", "+46 ", "_T.mobile"]
+                ]
+              ]
+            ]
+          ]
+        ],
+        ["add", "name", "_S.global-person:DisplayName"],
+        ["add", "firstName", "_S.global-person:FirstName"],
+        ["add", "lastName", "_S.global-person:LastName"],
+        ["add", "start_date", "_S.global-person:Start-date"],
+        ["add", "slack",
+          ["first", "_S.slack-user:name"]
+        ],
+        ["merge-union",
+          ["apply", "slackurl",
+            ["first", "_S.slack-user:id"]
+          ]
+        ],
+        ["merge",
+          ["apply-hops", "cv", {
+            "datasets": ["global-cv pg"],
+            "where": ["eq", "_S.$ids", "pg.bruker_id-ni"]
+          }]
+        ],
+        ["merge-union",
+          ["apply-hops", "skills", {
+            "datasets": ["global-classification skills"],
+            "where": ["eq", "_S.cvpartner-userskills:skills",
+              ["ni-id", "skills.$ids"]
+            ]
+          }]
+        ],
+        ["filter",
+          ["is-not-empty", "_T.uid"]
+        ],
+        ["remove", "ad-temp"]
+      ],
+      "blogs": [
+        ["add", "description", "_S.cvpartner-cv:long_description.no"],
+        ["add", "name", "_S.cvpartner-cv:name.no"],
+        ["add", "url", "_S.cvpartner-cv:url"],
+        ["add", "year", "_S.cvpartner-cv:year"]
+      ],
+      "customer": [
+        ["if",
+          ["gt", "_S.no", ""],
+          ["add", "customer", "_S.no"],
+          ["if",
+            ["gt", "_S.int", ""],
+            ["add", "customer", "_S.int"],
+            ["if",
+              ["gt", "_S.se", ""],
+              ["add", "customer", "_S.se"]
+            ]
+          ]
+        ]
+      ],
+      "cv": [
+        ["add", "role",
+          ["coalesce",
+            ["list", "_P._S.global-person:Title", "_S.cvpartner-cv:title.no", "_S.cvpartner-cv:title.se", "_S.cvpartner-cv:title.int"]
+          ]
+        ],
+        ["add", "image_large", "_S.image.large.url"],
+        ["add", "image_thumb", "_S.image.thumb.url"],
+        ["add", "cv_url", "_S.cvpartner-cv:url"],
+        ["add", "blogs",
+          ["apply", "blogs", "_S.cvpartner-cv:blogs"]
+        ],
+        ["merge-union",
+          ["apply", "skills_filter", "_S.cvpartner-cv:project_experiences.project_experience_skills.tags"]
+        ],
+        ["merge-union",
+          ["apply", "skills_filter", "_S.cvpartner-cv:technologies.technology_skills.tags"]
+        ],
+        ["merge",
+          ["apply", "key_qualifications", "_S.cvpartner-cv:key_qualifications"]
+        ],
+        ["add", "project_exp",
+          ["apply", "project_experiences", "_S.cvpartner-cv:project_experiences"]
+        ]
+      ],
+      "key_qualifications": [
+        ["filter",
+          ["eq", "_S.cvpartner-cv:disabled", false]
+        ],
+        ["comment",
+          ["eq", "_S.cvpartner-cv:key_points.name.no", ""]
+        ],
+        ["if",
+          ["gt", "_S.cvpartner-cv:long_description.no", ""],
+          ["add", "about_me", "_S.cvpartner-cv:long_description.no"],
+          ["if",
+            ["gt", "_S.cvpartner-cv:long_description.int", ""],
+            ["add", "about_me", "_S.cvpartner-cv:long_description.int"],
+            ["if",
+              ["gt", "_S.cvpartner-cv:long_description.se", ""],
+              ["add", "about_me", "_S.cvpartner-cv:long_description.se"]
+            ]
+          ]
+        ],
+        ["merge-union",
+          ["apply", "key_qualifications_language", "_S.cvpartner-cv:key_points.name"]
+        ],
+        ["comment", "ask_me", "_S.cvpartner-cv:key_points.name.no"]
+      ],
+      "key_qualifications_language": [
+        ["if",
+          ["gt", "_S.no", ""],
+          ["add", "ask_me", "_S.no"],
+          ["if",
+            ["gt", "_S.int", ""],
+            ["add", "ask_me", "_S.int"],
+            ["if",
+              ["gt", "_S.se", ""],
+              ["add", "ask_me", "_S.se"]
+            ]
+          ]
+        ]
+      ],
+      "project_experiences": [
+        ["filter",
+          ["eq", "_S.cvpartner-cv:disabled", false]
+        ],
+        ["merge-union",
+          ["apply", "customer", "_S.cvpartner-cv:customer"]
+        ],
+        ["merge-union",
+          ["apply", "project_name", "_S.cvpartner-cv:description"]
+        ],
+        ["merge-union",
+          ["apply", "roles", "_S.cvpartner-cv:roles.name"]
+        ],
+        ["if",
+          ["gt", "_S.month_from", ""],
+          ["add", "from",
+            ["datetime-parse", "%Y.%m",
+              ["concat", "_S.year_from", ".", "_S.month_from"]
+            ]
+          ],
+          ["if",
+            ["gt", "_S.year_from", ""],
+            ["add", "from",
+              ["datetime-parse", "%Y", "_S.year_from"]
+            ],
+            ["add", "from", "ikke påbegynt"]
+          ]
+        ],
+        ["if",
+          ["gt", "_S.month_to", ""],
+          ["add", "to",
+            ["datetime-parse", "%Y.%m",
+              ["concat", "_S.year_to", ".", "_S.month_to"]
+            ]
+          ],
+          ["if",
+            ["gt", "_S.year_to", ""],
+            ["add", "to",
+              ["datetime-parse", "%Y", "_S.year_to"]
+            ],
+            ["add", "to", "pågående"]
+          ]
+        ]
+      ],
+      "project_name": [
+        ["if",
+          ["gt", "_S.no", ""],
+          ["add", "project_name", "_S.no"],
+          ["if",
+            ["gt", "_S.int", ""],
+            ["add", "project_name", "_S.int"],
+            ["if",
+              ["gt", "_S.se", ""],
+              ["add", "project_name", "_S.se"]
+            ]
+          ]
+        ]
+      ],
+      "roles": [
+        ["if",
+          ["gt", "_S.no", ""],
+          ["add", "roles",
+            ["list", "_S.no"]
+          ],
+          ["if",
+            ["gt", "_S.int", ""],
+            ["add", "roles",
+              ["list", "_S.int"]
+            ],
+            ["if",
+              ["gt", "_S.se", ""],
+              ["add", "roles",
+                ["list", "_S.se"]
+              ]
+            ]
+          ]
+        ]
+      ],
+      "skills": [
+        ["if",
+          ["gt", "_S.values.no", ""],
+          ["add", "skill", "_S.values.no"],
+          ["if",
+            ["gt", "_S.int", ""],
+            ["add", "skill", "_S.values.int"],
+            ["if",
+              ["gt", "_S.se", ""],
+              ["add", "skill", "_S.se"]
+            ]
+          ]
+        ]
+      ],
+      "skills_filter": [
+        ["if",
+          ["gt", "_S.no", ""],
+          ["add", "skill", "_S.no"],
+          ["if",
+            ["gt", "_S.int", ""],
+            ["add", "skill", "_S.int"],
+            ["if",
+              ["gt", "_S.se", ""],
+              ["add", "skill", "_S.se"]
+            ]
+          ]
+        ]
+      ],
+      "slackurl": [
+        ["add", "slack_weburl",
+          ["concat", "https://bouvet.slack.com/messages/", "_S."]
+        ],
+        ["add", "slack_nativeurl",
+          ["concat", "slack://user?team=", "_P._S.slack-user:team_id", "&id=", "_S."]
+        ]
+      ]
+    }
+  },
+  "compaction": {
+    "sink": true,
+    "keep_versions": 5
+  }
+}

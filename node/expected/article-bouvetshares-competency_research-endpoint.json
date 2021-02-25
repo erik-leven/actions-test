@@ -1,0 +1,266 @@
+[
+  {
+    "_id": "69f8dd53-80c6-4a43-a119-399d5d71a2d0",
+    "data": {
+      "attachments": {},
+      "childOrder": "modifiedtime DESC",
+      "createdTime": "2017-08-24T06:03:42.598Z",
+      "creator": "user:bouvet:trude.hole-bouvet.no",
+      "data": {
+        "body": "Operating revenues increased 20.4 per cent for the first half to NOK 804.7 million. For the first six months, the operating profit ended at NOK 78 million, an increase of 27.2 per cent compared with last year.\n\"A good market and satisfied clients able and willing to invest, combined with our committed and capable employees, made this a very good quarter for us,\" says Sverre Hurum, CEO of Bouvet ASA.\nBouvet's operating costs, including depreciation, came to NOK 348.9 million for the second quarter, compared with NOK 304.3 million in the same period of 2016. That represents an increase of 14.6 per cent.\nThe EBIT margin for the second quarter was 9.5 per cent, down from 11.9 per cent in the second quarter last year.\nNet profit came to NOK 28.3 million, compared with NOK 30.9 million for the second quarter of 2016. Diluted earnings per share were NOK 2.72 for the quarter, compared with NOK 2.94 in the same period of last year.\nFurther information fromSverre Hurum, CEO, Bouvet ASA, tel +47 913 50 047Erik Stub\u0026oslash;, CFO, Bouvet ASA, tel +47 950 36 011",
+        "heading": "Q2 2017: A good market for Bouvet",
+        "lead": "Bouvet had operating revenues of NOK 385.7 \nmillion for the second quarter of 2017, compared with NOK 345.3 \nmillion in the same period of last year. Operating profit (EBIT) \ncame to NOK 36.8 million, compared with NOK 41 million in the second \nquarter of 2016. This quarter had four fewer working days compared \nwith the same period of last year."
+      },
+      "displayName": "Q2 2017: A GOOD MARKET FOR BOUVET",
+      "hasChildren": false,
+      "language": "en",
+      "modifiedTime": "2017-11-09T07:44:37.215Z",
+      "modifier": "user:bouvet:trude.hole-bouvet.no",
+      "owner": "user:bouvet:trude.hole-bouvet.no",
+      "page": {},
+      "publish": {
+        "first": "2017-08-24T06:18:04.803Z",
+        "from": "2017-08-24T06:18:04.803Z"
+      },
+      "type": "no.bouvet.bouvet:blog-classic",
+      "valid": true,
+      "workflow": {
+        "checks": {},
+        "state": "READY"
+      },
+      "x": {
+        "com-enonic-app-metafields": {
+          "meta-data": {
+            "blockRobots": false
+          }
+        },
+        "no-bouvet-bouvet": {
+          "menu-item": {
+            "menuItem": false
+          },
+          "related": {}
+        }
+      }
+    },
+    "filename": "en-69f8dd53-80c6-4a43-a119-399d5d71a2d0.json"
+  },
+  {
+    "_id": "b2f59b08-0886-4e1c-9663-21cf4ac5d317",
+    "data": {
+      "attachments": {},
+      "childOrder": "modifiedtime DESC",
+      "createdTime": "2017-06-15T10:32:53.368Z",
+      "creator": "user:bouvet:ylva.berge-bouvet.no",
+      "data": {
+        "authors": [
+          {
+            "_id": "d76909a0-a914-479a-a57f-75ea0ebaab24",
+            "attachments": {},
+            "childOrder": "modifiedtime DESC",
+            "createdTime": "2017-05-06T19:28:58.700Z",
+            "creator": "user:system:su",
+            "data": {
+              "bio": "",
+              "email": "ylva.berge@bouvet.no",
+              "name": "Ylva Seiff Berge"
+            },
+            "displayName": "Ylva Seiff Berge",
+            "hasChildren": false,
+            "language": "no",
+            "modifiedTime": "2017-05-06T20:02:14.843Z",
+            "modifier": "user:bouvet:erlend.schei-bouvet.no",
+            "owner": "user:system:su",
+            "page": {},
+            "publish": {
+              "first": "2017-05-06T20:02:14.843Z",
+              "from": "2017-05-06T20:02:14.843Z"
+            },
+            "type": "no.bouvet.bouvet:person",
+            "valid": true,
+            "workflow": {
+              "checks": {},
+              "state": "READY"
+            },
+            "x": {}
+          }
+        ],
+        "body": "- P\u0026aring; konferanser er det veldig mange foredrag og spor, alt er ikke relevant og derfor er det viktig \u0026aring; ha mulighet til \u0026aring; markere de foredragene man vil se. Denne funksjonaliteten hadde ikke den offisielle NDC appen, s\u0026aring; vi dunka sammen v\u0026aring;r egen i enkleste form, sier utvikler Nikhil Andre Luthra i Bouvet.\nFor \u0026aring; lage NDC-appen brukte vi Node.js for \u0026aring; hente ut innholdet fra NDC sin side, og javascript for \u0026aring; lage og lagre listene p\u0026aring; brukerens telefon/nettleser. Designet derimot har det ikke blitt lagt vekt p\u0026aring;, her m\u0026aring;tte det praktiske g\u0026aring; foran det estetiske. \u0026nbsp;\u0026nbsp;\nPr\u0026oslash;v v\u0026aring;r NDC-app her: http://ndc.labben.org\n\n\n\n",
+        "heading": "Ny NDC-app på 90 minutter!",
+        "image": "c575e16d-0473-4e0c-a117-df065d44190d",
+        "lead": "I år var det ikke lenger mulig å stjernemerke favoritt foredragene sine på NDC. Det gjorde Bouvet noe med på 90 minutter. \n"
+      },
+      "displayName": "Ny NDC-app på 90 minutter!",
+      "hasChildren": true,
+      "language": "no",
+      "modifiedTime": "2017-06-15T11:49:16.406Z",
+      "modifier": "user:bouvet:ylva.berge-bouvet.no",
+      "owner": "user:bouvet:ylva.berge-bouvet.no",
+      "page": {},
+      "publish": {
+        "first": "2017-06-15T10:39:22.220Z",
+        "from": "2017-06-15T10:39:22.220Z"
+      },
+      "tags": [
+        "Web og mobil"
+      ],
+      "type": "no.bouvet.bouvet:blog-classic",
+      "valid": true,
+      "workflow": {
+        "checks": {},
+        "state": "READY"
+      },
+      "x": {
+        "com-enonic-app-metafields": {
+          "meta-data": {
+            "blockRobots": false
+          }
+        },
+        "no-bouvet-bouvet": {
+          "menu-item": {
+            "menuItem": false
+          },
+          "related": {
+            "services": "d1c987f6-b4ba-4a94-8969-34709283ea50"
+          }
+        }
+      }
+    },
+    "filename": "no-b2f59b08-0886-4e1c-9663-21cf4ac5d317.json"
+  },
+  {
+    "_id": "f07ceeea-7193-47c8-a79b-027b5d705ca6",
+    "data": {
+      "attachments": {},
+      "childOrder": "modifiedtime DESC",
+      "createdTime": "2018-12-08T06:40:24.598Z",
+      "creator": "user:bouvet:emelie.stjarnborg-bouvet.se",
+      "data": {
+        "authors": [
+          {
+            "_id": "cbbab398-6cc4-4414-9c85-bffd570c5450",
+            "attachments": {},
+            "childOrder": "modifiedtime DESC",
+            "createdTime": "2018-12-08T06:39:07.991Z",
+            "creator": "user:bouvet:emelie.stjarnborg-bouvet.se",
+            "data": {
+              "bio": "null",
+              "department": "Kundupplevelse 2",
+              "email": "elisabeth.mark@bouvet.se",
+              "name": "Elisabeth Mark",
+              "office": {
+                "contacts": "72c9a3ac-822a-42df-8686-7ff5d3c6cdfd",
+                "email": "info@bouvet.se",
+                "heading": "Stockholm",
+                "image": "d4c0dccc-3106-4567-9f38-2c431baaf6ff",
+                "latlong": "59.340403,18.086874",
+                "lead": "Bouvets kontor i Stockholm ligger centralt placerat på Östermalmsgatan. Vi är ett starkt team på mer än 65 konsulter med lång erfarenhet och kompetens inom systemutveckling, arkitektur, integration, användarupplevelse, interaktionsdesign samt projekt- och testledning.",
+                "phone": "+ 46 771 - 611 100",
+                "streetAddress": "Östermalmsgatan 87 A\n114 59 Stockholm"
+              },
+              "title": "UX-designer"
+            },
+            "displayName": "Elisabeth Mark",
+            "hasChildren": false,
+            "language": "sv",
+            "modifiedTime": "2018-12-08T06:39:58.429Z",
+            "modifier": "user:bouvet:emelie.stjarnborg-bouvet.se",
+            "owner": "user:bouvet:emelie.stjarnborg-bouvet.se",
+            "page": {},
+            "publish": {
+              "first": "2018-12-08T06:40:01.349Z",
+              "from": "2018-12-08T06:40:01.349Z"
+            },
+            "type": "no.bouvet.bouvet:person",
+            "valid": true,
+            "workflow": {
+              "checks": {},
+              "state": "READY"
+            },
+            "x": {
+              "com-enonic-app-metafields": {
+                "meta-data": {
+                  "blockRobots": false,
+                  "seoDescription": "null"
+                }
+              },
+              "no-bouvet-bouvet": {
+                "menu-item": {
+                  "menuItem": false
+                },
+                "related": {}
+              }
+            }
+          }
+        ],
+        "body": "1.\u0026nbsp;Kontrast\n\nAnvänd ett verktyg för att mäta kontrasten mellan text och bakgrund. Sträva efter att nå AA-nivå.\n\nAnvänd inte endast färg för att särskilja innehåll eller förmedla information.\n\n\nSträva minst att uppnå nivå AA.\n\n\n2.\u0026nbsp;Klickbarhet\n\nSkapa generösa klickytor runt alla klickbara element, minst 44x44 pixlar. Testa att klicka på knappar och länkar med ’fel’ hand\u0026nbsp;(alltså vänster om du är högerhänt).\n\n\nMinst 44X44 pixlars klickyta\n\n\n3.\u0026nbsp;Tangentbordsnavigering\n\nGör det möjligt att navigera på webbplatsen genom att tabba dig fram endast med tangentbord. Bygg upp i en logisk tabbordning.\n\nTesta dig fram genom att koppla ur musen – kan du använda dig av alla funktioner med endast tangentbordet?\n\n\u0026nbsp;\n\n4.\u0026nbsp;Alt-texter och textalternativ\n\nAnvänd alt-attribut för att beskriva innehåll i bilder så att skärmläsare kan läsa\u0026nbsp;upp innehållet. Syntolka eller beskriv med text allt\u0026nbsp;rörligt material.\n\n\nAnvänd beskrivande alt-attribut\n\n\n5.\u0026nbsp;Felmeddelanden\n\nVisa tydligt i positiv form var ett fel uppstått och hur det kan rättas till, till exempel det korrekta formatet för det aktuella\u0026nbsp;formulärfältet.\n\n\nAnvänd förklarande felmeddelanden\n\n\n6.\u0026nbsp;Tydliga texter och länkar\n\nAnvänd beskrivande länktexter, sidtitlar och rubriker. Skriv inte ’Läs mer’ eller ’Klicka här’ på en knapp, utan beskriv istället vart\u0026nbsp;länken leder.\n\n\nAnvänd beskrivande länktexter\n\n\n7. Möjliggör förstoring\n\nLåt användaren kunna förstora text upp till 200%, utan att behöva scrolla i sidled.\n\n\nMöjliggör zoom upp till 200% utan att användaren behöver scrolla\n\n\n8.\u0026nbsp;Gör användartester\n\nLåt riktiga användare testa produkten!\n\n\u0026nbsp;\n",
+        "category": "design",
+        "heading": "8 tips för en inkluderande design",
+        "image": "d5aa8f79-a08a-46e2-9d56-fda282aad4ae",
+        "lead": "\"Design för alla\" betyder att alla har möjlighet att ta del av information, oavsett funktionsförmåga. Istället för att bygga speciallösningar bör man tänka inkluderande design redan i början av designprocessen. Alla vinner på detta i slutändan; alla besökare känner sig sedda, och du exkluderar inte de 20% av befolkningen. Dessutom är det ju numera lag på att offentlig sektor måste följa WCAG 2.0. Här kommer mina 8 bästa tips.",
+        "updated": "2019-01-16T09:51:00Z"
+      },
+      "displayName": "8 tips för en inkluderande design",
+      "hasChildren": true,
+      "language": "sv",
+      "modifiedTime": "2020-02-23T20:31:55.428Z",
+      "modifier": "user:bouvet:henriette.hoyer-bouvet.no",
+      "owner": "user:bouvet:emelie.stjarnborg-bouvet.se",
+      "page": {
+        "config": {},
+        "descriptor": "no.bouvet.bouvet:default",
+        "path": "/",
+        "regions": {
+          "main": {
+            "components": [
+              {
+                "config": {},
+                "descriptor": "no.bouvet.bouvet:blog-article-show",
+                "path": "/main/0",
+                "type": "part"
+              }
+            ],
+            "name": "main"
+          }
+        },
+        "type": "page"
+      },
+      "publish": {
+        "first": "2018-12-08T07:00:16.675Z",
+        "from": "2018-12-08T07:00:16.675Z"
+      },
+      "tags": [
+        "User Experience (UX)",
+        "Användbarhet och tillgänglighet",
+        "Kundupplevelse",
+        "Design"
+      ],
+      "type": "no.bouvet.bouvet:blog-classic",
+      "valid": true,
+      "workflow": {
+        "checks": {},
+        "state": "READY"
+      },
+      "x": {
+        "com-enonic-app-metafields": {
+          "meta-data": {
+            "blockRobots": false
+          }
+        },
+        "no-bouvet-bouvet": {
+          "menu-item": {
+            "menuItem": false
+          },
+          "related": {
+            "services": [
+              "71113c8a-26b0-4104-9d92-0cda41439430",
+              "c93cebf1-995a-421d-9f1d-cd7a4b704cf6",
+              "169988f9-59c0-4140-a421-7b3085f0e53b",
+              "aa7c99e5-f545-40bc-bfa9-8a958a8470d3"
+            ]
+          }
+        }
+      }
+    },
+    "filename": "sv-f07ceeea-7193-47c8-a79b-027b5d705ca6.json"
+  }
+]

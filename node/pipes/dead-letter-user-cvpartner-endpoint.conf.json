@@ -1,0 +1,28 @@
+{
+  "_id": "dead-letter-user-cvpartner-endpoint",
+  "type": "pipe",
+  "source": {
+    "type": "dataset",
+    "dataset": "dead-letter-user-cvpartner"
+  },
+  "sink": {
+    "type": "json",
+    "system": "smtp-ms",
+    "url": "dead-letter-user-cvpartner/dead-letters/CV-PARTNER"
+  },
+  "transform": {
+    "type": "dtl",
+    "rules": {
+      "default": [
+        ["filter",
+          ["eq", "_S._deleted", false]
+        ],
+        ["copy", "*"]
+      ]
+    }
+  },
+  "pump": {
+    "mode": "$ENV(pump-mode)",
+    "schedule_interval": 3600
+  }
+}

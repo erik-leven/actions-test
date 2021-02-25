@@ -1,0 +1,12 @@
+[
+  {
+    "_id": "0001",
+    "image": "https://image.com/1",
+    "user": "6895fa0d-60d4-4ebb-9d13-eaa6487ba760"
+  },
+  {
+    "_id": "0003",
+    "image": "https://image.com/9",
+    "user": "a332a54d-f0fd-4792-93fc-7f9a19530716"
+  }
+]

@@ -1,0 +1,55 @@
+{
+  "_id": "user-history-pulsen",
+  "type": "pipe",
+  "source": {
+    "type": "dataset",
+    "dataset": "global-person"
+  },
+  "transform": {
+    "type": "dtl",
+    "rules": {
+      "default": [
+        ["filter",
+          ["in", "_S.global-person:employee_status",
+            ["list", "EarlyEmployee", "TempEarlyEmployee", "SoonEmployee", "TempSoonEmployee", "Employee", "TempEmployee", "Quit"]
+          ]
+        ],
+        ["filter",
+          ["in", "~:bouvet:catalystone-user", "_S.rdf:type"]
+        ],
+        ["copy", "_id"],
+        ["add", "Ansatt_ID", "_S.catalystone-user:UNIQUE_IMPORT_ID.value"],
+        ["add", "Navn", "_S.catalystone-user:NAME.value"],
+        ["add", "Fornavn", "_S.catalystone-user:FIRST_NAME.value"],
+        ["add", "Etternavn", "_S.catalystone-user:LAST_NAME.value"],
+        ["add", "Epost", "_S.catalystone-user:EMAIL.value"],
+        ["add", "Organisasjon", "_S.catalystone-user:ORGANIZATION.value"],
+        ["add", "Leder", "_S.catalystone-user:SUPERVISOR.EMPLOYEE_ID"],
+        ["add", "HR_leder", "_S.catalystone-user:HR_MANAGER.EMPLOYEE_ID"],
+        ["add", "Arbeidssted", "_S.catalystone-user:JOB_LOCATION.value"],
+        ["add", "Jobbrolle", "_S.catalystone-user:JOB_ROLE.value"],
+        ["add", "Avdelingsleder", "_S.catalystone-user:DEPARTMENT_MANAGER.value"],
+        ["add", "Sluttdato", "_S.catalystone-user:TERMINATION_DATE.value"],
+        ["add", "Tittel", "_S.catalystone-user:TITLE.value"],
+        ["add", "Ansattstatus", "_S.catalystone-user:EMPLOYMENT_STATUS.value"],
+        ["add", "Brukernavn", "_S.catalystone-user:USERNAME.value"],
+        ["add", "Brukerkontostatus", "_S.catalystone-user:ACCESS_DISABLE.value"],
+        ["add", "Selskap", "_S.catalystone-user:1002.VALUE.value"],
+        ["add", "Mobiltelefon", "_S.catalystone-user:1003.VALUE.value"],
+        ["add", "Faktisksistearbeidsdag", "_S.catalystone-user:1029.VALUE.value"],
+        ["add", "Nyarbeidsgiver", "_S.catalystone-user:1076.VALUE.value"],
+        ["add", "Regionid", "_S.catalystone-user:1117.VALUE.value"],
+        ["add", "Oppsigelsestid_antallmaaneder", "_S.catalystone-user:1124.VALUE.value"],
+        ["add", "CurrentDepartmentid", "_S.catalystone-user:1125.VALUE.value"],
+        ["add", "Omraadeid_Areaid", "_S.catalystone-user:1134.VALUE.value"],
+        ["add", "Oensketvisningsnavn", "_S.catalystone-user:1141.VALUE.value"],
+        ["add", "Roller",
+          ["join", ", ", "_S.catalystone-user:1071.VALUES.VALUE.value"]
+        ],
+        ["add", "Leveranseleder&salgsleder",
+          ["join", ", ", "_S.catalystone-user:1126.PERSON.NAME"]
+        ]
+      ]
+    }
+  }
+}

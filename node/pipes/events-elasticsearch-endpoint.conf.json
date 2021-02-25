@@ -1,0 +1,28 @@
+{
+  "_id": "events-elasticsearch-endpoint",
+  "type": "pipe",
+  "source": {
+    "type": "dataset",
+    "dataset": "events-elasticsearch"
+  },
+  "sink": {
+    "type": "json",
+    "system": "elasticsearch",
+    "url": "/sesam_event_data"
+  },
+  "transform": {
+    "type": "dtl",
+    "rules": {
+      "default": [
+        ["copy", "*"],
+        ["add", "events-elasticsearch:sesam_updated",
+          ["now"]
+        ]
+      ]
+    }
+  },
+  "pump": {
+    "mode": "$ENV(pump-mode)",
+    "schedule_interval": 600
+  }
+}
