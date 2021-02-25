@@ -33,7 +33,7 @@ jobs:
       - name: Run system test
         env:
           JWT: ${{ secrets.JWT }}
-          NODE: "datahub-03a25ce4.sesam.cloud"
+          NODE: "datahub-c2bdfabb.sesam.cloud/api"
           SESAM_TAG: "1.15.38"
 
         run: |
