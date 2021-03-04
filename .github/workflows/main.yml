@@ -31,4 +31,4 @@ jobs:
       - name: Run sesam test
         run: |
           bash <(curl -s https://raw.githubusercontent.com/sesam-community/sesam-py/${{ env.VERSION }}/install-latest.sh)
-          cd node/ && ../sesam -version && ../sesam -vv -print-scheduler-log -scheduler-max-runs 500 --scheduler-max-run-time 600 test
+          cd node/ && ../sesam -version && ../sesam -vv -print-scheduler-log -scheduler-max-runs 500 -scheduler-max-run-time 600 test
