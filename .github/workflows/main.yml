@@ -22,7 +22,7 @@ jobs:
     env:
       NODE: "datahub-0b08b50b.sesam.cloud"
       JWT: ${{ secrets.JWT }}
-      VERSION: 2.0.1
+      VERSION: "2.0.1"
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
